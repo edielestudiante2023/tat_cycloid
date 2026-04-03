@@ -67,7 +67,7 @@ $v = function(string $campo, mixed $default = '') use ($registro) {
         </div>
 
         <hr class="my-3">
-        <p class="form-label mb-2" style="font-weight:700;color:#1c2437;">Contacto empresa</p>
+        <p class="form-label mb-2" style="font-weight:700;color:#1b4332;">Contacto empresa</p>
 
         <div class="row g-2 mb-3">
             <div class="col-12 col-md-6">
@@ -85,7 +85,7 @@ $v = function(string $campo, mixed $default = '') use ($registro) {
         </div>
 
         <hr class="my-3">
-        <p class="form-label mb-2" style="font-weight:700;color:#1c2437;">Responsable SST</p>
+        <p class="form-label mb-2" style="font-weight:700;color:#1b4332;">Responsable SST</p>
 
         <div class="mb-3">
             <label class="form-label">Nombre responsable SST</label>

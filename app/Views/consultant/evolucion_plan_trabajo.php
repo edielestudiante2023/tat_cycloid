@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evolucion Planes de Trabajo - Enterprise SST</title>
+    <title>Evolucion Planes de Trabajo - Cycloid TAT</title>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -83,7 +83,7 @@
 
         .chart-container h5 {
             text-align: center;
-            color: #1c2437;
+            color: #1b4332;
             font-weight: 600;
             margin-bottom: 1rem;
         }
@@ -141,14 +141,14 @@
                 <h4 class="mb-0 fw-bold" id="headerTotalActividades"><?= number_format($totalActividades) ?></h4>
             </div>
             <div>
-                <h5 class="mb-0 fw-bold" style="color: #1c2437;">EVOLUCION PLANES DE TRABAJO CLIENTES</h5>
+                <h5 class="mb-0 fw-bold" style="color: #1b4332;">EVOLUCION PLANES DE TRABAJO CLIENTES</h5>
             </div>
             <div class="text-center">
                 <small class="text-muted d-block">CUENTA DE CLIENTES</small>
                 <h4 class="mb-0 fw-bold" id="headerTotalClientes"><?= $totalClientes ?></h4>
             </div>
             <div>
-                <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprise SST" style="height: 50px;">
+                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT" style="height: 50px;">
             </div>
         </div>
     </nav>

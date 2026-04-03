@@ -109,7 +109,7 @@
     <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 20px;">
       <div>
         <a href="https://dashboard.cycloidtalent.com/login">
-          <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprisesst Logo" style="height: 100px;">
+          <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" style="height: 100px;">
         </a>
       </div>
       <div>

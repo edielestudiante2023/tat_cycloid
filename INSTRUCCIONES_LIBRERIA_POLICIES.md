@@ -17,7 +17,7 @@ Todo de forma automática al crear un cliente nuevo, sin necesidad de cargar CSV
 #### A. Políticas (client_policies)
 📁 `app/Libraries/PolicyTypesLibrary.php`
 
-- Contiene los 44 `policy_type_ids` estándar para Propiedad Horizontal
+- Contiene los 44 `policy_type_ids` estándar para Tienda a Tienda
 - Define contenido predeterminado para algunos tipos (Misión, Visión, ARL, etc.)
 - Genera automáticamente la estructura de datos para inserción masiva
 
@@ -334,4 +334,4 @@ Si tienes dudas o problemas:
 
 **Fecha de implementación:** 2025-01-09
 **Versión:** 1.0
-**Sistema:** Enterprise SST - Propiedad Horizontal Colombia
+**Sistema:** Enterprise SST - Tienda a Tienda Colombia

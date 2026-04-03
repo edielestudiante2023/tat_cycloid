@@ -31,14 +31,14 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
         .header-code { width: 120px; font-size: 8px; }
 
         .cover-page { text-align: center; padding-top: 120px; }
-        .cover-title { font-size: 18px; font-weight: bold; color: #1c2437; margin-bottom: 10px; }
+        .cover-title { font-size: 18px; font-weight: bold; color: #1b4332; margin-bottom: 10px; }
         .cover-subtitle { font-size: 14px; font-weight: bold; color: #444; margin-bottom: 30px; }
         .cover-img { max-width: 400px; max-height: 280px; border: 2px solid #ccc; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #1c2437; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #1b4332; }
 
-        .section-title { background: #1c2437; color: white; padding: 4px 8px; font-weight: bold; font-size: 9px; margin: 10px 0 5px; }
-        .section-subtitle { font-weight: bold; font-size: 9px; color: #1c2437; margin: 6px 0 3px; }
+        .section-title { background: #1b4332; color: white; padding: 4px 8px; font-weight: bold; font-size: 9px; margin: 10px 0 5px; }
+        .section-subtitle { font-weight: bold; font-size: 9px; color: #1b4332; margin: 6px 0 3px; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
@@ -49,7 +49,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
         .data-table td { border: 1px solid #ccc; padding: 3px 5px; font-size: 8px; vertical-align: middle; }
 
         .content-text { font-size: 8.5px; line-height: 1.4; margin-bottom: 5px; text-align: justify; }
-        .content-bold { font-size: 8.5px; font-weight: bold; margin: 5px 0 2px; color: #1c2437; }
+        .content-bold { font-size: 8.5px; font-weight: bold; margin: 5px 0 2px; color: #1b4332; }
 
         .foto-block { text-align: center; margin: 6px 0; }
         .foto-block img { max-width: 300px; max-height: 200px; border: 1px solid #ccc; }
@@ -59,7 +59,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
         .foto-row td { text-align: center; padding: 4px; vertical-align: top; }
         .foto-row img { max-width: 220px; max-height: 150px; border: 1px solid #ccc; }
 
-        .annex-title { background: #2c3e50; color: white; padding: 5px 8px; font-weight: bold; font-size: 10px; margin: 10px 0 6px; text-align: center; }
+        .annex-title { background: #2d6a4f; color: white; padding: 5px 8px; font-weight: bold; font-size: 10px; margin: 10px 0 6px; text-align: center; }
 
         .opt-a { background: #d4edda; color: #155724; font-weight: bold; text-align: center; }
         .opt-b { background: #fff3cd; color: #856404; font-weight: bold; text-align: center; }

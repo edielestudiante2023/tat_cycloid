@@ -129,7 +129,7 @@
     En cumplimiento de la <strong>Ley 1581 de 2012</strong> (Ley de Proteccion de Datos Personales) y el
     <strong>Decreto 1377 de 2013</strong>, autorizo de manera libre, expresa, previa e informada a
     <strong><?= esc($cliente['nombre_cliente'] ?? '') ?></strong> y a <strong>CYCLOID TALENT S.A.S.</strong>
-    (Enterprise SST) para que realice la recoleccion, almacenamiento, uso, circulacion y tratamiento de mis
+    (Cycloid TAT) para que realice la recoleccion, almacenamiento, uso, circulacion y tratamiento de mis
     datos personales suministrados en el presente documento, con las siguientes finalidades:<br><br>
     1) Cumplimiento de obligaciones legales en materia de Seguridad y Salud en el Trabajo.<br>
     2) Gestion del Sistema de Gestion de SST (SG-SST).<br>

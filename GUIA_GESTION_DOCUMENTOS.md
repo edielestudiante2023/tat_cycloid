@@ -1,6 +1,6 @@
 # Guía de Gestión de Documentos SST
 
-Esta guía explica cómo agregar o eliminar documentos del sistema de gestión SST de Propiedad Horizontal.
+Esta guía explica cómo agregar o eliminar documentos del sistema de gestión SST de Tienda a Tienda.
 
 ---
 
@@ -183,7 +183,7 @@ class PzpoliticaacosexualController extends Controller
             return redirect()->to('/dashboardclient')->with('error', 'No se encontró este documento.');
         }
 
-        // Para Propiedad Horizontal, latestVersion y policyType son lo mismo
+        // Para Tienda a Tienda, latestVersion y policyType son lo mismo
         $latestVersion = $policyType;
         $allVersions = get_all_document_versions($policyTypeId);
 
@@ -682,4 +682,4 @@ Si encuentras algún problema o tienes dudas:
 ---
 
 **Última actualización:** 2026-01-09
-**Versión del sistema:** Propiedad Horizontal SST v2.0
+**Versión del sistema:** Tienda a Tienda SST v2.0

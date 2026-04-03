@@ -45,7 +45,7 @@
         text-align: center;
         font-weight: bold;
         font-size: 13px;
-        color: #1c2437;
+        color: #1b4332;
         margin: 20px 0 5px;
     }
     .subtitle {
@@ -58,16 +58,16 @@
     .section-title {
         font-weight: bold;
         font-size: 11px;
-        color: #1c2437;
+        color: #1b4332;
         margin-top: 18px;
         margin-bottom: 6px;
-        border-bottom: 1px solid #1c2437;
+        border-bottom: 1px solid #1b4332;
         padding-bottom: 3px;
     }
     .subsection-title {
         font-weight: bold;
         font-size: 10px;
-        color: #1c2437;
+        color: #1b4332;
         margin-top: 12px;
         margin-bottom: 4px;
     }
@@ -78,7 +78,7 @@
         font-size: 9px;
     }
     .data-table th {
-        background: #1c2437;
+        background: #1b4332;
         color: white;
         padding: 5px 6px;
         text-align: left;
@@ -126,17 +126,17 @@
     }
     .indicador-box .ind-label {
         font-weight: bold;
-        color: #1c2437;
+        color: #1b4332;
     }
     .tanque-info {
-        border: 1px solid #1c2437;
+        border: 1px solid #1b4332;
         padding: 8px 12px;
         margin: 8px 0 12px;
         background: #f5f8ff;
     }
     .tanque-info .tanque-label {
         font-weight: bold;
-        color: #1c2437;
+        color: #1b4332;
     }
 </style>
 </head>

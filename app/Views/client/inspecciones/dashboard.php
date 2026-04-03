@@ -14,7 +14,7 @@
                     <div style="width:60px; height:60px; border-radius:50%; background:<?= $tipo['color'] ?>; display:inline-flex; align-items:center; justify-content:center; margin-bottom:1rem;">
                         <i class="fas <?= $tipo['icono'] ?> text-white" style="font-size:1.5rem;"></i>
                     </div>
-                    <h5 style="color:#1c2437; font-weight:700;"><?= esc($tipo['nombre']) ?></h5>
+                    <h5 style="color:#1b4332; font-weight:700;"><?= esc($tipo['nombre']) ?></h5>
                     <?php if (!empty($tipo['es_dashboard'])): ?>
                     <div style="font-size:1rem; font-weight:600; color:<?= $tipo['color'] ?>; margin-top:0.5rem;">
                         <i class="fas fa-table me-1"></i> Ver consolidado

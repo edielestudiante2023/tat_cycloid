@@ -156,7 +156,7 @@
   <nav style="background-color: white; position: fixed; top:0; width:100%; z-index:1000; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
     <div class="d-flex justify-content-between align-items-center px-4">
       <a href="https://dashboard.cycloidtalent.com/login">
-        <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprisesst Logo" height="100">
+        <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" height="100">
       </a>
       <a href="https://cycloidtalent.com/index.php/consultoria-sst">
         <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" height="100">

@@ -341,7 +341,7 @@
     <nav class="navbar-custom">
         <div class="navbar-content">
             <div class="navbar-logos">
-                <div><a href="https://dashboard.cycloidtalent.com/login"><img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprisesst Logo"></a></div>
+                <div><a href="https://dashboard.cycloidtalent.com/login"><img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo"></a></div>
                 <div><a href="https://cycloidtalent.com/index.php/consultoria-sst"><img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo"></a></div>
                 <div><a href="https://cycloidtalent.com/"><img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo"></a></div>
             </div>

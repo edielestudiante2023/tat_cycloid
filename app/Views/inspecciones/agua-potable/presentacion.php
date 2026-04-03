@@ -7,7 +7,7 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #e6edf3; font-size: 18px; line-height: 1.6; }
-.doc-header { background: #1c2437; border-bottom: 4px solid #58a6ff; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.doc-header { background: #1b4332; border-bottom: 4px solid #58a6ff; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
 .doc-header h1 { font-size: 26px; color: #fff; }
 .code-badge { background: #58a6ff; color: #0d1117; font-weight: bold; font-size: 20px; padding: 8px 20px; border-radius: 6px; }
 .nav-bar { background: #161b22; padding: 12px 48px; border-bottom: 1px solid #30363d; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
@@ -17,7 +17,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 .content { padding: 48px; max-width: 1400px; margin: 0 auto; }
 .section { background: #161b22; border: 1px solid #30363d; border-radius: 10px; margin-bottom: 24px; overflow: hidden; }
 .section-header { padding: 22px 32px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; transition: background .2s; }
-.section-header:hover { background: #1c2437; }
+.section-header:hover { background: #1b4332; }
 .section-header h2 { font-size: 20px; color: #58a6ff; font-weight: 600; }
 .badges { display: flex; gap: 8px; align-items: center; }
 .badge { font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
@@ -34,7 +34,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 .sub-section { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; margin: 14px 0; padding: 18px 24px; }
 .sub-section h3 { color: #79c0ff; font-size: 15px; margin-bottom: 10px; }
 .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0; }
-.data-table th { background: #1c2437; color: #58a6ff; padding: 10px 12px; text-align: left; border: 1px solid #30363d; }
+.data-table th { background: #1b4332; color: #58a6ff; padding: 10px 12px; text-align: left; border: 1px solid #30363d; }
 .data-table td { padding: 8px 12px; border: 1px solid #21262d; vertical-align: top; }
 .data-table tr:nth-child(even) td { background: #0d1117; }
 .ai-note { background: #1f2d3f; border: 1px solid #1f6feb; border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-size: 14px; color: #79c0ff; }

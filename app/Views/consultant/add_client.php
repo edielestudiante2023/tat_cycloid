@@ -164,7 +164,7 @@
 <!-- NAVBAR -->
 <nav class="top-navbar">
     <a href="https://dashboard.cycloidtalent.com/login">
-        <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprisesst">
+        <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT">
     </a>
     <a href="https://cycloidtalent.com/index.php/consultoria-sst">
         <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST">

@@ -11,7 +11,7 @@
   <style>
     body {
       background-color: #f5f7fa;
-      color: #1c2437;
+      color: #1b4332;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -20,7 +20,7 @@
     /* Estilo para la barra lateral vertical */
     .vertical-sidebar {
       background-color: whitesmoke;
-      border-right: 2px solid #bd9751;
+      border-right: 2px solid #e76f51;
       height: 100vh;
       padding-top: 20px;
       position: fixed;
@@ -50,7 +50,7 @@
     }
 
     .btn-primary-custom {
-      background-color: #1c2437;
+      background-color: #1b4332;
       color: #ffffff;
       border: none;
     }
@@ -61,7 +61,7 @@
     }
 
     footer {
-      background-color: #1c2437;
+      background-color: #1b4332;
       color: #ffffff;
       padding: 15px 0;
       text-align: center;
@@ -88,7 +88,7 @@
   <!-- Barra lateral vertical con logotipos -->
   <div class="vertical-sidebar">
     <a href="https://dashboard.cycloidtalent.com/login" target="_blank">
-      <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Logo Enterprisesst">
+      <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Logo Cycloid TAT">
     </a>
     <a href="https://cycloidtalent.com/index.php/consultoria-sst" target="_blank">
       <img src="<?= base_url('uploads/logosst.png') ?>" alt="Logo SST">

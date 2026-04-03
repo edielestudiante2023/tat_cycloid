@@ -52,7 +52,7 @@ function confirmarEliminarInsp(url){
     Swal.fire({
         title:'Eliminar registro',
         html:'<p style="color:#666;font-size:14px;">Esta accion no se puede deshacer.<br>Para confirmar, resuelve la operacion:</p>'+
-             '<div style="font-size:24px;font-weight:700;color:#1c2437;margin:10px 0;">'+a+' '+op+' '+b+' = ?</div>',
+             '<div style="font-size:24px;font-weight:700;color:#1b4332;margin:10px 0;">'+a+' '+op+' '+b+' = ?</div>',
         input:'number',inputPlaceholder:'Tu respuesta',icon:'warning',showCancelButton:true,
         confirmButtonColor:'#dc3545',confirmButtonText:'Eliminar',cancelButtonText:'Cancelar',
         inputValidator:function(value){
@@ -69,7 +69,7 @@ function confirmarEliminarInsp(url){
         Swal.fire({
             title:'Confirmar eliminacion',
             html:'<p style="color:#dc3545;font-size:14px;font-weight:600;">Segunda verificacion</p>'+
-                 '<div style="font-size:24px;font-weight:700;color:#1c2437;margin:10px 0;">'+a2+' '+op2+' '+b2+' = ?</div>',
+                 '<div style="font-size:24px;font-weight:700;color:#1b4332;margin:10px 0;">'+a2+' '+op2+' '+b2+' = ?</div>',
             input:'number',inputPlaceholder:'Tu respuesta',icon:'error',showCancelButton:true,
             confirmButtonColor:'#dc3545',confirmButtonText:'Confirmar eliminacion',cancelButtonText:'Cancelar',
             inputValidator:function(value){

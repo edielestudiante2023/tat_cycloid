@@ -50,7 +50,7 @@ Este documento, denominado Plan de Preparación y Respuesta ante Situaciones de 
 
 
 CONCEPTOS
-De acuerdo con el artículo 4 de la Ley 675 de 2001 por medio de la cual se expide el Régimen de Propiedad Horizontal, cada edificio o conjunto de uso residencial debe constituirse en persona jurídica, por tanto, la legislación colombiana alrededor del tema de Seguridad y Salud en el Trabajo es perfectamente aplicable a las administraciones y consejos de administración, motivo por el cual se hará uso de la terminología del Sistema de Gestión de Seguridad y Salud en el Trabajo.
+De acuerdo con el artículo 4 de la Ley 675 de 2001 por medio de la cual se expide el Régimen de Tienda a Tienda, cada edificio o conjunto de uso residencial debe constituirse en persona jurídica, por tanto, la legislación colombiana alrededor del tema de Seguridad y Salud en el Trabajo es perfectamente aplicable a las administraciones y consejos de administración, motivo por el cual se hará uso de la terminología del Sistema de Gestión de Seguridad y Salud en el Trabajo.
 
 Para mayor comprensión de la diferente terminología que se va a tratar en el documento, se describe a continuación algunos de los conceptos:
 
@@ -72,7 +72,7 @@ CONTROL: Acción de eliminar o limitar el desarrollo de un siniestro, para evita
 
 DESASTRE: Es el daño o alteración grave de las condiciones normales de la vida, causado por fenómenos naturales o acción del hombre en forma accidental.
 
-EMERGENCIA: Estado de alteración parcial o total de las actividades de una propiedad horizontal, ocasionado por la ocurrencia de un evento que genera peligro inminente y cuyo control supera la capacidad de respuesta de las personas y de las organizaciones.
+EMERGENCIA: Estado de alteración parcial o total de las actividades de una tienda a tienda, ocasionado por la ocurrencia de un evento que genera peligro inminente y cuyo control supera la capacidad de respuesta de las personas y de las organizaciones.
 
 ESCENARIO: se refiere a una representación o descripción detallada de una situación o conjunto de circunstancias hipotéticas, ya sea en el presente o en el futuro. Los escenarios se utilizan comúnmente en diversas áreas, como la planificación estratégica, la toma de decisiones, la gestión de riesgos y la narrativa, para explorar posibles resultados o eventos. Pueden ser utilizados como herramientas para analizar y comprender mejor las implicaciones de diferentes cursos de acción, identificar desafíos potenciales y prepararse para diversas contingencias. En el contexto de un plan de emergencias, un escenario podría ser una representación detallada de una situación de emergencia hipotética que se utiliza como base para la planificación y preparación de respuestas.  
 
@@ -399,7 +399,7 @@ CLASIFICACIÓN DEL RIESGO: PROBABLE.
 ATENTADOS TERRORISTAS: En este se incluyen aquellas acciones en que además de bombas, o proyectiles dirigidos desde cierta distancia hacia algún objetivo en particular y que generalmente puede afectar instalaciones o viviendas aledañas y ajenas a las que se proponían hacer daño sin que por eso importe algo también puede tratarse de acciones de que inciten a sembrar terror en la población esto puede incluir acciones como el secuestro ya sea por grupos organizados como la guerrilla o bandas criminales.
 CLASIFICACIÓN DEL RIESGO: PROBABLE.
 
-ASALTO Y HURTO: Existe la posibilidad de tener este riesgo principalmente en horas nocturnas ocasionado por la gran inseguridad que se presenta en la actualidad en el Distrito Capital, pero es importante acotar que el conjunto residencial cuenta con un sistema de vigilancia privado contratado para salvaguardar los bienes y servicios de los residentes pero esto se limita solo a la propiedad horizontal, esto no desconoce la problemática que se presenta en las áreas perimetrales del sector del conjunto residencial.
+ASALTO Y HURTO: Existe la posibilidad de tener este riesgo principalmente en horas nocturnas ocasionado por la gran inseguridad que se presenta en la actualidad en el Distrito Capital, pero es importante acotar que el conjunto residencial cuenta con un sistema de vigilancia privado contratado para salvaguardar los bienes y servicios de los residentes pero esto se limita solo a la tienda a tienda, esto no desconoce la problemática que se presenta en las áreas perimetrales del sector del conjunto residencial.
 CLASIFICACIÓN EL RIESGO: PROBABLE.
 
 
@@ -555,10 +555,10 @@ Verificar periódicamente la operatividad del sistema de comunicación interna d
 
 ANEXOS PARA LA DEFINICIÓN DE AMENAZAS
 
-Evaluación de Elementos de Seguridad para la Elaboración del Plan de Emergencias en Propiedad Horizontal
+Evaluación de Elementos de Seguridad para la Elaboración del Plan de Emergencias en Tienda a Tienda
 La gestión eficiente de la seguridad en propiedades horizontales requiere un enfoque integral que permita identificar y mitigar los riesgos a los que están expuestos los residentes, visitantes y trabajadores. Como parte de este proceso, Cycloid Talent SAS ha llevado a cabo una revisión exhaustiva de los principales elementos de seguridad, necesarios para la creación de un Plan de Emergencias acorde a las normativas vigentes y adaptado a las necesidades particulares de la propiedad.
 Entre los componentes evaluados se incluyen la inspección general de las áreas comunes, la elaboración de una matriz de vulnerabilidad, la identificación de la ocurrencia de peligros, así como el estado de los extintores, botiquines y otros recursos esenciales para la seguridad, tales como los equipos de comunicación y sistemas de monitoreo. Esta evaluación garantiza que la propiedad cuente con las herramientas necesarias para la prevención de incidentes y la respuesta eficaz ante situaciones de emergencia.
-Inspección Locativa General: En el contexto de una propiedad horizontal, la inspección general se refiere a la revisión periódica de todas las áreas comunes (como parqueaderos, escaleras, techos, ascensores, sistemas eléctricos, etc.) con el fin de identificar posibles riesgos para la seguridad de los residentes, visitantes y trabajadores. Estas inspecciones ayudan a mantener un entorno seguro y prevenir accidentes.
+Inspección Locativa General: En el contexto de una tienda a tienda, la inspección general se refiere a la revisión periódica de todas las áreas comunes (como parqueaderos, escaleras, techos, ascensores, sistemas eléctricos, etc.) con el fin de identificar posibles riesgos para la seguridad de los residentes, visitantes y trabajadores. Estas inspecciones ayudan a mantener un entorno seguro y prevenir accidentes.
 HALLAZGO IDENTIFICADO
 IMAGEN DEL HALLAZGO
 FECHA
@@ -671,7 +671,7 @@ OBSERVACIONES DEL CONSULTOR
 
 <<End>>
 
-Ocurrencia de Peligros: En una propiedad horizontal, la ocurrencia de peligros se refiere a la probabilidad de que sucedan situaciones que puedan comprometer la seguridad, como incendios, inundaciones, fallos eléctricos o robos. Este análisis permite a los administradores tomar medidas preventivas y establecer planes de contingencia para minimizar los riesgos.
+Ocurrencia de Peligros: En una tienda a tienda, la ocurrencia de peligros se refiere a la probabilidad de que sucedan situaciones que puedan comprometer la seguridad, como incendios, inundaciones, fallos eléctricos o robos. Este análisis permite a los administradores tomar medidas preventivas y establecer planes de contingencia para minimizar los riesgos.
 Origen del peligro
 Se identifican cuatro orígenes de los peligros:
 Natural: Incluye eventos como terremotos, inundaciones, vendavales e incendios forestales.
@@ -756,7 +756,7 @@ SISMOS, CAÍDA DE ESTRUCTURAS: Ninguna edificación, aún las construidas recien
 INUNDACIONES: Se presentan generalmente después de una lluvia fuerte o una granizada, por sustracción de drenajes, por taponamiento de sifones, de desagües o de bajantes de canales; cuando se presenta acumulación de residuos o basuras o por diámetros muy reducidos de los tubos de la cañería; por mala inclinación de los desniveles hacia los respectivos desagües, o por estar la edificación en zonas bajas inundables como cerca de ríos, lagos o por estar construida en zonas pantanosas. Por presentarse en la capital épocas de fuertes y prolongados inviernos, es muy probable que se presenten este tipo de amenazas.
 VENDAVALES, GRANIZADA Y TORMENTAS ELÉCTRICAS: Los cambios climáticos y meteorológicos se pueden encontrar acompañados de vientos, lluvias, granizadas, tormentas eléctricas. La acción de vientos fuertes no solo puede romper ventanales y levantar tejas en las cubiertas, sino hacer caer antenas y pararrayos. Las tormentas eléctricas pueden traer como consecuencia accidentes fatales de trabajadores y la probabilidad de incendios con pérdidas materiales.
 ATENTADOS TERRORISTAS: En este se incluyen aquellas acciones en que además de bombas, o proyectiles dirigidos desde cierta distancia hacia algún objetivo en particular y que generalmente puede afectar instalaciones o viviendas aledañas y ajenas a las que se proponían hacer daño sin que por eso importe algo también puede tratarse de acciones de que inciten a sembrar terror en la población esto puede incluir acciones como el secuestro ya sea por grupos organizados como la guerrilla o bandas criminales.
-ASALTO Y HURTO: Existe la posibilidad de tener este riesgo principalmente en horas nocturnas ocasionado por la gran inseguridad que se presenta en la actualidad en el Distrito Capital, pero es importante acotar que el conjunto residencial cuenta con un sistema de vigilancia privado contratado para salvaguardar los bienes y servicios de los residentes pero esto se limita solo a la propiedad horizontal, esto no desconoce la problemática que se presenta en las áreas perimetrales del sector del conjunto residencial.
+ASALTO Y HURTO: Existe la posibilidad de tener este riesgo principalmente en horas nocturnas ocasionado por la gran inseguridad que se presenta en la actualidad en el Distrito Capital, pero es importante acotar que el conjunto residencial cuenta con un sistema de vigilancia privado contratado para salvaguardar los bienes y servicios de los residentes pero esto se limita solo a la tienda a tienda, esto no desconoce la problemática que se presenta en las áreas perimetrales del sector del conjunto residencial.
 VANDALISMO: Por la gran descomposición social que se vive hoy en día esta es una de las amenazas con un riesgo de probabilidad considerable sin que tenga que ver el tipo de empresa o área habitacional que pueda ser afectada es simplemente el deseo de producir pánico y sembrar el miedo entre la población. La probabilidad de que suceda esta amenaza es poco probable debido a la ubicación que presenta el conjunto residencial, sin embargo se debe considerar que existen muchas formas de hacerlo: a través de paquetes, de sobres, de vehículos y de variedad de artículos incluyendo extintores.
 INCENDIOS: Entre las amenazas más importantes se hace referencia a las de incendio, la cual es característica de toda edificación cuya destinación sea de carácter industrial, comercial, de servicios o residencia. Esta amenaza no solamente se presenta por una eventual vecindad a fuentes de ignición o detonación, fuentes de calor, fuentes eléctricas, presencia de cargas estáticas y también por diferentes cargas combustibles de materiales sólidos presentes en las instalaciones del conjunto residencial y a los trabajos que en él se realicen. Debido a que el conjunto se almacenan diferentes combustibles como vestuario, telones, madera, alfombras, cartón, plásticos, equipos de oficina; presencia de gas natural y demás combustibles que pueden ocasionar un incendio de grandes proporciones.
 EXPLOSIONES: Es un riesgo que viene relacionado con el manejo de cargas combustibles del tipo B como el almacenamiento y manipulación de líquidos y gases inflamables, la reactividad por escape de gases comprimidos como el caso de gas natural, y en el manejo de solventes, lacas, pinturas, varsol que normalmente emanan gases con propiedades inflamables detonantes lo mismo que eventualmente lo podría hacer pero con menos posibilidad el ACPM.
@@ -939,7 +939,7 @@ Reducción de morbilidad y mortalidad: La atención oportuna y eficaz de lesione
 Prevención de complicaciones: Un botiquín tipo B bien dotado permite prevenir complicaciones derivadas de lesiones o urgencias, lo que reduce la necesidad de atención médica especializada y los costos asociados a la misma.
 Promoción de la salud: La presencia de un botiquín tipo B puede incentivar la adopción de prácticas de autocuidado y primeros auxilios, lo que contribuye a promover la salud individual y colectiva en la comunidad.
 2. Enfoque de seguridad y bienestar:
-Minimización de riesgos: Un botiquín tipo B bien dotado minimiza los riesgos asociados a accidentes, lesiones o urgencias médicas en la propiedad horizontal.
+Minimización de riesgos: Un botiquín tipo B bien dotado minimiza los riesgos asociados a accidentes, lesiones o urgencias médicas en la tienda a tienda.
 Protección de la integridad física: Permite brindar atención inmediata a las personas afectadas, protegiendo su integridad física y reduciendo el impacto psicológico de las situaciones de emergencia.
 Generación de un ambiente seguro: La disponibilidad de un botiquín tipo B contribuye a crear un ambiente más seguro para todos los residentes, visitantes y personal del conjunto residencial.
 3. Aspectos legales y normativos:
@@ -947,9 +947,9 @@ Cumplimiento de la Ley 1801 de 2016 y el Decreto 1076 de 2015: La normativa colo
 Responsabilidad civil: La ausencia de un botiquín tipo B o su mal estado puede generar responsabilidad civil para la administración del conjunto residencial en caso de un accidente o una urgencia médica.
 Promoción de una cultura de cumplimiento legal: El cumplimiento de la normativa sobre botiquines tipo B contribuye a fortalecer una cultura de cumplimiento legal en las propiedades horizontales.
 4. Consideraciones éticas y de responsabilidad social:
-Derecho a la salud: La disponibilidad de un botiquín tipo B garantiza el derecho fundamental a la salud de las personas que habitan o frecuentan la propiedad horizontal.
+Derecho a la salud: La disponibilidad de un botiquín tipo B garantiza el derecho fundamental a la salud de las personas que habitan o frecuentan la tienda a tienda.
 Protección de la vida y la integridad física: Brindar atención inmediata a las personas en situación de emergencia es un deber ético de la administración del conjunto residencial.
-Compromiso con el bienestar social: Dotar a la propiedad horizontal con un botiquín tipo B demuestra el compromiso social de la administración con el bienestar de las personas que viven, trabajan o visitan el lugar.
+Compromiso con el bienestar social: Dotar a la tienda a tienda con un botiquín tipo B demuestra el compromiso social de la administración con el bienestar de las personas que viven, trabajan o visitan el lugar.
 5. Fundamentación científica y técnica:
 Norma NTC 4198: La Norma NTC 4198 establece los requisitos de dotación y funcionamiento de los botiquines de primeros auxilios, garantizando su calidad, eficacia y seguridad.
 Guías de primeros auxilios: Existen guías y protocolos reconocidos internacionalmente para el uso adecuado de los botiquines de primeros auxilios, asegurando una atención oportuna y correcta.
@@ -1117,7 +1117,7 @@ COMPRA DE ELEMENTOS REQUERIDOS POR EL CLIENTE PARA CUMPLIMIENTO DEL BOTIQUÍN
 
 <<End>>
 
-Recursos para la Seguridad: En el contexto de propiedad horizontal, estos recursos incluyen tanto el equipo físico (como cámaras de seguridad, alarmas, cercas eléctricas, sistemas de control de acceso) como personal de seguridad capacitado. Estos recursos están destinados a proteger a los residentes y garantizar el control de accesos y salidas, así como la vigilancia de áreas comunes.
+Recursos para la Seguridad: En el contexto de tienda a tienda, estos recursos incluyen tanto el equipo físico (como cámaras de seguridad, alarmas, cercas eléctricas, sistemas de control de acceso) como personal de seguridad capacitado. Estos recursos están destinados a proteger a los residentes y garantizar el control de accesos y salidas, así como la vigilancia de áreas comunes.
 Riesgos Estructurales y Arquitectónicos
 Las propiedades horizontales pueden presentar diversos riesgos estructurales y arquitectónicos que pueden afectar la integridad física de las personas y la estabilidad de la edificación. Algunos ejemplos incluyen:
 Defectos estructurales: Grietas en muros o columnas, hundimientos de pisos, filtraciones de agua, etc.
@@ -1125,13 +1125,13 @@ Materiales inadecuados o deteriorados: Uso de materiales de construcción de baj
 Diseño arquitectónico deficiente: Escaleras mal diseñadas, barandillas inseguras, falta de iluminación adecuada, etc.
 Falta de mantenimiento preventivo: No realizar inspecciones periódicas y reparaciones oportunas de las instalaciones y equipos.
 Riesgos Administrativos
-Los riesgos administrativos en una propiedad horizontal se relacionan con la gestión inadecuada de los recursos, la falta de controles y la ausencia de protocolos de seguridad. Algunos ejemplos incluyen:
+Los riesgos administrativos en una tienda a tienda se relacionan con la gestión inadecuada de los recursos, la falta de controles y la ausencia de protocolos de seguridad. Algunos ejemplos incluyen:
 Gestión deficiente de los recursos económicos: Falta de planificación financiera, mal manejo de los fondos comunes, etc.
 Falta de control en el acceso a las instalaciones: No contar con un sistema de control de acceso adecuado, permitiendo el ingreso de personas no autorizadas.
 Ausencia de protocolos de seguridad: No contar con planes de emergencia para incendios, sismos u otras emergencias, ni con procedimientos para la prevención de accidentes.
 Falta de capacitación del personal: No brindar capacitación periódica al personal sobre temas de seguridad y salud en el trabajo.
 El Rol del Especialista en SST
-Un especialista en Seguridad y Salud en el Trabajo (SST) posee la formación, experiencia y herramientas necesarias para asesorar a la administración y copropietarios de una propiedad horizontal en la identificación, evaluación y control de los riesgos estructurales, arquitectónicos y administrativos. Las funciones del especialista en SST en este ámbito incluyen:
+Un especialista en Seguridad y Salud en el Trabajo (SST) posee la formación, experiencia y herramientas necesarias para asesorar a la administración y copropietarios de una tienda a tienda en la identificación, evaluación y control de los riesgos estructurales, arquitectónicos y administrativos. Las funciones del especialista en SST en este ámbito incluyen:
 Inspecciones estructurales y arquitectónicas: Realizar inspecciones periódicas de las instalaciones para identificar posibles defectos estructurales, materiales inadecuados o diseño arquitectónico deficiente.
 Evaluación de riesgos administrativos: Analizar los procesos administrativos, los controles existentes y los protocolos de seguridad para identificar posibles falencias o áreas de mejora.
 Elaboración de un plan de gestión de riesgos: Desarrollar un plan que establezca las medidas necesarias para prevenir o controlar los riesgos identificados en las áreas estructural, arquitectónica y administrativa.
@@ -1266,11 +1266,11 @@ OBSERVACIONES
 
 <<End>>
 <<If: [TIENE GABINETES CON PUNTO HIDRAULICO] = "SI">>
-Gabinetes Contra Incendio: Los gabinetes contra incendio en una copropiedad representan un componente fundamental dentro de los sistemas de seguridad, destinados a la protección tanto de los residentes como de las instalaciones, al contener mangueras, boquillas y otros equipos esenciales para una respuesta inmediata ante incendios mientras arriban los bomberos; su ubicación estratégica en áreas comunes y de fácil acceso, como pasillos, parqueaderos y escaleras, asegura una intervención rápida en caso de emergencia, lo cual adquiere especial relevancia en el contexto de la propiedad horizontal en Colombia dada la concentración de personas y bienes en un mismo espacio, donde la Norma Técnica Colombiana (NTC) 1800, que define los requisitos mínimos para estos gabinetes, se erige como un elemento crucial para garantizar la seguridad de vidas y propiedades en este tipo de edificaciones.
-Alcance y Aplicación de la Norma NTC 1800 en Propiedad Horizontal
-La NTC 1800 se aplica a los gabinetes contra incendios tipo I, II y III instalados en edificios de propiedad horizontal en Colombia. Estos gabinetes, al igual que en otros tipos de edificaciones, se conectan a la red de tuberías de agua contra incendios y permiten combatir incendios de manera efectiva.
-Componentes Esenciales de los Gabinetes Contra Incendios en Propiedad Horizontal
-En el contexto de la propiedad horizontal, la NTC 1800 establece los mismos componentes esenciales para los gabinetes contra incendios que en otros tipos de edificaciones:
+Gabinetes Contra Incendio: Los gabinetes contra incendio en una copropiedad representan un componente fundamental dentro de los sistemas de seguridad, destinados a la protección tanto de los residentes como de las instalaciones, al contener mangueras, boquillas y otros equipos esenciales para una respuesta inmediata ante incendios mientras arriban los bomberos; su ubicación estratégica en áreas comunes y de fácil acceso, como pasillos, parqueaderos y escaleras, asegura una intervención rápida en caso de emergencia, lo cual adquiere especial relevancia en el contexto de la tienda a tienda en Colombia dada la concentración de personas y bienes en un mismo espacio, donde la Norma Técnica Colombiana (NTC) 1800, que define los requisitos mínimos para estos gabinetes, se erige como un elemento crucial para garantizar la seguridad de vidas y propiedades en este tipo de edificaciones.
+Alcance y Aplicación de la Norma NTC 1800 en Tienda a Tienda
+La NTC 1800 se aplica a los gabinetes contra incendios tipo I, II y III instalados en edificios de tienda a tienda en Colombia. Estos gabinetes, al igual que en otros tipos de edificaciones, se conectan a la red de tuberías de agua contra incendios y permiten combatir incendios de manera efectiva.
+Componentes Esenciales de los Gabinetes Contra Incendios en Tienda a Tienda
+En el contexto de la tienda a tienda, la NTC 1800 establece los mismos componentes esenciales para los gabinetes contra incendios que en otros tipos de edificaciones:
 Manguera: La manguera es indispensable para dirigir un chorro de agua hacia la base del fuego. Su longitud y tipo dependerán del tamaño del edificio, el número de unidades y el nivel de riesgo de incendio.
 
 
@@ -1292,8 +1292,8 @@ Gabinete: El gabinete alberga todos los componentes del sistema contra incendios
 Señalización: El gabinete debe estar claramente identificado con la señal de "Gabinete contra incendios" para facilitar su ubicación en caso de una emergencia.
 
 
-Requisitos Adicionales para los Gabinetes Contra Incendios en Propiedad Horizontal
-Además de los componentes esenciales, la NTC 1800 establece requisitos adicionales para los gabinetes contra incendios en propiedad horizontal, tomando en cuenta las características específicas de este tipo de edificaciones:
+Requisitos Adicionales para los Gabinetes Contra Incendios en Tienda a Tienda
+Además de los componentes esenciales, la NTC 1800 establece requisitos adicionales para los gabinetes contra incendios en tienda a tienda, tomando en cuenta las características específicas de este tipo de edificaciones:
 Ubicación estratégica: Los gabinetes contra incendios deben ubicarse en puntos estratégicos de la edificación, considerando las vías de evacuación y los accesos a las unidades habitacionales.
 
 
@@ -1306,13 +1306,13 @@ Señalización clara: La señalización de los gabinetes debe ser clara, visible
 Capacitación y entrenamiento: Es fundamental que los residentes reciban capacitación y entrenamiento en el uso correcto de los gabinetes contra incendios, incluyendo la operación de la manguera, la válvula y la boquilla.
 
 
-Planes de emergencia: La propiedad horizontal debe contar con planes de emergencia que incluyan procedimientos específicos para la utilización de los gabinetes contra incendios en caso de un incendio.
+Planes de emergencia: La tienda a tienda debe contar con planes de emergencia que incluyan procedimientos específicos para la utilización de los gabinetes contra incendios en caso de un incendio.
 
 
-Importancia de la Norma NTC 1800 en Propiedad Horizontal
-El cumplimiento de la NTC 1800 en propiedad horizontal es de vital importancia para garantizar la seguridad contra incendios en este tipo de edificaciones. Los gabinetes contra incendios, diseñados y mantenidos de acuerdo con la norma, pueden ser la clave para salvar vidas y proteger bienes en caso de un incendio.
-Responsabilidades en la Propiedad Horizontal
-En el contexto de la propiedad horizontal, la responsabilidad del cumplimiento de la NTC 1800 recae en la administración de la unidad residencial, quien debe velar por la instalación, inspección, mantenimiento y pruebas periódicas de los gabinetes contra incendios.
+Importancia de la Norma NTC 1800 en Tienda a Tienda
+El cumplimiento de la NTC 1800 en tienda a tienda es de vital importancia para garantizar la seguridad contra incendios en este tipo de edificaciones. Los gabinetes contra incendios, diseñados y mantenidos de acuerdo con la norma, pueden ser la clave para salvar vidas y proteger bienes en caso de un incendio.
+Responsabilidades en la Tienda a Tienda
+En el contexto de la tienda a tienda, la responsabilidad del cumplimiento de la NTC 1800 recae en la administración de la unidad residencial, quien debe velar por la instalación, inspección, mantenimiento y pruebas periódicas de los gabinetes contra incendios.
 <<Start: [ULTIMO_GABINETES]>> 
 cción, mantenimiento y pruebas periódicas de los gabinetes contra incendios.
 
@@ -1430,9 +1430,9 @@ TRÁNSITO
 Ten en cuenta que la línea general de emergencia es 123, que permite a los colombianos acceder a todos los servicios de emergencia y seguridad ofrecidos por el estado.
 
 
-BRIGADA DE EMERGENCIAS EN LA PROPIEDAD HORIZONTAL
+BRIGADA DE EMERGENCIAS EN LA TIENDA A TIENDA
 
-La infraestructura de emergencias en la propiedad horizontal de <<[NOMBRE DEL CLIENTE]>> está respaldada por una brigada altamente capacitada que integra funciones de primeros auxilios, contra incendios y evacuación. Este grupo polifuncional, compuesto por individuos competentes y comprometidos, se encarga de salvaguardar la seguridad y bienestar de la comunidad en situaciones críticas.
+La infraestructura de emergencias en la tienda a tienda de <<[NOMBRE DEL CLIENTE]>> está respaldada por una brigada altamente capacitada que integra funciones de primeros auxilios, contra incendios y evacuación. Este grupo polifuncional, compuesto por individuos competentes y comprometidos, se encarga de salvaguardar la seguridad y bienestar de la comunidad en situaciones críticas.
 
 BRIGADA PRIMEROS AUXILIOS, CONTRA INCENDIOS Y EVACUACIÓN
 
@@ -1481,7 +1481,7 @@ Ubicación Estratégica del Equipo:
 Disponer estratégicamente todo el equipo necesario en el Kit de Emergencia designado por <<[NOMBRE DEL CLIENTE]>> en el área de recepción.
 Verificar regularmente el estado y la disponibilidad de los elementos en el kit para asegurar una respuesta inmediata y efectiva.
 
-Estas acciones, respaldadas por la formación y compromiso de la Brigada de emergencia, contribuirán significativamente a la ejecución exitosa de las operaciones de evacuación en situaciones de emergencia en la propiedad horizontal de <<[NOMBRE DEL CLIENTE]>>.
+Estas acciones, respaldadas por la formación y compromiso de la Brigada de emergencia, contribuirán significativamente a la ejecución exitosa de las operaciones de evacuación en situaciones de emergencia en la tienda a tienda de <<[NOMBRE DEL CLIENTE]>>.
 
 UTILIZACIÓN DE LOS EQUIPOS CONTRA INCENDIO 
 
@@ -1788,7 +1788,7 @@ Establecer el horario, los participantes y el objetivo de la prueba.
 
 Objetivo y alcance de la prueba
 
-Detallar los objetivos específicos para los cuales fue diseñada la prueba. Indicar cuáles participantes de la propiedad horizontal se van a poner a prueba y quienes simularán las acciones.
+Detallar los objetivos específicos para los cuales fue diseñada la prueba. Indicar cuáles participantes de la tienda a tienda se van a poner a prueba y quienes simularán las acciones.
 
 Guía
 

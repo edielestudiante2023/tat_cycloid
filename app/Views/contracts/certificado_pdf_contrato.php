@@ -75,7 +75,7 @@
     </div>
 
     <div class="footer">
-        Enterprise SST - Sistema de Gestion de Seguridad y Salud en el Trabajo | Cycloid Talent S.A.S. NIT 901.653.912-2<br>
+        Cycloid TAT - Sistema de Gestion de Seguridad y Salud en el Trabajo | Cycloid Talent S.A.S. NIT 901.653.912-2<br>
         Documento generado el <?= date('d/m/Y H:i:s') ?>
     </div>
 </body>

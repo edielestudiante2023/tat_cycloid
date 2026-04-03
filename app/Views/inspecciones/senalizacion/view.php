@@ -1,5 +1,5 @@
 <?php
-$califColor = '#bd9751';
+$califColor = '#e76f51';
 $calif = (float)($inspeccion['calificacion'] ?? 0);
 if ($calif <= 40) $califColor = '#dc3545';
 elseif ($calif <= 60) $califColor = '#fd7e14';

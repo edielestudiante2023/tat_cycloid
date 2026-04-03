@@ -45,14 +45,14 @@
         text-align: center;
         font-size: 14px;
         font-weight: bold;
-        color: #1c2437;
+        color: #1b4332;
         margin: 15px 0 5px;
     }
     .subtitulo {
         text-align: center;
         font-size: 11px;
         font-weight: bold;
-        color: #bd9751;
+        color: #e76f51;
         margin-bottom: 3px;
     }
     .periodo-text {
@@ -62,7 +62,7 @@
         margin-bottom: 15px;
     }
     .section-title {
-        background: #1c2437;
+        background: #1b4332;
         color: #fff;
         font-weight: bold;
         font-size: 10px;
@@ -83,7 +83,7 @@
         background: #f0f0f0;
         font-weight: bold;
         width: 30%;
-        color: #1c2437;
+        color: #1b4332;
     }
     .metricas-table {
         width: 100%;
@@ -98,7 +98,7 @@
     .metricas-table .metric-value {
         font-size: 18px;
         font-weight: bold;
-        color: #1c2437;
+        color: #1b4332;
     }
     .metricas-table .metric-label {
         font-size: 8px;
@@ -155,7 +155,7 @@
         margin-bottom: 10px;
     }
     .actividades-table th {
-        background: #1c2437;
+        background: #1b4332;
         color: #fff;
         font-size: 8px;
         padding: 4px 6px;
@@ -173,7 +173,7 @@
     .page-break {
         page-break-before: always;
     }
-    .text-gold { color: #bd9751; }
+    .text-gold { color: #e76f51; }
     .text-green { color: #28a745; }
     .text-red { color: #dc3545; }
     .text-center { text-align: center; }
@@ -207,7 +207,7 @@
         </td>
     </tr>
     <tr>
-        <td class="header-title" style="font-size: 11px; color: #1c2437;">
+        <td class="header-title" style="font-size: 11px; color: #1b4332;">
             INFORME DE AVANCES
         </td>
         <td class="header-code">
@@ -305,7 +305,7 @@
                     <?php endif; ?>
                 </td>
                 <td style="width:25%;border:none;padding:4px;text-align:center;">
-                    <div style="font-size:26px;font-weight:bold;color:#1c2437;"><?= number_format($puntajeActual, 1) ?>%</div>
+                    <div style="font-size:26px;font-weight:bold;color:#1b4332;"><?= number_format($puntajeActual, 1) ?>%</div>
                     <div style="font-size:8px;color:#777;">Anterior: <?= number_format($puntajeAnterior, 1) ?>%</div>
                     <div style="font-size:10px;color:<?= $dif > 0 ? '#28a745' : ($dif < 0 ? '#dc3545' : '#6c757d') ?>;font-weight:bold;">
                         <?= $dif > 0 ? '+' : '' ?><?= number_format($dif, 1) ?> pp
@@ -341,7 +341,7 @@
                     <?php endif; ?>
                 </td>
                 <td style="width:25%;border:none;padding:4px;text-align:center;">
-                    <div style="font-size:26px;font-weight:bold;color:#1c2437;"><?= number_format($planPct, 1) ?>%</div>
+                    <div style="font-size:26px;font-weight:bold;color:#1b4332;"><?= number_format($planPct, 1) ?>%</div>
                     <div style="font-size:8px;color:#777;">Actividades cerradas</div>
                 </td>
                 <td style="width:50%;border:none;padding:4px;">
@@ -388,7 +388,7 @@
                             if ($c['estado'] === 'EJECUTADA') $ejecutadas = intval($c['cantidad']);
                         }
                     ?>
-                    <div style="font-size:26px;font-weight:bold;color:#1c2437;"><?= number_format($capPct, 1) ?>%</div>
+                    <div style="font-size:26px;font-weight:bold;color:#1b4332;"><?= number_format($capPct, 1) ?>%</div>
                     <div style="font-size:8px;color:#777;">Capacitaciones ejecutadas</div>
                 </td>
                 <td style="width:50%;border:none;padding:4px;">
@@ -431,7 +431,7 @@
                             }
                         }
                     ?>
-                    <div style="font-size:26px;font-weight:bold;color:#1c2437;"><?= $abiertos ?> / <?= $totalPend ?></div>
+                    <div style="font-size:26px;font-weight:bold;color:#1b4332;"><?= $abiertos ?> / <?= $totalPend ?></div>
                     <div style="font-size:8px;color:#777;">Abiertos / Total</div>
                 </td>
                 <td style="width:50%;border:none;padding:4px;">

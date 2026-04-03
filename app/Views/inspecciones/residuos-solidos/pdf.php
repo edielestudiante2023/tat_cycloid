@@ -45,7 +45,7 @@
         text-align: center;
         font-weight: bold;
         font-size: 13px;
-        color: #1c2437;
+        color: #1b4332;
         margin: 20px 0 5px;
     }
     .subtitle {
@@ -58,16 +58,16 @@
     .section-title {
         font-weight: bold;
         font-size: 11px;
-        color: #1c2437;
+        color: #1b4332;
         margin-top: 18px;
         margin-bottom: 6px;
-        border-bottom: 1px solid #1c2437;
+        border-bottom: 1px solid #1b4332;
         padding-bottom: 3px;
     }
     .subsection-title {
         font-weight: bold;
         font-size: 10px;
-        color: #1c2437;
+        color: #1b4332;
         margin-top: 12px;
         margin-bottom: 4px;
     }
@@ -78,7 +78,7 @@
         font-size: 9px;
     }
     .data-table th {
-        background: #1c2437;
+        background: #1b4332;
         color: white;
         padding: 5px 6px;
         text-align: left;
@@ -126,7 +126,7 @@
     }
     .indicador-box .ind-label {
         font-weight: bold;
-        color: #1c2437;
+        color: #1b4332;
     }
 </style>
 </head>
@@ -395,9 +395,9 @@ if (file_exists($canecasPath)) {
 
 <div class="subsection-title">1.11.1 Recolección — Flujo del residente para disposición de residuos</div>
 <?php if (!empty($inspeccion['flujo_residente'])): ?>
-<table style="width:100%; border:1.5px solid #1c2437; border-collapse:collapse; margin:6px 0 14px;">
+<table style="width:100%; border:1.5px solid #1b4332; border-collapse:collapse; margin:6px 0 14px;">
     <tr>
-        <td style="background:#1c2437; color:white; padding:5px 8px; font-weight:bold; font-size:9px; width:30%;">
+        <td style="background:#1b4332; color:white; padding:5px 8px; font-weight:bold; font-size:9px; width:30%;">
             FLUJO DEL RESIDENTE
         </td>
         <td style="padding:7px 10px; font-size:9.5px; vertical-align:top;">

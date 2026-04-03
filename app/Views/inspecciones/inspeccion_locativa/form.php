@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 html: 'Para finalizar necesitas al menos:<br><br>' +
                     (!cliente ? '- Seleccionar un cliente<br>' : '') +
                     (hallazgos === 0 ? '- Agregar al menos 1 hallazgo<br>' : ''),
-                confirmButtonColor: '#bd9751',
+                confirmButtonColor: '#e76f51',
             });
             return;
         }
@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showCancelButton: true,
             confirmButtonText: 'Si, finalizar',
             cancelButtonText: 'Cancelar',
-            confirmButtonColor: '#bd9751',
+            confirmButtonColor: '#e76f51',
         }).then(result => {
             if (result.isConfirmed) {
                 // Crear un hidden para indicar finalizar y submit
@@ -463,7 +463,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         showCancelButton: true,
                         confirmButtonText: 'Si, restaurar',
                         cancelButtonText: 'No, empezar de cero',
-                        confirmButtonColor: '#bd9751',
+                        confirmButtonColor: '#e76f51',
                     }).then(result => {
                         if (result.isConfirmed) {
                             restoreFromLocal(data);

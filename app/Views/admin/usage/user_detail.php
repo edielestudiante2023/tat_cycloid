@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Detalle de Usuario - Enterprise SST</title>
+    <title>Detalle de Usuario - Cycloid TAT</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,7 +14,7 @@
         }
 
         .user-card {
-            background: linear-gradient(135deg, #1c2437, #2c3e50);
+            background: linear-gradient(135deg, #1b4332, #2d6a4f);
             color: white;
             border-radius: 15px;
             padding: 30px;
@@ -24,7 +24,7 @@
         .user-card .avatar {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #bd9751, #d4af37);
+            background: linear-gradient(135deg, #e76f51, #f4a261);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -97,7 +97,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;">
             <div>
                 <a href="<?= base_url('/admin/dashboard') ?>">
-                    <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprisesst Logo" style="height: 80px;">
+                    <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" style="height: 80px;">
                 </a>
             </div>
             <div>

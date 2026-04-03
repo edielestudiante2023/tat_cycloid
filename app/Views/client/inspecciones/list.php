@@ -56,13 +56,13 @@ $icono = $iconos[$tipo] ?? 'fa-clipboard-list';
             <div class="card h-100" style="transition:all 0.3s ease; cursor:pointer;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-start mb-2">
-                        <span style="font-size:13px; color:#1c2437; font-weight:700;">
+                        <span style="font-size:13px; color:#1b4332; font-weight:700;">
                             #<?= $insp['id'] ?>
                         </span>
                         <span class="badge bg-success" style="font-size:11px;">Completo</span>
                     </div>
                     <div style="font-size:14px; color:#555;">
-                        <i class="fas fa-calendar-alt me-1" style="color:#bd9751;"></i>
+                        <i class="fas fa-calendar-alt me-1" style="color:#e76f51;"></i>
                         <?= date('d/m/Y', strtotime($insp[$campo_fecha])) ?>
                     </div>
                     <?php if ($tipo === 'senalizacion' && isset($insp['calificacion'])): ?>
@@ -131,7 +131,7 @@ $icono = $iconos[$tipo] ?? 'fa-clipboard-list';
                     </div>
                     <?php endif; ?>
                     <div class="mt-3 text-end">
-                        <span style="font-size:12px; color:#bd9751; font-weight:600;">
+                        <span style="font-size:12px; color:#e76f51; font-weight:600;">
                             Ver detalle <i class="fas fa-chevron-right ms-1"></i>
                         </span>
                     </div>

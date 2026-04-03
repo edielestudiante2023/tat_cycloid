@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         text: 'Se encontro un borrador guardado. Desea restaurar los datos?',
                         icon: 'question',
                         showCancelButton: true,
-                        confirmButtonColor: '#bd9751',
+                        confirmButtonColor: '#e76f51',
                         confirmButtonText: 'Si, restaurar',
                         cancelButtonText: 'No, empezar de cero'
                     }).then(function(result) {

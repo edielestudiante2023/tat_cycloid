@@ -14,8 +14,8 @@ body {
     line-height: 1.6;
 }
 .doc-header {
-    background: #1c2437;
-    border-bottom: 4px solid #bd9751;
+    background: #1b4332;
+    border-bottom: 4px solid #e76f51;
     padding: 28px 48px;
     display: flex;
     justify-content: space-between;
@@ -26,8 +26,8 @@ body {
 }
 .doc-header h1 { font-size: 26px; color: #fff; }
 .doc-header .code-badge {
-    background: #bd9751;
-    color: #1c2437;
+    background: #e76f51;
+    color: #1b4332;
     font-weight: bold;
     font-size: 20px;
     padding: 8px 20px;
@@ -69,10 +69,10 @@ body {
     user-select: none;
     transition: background .2s;
 }
-.section-header:hover { background: #1c2437; }
+.section-header:hover { background: #1b4332; }
 .section-header h2 {
     font-size: 20px;
-    color: #bd9751;
+    color: #e76f51;
     font-weight: 600;
 }
 .section-header .badges { display: flex; gap: 8px; align-items: center; }
@@ -122,8 +122,8 @@ body {
     margin: 12px 0;
 }
 .data-table th {
-    background: #1c2437;
-    color: #bd9751;
+    background: #1b4332;
+    color: #e76f51;
     padding: 10px 12px;
     text-align: left;
     border: 1px solid #30363d;
@@ -156,7 +156,7 @@ body {
 
 <div class="doc-header">
     <div>
-        <h1><span style="color:#bd9751">📋</span> Programa de Limpieza y Desinfección</h1>
+        <h1><span style="color:#e76f51">📋</span> Programa de Limpieza y Desinfección</h1>
         <div style="color:#8b949e; font-size:15px; margin-top:4px;">Plan de Saneamiento Básico — Tienda a Tienda</div>
     </div>
     <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
@@ -170,7 +170,7 @@ body {
 </div>
 
 <div class="nav-bar">
-    <strong style="color:#bd9751;font-size:14px;">Secciones:</strong>
+    <strong style="color:#e76f51;font-size:14px;">Secciones:</strong>
     <span class="sep">|</span>
     <a href="#s11">1.1 Objetivo</a>
     <a href="#s12">1.2 Alcance</a>
@@ -187,7 +187,7 @@ body {
     <a href="#s113">1.13 Control</a>
     <a href="#s114">1.14 Indicadores</a>
     <span class="sep">|</span>
-    <a href="javascript:openAll()" style="color:#bd9751">▶ Expandir todo</a>
+    <a href="javascript:openAll()" style="color:#e76f51">▶ Expandir todo</a>
     <a href="javascript:closeAll()" style="color:#8b949e">▼ Colapsar todo</a>
 </div>
 
@@ -469,19 +469,19 @@ body {
         <div class="sub-section">
             <h3>1.14.1 Cumplimiento de actividades de limpieza y desinfección</h3>
             <table class="data-table">
-                <tr><td style="width:40%; background:#161b22; font-weight:bold; color:#bd9751;">Fórmula</td><td>(N° días registrados ÷ Días hábiles del periodo) × 100</td></tr>
-                <tr><td style="background:#161b22; font-weight:bold; color:#bd9751;">Meta</td><td>≥ 95%</td></tr>
-                <tr><td style="background:#161b22; font-weight:bold; color:#bd9751;">Periodicidad</td><td>Mensual</td></tr>
-                <tr><td style="background:#161b22; font-weight:bold; color:#bd9751;">Fuente</td><td>Planilla de limpieza diligenciada</td></tr>
+                <tr><td style="width:40%; background:#161b22; font-weight:bold; color:#e76f51;">Fórmula</td><td>(N° días registrados ÷ Días hábiles del periodo) × 100</td></tr>
+                <tr><td style="background:#161b22; font-weight:bold; color:#e76f51;">Meta</td><td>≥ 95%</td></tr>
+                <tr><td style="background:#161b22; font-weight:bold; color:#e76f51;">Periodicidad</td><td>Mensual</td></tr>
+                <tr><td style="background:#161b22; font-weight:bold; color:#e76f51;">Fuente</td><td>Planilla de limpieza diligenciada</td></tr>
             </table>
         </div>
         <div class="sub-section">
             <h3>1.14.2 Estado de los elementos de limpieza</h3>
             <table class="data-table">
-                <tr><td style="width:40%; background:#161b22; font-weight:bold; color:#bd9751;">Fórmula</td><td>(N° elementos en buen estado ÷ N° total verificados) × 100</td></tr>
-                <tr><td style="background:#161b22; font-weight:bold; color:#bd9751;">Meta</td><td>≥ 90%</td></tr>
-                <tr><td style="background:#161b22; font-weight:bold; color:#bd9751;">Periodicidad</td><td>Mensual</td></tr>
-                <tr><td style="background:#161b22; font-weight:bold; color:#bd9751;">Elementos</td><td>Escobas, traperos, cepillos, mopas, baldes, recogedores, atomizadores</td></tr>
+                <tr><td style="width:40%; background:#161b22; font-weight:bold; color:#e76f51;">Fórmula</td><td>(N° elementos en buen estado ÷ N° total verificados) × 100</td></tr>
+                <tr><td style="background:#161b22; font-weight:bold; color:#e76f51;">Meta</td><td>≥ 90%</td></tr>
+                <tr><td style="background:#161b22; font-weight:bold; color:#e76f51;">Periodicidad</td><td>Mensual</td></tr>
+                <tr><td style="background:#161b22; font-weight:bold; color:#e76f51;">Elementos</td><td>Escobas, traperos, cepillos, mopas, baldes, recogedores, atomizadores</td></tr>
             </table>
         </div>
     </div>

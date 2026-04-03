@@ -59,7 +59,7 @@ $esActiva       = $evaluacion['estado'] === 'activo';
                     <div style="font-size:10px; color:#999;">Respondieron</div>
                 </div>
                 <div class="col-3">
-                    <div style="font-size:24px; font-weight:800; color:#bd9751;"><?= number_format($promedio, 1) ?>%</div>
+                    <div style="font-size:24px; font-weight:800; color:#e76f51;"><?= number_format($promedio, 1) ?>%</div>
                     <div style="font-size:10px; color:#999;">Promedio</div>
                 </div>
                 <div class="col-3">
@@ -93,7 +93,7 @@ $esActiva       = $evaluacion['estado'] === 'activo';
                 </div>
                 <div class="text-end">
                     <div style="font-size:10px; color:#999; font-weight:600; letter-spacing:0.5px;">CÓDIGO</div>
-                    <div style="font-size:15px; font-weight:800; color:#bd9751; font-family:monospace;"><?= esc($s['codigo']) ?></div>
+                    <div style="font-size:15px; font-weight:800; color:#e76f51; font-family:monospace;"><?= esc($s['codigo']) ?></div>
                 </div>
             </div>
 

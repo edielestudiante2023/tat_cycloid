@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 title: 'Datos precargados automáticamente',
                 html: 'Al seleccionar el cliente y la fecha, el sistema cargará automáticamente el <strong>listado de asistencia</strong> y los <strong>resultados de evaluación</strong> registrados para ese día.<br><br>Si cambias la fecha, los datos se actualizan solos.',
                 confirmButtonText: 'Entendido',
-                confirmButtonColor: '#bd9751',
+                confirmButtonColor: '#e76f51',
             });
         }
     });
@@ -494,7 +494,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         showCancelButton: true,
                         confirmButtonText: 'Si, restaurar',
                         cancelButtonText: 'No, empezar de cero',
-                        confirmButtonColor: '#bd9751',
+                        confirmButtonColor: '#e76f51',
                     }).then(result => {
                         if (result.isConfirmed) restoreFromLocal(data);
                         else localStorage.removeItem(STORAGE_KEY);

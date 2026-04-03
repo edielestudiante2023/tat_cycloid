@@ -245,7 +245,7 @@
         <!-- Footer -->
         <div style="background: #f8f9fa; padding: 20px; text-align: center; border-top: 1px solid #eee;">
             <p style="color: #999; font-size: 12px; margin: 0;">
-                Enterprise SST - Sistema de Gestion de Seguridad y Salud en el Trabajo<br>
+                Cycloid TAT - Sistema de Gestion de Seguridad y Salud en el Trabajo<br>
                 Este es un mensaje automatico, por favor no responda a este correo.<br>
                 Enviado el <?= date('d/m/Y H:i:s') ?>
             </p>

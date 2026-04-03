@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= esc($title ?? 'Inspecciones') ?> - Enterprisesst</title>
+    <title><?= esc($title ?? 'Inspecciones') ?> - Cycloid TAT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #1c2437;
+            color: #1b4332;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
         }
         .navbar {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 3px solid #bd9751;
+            border-bottom: 3px solid #e76f51;
             position: fixed;
             top: 0;
             width: 100%;
@@ -41,7 +41,7 @@
             padding-bottom: 60px;
         }
         .page-header {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             color: white;
             padding: 1.5rem 2rem;
             border-radius: 15px;
@@ -97,7 +97,7 @@
             color: white;
         }
         footer {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             color: #ffffff;
             padding: 15px 0;
             margin-top: 2rem;
@@ -114,7 +114,7 @@
     <nav class="navbar">
         <div class="container navbar-content">
             <a href="https://dashboard.cycloidtalent.com/login" target="_blank">
-                <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Logo Enterprisesst">
+                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Logo Cycloid TAT">
             </a>
             <a href="https://cycloidtalent.com/index.php/consultoria-sst" target="_blank">
                 <img src="<?= base_url('uploads/logosst.png') ?>" alt="Logo SST">

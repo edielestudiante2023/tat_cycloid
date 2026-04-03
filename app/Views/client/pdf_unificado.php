@@ -12,7 +12,7 @@
     <style>
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #1c2437;
+            color: #1b4332;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
         }
@@ -20,7 +20,7 @@
         .navbar {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 3px solid #bd9751;
+            border-bottom: 3px solid #e76f51;
             position: fixed;
             top: 0;
             width: 100%;
@@ -52,7 +52,7 @@
         }
 
         .header-section {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             color: white;
             padding: 2rem;
             border-radius: 15px;
@@ -72,7 +72,7 @@
         }
 
         .info-card {
-            background: linear-gradient(135deg, #bd9751 0%, #d4af37 100%);
+            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
             color: white;
             border-radius: 15px;
             padding: 1.5rem;
@@ -121,7 +121,7 @@
         .document-item .icon {
             width: 35px;
             height: 35px;
-            background: linear-gradient(135deg, #bd9751 0%, #d4af37 100%);
+            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -144,7 +144,7 @@
         .dimension-actuar { background: #9C27B0; color: white; }
 
         .btn-generate {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             color: white;
             font-weight: 600;
             padding: 1rem 2rem;
@@ -169,8 +169,8 @@
 
         .btn-back {
             background: transparent;
-            color: #1c2437;
-            border: 2px solid #1c2437;
+            color: #1b4332;
+            border: 2px solid #1b4332;
             padding: 0.75rem 1.5rem;
             border-radius: 50px;
             font-weight: 600;
@@ -178,7 +178,7 @@
         }
 
         .btn-back:hover {
-            background: #1c2437;
+            background: #1b4332;
             color: white;
         }
 
@@ -198,7 +198,7 @@
         }
 
         .progress-bar {
-            background: linear-gradient(135deg, #bd9751 0%, #d4af37 100%);
+            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
             border-radius: 15px;
             transition: width 0.3s ease;
         }
@@ -207,7 +207,7 @@
             text-align: center;
             margin-top: 1rem;
             font-weight: 500;
-            color: #1c2437;
+            color: #1b4332;
         }
 
         .alert-warning-custom {
@@ -232,7 +232,7 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #bd9751;
+            color: #e76f51;
         }
 
         .stat-label {
@@ -241,7 +241,7 @@
         }
 
         footer {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             color: #ffffff;
             padding: 20px 0;
             margin-top: 3rem;
@@ -269,7 +269,7 @@
     <nav class="navbar">
         <div class="container navbar-content">
             <a href="https://dashboard.cycloidtalent.com/login" target="_blank">
-                <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Logo Enterprisesst">
+                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Logo Cycloid TAT">
             </a>
             <a href="https://cycloidtalent.com/index.php/consultoria-sst" target="_blank">
                 <img src="<?= base_url('uploads/logosst.png') ?>" alt="Logo SST">
@@ -352,7 +352,7 @@
                                 $currentDimension = $acceso['dimension'];
                         ?>
                             <div class="document-item" style="background: #f8f9fa; font-weight: 600; cursor:pointer;" data-dimension="<?= esc($currentDimension) ?>">
-                                <div class="icon" style="background: #1c2437;">
+                                <div class="icon" style="background: #1b4332;">
                                     <i class="fas fa-folder"></i>
                                 </div>
                                 <span><?= esc($currentDimension) ?></span>

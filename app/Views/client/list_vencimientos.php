@@ -42,7 +42,7 @@
                 <!-- Logos -->
                 <div class="d-flex align-items-center justify-content-around w-100">
                     <a href="https://dashboard.cycloidtalent.com/login" class="mx-2">
-                        <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprisesst Logo" style="height: 80px;">
+                        <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" style="height: 80px;">
                     </a>
                     <a href="https://cycloidtalent.com/index.php/consultoria-sst" class="mx-2">
                         <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" style="height: 80px;">

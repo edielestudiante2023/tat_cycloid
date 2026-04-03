@@ -343,4 +343,4 @@ Al crear un cliente ahora:
 **Implementado por:** Claude Code + IA
 **Fecha:** 2025-01-09
 **Versión:** 1.0
-**Sistema:** Enterprise SST - Propiedad Horizontal Colombia
+**Sistema:** Enterprise SST - Tienda a Tienda Colombia

@@ -1,4 +1,4 @@
-# Fechas en Documentos SST - Propiedad Horizontal
+# Fechas en Documentos SST - Tienda a Tienda
 
 ## 📅 Cómo Funcionan las Fechas en los Documentos
 

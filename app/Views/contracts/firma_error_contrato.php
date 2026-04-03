@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="card-footer text-center text-muted bg-light">
-                <small>Enterprise SST - Sistema de Gestion de Seguridad y Salud en el Trabajo</small>
+                <small>Cycloid TAT - Sistema de Gestion de Seguridad y Salud en el Trabajo</small>
             </div>
         </div>
     </div>

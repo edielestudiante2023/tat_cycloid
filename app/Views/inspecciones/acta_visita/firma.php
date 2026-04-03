@@ -241,11 +241,11 @@ function updateNav() {
 function guardarFirma(tipo, paso) {
     const canvas = canvases[tipo];
     if (!canvas || !canvas.hayDibujo) {
-        Swal.fire({ icon: 'warning', title: 'Dibuje su firma primero', confirmButtonColor: '#bd9751' });
+        Swal.fire({ icon: 'warning', title: 'Dibuje su firma primero', confirmButtonColor: '#e76f51' });
         return;
     }
     if (!canvas.validarMinPixeles(100)) {
-        Swal.fire({ icon: 'warning', title: 'La firma es muy pequena', text: 'Por favor firme con un trazo mas visible', confirmButtonColor: '#bd9751' });
+        Swal.fire({ icon: 'warning', title: 'La firma es muy pequena', text: 'Por favor firme con un trazo mas visible', confirmButtonColor: '#e76f51' });
         return;
     }
 
@@ -258,7 +258,7 @@ function guardarFirma(tipo, paso) {
         showCancelButton: true,
         confirmButtonText: 'Confirmar',
         cancelButtonText: 'Repetir',
-        confirmButtonColor: '#bd9751',
+        confirmButtonColor: '#e76f51',
     }).then(result => {
         if (!result.isConfirmed) return;
 
@@ -326,7 +326,7 @@ function guardarFirma(tipo, paso) {
                         <small class="text-muted">Se enviara al volver la conexion</small>
                     </div>`;
 
-                Swal.fire({ icon: 'info', title: 'Guardado offline', html: 'Sin conexion. La firma se enviara automaticamente cuando vuelva el internet.', confirmButtonColor: '#bd9751' });
+                Swal.fire({ icon: 'info', title: 'Guardado offline', html: 'Sin conexion. La firma se enviara automaticamente cuando vuelva el internet.', confirmButtonColor: '#e76f51' });
 
                 if (paso < totalPasos - 1) {
                     setTimeout(() => cambiarPaso(1), 1000);
@@ -412,7 +412,7 @@ function finalizarSinFirma() {
         showCancelButton: true,
         confirmButtonText: 'Finalizar sin firma',
         cancelButtonText: 'Cancelar',
-        confirmButtonColor: '#bd9751',
+        confirmButtonColor: '#e76f51',
         preConfirm: () => {
             const sel = document.querySelector('input[name="motivoSinFirma"]:checked');
             if (!sel) {

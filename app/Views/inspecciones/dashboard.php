@@ -994,24 +994,24 @@
     <!-- Buscador de inspecciones -->
     <div class="mb-3 mt-2">
         <div class="input-group">
-            <span class="input-group-text" style="background:#1c2437; color:#bd9751; border:none;"><i class="fas fa-search"></i></span>
+            <span class="input-group-text" style="background:#1b4332; color:#e76f51; border:none;"><i class="fas fa-search"></i></span>
             <input type="text" id="buscarInspeccion" class="form-control" placeholder="Buscar inspección..." style="border:1px solid #dee2e6; font-size:14px;">
         </div>
     </div>
 
     <!-- Card Agendamiento destacada -->
     <div class="section-title">Agendamiento</div>
-    <a href="<?= base_url('/inspecciones/agendamiento') ?>" class="card mb-3 border-0" style="background: linear-gradient(135deg, #1c2437, #2c3e50); border-radius: 12px; text-decoration:none;">
+    <a href="<?= base_url('/inspecciones/agendamiento') ?>" class="card mb-3 border-0" style="background: linear-gradient(135deg, #1b4332, #2d6a4f); border-radius: 12px; text-decoration:none;">
         <div class="card-body py-3 px-3 d-flex align-items-center justify-content-between">
             <div>
-                <div style="color: #bd9751; font-weight: 700; font-size: 16px;">
+                <div style="color: #e76f51; font-weight: 700; font-size: 16px;">
                     <i class="fas fa-calendar-alt me-2"></i>Agendamientos
                 </div>
                 <div style="color: #adb5bd; font-size: 13px;">
                     <?= $totalAgendamientos ?> visita<?= $totalAgendamientos !== 1 ? 's' : '' ?> pendiente<?= $totalAgendamientos !== 1 ? 's' : '' ?>
                 </div>
             </div>
-            <div style="color: #bd9751; font-size: 24px;">
+            <div style="color: #e76f51; font-size: 24px;">
                 <i class="fas fa-arrow-right"></i>
             </div>
         </div>
@@ -1260,7 +1260,7 @@ function confirmarEliminar(url) {
     Swal.fire({
         title: 'Eliminar registro',
         html: '<p style="color:#666;font-size:14px;">Esta accion no se puede deshacer.<br>Para confirmar, resuelve la operacion:</p>' +
-              '<div style="font-size:24px;font-weight:700;color:#1c2437;margin:10px 0;">' + a + ' ' + op + ' ' + b + ' = ?</div>',
+              '<div style="font-size:24px;font-weight:700;color:#1b4332;margin:10px 0;">' + a + ' ' + op + ' ' + b + ' = ?</div>',
         input: 'number',
         inputPlaceholder: 'Tu respuesta',
         icon: 'warning',
@@ -1294,7 +1294,7 @@ function confirmarEliminar(url) {
         Swal.fire({
             title: 'Confirmar eliminacion',
             html: '<p style="color:#dc3545;font-size:14px;font-weight:600;">Segunda verificacion</p>' +
-                  '<div style="font-size:24px;font-weight:700;color:#1c2437;margin:10px 0;">' + a2 + ' ' + op2 + ' ' + b2 + ' = ?</div>',
+                  '<div style="font-size:24px;font-weight:700;color:#1b4332;margin:10px 0;">' + a2 + ' ' + op2 + ' ' + b2 + ' = ?</div>',
             input: 'number',
             inputPlaceholder: 'Tu respuesta',
             icon: 'error',

@@ -13,7 +13,7 @@
 <?php endif; ?>
 
 <div class="card mb-3">
-    <div class="card-header" style="background: #1c2437; color: white;">
+    <div class="card-header" style="background: #1b4332; color: white;">
         <i class="fas fa-info-circle me-1"></i> Datos Generales
     </div>
     <div class="card-body p-0">

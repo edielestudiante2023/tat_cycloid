@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snapshot Datos - Enterprise SST</title>
+    <title>Snapshot Datos - Cycloid TAT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -22,11 +22,11 @@
             z-index: 1000;
             padding: 10px 0;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border-bottom: 2px solid #bd9751;
+            border-bottom: 2px solid #e76f51;
         }
 
         .page-header {
-            background: linear-gradient(135deg, #1c2437, #2c3e50);
+            background: linear-gradient(135deg, #1b4332, #2d6a4f);
             color: white;
             padding: 30px;
             border-radius: 15px;
@@ -75,7 +75,7 @@
 
         .info-item {
             padding: 15px;
-            border-left: 4px solid #bd9751;
+            border-left: 4px solid #e76f51;
             background: #f8f9fa;
             border-radius: 0 8px 8px 0;
             margin-bottom: 15px;
@@ -97,7 +97,7 @@
     <nav class="navbar-fixed">
         <div class="d-flex justify-content-between align-items-center px-4" style="max-width: 1200px; margin: 0 auto;">
             <a href="<?= base_url('/admin/dashboard') ?>">
-                <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Logo" style="height: 60px;">
+                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Logo" style="height: 60px;">
             </a>
             <div>
                 <a href="<?= base_url('/admin/dashboard') ?>" class="btn btn-primary btn-sm me-2">
