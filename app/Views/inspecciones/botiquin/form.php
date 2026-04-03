@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cliente = document.getElementById('selectCliente').value;
         if (!cliente) {
             e.preventDefault();
-            Swal.fire({ icon: 'warning', title: 'Selecciona un cliente', confirmButtonColor: '#bd9751' });
+            Swal.fire({ icon: 'warning', title: 'Selecciona un cliente', confirmButtonColor: '#e76f51' });
             return;
         }
         e.preventDefault();
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showCancelButton: true,
             confirmButtonText: 'Si, finalizar',
             cancelButtonText: 'Cancelar',
-            confirmButtonColor: '#bd9751',
+            confirmButtonColor: '#e76f51',
         }).then(result => {
             if (result.isConfirmed) {
                 const input = document.createElement('input');
@@ -518,7 +518,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         showCancelButton: true,
                         confirmButtonText: 'Si, restaurar',
                         cancelButtonText: 'No, empezar de cero',
-                        confirmButtonColor: '#bd9751',
+                        confirmButtonColor: '#e76f51',
                     }).then(result => {
                         if (result.isConfirmed) restoreFromLocal(data);
                         else localStorage.removeItem(STORAGE_KEY);

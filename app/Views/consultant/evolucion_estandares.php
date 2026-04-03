@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evolucion Estandares Minimos - Enterprise SST</title>
+    <title>Evolucion Estandares Minimos - Cycloid TAT</title>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -83,7 +83,7 @@
 
         .chart-container h5 {
             text-align: center;
-            color: #1c2437;
+            color: #1b4332;
             font-weight: 600;
             margin-bottom: 1rem;
         }
@@ -137,12 +137,12 @@
                 </a>
             </div>
             <div>
-                <h5 class="mb-0 fw-bold" style="color: #1c2437;">EVOLUCION ESTANDARES MINIMOS CLIENTES</h5>
+                <h5 class="mb-0 fw-bold" style="color: #1b4332;">EVOLUCION ESTANDARES MINIMOS CLIENTES</h5>
             </div>
             <div class="d-flex align-items-center">
                 <span class="badge bg-secondary me-2">nombre_cliente</span>
                 <span class="badge bg-primary fs-6" id="badgeTotalClientes"><?= $totalClientes ?></span>
-                <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprise SST" style="height: 50px; margin-left: 15px;">
+                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT" style="height: 50px; margin-left: 15px;">
             </div>
         </div>
     </nav>

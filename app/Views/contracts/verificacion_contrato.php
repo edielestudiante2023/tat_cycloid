@@ -125,7 +125,7 @@
             <?php endif; ?>
 
             <div class="footer">
-                Enterprise SST - Sistema de Gestion de Seguridad y Salud en el Trabajo<br>
+                Cycloid TAT - Sistema de Gestion de Seguridad y Salud en el Trabajo<br>
                 Powered by Cycloid Talent S.A.S.
             </div>
         </div>

@@ -8,11 +8,11 @@
     <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --gold: #bd9751; --gold-dark: #8B6914; }
+        :root { --gold: #e76f51; --gold-dark: #8B6914; }
         body { background: #f0f2f5; font-family: 'Segoe UI', sans-serif; }
 
         .topbar {
-            background: linear-gradient(135deg, #1c2437, #2d3a52);
+            background: linear-gradient(135deg, #1b4332, #2d3a52);
             color: white;
             padding: 14px 24px;
             display: flex;
@@ -42,14 +42,14 @@
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
             border-top: 4px solid var(--gold);
         }
-        .kpi-card .kpi-value { font-size: 2.2rem; font-weight: 700; color: #1c2437; }
+        .kpi-card .kpi-value { font-size: 2.2rem; font-weight: 700; color: #1b4332; }
         .kpi-card .kpi-label { font-size: 0.82rem; color: #6c757d; margin-top: 4px; }
         .kpi-card .kpi-icon { font-size: 1.5rem; margin-bottom: 8px; color: var(--gold); }
 
         .section-title {
             font-size: 1rem;
             font-weight: 700;
-            color: #1c2437;
+            color: #1b4332;
             border-left: 4px solid var(--gold);
             padding-left: 10px;
             margin: 28px 0 14px;
@@ -67,7 +67,7 @@
         .user-card .card-name {
             font-weight: 700;
             font-size: 0.92rem;
-            color: #1c2437;
+            color: #1b4332;
             margin-bottom: 4px;
             white-space: nowrap;
             overflow: hidden;
@@ -76,7 +76,7 @@
         .user-card .card-date { font-size: 0.75rem; color: #aaa; margin-bottom: 12px; }
         .user-card .stat { display: flex; justify-content: space-between; font-size: 0.8rem; color: #555; padding: 3px 0; border-bottom: 1px solid #f0f0f0; }
         .user-card .stat:last-child { border-bottom: none; }
-        .user-card .stat span:last-child { font-weight: 600; color: #1c2437; }
+        .user-card .stat span:last-child { font-weight: 600; color: #1b4332; }
         .badge-rol { font-size: 0.68rem; padding: 2px 8px; border-radius: 20px; }
         .badge-client { background: #e8f5e9; color: #2e7d32; }
         .badge-consultant { background: #e3f2fd; color: #1565c0; }

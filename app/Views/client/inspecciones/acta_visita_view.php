@@ -28,7 +28,7 @@
         <?php foreach ($integrantes as $int): ?>
         <div class="d-flex justify-content-between py-2" style="font-size:14px; border-bottom:1px solid #f0f0f0;">
             <span><?= esc($int['nombre']) ?></span>
-            <span class="badge" style="background:#1c2437; font-size:11px;"><?= esc($int['rol']) ?></span>
+            <span class="badge" style="background:#1b4332; font-size:11px;"><?= esc($int['rol']) ?></span>
         </div>
         <?php endforeach; ?>
     </div>
@@ -42,7 +42,7 @@
         <h6 class="card-title">TEMAS TRATADOS</h6>
         <?php foreach ($temas as $i => $tema): ?>
         <div style="font-size:14px; padding:6px 0; border-bottom:1px solid #f0f0f0;">
-            <strong style="color:#bd9751;">Tema <?= $i + 1 ?>:</strong> <?= esc($tema['descripcion']) ?>
+            <strong style="color:#e76f51;">Tema <?= $i + 1 ?>:</strong> <?= esc($tema['descripcion']) ?>
         </div>
         <?php endforeach; ?>
     </div>

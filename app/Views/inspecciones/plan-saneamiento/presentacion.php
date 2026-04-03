@@ -7,9 +7,9 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #e6edf3; font-size: 18px; line-height: 1.6; }
-.doc-header { background: #1c2437; border-bottom: 4px solid #bd9751; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.doc-header { background: #1b4332; border-bottom: 4px solid #e76f51; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
 .doc-header h1 { font-size: 26px; color: #fff; }
-.code-badge { background: #bd9751; color: #1c2437; font-weight: bold; font-size: 20px; padding: 8px 20px; border-radius: 6px; }
+.code-badge { background: #e76f51; color: #1b4332; font-weight: bold; font-size: 20px; padding: 8px 20px; border-radius: 6px; }
 .nav-bar { background: #161b22; padding: 12px 48px; border-bottom: 1px solid #30363d; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 .nav-bar a { color: #8b949e; text-decoration: none; font-size: 14px; padding: 4px 10px; border-radius: 4px; transition: all .2s; }
 .nav-bar a:hover { background: #21262d; color: #e6edf3; }
@@ -17,13 +17,13 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 .content { padding: 48px; max-width: 1400px; margin: 0 auto; }
 .section { background: #161b22; border: 1px solid #30363d; border-radius: 10px; margin-bottom: 24px; overflow: hidden; }
 .section-header { padding: 22px 32px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; transition: background .2s; }
-.section-header:hover { background: #1c2437; }
-.section-header h2 { font-size: 20px; color: #bd9751; font-weight: 600; }
+.section-header:hover { background: #1b4332; }
+.section-header h2 { font-size: 20px; color: #e76f51; font-weight: 600; }
 .badges { display: flex; gap: 8px; align-items: center; }
 .badge { font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
 .badge-static { background: #21262d; color: #8b949e; border: 1px solid #30363d; }
 .badge-ai { background: #1f3a2e; color: #3fb950; border: 1px solid #238636; }
-.badge-data { background: #2d2210; color: #bd9751; border: 1px solid #7d6323; }
+.badge-data { background: #2d2210; color: #e76f51; border: 1px solid #7d6323; }
 .badge-arrow { color: #8b949e; font-size: 18px; transition: transform .2s; }
 .badge-arrow.open { transform: rotate(180deg); }
 .section-body { padding: 28px 32px; border-top: 1px solid #30363d; font-size: 16px; color: #c9d1d9; display: none; }
@@ -36,8 +36,8 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 .sub-header .icon { font-size: 22px; }
 .sub-header h3 { font-size: 16px; font-weight: 600; }
 .sub-body { padding: 16px 20px; font-size: 15px; }
-.prog-limpieza .sub-header { background: #1c2437; border-left: 4px solid #bd9751; }
-.prog-limpieza .sub-header h3 { color: #bd9751; }
+.prog-limpieza .sub-header { background: #1b4332; border-left: 4px solid #e76f51; }
+.prog-limpieza .sub-header h3 { color: #e76f51; }
 .prog-limpieza .sub-body { background: #13192a; border: 1px solid #2d3247; border-top: none; }
 .prog-residuos .sub-header { background: #1c2e1c; border-left: 4px solid #3fb950; }
 .prog-residuos .sub-header h3 { color: #3fb950; }
@@ -49,7 +49,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 .prog-agua .sub-header h3 { color: #58a6ff; }
 .prog-agua .sub-body { background: #11111f; border: 1px solid #1f2d3f; border-top: none; }
 .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0; }
-.data-table th { background: #1c2437; color: #bd9751; padding: 10px 12px; text-align: left; border: 1px solid #30363d; }
+.data-table th { background: #1b4332; color: #e76f51; padding: 10px 12px; text-align: left; border: 1px solid #30363d; }
 .data-table td { padding: 8px 12px; border: 1px solid #21262d; vertical-align: top; }
 .data-table tr:nth-child(even) td { background: #0d1117; }
 .ai-note { background: #1f3a2e; border: 1px solid #238636; border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-size: 14px; color: #3fb950; }
@@ -62,7 +62,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 .legend { display: flex; gap: 20px; align-items: center; font-size: 14px; }
 .doc-links { display: flex; gap: 12px; flex-wrap: wrap; margin: 14px 0; }
 .doc-link { padding: 10px 16px; border-radius: 8px; font-size: 14px; font-weight: bold; text-decoration: none; }
-.link-limpieza { background: #2d2210; color: #bd9751; border: 1px solid #7d6323; }
+.link-limpieza { background: #2d2210; color: #e76f51; border: 1px solid #7d6323; }
 .link-residuos { background: #1c2e1c; color: #3fb950; border: 1px solid #238636; }
 .link-plagas { background: #2e1c1c; color: #ff7b72; border: 1px solid #8b2222; }
 .link-agua { background: #1c1c2e; color: #58a6ff; border: 1px solid #1f6feb; }
@@ -72,7 +72,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 
 <div class="doc-header">
     <div>
-        <h1><span style="color:#bd9751">🛡️</span> Plan de Saneamiento Básico</h1>
+        <h1><span style="color:#e76f51">🛡️</span> Plan de Saneamiento Básico</h1>
         <div style="color:#8b949e; font-size:15px; margin-top:4px;">Documento consolidador — Integra los 4 programas del Plan</div>
     </div>
     <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
@@ -86,7 +86,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 </div>
 
 <div class="nav-bar">
-    <strong style="color:#bd9751;font-size:14px;">Secciones:</strong>
+    <strong style="color:#e76f51;font-size:14px;">Secciones:</strong>
     <span class="sep">|</span>
     <a href="#intro">Introducción</a>
     <a href="#consolidacion">Consolidación indicadores</a>
@@ -94,12 +94,12 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
     <a href="#resultados">Resultados a la fecha</a>
     <span class="sep">|</span>
     <strong style="font-size:13px;color:#8b949e;">Programas:</strong>
-    <a href="#p-limpieza" style="color:#bd9751">📋 Limpieza</a>
+    <a href="#p-limpieza" style="color:#e76f51">📋 Limpieza</a>
     <a href="#p-residuos" style="color:#3fb950">♻️ Residuos</a>
     <a href="#p-plagas" style="color:#ff7b72">🐛 Plagas</a>
     <a href="#p-agua" style="color:#58a6ff">💧 Agua</a>
     <span class="sep">|</span>
-    <a href="javascript:openAll()" style="color:#bd9751">▶ Expandir todo</a>
+    <a href="javascript:openAll()" style="color:#e76f51">▶ Expandir todo</a>
     <a href="javascript:closeAll()" style="color:#8b949e">▼ Colapsar todo</a>
 </div>
 
@@ -237,14 +237,14 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
             </div>
             <div class="sub-body">
                 <div class="kpi-card">
-                    <div class="kpi-title" style="color:#bd9751;">KPI 1: Cumplimiento de actividades de limpieza y desinfección</div>
+                    <div class="kpi-title" style="color:#e76f51;">KPI 1: Cumplimiento de actividades de limpieza y desinfección</div>
                     <div class="kpi-row"><span class="kpi-label">Fórmula:</span><span class="kpi-val">(Días registrados ÷ Días hábiles del periodo) × 100</span></div>
                     <div class="kpi-row"><span class="kpi-label">Meta:</span><span class="kpi-val" style="color:#3fb950;">≥ 95%</span></div>
                     <div class="kpi-row"><span class="kpi-label">Resultado:</span><span class="kpi-val" style="color:#f0a84c;">[DATO REAL DEL KPI]</span></div>
                     <div class="kpi-row"><span class="kpi-label">Periodicidad:</span><span class="kpi-val">Mensual</span></div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-title" style="color:#bd9751;">KPI 2: Estado de los elementos de limpieza</div>
+                    <div class="kpi-title" style="color:#e76f51;">KPI 2: Estado de los elementos de limpieza</div>
                     <div class="kpi-row"><span class="kpi-label">Fórmula:</span><span class="kpi-val">(Elementos en buen estado ÷ Total verificados) × 100</span></div>
                     <div class="kpi-row"><span class="kpi-label">Meta:</span><span class="kpi-val" style="color:#3fb950;">≥ 90%</span></div>
                     <div class="kpi-row"><span class="kpi-label">Resultado:</span><span class="kpi-val" style="color:#f0a84c;">[DATO REAL DEL KPI]</span></div>

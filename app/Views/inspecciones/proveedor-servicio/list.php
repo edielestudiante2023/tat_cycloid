@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             text: '¿Cambiar estado del proveedor?',
             icon: 'question',
             showCancelButton: true,
-            confirmButtonColor: '#1c2437',
+            confirmButtonColor: '#1b4332',
             confirmButtonText: 'Sí, cambiar',
             cancelButtonText: 'Cancelar'
         }).then(function(r) {
@@ -109,7 +109,7 @@ function confirmarEliminar(url, nombre) {
     Swal.fire({
         title: 'Eliminar proveedor',
         html: '<p style="color:#666;font-size:14px;">Se eliminará <strong>' + nombre + '</strong>.<br>Para confirmar, resuelve:</p>' +
-              '<div style="font-size:24px;font-weight:700;color:#1c2437;margin:10px 0;">' + a + ' ' + op + ' ' + b + ' = ?</div>',
+              '<div style="font-size:24px;font-weight:700;color:#1b4332;margin:10px 0;">' + a + ' ' + op + ' ' + b + ' = ?</div>',
         input: 'number', inputPlaceholder: 'Tu respuesta', icon: 'warning',
         showCancelButton: true, confirmButtonColor: '#dc3545',
         confirmButtonText: 'Eliminar', cancelButtonText: 'Cancelar',

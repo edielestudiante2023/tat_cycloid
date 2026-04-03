@@ -11,17 +11,17 @@
     .header-table .logo-cell img { max-width: 90px; max-height: 55px; }
     .header-table .title-cell { text-align: center; font-weight: bold; font-size: 10px; }
     .header-table .code-cell { width: 120px; font-size: 9px; }
-    .main-title { text-align: center; font-weight: bold; font-size: 13px; color: #1c2437; margin: 20px 0 5px; }
+    .main-title { text-align: center; font-weight: bold; font-size: 13px; color: #1b4332; margin: 20px 0 5px; }
     .subtitle { text-align: center; font-weight: bold; font-size: 11px; color: #333; margin-bottom: 15px; }
-    .section-title { font-weight: bold; font-size: 11px; color: #1c2437; margin-top: 18px; margin-bottom: 6px; border-bottom: 1px solid #1c2437; padding-bottom: 3px; }
-    .subsection-title { font-weight: bold; font-size: 10px; color: #1c2437; margin-top: 12px; margin-bottom: 4px; }
+    .section-title { font-weight: bold; font-size: 11px; color: #1b4332; margin-top: 18px; margin-bottom: 6px; border-bottom: 1px solid #1b4332; padding-bottom: 3px; }
+    .subsection-title { font-weight: bold; font-size: 10px; color: #1b4332; margin-top: 12px; margin-bottom: 4px; }
     .data-table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 9px; }
-    .data-table th { background: #1c2437; color: white; padding: 5px 7px; text-align: center; font-weight: bold; border: 1px solid #1c2437; }
+    .data-table th { background: #1b4332; color: white; padding: 5px 7px; text-align: center; font-weight: bold; border: 1px solid #1b4332; }
     .data-table td { border: 1px solid #aaa; padding: 4px 6px; vertical-align: top; }
     .data-table tr:nth-child(even) td { background: #f5f5f5; }
     .alert-box { background: #d1ecf1; border: 1.5px solid #0c5460; border-radius: 4px; padding: 7px 10px; margin: 8px 0; font-size: 9.5px; }
-    .step-box { border: 1px solid #1c2437; border-radius: 3px; padding: 6px 10px; margin: 5px 0; font-size: 9.5px; }
-    .step-num { font-weight: bold; color: #1c2437; }
+    .step-box { border: 1px solid #1b4332; border-radius: 3px; padding: 6px 10px; margin: 5px 0; font-size: 9.5px; }
+    .step-num { font-weight: bold; color: #1b4332; }
     p { margin: 5px 0 8px; font-size: 10px; }
     ul, ol { margin: 4px 0 8px 18px; font-size: 10px; }
     li { margin-bottom: 2px; }
@@ -90,9 +90,9 @@
 <!-- 5. CAPACIDAD DE RESERVA -->
 <div class="section-title">5. CAPACIDAD DE RESERVA DEL CONJUNTO</div>
 <?php if (!empty($inspeccion['capacidad_reserva'])): ?>
-<table style="width:100%; border:1.5px solid #1c2437; border-collapse:collapse; margin-bottom:8px;">
+<table style="width:100%; border:1.5px solid #1b4332; border-collapse:collapse; margin-bottom:8px;">
     <tr>
-        <td style="background:#1c2437; color:white; padding:6px 10px; font-weight:bold; width:40%;">CAPACIDAD DE ALMACENAMIENTO</td>
+        <td style="background:#1b4332; color:white; padding:6px 10px; font-weight:bold; width:40%;">CAPACIDAD DE ALMACENAMIENTO</td>
         <td style="padding:7px 10px;"><?= esc($inspeccion['capacidad_reserva']) ?></td>
     </tr>
 </table>
@@ -104,9 +104,9 @@
 <!-- 6. PROVEEDOR DE AGUA ALTERNATIVA -->
 <div class="section-title">6. PROVEEDOR DE AGUA ALTERNATIVA (CARROTANQUE)</div>
 <?php if (!empty($inspeccion['empresa_carrotanque'])): ?>
-<table style="width:100%; border:1.5px solid #1c2437; border-collapse:collapse; margin-bottom:8px;">
+<table style="width:100%; border:1.5px solid #1b4332; border-collapse:collapse; margin-bottom:8px;">
     <tr>
-        <td style="background:#1c2437; color:white; padding:6px 10px; font-weight:bold; width:40%;">PROVEEDOR CARROTANQUE</td>
+        <td style="background:#1b4332; color:white; padding:6px 10px; font-weight:bold; width:40%;">PROVEEDOR CARROTANQUE</td>
         <td style="padding:7px 10px;"><?= nl2br(esc($inspeccion['empresa_carrotanque'])) ?></td>
     </tr>
 </table>

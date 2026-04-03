@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprisesst Tienda a Tienda</title>
+    <title>Cycloid TAT - Tienda a Tienda</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -13,7 +13,7 @@
         /* Estilo global */
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #1c2437;
+            color: #1b4332;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
         }
@@ -22,7 +22,7 @@
         .navbar {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 3px solid #bd9751;
+            border-bottom: 3px solid #e76f51;
             position: fixed;
             top: 0;
             width: 100%;
@@ -54,7 +54,7 @@
 
         /* Header mejorado */
         .welcome-header {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             color: white;
             padding: 2rem;
             border-radius: 15px;
@@ -95,7 +95,7 @@
         }
 
         .btn-primary-custom {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             color: #ffffff;
             border: none;
         }
@@ -107,7 +107,7 @@
         }
 
         .btn-success-custom {
-            background: linear-gradient(135deg, #bd9751 0%, #d4af37 100%);
+            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
             color: #ffffff;
             border: none;
         }
@@ -120,19 +120,19 @@
 
         .btn-info-custom {
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            color: #1c2437;
-            border: 2px solid #1c2437;
+            color: #1b4332;
+            border: 2px solid #1b4332;
         }
 
         .btn-info-custom:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(28, 36, 55, 0.2);
-            color: #1c2437;
+            color: #1b4332;
         }
 
         /* Título de sección */
         .section-title {
-            background: linear-gradient(135deg, #bd9751 0%, #d4af37 100%);
+            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -155,7 +155,7 @@
         }
 
         .accordion-header .accordion-button {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             color: white;
             font-weight: 600;
             font-size: 1.1rem;
@@ -166,7 +166,7 @@
         }
 
         .accordion-header .accordion-button:not(.collapsed) {
-            background: linear-gradient(135deg, #bd9751 0%, #d4af37 100%);
+            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
             color: white;
             box-shadow: none;
         }
@@ -186,7 +186,7 @@
             align-items: center;
             padding: 1rem 1.5rem;
             text-decoration: none;
-            color: #1c2437;
+            color: #1b4332;
             border-bottom: 1px solid #e9ecef;
             transition: all 0.3s ease;
             position: relative;
@@ -198,7 +198,7 @@
 
         .access-item:hover {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            color: #1c2437;
+            color: #1b4332;
             transform: translateX(10px);
             text-decoration: none;
         }
@@ -206,7 +206,7 @@
         .access-item .item-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #bd9751 0%, #d4af37 100%);
+            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -221,7 +221,7 @@
         }
 
         .access-item .item-number {
-            background: #1c2437;
+            background: #1b4332;
             color: white;
             width: 30px;
             height: 30px;
@@ -269,11 +269,11 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             text-align: center;
             margin-top: 3rem;
-            border: 2px solid #bd9751;
+            border: 2px solid #e76f51;
         }
 
         .asesoria-card h2 {
-            color: #1c2437;
+            color: #1b4332;
             margin-bottom: 1rem;
         }
 
@@ -296,14 +296,14 @@
         }
 
         .contact-item i {
-            color: #bd9751;
+            color: #e76f51;
             margin-right: 0.5rem;
             font-size: 1.2rem;
         }
 
         /* Footer mejorado */
         footer {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             color: #ffffff;
             padding: 20px 0;
             margin-top: 3rem;
@@ -333,7 +333,7 @@
             width: 68px;
             height: 68px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #bd9751 0%, #8B6914 100%);
+            background: linear-gradient(135deg, #e76f51 0%, #8B6914 100%);
             box-shadow: 0 6px 24px rgba(139, 105, 20, 0.45);
             cursor: pointer;
             z-index: 1050;
@@ -380,7 +380,7 @@
         }
 
         .otto-widget-header {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             padding: 16px 20px;
             display: flex;
             align-items: center;
@@ -392,7 +392,7 @@
             height: 48px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #bd9751;
+            border: 2px solid #e76f51;
         }
         .otto-widget-header .otto-info {
             flex: 1;
@@ -404,7 +404,7 @@
             margin: 0;
         }
         .otto-widget-header .otto-role {
-            color: #bd9751;
+            color: #e76f51;
             font-size: 0.82rem;
             margin: 0;
         }
@@ -432,7 +432,7 @@
             padding: 14px 16px;
             margin-bottom: 16px;
             font-size: 0.95rem;
-            color: #1c2437;
+            color: #1b4332;
             line-height: 1.5;
         }
         .otto-input-row {
@@ -449,10 +449,10 @@
             transition: border-color 0.2s;
         }
         .otto-input-row input:focus {
-            border-color: #bd9751;
+            border-color: #e76f51;
         }
         .otto-input-row button {
-            background: linear-gradient(135deg, #bd9751 0%, #8B6914 100%);
+            background: linear-gradient(135deg, #e76f51 0%, #8B6914 100%);
             border: none;
             color: #fff;
             border-radius: 12px;
@@ -478,14 +478,14 @@
             border-radius: 20px;
             padding: 6px 12px;
             font-size: 0.8rem;
-            color: #1c2437;
+            color: #1b4332;
             cursor: pointer;
             transition: background 0.2s, border-color 0.2s;
         }
         .otto-suggestion:hover {
-            background: #bd9751;
+            background: #e76f51;
             color: #fff;
-            border-color: #bd9751;
+            border-color: #e76f51;
         }
 
         /* Responsive */
@@ -517,7 +517,7 @@
         <div class="container navbar-content">
             <!-- Logo izquierdo -->
             <a href="https://dashboard.cycloidtalent.com/login" target="_blank">
-                <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Logo Enterprisesst">
+                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Logo Cycloid TAT">
             </a>
             <!-- Logo central -->
             <a href="https://cycloidtalent.com/index.php/consultoria-sst" target="_blank">
@@ -536,7 +536,7 @@
             <!-- Header -->
             <div class="welcome-header text-center fade-in-up">
                 <h1><i class="fas fa-building"></i> ¡<?= esc($client['nombre_cliente']) ?>!</h1>
-                <p>Bienvenido a Enterprisesst, tu aplicativo especializado en SG-SST</p>
+                <p>Bienvenido a Cycloid TAT, tu aplicativo especializado en SG-SST</p>
                 <p><i class="fas fa-user me-2"></i>Sesión: <strong><?= session()->get('nombre_usuario') ?? 'Usuario' ?></strong></p>
             </div>
 

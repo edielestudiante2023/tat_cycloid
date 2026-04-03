@@ -59,7 +59,7 @@
     <nav class="navbar navbar-custom">
         <div class="container-fluid d-flex justify-content-between align-items-center px-4">
             <a href="<?= base_url('/dashboardconsultant') ?>">
-                <img src="<?= base_url('assets/img/logotipo_enterprisesst.png') ?>" alt="Logo">
+                <img src="<?= base_url('assets/img/logotipo_cycloid_tat.png') ?>" alt="Logo">
             </a>
             <a href="<?= base_url('/dashboardconsultant') ?>" class="btn btn-outline-light btn-sm">
                 <i class="fas fa-arrow-left me-1"></i> Volver al Dashboard

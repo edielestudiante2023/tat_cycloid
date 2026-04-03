@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%); min-height: 100vh; }
+        body { background: linear-gradient(135deg, #2d6a4f 0%, #1a252f 100%); min-height: 100vh; }
         .firma-container { max-width: 650px; margin: 0 auto; padding: 15px; }
         .card-firma { border: none; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
         .header-protocolo { background: linear-gradient(135deg, #c0392b 0%, #96281b 100%); color: white; border-radius: 12px 12px 0 0; padding: 20px; text-align: center; }

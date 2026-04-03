@@ -20,14 +20,14 @@ $tipoLabel = $tiposCharla[$inspeccion['tipo_charla'] ?? ''] ?? $inspeccion['tipo
         .header-title { text-align: center; font-weight: bold; font-size: 9px; }
         .header-code { width: 120px; font-size: 8px; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #1c2437; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #1b4332; }
         .main-subtitle { text-align: center; font-size: 9px; font-weight: bold; margin: 0 0 6px; color: #444; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
         .info-label { font-weight: bold; color: #444; width: 130px; background: #f7f7f7; }
 
-        .section-title { background: #1c2437; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
+        .section-title { background: #1b4332; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
 
         .asist-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .asist-table th { background: #e8e8e8; padding: 4px 6px; font-size: 8px; border: 1px solid #ccc; text-align: left; }
@@ -35,7 +35,7 @@ $tipoLabel = $tiposCharla[$inspeccion['tipo_charla'] ?? ''] ?? $inspeccion['tipo
 
         .content-text { font-size: 9px; line-height: 1.4; margin-bottom: 5px; }
         .resp-text { font-size: 8.5px; line-height: 1.5; margin-bottom: 6px; text-align: justify; }
-        .resp-title { font-size: 9px; font-weight: bold; margin: 6px 0 3px; color: #1c2437; }
+        .resp-title { font-size: 9px; font-weight: bold; margin: 6px 0 3px; color: #1b4332; }
 
         .firma-img { max-width: 80px; max-height: 40px; }
     </style>

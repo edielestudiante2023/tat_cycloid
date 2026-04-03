@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restablecer Contraseña - Enterprise SST</title>
+    <title>Restablecer Contraseña - Cycloid TAT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         * {
@@ -13,7 +13,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #bd9751 0%, #d4af37 25%, #f5f7fa 50%, #c3cfe2 75%, #bd9751 100%);
+            background: linear-gradient(135deg, #e76f51 0%, #f4a261 25%, #f5f7fa 50%, #c3cfe2 75%, #e76f51 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -24,10 +24,10 @@
 
         @keyframes backgroundShift {
             0%, 100% {
-                background: linear-gradient(135deg, #bd9751 0%, #d4af37 25%, #f5f7fa 50%, #c3cfe2 75%, #bd9751 100%);
+                background: linear-gradient(135deg, #e76f51 0%, #f4a261 25%, #f5f7fa 50%, #c3cfe2 75%, #e76f51 100%);
             }
             50% {
-                background: linear-gradient(135deg, #d4af37 0%, #bd9751 25%, #c3cfe2 50%, #f5f7fa 75%, #d4af37 100%);
+                background: linear-gradient(135deg, #f4a261 0%, #e76f51 25%, #c3cfe2 50%, #f5f7fa 75%, #f4a261 100%);
             }
         }
 
@@ -63,7 +63,7 @@
         .title {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #1c2437;
+            color: #1b4332;
             text-align: center;
             margin-bottom: 10px;
         }
@@ -85,18 +85,18 @@
         }
 
         .form-control:focus {
-            border-color: #bd9751;
+            border-color: #e76f51;
             box-shadow: 0 0 0 4px rgba(189, 151, 81, 0.2);
         }
 
         .form-label {
             font-weight: 600;
-            color: #1c2437;
+            color: #1b4332;
             margin-bottom: 8px;
         }
 
         .btn-primary-custom {
-            background: linear-gradient(135deg, #1c2437, #2c3e50);
+            background: linear-gradient(135deg, #1b4332, #2d6a4f);
             border: none;
             border-radius: 12px;
             color: white;
@@ -110,7 +110,7 @@
         .btn-primary-custom:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(28, 36, 55, 0.3);
-            background: linear-gradient(135deg, #2c3e50, #bd9751);
+            background: linear-gradient(135deg, #2d6a4f, #e76f51);
         }
 
         .back-link {
@@ -119,14 +119,14 @@
         }
 
         .back-link a {
-            color: #bd9751;
+            color: #e76f51;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
         }
 
         .back-link a:hover {
-            color: #1c2437;
+            color: #1b4332;
         }
 
         .alert-danger-custom {
@@ -183,7 +183,7 @@
 
 <div class="main-container">
     <div class="logo-container">
-        <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprisesst Logo">
+        <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo">
     </div>
 
     <div class="header-icon">🔑</div>

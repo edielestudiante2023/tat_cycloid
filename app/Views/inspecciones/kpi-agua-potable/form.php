@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         showCancelButton: true,
                         confirmButtonText: 'Si, restaurar',
                         cancelButtonText: 'No, empezar de cero',
-                        confirmButtonColor: '#bd9751',
+                        confirmButtonColor: '#e76f51',
                     }).then(result => {
                         if (result.isConfirmed) restoreFromLocal(data);
                         else localStorage.removeItem(STORAGE_KEY);
@@ -386,7 +386,7 @@ function openPhoto(src) {
             denyButtonText: pendientes.length > 0 ? '<i class="fas fa-plus-circle"></i> Crear otro indicador' : '',
             cancelButtonText: '<i class="fas fa-edit"></i> Quedarme aquí',
             confirmButtonColor: '#28a745',
-            denyButtonColor: '#bd9751',
+            denyButtonColor: '#e76f51',
         }).then(function(result) {
             if (result.isConfirmed && currentId) {
                 window.location.href = '<?= base_url('/inspecciones/' . ($slug ?? 'kpi-agua-potable') . '/finalizar-grupo/') ?>' + currentId;

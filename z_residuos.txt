@@ -1,7 +1,7 @@
 
-1. PROGRAMA DE DESECHOS SÓLIDOS – PROPIEDAD HORIZONTAL
+1. PROGRAMA DE DESECHOS SÓLIDOS – TIENDA A TIENDA
 1.1 OBJETIVO
-Definir, planificar y estandarizar las actividades, responsabilidades, elementos, áreas, recursos humanos, mecanismos de control, indicadores y procedimientos que garanticen una gestión integral, segura y eficiente de los residuos sólidos generados en <<[CLIENTE]>>, desde su generación, separación en la fuente, recolección interna, almacenamiento temporal, aprovechamiento y/o disposición final, en cumplimiento de la normatividad ambiental y sanitaria vigente aplicable a la Propiedad Horizontal.
+Definir, planificar y estandarizar las actividades, responsabilidades, elementos, áreas, recursos humanos, mecanismos de control, indicadores y procedimientos que garanticen una gestión integral, segura y eficiente de los residuos sólidos generados en <<[CLIENTE]>>, desde su generación, separación en la fuente, recolección interna, almacenamiento temporal, aprovechamiento y/o disposición final, en cumplimiento de la normatividad ambiental y sanitaria vigente aplicable a la Tienda a Tienda.
 1.2 ALCANCE
 El presente Programa aplica a todos los residuos sólidos generados por <<[CLIENTE]>>, derivados de las siguientes actividades:
 Administración del conjunto

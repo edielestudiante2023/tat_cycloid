@@ -123,7 +123,7 @@ class MiController extends Controller
         // ✅ latestVersion es lo mismo que policyType
         $latestVersion = $policyType;
 
-        // ✅ Obtener todas las versiones (siempre 1 versión para Propiedad Horizontal)
+        // ✅ Obtener todas las versiones (siempre 1 versión para Tienda a Tienda)
         $allVersions = get_all_document_versions($policyTypeId);
 
         // ✅ Los datos se pasan igual a la vista

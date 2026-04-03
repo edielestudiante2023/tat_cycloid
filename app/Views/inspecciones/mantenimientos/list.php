@@ -17,13 +17,13 @@
         font-weight: 600;
         white-space: nowrap;
         cursor: pointer;
-        border: 2px solid #bd9751;
+        border: 2px solid #e76f51;
         background: white;
-        color: #bd9751;
+        color: #e76f51;
         transition: all .2s;
     }
     .filter-pill.active {
-        background: #bd9751;
+        background: #e76f51;
         color: white;
     }
     .filter-pill .pill-count {
@@ -48,13 +48,13 @@
     }
     .card-vencimiento.vencido { border-left-color: #dc3545; }
     .card-vencimiento.proximo { border-left-color: #ffc107; }
-    .card-vencimiento.normal { border-left-color: #bd9751; }
+    .card-vencimiento.normal { border-left-color: #e76f51; }
     .card-vencimiento.ejecutado { border-left-color: #28a745; }
     .card-vencimiento.cerrada { border-left-color: #6c757d; }
 
     .badge-vencido { background: #dc3545; color: white; }
     .badge-proximo { background: #ffc107; color: #333; }
-    .badge-normal { background: #bd9751; color: white; }
+    .badge-normal { background: #e76f51; color: white; }
     .badge-ejecutado { background: #28a745; color: white; }
     .badge-cerrada { background: #6c757d; color: white; }
 

@@ -132,6 +132,7 @@ app/Commands/ReplicateToTat.php
 app/Commands/CopyConsultores.php
 app/Commands/CopyUsuarios.php
 app/Commands/CreateUsuariosConsultores.php
+app/Commands/CopyCatalogos.php
 tools/cargar_pdfs_produccion.php
 tools/clasificar_pdfs.php
 tools/reparar_nombres_v2.php

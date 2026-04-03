@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1c2437">
+    <meta name="theme-color" content="#1b4332">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Inspecciones">
     <link rel="manifest" href="<?= base_url('/manifest_inspecciones.json?v=3') ?>">
     <link rel="apple-touch-icon" href="<?= base_url('/icons/icon-192.png?v=3') ?>">
-    <title>Login - Enterprise SST</title>
+    <title>Login - Cycloid TAT</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #bd9751 0%, #d4af37 25%, #f5f7fa 50%, #c3cfe2 75%, #bd9751 100%);
+            background: linear-gradient(135deg, #e76f51 0%, #f4a261 25%, #f5f7fa 50%, #c3cfe2 75%, #e76f51 100%);
             height: 100vh;
             overflow: hidden;
             display: flex;
@@ -34,10 +34,10 @@
 
         @keyframes backgroundShift {
             0%, 100% { 
-                background: linear-gradient(135deg, #bd9751 0%, #d4af37 25%, #f5f7fa 50%, #c3cfe2 75%, #bd9751 100%);
+                background: linear-gradient(135deg, #e76f51 0%, #f4a261 25%, #f5f7fa 50%, #c3cfe2 75%, #e76f51 100%);
             }
             50% { 
-                background: linear-gradient(135deg, #d4af37 0%, #bd9751 25%, #c3cfe2 50%, #f5f7fa 75%, #d4af37 100%);
+                background: linear-gradient(135deg, #f4a261 0%, #e76f51 25%, #c3cfe2 50%, #f5f7fa 75%, #f4a261 100%);
             }
         }
 
@@ -56,7 +56,7 @@
             position: absolute;
             width: 6px;
             height: 6px;
-            background: radial-gradient(circle, #d4af37, #bd9751);
+            background: radial-gradient(circle, #f4a261, #e76f51);
             border-radius: 50%;
             animation: float 15s linear infinite;
             box-shadow: 0 0 10px rgba(189, 151, 81, 0.5);
@@ -272,7 +272,7 @@
         .login-title {
             font-size: 2.2rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #1c2437, #2c3e50);
+            background: linear-gradient(135deg, #1b4332, #2d6a4f);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
@@ -285,7 +285,7 @@
         }
 
         .login-subtitle {
-            color: #1c2437;
+            color: #1b4332;
             font-size: 1.1rem;
             opacity: 0;
             animation: fadeIn 1s ease-out 0.5s forwards;
@@ -326,26 +326,26 @@
             font-size: 1rem;
             transition: all 0.3s ease;
             position: relative;
-            color: #1c2437;
+            color: #1b4332;
         }
 
         .form-control:focus, .form-select:focus {
             background: #ffffff;
-            border-color: #bd9751;
+            border-color: #e76f51;
             box-shadow: 0 0 0 4px rgba(189, 151, 81, 0.3), 0 10px 25px rgba(189, 151, 81, 0.2);
             transform: translateY(-2px);
         }
 
         .form-label {
             font-weight: 600;
-            color: #1c2437;
+            color: #1b4332;
             margin-bottom: 8px;
             display: block;
         }
 
         /* Botón dinámico */
         .btn-dynamic {
-            background: linear-gradient(135deg, #1c2437, #2c3e50);
+            background: linear-gradient(135deg, #1b4332, #2d6a4f);
             border: none;
             border-radius: 12px;
             color: white;
@@ -388,7 +388,7 @@
         .btn-dynamic:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 35px rgba(28, 36, 55, 0.4);
-            background: linear-gradient(135deg, #2c3e50, #bd9751);
+            background: linear-gradient(135deg, #2d6a4f, #e76f51);
         }
 
         .btn-dynamic:active {
@@ -404,7 +404,7 @@
         }
 
         .footer-text {
-            color: #1c2437;
+            color: #1b4332;
             font-size: 0.9rem;
             animation: pulse 2s ease-in-out infinite alternate;
         }
@@ -420,9 +420,9 @@
             border-radius: 12px;
             background: linear-gradient(135deg, rgba(189, 151, 81, 0.9), rgba(212, 175, 55, 0.9));
             backdrop-filter: blur(10px);
-            border-left: 4px solid #bd9751;
+            border-left: 4px solid #e76f51;
             animation: alertSlideIn 0.5s ease-out;
-            color: #1c2437;
+            color: #1b4332;
         }
 
         @keyframes alertSlideIn {
@@ -512,7 +512,7 @@
             width: 60px;
             height: 60px;
             border: 3px solid rgba(28, 36, 55, 0.3);
-            border-top: 3px solid #bd9751;
+            border-top: 3px solid #e76f51;
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
@@ -549,7 +549,7 @@
     <div class="logos-panel">
         <div class="logo-container">
             <div class="logo-image-wrapper">
-                <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Logo Enterprise SST" class="logo-image">
+                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Logo Cycloid TAT" class="logo-image">
             </div>
             <div class="logo-image-wrapper">
                 <img src="<?= base_url('uploads/logocycloid.png') ?>" alt="Logo Cycloid" class="logo-image">
@@ -563,7 +563,7 @@
     <!-- Panel de login -->
     <div class="login-panel">
         <div class="login-header">
-            <h2 class="login-title">Aplicativo Enterprisesst</h2>
+            <h2 class="login-title">Cycloid TAT</h2>
             <h4 class="login-subtitle">Inicio de Sesión Tienda a Tienda</h4>
         </div>
 
@@ -608,7 +608,7 @@
             </button>
 
             <div class="text-center mt-3">
-                <a href="<?= base_url('/forgot-password') ?>" style="color: #bd9751; text-decoration: none; font-weight: 500; transition: color 0.3s;">
+                <a href="<?= base_url('/forgot-password') ?>" style="color: #e76f51; text-decoration: none; font-weight: 500; transition: color 0.3s;">
                     ¿Olvidaste tu contraseña?
                 </a>
             </div>
@@ -690,7 +690,7 @@
         inputs.forEach(input => {
             input.addEventListener('input', function() {
                 if (this.checkValidity()) {
-                    this.style.borderColor = '#bd9751';
+                    this.style.borderColor = '#e76f51';
                     this.style.boxShadow = '0 0 0 2px rgba(189, 151, 81, 0.2)';
                 } else {
                     this.style.borderColor = '#e63939';

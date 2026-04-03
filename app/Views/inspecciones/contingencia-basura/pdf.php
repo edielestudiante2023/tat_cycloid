@@ -11,18 +11,18 @@
     .header-table .logo-cell img { max-width: 90px; max-height: 55px; }
     .header-table .title-cell { text-align: center; font-weight: bold; font-size: 10px; }
     .header-table .code-cell { width: 120px; font-size: 9px; }
-    .main-title { text-align: center; font-weight: bold; font-size: 13px; color: #1c2437; margin: 20px 0 5px; }
+    .main-title { text-align: center; font-weight: bold; font-size: 13px; color: #1b4332; margin: 20px 0 5px; }
     .subtitle { text-align: center; font-weight: bold; font-size: 11px; color: #333; margin-bottom: 15px; }
-    .section-title { font-weight: bold; font-size: 11px; color: #1c2437; margin-top: 18px; margin-bottom: 6px; border-bottom: 1px solid #1c2437; padding-bottom: 3px; }
-    .subsection-title { font-weight: bold; font-size: 10px; color: #1c2437; margin-top: 12px; margin-bottom: 4px; }
+    .section-title { font-weight: bold; font-size: 11px; color: #1b4332; margin-top: 18px; margin-bottom: 6px; border-bottom: 1px solid #1b4332; padding-bottom: 3px; }
+    .subsection-title { font-weight: bold; font-size: 10px; color: #1b4332; margin-top: 12px; margin-bottom: 4px; }
     .data-table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 9px; }
-    .data-table th { background: #1c2437; color: white; padding: 5px 7px; text-align: center; font-weight: bold; border: 1px solid #1c2437; }
+    .data-table th { background: #1b4332; color: white; padding: 5px 7px; text-align: center; font-weight: bold; border: 1px solid #1b4332; }
     .data-table td { border: 1px solid #aaa; padding: 4px 6px; vertical-align: top; }
     .data-table tr:nth-child(even) td { background: #f5f5f5; }
     .alert-box { background: #d4edda; border: 1.5px solid #155724; border-radius: 4px; padding: 7px 10px; margin: 8px 0; font-size: 9.5px; }
     .warning-box { background: #fff3cd; border: 1.5px solid #e6a800; border-radius: 4px; padding: 7px 10px; margin: 8px 0; font-size: 9.5px; }
-    .step-box { border: 1px solid #1c2437; border-radius: 3px; padding: 6px 10px; margin: 5px 0; font-size: 9.5px; }
-    .step-num { font-weight: bold; color: #1c2437; }
+    .step-box { border: 1px solid #1b4332; border-radius: 3px; padding: 6px 10px; margin: 5px 0; font-size: 9.5px; }
+    .step-num { font-weight: bold; color: #1b4332; }
     p { margin: 5px 0 8px; font-size: 10px; }
     ul, ol { margin: 4px 0 8px 18px; font-size: 10px; }
     li { margin-bottom: 2px; }
@@ -78,9 +78,9 @@
 
 <!-- 4. INFORMACIÓN DEL PRESTADOR -->
 <div class="section-title">4. INFORMACIÓN DEL PRESTADOR DEL SERVICIO DE ASEO</div>
-<table style="width:100%; border:1.5px solid #1c2437; border-collapse:collapse; margin-bottom:8px;">
+<table style="width:100%; border:1.5px solid #1b4332; border-collapse:collapse; margin-bottom:8px;">
     <tr>
-        <td style="background:#1c2437; color:white; padding:6px 10px; font-weight:bold; width:40%;">EMPRESA PRESTADORA DE ASEO</td>
+        <td style="background:#1b4332; color:white; padding:6px 10px; font-weight:bold; width:40%;">EMPRESA PRESTADORA DE ASEO</td>
         <td style="padding:7px 10px;"><?= esc($inspeccion['empresa_aseo'] ?? 'Por definir') ?></td>
     </tr>
     <tr>

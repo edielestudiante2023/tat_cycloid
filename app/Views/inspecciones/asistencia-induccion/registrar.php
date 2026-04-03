@@ -37,7 +37,7 @@ $idInspeccion = $inspeccion['id'];
     <!-- Formulario por persona -->
     <div class="card mb-3" id="formCard">
         <div class="card-body">
-            <h6 class="card-title mb-3" style="font-size:14px; color:#1c2437; font-weight:700;">
+            <h6 class="card-title mb-3" style="font-size:14px; color:#1b4332; font-weight:700;">
                 <i class="fas fa-user-plus me-1"></i>
                 Asistente <span id="numAsistente"><?= $totalRegistrados + 1 ?></span>
             </h6>
@@ -160,7 +160,7 @@ function guardarAsistente() {
     if (!cargo) faltantes.push('Cargo');
     if (firmaVacia) faltantes.push('Firma');
     if (faltantes.length > 0) {
-        Swal.fire({ icon: 'warning', title: 'Campos obligatorios', html: 'Faltan: <strong>' + faltantes.join(', ') + '</strong>', confirmButtonColor: '#bd9751' });
+        Swal.fire({ icon: 'warning', title: 'Campos obligatorios', html: 'Faltan: <strong>' + faltantes.join(', ') + '</strong>', confirmButtonColor: '#e76f51' });
         return;
     }
 
@@ -182,7 +182,7 @@ function guardarAsistente() {
         .then(data => {
             CSRFHASH = data.csrf_hash || CSRFHASH;
             if (!data.success) {
-                Swal.fire({ icon: 'error', title: 'Error', text: data.error || 'No se pudo guardar', confirmButtonColor: '#bd9751' });
+                Swal.fire({ icon: 'error', title: 'Error', text: data.error || 'No se pudo guardar', confirmButtonColor: '#e76f51' });
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fas fa-check me-1"></i> Guardar y pasar al siguiente';
                 return;
@@ -242,7 +242,7 @@ function guardarAsistente() {
                     icon: 'info',
                     title: 'Guardado offline',
                     html: 'Sin conexion. La firma se guardo localmente y se enviara automaticamente cuando vuelva el internet.',
-                    confirmButtonColor: '#bd9751'
+                    confirmButtonColor: '#e76f51'
                 });
 
                 // Limpiar formulario
@@ -252,7 +252,7 @@ function guardarAsistente() {
                 limpiarFirma();
                 document.getElementById('asisNombre').focus();
             } catch (dbErr) {
-                Swal.fire({ icon: 'error', title: 'Error', text: 'No se pudo guardar la firma. Intente de nuevo.', confirmButtonColor: '#bd9751' });
+                Swal.fire({ icon: 'error', title: 'Error', text: 'No se pudo guardar la firma. Intente de nuevo.', confirmButtonColor: '#e76f51' });
             }
             btn.disabled = false;
             btn.innerHTML = '<i class="fas fa-check me-1"></i> Guardar y pasar al siguiente';
@@ -294,7 +294,7 @@ function eliminarAsistente(idAsistente, btn) {
 function iniciarFinalizacion() {
     const total = parseInt(document.getElementById('countFin').textContent);
     if (total === 0) {
-        Swal.fire({ icon: 'warning', title: 'Sin asistentes', text: 'Debe registrar al menos un asistente.', confirmButtonColor: '#bd9751' });
+        Swal.fire({ icon: 'warning', title: 'Sin asistentes', text: 'Debe registrar al menos un asistente.', confirmButtonColor: '#e76f51' });
         return;
     }
 
@@ -317,7 +317,7 @@ function iniciarFinalizacion() {
         showCancelButton: true,
         confirmButtonText: 'Continuar',
         cancelButtonText: 'Cancelar',
-        confirmButtonColor: '#bd9751',
+        confirmButtonColor: '#e76f51',
         inputValidator: val => {
             if (!val) return 'Ingrese un número';
             if (parseInt(val) !== op1.r) return 'Respuesta incorrecta, intente de nuevo';
@@ -384,10 +384,10 @@ async function syncManual() {
             });
             setTimeout(() => window.location.reload(), 2000);
         } else if (result.failed > 0) {
-            Swal.fire({ icon: 'warning', title: 'Sin conexion', text: 'Aun no hay internet. Se reintentara automaticamente.', confirmButtonColor: '#bd9751' });
+            Swal.fire({ icon: 'warning', title: 'Sin conexion', text: 'Aun no hay internet. Se reintentara automaticamente.', confirmButtonColor: '#e76f51' });
         }
     } catch (e) {
-        Swal.fire({ icon: 'error', title: 'Error', text: 'No se pudo sincronizar.', confirmButtonColor: '#bd9751' });
+        Swal.fire({ icon: 'error', title: 'Error', text: 'No se pudo sincronizar.', confirmButtonColor: '#e76f51' });
     }
     btn.disabled = false;
     btn.innerHTML = '<i class="fas fa-sync"></i> Sincronizar';

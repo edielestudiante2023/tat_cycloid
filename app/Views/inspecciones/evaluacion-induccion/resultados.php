@@ -22,7 +22,7 @@ $reprobados  = array_filter($respuestas, fn($r) => $r['calificacion'] < 70);
                     <div style="font-size:11px; color:#999;">Respondieron</div>
                 </div>
                 <div class="col-4">
-                    <div style="font-size:28px; font-weight:800; color:#bd9751;"><?= number_format($promedio, 1) ?>%</div>
+                    <div style="font-size:28px; font-weight:800; color:#e76f51;"><?= number_format($promedio, 1) ?>%</div>
                     <div style="font-size:11px; color:#999;">Promedio</div>
                 </div>
                 <div class="col-4">

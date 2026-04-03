@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <style>
         body { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
-        .navbar { background: rgba(255, 255, 255, 0.95); border-bottom: 3px solid #bd9751; }
+        .navbar { background: rgba(255, 255, 255, 0.95); border-bottom: 3px solid #e76f51; }
         @media print {
             .no-print { display: none !important; }
             body { background: white; }
@@ -42,7 +42,7 @@
         .sticky-col-2 { position: sticky; left: 35px; background-color: white; z-index: 1; }
         .sticky-col-3 { position: sticky; left: 185px; background-color: white; z-index: 1; }
         .page-header {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;
         }
     </style>

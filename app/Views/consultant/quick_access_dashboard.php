@@ -14,10 +14,10 @@
 
     <style>
         :root {
-            --primary-dark: #1c2437;
-            --secondary-dark: #2c3e50;
-            --gold-primary: #bd9751;
-            --gold-secondary: #d4af37;
+            --primary-dark: #1b4332;
+            --secondary-dark: #2d6a4f;
+            --gold-primary: #e76f51;
+            --gold-secondary: #f4a261;
             --white-primary: #ffffff;
             --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
@@ -162,7 +162,7 @@
             <div class="header-logos-custom d-flex justify-content-between align-items-center w-100">
                 <div>
                     <a href="https://dashboard.cycloidtalent.com/login" target="_blank">
-                        <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprisesst Logo">
+                        <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo">
                     </a>
                 </div>
                 <div>

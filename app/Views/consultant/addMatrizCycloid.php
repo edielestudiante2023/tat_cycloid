@@ -28,7 +28,7 @@
                 <!-- Logos: se agrupan en una fila en pantallas medianas y grandes -->
                 <div class="col-md-8 col-12 d-flex justify-content-between align-items-center">
                     <a href="https://dashboard.cycloidtalent.com/login" class="d-inline-block">
-                        <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprisesst Logo" class="img-fluid" style="max-height: 60px;">
+                        <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" class="img-fluid" style="max-height: 60px;">
                     </a>
                     <a href="https://cycloidtalent.com/index.php/consultoria-sst" class="d-inline-block mx-2">
                         <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" class="img-fluid" style="max-height: 60px;">

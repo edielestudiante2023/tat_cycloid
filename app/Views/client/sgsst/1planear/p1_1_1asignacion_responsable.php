@@ -34,7 +34,7 @@
         h1,
         h2 {
             text-align: center;
-            color: #2c3e50;
+            color: #2d6a4f;
         }
 
         p {

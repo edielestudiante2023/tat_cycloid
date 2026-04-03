@@ -1,10 +1,10 @@
-NOMBRE DE LA PROPIEDAD HORIZONTAL: <<[NOMBRE DEL CLIENTE]>>
+NOMBRE DE LA TIENDA A TIENDA: <<[NOMBRE DEL CLIENTE]>>
 FECHA: <<[FECHA]>>
-OBJETO DEL ACTA: El presente documento tiene como finalidad formalizar la entrega y aceptación de responsabilidades en materia de Seguridad y Salud en el Trabajo (SST) dentro de la PROPIEDAD HORIZONTAL, de acuerdo con la normativa vigente y con el objetivo de garantizar la gestión efectiva de los riesgos laborales y la protección de los trabajadores y contratistas.
+OBJETO DEL ACTA: El presente documento tiene como finalidad formalizar la entrega y aceptación de responsabilidades en materia de Seguridad y Salud en el Trabajo (SST) dentro de la TIENDA A TIENDA, de acuerdo con la normativa vigente y con el objetivo de garantizar la gestión efectiva de los riesgos laborales y la protección de los trabajadores y contratistas.
 
 1. RESPONSABILIDADES DEL ADMINISTRADOR
 Definir, firmar y divulgar la política de Seguridad y Salud en el Trabajo, asegurando su cumplimiento y revisión periódica.
-Asignar y comunicar las responsabilidades específicas en SST a todos los niveles de la PROPIEDAD HORIZONTAL.
+Asignar y comunicar las responsabilidades específicas en SST a todos los niveles de la TIENDA A TIENDA.
 Presentar informes de rendición de cuentas sobre el desempeño en SST ante el consejo y la comunidad.
 Garantizar los recursos necesarios (financieros, técnicos y de personal) para el diseño, implementación y mejora del SG-SST.
 Asegurar la consulta y participación del asesor en SST y del vigía en la identificación de peligros y la implementación de medidas de control.
@@ -30,7 +30,7 @@ Mantener actualizado el sistema de indicadores de SST.
 Proponer actividades para mejorar las condiciones de seguridad y salud en el trabajo.
 Participar en actividades de capacitación en SST y promover su cumplimiento.
 Colaborar con autoridades en inspecciones y auditorías.
-Vigilar el cumplimiento de las normas de SST en la PROPIEDAD HORIZONTAL.
+Vigilar el cumplimiento de las normas de SST en la TIENDA A TIENDA.
 Reportar condiciones de riesgo y sugerir medidas de control.
 Servir de enlace entre la administración y los contratistas en temas de SST.
 Apoyar la revisión de estadísticas de accidentalidad y enfermedades laborales.
@@ -51,7 +51,7 @@ Participar en la evaluación de peligros y riesgos en el lugar de trabajo.
 Colaborar en la implementación de medidas de prevención y control.
 
 5. FIRMA DE ACEPTACIÓN DE RESPONSABILIDADES
-Con la firma de este documento, cada una de las partes acepta las responsabilidades establecidas en materia de Seguridad y Salud en el Trabajo dentro de la PROPIEDAD HORIZONTAL.
+Con la firma de este documento, cada una de las partes acepta las responsabilidades establecidas en materia de Seguridad y Salud en el Trabajo dentro de la TIENDA A TIENDA.
 
 NOMBRE
 CEDULA

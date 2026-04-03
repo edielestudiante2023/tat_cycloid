@@ -37,7 +37,7 @@
         }
 
         .header-section {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             color: white;
             padding: 2rem;
             border-radius: 15px;
@@ -75,7 +75,7 @@
         }
 
         .metric-card h2 {
-            color: #1c2437;
+            color: #1b4332;
             font-size: 2.5rem;
             font-weight: bold;
             margin: 0;
@@ -92,7 +92,7 @@
 
         .chart-container h5 {
             text-align: center;
-            color: #1c2437;
+            color: #1b4332;
             font-weight: 600;
             margin-bottom: 1rem;
         }
@@ -132,7 +132,7 @@
     <!-- Navbar con logos -->
     <nav class="navbar-logos">
         <div class="container-fluid d-flex justify-content-around align-items-center">
-            <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprise SST" height="60">
+            <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT" height="60">
             <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST" height="60">
             <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloid" height="60">
         </div>

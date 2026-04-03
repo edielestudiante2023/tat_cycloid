@@ -89,7 +89,7 @@
                 <div class="card-body py-3 px-3">
                     <div class="d-flex align-items-center">
                         <div class="me-3">
-                            <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;background:#2c3e50;">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:45px;height:45px;background:#2d6a4f;">
                                 <i class="fas fa-user-shield" style="color:#e0c97f;font-size:18px;"></i>
                             </div>
                         </div>

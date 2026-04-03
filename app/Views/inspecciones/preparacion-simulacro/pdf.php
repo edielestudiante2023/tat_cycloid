@@ -27,21 +27,21 @@ if (!empty($inspeccion['hora_inicio']) && !empty($inspeccion['agradecimiento_cie
         .header-title { text-align: center; font-weight: bold; font-size: 9px; }
         .header-code { width: 120px; font-size: 8px; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #1c2437; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #1b4332; }
         .main-subtitle { text-align: center; font-size: 9px; font-weight: bold; margin: 0 0 6px; color: #444; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
         .info-label { font-weight: bold; color: #444; width: 160px; background: #f7f7f7; }
 
-        .section-title { background: #1c2437; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
+        .section-title { background: #1b4332; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
         .content-text { font-size: 9px; line-height: 1.4; margin-bottom: 5px; }
 
         .data-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .data-table th { background: #e8e8e8; padding: 4px 6px; font-size: 9px; border: 1px solid #ccc; text-align: left; }
         .data-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
 
-        .badge-item { display: inline-block; padding: 2px 6px; background: #1c2437; color: white; font-size: 8px; font-weight: bold; margin: 1px 2px; }
+        .badge-item { display: inline-block; padding: 2px 6px; background: #1b4332; color: white; font-size: 8px; font-weight: bold; margin: 1px 2px; }
 
         .foto-container { text-align: center; margin: 4px 0; }
         .foto-container img { max-width: 220px; max-height: 160px; border: 1px solid #ccc; }

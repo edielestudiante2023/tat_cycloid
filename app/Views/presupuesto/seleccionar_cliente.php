@@ -11,9 +11,9 @@
     <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
     <style>
         :root {
-            --primary-dark: #1c2437;
-            --gold-primary: #bd9751;
-            --gold-secondary: #d4af37;
+            --primary-dark: #1b4332;
+            --gold-primary: #e76f51;
+            --gold-secondary: #f4a261;
         }
         body { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
         .main-card {
@@ -25,7 +25,7 @@
             overflow: hidden;
         }
         .card-header-custom {
-            background: linear-gradient(135deg, var(--primary-dark), #2c3e50);
+            background: linear-gradient(135deg, var(--primary-dark), #2d6a4f);
             color: white;
             padding: 28px 32px;
             text-align: center;

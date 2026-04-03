@@ -114,7 +114,7 @@
             <!-- Logos -->
             <div class="d-flex align-items-center">
                 <a href="https://dashboard.cycloidtalent.com/login" class="me-3">
-                    <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprisesst Logo" height="60">
+                    <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" height="60">
                 </a>
                 <a href="https://cycloidtalent.com/index.php/consultoria-sst" class="me-3">
                     <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" height="60">

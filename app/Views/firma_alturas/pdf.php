@@ -23,7 +23,7 @@
         .header-title { text-align: center; font-weight: bold; font-size: 10px; }
         .header-code { width: 130px; font-size: 9px; }
 
-        .main-title { text-align: center; font-size: 13px; font-weight: bold; margin: 15px 0 10px; color: #1c2437; }
+        .main-title { text-align: center; font-size: 13px; font-weight: bold; margin: 15px 0 10px; color: #1b4332; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; border: 1px solid #ccc; }
         .info-table td { padding: 5px 8px; font-size: 10px; border: 1px solid #ccc; }

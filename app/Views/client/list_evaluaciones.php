@@ -44,7 +44,7 @@
 
         /* Header */
         .header-section {
-            background: linear-gradient(135deg, #1c2437 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
             color: white;
             padding: 1.5rem;
             border-radius: 15px;
@@ -69,7 +69,7 @@
         .indicator-value {
             font-size: 2rem;
             font-weight: bold;
-            color: #1c2437;
+            color: #1b4332;
         }
 
         .indicator-label {
@@ -176,7 +176,7 @@
 
         .accordion-estandar .accordion-button:not(.collapsed) {
             background-color: #e9ecef;
-            color: #1c2437;
+            color: #1b4332;
         }
 
         .accordion-estandar .accordion-body {
@@ -373,7 +373,7 @@
         <div class="container-fluid d-flex justify-content-between align-items-center px-3">
             <div class="d-flex align-items-center gap-2">
                 <a href="https://dashboard.cycloidtalent.com/login">
-                    <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprisesst">
+                    <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT">
                 </a>
                 <a href="https://cycloidtalent.com/index.php/consultoria-sst">
                     <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST">

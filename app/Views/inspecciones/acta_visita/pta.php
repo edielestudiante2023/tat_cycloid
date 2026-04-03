@@ -22,7 +22,7 @@ $totalActividades = count($actividades);
         <?= csrf_field() ?>
 
         <!-- Barra de acciones masivas -->
-        <div class="card mb-3" style="border:none; background:#1c2437; border-radius:10px;">
+        <div class="card mb-3" style="border:none; background:#1b4332; border-radius:10px;">
             <div class="card-body py-2 px-3">
                 <div class="d-flex align-items-center justify-content-between mb-2">
                     <label class="form-check-label text-white" style="font-size:13px;">
@@ -49,7 +49,7 @@ $totalActividades = count($actividades);
             $mesPta = $a['fecha_propuesta'] ? (int) date('m', strtotime($a['fecha_propuesta'])) : 0;
             $rezagada = $mesPta > 0 && $mesPta < $mesVisita;
         ?>
-        <div class="card mb-2 pta-card" data-id="<?= $idPta ?>" style="border-left:4px solid <?= $yaCerrada ? '#28a745' : ($rezagada ? '#fd7e14' : '#bd9751') ?>; border-radius:8px;">
+        <div class="card mb-2 pta-card" data-id="<?= $idPta ?>" style="border-left:4px solid <?= $yaCerrada ? '#28a745' : ($rezagada ? '#fd7e14' : '#e76f51') ?>; border-radius:8px;">
             <div class="card-body py-2 px-3">
                 <input type="hidden" name="pta_actividad_id[]" value="<?= $idPta ?>">
 
@@ -94,7 +94,7 @@ $totalActividades = count($actividades);
                     <!-- Checkbox seleccion masiva -->
                     <?php if (!$yaCerrada): ?>
                     <div class="pt-1">
-                        <input type="checkbox" class="form-check-input bulk-select" data-id="<?= $idPta ?>" title="Seleccionar para comentario masivo" style="accent-color:#bd9751;">
+                        <input type="checkbox" class="form-check-input bulk-select" data-id="<?= $idPta ?>" title="Seleccionar para comentario masivo" style="accent-color:#e76f51;">
                     </div>
                     <?php endif; ?>
                 </div>
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showCancelButton: true,
             confirmButtonText: 'Guardar y continuar',
             cancelButtonText: 'Cancelar',
-            confirmButtonColor: '#bd9751',
+            confirmButtonColor: '#e76f51',
             inputValidator: function(val) {
                 if (!val) return 'Ingrese un numero';
                 if (parseInt(val) !== (a + b)) return 'Respuesta incorrecta';
@@ -199,13 +199,13 @@ document.addEventListener('DOMContentLoaded', function() {
         btnApplyBulk.addEventListener('click', function() {
             var text = bulkComment.value.trim();
             if (!text) {
-                Swal.fire({ icon: 'warning', title: 'Escriba un comentario', text: 'Ingrese el texto antes de aplicar.', confirmButtonColor: '#bd9751' });
+                Swal.fire({ icon: 'warning', title: 'Escriba un comentario', text: 'Ingrese el texto antes de aplicar.', confirmButtonColor: '#e76f51' });
                 return;
             }
 
             var selected = document.querySelectorAll('.bulk-select:checked');
             if (selected.length === 0) {
-                Swal.fire({ icon: 'warning', title: 'Ninguna seleccionada', text: 'Seleccione al menos una actividad con el checkbox de la derecha.', confirmButtonColor: '#bd9751' });
+                Swal.fire({ icon: 'warning', title: 'Ninguna seleccionada', text: 'Seleccione al menos una actividad con el checkbox de la derecha.', confirmButtonColor: '#e76f51' });
                 return;
             }
 

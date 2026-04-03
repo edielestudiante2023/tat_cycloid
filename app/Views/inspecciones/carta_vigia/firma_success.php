@@ -60,7 +60,7 @@
             <p style="font-size: 13px; color: #888;">
                 <i class="fas fa-info-circle"></i>
                 <?php if (!empty($verificacion)): ?>
-                    Documento firmado digitalmente via Enterprise SST.
+                    Documento firmado digitalmente via Cycloid TAT.
                 <?php else: ?>
                     Puede cerrar esta ventana. El documento firmado quedara disponible en el sistema.
                 <?php endif; ?>

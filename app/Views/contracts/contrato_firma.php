@@ -21,7 +21,7 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
         .header-contrato {
-            background: linear-gradient(135deg, #1a5f7a 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #1a5f7a 0%, #2d6a4f 100%);
             color: white;
             border-radius: 12px 12px 0 0;
             padding: 25px;
@@ -256,7 +256,7 @@
 
             <!-- Footer -->
             <div class="card-footer text-center text-muted">
-                <small>Documento generado por Enterprise SST - Sistema de Gestion de Seguridad y Salud en el Trabajo</small>
+                <small>Documento generado por Cycloid TAT - Sistema de Gestion de Seguridad y Salud en el Trabajo</small>
             </div>
         </div>
     </div>

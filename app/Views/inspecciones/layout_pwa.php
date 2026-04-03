@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="theme-color" content="#1c2437">
+    <meta name="theme-color" content="#1b4332">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Inspecciones">
@@ -25,8 +25,8 @@
 
     <style>
         :root {
-            --primary-dark: #1c2437;
-            --gold-primary: #bd9751;
+            --primary-dark: #1b4332;
+            --gold-primary: #e76f51;
             --gold-hover: #a8843f;
             --bg-light: #f5f5f5;
             --text-primary: #333;
@@ -218,12 +218,12 @@
         .dataTables_wrapper .dataTables_info,
         .dataTables_wrapper .dataTables_paginate { font-size: 13px; }
         table.dataTable td, table.dataTable th { font-size: 13px; vertical-align: middle; }
-        table.dataTable thead th { background: #1c2437 !important; color: #bd9751 !important; border-color: #2c3e50 !important; }
+        table.dataTable thead th { background: #1b4332 !important; color: #e76f51 !important; border-color: #2d6a4f !important; }
         table.dataTable thead th.sorting:after,
         table.dataTable thead th.sorting_asc:after,
-        table.dataTable thead th.sorting_desc:after { color: #bd9751; }
-        .dataTables_wrapper .page-item.active .page-link { background-color: #bd9751; border-color: #bd9751; }
-        .dataTables_wrapper .page-link { color: #1c2437; }
+        table.dataTable thead th.sorting_desc:after { color: #e76f51; }
+        .dataTables_wrapper .page-item.active .page-link { background-color: #e76f51; border-color: #e76f51; }
+        .dataTables_wrapper .page-link { color: #1b4332; }
 
         /* Badge estados */
         .badge-borrador {

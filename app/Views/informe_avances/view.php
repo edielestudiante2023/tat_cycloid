@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary-dark: #1c2437; --gold-primary: #bd9751; --gold-secondary: #d4af37; --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+        :root { --primary-dark: #1b4332; --gold-primary: #e76f51; --gold-secondary: #f4a261; --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
         body { background: var(--gradient-bg); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; }
         .navbar-custom { background: #fff; box-shadow: 0 8px 32px rgba(28,36,55,0.15); padding: 15px 0; border-bottom: 2px solid var(--gold-primary); }
         .card-section { border: none; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 1.5rem; }

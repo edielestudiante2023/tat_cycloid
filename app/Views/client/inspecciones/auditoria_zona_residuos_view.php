@@ -31,7 +31,7 @@ $colorMap = [
         <div class="mb-3 p-2" style="background:#f8f9fa; border-radius:8px;">
             <div class="d-flex justify-content-between align-items-center">
                 <span style="font-size:13px; font-weight:600;">
-                    <i class="fas <?= $info['icon'] ?? 'fa-check-circle' ?> me-1" style="color:#bd9751;"></i>
+                    <i class="fas <?= $info['icon'] ?? 'fa-check-circle' ?> me-1" style="color:#e76f51;"></i>
                     <?= esc($info['label']) ?>
                 </span>
                 <?php if ($info['tipo'] === 'enum'):
@@ -69,6 +69,6 @@ $colorMap = [
 
 <div class="mb-4">
     <?php if (!empty($inspeccion['ruta_pdf'])): ?>
-    <a href="<?= base_url('/inspecciones/auditoria-zona-residuos/pdf/') ?><?= $inspeccion['id'] ?>" class="btn btn-primary" target="_blank" style="background:#bd9751; border-color:#bd9751;"><i class="fas fa-file-pdf"></i> Ver PDF</a>
+    <a href="<?= base_url('/inspecciones/auditoria-zona-residuos/pdf/') ?><?= $inspeccion['id'] ?>" class="btn btn-primary" target="_blank" style="background:#e76f51; border-color:#e76f51;"><i class="fas fa-file-pdf"></i> Ver PDF</a>
     <?php endif; ?>
 </div>

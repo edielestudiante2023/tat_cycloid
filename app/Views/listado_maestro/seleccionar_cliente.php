@@ -10,10 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
     <style>
-        :root { --primary-dark: #1c2437; --gold-primary: #bd9751; --gold-secondary: #d4af37; }
+        :root { --primary-dark: #1b4332; --gold-primary: #e76f51; --gold-secondary: #f4a261; }
         body { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
         .main-card { max-width: 700px; margin: 60px auto; border: none; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.12); overflow: hidden; }
-        .card-header-custom { background: linear-gradient(135deg, var(--primary-dark), #2c3e50); color: white; padding: 28px 32px; text-align: center; }
+        .card-header-custom { background: linear-gradient(135deg, var(--primary-dark), #2d6a4f); color: white; padding: 28px 32px; text-align: center; }
         .card-header-custom h2 { margin: 0; font-weight: 700; font-size: 1.5rem; }
         .card-header-custom p { margin: 8px 0 0; opacity: 0.8; font-size: 0.9rem; }
         .card-body-custom { padding: 32px; }
