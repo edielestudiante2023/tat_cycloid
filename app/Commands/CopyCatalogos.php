@@ -13,10 +13,10 @@ class CopyCatalogos extends BaseCommand
 
     public function run(array $params)
     {
-        $doHost = 'db-mysql-cycloid-do-user-18794030-0.h.db.ondigitalocean.com';
-        $doUser = 'cycloid_userdb';
-        $doPass = 'AVNS_MR2SLvzRh3i_7o9fEHN';
-        $doPort = 25060;
+        $doHost = env('DO_DB_HOST', 'localhost');
+        $doUser = env('DO_DB_USER', 'root');
+        $doPass = env('DO_DB_PASS', '');
+        $doPort = (int) env('DO_DB_PORT', 25060);
 
         // Tablas catálogo a copiar
         $catalogTables = [
