@@ -1,0 +1,224 @@
+<div class="container-fluid px-3">
+    <div class="mt-2 mb-3 d-flex justify-content-between align-items-center">
+        <h6 class="mb-0">Acta de Visita</h6>
+        <span class="badge badge-<?= esc($acta['estado']) ?>">
+            <?php
+            switch ($acta['estado']) {
+                case 'borrador': echo 'Borrador'; break;
+                case 'pendiente_firma': echo 'Pend. Firma'; break;
+                case 'completo': echo 'Completo'; break;
+            }
+            ?>
+        </span>
+    </div>
+
+    <!-- Datos generales -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <h6 class="card-title" style="font-size:14px; color:#999;">DATOS GENERALES</h6>
+            <table class="table table-sm mb-0" style="font-size:14px;">
+                <tr><td class="text-muted" style="width:40%;">Cliente</td><td><strong><?= esc($cliente['nombre_cliente'] ?? '') ?></strong></td></tr>
+                <tr><td class="text-muted">Fecha</td><td><?= date('d/m/Y', strtotime($acta['fecha_visita'])) ?></td></tr>
+                <tr><td class="text-muted">Hora</td><td><?= date('g:i A', strtotime($acta['hora_visita'])) ?></td></tr>
+                <tr><td class="text-muted">Motivo</td><td><?= esc($acta['motivo']) ?></td></tr>
+                <tr><td class="text-muted">Modalidad</td><td><?= esc($acta['modalidad'] ?? 'Presencial') ?></td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Integrantes -->
+    <?php if (!empty($integrantes)): ?>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h6 class="card-title" style="font-size:14px; color:#999;">INTEGRANTES</h6>
+            <?php foreach ($integrantes as $int): ?>
+            <div class="d-flex justify-content-between py-1" style="font-size:14px; border-bottom:1px solid #eee;">
+                <span><?= esc($int['nombre']) ?></span>
+                <span class="badge bg-secondary"><?= esc($int['rol']) ?></span>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- Temas -->
+    <?php if (!empty($temas)): ?>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h6 class="card-title" style="font-size:14px; color:#999;">TEMAS TRATADOS</h6>
+            <?php foreach ($temas as $i => $tema): ?>
+            <div style="font-size:14px; padding:4px 0; border-bottom:1px solid #eee;">
+                <strong>Tema <?= $i + 1 ?>:</strong> <?= esc($tema['descripcion']) ?>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- Actividades PTA Revisadas en Visita -->
+    <?php if (!empty($ptaActividades)): ?>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h6 class="card-title" style="font-size:14px; color:#999;">ACTIVIDADES PLAN DE TRABAJO REVISADAS</h6>
+            <?php foreach ($ptaActividades as $pta): ?>
+            <div style="font-size:14px; padding:4px 0; border-bottom:1px solid #eee;">
+                <strong><?= esc($pta['numeral_plandetrabajo'] ?? '') ?></strong> - <?= esc($pta['actividad_plandetrabajo'] ?? '') ?>
+                <?php if ($pta['cerrada']): ?>
+                    <span class="badge bg-success" style="font-size:10px;">CERRADA</span>
+                <?php elseif (!empty($pta['justificacion_no_cierre'])): ?>
+                    <span class="badge bg-warning text-dark" style="font-size:10px;">EN PROCESO</span>
+                    <small class="text-muted d-block"><?= esc($pta['justificacion_no_cierre']) ?></small>
+                <?php else: ?>
+                    <span class="badge bg-secondary" style="font-size:10px;">PENDIENTE</span>
+                <?php endif; ?>
+                <?php if (!empty($pta['fecha_propuesta'])): ?>
+                    <small class="text-muted d-block">Fecha propuesta: <?= date('d/m/Y', strtotime($pta['fecha_propuesta'])) ?></small>
+                <?php endif; ?>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- Pendientes cerrados en esta visita -->
+    <?php if (!empty($pendientesCerradosEnVisita)): ?>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h6 class="card-title" style="font-size:14px; color:#999;">PENDIENTES CERRADOS EN VISITA</h6>
+            <?php foreach ($pendientesCerradosEnVisita as $pend): ?>
+            <div style="font-size:14px; padding:4px 0; border-bottom:1px solid #eee;">
+                <?= esc($pend['tarea_actividad']) ?>
+                <span class="badge bg-success" style="font-size:10px;">CERRADO</span>
+                <?php if (!empty($pend['responsable'])): ?>
+                    <small class="text-muted d-block">Responsable: <?= esc($pend['responsable']) ?></small>
+                <?php endif; ?>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- Mantenimientos ejecutados en esta visita -->
+    <?php if (!empty($mantenimientosEnVisita)): ?>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h6 class="card-title" style="font-size:14px; color:#999;">MANTENIMIENTOS EJECUTADOS EN VISITA</h6>
+            <?php foreach ($mantenimientosEnVisita as $mmto): ?>
+            <div style="font-size:14px; padding:4px 0; border-bottom:1px solid #eee;">
+                <?= esc($mmto['detalle_mantenimiento'] ?? $mmto['observaciones'] ?? 'Mantenimiento') ?>
+                <span class="badge bg-success" style="font-size:10px;">EJECUTADO</span>
+                <?php if (!empty($mmto['fecha_realizacion'])): ?>
+                    <small class="text-muted d-block">Fecha: <?= date('d/m/Y', strtotime($mmto['fecha_realizacion'])) ?></small>
+                <?php endif; ?>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- Observaciones -->
+    <?php if (!empty($acta['observaciones'])): ?>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h6 class="card-title" style="font-size:14px; color:#999;">OBSERVACIONES</h6>
+            <p style="font-size:14px; margin:0;"><?= nl2br(esc($acta['observaciones'])) ?></p>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- Cartera -->
+    <?php if (!empty($acta['cartera'])): ?>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h6 class="card-title" style="font-size:14px; color:#999;">CARTERA</h6>
+            <p style="font-size:14px; margin:0;"><?= nl2br(esc($acta['cartera'])) ?></p>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- Compromisos -->
+    <?php if (!empty($compromisos)): ?>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h6 class="card-title" style="font-size:14px; color:#999;">COMPROMISOS</h6>
+            <?php foreach ($compromisos as $comp): ?>
+            <div style="font-size:14px; padding:6px 0; border-bottom:1px solid #eee;">
+                <strong><?= esc($comp['tarea_actividad']) ?></strong>
+                <div class="text-muted" style="font-size:12px;">
+                    Responsable: <?= esc($comp['responsable'] ?? '-') ?>
+                    | Fecha cierre: <?= !empty($comp['fecha_cierre']) ? date('d/m/Y', strtotime($comp['fecha_cierre'])) : '-' ?>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- Fotos y Soportes -->
+    <?php if (!empty($fotos)): ?>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h6 class="card-title" style="font-size:14px; color:#999;">REGISTRO FOTOGRAFICO</h6>
+            <div class="row g-2">
+                <?php foreach ($fotos as $foto): ?>
+                <div class="col-4">
+                    <img src="/<?= esc($foto['ruta_archivo']) ?>"
+                         class="img-fluid rounded"
+                         style="width:100%; height:100px; object-fit:cover; cursor:pointer; border:1px solid #ddd;"
+                         onclick="openPhoto(this.src, '<?= esc($foto['descripcion'] ?? '', 'js') ?>')"
+                         alt="<?= esc($foto['descripcion'] ?? 'Foto') ?>">
+                    <?php if (!empty($foto['descripcion'])): ?>
+                        <small class="text-muted d-block text-center" style="font-size:11px;"><?= esc($foto['descripcion']) ?></small>
+                    <?php endif; ?>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+
+    <!-- Modal para ver foto ampliada -->
+    <div class="modal fade" id="photoModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-0 py-1">
+                    <small class="text-light" id="photoDesc"></small>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-1 text-center">
+                    <img id="photoFull" src="" class="img-fluid" style="max-height:80vh;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    function openPhoto(src, desc) {
+        document.getElementById('photoFull').src = src;
+        document.getElementById('photoDesc').textContent = desc || '';
+        new bootstrap.Modal(document.getElementById('photoModal')).show();
+    }
+    </script>
+
+    <!-- Acciones -->
+    <div class="mb-4">
+        <?php if ($acta['estado'] === 'completo' && !empty($acta['ruta_pdf'])): ?>
+        <a href="<?= base_url('/inspecciones/acta-visita/pdf/') ?><?= $acta['id'] ?>" class="btn btn-pwa btn-pwa-primary" target="_blank">
+            <i class="fas fa-file-pdf"></i> Ver PDF
+        </a>
+        <?php endif; ?>
+    <?php if ($acta['estado'] === 'completo'): ?>
+    <a href="<?= base_url('/inspecciones/acta-visita/regenerar/') ?><?= $acta['id'] ?>" class="btn btn-pwa btn-pwa-outline" onclick="return confirm('¿Regenerar el PDF con la plantilla actual?')">
+        <i class="fas fa-sync-alt me-2"></i>Regenerar PDF
+    </a>
+    <a href="<?= base_url('/inspecciones/acta-visita/enviar-email/') ?><?= $acta['id'] ?>" class="btn btn-pwa btn-pwa-outline" onclick="return confirm('¿Enviar el PDF por email al cliente, consultor y consultor externo?')">
+        <i class="fas fa-envelope me-2"></i>Enviar por Email
+    </a>
+    <?php endif; ?>
+
+        <?php if ($acta['estado'] !== 'completo'): ?>
+        <a href="<?= base_url('/inspecciones/acta-visita/edit/') ?><?= $acta['id'] ?>" class="btn btn-pwa btn-pwa-outline">
+            <i class="fas fa-edit"></i> Editar
+        </a>
+        <?php endif; ?>
+    </div>
+</div>

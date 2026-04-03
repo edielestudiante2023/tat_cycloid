@@ -1,0 +1,455 @@
+<?php
+
+namespace App\Controllers\Inspecciones;
+
+use App\Controllers\BaseController;
+use App\Models\EvaluacionSimulacroModel;
+use App\Models\ClientModel;
+use App\Models\ConsultantModel;
+use App\Models\ReporteModel;
+use App\Libraries\InspeccionEmailNotifier;
+use App\Traits\AutosaveJsonTrait;
+use App\Traits\ImagenCompresionTrait;
+use Dompdf\Dompdf;
+
+class EvaluacionSimulacroController extends BaseController
+{
+    use AutosaveJsonTrait;
+    use ImagenCompresionTrait;
+    protected EvaluacionSimulacroModel $evalModel;
+
+    public function __construct()
+    {
+        $this->evalModel = new EvaluacionSimulacroModel();
+    }
+
+    /**
+     * Lista de evaluaciones de simulacro (admin ve todas, consultor ve sus clientes)
+     */
+    public function list()
+    {
+        $evaluaciones = $this->evalModel
+            ->select('tbl_evaluacion_simulacro.*, tbl_clientes.nombre_cliente')
+            ->join('tbl_clientes', 'tbl_clientes.id_cliente = tbl_evaluacion_simulacro.id_cliente', 'left')
+            ->orderBy('tbl_evaluacion_simulacro.fecha', 'DESC')
+            ->findAll();
+
+        $data = [
+            'title'        => 'Evaluacion Simulacro de Evacuacion',
+            'evaluaciones' => $evaluaciones,
+        ];
+
+        return view('inspecciones/layout_pwa', [
+            'content' => view('inspecciones/simulacro/list', $data),
+            'title'   => 'Ev. Simulacro',
+        ]);
+    }
+
+    /**
+     * Vista read-only de una evaluacion
+     */
+    public function view($id)
+    {
+        $eval = $this->evalModel->find($id);
+        if (!$eval) {
+            return redirect()->to('/inspecciones/simulacro')->with('error', 'No encontrada');
+        }
+
+        $clientModel = new ClientModel();
+
+        $data = [
+            'title'   => 'Ver Evaluacion Simulacro',
+            'eval'    => $eval,
+            'cliente' => $clientModel->find($eval['id_cliente']),
+        ];
+
+        return view('inspecciones/layout_pwa', [
+            'content' => view('inspecciones/simulacro/view', $data),
+            'title'   => 'Ver Simulacro',
+        ]);
+    }
+
+    /**
+     * Genera y muestra el PDF inline
+     */
+    public function generatePdf($id)
+    {
+        $eval = $this->evalModel->find($id);
+        if (!$eval) {
+            return redirect()->to('/inspecciones/simulacro')->with('error', 'No encontrada');
+        }
+
+        $pdfPath = $this->generarPdfInterno($id);
+        $this->evalModel->update($id, ['ruta_pdf' => $pdfPath]);
+        $fullPath = FCPATH . $pdfPath;
+        if (!file_exists($fullPath)) {
+            return redirect()->back()->with('error', 'PDF no encontrado');
+        }
+
+        return $this->servirPdf($fullPath, 'simulacro_' . $id . '.pdf');
+    }
+
+    /**
+     * Finalizar: genera PDF + registra en tbl_reporte
+     */
+    public function finalizar($id)
+    {
+        $eval = $this->evalModel->find($id);
+        if (!$eval) {
+            return redirect()->to('/inspecciones/simulacro')->with('error', 'No encontrada');
+        }
+
+        $pdfPath = $this->generarPdfInterno($id);
+        if (!$pdfPath) {
+            return redirect()->back()->with('error', 'Error al generar PDF');
+        }
+
+        $this->evalModel->update($id, [
+            'estado'   => 'completo',
+            'ruta_pdf' => $pdfPath,
+        ]);
+
+        $eval = $this->evalModel->find($id);
+        $this->uploadToReportes($eval, $pdfPath);
+
+        // Enviar email con PDF adjunto
+        $emailResult = InspeccionEmailNotifier::enviar(
+            (int) $eval['id_cliente'],
+            (int) $eval['id_consultor'],
+            'EVALUACIÓN SIMULACRO',
+            $eval['fecha'],
+            $pdfPath,
+            (int) $eval['id'],
+            'EvaluacionSimulacro'
+        );
+        $msg = 'Evaluacion finalizada y PDF generado.';
+        if ($emailResult['success']) {
+            $msg .= ' ' . $emailResult['message'];
+        } else {
+            $msg .= ' (Email no enviado: ' . $emailResult['error'] . ')';
+        }
+
+        return redirect()->to('/inspecciones/simulacro/view/' . $id)
+            ->with('msg', $msg);
+    }
+
+    /**
+     * Eliminar (solo borradores)
+     */
+    public function delete($id)
+    {
+        $eval = $this->evalModel->find($id);
+        if (!$eval) {
+            return redirect()->to('/inspecciones/simulacro')->with('error', 'No encontrada');
+        }
+        // Borrar fotos
+        foreach (['imagen_1', 'imagen_2'] as $campo) {
+            if (!empty($eval[$campo]) && file_exists(FCPATH . $eval[$campo])) {
+                unlink(FCPATH . $eval[$campo]);
+            }
+        }
+
+        // Borrar PDF
+        if (!empty($eval['ruta_pdf']) && file_exists(FCPATH . $eval['ruta_pdf'])) {
+            unlink(FCPATH . $eval['ruta_pdf']);
+        }
+
+        $this->evalModel->delete($id);
+
+        return redirect()->to('/inspecciones/simulacro')->with('msg', 'Evaluacion eliminada');
+    }
+
+    /**
+     * Formulario de edicion
+     */
+    public function edit($id)
+    {
+        $eval = $this->evalModel->find($id);
+        if (!$eval) {
+            return redirect()->to('/inspecciones/simulacro')->with('error', 'No encontrada');
+        }
+
+        $clientModel = new ClientModel();
+
+        $data = [
+            'title'   => 'Editar Evaluacion Simulacro',
+            'eval'    => $eval,
+            'cliente' => $clientModel->find($eval['id_cliente']),
+        ];
+
+        return view('inspecciones/layout_pwa', [
+            'content' => view('inspecciones/simulacro/form', $data),
+            'title'   => 'Editar Simulacro',
+        ]);
+    }
+
+    /**
+     * Actualizar evaluacion
+     */
+    public function update($id)
+    {
+        $eval = $this->evalModel->find($id);
+        if (!$eval) {
+            if ($this->isAutosaveRequest()) {
+                return $this->autosaveJsonError('No encontrada', 404);
+            }
+            return redirect()->to('/inspecciones/simulacro')->with('error', 'No encontrada');
+        }
+
+        $data = $this->getEvalPostData();
+
+        foreach (['imagen_1', 'imagen_2'] as $campo) {
+            $nueva = $this->uploadFoto($campo, 'uploads/inspecciones/simulacro/fotos/');
+            if ($nueva) {
+                if (!empty($eval[$campo]) && file_exists(FCPATH . $eval[$campo])) {
+                    unlink(FCPATH . $eval[$campo]);
+                }
+                $data[$campo] = $nueva;
+            }
+        }
+
+        $this->evalModel->update($id, $data);
+
+        if ($this->request->getPost('finalizar')) {
+            return $this->finalizar($id);
+        }
+
+        if ($this->isAutosaveRequest()) {
+            return $this->autosaveJsonSuccess((int)$id);
+        }
+
+        return redirect()->to('/inspecciones/simulacro/edit/' . $id)
+            ->with('msg', 'Evaluacion actualizada');
+    }
+
+    // ===== METODOS PRIVADOS =====
+
+    private function getEvalPostData(): array
+    {
+        $data = [
+            'fecha'                     => $this->request->getPost('fecha'),
+            'direccion'                 => $this->request->getPost('direccion'),
+            'evento_simulado'           => $this->request->getPost('evento_simulado'),
+            'alcance_simulacro'         => $this->request->getPost('alcance_simulacro'),
+            'tipo_evacuacion'           => $this->request->getPost('tipo_evacuacion'),
+            'personal_no_evacua'        => $this->request->getPost('personal_no_evacua'),
+            'puntos_encuentro'          => $this->request->getPost('puntos_encuentro'),
+            'recurso_humano'            => $this->request->getPost('recurso_humano'),
+            'nombre_brigadista_lider'   => $this->request->getPost('nombre_brigadista_lider'),
+            'email_brigadista_lider'    => $this->request->getPost('email_brigadista_lider'),
+            'whatsapp_brigadista_lider' => $this->request->getPost('whatsapp_brigadista_lider'),
+            'hora_inicio'               => $this->request->getPost('hora_inicio') ?: null,
+            'alistamiento_recursos'     => $this->request->getPost('alistamiento_recursos') ?: null,
+            'asumir_roles'              => $this->request->getPost('asumir_roles') ?: null,
+            'suena_alarma'              => $this->request->getPost('suena_alarma') ?: null,
+            'distribucion_roles'        => $this->request->getPost('distribucion_roles') ?: null,
+            'llegada_punto_encuentro'   => $this->request->getPost('llegada_punto_encuentro') ?: null,
+            'agrupacion_por_afinidad'   => $this->request->getPost('agrupacion_por_afinidad') ?: null,
+            'conteo_personal'           => $this->request->getPost('conteo_personal') ?: null,
+            'agradecimiento_y_cierre'   => $this->request->getPost('agradecimiento_y_cierre') ?: null,
+            'tiempo_total'              => $this->request->getPost('tiempo_total'),
+            'hombre'                    => (int) ($this->request->getPost('hombre') ?? 0),
+            'mujer'                     => (int) ($this->request->getPost('mujer') ?? 0),
+            'ninos'                     => (int) ($this->request->getPost('ninos') ?? 0),
+            'adultos_mayores'           => (int) ($this->request->getPost('adultos_mayores') ?? 0),
+            'discapacidad'              => (int) ($this->request->getPost('discapacidad') ?? 0),
+            'mascotas'                  => (int) ($this->request->getPost('mascotas') ?? 0),
+            'total'                     => (int) ($this->request->getPost('total') ?? 0),
+            'alarma_efectiva'           => $this->request->getPost('alarma_efectiva') ?: null,
+            'orden_evacuacion'          => $this->request->getPost('orden_evacuacion') ?: null,
+            'liderazgo_brigadistas'     => $this->request->getPost('liderazgo_brigadistas') ?: null,
+            'organizacion_punto_encuentro' => $this->request->getPost('organizacion_punto_encuentro') ?: null,
+            'participacion_general'     => $this->request->getPost('participacion_general') ?: null,
+            'evaluacion_cuantitativa'   => $this->request->getPost('evaluacion_cuantitativa'),
+            'evaluacion_cualitativa'    => $this->request->getPost('evaluacion_cualitativa'),
+            'observaciones'             => $this->request->getPost('observaciones'),
+        ];
+
+        foreach (['tipo_alarma', 'distintivos_brigadistas', 'equipos_emergencia'] as $campo) {
+            $vals = $this->request->getPost($campo);
+            $data[$campo] = is_array($vals) ? implode(',', $vals) : '';
+        }
+
+        return $data;
+    }
+
+    private function uploadFoto(string $campo, string $dir): ?string
+    {
+        $file = $this->request->getFile($campo);
+        if (!$file || !$file->isValid() || $file->hasMoved()) {
+            return null;
+        }
+        if (!is_dir(FCPATH . $dir)) {
+            mkdir(FCPATH . $dir, 0755, true);
+        }
+        $fileName = $file->getRandomName();
+        $file->move(FCPATH . $dir, $fileName);
+        $this->comprimirImagen(FCPATH . $dir . $fileName);
+        return $dir . $fileName;
+    }
+
+    /**
+     * Genera el PDF con DOMPDF
+     */
+        public function regenerarPdf($id)
+    {
+        $inspeccion = $this->evalModel->find($id);
+        if (!$inspeccion || ($inspeccion['estado'] ?? '') !== 'completo') {
+            return redirect()->to('/inspecciones/simulacro')->with('error', 'Solo se puede regenerar un registro finalizado.');
+        }
+
+        $pdfPath = $this->generarPdfInterno($id);
+
+        $this->evalModel->update($id, [
+            'ruta_pdf' => $pdfPath,
+        ]);
+
+        $inspeccion = $this->evalModel->find($id);
+        $this->uploadToReportes($inspeccion, $pdfPath);
+
+        return redirect()->to("/inspecciones/simulacro/view/{$id}")->with('msg', 'PDF regenerado exitosamente.');
+    }
+
+    private function generarPdfInterno($id): ?string
+    {
+        $eval = $this->evalModel->find($id);
+        $clientModel = new ClientModel();
+        $cliente = $clientModel->find($eval['id_cliente']);
+
+        // Logo en base64
+        $logoBase64 = '';
+        if (!empty($cliente['logo'])) {
+            $logoPath = FCPATH . 'uploads/' . $cliente['logo'];
+            if (file_exists($logoPath)) {
+                $logoBase64 = $this->fotoABase64ParaPdf($logoPath);
+            }
+        }
+
+        // Fotos a base64
+        $fotosBase64 = [];
+        foreach (['imagen_1', 'imagen_2'] as $campo) {
+            $fotosBase64[$campo] = '';
+            if (!empty($eval[$campo])) {
+                $fotoPath = FCPATH . $eval[$campo];
+                if (file_exists($fotoPath)) {
+                    $fotosBase64[$campo] = $this->fotoABase64ParaPdf($fotoPath);
+                }
+            }
+        }
+
+        // Consultor del cliente
+        $consultorNombre = '';
+        if (!empty($cliente['id_consultor'])) {
+            $consultantModel = new ConsultantModel();
+            $consultor = $consultantModel->find($cliente['id_consultor']);
+            $consultorNombre = $consultor['nombre_consultor'] ?? '';
+        }
+
+        $data = [
+            'eval'            => $eval,
+            'cliente'         => $cliente,
+            'consultorNombre' => $consultorNombre,
+            'logoBase64'      => $logoBase64,
+            'fotosBase64'     => $fotosBase64,
+        ];
+
+        $html = view('inspecciones/simulacro/pdf', $data);
+
+        $options = new \Dompdf\Options();
+        $options->set('isRemoteEnabled', true);
+        $options->set('isHtml5ParserEnabled', true);
+        $dompdf = new Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('letter', 'portrait');
+        $dompdf->render();
+
+        $pdfDir = 'uploads/inspecciones/simulacro/pdfs/';
+        if (!is_dir(FCPATH . $pdfDir)) {
+            mkdir(FCPATH . $pdfDir, 0755, true);
+        }
+
+        $pdfFileName = 'simulacro_' . $id . '_' . date('Ymd_His') . '.pdf';
+        $pdfPath = $pdfDir . $pdfFileName;
+
+        // Borrar PDF anterior
+        if (!empty($eval['ruta_pdf']) && file_exists(FCPATH . $eval['ruta_pdf'])) {
+            unlink(FCPATH . $eval['ruta_pdf']);
+        }
+
+        file_put_contents(FCPATH . $pdfPath, $dompdf->output());
+
+        return $pdfPath;
+    }
+
+    /**
+     * Registra/actualiza el PDF en tbl_reporte
+     */
+    // ── Email ─────────────────────────────────────────────────
+
+    public function enviarEmail($id)
+    {
+        $eval = $this->evalModel->find($id);
+        if (!$eval || $eval['estado'] !== 'completo' || empty($eval['ruta_pdf'])) {
+            return redirect()->to("/inspecciones/simulacro/view/{$id}")->with('error', 'Debe estar finalizado con PDF para enviar email.');
+        }
+
+        $result = InspeccionEmailNotifier::enviar(
+            (int) $eval['id_cliente'],
+            (int) $eval['id_consultor'],
+            'EVALUACIÓN SIMULACRO',
+            $eval['fecha'],
+            $eval['ruta_pdf'],
+            (int) $eval['id'],
+            'EvaluacionSimulacro'
+        );
+
+        if ($result['success']) {
+            return redirect()->to("/inspecciones/simulacro/view/{$id}")->with('msg', $result['message']);
+        }
+        return redirect()->to("/inspecciones/simulacro/view/{$id}")->with('error', $result['error']);
+    }
+
+    private function uploadToReportes(array $eval, string $pdfPath): bool
+    {
+        $reporteModel = new ReporteModel();
+        $clientModel = new ClientModel();
+        $cliente = $clientModel->find($eval['id_cliente']);
+        if (!$cliente) return false;
+
+        $nitCliente = $cliente['nit_cliente'];
+
+        $existente = $reporteModel
+            ->where('id_cliente', $eval['id_cliente'])
+            ->where('id_report_type', 6)
+            ->where('id_detailreport', 21)
+            ->like('observaciones', 'eval_sim_id:' . $eval['id'])
+            ->first();
+
+        $destDir = UPLOADS_PATH . $nitCliente;
+        if (!is_dir($destDir)) {
+            mkdir($destDir, 0755, true);
+        }
+
+        $fileName = 'simulacro_' . $eval['id'] . '_' . date('Ymd_His') . '.pdf';
+        $destPath = $destDir . '/' . $fileName;
+        copy(FCPATH . $pdfPath, $destPath);
+
+        $data = [
+            'titulo_reporte'  => 'EVALUACION SIMULACRO - ' . ($cliente['nombre_cliente'] ?? '') . ' - ' . $eval['fecha'],
+            'id_detailreport' => 21,
+            'id_report_type'  => 6,
+            'id_cliente'      => $eval['id_cliente'],
+            'estado'          => 'CERRADO',
+            'observaciones'   => 'Generado automaticamente desde modulo de inspecciones. eval_sim_id:' . $eval['id'],
+            'enlace'          => base_url(UPLOADS_URL_PREFIX . '/' . $nitCliente . '/' . $fileName),
+            'updated_at'      => date('Y-m-d H:i:s'),
+        ];
+
+        if ($existente) {
+            return $reporteModel->update($existente['id_reporte'], $data);
+        }
+
+        $data['created_at'] = date('Y-m-d H:i:s');
+        return $reporteModel->save($data);
+    }
+}

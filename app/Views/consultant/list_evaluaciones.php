@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Evaluaciones</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- DataTables CSS -->
+  <link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <!-- DataTables Buttons CSS -->
+  <link href="https://cdn.datatables.net/buttons/2.3.3/css/buttons.bootstrap5.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Select2 CSS para select buscable -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      margin: 20px 0;
+      text-align: center;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    .dataTables_filter input {
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding: 6px;
+    }
+
+    .dataTables_length select {
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      padding: 6px;
+    }
+
+    td,
+    th {
+      max-width: 20ch;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 25px;
+    }
+
+    /* Expandable cell text */
+    .cell-expandable {
+      cursor: pointer;
+      position: relative;
+    }
+    .cell-expandable .expand-icon {
+      font-size: 0.7rem;
+      margin-left: 4px;
+      color: #007bff;
+    }
+    td.expanded-cell {
+      white-space: normal !important;
+      overflow: visible !important;
+      text-overflow: unset !important;
+      max-width: 40ch !important;
+      height: auto !important;
+    }
+
+    .tooltip-inner {
+      max-width: 300px;
+      word-wrap: break-word;
+      z-index: 1050;
+    }
+
+    .filters select {
+      width: 100%;
+      padding: 4px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    /* Estilo para la columna de fila expandible */
+    td.details-control {
+      background: url('https://www.datatables.net/examples/resources/details_open.png') no-repeat center center;
+      cursor: pointer;
+    }
+
+    tr.shown td.details-control {
+      background: url('https://www.datatables.net/examples/resources/details_close.png') no-repeat center center;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center">
+        <a href="https://dashboard.cycloidtalent.com/login" class="me-3">
+          <img src="<?= base_url('uploads/logoenterprisesstblancoslogan.png') ?>" alt="Enterprisesst Logo" height="60">
+        </a>
+        <a href="https://cycloidtalent.com/index.php/consultoria-sst" class="me-3">
+          <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" height="60">
+        </a>
+        <a href="https://cycloidtalent.com/">
+          <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo" height="60">
+        </a>
+      </div>
+      <div class="ms-auto d-flex">
+        <div class="text-center me-3">
+          <h6 class="mb-1" style="font-size: 16px;">Ir a Dashboard</h6>
+          <a href="<?= base_url('/dashboardconsultant') ?>" class="btn btn-primary btn-sm">Ir a DashBoard</a>
+        </div>
+        <div class="text-center">
+          <h6 class="mb-1" style="font-size: 16px;">Añadir Registro</h6>
+          <a href="<?= base_url('/addEvaluacion') ?>" class="btn btn-success btn-sm" target="_blank">Añadir Registro</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Espaciado para el navbar fijo -->
+  <div style="height: 100px;"></div>
+
+  <div class="container-fluid mt-5">
+    <h1 class="text-center mb-4">Lista de Evaluaciones</h1>
+    <!-- Bloque para seleccionar cliente -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="clientSelect">Selecciona un Cliente:</label>
+        <select id="clientSelect" class="form-select">
+          <option value="">Seleccione un cliente</option>
+        </select>
+      </div>
+      <div class="col-md-2 align-self-end">
+        <button id="loadData" class="btn btn-primary">Cargar Datos</button>
+      </div>
+      <div class="col-md-2 align-self-end">
+        <button id="btnSocializarEvaluacion" class="btn btn-success btn-sm" title="Enviar Evaluación de Estándares Mínimos por email al cliente y consultor">
+          <i class="fas fa-envelope"></i> Socializar Evaluación
+        </button>
+      </div>
+      <div class="col-md-2 align-self-end">
+        <button id="btnResetCicloPHVA" class="btn btn-danger btn-sm" title="Resetear las 37 evaluaciones del ciclo PHVA anual" data-bs-toggle="modal" data-bs-target="#confirmResetModal">
+          <i class="fas fa-redo-alt"></i> Resetear Ciclo PHVA
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal de Confirmación para Reset PHVA -->
+    <div class="modal fade" id="confirmResetModal" tabindex="-1" aria-labelledby="confirmResetModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title" id="confirmResetModalLabel">
+              <i class="fas fa-exclamation-triangle me-2"></i>Confirmar Reseteo del Ciclo PHVA
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-warning">
+              <i class="fas fa-info-circle me-2"></i>
+              <strong>Información:</strong> Esta acción reseteará las 37 evaluaciones del ciclo PHVA anual. Los campos de evaluación inicial quedarán vacíos y el puntaje cuantitativo se pondrá en 0.
+            </div>
+            <div class="alert alert-danger">
+              <i class="fas fa-exclamation-circle me-2"></i>
+              <strong>¡ATENCIÓN!</strong> Esta acción no se puede deshacer.
+            </div>
+            <p class="fs-5">¿Está seguro que desea resetear el ciclo PHVA para:</p>
+            <p class="fs-4 fw-bold text-center text-primary" id="clienteNombreConfirm"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-danger" id="btnEjecutarReset">
+              <i class="fas fa-check me-1"></i>Sí, Resetear Ahora
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjetas de indicadores compactas -->
+    <div id="indicatorsRow" class="row mb-4" style="display: none;">
+      <div class="col-md-2">
+        <div class="card shadow-sm border-light h-100">
+          <div class="card-body text-center py-2" style="background-color: #FFE5EC;">
+            <h6 class="card-title text-secondary mb-1" style="font-size: 0.8rem;">Puntuación Actual</h6>
+            <p class="h5 font-weight-bold mb-0" id="puntajeActual">0</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card shadow-sm border-light h-100">
+          <div class="card-body text-center py-2" style="background-color: #E3FDFD;">
+            <h6 class="card-title text-secondary mb-1" style="font-size: 0.8rem;">Puntuación Máxima</h6>
+            <p class="h5 font-weight-bold mb-0" id="puntajeMaximo">0</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card shadow-sm border-light h-100">
+          <div class="card-body text-center py-2" style="background-color: #E5FBB8;">
+            <h6 class="card-title text-secondary mb-1" style="font-size: 0.8rem;">Cumplimiento %</h6>
+            <p class="h5 font-weight-bold mb-0" id="indicadorGeneral">0%</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card shadow-sm border-light h-100">
+          <div class="card-body text-center py-2" style="background-color: #D4F6D4;">
+            <h6 class="card-title text-success mb-1" style="font-size: 0.75rem;">Cumple Total</h6>
+            <p class="small mb-0" id="cumpleTotal">0 (0%)</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card shadow-sm border-light h-100">
+          <div class="card-body text-center py-2" style="background-color: #FFEBEE;">
+            <h6 class="card-title text-danger mb-1" style="font-size: 0.75rem;">No Cumple</h6>
+            <p class="small mb-0" id="noCumple">0 (0%)</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card shadow-sm border-light h-100">
+          <div class="card-body text-center py-2" style="background-color: #FFF3E0;">
+            <h6 class="card-title text-warning mb-1" style="font-size: 0.75rem;">No Aplica</h6>
+            <p class="small mb-0" id="noAplica">0 (0%)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="clearState" class="btn btn-danger btn-sm mb-3">Restablecer Filtros</button>
+    <button id="toggleExpandAll" class="btn btn-outline-primary btn-sm mb-3 ms-2">
+      <i class="fas fa-expand-alt"></i> Expandir Textos
+    </button>
+    <div id="buttonsContainer"></div>
+    <div class="table-responsive">
+      <table id="evaluacionesTable" class="table table-striped table-bordered nowrap" style="width:100%">
+        <thead class="table-light">
+          <tr>
+            <!-- Columna para fila expandible -->
+            <th></th>
+            <th>Acciones</th>
+            <th>Cliente</th>
+            <th>Ciclo</th>
+            <th>Estándar</th>
+            <th>Item del Estándar</th>
+            <th>*Evaluación Inicial</th>
+            <th>Valor</th>
+            <th>Puntaje Cuantitativo</th>
+            <th>Item</th>
+            <th>Criterio</th>
+            <th>Modo de Verificación</th>
+            <th>Observaciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los datos se cargarán vía AJAX -->
+        </tbody>
+        <!-- Se reubica el tfoot debajo del tbody -->
+        <tfoot class="table-light">
+          <tr class="filters">
+            <th></th>
+            <th>
+              <select class="form-select form-select-sm filter-select" disabled>
+                <option value="">Todos</option>
+              </select>
+            </th>
+            <th>
+              <select class="form-select form-select-sm filter-select">
+                <option value="">Todos</option>
+              </select>
+            </th>
+            <th>
+              <select class="form-select form-select-sm filter-select">
+                <option value="">Todos</option>
+              </select>
+            </th>
+            <th>
+              <select class="form-select form-select-sm filter-select">
+                <option value="">Todos</option>
+              </select>
+            </th>
+            <th>
+              <select class="form-select form-select-sm filter-select">
+                <option value="">Todos</option>
+              </select>
+            </th>
+            <th>
+              <select class="form-select form-select-sm filter-select">
+                <option value="">Todos</option>
+              </select>
+            </th>
+            <th>
+              <select class="form-select form-select-sm filter-select">
+                <option value="">Todos</option>
+              </select>
+            </th>
+            <th>
+              <select class="form-select form-select-sm filter-select">
+                <option value="">Todos</option>
+              </select>
+            </th>
+            <th>
+              <select class="form-select form-select-sm filter-select">
+                <option value="">Todos</option>
+              </select>
+            </th>
+            <th>
+              <select class="form-select form-select-sm filter-select">
+                <option value="">Todos</option>
+              </select>
+            </th>
+            <th>
+              <select class="form-select form-select-sm filter-select">
+                <option value="">Todos</option>
+              </select>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white py-4 border-top mt-5">
+    <div class="container text-center">
+      <p class="fw-bold mb-1">Cycloid Talent SAS</p>
+      <p class="mb-1">Todos los derechos reservados © 2024</p>
+      <p class="mb-1">NIT: 901.653.912</p>
+      <p class="mb-3">Sitio oficial:
+        <a href="https://cycloidtalent.com/" target="_blank">https://cycloidtalent.com/</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap Bundle (incluye Popper.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+  <!-- DataTables Buttons JS -->
+  <script src="https://cdn.datatables.net/buttons/2.3.3/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.bootstrap5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.3/js/buttons.colVis.min.js"></script>
+
+  <script>
+    // Función para formatear la fila expandible (detalles)
+    function format(rowData) {
+      var html = '<table cellpadding="5" cellspacing="0" border="0" style="width: 60%; table-layout: auto; word-wrap: break-word;">';
+      var fields = [{
+          label: 'Cliente',
+          value: rowData.nombre_cliente
+        },
+        {
+          label: 'Ciclo',
+          value: rowData.ciclo
+        },
+        {
+          label: 'Estándar',
+          value: rowData.estandar
+        },
+        {
+          label: 'Item del Estándar',
+          value: rowData.item_del_estandar
+        },
+        {
+          label: 'Evaluación Inicial',
+          value: rowData.evaluacion_inicial
+        },
+        {
+          label: 'Valor',
+          value: rowData.valor
+        },
+        {
+          label: 'Puntaje Cuantitativo',
+          value: rowData.puntaje_cuantitativo
+        },
+        {
+          label: 'Item',
+          value: rowData.item
+        },
+        {
+          label: 'Criterio',
+          value: rowData.criterio
+        },
+        {
+          label: 'Modo de Verificación',
+          value: rowData.modo_de_verificacion
+        },
+        {
+          label: 'Observaciones',
+          value: rowData.observaciones
+        }
+      ];
+
+      fields.forEach(function (field) {
+        html += '<tr>';
+        html += '<td style="white-space: normal; padding: 5px;"><strong>' + field.label + ':</strong></td>';
+        html += '<td style="white-space: normal; padding: 5px;">' + (field.value || '') + '</td>';
+        html += '</tr>';
+      });
+
+      html += '</table>';
+      return html;
+    }
+
+    // Función para actualizar los filtros en el <tfoot>
+    function updateFilters(api) {
+      api.columns().every(function () {
+        var column = this;
+        var headerIndex = column.index();
+        var filterElement = $('tfoot tr.filters th').eq(headerIndex).find('.filter-select');
+        if (filterElement.length && !filterElement.prop('disabled')) {
+          filterElement.empty().append('<option value="">Todos</option>');
+          column.data().unique().sort().each(function (d) {
+            // Incluir valores vacíos/null como "-"
+            var displayValue = (d === null || d === "" || d === undefined) ? "-" : d;
+            if (filterElement.find('option[value="' + displayValue + '"]').length === 0) {
+              filterElement.append('<option value="' + displayValue + '">' + displayValue + '</option>');
+            }
+          });
+          var search = column.search();
+          if (search) {
+            filterElement.val(search);
+          }
+        }
+      });
+    }
+
+    // Inicialización una vez cargado el documento
+    $(document).ready(function () {
+      // Inicializar el select con Select2
+      $('#clientSelect').select2({
+        placeholder: 'Seleccione un cliente',
+        allowClear: true,
+        width: '100%'
+      });
+
+      // Cargar clientes vía AJAX usando las claves 'id' y 'nombre'
+      $.ajax({
+        url: "<?= base_url('/api/getClientes') ?>",
+        method: "GET",
+        dataType: "json",
+        success: function (data) {
+          data.forEach(function (cliente) {
+            $("#clientSelect").append('<option value="' + cliente.id + '">' + cliente.nombre + '</option>');
+          });
+          var storedClient = localStorage.getItem('selectedClient');
+          if (storedClient) {
+            $("#clientSelect").val(storedClient).trigger('change');
+            loadClientIndicators(storedClient);
+          }
+
+          // Escuchar cambios de cliente desde Quick Access Dashboard (otras pestañas)
+          function _syncClientFromQA(newClientId) {
+            console.log('[Evaluaciones] Sync recibido, cliente:', newClientId);
+            if ($('#clientSelect option[value="' + newClientId + '"]').length > 0) {
+              $('#clientSelect').val(newClientId).trigger('change');
+            }
+          }
+          window.addEventListener('storage', function(e) {
+            if (e.key === 'clientSyncTrigger' && e.newValue) {
+              _syncClientFromQA(e.newValue.split('|')[0]);
+            }
+          });
+          if (typeof BroadcastChannel !== 'undefined') {
+            var _qaSyncCh = new BroadcastChannel('quick_access_sync');
+            _qaSyncCh.onmessage = function(e) {
+              if (e.data && e.data.type === 'clientChange') _syncClientFromQA(e.data.clientId);
+            };
+          }
+        },
+        error: function () {
+          alert('Error al cargar la lista de clientes.');
+        }
+      });
+
+      // Inicializar DataTable con fila expandible y render para inline editing
+      var table = $('#evaluacionesTable').DataTable({
+        stateSave: true,
+        language: {
+          url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json"
+        },
+        pagingType: "full_numbers",
+        responsive: true,
+        autoWidth: false,
+        dom: 'Bfltip',
+        pageLength: 10,
+        buttons: [{
+            extend: 'excelHtml5',
+            text: 'Exportar a Excel',
+            className: 'btn btn-success btn-sm'
+          },
+          {
+            extend: 'colvis',
+            text: 'Seleccionar Columnas',
+            className: 'btn btn-secondary btn-sm'
+          }
+        ],
+        ajax: {
+          url: "<?= base_url('/api/getEvaluaciones') ?>",
+          data: function (d) {
+            d.cliente = $("#clientSelect").val();
+          },
+          dataSrc: ''
+        },
+columns: [{
+            data: null,
+            orderable: false,
+            className: 'details-control',
+            defaultContent: ''
+          },
+          {
+            data: 'acciones',
+            orderable: false
+          },
+          {
+            data: 'nombre_cliente',
+            render: function (data, type, row) {
+              if (type === 'display') {
+                return '<span data-bs-toggle="tooltip" title="' + data + '">' + data + '</span>';
+              }
+              return data;
+            }
+          },
+          {
+            data: 'ciclo'
+          },
+          {
+            data: 'estandar'
+          },
+          {
+            data: 'item_del_estandar',
+            render: function (data, type, row) {
+              if (type === 'display') {
+                return '<span class="cell-expandable" data-bs-toggle="tooltip" title="' + data + '">' + data + ' <i class="fas fa-caret-down expand-icon"></i></span>';
+              }
+              return data;
+            }
+          },
+          {
+            data: 'evaluacion_inicial',
+            render: function (data, type, row) {
+              // Normalizar valores vacíos/null a "-" para filter y display
+              data = (data === null || data === "") ? "-" : data;
+
+              if (type === 'filter') {
+                return data;
+              }
+
+              var displayText = data || '&nbsp;';
+              return '<span class="editable-select" data-field="evaluacion_inicial" data-id="' + row.id_ev_ini + '">' + displayText + '</span>';
+            }
+          },
+          {
+            data: 'valor'
+          },
+          {
+            data: 'puntaje_cuantitativo'
+          },
+          {
+            data: 'item',
+            render: function (data, type, row) {
+              if (type === 'display') {
+                return '<span data-bs-toggle="tooltip" title="' + (data || '') + '">' + (data || '') + '</span>';
+              }
+              return data;
+            }
+          },
+          {
+            data: 'criterio',
+            render: function (data, type, row) {
+              if (type === 'display') {
+                return '<span data-bs-toggle="tooltip" title="' + (data || '') + '">' + (data || '') + '</span>';
+              }
+              return data;
+            }
+          },
+          {
+            data: 'modo_de_verificacion',
+            render: function (data, type, row) {
+              if (type === 'display') {
+                return '<span data-bs-toggle="tooltip" title="' + (data || '') + '">' + (data || '') + '</span>';
+              }
+              return data;
+            }
+          },
+          {
+            data: 'observaciones',
+            render: function (data, type, row) {
+              if (type === 'filter') {
+                return data;
+              }
+              data = (data === null || data === "") ? "-" : data;
+              var displayText = data || '&nbsp;';
+              return '<span class="editable" data-field="observaciones" data-id="' + row.id_ev_ini + '">' + displayText + '</span>';
+            }
+          }
+        ],
+        initComplete: function () {
+          var api = this.api();
+          updateFilters(api);
+        }
+      });
+
+      table.buttons().container().appendTo('#buttonsContainer');
+
+      // Evento para actualizar filtro al cambiar alguna opción en el <tfoot>
+      $('tfoot').on('change', '.filter-select', function () {
+        var columnIndex = $(this).closest('th').index();
+        var value = $(this).val();
+        table.column(columnIndex).search(value).draw();
+      });
+
+      // Evento para fila expandible (row child details)
+      $('#evaluacionesTable tbody').on('click', 'td.details-control', function () {
+        var tr = $(this).closest('tr');
+        var row = table.row(tr);
+        if (row.child.isShown()) {
+          row.child.hide();
+          tr.removeClass('shown');
+        } else {
+          row.child(format(row.data())).show();
+          tr.addClass('shown');
+        }
+      });
+
+      // Funcionalidad de edición en línea con stopPropagation
+      $(document).on('click', '.editable-select, .editable', function (e) {
+        e.stopPropagation(); // Evita que se active la fila expandible
+        if ($(this).find('input, select').length) return;
+
+        var cell = $(this);
+        var field = cell.data('field');
+        var id = cell.data('id');
+        var currentValue = cell.text().trim();
+
+        if (field === 'evaluacion_inicial') {
+          var options = ['CUMPLE TOTALMENTE', 'NO CUMPLE', 'NO APLICA'];
+          var select = $('<select>', {
+            class: 'form-select form-select-sm'
+          });
+          // Agregar opción vacía
+          select.append($('<option>', {
+            value: '',
+            text: '-- Seleccionar --',
+            selected: currentValue === '-' || currentValue === ''
+          }));
+          options.forEach(function (option) {
+            select.append($('<option>', {
+              value: option,
+              text: option,
+              selected: option === currentValue
+            }));
+          });
+          cell.html(select);
+          select.focus();
+          select.on('blur change', function () {
+            var newValue = select.val();
+            cell.text(newValue);
+            updateField(id, field, newValue, cell);
+          });
+        } else if (field === 'observaciones') {
+          var input = $('<input>', {
+            type: 'text',
+            class: 'form-control',
+            value: currentValue
+          });
+          cell.html(input);
+          input.focus();
+          input.on('blur', function () {
+            var newValue = input.val();
+            cell.text(newValue);
+            updateField(id, field, newValue, cell);
+          });
+        }
+      });
+
+      function updateField(id, field, value, cell) {
+        $.ajax({
+          url: '<?= base_url('/api/updateEvaluacion') ?>',
+          method: 'POST',
+          data: {
+            id: id,
+            field: field,
+            value: value
+          },
+          success: function (response) {
+            if (response.success) {
+              console.log(response.message);
+              if (field === 'evaluacion_inicial' && response.puntaje_cuantitativo !== undefined) {
+                var row = cell.closest('tr');
+                row.find('td').eq(8).text(response.puntaje_cuantitativo);
+              }
+              // Refresh indicator cards after any successful change
+              var clientId = $("#clientSelect").val();
+              if (clientId) {
+                loadClientIndicators(clientId);
+              }
+            } else {
+              alert('Error: ' + response.message);
+            }
+          },
+          error: function (xhr, status, error) {
+            console.error('Error al comunicarse con el servidor:', error);
+            alert('Error al comunicarse con el servidor: ' + error);
+          }
+        });
+      }
+
+      // Función para cargar indicadores del cliente
+      function loadClientIndicators(clientId) {
+        if (!clientId) {
+          $('#indicatorsRow').hide();
+          return;
+        }
+        
+        $.ajax({
+          url: "<?= base_url('/api/getClientIndicators') ?>",
+          method: "GET",
+          data: { cliente_id: clientId },
+          dataType: "json",
+          success: function (data) {
+            if (data.success) {
+              // Mostrar las tarjetas
+              $('#indicatorsRow').show();
+              
+              // Actualizar los valores
+              $('#puntajeActual').text(data.sum_puntaje_cuantitativo || 0);
+              $('#puntajeMaximo').text(data.sum_valor || 0);
+              $('#indicadorGeneral').text(Math.round((data.indicador_general || 0) * 100) + '%');
+              
+              // Calcular porcentajes para las categorías
+              var totalItems = (data.count_cumple || 0) + (data.count_no_cumple || 0) + (data.count_no_aplica || 0);
+              var cumplePct = totalItems > 0 ? Math.round((data.count_cumple / totalItems) * 100) : 0;
+              var noCumplePct = totalItems > 0 ? Math.round((data.count_no_cumple / totalItems) * 100) : 0;
+              var noAplicaPct = totalItems > 0 ? Math.round((data.count_no_aplica / totalItems) * 100) : 0;
+              
+              $('#cumpleTotal').text((data.count_cumple || 0) + ' (' + cumplePct + '%)');
+              $('#noCumple').text((data.count_no_cumple || 0) + ' (' + noCumplePct + '%)');
+              $('#noAplica').text((data.count_no_aplica || 0) + ' (' + noAplicaPct + '%)');
+            } else {
+              $('#indicatorsRow').hide();
+            }
+          },
+          error: function () {
+            $('#indicatorsRow').hide();
+          }
+        });
+      }
+
+      $("#loadData").click(function () {
+        var clientId = $("#clientSelect").val();
+        if (clientId) {
+          localStorage.setItem('selectedClient', clientId);
+          loadClientIndicators(clientId);
+          table.ajax.reload();
+        } else {
+          alert('Por favor, seleccione un cliente.');
+        }
+      });
+
+      $('#clientSelect').on('change', function () {
+        var clientId = $(this).val();
+        if (clientId) {
+          localStorage.setItem('selectedClient', clientId);
+          loadClientIndicators(clientId);
+          table.ajax.reload();
+        } else {
+          $('#indicatorsRow').hide();
+        }
+      });
+
+      $("#clearState").on("click", function () {
+        localStorage.removeItem('selectedClient');
+        var storageKey = 'DataTables_' + table.table().node().id + '_' + window.location.pathname;
+        localStorage.removeItem(storageKey);
+        table.state.clear();
+        $('tfoot .filter-select').each(function () {
+          $(this).val('');
+        });
+        table.columns().search('').draw();
+        $("#clientSelect").val(null).trigger("change");
+        $('#indicatorsRow').hide(); // Ocultar las tarjetas de indicadores
+      });
+
+      function initializeTooltips() {
+        // Destruir tooltips existentes primero
+        var existingTooltips = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        existingTooltips.forEach(function (element) {
+          var tooltip = bootstrap.Tooltip.getInstance(element);
+          if (tooltip) {
+            tooltip.dispose();
+          }
+        });
+
+        // Crear nuevos tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl, {
+            trigger: 'hover',
+            container: 'body'
+          });
+        });
+      }
+      initializeTooltips();
+
+      // Actualizar filtros y tooltips en cada redibujado de la tabla
+      table.on('draw.dt', function () {
+        updateFilters(table);
+        initializeTooltips();
+      });
+
+      // Click individual para expandir/contraer celda de item_del_estandar
+      $('#evaluacionesTable tbody').on('click', '.cell-expandable', function (e) {
+        e.stopPropagation();
+        var td = $(this).closest('td');
+        td.toggleClass('expanded-cell');
+        var icon = $(this).find('.expand-icon');
+        if (td.hasClass('expanded-cell')) {
+          icon.removeClass('fa-caret-down').addClass('fa-caret-up');
+        } else {
+          icon.removeClass('fa-caret-up').addClass('fa-caret-down');
+        }
+      });
+
+      // Botón global expandir/contraer todos los textos
+      var allExpanded = false;
+      $('#toggleExpandAll').on('click', function () {
+        allExpanded = !allExpanded;
+        var $cells = $('#evaluacionesTable tbody td:nth-child(6)'); // columna item_del_estandar (índice 6)
+        if (allExpanded) {
+          $cells.addClass('expanded-cell');
+          $cells.find('.expand-icon').removeClass('fa-caret-down').addClass('fa-caret-up');
+          $(this).html('<i class="fas fa-compress-alt"></i> Contraer Textos');
+        } else {
+          $cells.removeClass('expanded-cell');
+          $cells.find('.expand-icon').removeClass('fa-caret-up').addClass('fa-caret-down');
+          $(this).html('<i class="fas fa-expand-alt"></i> Expandir Textos');
+        }
+      });
+
+      // Manejador para el botón de Socializar Evaluación de Estándares
+      $('#btnSocializarEvaluacion').on('click', function() {
+        var clienteId = $('#clientSelect').val();
+
+        if (!clienteId) {
+          alert('Debe seleccionar un cliente primero.');
+          return;
+        }
+
+        if (!confirm('¿Desea enviar la Evaluación de Estándares Mínimos por email al cliente y al consultor?')) {
+          return;
+        }
+
+        var $btn = $(this);
+        $btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> Enviando...');
+
+        $.ajax({
+          url: '<?= base_url('/socializacion/send-evaluacion-estandares') ?>',
+          method: 'POST',
+          data: {
+            id_cliente: clienteId,
+            '<?= csrf_token() ?>': '<?= csrf_hash() ?>'
+          },
+          dataType: 'json',
+          success: function(response) {
+            if (response.success) {
+              alert('Email enviado exitosamente.\n\n' + response.message);
+            } else {
+              alert('Error: ' + response.message);
+            }
+          },
+          error: function(xhr, status, error) {
+            alert('Error al enviar el email: ' + error);
+            console.error('Error AJAX:', xhr.responseText);
+          },
+          complete: function() {
+            $btn.prop('disabled', false).html('<i class="fas fa-envelope"></i> Socializar Evaluación');
+          }
+        });
+      });
+
+      // ============================================
+      // Funcionalidad Reset Ciclo PHVA
+      // ============================================
+
+      // Validar que haya cliente seleccionado antes de abrir el modal
+      $('#btnResetCicloPHVA').on('click', function(e) {
+        var clienteId = $('#clientSelect').val();
+        if (!clienteId) {
+          e.preventDefault();
+          e.stopPropagation();
+          alert('Debe seleccionar un cliente primero.');
+          return false;
+        }
+        // Mostrar nombre del cliente en el modal
+        var clienteNombre = $('#clientSelect option:selected').text();
+        $('#clienteNombreConfirm').text(clienteNombre);
+      });
+
+      // Ejecutar el reset cuando se confirma
+      $('#btnEjecutarReset').on('click', function() {
+        var clienteId = $('#clientSelect').val();
+        var $btn = $(this);
+
+        if (!clienteId) {
+          alert('Debe seleccionar un cliente primero.');
+          $('#confirmResetModal').modal('hide');
+          return;
+        }
+
+        $btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin me-1"></i>Procesando...');
+
+        $.ajax({
+          url: '<?= base_url('api/resetCicloPHVA') ?>',
+          method: 'POST',
+          data: {
+            id_cliente: clienteId,
+            '<?= csrf_token() ?>': '<?= csrf_hash() ?>'
+          },
+          dataType: 'json',
+          success: function(response) {
+            $('#confirmResetModal').modal('hide');
+            if (response.success) {
+              alert('✅ ' + response.message);
+              // Recargar la tabla para reflejar los cambios
+              $('#loadData').click();
+            } else {
+              alert('❌ Error: ' + response.message);
+            }
+          },
+          error: function(xhr, status, error) {
+            $('#confirmResetModal').modal('hide');
+            alert('❌ Error al procesar la solicitud: ' + error);
+            console.error('Error:', xhr.responseText);
+          },
+          complete: function() {
+            $btn.prop('disabled', false).html('<i class="fas fa-check me-1"></i>Sí, Resetear Ahora');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
