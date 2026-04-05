@@ -2,13 +2,10 @@
 # Operating Specific Junk Files
 #-------------------------
 
-
 # OS X
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# OS X Thumbnails
 ._*
 
 # Windows image file caches
@@ -123,38 +120,65 @@ nb-configuration.xml
 # Visual Studio Code
 .vscode/
 
-# Claude settings (contiene secrets de producción)
-.claude/settings.json
+#-------------------------
+# Claude Code
+#-------------------------
+.claude/
 
-# Scripts utilitarios con credenciales (solo uso local)
+#-------------------------
+# Archivos de configuracion con credenciales
+#-------------------------
+app/Config/App.php
+app/Config/Database.php
+
+#-------------------------
+# Scripts con credenciales hardcodeadas (solo uso local)
+#-------------------------
 app/Commands/ReplicateDbStructure.php
 app/Commands/ReplicateToTat.php
 app/Commands/CopyConsultores.php
 app/Commands/CopyUsuarios.php
 app/Commands/CreateUsuariosConsultores.php
+app/Commands/CreateTestClient.php
+app/Commands/FixTestClient.php
 tools/cargar_pdfs_produccion.php
 tools/clasificar_pdfs.php
 tools/reparar_nombres_v2.php
 tools/reparar_nombres_archivos.php
 app/SQL/query_pta_indicadores.php
 
+#-------------------------
+# Archivos temporales y basura
+#-------------------------
+tmp_*.php
+bash.exe.stackdump
+composer-setup.php
+generate_icons.php
+sendgrid.env*
+nul
+*.stackdump
+
+#-------------------------
+# Archivos de migracion SQL sueltos (ya aplicados)
+#-------------------------
+*.sql
+
+#-------------------------
+# Composer lock y json (gestionados localmente)
+#-------------------------
+composer.lock
+composer.json
+
+#-------------------------
+# Resultados de tests
+#-------------------------
 /results/
 /phpunit*.xml
 
-# Ignorar archivos de configuración específicos
-app/Config/App.php
-app/Config/Database.php
-
-sendgrid.envsendgrid.env
-
-composer.lock
-composer.json
-nul
-
 #-------------------------
-# Uploads dinámicos de producción
+# Uploads dinamicos de produccion
 # NUNCA borrar con git clean — estos archivos
-# son documentación de clientes generada en producción
+# son documentacion de clientes generada en produccion
 #-------------------------
 writable/soportes-clientes/
 public/uploads/*/
@@ -167,3 +191,14 @@ public/uploads/matrices/
 public/uploads/planillas-seguridad-social/
 public/uploads/reportes/
 public/uploads/imagenesplanemergencias/
+
+#-------------------------
+# Archivos de notas/bocetos (no son parte del sistema)
+#-------------------------
+z_*.txt
+Z_*.TXT
+y_*.txt
+ZZ_*.txt
+zz_*.txt
+emergencias.txt
+senalizacion.txt
