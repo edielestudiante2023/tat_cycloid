@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php helper("pwa"); echo pwa_client_head(); ?>
     <title>4.1.2 Procedimiento para Acciones Correctivas, Preventivas y de Mejora (ACPM)</title>
     <style>
         body {
@@ -396,6 +397,7 @@ Fecha: <?= isset($latestVersion['sin_contrato']) && $latestVersion['sin_contrato
         </a>
     </div> -->
 
+<?php helper("pwa"); echo pwa_client_scripts(); ?>
 </body>
 
 </html>

@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1b4332">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mi SST">
+    <link rel="manifest" href="<?= base_url('manifest_client.json?v=1') ?>">
+    <link rel="apple-touch-icon" href="<?= base_url('icons/icon-192.png') ?>">
     <title>Cycloid TAT - Tienda a Tienda</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -807,6 +813,24 @@
                 });
             });
         });
+    </script>
+
+    <!-- PWA: Banner offline + Service Worker -->
+    <div id="offlineBanner" style="display:none;position:fixed;top:0;left:0;right:0;background:#e76f51;color:#fff;text-align:center;padding:8px;z-index:9999;font-weight:600;">
+        <i class="fas fa-wifi-slash"></i> Sin conexi&oacute;n - Modo offline
+    </div>
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('<?= base_url("sw_client.js") ?>', {
+                scope: '<?= base_url() ?>'
+            })
+            .then(function(reg) { console.log('Client SW registered, scope:', reg.scope); })
+            .catch(function(err) { console.log('Client SW error:', err); });
+        });
+    }
+    window.addEventListener('online', function() { document.getElementById('offlineBanner').style.display = 'none'; });
+    window.addEventListener('offline', function() { document.getElementById('offlineBanner').style.display = 'block'; });
     </script>
 </body>
 

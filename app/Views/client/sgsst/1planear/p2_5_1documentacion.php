@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php helper("pwa"); echo pwa_client_head(); ?>
     <title>2.5.1 Procedimiento para el Control y Conservación de Documentos del SG-SST</title>
     <style>
         body {
@@ -419,6 +420,7 @@
         </a>
     </div> -->
 
+<?php helper("pwa"); echo pwa_client_scripts(); ?>
 </body>
 
 </html>
