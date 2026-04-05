@@ -706,10 +706,18 @@
         })();
     </script>
 
-    <!-- PWA: Banner offline + Service Worker -->
+    <!-- PWA: Banner offline + Boton volver + Service Worker -->
     <div id="offlineBanner" style="display:none;position:fixed;top:0;left:0;right:0;background:#e76f51;color:#fff;text-align:center;padding:8px;z-index:9999;font-weight:600;">
         <i class="fas fa-wifi-slash"></i> Sin conexi&oacute;n - Modo offline
     </div>
+    <a href="<?= base_url('client/dashboard') ?>" id="btnVolverDashboard" title="Volver al Dashboard" style="position:fixed;bottom:24px;left:24px;z-index:9998;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1b4332,#2d6a4f);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,0.3);text-decoration:none;font-size:22px;transition:transform 0.2s,box-shadow 0.2s;border:2px solid rgba(255,255,255,0.2);">
+        <i class="fas fa-home"></i>
+    </a>
+    <style>
+    #btnVolverDashboard:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(0,0,0,0.4);}
+    #btnVolverDashboard:active{transform:scale(0.95);}
+    @media(max-width:768px){#btnVolverDashboard{bottom:20px;left:16px;width:50px;height:50px;font-size:20px;}}
+    </style>
     <script>
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
