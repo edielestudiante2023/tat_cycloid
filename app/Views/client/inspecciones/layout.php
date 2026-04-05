@@ -148,7 +148,7 @@
         <i class="fas fa-wifi-slash"></i> Sin conexi&oacute;n - Modo offline
     </div>
     <a href="<?= base_url('client/dashboard') ?>" id="btnVolverDashboard" title="Volver al Dashboard" style="position:fixed;bottom:24px;left:24px;z-index:9998;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1b4332,#2d6a4f);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,0.3);text-decoration:none;font-size:22px;transition:transform 0.2s,box-shadow 0.2s;border:2px solid rgba(255,255,255,0.2);">
-        <i class="fas fa-home"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40h-16c-1.1 0-2.2 0-3.3-.1-1.4 .1-2.8 .1-4.2 .1H392c-22.1 0-40-17.9-40-40V360c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32v112c0 22.1-17.9 40-40 40h-12c-1.5 0-3-.1-4.5-.2-1 .1-2.1 .2-3.1 .2H88c-22.1 0-40-17.9-40-40v-78.2c0-2.6-.2-5.2-.5-7.8V288H32c-18 0-32-14-32-32.1 0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7l255.4 224.5c8 7 12 15 11 24z"/></svg>
     </a>
     <style>
     #btnVolverDashboard:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(0,0,0,0.4);}
