@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>HARDENING DE REPOSITORIO &mdash; tat&lowbar;cycloid</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="hardening-de-repositorio--tat_cycloid">HARDENING DE REPOSITORIO — tat_cycloid</h1>
+<p><strong>Fecha:</strong> 2026-04-05
+<strong>Aplicativo:</strong> tat_cycloid — Plataforma SST Tienda a Tienda (TAT)
+<strong>Empresa:</strong> Cycloid Talent
+<strong>Preparado para:</strong> Edwin Lopez (consultor de infraestructura)</p>
+<hr>
+<h2 id="tabla-de-contenido">TABLA DE CONTENIDO</h2>
+<ol>
+<li>Descripcion del aplicativo</li>
+<li>Mapa de base de datos</li>
+<li>Inventario de API Keys y servicios externos</li>
+<li>Documentacion del proyecto (README, CONTRIBUTING, .env.example)</li>
+<li>Ramas de trabajo</li>
+<li>Pipelines CI/CD</li>
+<li>Organizacion del repositorio</li>
+<li>Hallazgos criticos y acciones pendientes</li>
+</ol>
+<hr>
+<h2 id="1-descripcion-del-aplicativo">1. DESCRIPCION DEL APLICATIVO</h2>
+<h3 id="origen">Origen</h3>
+<p><code>tat_cycloid</code> es un fork independiente de <code>enterprisesstph</code>. Mientras enterprisesstph atiende el segmento de Propiedad Horizontal, <code>tat_cycloid</code> atiende el segmento de Tienda a Tienda (TAT) — asesoria SST al tendero.</p>
+<p>Comparten la misma base de codigo, pero cada uno tiene:</p>
+<ul>
+<li>Base de datos independiente</li>
+<li>Branding independiente (Cycloid TAT)</li>
+<li>Configuracion independiente (.env, dominio, deploy)</li>
+</ul>
+<h3 id="stack-tecnologico">Stack tecnologico</h3>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Tecnologia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backend</td>
+<td>PHP 8.2 + CodeIgniter 4</td>
+</tr>
+<tr>
+<td>Base de datos</td>
+<td>MySQL 8 (DigitalOcean Managed, SSL required)</td>
+</tr>
+<tr>
+<td>Servidor web</td>
+<td>Nginx 1.24 (Ubuntu 24.04)</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>SendGrid API v3</td>
+</tr>
+<tr>
+<td>PDF</td>
+<td>TCPDF (contratos) + DOMPDF 3.0.0 (certificados, actas, inspecciones)</td>
+</tr>
+<tr>
+<td>Excel</td>
+<td>PhpSpreadsheet</td>
+</tr>
+<tr>
+<td>IA</td>
+<td>OpenAI GPT-4o-mini (Chat Otto, generacion de textos)</td>
+</tr>
+<tr>
+<td>IA (tools)</td>
+<td>Anthropic Claude Haiku (clasificacion de PDFs)</td>
+</tr>
+<tr>
+<td>PWA</td>
+<td>Modulo inspecciones (manifest + service worker)</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>Looker Studio (embeds)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modulos-principales-16">Modulos principales (16)</h3>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Descripcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contratos</td>
+<td>Ciclo completo: creacion, firma digital, PDF, renovacion, cancelacion</td>
+</tr>
+<tr>
+<td>Plan de Trabajo Anual (PTA)</td>
+<td>Actividades PHVA por cliente, edicion inline, exportacion Excel, auditoria</td>
+</tr>
+<tr>
+<td>Evaluacion Estandares Minimos</td>
+<td>Decreto 1072, evaluacion por ciclo, historial de puntajes</td>
+</tr>
+<tr>
+<td>Actas de Visita</td>
+<td>Registro con fotos, firma digital, PDF, notificaciones</td>
+</tr>
+<tr>
+<td>Inspecciones (PWA)</td>
+<td>Locativa, extintores, botiquin, gabinetes, senalizacion, comunicaciones, recursos</td>
+</tr>
+<tr>
+<td>Capacitaciones</td>
+<td>Cronograma, asistencia induccion, evaluacion, reportes</td>
+</tr>
+<tr>
+<td>KPIs</td>
+<td>17 indicadores SST (frecuencia, severidad, mortalidad, ausentismo, etc.)</td>
+</tr>
+<tr>
+<td>Pendientes</td>
+<td>Compromisos con conteo de dias, recordatorios automaticos</td>
+</tr>
+<tr>
+<td>Plan de Saneamiento</td>
+<td>Limpieza, residuos, plagas, agua potable, contingencias, KPIs</td>
+</tr>
+<tr>
+<td>Documentos SGSST</td>
+<td>Documentos normativos (politicas, programas, formatos)</td>
+</tr>
+<tr>
+<td>Matrices</td>
+<td>Riesgos, vulnerabilidad, EPP (generacion automatica desde plantillas Excel)</td>
+</tr>
+<tr>
+<td>Chat Otto (IA)</td>
+<td>Asistente IA con function calling, consultas SQL readonly, 3 capas de seguridad</td>
+</tr>
+<tr>
+<td>Presupuesto SST</td>
+<td>Categorias, items, detalle de ejecucion</td>
+</tr>
+<tr>
+<td>Informes de Avances</td>
+<td>Reportes mensuales con metricas e imagenes</td>
+</tr>
+<tr>
+<td>Firmas Digitales</td>
+<td>Firma electronica via token por email (contratos + protocolo alturas)</td>
+</tr>
+<tr>
+<td>Portal Cliente</td>
+<td>Dashboard readonly, chat Otto, inspecciones, reportes, pendientes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="roles-de-usuario">Roles de usuario</h3>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Acceso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>admin</td>
+<td>Todo el sistema + gestion de usuarios + configuracion</td>
+</tr>
+<tr>
+<td>consultant</td>
+<td>Gestion de clientes asignados + inspecciones + chat IA completo</td>
+</tr>
+<tr>
+<td>client</td>
+<td>Portal readonly + chat Otto (solo SELECT)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="estructura-del-proyecto">Estructura del proyecto</h3>
+<pre><code>tat_cycloid/
+├── app/
+│   ├── Commands/          # 18 comandos spark (cron jobs + utilidades)
+│   ├── Config/            # Routes.php, Database.php, Filters.php
+│   ├── Controllers/       # ~171 controladores
+│   │   └── Inspecciones/  # ~44 controladores de inspecciones (PWA)
+│   ├── Filters/           # AuthFilter, ApiKeyFilter, AuthOrApiKeyFilter
+│   ├── Libraries/         # 17 librerias de logica de negocio
+│   ├── Models/            # ~111 modelos
+│   ├── Services/          # IADocumentacionService, PtaAuditService, PtaTransicionesService
+│   ├── SQL/               # Scripts de migracion
+│   ├── Templates/         # Plantillas Excel para matrices
+│   └── Views/             # Vistas PHP
+├── docs/                  # ~60 documentos tecnicos
+├── public/                # Punto de entrada web (index.php)
+├── tools/                 # Scripts utilitarios
+├── tests/                 # Tests PHPUnit
+├── writable/              # Logs, cache, sesiones
+├── .env                   # Variables de entorno (NO commitear)
+├── deploy.sh              # Script de deploy
+├── README.md              # Documentacion principal
+└── spark                  # CLI de CodeIgniter
+</code></pre>
+<h3 id="servidor-de-produccion">Servidor de produccion</h3>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP</td>
+<td>66.29.154.174</td>
+</tr>
+<tr>
+<td>Hostname</td>
+<td><a href="http://server1.cycloidtalent.com">server1.cycloidtalent.com</a></td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Ubuntu 24.04.3 LTS</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>8.2.28</td>
+</tr>
+<tr>
+<td>MySQL</td>
+<td>MariaDB 10.11.13 (local) / MySQL 8 (DigitalOcean Managed)</td>
+</tr>
+<tr>
+<td>Nginx</td>
+<td>1.24.0</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>1.9 GB total, 1.0 GB usada</td>
+</tr>
+<tr>
+<td>Disco</td>
+<td>40 GB, 62% usado (15 GB disponibles)</td>
+</tr>
+<tr>
+<td>Uptime</td>
+<td>179 dias</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nota:</strong> El servidor es compartido con <code>enterprisesstph</code>. La auditoria detallada del servidor esta en <code>HARDENING-enterprisesstph.md</code>.</p>
+<hr>
+<h2 id="2-mapa-de-base-de-datos">2. MAPA DE BASE DE DATOS</h2>
+<p><strong>Motor:</strong> MySQL 8 (DigitalOcean Managed)
+<strong>Base de datos:</strong> tat_cycloid
+<strong>Tamano total:</strong> 5.34 MB
+<strong>SSL:</strong> Required</p>
+<h3 id="usuarios-de-base-de-datos">Usuarios de base de datos</h3>
+<table>
+<thead>
+<tr>
+<th>Usuario</th>
+<th>Permisos</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cycloid_userdb</td>
+<td>Full access</td>
+<td>Aplicacion principal (CRUD)</td>
+</tr>
+<tr>
+<td>cycloid_readonly</td>
+<td>SELECT only (vistas v_* + tablas maestras)</td>
+<td>Portal cliente (Chat Otto)</td>
+</tr>
+<tr>
+<td>doadmin</td>
+<td>Super admin</td>
+<td>Administracion DigitalOcean</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resumen">Resumen</h3>
+<ul>
+<li><strong>107 tablas</strong> (BASE TABLE)</li>
+<li><strong>75 vistas</strong> (VIEW) — 66 con prefijo <code>v_</code> para portal cliente + 9 de negocio</li>
+<li><strong>71 foreign keys</strong> definidas</li>
+<li><strong>~85 tablas vacias</strong> (79%) — el sistema esta recien desplegado, con solo 2 clientes de prueba</li>
+</ul>
+<h3 id="tablas-con-datos-registros--0">Tablas con datos (registros &gt; 0)</h3>
+<table>
+<thead>
+<tr>
+<th>Tabla</th>
+<th>Registros</th>
+<th>Descripcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>estandares_accesos</td>
+<td>80</td>
+<td>Accesos a estandares</td>
+</tr>
+<tr>
+<td>dashboard_items</td>
+<td>67</td>
+<td>Items del dashboard</td>
+</tr>
+<tr>
+<td>accesos</td>
+<td>59</td>
+<td>Permisos de acceso</td>
+</tr>
+<tr>
+<td>client_policies</td>
+<td>42</td>
+<td>Politicas de cliente</td>
+</tr>
+<tr>
+<td>policy_types</td>
+<td>44</td>
+<td>Tipos de politica</td>
+</tr>
+<tr>
+<td>document_versions</td>
+<td>42</td>
+<td>Versiones de documentos</td>
+</tr>
+<tr>
+<td>capacitaciones_sst</td>
+<td>31</td>
+<td>Catalogos de capacitaciones</td>
+</tr>
+<tr>
+<td>tbl_presupuesto_items</td>
+<td>25</td>
+<td>Items de presupuesto</td>
+</tr>
+<tr>
+<td>report_type_table</td>
+<td>20</td>
+<td>Tipos de reporte</td>
+</tr>
+<tr>
+<td>tbl_kpi_definition</td>
+<td>17</td>
+<td>Definiciones de KPI</td>
+</tr>
+<tr>
+<td>tbl_presupuesto_categorias</td>
+<td>8</td>
+<td>Categorias presupuesto</td>
+</tr>
+<tr>
+<td>tbl_sesiones_usuario</td>
+<td>8</td>
+<td>Sesiones activas</td>
+</tr>
+<tr>
+<td>tbl_usuarios</td>
+<td>6</td>
+<td>Usuarios del sistema</td>
+</tr>
+<tr>
+<td>tbl_usuario_roles</td>
+<td>6</td>
+<td>Roles asignados</td>
+</tr>
+<tr>
+<td>tbl_consultor</td>
+<td>4</td>
+<td>Consultores</td>
+</tr>
+<tr>
+<td>tbl_kpi_type</td>
+<td>4</td>
+<td>Tipos de KPI</td>
+</tr>
+<tr>
+<td>estandares</td>
+<td>4</td>
+<td>Estandares</td>
+</tr>
+<tr>
+<td>tbl_roles</td>
+<td>3</td>
+<td>Roles (admin, consultant, client)</td>
+</tr>
+<tr>
+<td>tbl_clientes</td>
+<td>2</td>
+<td>Clientes de prueba</td>
+</tr>
+<tr>
+<td>tbl_measurement_period</td>
+<td>2</td>
+<td>Periodos de medicion</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tabla-central-tbl_clientes">Tabla central: tbl_clientes</h3>
+<p>40+ tablas dependen de <code>tbl_clientes.id_cliente</code> via foreign key. Es la entidad central del sistema.</p>
+<h3 id="tablas-principales-por-modulo">Tablas principales por modulo</h3>
+<p><strong>Nucleo (7 tablas):</strong> tbl_clientes (2 reg), tbl_usuarios (6), tbl_usuario_roles (6), tbl_roles (3), tbl_consultor (4), tbl_sesiones_usuario (8), tbl_chat_log (0)</p>
+<p><strong>Plan de trabajo (5 tablas):</strong> tbl_pta_cliente, tbl_pta_cliente_audit, tbl_pta_cliente_old, tbl_pta_transiciones, tbl_inventario_actividades_plandetrabajo — todas vacias</p>
+<p><strong>Evaluacion estandares (5 tablas):</strong> evaluacion_inicial_sst, estandares (4), estandares_accesos (80), historial_resumen_estandares, historial_resumen_plan_trabajo</p>
+<p><strong>Reportes (5 tablas):</strong> tbl_reporte, report_type_table (20), detail_report, document_versions (42), tbl_listado_maestro_documentos</p>
+<p><strong>Actas de visita (5 tablas):</strong> tbl_acta_visita, tbl_acta_visita_fotos, tbl_acta_visita_integrantes, tbl_acta_visita_pta, tbl_acta_visita_temas</p>
+<p><strong>Inspecciones (12 tablas):</strong> 6 master + 5 detalle + 1 recursos seguridad — todas vacias</p>
+<p><strong>Capacitaciones (6 tablas):</strong> capacitaciones_sst (31), tbl_cronog_capacitacion, tbl_reporte_capacitacion, tbl_asistencia_induccion + asistentes</p>
+<p><strong>KPIs (10 tablas):</strong> tbl_kpis, tbl_kpi_definition (17), tbl_client_kpi, + variables, periodos, objetivos</p>
+<p><strong>Plan saneamiento (13 tablas):</strong> programas (agua, limpieza, plagas, residuos) + KPIs + contingencias</p>
+<p><strong>Otros:</strong> contratos, pendientes, informe_avances, presupuesto (4 tablas), matrices, mantenimientos, vigias, dotaciones (3 tablas)</p>
+<h3 id="vistas-de-negocio-9">Vistas de negocio (9)</h3>
+<p>cronograma_capacitaciones_cliente, evaluacion_inicial_cliente, evaluacion_inicial_cliente_consultor, mantenimientos_por_vencer, pendientes_abiertos_vencidos, pendientes_del_cliente, plan_de_trabajo_del_cliente, resumen_estandares_cliente, resumen_mensual_plan_trabajo, view_clientes_consultores, vista_cronograma_capacitaciones, vw_consumo_usuarios, vw_reporte_completo</p>
+<h3 id="vistas-del-portal-cliente-66-con-prefijo-v_">Vistas del portal cliente (66 con prefijo v_)</h3>
+<p>Todas las tablas principales tienen su vista <code>v_</code> correspondiente para acceso readonly del portal cliente.</p>
+<hr>
+<h2 id="3-inventario-de-api-keys-y-servicios-externos">3. INVENTARIO DE API KEYS Y SERVICIOS EXTERNOS</h2>
+<h3 id="resumen-1">Resumen</h3>
+<table>
+<thead>
+<tr>
+<th>Servicio</th>
+<th>Variable</th>
+<th>Archivos</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SendGrid</td>
+<td><code>SENDGRID_API_KEY</code></td>
+<td>20+</td>
+<td>Activa</td>
+</tr>
+<tr>
+<td>OpenAI</td>
+<td><code>OPENAI_API_KEY</code></td>
+<td>7</td>
+<td>Activa</td>
+</tr>
+<tr>
+<td>Anthropic</td>
+<td><code>ANTHROPIC_API_KEY</code></td>
+<td>1</td>
+<td>Activa (solo tools/)</td>
+</tr>
+<tr>
+<td>Token API</td>
+<td><code>APP_API_KEY</code></td>
+<td>2</td>
+<td>Activa — token interno</td>
+</tr>
+<tr>
+<td>Token Cron</td>
+<td><code>CRON_TOKEN</code></td>
+<td>1</td>
+<td>Activa</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sendgrid">SendGrid</h3>
+<p>Usado en 20+ archivos para todo el email transaccional: recuperacion de password, notificaciones de firma, recordatorios de pendientes, auditorias, inspecciones, contratos, onboarding de clientes.</p>
+<p><strong>Patron:</strong> <code>new \SendGrid(getenv('SENDGRID_API_KEY'))</code></p>
+<p><strong>Archivos principales:</strong></p>
+<ul>
+<li>10+ controladores (Auth, Chat, AdminDashboard, Email, FirmaElectronica, FirmaAlturas, Contract, Consultant, ClientOnboarding, InformeAvances, VencimientosMantenimiento, PlanillaSegSocial, SocializacionEmail)</li>
+<li>3 libraries (ResumenPendientesNotificador, NotificadorVisita, InspeccionEmailNotifier)</li>
+<li>4+ commands/cron (Seguimiento, Contratos, Pendientes, SinAgendar)</li>
+<li>Controladores de inspecciones (AgendamientoController, ActaVisitaController, CartaVigiaPwaController)</li>
+</ul>
+<h3 id="openai">OpenAI</h3>
+<p>Usado en 7 archivos para IA generativa: Chat Otto, generacion de clausulas de contratos, sugerencias PTA, analisis de pendientes, evaluaciones de capacitacion.</p>
+<p><strong>Patron:</strong> cURL directo a <code>https://api.openai.com/v1/chat/completions</code>
+<strong>Modelo:</strong> gpt-4o-mini (configurable via <code>OPENAI_MODEL</code>)</p>
+<p><strong>Archivos:</strong></p>
+<ul>
+<li><code>app/Controllers/ChatController.php</code> — Chat Otto con function calling</li>
+<li><code>app/Controllers/ContractController.php</code> — Generacion de clausulas</li>
+<li><code>app/Controllers/PtaClienteNuevaController.php</code> — Sugerencias PTA</li>
+<li><code>app/Controllers/PendientesController.php</code> — Analisis de pendientes</li>
+<li><code>app/Controllers/Inspecciones/ReporteCapacitacionController.php</code> — Evaluaciones</li>
+<li><code>app/Controllers/Inspecciones/AsistenciaInduccionController.php</code> — Evaluaciones</li>
+<li><code>app/Services/IADocumentacionService.php</code> — Servicio centralizado</li>
+</ul>
+<h3 id="anthropic-claude">Anthropic (Claude)</h3>
+<p>Solo 1 archivo: <code>tools/clasificar_pdfs.php</code> — clasificacion automatica de PDFs con Claude Haiku.</p>
+<h3 id="hallazgos-criticos-de-seguridad">HALLAZGOS CRITICOS DE SEGURIDAD</h3>
+<p><strong>CRITICO — Credenciales hardcodeadas en codigo:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Problema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app/Commands/ReplicateToTat.php:19</code></td>
+<td>Password BD produccion <code>AVNS_***REDACTED***</code> hardcodeado</td>
+</tr>
+<tr>
+<td><code>app/Commands/ReplicateDbStructure.php:19</code></td>
+<td>Password BD produccion hardcodeado</td>
+</tr>
+<tr>
+<td><code>app/Commands/CreateTestClient.php:18</code></td>
+<td>Password BD produccion hardcodeado</td>
+</tr>
+<tr>
+<td><code>app/Commands/FixTestClient.php:18</code></td>
+<td>Password BD produccion hardcodeado</td>
+</tr>
+<tr>
+<td><code>app/Commands/CreateUsuariosConsultores.php:18</code></td>
+<td>Password BD produccion hardcodeado</td>
+</tr>
+<tr>
+<td><code>app/Commands/CopyUsuarios.php:18</code></td>
+<td>Password BD produccion hardcodeado</td>
+</tr>
+<tr>
+<td><code>app/Commands/CopyConsultores.php:19</code></td>
+<td>Password BD produccion hardcodeado</td>
+</tr>
+<tr>
+<td><code>app/Config/Database.php:62</code></td>
+<td>Password readonly <code>CycloidPortal2026!</code> hardcodeado</td>
+</tr>
+<tr>
+<td><code>app/Controllers/UserController.php:288</code></td>
+<td>Fallback <code>SG.xxxxxx</code> hardcodeado</td>
+</tr>
+<tr>
+<td><code>app/SQL/query_pta_indicadores.php:5</code></td>
+<td>Password BD produccion <code>AVNS_***REDACTED_OLD***</code> (old) hardcodeado</td>
+</tr>
+<tr>
+<td><code>tools/cargar_pdfs_produccion.php:29,126</code></td>
+<td>Password BD produccion hardcodeado</td>
+</tr>
+<tr>
+<td><code>tools/clasificar_pdfs.php:418</code></td>
+<td>Password BD produccion hardcodeado</td>
+</tr>
+<tr>
+<td><code>tools/reparar_nombres_v2.php:22</code></td>
+<td>Password BD produccion hardcodeado</td>
+</tr>
+<tr>
+<td><code>tools/reparar_nombres_archivos.php:29</code></td>
+<td>Password BD produccion hardcodeado</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total: 14 archivos con credenciales hardcodeadas.</strong></p>
+<p><strong>CRITICO — Repositorio PUBLICO:</strong></p>
+<p>El repositorio <code>github.com/edielestudiante2023/tat_cycloid</code> es <strong>PUBLICO</strong>. El archivo <code>.env</code> esta en <code>.gitignore</code> pero las credenciales estan hardcodeadas en multiples archivos del codigo fuente. Ademas, algunos de estos archivos con credenciales estan en <code>.gitignore</code> (Commands de replicacion, tools/) pero otros NO:</p>
+<p><strong>Archivos con credenciales que SI estan trackeados en git:</strong></p>
+<ul>
+<li><code>app/Config/Database.php</code> — en <code>.gitignore</code> (OK)</li>
+<li><code>app/Controllers/UserController.php:288</code> — <strong>NO en .gitignore</strong> (EXPUESTO)</li>
+<li><code>app/SQL/query_pta_indicadores.php</code> — en <code>.gitignore</code> (OK)</li>
+</ul>
+<p><strong>CRITICO — .env con credenciales reales:</strong></p>
+<p>El <code>.env</code> local contiene:</p>
+<ul>
+<li><code>SENDGRID_API_KEY=SG.6jqYPC-TRGeBhbVpjoazeQ...</code> (API Key real)</li>
+<li><code>OPENAI_API_KEY=sk-proj-Efjaw4TAiR...</code> (API Key real)</li>
+<li><code>APP_API_KEY=sst_4f480e90e9c67de074c6...</code> (Token real)</li>
+<li><code>database.production.password=AVNS_***REDACTED_OLD***</code> (password BD produccion)</li>
+</ul>
+<p>Aunque <code>.env</code> esta en <code>.gitignore</code>, si alguna vez se commiteo por error, las credenciales quedarian en el historial de git.</p>
+<h3 id="claves-que-deben-rotarse">Claves que DEBEN rotarse</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Accion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SENDGRID_API_KEY</code></td>
+<td>Rotar</td>
+</tr>
+<tr>
+<td><code>OPENAI_API_KEY</code></td>
+<td>ROTAR INMEDIATAMENTE</td>
+</tr>
+<tr>
+<td><code>database.production.password</code></td>
+<td>Rotar en DigitalOcean (ya se uso <code>AVNS_***REDACTED***</code> nuevo)</td>
+</tr>
+<tr>
+<td><code>APP_API_KEY</code></td>
+<td>Regenerar</td>
+</tr>
+<tr>
+<td>Password readonly <code>CycloidPortal2026!</code></td>
+<td>Cambiar y mover a .env</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="4-documentacion-del-proyecto">4. DOCUMENTACION DEL PROYECTO</h2>
+<h3 id="estado-actual">Estado actual</h3>
+<table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Estado</th>
+<th>Accion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>README.md</code></td>
+<td>Existe pero es generico (CodeIgniter default)</td>
+<td><strong>Reescribir</strong></td>
+</tr>
+<tr>
+<td><code>CONTRIBUTING.md</code></td>
+<td>No existe</td>
+<td><strong>Crear</strong></td>
+</tr>
+<tr>
+<td><code>.env.example</code></td>
+<td>No existe</td>
+<td><strong>Crear</strong></td>
+</tr>
+<tr>
+<td><code>docs/</code></td>
+<td>60+ documentos tecnicos</td>
+<td>OK</td>
+</tr>
+</tbody>
+</table>
+<h3 id="archivos-pendientes-de-crear">Archivos pendientes de crear</h3>
+<p><strong><a href="http://README.html">README.md</a></strong> — Debe incluir:</p>
+<ul>
+<li>Stack tecnologico completo</li>
+<li>16 modulos con descripcion</li>
+<li>3 roles de usuario con accesos</li>
+<li>Estructura de carpetas</li>
+<li>Requisitos previos e instrucciones de instalacion</li>
+<li>Variables de entorno documentadas</li>
+<li>Cron jobs con frecuencia y descripcion</li>
+<li>Instrucciones de deploy</li>
+</ul>
+<p><strong><a href="http://CONTRIBUTING.html">CONTRIBUTING.md</a></strong> — Debe incluir:</p>
+<ul>
+<li>Flujo de ramas (main → develop → feature/ → hotfix/)</li>
+<li>Convencion de commits (feat:, fix:, docs:, refactor:, chore:)</li>
+<li>Convencion de nombres de ramas</li>
+<li>Reglas (no push directo, no credenciales, no temporales, no destructivos)</li>
+<li>Proceso de revision con pipeline CI/CD</li>
+</ul>
+<p><strong>.env.example</strong> — Debe incluir:</p>
+<ul>
+<li>Variables de entorno para BD principal y readonly</li>
+<li>API Keys de email (SendGrid), OpenAI, Anthropic</li>
+<li>Tokens internos (APP_API_KEY, CRON_TOKEN)</li>
+<li>Configuracion de BD de produccion (sin valores reales)</li>
+</ul>
+<hr>
+<h2 id="5-ramas-de-trabajo">5. RAMAS DE TRABAJO</h2>
+<h3 id="estado-actual-1">Estado actual</h3>
+<table>
+<thead>
+<tr>
+<th>Rama</th>
+<th>Estado</th>
+<th>Commit actual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>main</td>
+<td>En remoto (origin/main)</td>
+<td>Commit inicial</td>
+</tr>
+<tr>
+<td>cycloid</td>
+<td>Local, rama activa de desarrollo</td>
+<td>Rama de trabajo actual</td>
+</tr>
+</tbody>
+</table>
+<p><strong>No existe rama <code>develop</code>.</strong> Todo el desarrollo se hace en <code>cycloid</code> y se pushea a <code>main</code> directamente.</p>
+<h3 id="estructura-propuesta">Estructura propuesta</h3>
+<pre><code>main          ← Produccion. Solo codigo validado y estable.
+develop       ← Integracion. Aqui se unen los cambios antes de ir a main.
+feature/xxx   ← Nuevas funcionalidades. Se crean desde develop.
+hotfix/xxx    ← Correcciones urgentes. Se crean desde main.
+</code></pre>
+<h3 id="acciones-pendientes">Acciones pendientes</h3>
+<ol>
+<li>Crear rama <code>develop</code> a partir de <code>main</code></li>
+<li>Mergear <code>cycloid</code> a <code>develop</code> (o renombrar <code>cycloid</code> → <code>develop</code>)</li>
+<li>Proteger <code>main</code>: requiere PR, no push directo</li>
+<li>Proteger <code>develop</code>: requiere PR desde feature/</li>
+<li>Documentar flujo en <a href="http://CONTRIBUTING.html">CONTRIBUTING.md</a></li>
+</ol>
+<h3 id="flujo-de-trabajo-propuesto">Flujo de trabajo propuesto</h3>
+<ul>
+<li>Nueva funcionalidad: <code>develop</code> → <code>feature/nombre</code> → PR a <code>develop</code> → PR a <code>main</code></li>
+<li>Hotfix urgente: <code>main</code> → <code>hotfix/nombre</code> → PR a <code>main</code> + PR a <code>develop</code></li>
+</ul>
+<hr>
+<h2 id="6-pipelines-cicd">6. PIPELINES CI/CD</h2>
+<h3 id="estado-actual-2">Estado actual</h3>
+<p>No hay pipelines configurados. No existe carpeta <code>.github/workflows/</code> ni <code>.gitea/workflows/</code>.</p>
+<h3 id="propuesta-github-actions-ya-que-el-repo-esta-en-github">Propuesta (GitHub Actions, ya que el repo esta en GitHub)</h3>
+<p><strong>Pipeline 1: Validacion (en cada push/PR)</strong></p>
+<p>Archivo: <code>.github/workflows/validate.yml</code></p>
+<table>
+<thead>
+<tr>
+<th>Job</th>
+<th>Que hace</th>
+<th>Bloquea si falla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>syntax</td>
+<td><code>php -l</code> en todos los .php de app/</td>
+<td>Si</td>
+</tr>
+<tr>
+<td>secrets-scan</td>
+<td>Busca API keys hardcodeadas (SendGrid, OpenAI, Anthropic, DB passwords)</td>
+<td>Si</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pipeline 2: Deploy a produccion (en merge a main)</strong></p>
+<p>Archivo: <code>.github/workflows/deploy.yml</code></p>
+<table>
+<thead>
+<tr>
+<th>Job</th>
+<th>Que hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>validate</td>
+<td>Sintaxis PHP + busqueda de credenciales</td>
+</tr>
+<tr>
+<td>deploy</td>
+<td>SSH al servidor + <a href="http://deploy.sh">deploy.sh</a></td>
+</tr>
+<tr>
+<td>verify</td>
+<td>Verificacion HTTP post-deploy</td>
+</tr>
+</tbody>
+</table>
+<h3 id="secrets-necesarios-en-github">Secrets necesarios en GitHub</h3>
+<ul>
+<li><code>PROD_HOST</code>: 66.29.154.174</li>
+<li><code>PROD_USER</code>: root</li>
+<li><code>PROD_SSH_KEY</code>: Llave privada ed25519</li>
+<li><code>PROD_PATH</code>: Ruta del proyecto en el servidor (por confirmar)</li>
+</ul>
+<h3 id="deploysh"><a href="http://deploy.sh">deploy.sh</a></h3>
+<p>Ya existe un <code>deploy.sh</code> funcional, pero referencia a <code>enterprisesstph</code>. Debe actualizarse:</p>
+<ul>
+<li>Cambiar nombre de &quot;DEPLOY SEGURO — enterprisesstph&quot; a &quot;DEPLOY SEGURO — tat_cycloid&quot;</li>
+<li>Actualizar ruta de uploads si es diferente</li>
+</ul>
+<hr>
+<h2 id="7-organizacion-del-repositorio">7. ORGANIZACION DEL REPOSITORIO</h2>
+<h3 id="estado-del-repositorio">Estado del repositorio</h3>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Estado actual</th>
+<th>Accion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visibilidad</td>
+<td><strong>PUBLICO</strong> en GitHub</td>
+<td><strong>HACER PRIVADO INMEDIATAMENTE</strong></td>
+</tr>
+<tr>
+<td>.gitignore</td>
+<td>Parcialmente configurado</td>
+<td>Falta agregar mas archivos basura</td>
+</tr>
+<tr>
+<td>.env.example</td>
+<td>No existe</td>
+<td><strong>Crear</strong></td>
+</tr>
+<tr>
+<td>Archivos basura</td>
+<td>20+ archivos .txt, tmp_*.php trackeados</td>
+<td><strong>Limpiar</strong></td>
+</tr>
+<tr>
+<td><a href="http://deploy.sh">deploy.sh</a></td>
+<td>Referencia a enterprisesstph</td>
+<td><strong>Actualizar</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="archivos-basura-trackeados-en-git-pendiente-limpieza">Archivos basura trackeados en git (pendiente limpieza)</h3>
+<p><strong>Archivos de notas/bocetos (no son parte del sistema):</strong></p>
+<ul>
+<li>z_botiquin.txt, z_gabinetes.txt, z_comunicaciones.txt, z_limpieza.txt, z_ocurrencia.txt, z_plagas.txt, z_plandeemergencia.txt, z_recursosseguridad.txt, z_residuos.txt, z_responsabilidadessst.txt, z_aguapotable.txt, z_asistentes.txt, z_dotacion_vigilante.txt, z_hvbrigadista.txt, z_kpis.txt, y_appscriptbrigadista.txt, Z_PLANSANEAMIENTO.TXT, ZZ_PASCRIPTEVSIMULACTRO.txt, zz_todaslasrutas.txt, emergencias.txt, senalizacion.txt</li>
+</ul>
+<p><strong>Scripts temporales:</strong></p>
+<ul>
+<li>tmp_actas.php, tmp_describe.php, tmp_insert_compromisos.php, tmp_query.php</li>
+</ul>
+<p><strong>Otros:</strong></p>
+<ul>
+<li>bash.exe.stackdump</li>
+<li>composer-setup.php</li>
+<li>generate_icons.php</li>
+<li>tbl_clientes.sql</li>
+<li>EJECUTAR_AHORA_rename.sql</li>
+<li>migration_add_capacitacion_fields.sql, migration_safe_rename.sql</li>
+<li>csv_plandetrabajocliente - copia.csv, csvcapacitaciones2025.csv</li>
+<li>lpta2026.xlsx</li>
+</ul>
+<p><strong>15+ archivos .md sueltos en raiz</strong> que deberian moverse a <code>docs/</code>:</p>
+<ul>
+<li>ACTUALIZACION_FECHAS_CONTRATOS.md, FECHAS_DOCUMENTOS.md, GUIA_GESTION_DOCUMENTOS.md, GUIA_MIGRACION_CONTROLADORES.md, GUIA_MIGRACION_SEGURA_CAPACITACIONES.md, GUIA_SISTEMA_PLAN_TRABAJO.md, IMPLEMENTACION_GENERACION_CONTRATOS.md, INSTRUCCIONES_FECHAS_PRIMER_CONTRATO.md, INSTRUCCIONES_LIBRERIA_POLICIES.md, MIGRACION_CAPACITACIONES.md, MIGRACION_COMPLETADA.md, QUICK_ACCESS_DASHBOARD_DOCUMENTATION.md, RESUMEN_IMPLEMENTACION_LIBRERIAS.md, SISTEMA_ESTANDARES_MINIMOS.md, SISTEMA_FECHAS_PRIMER_CONTRATO.md, SISTEMA_HISTORIAL_CONTRATOS.md</li>
+</ul>
+<h3 id="archivos-csv-que-si-deben-quedarse-usados-por-libraries">Archivos CSV que SI deben quedarse (usados por Libraries)</h3>
+<ul>
+<li>PTA2026.csv (WorkPlanLibrary)</li>
+<li>capacitaciones ph.csv (TrainingLibrary)</li>
+<li>csvevaluacionestandaresminimosph.csv (StandardsLibrary)</li>
+</ul>
+<hr>
+<h2 id="8-hallazgos-criticos-y-acciones-pendientes">8. HALLAZGOS CRITICOS Y ACCIONES PENDIENTES</h2>
+<h3 id="prioridad-critica">Prioridad CRITICA</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Accion</th>
+<th>Responsable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Hacer repo PRIVADO en GitHub</strong> — Credenciales expuestas en codigo fuente</td>
+<td>INMEDIATO</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Rotar TODAS las API Keys y passwords de BD</strong> — SendGrid, OpenAI, BD produccion, readonly</td>
+<td>INMEDIATO</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Eliminar credenciales hardcodeadas</strong> de 14 archivos — migrar a <code>getenv('DB_PROD_PASS')</code></td>
+<td>Cliente</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Mover password readonly de Database.php a .env</strong> — actualmente <code>CycloidPortal2026!</code> en codigo</td>
+<td>Cliente</td>
+</tr>
+</tbody>
+</table>
+<h3 id="prioridad-alta">Prioridad ALTA</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Accion</th>
+<th>Responsable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>Crear <code>.env.example</code> con todas las variables (sin valores reales)</td>
+<td>Cliente</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Reescribir <code>README.md</code> (actualmente generico de CodeIgniter)</td>
+<td>Cliente</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Crear <code>CONTRIBUTING.md</code> con flujo de ramas y convencion de commits</td>
+<td>Cliente</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Crear rama <code>develop</code> y establecer flujo de ramas</td>
+<td>Cliente</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Actualizar <code>deploy.sh</code> (referencia a enterprisesstph)</td>
+<td>Cliente</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Configurar GitHub Actions (validacion + deploy)</td>
+<td>Consultor</td>
+</tr>
+</tbody>
+</table>
+<h3 id="prioridad-media">Prioridad MEDIA</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Accion</th>
+<th>Responsable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>Limpiar 20+ archivos basura del repo (z_<em>.txt, tmp_</em>.php, etc.)</td>
+<td>Cliente</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Mover 15+ .md sueltos de raiz a docs/</td>
+<td>Cliente</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Proteger ramas main y develop en GitHub</td>
+<td>Consultor</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Centralizar email en clase EmailService (20+ archivos con SendGrid directo)</td>
+<td>Cliente</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Centralizar OpenAI en servicio unico (7 archivos con cURL directo)</td>
+<td>Cliente</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em>Documento generado el 2026-04-05. Preparado como entregable del proceso de hardening del repositorio tat_cycloid.</em></p>
+
+            
+            
+        </body>
+        </html>

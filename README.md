@@ -1,68 +1,155 @@
-# CodeIgniter 4 Application Starter
+# TAT Cycloid — Plataforma SST Tienda a Tienda
 
-## What is CodeIgniter?
+Sistema de gestion de Seguridad y Salud en el Trabajo (SST) para el segmento Tienda a Tienda (TAT), desarrollado por Cycloid Talent.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Fork independiente de [enterprisesstph](https://github.com/edielestudiante2023/enterprisesstph) (Propiedad Horizontal). Cada proyecto tiene base de datos, branding y configuracion independientes.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Stack tecnologico
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+| Componente | Tecnologia |
+|------------|-----------|
+| Backend | PHP 8.2 + CodeIgniter 4 |
+| Base de datos | MySQL 8 (DigitalOcean Managed, SSL required) |
+| Servidor web | Nginx 1.24 (Ubuntu 24.04) |
+| Email | SendGrid API v3 |
+| PDF | TCPDF (contratos) + DOMPDF 3.0.0 (certificados, actas, inspecciones) |
+| Excel | PhpSpreadsheet |
+| IA | OpenAI GPT-4o-mini (Chat Otto, generacion de textos) |
+| IA (tools) | Anthropic Claude Haiku (clasificacion de PDFs) |
+| PWA | Modulo inspecciones (manifest + service worker) |
+| Analytics | Looker Studio (embeds) |
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Modulos principales (16)
 
-## Installation & updates
+| Modulo | Descripcion |
+|--------|-------------|
+| Contratos | Ciclo completo: creacion, firma digital, PDF, renovacion, cancelacion |
+| Plan de Trabajo Anual (PTA) | Actividades PHVA por cliente, edicion inline, exportacion Excel, auditoria |
+| Evaluacion Estandares Minimos | Decreto 1072, evaluacion por ciclo, historial de puntajes |
+| Actas de Visita | Registro con fotos, firma digital, PDF, notificaciones |
+| Inspecciones (PWA) | Locativa, extintores, botiquin, gabinetes, senalizacion, comunicaciones, recursos |
+| Capacitaciones | Cronograma, asistencia induccion, evaluacion, reportes |
+| KPIs | 17 indicadores SST (frecuencia, severidad, mortalidad, ausentismo, etc.) |
+| Pendientes | Compromisos con conteo de dias, recordatorios automaticos |
+| Plan de Saneamiento | Limpieza, residuos, plagas, agua potable, contingencias, KPIs |
+| Documentos SGSST | Documentos normativos (politicas, programas, formatos) |
+| Matrices | Riesgos, vulnerabilidad, EPP (generacion desde plantillas Excel) |
+| Chat Otto (IA) | Asistente IA con function calling, consultas SQL readonly, 3 capas de seguridad |
+| Presupuesto SST | Categorias, items, detalle de ejecucion |
+| Informes de Avances | Reportes mensuales con metricas e imagenes |
+| Firmas Digitales | Firma electronica via token por email (contratos + protocolo alturas) |
+| Portal Cliente | Dashboard readonly, chat Otto, inspecciones, reportes, pendientes |
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## Roles de usuario
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+| Rol | Acceso |
+|-----|--------|
+| admin | Todo el sistema + gestion de usuarios + configuracion |
+| consultant | Gestion de clientes asignados + inspecciones + chat IA completo |
+| client | Portal readonly + chat Otto (solo SELECT) |
 
-## Setup
+## Estructura del proyecto
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+```
+tat_cycloid/
+├── app/
+│   ├── Commands/          # 18 comandos spark (cron jobs + utilidades)
+│   ├── Config/            # Routes.php, Database.php, Filters.php
+│   ├── Controllers/       # ~171 controladores
+│   │   └── Inspecciones/  # ~44 controladores de inspecciones (PWA)
+│   ├── Filters/           # AuthFilter, ApiKeyFilter, AuthOrApiKeyFilter
+│   ├── Libraries/         # 17 librerias de logica de negocio
+│   ├── Models/            # ~111 modelos
+│   ├── Services/          # IADocumentacionService, PtaAuditService, PtaTransicionesService
+│   ├── SQL/               # Scripts de migracion
+│   ├── Templates/         # Plantillas Excel para matrices
+│   └── Views/             # Vistas PHP
+├── docs/                  # Documentacion tecnica (~60 documentos)
+├── public/                # Punto de entrada web (index.php)
+├── tools/                 # Scripts utilitarios
+├── tests/                 # Tests PHPUnit
+├── writable/              # Logs, cache, sesiones
+├── .env                   # Variables de entorno (NO commitear)
+├── .env.example           # Template de variables (SI commitear)
+├── deploy.sh              # Script de deploy seguro
+├── CONTRIBUTING.md        # Guia de contribucion
+└── spark                  # CLI de CodeIgniter
+```
 
-## Important Change with index.php
+## Requisitos previos
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+- PHP 8.2+ con extensiones: intl, mbstring, mysqlnd, curl, gd, openssl
+- MySQL 8.0+ o MariaDB 10.11+
+- Composer 2.x
+- Nginx o Apache
+- Git
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+## Instalacion local
 
-**Please** read the user guide for a better explanation of how CI4 works!
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/edielestudiante2023/tat_cycloid.git
+cd tat_cycloid
 
-## Repository Management
+# 2. Instalar dependencias
+composer install
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+# 3. Configurar variables de entorno
+cp .env.example .env
+# Editar .env con tus valores locales
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+# 4. Crear base de datos
+mysql -u root -e "CREATE DATABASE tat_cycloid CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;"
 
-## Server Requirements
+# 5. Configurar servidor web
+# Apuntar el document root a la carpeta public/
+# Ejemplo XAMPP: http://localhost/tat_cycloid/public/
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+# 6. Verificar instalacion
+php spark serve
+```
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+## Variables de entorno
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+Ver `.env.example` para la lista completa. Las principales:
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+| Variable | Descripcion |
+|----------|-------------|
+| `CI_ENVIRONMENT` | development / production |
+| `app.baseURL` | URL base de la aplicacion |
+| `database.default.*` | Conexion BD principal |
+| `readonly.*` | Conexion BD readonly (portal cliente) |
+| `SENDGRID_API_KEY` | API Key de SendGrid (email transaccional) |
+| `OPENAI_API_KEY` | API Key de OpenAI (Chat Otto, generacion de textos) |
+| `OPENAI_MODEL` | Modelo OpenAI (default: gpt-4o-mini) |
+| `APP_API_KEY` | Token para endpoints API internos |
+| `CRON_TOKEN` | Token para endpoints cron via HTTP |
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## Cron jobs (10 tareas programadas)
+
+| Comando | Frecuencia | Descripcion |
+|---------|-----------|-------------|
+| `php spark auditoria:revisar-visitas-diario` | Diario 7 AM | Verificar visitas del dia anterior |
+| `php spark recordatorio:visitas` | Diario 3 PM | Recordatorio de visitas |
+| `php spark seguimiento:agenda-diario` | Diario 3 PM | Seguimiento agenda |
+| `php spark inspecciones:resumen-pendientes` | Diario 5 PM | Inspecciones pendientes |
+| `php spark firmas:protocolo-alturas --reporte` | Diario 7 AM | Reporte firmas alturas |
+| `php spark contratos:resumen-semanal` | Lunes 7 AM | Resumen contratos |
+| `php spark auditoria:recordatorio-sin-agendar` | L-V 7 AM | Clientes sin agendar |
+| `php spark pendientes:recordatorio` | Dia 1 y 16 | Recordatorio pendientes |
+| `php spark reportes:limpiar-404` | Semanal | Limpiar reportes con archivos faltantes |
+| `php spark pdfs:regenerar` | Manual | Regenerar PDFs masivamente |
+
+## Deploy a produccion
+
+```bash
+ssh root@66.29.154.174 "cd /www/wwwroot/tat_cycloid && bash deploy.sh"
+```
+
+El script `deploy.sh` es seguro: hace stash, pull, pop. Nunca borra archivos de uploads.
+
+## Documentacion adicional
+
+- [HARDENING-tat_cycloid.md](docs/HARDENING-tat_cycloid.md) — Auditoria de seguridad y hardening
+- [CONTRIBUTING.md](CONTRIBUTING.md) — Guia de contribucion
+- [docs/](docs/) — 60+ documentos tecnicos por modulo
