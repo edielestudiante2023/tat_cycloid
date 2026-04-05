@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php helper("pwa"); echo pwa_client_head(); ?>
     <title>2.5.0 Procedimiento de Reporte de Accidentes e Incidentes de Trabajo</title>
     <style>
         body {
@@ -346,6 +347,7 @@
         </a>
     </div> -->
 
+<?php helper("pwa"); echo pwa_client_scripts(); ?>
 </body>
 
 </html>

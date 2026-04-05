@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php helper("pwa"); echo pwa_client_head(); ?>
     <title>1.1.11 Manual de Convivencia Laboral </title>
     <style>
         body {
@@ -497,7 +498,8 @@ Fecha: <?= isset($latestVersion['sin_contrato']) && $latestVersion['sin_contrato
             <span class="zeta-resaltado">Nota:</span> Este Manual no cubre las actividades desarrolladas por personal propio de <strong><?= $client['nombre_cliente'] ?></strong>
         </p>
 
-    </body>
+    <?php helper("pwa"); echo pwa_client_scripts(); ?>
+</body>
 
 
 <footer>
@@ -571,6 +573,7 @@ Fecha: <?= isset($latestVersion['sin_contrato']) && $latestVersion['sin_contrato
         </a>
     </div> -->
 
+<?php helper("pwa"); echo pwa_client_scripts(); ?>
 </body>
 
 </html>

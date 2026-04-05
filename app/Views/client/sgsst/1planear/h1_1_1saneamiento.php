@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php helper("pwa"); echo pwa_client_head(); ?>
     <title>Plan de Saneamiento Básico</title>
     <style>
         body {
@@ -780,6 +781,7 @@
     </footer>
 
 
+<?php helper("pwa"); echo pwa_client_scripts(); ?>
 </body>
 
 </html>

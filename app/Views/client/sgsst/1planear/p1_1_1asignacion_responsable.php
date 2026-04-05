@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php helper("pwa"); echo pwa_client_head(); ?>
     <title>1.1.1 Asignación de Responsable</title>
     <style>
         body {
@@ -299,6 +300,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'Spanish_Spain'); // Configura el idi
         </a>
     </div> -->
 
+<?php helper("pwa"); echo pwa_client_scripts(); ?>
 </body>
 
 </html>

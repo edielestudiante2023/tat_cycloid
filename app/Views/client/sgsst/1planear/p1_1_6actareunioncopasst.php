@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php helper("pwa"); echo pwa_client_head(); ?>
     <title>1.1.6 Acta de Reunión Copasst</title>
     <style>
         body {
@@ -504,6 +505,7 @@ Fecha: <?= isset($latestVersion['sin_contrato']) && $latestVersion['sin_contrato
         </a>
     </div> -->
     
+<?php helper("pwa"); echo pwa_client_scripts(); ?>
 </body>
 
 </html>
