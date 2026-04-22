@@ -28,10 +28,11 @@ html,body{margin:0;padding:0;background:#f4f6f9;font-family:-apple-system,BlinkM
 .offline-bar{background:#ffc107;color:#1c2437;padding:10px;text-align:center;font-size:.85rem;font-weight:600;border-radius:8px;margin-bottom:10px;display:none}
 .offline-bar.show{display:block}
 .actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
-.actions a{flex:1;min-width:140px;padding:12px 14px;border-radius:10px;text-decoration:none;text-align:center;font-size:.9rem;font-weight:600;transition:transform .15s}
-.actions a:active{transform:scale(.97)}
-.actions .btn-back{background:#1c2437;color:#bd9751;border:1px solid #bd9751}
-.actions .btn-calendar{background:#bd9751;color:#1c2437}
+.actions .btn-report{flex:1;padding:16px 14px;border-radius:10px;border:0;background:#bd9751;color:#1c2437;text-align:center;font-size:1rem;font-weight:700;transition:transform .15s,background .2s;cursor:pointer}
+.actions .btn-report:active{transform:scale(.97)}
+.actions .btn-report:disabled{background:#b0b0b0;color:#fff;cursor:not-allowed}
+.actions .btn-report.sent{background:#28a745;color:#fff}
+.report-hint{font-size:.8rem;color:#666;text-align:center;margin-top:6px}
 .progress-box{background:#fff;border-radius:12px;padding:14px;margin-top:10px;box-shadow:0 2px 8px rgba(0,0,0,.05);text-align:center}
 .progress-box .pct{font-size:1.6rem;font-weight:700;color:#1c2437}
 .progress-box .pct.done{color:#28a745}
@@ -75,13 +76,14 @@ html,body{margin:0;padding:0;background:#f4f6f9;font-family:-apple-system,BlinkM
     <?php endif; ?>
 
     <div class="actions">
-        <a href="<?= base_url('dashboard') ?>" class="btn-back">
-            <i class="fa-solid fa-arrow-left"></i> Volver al dashboard
-        </a>
-        <a href="<?= base_url('rutinas/calendario?usuario=' . (int)$usuario['id_usuario']) ?>" class="btn-calendar" target="_blank">
-            <i class="fa-solid fa-calendar-days"></i> Ver mi calendario
-        </a>
+        <button type="button" id="btnReportar" class="btn-report">
+            <i class="fa-solid fa-paper-plane"></i> <span id="btnReportarLabel">Terminar y reportar rutina</span>
+        </button>
     </div>
+    <p class="report-hint">
+        <i class="fa-solid fa-circle-info"></i>
+        Al terminar, presiona el botón para notificar al consultor y al propietario.
+    </p>
 
     <div class="footer">Cycloid Talent · Checklist seguro con token del día</div>
 </div>
@@ -94,6 +96,7 @@ const USER_ID    = <?= (int)$usuario['id_usuario'] ?>;
 const FECHA      = <?= json_encode($fecha) ?>;
 const TOKEN      = <?= json_encode($token) ?>;
 const UPDATE_URL = <?= json_encode(base_url('rutinas/checklist/update')) ?>;
+const REPORT_URL = <?= json_encode(base_url('rutinas/checklist/reportar')) ?>;
 
 function toast(msg, isError){
     const t = document.getElementById('toast');
@@ -182,6 +185,51 @@ document.querySelectorAll('.chk').forEach(chk => {
         }
     });
 });
+
+// Botón "Terminar y reportar rutina"
+const btnReportar = document.getElementById('btnReportar');
+if (btnReportar) {
+    btnReportar.addEventListener('click', async function(){
+        // Si hay pendientes offline, intentar sincronizar primero
+        if (!navigator.onLine) {
+            toast('Sin red — conecta para reportar', true);
+            return;
+        }
+        const pending = await OfflineQueue.count();
+        if (pending > 0) {
+            toast('Sincronizando ' + pending + ' pendientes…');
+            await OfflineQueue.syncAll();
+        }
+
+        btnReportar.disabled = true;
+        const label = document.getElementById('btnReportarLabel');
+        label.textContent = 'Enviando reporte…';
+
+        try {
+            const body = new FormData();
+            body.append('user_id', USER_ID);
+            body.append('fecha', FECHA);
+            body.append('token', TOKEN);
+
+            const res = await fetch(REPORT_URL, { method: 'POST', body });
+            const data = await res.json();
+
+            if (data.success) {
+                btnReportar.classList.add('sent');
+                label.textContent = '✓ Reporte enviado (' + (data.pct ?? '--') + '%)';
+                toast('Reporte enviado al consultor y propietario');
+            } else {
+                label.textContent = 'Terminar y reportar rutina';
+                btnReportar.disabled = false;
+                toast(data.message || 'No se pudo reportar', true);
+            }
+        } catch (e) {
+            label.textContent = 'Terminar y reportar rutina';
+            btnReportar.disabled = false;
+            toast('Error de red al reportar', true);
+        }
+    });
+}
 
 // Sincronizar automáticamente al recuperar conexión
 OfflineQueue.startOnlineListener(function(result){

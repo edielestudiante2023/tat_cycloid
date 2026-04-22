@@ -346,14 +346,16 @@ for ($i = 0; $i < 3; $i++) {
 echo "\n=== Cartas de Vigía ===\n";
 $m->query("DELETE FROM tbl_carta_vigia WHERE id_cliente={$ID_CLIENTE} AND nombre_vigia LIKE '%{$MARK}%'");
 $vigias = [
-    ["María González {$MARK}", '1020304060', 'maria.gonzalez@test.com', '3001234567'],
-    ["Pedro Martínez {$MARK}", '1020304061', 'pedro.martinez@test.com', '3001234568'],
-    ["Laura Díaz {$MARK}",     '1020304062', 'laura.diaz@test.com',      '3001234569'],
+    ["María González {$MARK}", '1020304060', 'maria.gonzalez@test.com', '3001234567', 'pendiente_firma'],
+    ["Pedro Martínez {$MARK}", '1020304061', 'pedro.martinez@test.com', '3001234568', 'firmado'],
+    ["Laura Díaz {$MARK}",     '1020304062', 'laura.diaz@test.com',      '3001234569', 'sin_enviar'],
 ];
 foreach ($vigias as $v) {
-    $sql = "INSERT INTO tbl_carta_vigia (id_cliente, id_consultor, nombre_vigia, documento_vigia, email_vigia, telefono_vigia, estado_firma) VALUES ({$ID_CLIENTE}, {$ID_CONSULTOR}, '{$v[0]}', '{$v[1]}', '{$v[2]}', '{$v[3]}', 'sin_enviar')";
+    $extraCol = $v[4] === 'firmado' ? ', firma_fecha' : '';
+    $extraVal = $v[4] === 'firmado' ? ', NOW()' : '';
+    $sql = "INSERT INTO tbl_carta_vigia (id_cliente, id_consultor, nombre_vigia, documento_vigia, email_vigia, telefono_vigia, estado_firma{$extraCol}) VALUES ({$ID_CLIENTE}, {$ID_CONSULTOR}, '{$v[0]}', '{$v[1]}', '{$v[2]}', '{$v[3]}', '{$v[4]}'{$extraVal})";
     $m->query($sql);
-    echo "  + {$v[0]}\n";
+    echo "  + {$v[0]} ({$v[4]})\n";
 }
 
 // ============================================================
@@ -471,6 +473,135 @@ foreach ($caps as $idx => $c) {
     else echo "  + {$c[0]}\n";
 }
 
+// ============================================================
+// 19. PENDIENTES (derivados de actas)
+// ============================================================
+echo "\n=== Pendientes ===\n";
+$m->query("DELETE FROM tbl_pendientes WHERE id_cliente={$ID_CLIENTE} AND tarea_actividad LIKE '%{$MARK}%'");
+$actas = [];
+$rs = $m->query("SELECT id FROM tbl_acta_visita WHERE id_cliente={$ID_CLIENTE} ORDER BY id DESC LIMIT 3");
+while ($row = $rs->fetch_assoc()) $actas[] = (int)$row['id'];
+$tareas = [
+    'Entregar soportes de manipulación de alimentos al consultor',
+    'Realizar mantenimiento preventivo a neveras',
+    'Capacitar al personal en uso de extintores',
+];
+foreach ($tareas as $i => $t) {
+    $idActa = $actas[$i % max(1,count($actas))] ?? 0;
+    $resp = 'Tendero';
+    $tarea = "{$MARK} " . $m->real_escape_string($t);
+    $m->query("INSERT INTO tbl_pendientes (id_cliente, id_acta, responsable, tarea_actividad, estado, id_acta_visita) VALUES ({$ID_CLIENTE}, '{$idActa}', '{$resp}', '{$tarea}', 'ABIERTA', {$idActa})");
+    echo "  + {$t}\n";
+}
+
+// ============================================================
+// 20. CERTIFICADOS DE SERVICIO (lavado tanques, fumigación, desratización)
+// ============================================================
+echo "\n=== Certificados de servicio ===\n";
+$m->query("DELETE FROM tbl_certificado_servicio WHERE id_cliente={$ID_CLIENTE} AND observaciones LIKE '%{$MARK}%'");
+$servicios = [
+    2 => 'Lavado de tanques',
+    3 => 'Fumigación',
+    4 => 'Desratización',
+];
+foreach ($servicios as $idM => $label) {
+    for ($i = 0; $i < 3; $i++) {
+        $fecha = date('Y-m-d', strtotime("-" . ($i*60) . " days"));
+        $obs = "{$MARK} Certificado {$label} demo #" . ($i+1);
+        $foto = nextFoto();
+        $m->query("INSERT INTO tbl_certificado_servicio (id_cliente, id_mantenimiento, fecha_servicio, archivo, observaciones, id_consultor) VALUES ({$ID_CLIENTE}, {$idM}, '{$fecha}', '{$foto}', '{$obs}', {$ID_CONSULTOR})");
+    }
+    echo "  + {$label}: 3 certificados\n";
+}
+
+// ============================================================
+// 21. PLANILLAS SEGURIDAD SOCIAL (global, sin id_cliente)
+// ============================================================
+echo "\n=== Planilla SS ===\n";
+$m->query("DELETE FROM tbl_planillas_seguridad_social WHERE notas LIKE '%{$MARK}%'");
+$meses = [date('Y-m', strtotime('-0 months')), date('Y-m', strtotime('-1 months')), date('Y-m', strtotime('-2 months'))];
+foreach ($meses as $mes) {
+    $foto = nextFoto();
+    $notas = "{$MARK} Planilla demo";
+    $m->query("INSERT INTO tbl_planillas_seguridad_social (mes_aportes, archivo_pdf, cantidad_envios, estado_envio, notas) VALUES ('{$mes}', '{$foto}', 0, 'sin_enviar', '{$notas}')");
+    echo "  + Planilla {$mes}\n";
+}
+
+// ============================================================
+// 22. PROVEEDORES DE SERVICIO
+// ============================================================
+echo "\n=== Proveedores de servicio ===\n";
+$m->query("DELETE FROM tbl_proveedor_servicio WHERE id_cliente={$ID_CLIENTE} AND razon_social LIKE '%{$MARK}%'");
+$provs = [
+    ['fumigacion',   "Fumigadora Protección Total SAS {$MARK}", '900123456', 'contacto@fumigadora.com', '3001111111'],
+    ['aseo',         "Aseo Integral del Valle Ltda {$MARK}",     '900123457', 'contacto@aseointegral.com', '3001111112'],
+    ['mantenimiento',"Mantenimiento y Servicios Técnicos {$MARK}", '900123458', 'contacto@mantservicios.com', '3001111113'],
+];
+foreach ($provs as $p) {
+    $razon = $m->real_escape_string($p[1]);
+    $m->query("INSERT INTO tbl_proveedor_servicio (id_cliente, tipo_servicio, estado, razon_social, nit, email_empresa, telefono_empresa, nombre_responsable_sst, email_responsable_sst, cargo_responsable_sst, telefono_responsable_sst, id_consultor, created_at, updated_at) VALUES ({$ID_CLIENTE}, '{$p[0]}', 'activo', '{$razon}', '{$p[2]}', '{$p[3]}', '{$p[4]}', 'Responsable SST demo', 'sst@empresa.com', 'Coordinador SST', '3009999999', {$ID_CONSULTOR}, NOW(), NOW())");
+    echo "  + {$p[1]}\n";
+}
+
+// ============================================================
+// 22.5 EVALUACIONES DE INDUCCIÓN
+// ============================================================
+echo "\n=== Evaluaciones de Inducción ===\n";
+$m->query("DELETE FROM tbl_evaluaciones WHERE id_cliente={$ID_CLIENTE} AND titulo LIKE '%{$MARK}%'");
+$asist = [];
+$rs = $m->query("SELECT id FROM tbl_asistencia_induccion WHERE id_cliente={$ID_CLIENTE} ORDER BY id DESC LIMIT 3");
+while ($row = $rs->fetch_assoc()) $asist[] = (int)$row['id'];
+$temas = ['Inducción SG-SST', 'Manipulación de alimentos', 'Uso correcto de EPP'];
+foreach ($temas as $i => $titulo) {
+    $idAsist = $asist[$i] ?? 0;
+    $tituloEsc = "{$MARK} " . $m->real_escape_string($titulo);
+    $token = bin2hex(random_bytes(12));
+    $m->query("INSERT INTO tbl_evaluaciones (id_asistencia_induccion, id_cliente, id_tema, titulo, token, estado) VALUES ({$idAsist}, {$ID_CLIENTE}, 1, '{$tituloEsc}', '{$token}', 'activo')");
+    echo "  + {$titulo}\n";
+}
+
+// ============================================================
+// 23. AUDITORÍA ZONA RESIDUOS
+// ============================================================
+echo "\n=== Auditoría Zona Residuos ===\n";
+$m->query("DELETE FROM tbl_auditoria_zona_residuos WHERE id_cliente={$ID_CLIENTE} AND observaciones LIKE '%{$MARK}%'");
+for ($i = 0; $i < 3; $i++) {
+    $fecha = date('Y-m-d', strtotime("-" . ($i*25) . " days"));
+    $obs = "{$MARK} Auditoría zona residuos demo #" . ($i+1);
+    $fotos = [];
+    for ($j = 0; $j < 12; $j++) $fotos[] = nextFoto();
+    $sql = "INSERT INTO tbl_auditoria_zona_residuos (id_cliente, id_consultor, fecha_inspeccion,
+        estado_acceso, foto_acceso,
+        estado_techo_pared_pisos, foto_techo_pared_pisos,
+        estado_ventilacion, foto_ventilacion,
+        estado_prevencion_incendios, foto_prevencion_incendios,
+        estado_drenajes, foto_drenajes,
+        proliferacion_plagas, foto_proliferacion_plagas,
+        estado_recipientes, foto_recipientes,
+        estado_reciclaje, foto_reciclaje,
+        estado_iluminarias, foto_iluminarias,
+        estado_senalizacion, foto_senalizacion,
+        estado_limpieza_desinfeccion, foto_limpieza_desinfeccion,
+        estado_poseta, foto_poseta,
+        observaciones, estado)
+        VALUES ({$ID_CLIENTE}, {$ID_CONSULTOR}, '{$fecha}',
+        'bueno', '{$fotos[0]}',
+        'bueno', '{$fotos[1]}',
+        'bueno', '{$fotos[2]}',
+        'bueno', '{$fotos[3]}',
+        'regular', '{$fotos[4]}',
+        'No se observa proliferación de plagas', '{$fotos[5]}',
+        'bueno', '{$fotos[6]}',
+        'bueno', '{$fotos[7]}',
+        'bueno', '{$fotos[8]}',
+        'bueno', '{$fotos[9]}',
+        'bueno', '{$fotos[10]}',
+        'bueno', '{$fotos[11]}',
+        '{$obs}', 'completo')";
+    if (!$m->query($sql)) echo "  ERR: " . $m->error . "\n";
+}
+echo "  + 3 auditorías con 12 fotos cada una\n";
+
 echo "\n=== RESUMEN ===\n";
 foreach ([
     'tbl_inspeccion_nevera','tbl_inspeccion_limpieza_local','tbl_inspeccion_equipos',
@@ -480,7 +611,8 @@ foreach ([
     'tbl_carta_vigia','tbl_vencimientos_mantenimientos',
     'tbl_programa_limpieza','tbl_programa_residuos','tbl_programa_plagas','tbl_programa_agua_potable','tbl_plan_saneamiento',
     'tbl_kpi_limpieza','tbl_kpi_residuos','tbl_kpi_plagas','tbl_kpi_agua_potable',
-    'tbl_asistencia_induccion','tbl_reporte_capacitacion'
+    'tbl_asistencia_induccion','tbl_reporte_capacitacion',
+    'tbl_pendientes','tbl_certificado_servicio','tbl_proveedor_servicio','tbl_auditoria_zona_residuos','tbl_evaluaciones'
 ] as $t) {
     $r = $m->query("SELECT COUNT(*) c FROM {$t} WHERE id_cliente={$ID_CLIENTE}")->fetch_assoc();
     echo str_pad($t,42) . 'total=' . $r['c'] . "\n";

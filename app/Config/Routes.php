@@ -1849,6 +1849,18 @@ $routes->group('listado-maestro', ['filter' => 'auth'], function($routes) {
 });
 
 // ============================================================================
+// EMPLEADOS (personal contratado por el tendero) — CRUD
+// ============================================================================
+$routes->group('empleados', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                'EmpleadosController::index');
+    $routes->get('add',              'EmpleadosController::add');
+    $routes->post('add',             'EmpleadosController::addPost');
+    $routes->get('edit/(:num)',      'EmpleadosController::edit/$1');
+    $routes->post('edit/(:num)',     'EmpleadosController::editPost/$1');
+    $routes->get('delete/(:num)',    'EmpleadosController::delete/$1');
+});
+
+// ============================================================================
 // RUTINAS DE TRABAJO — PWA (calendario, asignaciones, checklist público)
 // ============================================================================
 $routes->group('rutinas', ['filter' => 'auth'], function($routes) {
@@ -1875,4 +1887,5 @@ $routes->group('rutinas', ['filter' => 'auth'], function($routes) {
 // Rutas PÚBLICAS (checklist tokenizado) — exceptuadas del filtro auth
 $routes->get('rutinas/checklist/(:num)/(:segment)/(:segment)', 'RutinasController::checklistPublico/$1/$2/$3');
 $routes->post('rutinas/checklist/update',                      'RutinasController::updateChecklistPublico');
+$routes->post('rutinas/checklist/reportar',                    'RutinasController::reportarChecklist');
 

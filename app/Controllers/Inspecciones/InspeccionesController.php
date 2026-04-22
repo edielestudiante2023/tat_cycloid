@@ -227,6 +227,18 @@ class InspeccionesController extends BaseController
         $totalPlanillaSS     = (new PlanillaSSModel())->countAllResults();
         $totalProveedores    = (new \App\Models\ProveedorServicioModel())->countAllResults();
 
+        // TAT — conteos de módulos de gestión diaria del tendero
+        $db = \Config\Database::connect();
+        $totalTrabajadores    = $db->table('tbl_trabajadores')->where('activo', 1)->countAllResults();
+        $totalBomberosExp     = $db->table('tbl_bomberos_solicitud')->countAllResults();
+        $totalNeveras         = $db->table('tbl_nevera')->where('activo', 1)->countAllResults();
+        $totalLimpiezaLocal   = $db->table('tbl_inspeccion_limpieza_local')->countAllResults();
+        $totalEquiposTat      = $db->table('tbl_inspeccion_equipos')->countAllResults();
+        $totalRecepcionMp     = $db->table('tbl_recepcion_mp')->countAllResults();
+        $totalContaminacionTat = $db->table('tbl_inspeccion_contaminacion')->countAllResults();
+        $totalAlmacenamientoTat = $db->table('tbl_inspeccion_almacenamiento')->countAllResults();
+        $totalDashboardSaneamiento = $totalKpiLimp + $totalKpiRes + $totalKpiPlag + $totalKpiAgua;
+
         $data = [
             'title'            => 'Inspecciones SST',
             'pendientes'       => $pendientes,
@@ -305,6 +317,15 @@ class InspeccionesController extends BaseController
             'totalDesratizacion'  => $totalDesratizacion,
             'totalPlanillaSS'     => $totalPlanillaSS,
             'totalProveedores'    => $totalProveedores,
+            'totalTrabajadores'        => $totalTrabajadores,
+            'totalBomberosExp'         => $totalBomberosExp,
+            'totalNeveras'             => $totalNeveras,
+            'totalLimpiezaLocal'       => $totalLimpiezaLocal,
+            'totalEquiposTat'          => $totalEquiposTat,
+            'totalRecepcionMp'         => $totalRecepcionMp,
+            'totalContaminacionTat'    => $totalContaminacionTat,
+            'totalAlmacenamientoTat'   => $totalAlmacenamientoTat,
+            'totalDashboardSaneamiento' => $totalDashboardSaneamiento,
             'nombre'           => session()->get('nombre_usuario'),
         ];
 

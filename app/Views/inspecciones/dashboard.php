@@ -1257,7 +1257,7 @@
         <a href="<?= base_url('/inspecciones/dashboard-saneamiento') ?>" class="card-tipo" style="border-color:#6a1b9a;">
             <i class="fas fa-clipboard-check" style="color:#6a1b9a;"></i>
             <div><strong>Dashboard Saneamiento</strong></div>
-            <div class="count">Consolidado KPIs</div>
+            <div class="count">(<?= $totalDashboardSaneamiento ?>)</div>
         </a>
         <a href="<?= base_url('/inspecciones/carta-vigia') ?>" class="card-tipo">
             <i class="fas fa-user-shield"></i>
@@ -1277,42 +1277,42 @@
         <a href="<?= base_url('/trabajadores/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#6f42c1;">
             <i class="fas fa-users" style="color:#6f42c1;"></i>
             <div><strong>Trabajadores</strong></div>
-            <div class="count">Gestión por cliente</div>
+            <div class="count">(<?= $totalTrabajadores ?>)</div>
         </a>
         <a href="<?= base_url('/bomberos/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#d62828;">
             <i class="fas fa-fire-extinguisher" style="color:#d62828;"></i>
             <div><strong>Permisos Bomberos</strong></div>
-            <div class="count">Expediente anual</div>
+            <div class="count">(<?= $totalBomberosExp ?>)</div>
         </a>
         <a href="<?= base_url('/neveras/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#0277bd;">
             <i class="fas fa-snowflake" style="color:#0277bd;"></i>
             <div><strong>Control Neveras</strong></div>
-            <div class="count">Temperatura / humedad</div>
+            <div class="count">(<?= $totalNeveras ?>)</div>
         </a>
         <a href="<?= base_url('/limpieza-local/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#198754;">
             <i class="fas fa-broom" style="color:#198754;"></i>
             <div><strong>Inspección de Aseo</strong></div>
-            <div class="count">Checklist de limpieza</div>
+            <div class="count">(<?= $totalLimpiezaLocal ?>)</div>
         </a>
         <a href="<?= base_url('/equipos/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#6c757d;">
             <i class="fas fa-tools" style="color:#6c757d;"></i>
             <div><strong>Equipos y Utensilios</strong></div>
-            <div class="count">Inspección semanal</div>
+            <div class="count">(<?= $totalEquiposTat ?>)</div>
         </a>
         <a href="<?= base_url('/recepcion-mp/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#6f4f28;">
             <i class="fas fa-truck-ramp-box" style="color:#6f4f28;"></i>
             <div><strong>Recepción MP</strong></div>
-            <div class="count">POES 4.1</div>
+            <div class="count">(<?= $totalRecepcionMp ?>)</div>
         </a>
         <a href="<?= base_url('/contaminacion/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#dc3545;">
             <i class="fas fa-exchange-alt" style="color:#dc3545;"></i>
             <div><strong>Contaminación Cruzada</strong></div>
-            <div class="count">POES 4.2</div>
+            <div class="count">(<?= $totalContaminacionTat ?>)</div>
         </a>
         <a href="<?= base_url('/almacenamiento/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#7c3aed;">
             <i class="fas fa-boxes-stacked" style="color:#7c3aed;"></i>
             <div><strong>Almacenamiento</strong></div>
-            <div class="count">POES 4.4</div>
+            <div class="count">(<?= $totalAlmacenamientoTat ?>)</div>
         </a>
         <a href="<?= base_url('/inspecciones/lavado-tanques') ?>" class="card-tipo">
             <i class="fas fa-water"></i>
