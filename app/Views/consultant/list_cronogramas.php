@@ -155,9 +155,9 @@
     }
 
     .btn-month:hover {
-      background-color: #007bff;
+      background-color: #ee6c21;
       color: #fff;
-      border-color: #007bff;
+      border-color: #ee6c21;
       transform: scale(1.1);
     }
 
@@ -431,14 +431,8 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
     <div class="container-fluid">
       <div class="d-flex align-items-center">
-        <a href="https://dashboard.cycloidtalent.com/login" class="me-3">
-          <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" height="60">
-        </a>
-        <a href="https://cycloidtalent.com/index.php/consultoria-sst" class="me-3">
-          <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" height="60">
-        </a>
-        <a href="https://cycloidtalent.com/">
-          <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo" height="60">
+        <a href="https://tat.cycloidtalent.com/index.php/login" class="me-3">
+          <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" height="60">
         </a>
       </div>
       <div class="ms-auto d-flex">
@@ -1565,7 +1559,7 @@
           if (field === 'estado') {
             options = ['PROGRAMADA', 'EJECUTADA', 'CANCELADA POR EL CLIENTE', 'REPROGRAMADA'];
           } else if (field === 'perfil_de_asistentes') {
-            options = ['CONTRATISTAS', 'RESIDENTES', 'TODOS', 'ASAMBLEA', 'CONSEJO DE ADMINISTRACIÓN', 'ADMINISTRADOR'];
+            options = ['CONTRATISTAS', 'CLIENTES Y TRABAJADORES', 'TODOS', 'PROPIETARIO', 'RESPONSABLE DEL SG-SST'];
           } else if (field === 'indicador_de_realizacion_de_la_capacitacion') {
             options = ['SE EJECUTO EN LA FECHA O ANTES', 'SE EJECUTO DESPUES', 'DECLINADA', 'NO SE REALIZÓ'];
           }

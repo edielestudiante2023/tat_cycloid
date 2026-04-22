@@ -281,7 +281,7 @@ class ReportController extends Controller
         </p>
 
         <p style='text-align: justify;'>
-            En <strong>Cycloid Talent</strong>, nos distinguimos por ser aliados estratégicos en la administración del SG-SST. Nuestro compromiso es ofrecerle soluciones innovadoras y personalizadas que potencien la seguridad y el bienestar en su copropiedad. Con Enterprisesst Tienda a Tienda, no solo recibe herramientas de gestión, sino también el respaldo de un equipo de expertos enfocados en brindarle resultados sobresalientes.
+            En <strong>Cycloid Talent</strong>, nos distinguimos por ser aliados estratégicos en la administración del SG-SST. Nuestro compromiso es ofrecerle soluciones innovadoras y personalizadas que potencien la seguridad y el bienestar en su establecimiento comercial. Con Enterprisesst Tienda a Tienda, no solo recibe herramientas de gestión, sino también el respaldo de un equipo de expertos enfocados en brindarle resultados sobresalientes.
             </p>
 
             <p style='text-align: justify;'>

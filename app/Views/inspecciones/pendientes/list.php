@@ -17,13 +17,13 @@
         font-weight: 600;
         white-space: nowrap;
         cursor: pointer;
-        border: 2px solid #e76f51;
+        border: 2px solid #ee6c21;
         background: white;
-        color: #e76f51;
+        color: #ee6c21;
         transition: all .2s;
     }
     .filter-pill.active {
-        background: #e76f51;
+        background: #ee6c21;
         color: white;
     }
     .filter-pill .pill-count {
@@ -43,7 +43,7 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         margin-bottom: 12px;
         border: none;
-        border-left: 4px solid #e76f51;
+        border-left: 4px solid #ee6c21;
         background: white;
     }
     .card-pendiente.abierta { border-left-color: #dc3545; }

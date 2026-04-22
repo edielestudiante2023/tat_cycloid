@@ -648,7 +648,7 @@ document.addEventListener('DOMContentLoaded', function() {
             icon: 'question',
             width: '90%',
             confirmButtonText: 'Guardar justificaciones',
-            confirmButtonColor: '#e76f51',
+            confirmButtonColor: '#ee6c21',
             allowOutsideClick: false,
             preConfirm: () => {
                 let allFilled = true;
@@ -697,7 +697,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     (!cliente ? '- Seleccionar un cliente<br>' : '') +
                     (integrantes === 0 ? '- Agregar al menos 1 integrante<br>' : '') +
                     (temas === 0 ? '- Agregar al menos 1 tema<br>' : ''),
-                confirmButtonColor: '#e76f51',
+                confirmButtonColor: '#ee6c21',
             });
             return;
         }
@@ -782,7 +782,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         showCancelButton: true,
                         confirmButtonText: 'Si, restaurar',
                         cancelButtonText: 'No, empezar de cero',
-                        confirmButtonColor: '#e76f51',
+                        confirmButtonColor: '#ee6c21',
                     }).then(result => {
                         if (result.isConfirmed) {
                             restoreFromLocal(data);

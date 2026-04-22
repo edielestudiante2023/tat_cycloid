@@ -83,11 +83,11 @@
 
 <div class="container py-3" style="max-width: 700px;">
 
-    <!-- Seccion 1: Selector Copropiedad -->
+    <!-- Seccion 1: Selector Establecimiento comercial -->
     <div class="card section-card">
-        <div class="card-header"><i class="fas fa-building"></i> Seleccion de Copropiedad</div>
+        <div class="card-header"><i class="fas fa-building"></i> Seleccion de Establecimiento comercial</div>
         <div class="card-body">
-            <label class="form-label req">Busque su copropiedad</label>
+            <label class="form-label req">Busque su establecimiento comercial</label>
             <select id="clienteSelect" class="form-select" style="width:100%;">
                 <option value="">-- Seleccione o busque --</option>
             </select>
@@ -332,7 +332,7 @@ $.ajax({
         data.forEach(c => {
             sel.append(`<option value="${c.id_cliente}">${c.nombre_cliente}</option>`);
         });
-        sel.select2({ placeholder: '-- Busque su copropiedad --', allowClear: true, width: '100%' });
+        sel.select2({ placeholder: '-- Busque su establecimiento comercial --', allowClear: true, width: '100%' });
     }
 });
 
@@ -558,7 +558,7 @@ document.getElementById('btnEnviar').addEventListener('click', function() {
     // Validar campos requeridos
     const missingFields = [];
     const clienteId = $('#clienteSelect').val();
-    if (!clienteId) missingFields.push('Copropiedad');
+    if (!clienteId) missingFields.push('Establecimiento comercial');
 
     const camposRequeridos = {
         'nombre_completo': 'Nombre completo',
@@ -771,5 +771,6 @@ OfflineQueue.startOnlineListener(function(result) {
     }
 });
 </script>
+    <script src="<?= base_url('js/image-compress.js?v=1') ?>" defer></script>
 </body>
 </html>

@@ -478,6 +478,185 @@ $routes->get('/client/lista-matrices/(:num)', 'ClientMatrices::index/$1');
 $routes->get('client/panel', 'ClientPanelController::showPanel');
 $routes->get('client/panel/(:num)', 'ClientPanelController::showPanel/$1');
 
+// TAT Fase 4.1 - Selector de cliente para Trabajadores (consultor)
+$routes->get('trabajadores/seleccionar-cliente', 'ClientTrabajadoresController::seleccionarCliente', ['filter' => 'auth']);
+
+// TAT Fase 4.2 - Selector de cliente para Bomberos (consultor)
+$routes->get('bomberos/seleccionar-cliente', 'ClientBomberosController::seleccionarCliente', ['filter' => 'auth']);
+
+// TAT Fase 4.2 - AJAX: municipios por departamento
+$routes->get('client/bomberos/municipios', 'ClientBomberosController::municipiosPorDepartamento', ['filter' => 'auth']);
+
+// TAT Fase 5.1 - Selector de cliente para Neveras (consultor)
+$routes->get('neveras/seleccionar-cliente', 'ClientNeverasController::seleccionarCliente', ['filter' => 'auth']);
+
+// TAT Fase 5.2 - Selector de cliente para Limpieza del Local (consultor)
+$routes->get('limpieza-local/seleccionar-cliente', 'ClientLimpiezaLocalController::seleccionarCliente', ['filter' => 'auth']);
+
+// TAT Fase 5.3a - Selector de cliente para Equipos y Utensilios (consultor)
+$routes->get('equipos/seleccionar-cliente', 'ClientEquiposController::seleccionarCliente', ['filter' => 'auth']);
+
+// TAT Fase 5.3b - Selector de cliente para Recepción MP (consultor)
+$routes->get('recepcion-mp/seleccionar-cliente', 'ClientRecepcionMpController::seleccionarCliente', ['filter' => 'auth']);
+
+// TAT Fase 5.3c - Selector Contaminación Cruzada (consultor)
+$routes->get('contaminacion/seleccionar-cliente', 'ClientContaminacionController::seleccionarCliente', ['filter' => 'auth']);
+
+// TAT Fase 5.3c - Módulo Contaminación Cruzada
+$routes->group('client/contaminacion', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                'ClientContaminacionController::index');
+    $routes->get('cliente/(:num)',   'ClientContaminacionController::index/$1');
+    $routes->get('nueva',            'ClientContaminacionController::crear');
+    $routes->post('guardar',         'ClientContaminacionController::guardar');
+    $routes->get('(:num)/ver',       'ClientContaminacionController::ver/$1');
+    $routes->post('(:num)/eliminar', 'ClientContaminacionController::eliminar/$1');
+});
+
+// TAT Fase 5.3d - Selector Almacenamiento (consultor)
+$routes->get('almacenamiento/seleccionar-cliente', 'ClientAlmacenamientoController::seleccionarCliente', ['filter' => 'auth']);
+
+// TAT Fase 5.3d - Módulo Almacenamiento
+$routes->group('client/almacenamiento', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                'ClientAlmacenamientoController::index');
+    $routes->get('cliente/(:num)',   'ClientAlmacenamientoController::index/$1');
+    $routes->get('nueva',            'ClientAlmacenamientoController::crear');
+    $routes->post('guardar',         'ClientAlmacenamientoController::guardar');
+    $routes->get('(:num)/ver',       'ClientAlmacenamientoController::ver/$1');
+    $routes->post('(:num)/eliminar', 'ClientAlmacenamientoController::eliminar/$1');
+});
+
+// TAT Fase 5.3c - Administración del catálogo de items de Contaminación Cruzada
+$routes->group('admin/contaminacion-items', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                         'ContaminacionItemController::index');
+    $routes->get('nuevo',                     'ContaminacionItemController::agregar');
+    $routes->post('guardar',                  'ContaminacionItemController::guardar');
+    $routes->get('(:num)/editar',             'ContaminacionItemController::editar/$1');
+    $routes->post('(:num)/actualizar',        'ContaminacionItemController::actualizar/$1');
+    $routes->post('(:num)/eliminar',          'ContaminacionItemController::eliminar/$1');
+    $routes->post('(:num)/activar',           'ContaminacionItemController::activar/$1');
+    $routes->get('asignar/(:num)',            'ContaminacionItemController::asignar/$1');
+    $routes->post('asignar/(:num)/guardar',   'ContaminacionItemController::guardarAsignaciones/$1');
+});
+
+// TAT Fase 5.3d - Administración del catálogo de items de Almacenamiento
+$routes->group('admin/almacenamiento-items', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                         'AlmacenamientoItemController::index');
+    $routes->get('nuevo',                     'AlmacenamientoItemController::agregar');
+    $routes->post('guardar',                  'AlmacenamientoItemController::guardar');
+    $routes->get('(:num)/editar',             'AlmacenamientoItemController::editar/$1');
+    $routes->post('(:num)/actualizar',        'AlmacenamientoItemController::actualizar/$1');
+    $routes->post('(:num)/eliminar',          'AlmacenamientoItemController::eliminar/$1');
+    $routes->post('(:num)/activar',           'AlmacenamientoItemController::activar/$1');
+    $routes->get('asignar/(:num)',            'AlmacenamientoItemController::asignar/$1');
+    $routes->post('asignar/(:num)/guardar',   'AlmacenamientoItemController::guardarAsignaciones/$1');
+});
+
+// TAT Fase 5.3b - Módulo Recepción de Materias Primas
+$routes->group('client/recepcion-mp', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                                 'ClientRecepcionMpController::index');
+    $routes->get('cliente/(:num)',                    'ClientRecepcionMpController::index/$1');
+    $routes->get('nueva',                             'ClientRecepcionMpController::crear');
+    $routes->post('guardar',                          'ClientRecepcionMpController::guardar');
+    $routes->get('(:num)/ver',                        'ClientRecepcionMpController::ver/$1');
+    $routes->post('(:num)/eliminar',                  'ClientRecepcionMpController::eliminar/$1');
+    // CRUD de proveedores (anidado)
+    $routes->get('proveedores',                       'ClientRecepcionMpController::proveedores');
+    $routes->post('proveedores/guardar',              'ClientRecepcionMpController::guardarProveedor');
+    $routes->post('proveedores/(:num)/actualizar',    'ClientRecepcionMpController::actualizarProveedor/$1');
+    $routes->post('proveedores/(:num)/eliminar',      'ClientRecepcionMpController::eliminarProveedor/$1');
+});
+
+// TAT Fase 5.3a - Administración del catálogo de items de equipos
+$routes->group('admin/equipos-items', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                         'EquipoItemController::index');
+    $routes->get('nuevo',                     'EquipoItemController::agregar');
+    $routes->post('guardar',                  'EquipoItemController::guardar');
+    $routes->get('(:num)/editar',             'EquipoItemController::editar/$1');
+    $routes->post('(:num)/actualizar',        'EquipoItemController::actualizar/$1');
+    $routes->post('(:num)/eliminar',          'EquipoItemController::eliminar/$1');
+    $routes->post('(:num)/activar',           'EquipoItemController::activar/$1');
+    $routes->get('asignar/(:num)',            'EquipoItemController::asignar/$1');
+    $routes->post('asignar/(:num)/guardar',   'EquipoItemController::guardarAsignaciones/$1');
+});
+
+// TAT Fase 5.3a - Módulo Condiciones de Equipos y Utensilios (tendero)
+$routes->group('client/equipos', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                        'ClientEquiposController::index');
+    $routes->get('cliente/(:num)',           'ClientEquiposController::index/$1');
+    $routes->get('nueva',                    'ClientEquiposController::crear');
+    $routes->post('guardar',                 'ClientEquiposController::guardar');
+    $routes->get('(:num)/ver',               'ClientEquiposController::ver/$1');
+    $routes->post('(:num)/eliminar',         'ClientEquiposController::eliminar/$1');
+});
+
+// TAT Fase 5.2 - Administración del catálogo de items de aseo
+$routes->group('admin/limpieza-items', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                         'LimpiezaItemController::index');
+    $routes->get('nuevo',                     'LimpiezaItemController::agregar');
+    $routes->post('guardar',                  'LimpiezaItemController::guardar');
+    $routes->get('(:num)/editar',             'LimpiezaItemController::editar/$1');
+    $routes->post('(:num)/actualizar',        'LimpiezaItemController::actualizar/$1');
+    $routes->post('(:num)/eliminar',          'LimpiezaItemController::eliminar/$1');
+    $routes->post('(:num)/activar',           'LimpiezaItemController::activar/$1');
+    $routes->get('asignar/(:num)',            'LimpiezaItemController::asignar/$1');
+    $routes->post('asignar/(:num)/guardar',   'LimpiezaItemController::guardarAsignaciones/$1');
+});
+
+// TAT Fase 3-bis - Aprobación pública de solicitudes de anulación (sin auth, solo token)
+$routes->get('anular/([a-f0-9]{64})',            'AnulacionController::detalle/$1');
+$routes->post('anular/([a-f0-9]{64})/aprobar',   'AnulacionController::aprobar/$1');
+$routes->post('anular/([a-f0-9]{64})/rechazar',  'AnulacionController::rechazar/$1');
+
+// TAT Fase 5.2 - Módulo Inspección de Aseo (tendero)
+$routes->group('client/limpieza-local', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                        'ClientLimpiezaLocalController::index');
+    $routes->get('cliente/(:num)',           'ClientLimpiezaLocalController::index/$1');
+    $routes->get('nueva',                    'ClientLimpiezaLocalController::crear');
+    $routes->post('guardar',                 'ClientLimpiezaLocalController::guardar');
+    $routes->get('(:num)/ver',               'ClientLimpiezaLocalController::ver/$1');
+    $routes->post('(:num)/eliminar',         'ClientLimpiezaLocalController::eliminar/$1');
+});
+
+// TAT Fase 5.1 - Modulo Control de Neveras (CRUD por el cliente/tendero)
+$routes->group('client/neveras', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                                     'ClientNeverasController::index');
+    $routes->get('cliente/(:num)',                        'ClientNeverasController::index/$1');
+    $routes->get('nueva',                                 'ClientNeverasController::agregarNevera');
+    $routes->post('guardar',                              'ClientNeverasController::guardarNevera');
+    $routes->get('(:num)/editar',                         'ClientNeverasController::editarNevera/$1');
+    $routes->post('(:num)/actualizar',                    'ClientNeverasController::actualizarNevera/$1');
+    $routes->post('(:num)/eliminar',                      'ClientNeverasController::eliminarNevera/$1');
+    $routes->get('(:num)/historico',                      'ClientNeverasController::historico/$1');
+    $routes->get('(:num)/medir',                          'ClientNeverasController::nuevaMedicion/$1');
+    $routes->post('(:num)/medir/guardar',                 'ClientNeverasController::guardarMedicion/$1');
+    $routes->post('(:num)/medicion/(:num)/eliminar',      'ClientNeverasController::eliminarMedicion/$1/$2');
+});
+
+// TAT Fase 4.2 - Modulo Permisos de Bomberos (CRUD por el cliente/tendero)
+$routes->group('client/bomberos', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                                              'ClientBomberosController::index');
+    $routes->get('cliente/(:num)',                                 'ClientBomberosController::index/$1');
+    $routes->post('nuevo-anio',                                    'ClientBomberosController::nuevoAnio');
+    $routes->get('expediente/(:num)',                              'ClientBomberosController::expediente/$1');
+    $routes->post('expediente/(:num)/encabezado',                  'ClientBomberosController::actualizarEncabezado/$1');
+    $routes->post('expediente/(:num)/doc/subir',                   'ClientBomberosController::uploadDocumento/$1');
+    $routes->post('expediente/(:num)/doc/(:num)/eliminar',         'ClientBomberosController::deleteDocumento/$1/$2');
+});
+
+// TAT Fase 4.1 - Modulo Trabajadores (CRUD por el cliente/tendero)
+$routes->group('client/trabajadores', ['filter' => 'auth'], function($routes) {
+    $routes->get('/',                              'ClientTrabajadoresController::index');
+    $routes->get('cliente/(:num)',                 'ClientTrabajadoresController::index/$1');
+    $routes->get('nuevo',                          'ClientTrabajadoresController::add');
+    $routes->post('guardar',                       'ClientTrabajadoresController::addPost');
+    $routes->get('(:num)/editar',                  'ClientTrabajadoresController::edit/$1');
+    $routes->post('(:num)/actualizar',             'ClientTrabajadoresController::updatePost/$1');
+    $routes->post('(:num)/eliminar',               'ClientTrabajadoresController::delete/$1');
+    $routes->get('(:num)/soportes',                'ClientTrabajadoresController::soportes/$1');
+    $routes->post('(:num)/soportes/subir',         'ClientTrabajadoresController::uploadSoporte/$1');
+    $routes->post('(:num)/soportes/(:num)/eliminar','ClientTrabajadoresController::deleteSoporte/$1/$2');
+});
+
 // Client Inspections (read-only web views)
 $routes->group('client/inspecciones', ['filter' => 'auth'], function($routes) {
     $routes->get('/', 'ClientInspeccionesController::dashboard');
@@ -490,6 +669,8 @@ $routes->group('client/inspecciones', ['filter' => 'auth'], function($routes) {
     $routes->get('senalizacion/(:num)', 'ClientInspeccionesController::viewSenalizacion/$1');
     $routes->get('botiquin', 'ClientInspeccionesController::listBotiquin');
     $routes->get('botiquin/(:num)', 'ClientInspeccionesController::viewBotiquin/$1');
+    $routes->get('botiquin-tipo-a', 'ClientInspeccionesController::listBotiquinTipoA');
+    $routes->get('botiquin-tipo-a/(:num)', 'ClientInspeccionesController::viewBotiquinTipoA/$1');
     $routes->get('extintores', 'ClientInspeccionesController::listExtintores');
     $routes->get('extintores/(:num)', 'ClientInspeccionesController::viewExtintores/$1');
     $routes->get('comunicaciones', 'ClientInspeccionesController::listComunicaciones');
@@ -840,6 +1021,9 @@ $routes->get('/admin/usage/user/(:num)', 'UsageController::userDetail/$1');
 $routes->get('/admin/usage/export-csv', 'UsageController::exportCsv');
 $routes->get('/admin/usage/chart-data', 'UsageController::chartData');
 
+// Estadisticas del directorio public/uploads/ (solo admin)
+$routes->get('/admin/uploads-stats', 'AdminUploadsStatsController::index');
+
 // ============================================================================
 // RUTAS DE AUDITORÍA DEL PLAN DE TRABAJO ANUAL (PTA)
 // ============================================================================
@@ -981,6 +1165,20 @@ $routes->group('inspecciones', ['namespace' => 'App\Controllers\Inspecciones', '
     $routes->post('botiquin/finalizar/(:num)', 'InspeccionBotiquinController::finalizar/$1');
     $routes->get('botiquin/delete/(:num)', 'InspeccionBotiquinController::delete/$1');
     $routes->get('botiquin/enviar-email/(:num)', 'InspeccionBotiquinController::enviarEmail/$1');
+
+    // Inspección Botiquín Tipo A
+    $routes->get('botiquin-tipo-a', 'InspeccionBotiquinTipoAController::list');
+    $routes->get('botiquin-tipo-a/create', 'InspeccionBotiquinTipoAController::create');
+    $routes->get('botiquin-tipo-a/create/(:num)', 'InspeccionBotiquinTipoAController::create/$1');
+    $routes->post('botiquin-tipo-a/store', 'InspeccionBotiquinTipoAController::store');
+    $routes->get('botiquin-tipo-a/edit/(:num)', 'InspeccionBotiquinTipoAController::edit/$1');
+    $routes->post('botiquin-tipo-a/update/(:num)', 'InspeccionBotiquinTipoAController::update/$1');
+    $routes->get('botiquin-tipo-a/view/(:num)', 'InspeccionBotiquinTipoAController::view/$1');
+    $routes->get('botiquin-tipo-a/pdf/(:num)', 'InspeccionBotiquinTipoAController::generatePdf/$1');
+    $routes->get('botiquin-tipo-a/regenerar/(:num)', 'InspeccionBotiquinTipoAController::regenerarPdf/$1');
+    $routes->post('botiquin-tipo-a/finalizar/(:num)', 'InspeccionBotiquinTipoAController::finalizar/$1');
+    $routes->get('botiquin-tipo-a/delete/(:num)', 'InspeccionBotiquinTipoAController::delete/$1');
+    $routes->get('botiquin-tipo-a/enviar-email/(:num)', 'InspeccionBotiquinTipoAController::enviarEmail/$1');
 
     // Inspección Gabinetes
     $routes->get('gabinetes', 'InspeccionGabineteController::list');
@@ -1649,4 +1847,29 @@ $routes->group('listado-maestro', ['filter' => 'auth'], function($routes) {
     $routes->get('matriz-peligros/(:num)', 'ListadoMaestroController::generarMatrizPeligros/$1');
     $routes->get('matrices-todas/(:num)', 'ListadoMaestroController::generarTodasMatrices/$1');
 });
+
+// ============================================================================
+// RUTINAS DE TRABAJO — PWA (calendario, asignaciones, checklist público)
+// ============================================================================
+$routes->group('rutinas', ['filter' => 'auth'], function($routes) {
+    // Calendario
+    $routes->get('calendario', 'RutinasController::calendario');
+
+    // CRUD Actividades
+    $routes->get('actividades',               'RutinasController::listActividades');
+    $routes->get('actividades/add',           'RutinasController::addActividad');
+    $routes->post('actividades/add',          'RutinasController::addActividadPost');
+    $routes->get('actividades/edit/(:num)',   'RutinasController::editActividad/$1');
+    $routes->post('actividades/edit/(:num)',  'RutinasController::editActividadPost/$1');
+    $routes->get('actividades/delete/(:num)', 'RutinasController::deleteActividad/$1');
+
+    // CRUD Asignaciones
+    $routes->get('asignaciones',               'RutinasController::listAsignaciones');
+    $routes->post('asignaciones/add',          'RutinasController::addAsignacionPost');
+    $routes->get('asignaciones/delete/(:num)', 'RutinasController::deleteAsignacion/$1');
+});
+
+// Rutas PÚBLICAS (checklist tokenizado) — exceptuadas del filtro auth
+$routes->get('rutinas/checklist/(:num)/(:segment)/(:segment)', 'RutinasController::checklistPublico/$1/$2/$3');
+$routes->post('rutinas/checklist/update',                      'RutinasController::updateChecklistPublico');
 

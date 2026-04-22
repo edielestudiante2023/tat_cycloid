@@ -266,7 +266,7 @@ class PlanContingenciaBasuraController extends BaseController
                 'empresa_aseo'               => 'Identificar y registrar el prestador del servicio público de aseo del municipio, incluyendo línea de atención al usuario, canal de radicación de PQRS y datos del supervisor de ruta asignado a la zona del conjunto.',
                 'horario_recoleccion_actual' => 'Documentar los días y horarios exactos de recolección vigentes en la zona del conjunto, verificando periódicamente con el prestador del servicio ante posibles cambios de ruta o cronograma.',
             ],
-            'cliente'    => ['nombre_cliente' => 'CONJUNTO RESIDENCIAL — EJEMPLO'],
+            'cliente'    => ['nombre_cliente' => 'ESTABLECIMIENTO COMERCIAL — EJEMPLO'],
             'consultor'  => ['nombre_consultor' => 'Consultor SST'],
             'logoBase64' => '',
         ];

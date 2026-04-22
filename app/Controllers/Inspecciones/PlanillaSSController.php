@@ -60,6 +60,7 @@ class PlanillaSSController extends BaseController
             }
             $newName = 'planilla_ss_' . $idCliente . '_' . date('Ymd_His') . '.' . $archivo->getExtension();
             $archivo->move(FCPATH . $dir, $newName);
+            compress_uploaded_image(FCPATH . $dir . $newName);
             $archivoPath = $dir . $newName;
         }
 

@@ -96,14 +96,14 @@
 
 <div class="container py-3">
 
-<!-- ==================== PASO 1: Selector Copropiedad ==================== -->
+<!-- ==================== PASO 1: Selector Establecimiento comercial ==================== -->
 <div class="wizard-step active" id="step-1">
     <div class="card">
-        <div class="card-header"><h5 class="mb-0"><i class="fas fa-building"></i> Busque su Copropiedad</h5></div>
+        <div class="card-header"><h5 class="mb-0"><i class="fas fa-building"></i> Busque su Establecimiento comercial</h5></div>
         <div class="card-body">
-            <p class="text-muted mb-3">Escriba parte del nombre de su copropiedad para buscarla.</p>
+            <p class="text-muted mb-3">Escriba parte del nombre de su establecimiento comercial para buscarla.</p>
             <select id="select-cliente" class="form-select" style="width:100%">
-                <option value="">-- Busque su copropiedad --</option>
+                <option value="">-- Busque su establecimiento comercial --</option>
             </select>
             <div class="sticky-actions mt-3">
                 <button type="button" class="btn btn-brand w-100" id="btn-step1-next" disabled>Continuar <i class="fas fa-arrow-right"></i></button>
@@ -412,7 +412,7 @@
             <p class="text-muted">Revise todos los datos antes del envio final.</p>
 
             <details class="border rounded p-2 mb-2" open>
-                <summary class="fw-semibold"><i class="fas fa-building"></i> Copropiedad</summary>
+                <summary class="fw-semibold"><i class="fas fa-building"></i> Establecimiento comercial</summary>
                 <div id="sum-cliente" class="mt-2 small"></div>
             </details>
 
@@ -486,7 +486,7 @@
 
     // ========== SELECT2 ==========
     $('#select-cliente').select2({
-        placeholder: 'Busque su copropiedad...',
+        placeholder: 'Busque su establecimiento comercial...',
         allowClear: true,
         minimumInputLength: 2,
         ajax: {
@@ -965,5 +965,6 @@
 
 })();
 </script>
+    <script src="<?= base_url('js/image-compress.js?v=1') ?>" defer></script>
 </body>
 </html>

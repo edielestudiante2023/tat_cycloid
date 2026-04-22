@@ -96,7 +96,7 @@
 
         h1_alfa {
             text-align: center;
-            color: #2d6a4f;
+            color: #ee6c21;
         }
 
         p_alfa, p,  li {

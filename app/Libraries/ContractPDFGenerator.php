@@ -120,8 +120,8 @@ class ContractPDFGenerator
      */
     private function addHeader()
     {
-        $logoCycloid = FCPATH . 'uploads/logocycloidsinfondo.png';
-        $logoSST = FCPATH . 'uploads/logosst.png';
+        $logoCycloid = FCPATH . 'uploads/tat.png';
+        $logoSST = FCPATH . 'uploads/tat.png';
 
         // Logo Cycloid (izquierda) - reducido a 25mm
         if (file_exists($logoCycloid)) {

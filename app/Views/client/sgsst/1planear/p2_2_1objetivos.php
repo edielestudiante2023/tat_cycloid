@@ -176,7 +176,7 @@
     <div class="alpha-title">OBJETIVOS DEL SISTEMA DE GESTIÓN DEL SEGURIDAD Y SALUD EN EL TRABAJO</div>
 
     <p class="beta-parrafo">
-        <strong><?= $client['nombre_cliente'] ?></strong>, con el propósito de garantizar el cumplimiento de los planes de seguridad y salud, tanto para contratistas y proveedores que desempeñan sus funciones en nuestro conjunto residencial, como para otras personas expuestas a riesgos o accidentes, emite la presente declaración de objetivos. Se considera este enfoque como un núcleo fundamental para el desarrollo humano y laboral.
+        <strong><?= $client['nombre_cliente'] ?></strong>, con el propósito de garantizar el cumplimiento de los planes de seguridad y salud, tanto para contratistas y proveedores que desempeñan sus funciones en nuestro establecimiento comercial, como para otras personas expuestas a riesgos o accidentes, emite la presente declaración de objetivos. Se considera este enfoque como un núcleo fundamental para el desarrollo humano y laboral.
     </p>
 
     <p class="beta-parrafo">
@@ -189,7 +189,7 @@
 
     <ul class="delta-lista">
         <li class="beta-parrafo">Diseñar un sistema de gestión en seguridad y salud en el trabajo que promueva el bienestar de acuerdo con la normatividad vigente. Este sistema facilitará el control de los factores de riesgo inherentes al personal asignado por nuestros proveedores y contratistas, con el objetivo de prevenir accidentes y enfermedades laborales que puedan resultar en incapacidades, invalidez o incluso pérdida de vidas.</li>
-        <li class="beta-parrafo">Identificar los factores de riesgo presentes en la copropiedad y aplicar medidas de control para mejorar las condiciones de trabajo y la salud del personal asignado por nuestros proveedores y contratistas.</li>
+        <li class="beta-parrafo">Identificar los factores de riesgo presentes en el establecimiento comercial y aplicar medidas de control para mejorar las condiciones de trabajo y la salud del personal asignado por nuestros proveedores y contratistas.</li>
         <li class="beta-parrafo">Planificar, organizar y llevar a cabo eventos de instrucción y capacitación que sirvan como elementos integrales para fortalecer competencias en la prevención del riesgo, fomentando la participación de proveedores y contratistas.</li>
         <li class="beta-parrafo">Diseñar e implementar un plan de emergencias para estar preparados ante eventos inesperados que puedan poner en riesgo a las personas o la propiedad, capacitando a la brigada de emergencia.</li>
         <li class="beta-parrafo">Garantizar que todas las acciones y estrategias definidas en el plan de trabajo del Programa de Seguridad y Salud en el Trabajo se lleven a cabo de manera completa y oportuna.</li>

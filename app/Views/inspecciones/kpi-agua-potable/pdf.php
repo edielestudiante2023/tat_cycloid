@@ -11,11 +11,11 @@
     .header-table .logo-cell img { max-width: 90px; max-height: 55px; }
     .header-table .title-cell { text-align: center; font-weight: bold; font-size: 10px; }
     .header-table .code-cell { width: 120px; font-size: 9px; }
-    .main-title { text-align: center; font-weight: bold; font-size: 13px; color: #1b4332; margin: 20px 0 15px; }
-    .section-title { background: #1b4332; color: white; padding: 4px 8px; font-weight: bold; font-size: 10px; margin: 15px 0 8px; }
+    .main-title { text-align: center; font-weight: bold; font-size: 13px; color: #c9541a; margin: 20px 0 15px; }
+    .section-title { background: #c9541a; color: white; padding: 4px 8px; font-weight: bold; font-size: 10px; margin: 15px 0 8px; }
     p { margin: 4px 0 8px; text-align: justify; }
     .data-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 10px; }
-    .data-table th { background: #1b4332; color: white; padding: 6px 8px; text-align: left; font-weight: bold; border: 1px solid #333; }
+    .data-table th { background: #c9541a; color: white; padding: 6px 8px; text-align: left; font-weight: bold; border: 1px solid #333; }
     .data-table td { padding: 5px 8px; border: 1px solid #ccc; vertical-align: top; }
     .evidence-table { width: 100%; border-collapse: collapse; margin-top: 5px; }
     .evidence-table td { text-align: center; padding: 5px; vertical-align: top; }

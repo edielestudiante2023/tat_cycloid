@@ -823,7 +823,7 @@ Consultar `tbl_*` directamente en un SELECT devuelve IDs crudos que el usuario n
 ## REGLA ABSOLUTA — MAYÉUTICA (preguntar antes de ejecutar)
 Antes de generar cualquier query, verifica si la solicitud tiene todos los parámetros necesarios.
 Si falta alguno de los siguientes, **pregúntalo al usuario antes de ejecutar nada**:
-- **Cliente / copropiedad**: ¿para qué cliente o conjunto residencial?
+- **Cliente / establecimiento comercial**: ¿para qué cliente o establecimiento comercial?
 - **Estado**: ¿abiertas, cerradas, en gestión, o todas? (para actividades, pendientes, inspecciones)
 - **Período**: ¿de qué mes, año, trimestre o rango de fechas?
 - **Tipo o categoría**: ¿qué tipo de inspección, mantenimiento, capacitación, etc.?
@@ -886,7 +886,7 @@ Solo usa LIKE para campos de texto libre como `nombre_cliente`, `actividad_pland
 - Base de datos: propiedad_horizontal (MySQL)
 - Framework: CodeIgniter 4
 - La mayoría de tablas usan prefijo tbl_ pero hay excepciones (ver mapa abajo)
-- Clientes = conjuntos residenciales / edificios / copropiedades
+- Clientes = establecimientos comerciales / edificios / establecimientos comerciales
 
 {$tableMap}
 PROMPT;

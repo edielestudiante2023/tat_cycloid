@@ -176,15 +176,15 @@
     <div class="alpha-title">POLÍTICA NO CONSUMO DE ALCOHOL, TABACO Y DROGAS</div>
 
     <p class="beta-parrafo">
-        Con el objetivo de fomentar un entorno libre de alcohol, drogas y tabaco en las instalaciones de <strong><?= $client['nombre_cliente'] ?></strong>, se ha formulado una política destinada a promover el bienestar de contratistas, trabajadores, residentes y proveedores.
+        Con el objetivo de fomentar un entorno libre de alcohol, drogas y tabaco en las instalaciones de <strong><?= $client['nombre_cliente'] ?></strong>, se ha formulado una política destinada a promover el bienestar de contratistas, trabajadores, clientes y trabajadores y proveedores.
     </p>
 
     <p class="beta-parrafo">
-        <strong><?= $client['nombre_cliente'] ?></strong> mantiene la prohibición del consumo, posesión y comercialización de bebidas alcohólicas, drogas ilícitas y tabaco por parte de contratistas y proveedores en cualquier área o durante la ejecución de servicios para la copropiedad.
+        <strong><?= $client['nombre_cliente'] ?></strong> mantiene la prohibición del consumo, posesión y comercialización de bebidas alcohólicas, drogas ilícitas y tabaco por parte de contratistas y proveedores en cualquier área o durante la ejecución de servicios para el establecimiento comercial.
     </p>
 
     <p class="beta-parrafo">
-        Con el propósito de garantizar el cumplimiento de esta política, <strong><?= $client['nombre_cliente'] ?></strong> se reserva el derecho de solicitar pruebas de alcoholemia y/o consumo de drogas ilícitas a contratistas o proveedores en situaciones en las que estén involucrados en accidentes y/o presenten características o actitudes sospechosas. El contratista o proveedor acepta someterse a estas pruebas necesarias para esclarecer presuntos indicios de abuso de drogas y/o alcohol en el desempeño de su personal asignado a la copropiedad.
+        Con el propósito de garantizar el cumplimiento de esta política, <strong><?= $client['nombre_cliente'] ?></strong> se reserva el derecho de solicitar pruebas de alcoholemia y/o consumo de drogas ilícitas a contratistas o proveedores en situaciones en las que estén involucrados en accidentes y/o presenten características o actitudes sospechosas. El contratista o proveedor acepta someterse a estas pruebas necesarias para esclarecer presuntos indicios de abuso de drogas y/o alcohol en el desempeño de su personal asignado al establecimiento comercial.
     </p>
 
     <p class="beta-parrafo">
@@ -192,7 +192,7 @@
     </p>
 
     <p class="beta-parrafo">
-        Se prohíbe expresamente presentarse en la copropiedad para llevar a cabo cualquier forma de contrato comercial o servicio bajo la influencia de alcohol y/o sustancias psicoactivas ilegales.
+        Se prohíbe expresamente presentarse en el establecimiento comercial para llevar a cabo cualquier forma de contrato comercial o servicio bajo la influencia de alcohol y/o sustancias psicoactivas ilegales.
     </p>
 
     <div class="signature-container">

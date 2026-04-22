@@ -2,7 +2,7 @@
 $colorMap = [
     'danger'    => ['border' => '#dc3545', 'badge_bg' => '#dc3545', 'badge_text' => '#fff'],
     'warning'   => ['border' => '#ffc107', 'badge_bg' => '#ffc107', 'badge_text' => '#333'],
-    'gold'      => ['border' => '#e76f51', 'badge_bg' => '#e76f51', 'badge_text' => '#fff'],
+    'gold'      => ['border' => '#ee6c21', 'badge_bg' => '#ee6c21', 'badge_text' => '#fff'],
     'success'   => ['border' => '#28a745', 'badge_bg' => '#28a745', 'badge_text' => '#fff'],
     'secondary' => ['border' => '#6c757d', 'badge_bg' => '#6c757d', 'badge_text' => '#fff'],
 ];
@@ -26,7 +26,7 @@ $colorMap = [
 
 <!-- Filtros -->
 <div class="d-flex gap-2 mb-3" style="overflow-x:auto; padding-bottom:4px;">
-    <button class="btn btn-sm filter-btn active" data-filter="all" style="white-space:nowrap; border-radius:20px; font-size:13px; font-weight:600; border:2px solid #e76f51; background:#e76f51; color:white;">
+    <button class="btn btn-sm filter-btn active" data-filter="all" style="white-space:nowrap; border-radius:20px; font-size:13px; font-weight:600; border:2px solid #ee6c21; background:#ee6c21; color:white;">
         Todos (<?= count($vencimientos) ?>)
     </button>
     <?php
@@ -34,14 +34,14 @@ $colorMap = [
     $ejecutados = array_filter($vencimientos, fn($v) => $v['estado_actividad'] === 'ejecutado');
     $cerrados = array_filter($vencimientos, fn($v) => in_array($v['estado_actividad'], ['CERRADA', 'CERRADA POR FIN CONTRATO']));
     ?>
-    <button class="btn btn-sm filter-btn" data-filter="sin ejecutar" style="white-space:nowrap; border-radius:20px; font-size:13px; font-weight:600; border:2px solid #e76f51; background:white; color:#e76f51;">
+    <button class="btn btn-sm filter-btn" data-filter="sin ejecutar" style="white-space:nowrap; border-radius:20px; font-size:13px; font-weight:600; border:2px solid #ee6c21; background:white; color:#ee6c21;">
         Pendientes (<?= count($sinEjecutar) ?>)
     </button>
-    <button class="btn btn-sm filter-btn" data-filter="ejecutado" style="white-space:nowrap; border-radius:20px; font-size:13px; font-weight:600; border:2px solid #e76f51; background:white; color:#e76f51;">
+    <button class="btn btn-sm filter-btn" data-filter="ejecutado" style="white-space:nowrap; border-radius:20px; font-size:13px; font-weight:600; border:2px solid #ee6c21; background:white; color:#ee6c21;">
         Ejecutados (<?= count($ejecutados) ?>)
     </button>
     <?php if (count($cerrados) > 0): ?>
-    <button class="btn btn-sm filter-btn" data-filter="cerrada" style="white-space:nowrap; border-radius:20px; font-size:13px; font-weight:600; border:2px solid #e76f51; background:white; color:#e76f51;">
+    <button class="btn btn-sm filter-btn" data-filter="cerrada" style="white-space:nowrap; border-radius:20px; font-size:13px; font-weight:600; border:2px solid #ee6c21; background:white; color:#ee6c21;">
         Cerrados (<?= count($cerrados) ?>)
     </button>
     <?php endif; ?>
@@ -57,14 +57,14 @@ $colorMap = [
     <div class="card mb-2 maint-card" data-estado="<?= esc($filterAttr) ?>" style="border-left:4px solid <?= $c['border'] ?>;">
         <div class="card-body py-3">
             <div class="d-flex justify-content-between align-items-start">
-                <strong style="font-size:14px; color:#1b4332;"><?= esc($v['detalle_mantenimiento'] ?? 'Sin detalle') ?></strong>
+                <strong style="font-size:14px; color:#c9541a;"><?= esc($v['detalle_mantenimiento'] ?? 'Sin detalle') ?></strong>
                 <span class="badge" style="background:<?= $c['badge_bg'] ?>; color:<?= $c['badge_text'] ?>; font-size:11px;">
                     <?= esc($v['label']) ?>
                 </span>
             </div>
             <div class="mt-1" style="font-size:13px; color:#555;">
                 <?php if ($estado === 'sin ejecutar'): ?>
-                    <i class="fas fa-calendar-alt me-1" style="color:#e76f51;"></i>
+                    <i class="fas fa-calendar-alt me-1" style="color:#ee6c21;"></i>
                     Vence: <?= date('d/m/Y', strtotime($v['fecha_vencimiento'])) ?>
                 <?php else: ?>
                     <?php if (!empty($v['fecha_realizacion'])): ?>
@@ -86,7 +86,7 @@ $colorMap = [
 
 <style>
     .filter-btn.active {
-        background: #e76f51 !important;
+        background: #ee6c21 !important;
         color: white !important;
     }
 </style>
@@ -101,10 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
             btns.forEach(function(b) {
                 b.classList.remove('active');
                 b.style.background = 'white';
-                b.style.color = '#e76f51';
+                b.style.color = '#ee6c21';
             });
             this.classList.add('active');
-            this.style.background = '#e76f51';
+            this.style.background = '#ee6c21';
             this.style.color = 'white';
 
             var filter = this.dataset.filter;

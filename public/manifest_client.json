@@ -7,8 +7,8 @@
     "scope": "/tat_cycloid/public/",
     "display": "standalone",
     "orientation": "portrait",
-    "background_color": "#1b4332",
-    "theme_color": "#1b4332",
+    "background_color": "#c9541a",
+    "theme_color": "#c9541a",
     "categories": ["business", "productivity"],
     "icons": [
         {

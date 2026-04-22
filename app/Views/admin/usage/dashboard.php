@@ -28,7 +28,7 @@
         }
 
         .stat-card.primary {
-            border-left-color: #007bff;
+            border-left-color: #ee6c21;
         }
 
         .stat-card.success {
@@ -54,7 +54,7 @@
         .stat-card .value {
             font-size: 2rem;
             font-weight: 700;
-            color: #1b4332;
+            color: #c9541a;
         }
 
         .stat-card .label {
@@ -81,7 +81,7 @@
         }
 
         .badge-admin {
-            background-color: #007bff;
+            background-color: #ee6c21;
             color: white;
         }
 
@@ -103,18 +103,18 @@
         }
 
         .btn-gold {
-            background: linear-gradient(135deg, #e76f51, #f4a261);
+            background: linear-gradient(135deg, #ee6c21, #ff8d4e);
             color: white;
             border: none;
         }
 
         .btn-gold:hover {
-            background: linear-gradient(135deg, #f4a261, #e76f51);
+            background: linear-gradient(135deg, #ff8d4e, #ee6c21);
             color: white;
         }
 
         .page-header {
-            background: linear-gradient(135deg, #1b4332, #2d6a4f);
+            background: linear-gradient(135deg, #c9541a, #ee6c21);
             color: white;
             padding: 30px;
             border-radius: 15px;
@@ -140,7 +140,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;">
             <div>
                 <a href="<?= base_url('/admin/dashboard') ?>">
-                    <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" style="height: 80px;">
+                    <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" style="height: 80px;">
                 </a>
             </div>
             <div>
@@ -314,7 +314,7 @@
                                 {
                                     label: 'Sesiones',
                                     data: data.sesiones,
-                                    borderColor: '#007bff',
+                                    borderColor: '#ee6c21',
                                     backgroundColor: 'rgba(0, 123, 255, 0.1)',
                                     fill: true,
                                     tension: 0.4

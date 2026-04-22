@@ -242,7 +242,7 @@ class ProgramaLimpiezaController extends BaseController
     {
         $data = [
             'inspeccion' => ['fecha_programa' => date('Y-m-d'), 'nombre_responsable' => 'Administrador(a) del Conjunto'],
-            'cliente'    => ['nombre_cliente' => 'CONJUNTO RESIDENCIAL — EJEMPLO'],
+            'cliente'    => ['nombre_cliente' => 'ESTABLECIMIENTO COMERCIAL — EJEMPLO'],
             'consultor'  => ['nombre_consultor' => 'Consultor SST'],
             'logoBase64' => '',
         ];

@@ -22,13 +22,13 @@
         .header-title { text-align: center; font-weight: bold; font-size: 9px; }
         .header-code { width: 120px; font-size: 8px; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 6px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 6px; color: #c9541a; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
         .info-label { font-weight: bold; color: #444; width: 140px; background: #f7f7f7; }
 
-        .section-title { background: #1b4332; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
+        .section-title { background: #c9541a; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
 
         .data-table { width: 100%; border-collapse: collapse; margin-bottom: 6px; }
         .data-table th { background: #e8e8e8; border: 1px solid #aaa; padding: 3px 4px; font-size: 8px; text-align: center; }
@@ -79,31 +79,31 @@
     <!-- INTRODUCCION: NTC 4198 -->
     <div class="section-title">FUNDAMENTACION</div>
     <p class="intro-text">
-        Fundamentacion de la obligatoriedad de botiquines tipo B en propiedades horizontales en Colombia:
+        Fundamentacion de la obligatoriedad de botiquines tipo B en establecimientos comerciales en Colombia:
     </p>
     <p class="intro-subtitle">1. Perspectiva de salud publica:</p>
     <p class="intro-text">
         <strong>Reduccion de morbilidad y mortalidad:</strong> La atencion oportuna y eficaz de lesiones y urgencias medicas puede disminuir la morbilidad y mortalidad asociada a estas situaciones.<br>
         <strong>Prevencion de complicaciones:</strong> Un botiquin tipo B bien dotado permite prevenir complicaciones derivadas de lesiones o urgencias, lo que reduce la necesidad de atencion medica especializada y los costos asociados a la misma.<br>
-        <strong>Promocion de la salud:</strong> La presencia de un botiquin tipo B puede incentivar la adopcion de practicas de autocuidado y primeros auxilios, lo que contribuye a promover la salud individual y colectiva en la comunidad.
+        <strong>Promocion de la salud:</strong> La presencia de un botiquin tipo B puede incentivar la adopcion de practicas de autocuidado y primeros auxilios, lo que contribuye a promover la salud individual y colectiva de los ocupantes del establecimiento.
     </p>
     <p class="intro-subtitle">2. Enfoque de seguridad y bienestar:</p>
     <p class="intro-text">
-        <strong>Minimizacion de riesgos:</strong> Un botiquin tipo B bien dotado minimiza los riesgos asociados a accidentes, lesiones o urgencias medicas en la tienda a tienda.<br>
+        <strong>Minimizacion de riesgos:</strong> Un botiquin tipo B bien dotado minimiza los riesgos asociados a accidentes, lesiones o urgencias medicas en el establecimiento.<br>
         <strong>Proteccion de la integridad fisica:</strong> Permite brindar atencion inmediata a las personas afectadas, protegiendo su integridad fisica y reduciendo el impacto psicologico de las situaciones de emergencia.<br>
-        <strong>Generacion de un ambiente seguro:</strong> La disponibilidad de un botiquin tipo B contribuye a crear un ambiente mas seguro para todos los residentes, visitantes y personal del conjunto residencial.
+        <strong>Generacion de un ambiente seguro:</strong> La disponibilidad de un botiquin tipo B contribuye a crear un ambiente mas seguro para todos los clientes y trabajadores, visitantes y personal del establecimiento comercial.
     </p>
     <p class="intro-subtitle">3. Aspectos legales y normativos:</p>
     <p class="intro-text">
-        <strong>Cumplimiento de la Ley 1801 de 2016 y el Decreto 1076 de 2015:</strong> La normativa colombiana establece la obligatoriedad de contar con un botiquin tipo B en las propiedades horizontales como requisito minimo de seguridad.<br>
-        <strong>Responsabilidad civil:</strong> La ausencia de un botiquin tipo B o su mal estado puede generar responsabilidad civil para la administracion del conjunto residencial en caso de un accidente o una urgencia medica.<br>
-        <strong>Promocion de una cultura de cumplimiento legal:</strong> El cumplimiento de la normativa sobre botiquines tipo B contribuye a fortalecer una cultura de cumplimiento legal en las propiedades horizontales.
+        <strong>Cumplimiento de la Ley 1801 de 2016 y el Decreto 1076 de 2015:</strong> La normativa colombiana establece la obligatoriedad de contar con un botiquin tipo B en los establecimientos comerciales como requisito minimo de seguridad.<br>
+        <strong>Responsabilidad civil:</strong> La ausencia de un botiquin tipo B o su mal estado puede generar responsabilidad civil para la administracion del establecimiento comercial en caso de un accidente o una urgencia medica.<br>
+        <strong>Promocion de una cultura de cumplimiento legal:</strong> El cumplimiento de la normativa sobre botiquines tipo B contribuye a fortalecer una cultura de cumplimiento legal en los establecimientos comerciales.
     </p>
     <p class="intro-subtitle">4. Consideraciones eticas y de responsabilidad social:</p>
     <p class="intro-text">
-        <strong>Derecho a la salud:</strong> La disponibilidad de un botiquin tipo B garantiza el derecho fundamental a la salud de las personas que habitan o frecuentan la tienda a tienda.<br>
-        <strong>Proteccion de la vida y la integridad fisica:</strong> Brindar atencion inmediata a las personas en situacion de emergencia es un deber etico de la administracion del conjunto residencial.<br>
-        <strong>Compromiso con el bienestar social:</strong> Dotar a la tienda a tienda con un botiquin tipo B demuestra el compromiso social de la administracion con el bienestar de las personas que viven, trabajan o visitan el lugar.
+        <strong>Derecho a la salud:</strong> La disponibilidad de un botiquin tipo B garantiza el derecho fundamental a la salud de las personas que trabajan o frecuentan el establecimiento.<br>
+        <strong>Proteccion de la vida y la integridad fisica:</strong> Brindar atencion inmediata a las personas en situacion de emergencia es un deber etico de la administracion del establecimiento comercial.<br>
+        <strong>Compromiso con el bienestar social:</strong> Dotar al establecimiento de comercio con un botiquin tipo B demuestra el compromiso social de la administracion con el bienestar de las personas que trabajan o visitan el lugar.
     </p>
     <p class="intro-subtitle">5. Fundamentacion cientifica y tecnica:</p>
     <p class="intro-text">

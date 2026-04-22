@@ -246,7 +246,7 @@ Fecha: <?= isset($latestVersion['sin_contrato']) && $latestVersion['sin_contrato
                     <td>Comité Paritario de Seguridad y Salud en el Trabajo, Brigada de Emergencia</td>
                 </tr>
                 <tr>
-                    <td>Inspección de condiciones de seguridad en instalaciones locativas (oficinas, áreas comunes).</td>
+                    <td>Inspección de condiciones de seguridad en instalaciones locativas (oficinas, áreas del establecimiento).</td>
                     <td>Comité Paritario de Seguridad y Salud en el Trabajo, Brigada de Emergencia</td>
                 </tr>
                 <tr>

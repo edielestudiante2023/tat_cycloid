@@ -69,7 +69,7 @@ $estados = ['NO APLICA', 'NO CUMPLE', 'CUMPLE PARCIALMENTE', 'CUMPLE TOTALMENTE'
                 <div id="<?= $grupoId ?>" class="accordion-collapse collapse" data-bs-parent="#accordionSenal">
                     <div class="accordion-body p-2">
                         <?php foreach ($items as $item): ?>
-                        <div class="card mb-2 item-senal-row" style="border-left:3px solid #e76f51;">
+                        <div class="card mb-2 item-senal-row" style="border-left:3px solid #ee6c21;">
                             <div class="card-body p-2">
                                 <input type="hidden" name="item_id[]" value="<?= $item['id'] ?? '' ?>">
                                 <input type="hidden" name="item_nombre[]" value="<?= esc($item['nombre_item']) ?>">
@@ -111,10 +111,10 @@ $estados = ['NO APLICA', 'NO CUMPLE', 'CUMPLE PARCIALMENTE', 'CUMPLE TOTALMENTE'
         </div><!-- /accordion -->
 
         <!-- Resumen calificación -->
-        <div class="card mt-3" id="cardResumen" style="border:2px solid #e76f51;">
+        <div class="card mt-3" id="cardResumen" style="border:2px solid #ee6c21;">
             <div class="card-body p-2 text-center">
                 <strong style="font-size:14px;">Calificación:</strong>
-                <span id="calcCalificacion" style="font-size:18px; font-weight:700; color:#e76f51;">--</span>%
+                <span id="calcCalificacion" style="font-size:18px; font-weight:700; color:#ee6c21;">--</span>%
                 <br>
                 <small id="calcDescripcion" style="font-size:12px; color:#666;">--</small>
                 <br>
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('calcCalificacion').textContent = calif.toFixed(1);
 
         let desc = '--';
-        let color = '#e76f51';
+        let color = '#ee6c21';
         if (denom > 0) {
             if (calif <= 40) { desc = 'Nivel critico'; color = '#dc3545'; }
             else if (calif <= 60) { desc = 'Nivel bajo'; color = '#fd7e14'; }
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cliente = document.getElementById('selectCliente').value;
         if (!cliente) {
             e.preventDefault();
-            Swal.fire({ icon: 'warning', title: 'Selecciona un cliente', confirmButtonColor: '#e76f51' });
+            Swal.fire({ icon: 'warning', title: 'Selecciona un cliente', confirmButtonColor: '#ee6c21' });
             return;
         }
         e.preventDefault();
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showCancelButton: true,
             confirmButtonText: 'Si, finalizar',
             cancelButtonText: 'Cancelar',
-            confirmButtonColor: '#e76f51',
+            confirmButtonColor: '#ee6c21',
         }).then(result => {
             if (result.isConfirmed) {
                 const input = document.createElement('input');
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         showCancelButton: true,
                         confirmButtonText: 'Si, restaurar',
                         cancelButtonText: 'No, empezar de cero',
-                        confirmButtonColor: '#e76f51',
+                        confirmButtonColor: '#ee6c21',
                     }).then(result => {
                         if (result.isConfirmed) restoreFromLocal(data);
                         else localStorage.removeItem(STORAGE_KEY);

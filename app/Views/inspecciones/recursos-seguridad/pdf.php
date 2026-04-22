@@ -22,14 +22,14 @@
         .header-title { text-align: center; font-weight: bold; font-size: 9px; }
         .header-code { width: 120px; font-size: 8px; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #c9541a; }
         .main-subtitle { text-align: center; font-size: 9px; font-weight: bold; margin: 0 0 6px; color: #444; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
         .info-label { font-weight: bold; color: #444; width: 180px; background: #f7f7f7; }
 
-        .section-title { background: #1b4332; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
+        .section-title { background: #c9541a; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
 
         .recurso-card { border: 1px solid #ccc; margin-bottom: 6px; }
         .recurso-header { background: #e8e8e8; padding: 3px 8px; font-weight: bold; font-size: 9px; border-bottom: 1px solid #ccc; }
@@ -72,12 +72,12 @@
     <!-- INTRODUCCION -->
     <div class="section-title">INTRODUCCION</div>
     <p class="intro-text">
-        Las propiedades horizontales, como condominios y conjuntos residenciales, albergan a una comunidad de personas que comparten espacios comunes y servicios. La seguridad y el bienestar de los residentes, visitantes y personal que habita estos espacios deben ser una prioridad absoluta. En este sentido, la minimizacion de riesgos estructurales, arquitectonicos y administrativos es un aspecto fundamental para garantizar una convivencia armoniosa y segura.
+        Los establecimientos de comercio reciben a diario la concurrencia de clientes, trabajadores, proveedores y visitantes que comparten las areas operativas, administrativas y de atencion al publico del negocio. La seguridad y el bienestar de todas estas personas deben ser una prioridad absoluta. En este sentido, la minimizacion de riesgos estructurales, arquitectonicos y administrativos es un aspecto fundamental para garantizar una operacion segura y confiable del establecimiento.
     </p>
 
     <div class="section-title">RIESGOS ESTRUCTURALES Y ARQUITECTONICOS</div>
     <p class="intro-text">
-        Las propiedades horizontales pueden presentar diversos riesgos estructurales y arquitectonicos que pueden afectar la integridad fisica de las personas y la estabilidad de la edificacion. Algunos ejemplos incluyen:<br>
+        Los establecimientos comerciales pueden presentar diversos riesgos estructurales y arquitectonicos que pueden afectar la integridad fisica de las personas y la estabilidad de la edificacion. Algunos ejemplos incluyen:<br>
         <strong>Defectos estructurales:</strong> Grietas en muros o columnas, hundimientos de pisos, filtraciones de agua, etc.<br>
         <strong>Materiales inadecuados o deteriorados:</strong> Uso de materiales de construccion de baja calidad o que han perdido sus propiedades con el tiempo.<br>
         <strong>Diseno arquitectonico deficiente:</strong> Escaleras mal disenadas, barandillas inseguras, falta de iluminacion adecuada, etc.<br>
@@ -86,7 +86,7 @@
 
     <div class="section-title">RIESGOS ADMINISTRATIVOS</div>
     <p class="intro-text">
-        Los riesgos administrativos en una tienda a tienda se relacionan con la gestion inadecuada de los recursos, la falta de controles y la ausencia de protocolos de seguridad. Algunos ejemplos incluyen:<br>
+        Los riesgos administrativos en un establecimiento de comercio se relacionan con la gestion inadecuada de los recursos, la falta de controles y la ausencia de protocolos de seguridad. Algunos ejemplos incluyen:<br>
         <strong>Gestion deficiente de los recursos economicos:</strong> Falta de planificacion financiera, mal manejo de los fondos comunes, etc.<br>
         <strong>Falta de control en el acceso a las instalaciones:</strong> No contar con un sistema de control de acceso adecuado, permitiendo el ingreso de personas no autorizadas.<br>
         <strong>Ausencia de protocolos de seguridad:</strong> No contar con planes de emergencia para incendios, sismos u otras emergencias, ni con procedimientos para la prevencion de accidentes.<br>
@@ -95,11 +95,11 @@
 
     <div class="section-title">EL ROL DEL ESPECIALISTA EN SST</div>
     <p class="intro-text">
-        Un especialista en Seguridad y Salud en el Trabajo (SST) posee la formacion, experiencia y herramientas necesarias para asesorar a la administracion y copropietarios de una tienda a tienda en la identificacion, evaluacion y control de los riesgos estructurales, arquitectonicos y administrativos. Las funciones del especialista en SST en este ambito incluyen:<br>
+        Un especialista en Seguridad y Salud en el Trabajo (SST) posee la formacion, experiencia y herramientas necesarias para asesorar a la administracion y propietarios de un establecimiento de comercio en la identificacion, evaluacion y control de los riesgos estructurales, arquitectonicos y administrativos. Las funciones del especialista en SST en este ambito incluyen:<br>
         <strong>Inspecciones estructurales y arquitectonicas:</strong> Realizar inspecciones periodicas de las instalaciones para identificar posibles defectos estructurales, materiales inadecuados o diseno arquitectonico deficiente.<br>
         <strong>Evaluacion de riesgos administrativos:</strong> Analizar los procesos administrativos, los controles existentes y los protocolos de seguridad para identificar posibles falencias o areas de mejora.<br>
         <strong>Elaboracion de un plan de gestion de riesgos:</strong> Desarrollar un plan que establezca las medidas necesarias para prevenir o controlar los riesgos identificados en las areas estructural, arquitectonica y administrativa.<br>
-        <strong>Implementacion del plan de gestion de riesgos:</strong> Brindar asesoria y asistencia en la implementacion del plan, incluyendo la capacitacion del personal y la sensibilizacion de los residentes.<br>
+        <strong>Implementacion del plan de gestion de riesgos:</strong> Brindar asesoria y asistencia en la implementacion del plan, incluyendo la capacitacion del personal y la sensibilizacion de los clientes y trabajadores.<br>
         <strong>Monitoreo y evaluacion del plan de gestion de riesgos:</strong> Realizar un seguimiento continuo del plan y evaluar su efectividad, identificando areas de mejora y realizando los ajustes necesarios.
     </p>
 

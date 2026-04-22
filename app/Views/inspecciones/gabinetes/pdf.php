@@ -22,13 +22,13 @@
         .header-title { text-align: center; font-weight: bold; font-size: 9px; }
         .header-code { width: 120px; font-size: 8px; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 6px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 6px; color: #c9541a; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
         .info-label { font-weight: bold; color: #444; width: 180px; background: #f7f7f7; }
 
-        .section-title { background: #1b4332; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
+        .section-title { background: #c9541a; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
 
         .data-table { width: 100%; border-collapse: collapse; margin-bottom: 6px; }
         .data-table th { background: #e8e8e8; border: 1px solid #aaa; padding: 3px 4px; font-size: 7px; text-align: center; }
@@ -76,18 +76,18 @@
 
     <!-- INTRODUCCION -->
     <div class="section-title">INTRODUCCION</div>
-    <p class="intro-subtitle">Norma Tecnica Colombiana para Gabinetes Contra Incendios en Tienda a Tienda</p>
+    <p class="intro-subtitle">Norma Tecnica Colombiana para Gabinetes Contra Incendios en Establecimientos de Comercio</p>
     <p class="intro-text">
-        En el contexto de la tienda a tienda en Colombia, la seguridad contra incendios cobra especial relevancia debido a la concentracion de personas y bienes en un mismo espacio. La Norma Tecnica Colombiana (NTC) 1800, que establece los requisitos minimos para los gabinetes contra incendios, se convierte en un elemento crucial para garantizar la proteccion de las personas y bienes en este tipo de edificaciones.
+        En los establecimientos de comercio, la seguridad contra incendios cobra especial relevancia debido a la concurrencia de clientes, trabajadores y proveedores, y a la presencia de productos, insumos y equipos que pueden representar carga combustible. La Norma Tecnica Colombiana (NTC) 1800, que establece los requisitos minimos para los gabinetes contra incendios, se convierte en un elemento crucial para garantizar la proteccion de las personas y los bienes dentro de este tipo de establecimientos.
     </p>
     <p class="intro-subtitle">Alcance y Aplicacion de la Norma NTC 1800</p>
     <p class="intro-text">
-        La NTC 1800 se aplica a los gabinetes contra incendios tipo I, II y III instalados en edificios de tienda a tienda en Colombia. Estos gabinetes se conectan a la red de tuberias de agua contra incendios y permiten combatir incendios de manera efectiva.
+        La NTC 1800 se aplica a los gabinetes contra incendios tipo I, II y III instalados en edificaciones de uso comercial en Colombia, incluyendo establecimientos de comercio de alimentos, tiendas de barrio y locales similares donde exista concurrencia de publico. Estos gabinetes se conectan a la red de tuberias de agua contra incendios y permiten combatir incendios de manera efectiva.
     </p>
-    <p class="intro-subtitle">Componentes Esenciales de los Gabinetes Contra Incendios en Tienda a Tienda</p>
+    <p class="intro-subtitle">Componentes Esenciales de los Gabinetes Contra Incendios</p>
     <p class="intro-text">
-        En el contexto de la tienda a tienda, la NTC 1800 establece los mismos componentes esenciales para los gabinetes contra incendios que en otros tipos de edificaciones:<br><br>
-        <strong>Manguera:</strong> La manguera es indispensable para dirigir un chorro de agua hacia la base del fuego. Su longitud y tipo dependeran del tamano del edificio, el numero de unidades y el nivel de riesgo de incendio.<br><br>
+        La NTC 1800 establece los siguientes componentes esenciales para los gabinetes contra incendios:<br><br>
+        <strong>Manguera:</strong> La manguera es indispensable para dirigir un chorro de agua hacia la base del fuego. Su longitud y tipo dependeran del tamano del establecimiento, la distribucion interna y el nivel de riesgo de incendio.<br><br>
         <strong>Hacha:</strong> El hacha es una herramienta multifuncional que puede ser utilizada para romper obstaculos, derribar escombros e incluso cortar materiales en caso de ser necesario.<br><br>
         <strong>Valvula:</strong> La valvula permite controlar el flujo de agua desde la red contra incendios hacia la manguera. Debe ser facil de operar y estar claramente identificada.<br><br>
         <strong>Boquilla:</strong> La boquilla permite ajustar el tipo de chorro de agua (recto, nebulizado, etc.) que se dirige hacia el fuego.<br><br>
@@ -95,22 +95,22 @@
         <strong>Gabinete:</strong> El gabinete alberga todos los componentes del sistema contra incendios y debe ser fabricado con materiales resistentes al fuego y a la corrosion. Su tamano debe ser adecuado para albergar todo el equipo necesario.<br><br>
         <strong>Senalizacion:</strong> El gabinete debe estar claramente identificado con la senal de "Gabinete contra incendios" para facilitar su ubicacion en caso de una emergencia.
     </p>
-    <p class="intro-subtitle">Requisitos Adicionales para los Gabinetes Contra Incendios en Tienda a Tienda</p>
+    <p class="intro-subtitle">Requisitos Adicionales para Establecimientos de Comercio</p>
     <p class="intro-text">
-        Ademas de los componentes esenciales, la NTC 1800 establece requisitos adicionales para los gabinetes contra incendios en tienda a tienda, tomando en cuenta las caracteristicas especificas de este tipo de edificaciones:<br><br>
-        <strong>Ubicacion estrategica:</strong> Los gabinetes contra incendios deben ubicarse en puntos estrategicos de la edificacion, considerando las vias de evacuacion y los accesos a las unidades habitacionales.<br><br>
-        <strong>Accesibilidad:</strong> Los gabinetes deben ser facilmente accesibles para todos los residentes, incluyendo personas con movilidad reducida.<br><br>
+        Ademas de los componentes esenciales, la NTC 1800 establece requisitos adicionales para los gabinetes contra incendios en establecimientos de comercio, tomando en cuenta las caracteristicas operativas del negocio:<br><br>
+        <strong>Ubicacion estrategica:</strong> Los gabinetes contra incendios deben ubicarse en puntos estrategicos del establecimiento, considerando las vias de evacuacion, las salidas de emergencia y los accesos a las zonas de mayor concurrencia de publico.<br><br>
+        <strong>Accesibilidad:</strong> Los gabinetes deben ser facilmente accesibles para clientes y trabajadores, incluyendo personas con movilidad reducida.<br><br>
         <strong>Senalizacion clara:</strong> La senalizacion de los gabinetes debe ser clara, visible y comprensible para todas las personas, utilizando simbolos universales y lenguaje sencillo.<br><br>
-        <strong>Capacitacion y entrenamiento:</strong> Es fundamental que los residentes reciban capacitacion y entrenamiento en el uso correcto de los gabinetes contra incendios, incluyendo la operacion de la manguera, la valvula y la boquilla.<br><br>
-        <strong>Planes de emergencia:</strong> La tienda a tienda debe contar con planes de emergencia que incluyan procedimientos especificos para la utilizacion de los gabinetes contra incendios en caso de un incendio.
+        <strong>Capacitacion y entrenamiento:</strong> Es fundamental que los trabajadores reciban capacitacion y entrenamiento en el uso correcto de los gabinetes contra incendios, incluyendo la operacion de la manguera, la valvula y la boquilla.<br><br>
+        <strong>Planes de emergencia:</strong> El establecimiento debe contar con un plan de emergencia que incluya procedimientos especificos para la utilizacion de los gabinetes contra incendios en caso de un incendio.
     </p>
-    <p class="intro-subtitle">Importancia de la Norma NTC 1800 en Tienda a Tienda</p>
+    <p class="intro-subtitle">Importancia de la Norma NTC 1800</p>
     <p class="intro-text">
-        El cumplimiento de la NTC 1800 en tienda a tienda es de vital importancia para garantizar la seguridad contra incendios en este tipo de edificaciones. Los gabinetes contra incendios, disenados y mantenidos de acuerdo con la norma, pueden ser la clave para salvar vidas y proteger bienes en caso de un incendio.
+        El cumplimiento de la NTC 1800 en los establecimientos de comercio es de vital importancia para garantizar la seguridad contra incendios. Los gabinetes contra incendios, disenados y mantenidos de acuerdo con la norma, pueden ser la clave para salvar vidas y proteger bienes en caso de un incendio.
     </p>
-    <p class="intro-subtitle">Responsabilidades en la Tienda a Tienda</p>
+    <p class="intro-subtitle">Responsabilidades del Establecimiento</p>
     <p class="intro-text">
-        En el contexto de la tienda a tienda, la responsabilidad del cumplimiento de la NTC 1800 recae en la administracion de la unidad residencial, quien debe velar por la instalacion, inspeccion, mantenimiento y pruebas periodicas de los gabinetes contra incendios.
+        La responsabilidad del cumplimiento de la NTC 1800 recae en el propietario o representante legal del establecimiento de comercio, quien debe velar por la instalacion, inspeccion, mantenimiento y pruebas periodicas de los gabinetes contra incendios.
     </p>
 
     <!-- DATOS DE LA INSPECCION -->

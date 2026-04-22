@@ -14,7 +14,7 @@
         }
 
         .user-card {
-            background: linear-gradient(135deg, #1b4332, #2d6a4f);
+            background: linear-gradient(135deg, #c9541a, #ee6c21);
             color: white;
             border-radius: 15px;
             padding: 30px;
@@ -24,7 +24,7 @@
         .user-card .avatar {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #e76f51, #f4a261);
+            background: linear-gradient(135deg, #ee6c21, #ff8d4e);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -74,7 +74,7 @@
         }
 
         .badge-admin {
-            background-color: #007bff;
+            background-color: #ee6c21;
             color: white;
         }
 
@@ -97,7 +97,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;">
             <div>
                 <a href="<?= base_url('/admin/dashboard') ?>">
-                    <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" style="height: 80px;">
+                    <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" style="height: 80px;">
                 </a>
             </div>
             <div>

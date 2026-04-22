@@ -242,8 +242,8 @@ class ProgramaResiduosController extends BaseController
     public function documento()
     {
         $data = [
-            'inspeccion' => ['fecha_programa' => date('Y-m-d'), 'nombre_responsable' => 'Administrador(a) del Conjunto', 'flujo_residente' => 'El residente deposita sus residuos debidamente separados en el punto ecológico del piso correspondiente, en el horario establecido por la Administración. El recuperador designado realiza el recorrido por los pisos, recolecta los residuos y los transporta al cuarto de residuos, donde los organiza en los contenedores según su clasificación (blanco, verde, negro) para su posterior presentación al prestador del servicio público de aseo.'],
-            'cliente'    => ['nombre_cliente' => 'CONJUNTO RESIDENCIAL — EJEMPLO'],
+            'inspeccion' => ['fecha_programa' => date('Y-m-d'), 'nombre_responsable' => 'Administrador(a) del Conjunto', 'flujo_residente' => 'El cliente o trabajador deposita sus residuos debidamente separados en el punto ecológico del piso correspondiente, en el horario establecido por la Administración. El recuperador designado realiza el recorrido por los pisos, recolecta los residuos y los transporta al cuarto de residuos, donde los organiza en los contenedores según su clasificación (blanco, verde, negro) para su posterior presentación al prestador del servicio público de aseo.'],
+            'cliente'    => ['nombre_cliente' => 'ESTABLECIMIENTO COMERCIAL — EJEMPLO'],
             'consultor'  => ['nombre_consultor' => 'Consultor SST'],
             'logoBase64' => '',
         ];

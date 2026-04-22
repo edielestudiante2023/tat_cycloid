@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         showCancelButton: true,
                         confirmButtonText: 'Si, restaurar',
                         cancelButtonText: 'No, empezar de cero',
-                        confirmButtonColor: '#e76f51',
+                        confirmButtonColor: '#ee6c21',
                     }).then(result => {
                         if (result.isConfirmed) restoreFromLocal(data);
                         else localStorage.removeItem(STORAGE_KEY);

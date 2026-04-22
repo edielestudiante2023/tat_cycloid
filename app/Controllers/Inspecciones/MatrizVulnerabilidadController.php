@@ -21,7 +21,7 @@ class MatrizVulnerabilidadController extends BaseController
 
     /**
      * 25 criterios de evaluacion con opciones A/B/C.
-     * Terminologia adaptada a copropiedad/tienda a tienda.
+     * Terminologia adaptada a establecimiento comercial/tienda a tienda.
      * Puntaje: A=1.0, B=0.5, C=0.0
      */
     public const CRITERIOS = [
@@ -29,9 +29,9 @@ class MatrizVulnerabilidadController extends BaseController
             'numero' => 1,
             'titulo' => 'El plan de evacuacion',
             'opciones' => [
-                'a' => 'Se ha determinado previamente por parte del personal de la copropiedad los aspectos basicos a poner en practica en caso de una evacuacion.',
-                'b' => 'Solo algunos residentes o personal conocen sobre normas de evacuacion o han tenido en cuenta aspectos al respecto.',
-                'c' => 'Ningun residente o personal de la copropiedad conoce sobre medidas de evacuacion y no se han desarrollado hasta el momento estrategias o planes al respecto.',
+                'a' => 'Se ha determinado previamente por parte del personal del establecimiento comercial los aspectos basicos a poner en practica en caso de una evacuacion.',
+                'b' => 'Solo algunos clientes y trabajadores o personal conocen sobre normas de evacuacion o han tenido en cuenta aspectos al respecto.',
+                'c' => 'Ningun cliente o trabajador o personal del establecimiento comercial conoce sobre medidas de evacuacion y no se han desarrollado hasta el momento estrategias o planes al respecto.',
             ],
         ],
         'c2_alarma_evacuacion' => [
@@ -65,7 +65,7 @@ class MatrizVulnerabilidadController extends BaseController
             'numero' => 5,
             'titulo' => 'Los puntos de reunion en una evacuacion',
             'opciones' => [
-                'a' => 'Se han establecido claramente y los conocen todos los ocupantes de la copropiedad.',
+                'a' => 'Se han establecido claramente y los conocen todos los ocupantes del establecimiento comercial.',
                 'b' => 'Existen varios sitios posibles pero ninguno se ha delimitado con claridad y nadie sabria hacia donde evacuar exactamente.',
                 'c' => 'No existen puntos optimos donde evacuar.',
             ],
@@ -83,7 +83,7 @@ class MatrizVulnerabilidadController extends BaseController
             'numero' => 7,
             'titulo' => 'La senalizacion para evacuacion',
             'opciones' => [
-                'a' => 'Se visualiza e identifica plenamente en todas las areas de la copropiedad.',
+                'a' => 'Se visualiza e identifica plenamente en todas las areas del establecimiento comercial.',
                 'b' => 'Esta muy oculta y apenas se observa en algunos sitios.',
                 'c' => 'No existen flechas o croquis de evacuacion en ninguna parte visible.',
             ],
@@ -119,7 +119,7 @@ class MatrizVulnerabilidadController extends BaseController
             'numero' => 11,
             'titulo' => 'Sistema de deteccion',
             'opciones' => [
-                'a' => 'La copropiedad posee sistema de deteccion de incendio revisado en el ultimo trimestre en todas las areas.',
+                'a' => 'El establecimiento comercial posee sistema de deteccion de incendio revisado en el ultimo trimestre en todas las areas.',
                 'b' => 'Solo existen algunos detectores sin revision y no en todas las areas.',
                 'c' => 'No existe ningun tipo de detector.',
             ],
@@ -162,7 +162,7 @@ class MatrizVulnerabilidadController extends BaseController
         ],
         'c16_divulgacion_plan' => [
             'numero' => 16,
-            'titulo' => 'Divulgacion del plan de emergencia a los residentes y personal',
+            'titulo' => 'Divulgacion del plan de emergencia a los clientes y trabajadores y personal',
             'opciones' => [
                 'a' => 'Se ha desarrollado minimo una por semestre.',
                 'b' => 'Esporadicamente se ha divulgado para algunas areas.',
@@ -200,14 +200,14 @@ class MatrizVulnerabilidadController extends BaseController
             'numero' => 20,
             'titulo' => 'Entidades de socorro externas',
             'opciones' => [
-                'a' => 'Conocen y participan activamente en el plan de emergencia de la copropiedad.',
-                'b' => 'Estan identificadas las entidades de socorro pero no conocen el plan de emergencia de la copropiedad.',
+                'a' => 'Conocen y participan activamente en el plan de emergencia del establecimiento comercial.',
+                'b' => 'Estan identificadas las entidades de socorro pero no conocen el plan de emergencia del establecimiento comercial.',
                 'c' => 'No se tienen en cuenta.',
             ],
         ],
         'c21_ocupantes' => [
             'numero' => 21,
-            'titulo' => 'Los ocupantes de la copropiedad son',
+            'titulo' => 'Los ocupantes del establecimiento comercial son',
             'opciones' => [
                 'a' => 'Siempre los mismos con muy pocos visitantes.',
                 'b' => 'Con un 10 a 20% de visitantes nuevos cada dia.',
@@ -216,7 +216,7 @@ class MatrizVulnerabilidadController extends BaseController
         ],
         'c22_plano_evacuacion' => [
             'numero' => 22,
-            'titulo' => 'En la entrada de la copropiedad o en cada piso',
+            'titulo' => 'En la entrada del establecimiento comercial o en cada piso',
             'opciones' => [
                 'a' => 'Existe y es visible un plano de evacuacion en cada piso.',
                 'b' => 'No existe un plano de evacuacion en cada piso pero alguien daria informacion.',
@@ -227,14 +227,14 @@ class MatrizVulnerabilidadController extends BaseController
             'numero' => 23,
             'titulo' => 'Las rutas de circulacion',
             'opciones' => [
-                'a' => 'En general las rutas de acceso y circulacion de los residentes y visitantes son amplias y seguras.',
+                'a' => 'En general las rutas de acceso y circulacion de los clientes y trabajadores y visitantes son amplias y seguras.',
                 'b' => 'En algun punto de las rutas no se circula con facilidad por falta de espacio u obstaculos al paso.',
                 'c' => 'En general las rutas y areas de circulacion son congestionadas y de dificil uso.',
             ],
         ],
         'c24_puertas_salida' => [
             'numero' => 24,
-            'titulo' => 'Las puertas de salida de la copropiedad',
+            'titulo' => 'Las puertas de salida del establecimiento comercial',
             'opciones' => [
                 'a' => 'Las puertas cumplen con las medidas minimas reglamentarias y de uso de cerraduras de seguridad.',
                 'b' => 'Solo algunas puertas permiten una salida rapida y poseen cerraduras de seguridad.',
@@ -245,7 +245,7 @@ class MatrizVulnerabilidadController extends BaseController
             'numero' => 25,
             'titulo' => 'Estructura y tipo de construccion',
             'opciones' => [
-                'a' => 'La estructura de la copropiedad se soporta en estructuras de concreto y no presenta ningun deterioro en paredes, columnas, techos o aditamentos internos.',
+                'a' => 'La estructura del establecimiento comercial se soporta en estructuras de concreto y no presenta ningun deterioro en paredes, columnas, techos o aditamentos internos.',
                 'b' => 'Presenta deterioro observable en paredes y techos que hagan pensar en danos estructurales.',
                 'c' => 'La estructura no posee cimentacion ni soportes de concreto y presenta deterioros estructurales observables en progreso durante los ultimos 6 meses.',
             ],
@@ -268,11 +268,11 @@ class MatrizVulnerabilidadController extends BaseController
         ['min' => 91, 'max' => 100, 'label' => 'Vulnerabilidad minima', 'color' => '#d4edda', 'text_color' => '#155724',
          'desc' => 'La vulnerabilidad es minima y el plan presenta un estado optimo de aplicacion.'],
         ['min' => 71, 'max' => 90,  'label' => 'Baja vulnerabilidad',   'color' => '#cce5ff', 'text_color' => '#004085',
-         'desc' => 'La copropiedad presenta una baja vulnerabilidad y un plan para emergencia apenas funcional que debe optimizarse.'],
+         'desc' => 'El establecimiento comercial presenta una baja vulnerabilidad y un plan para emergencia apenas funcional que debe optimizarse.'],
         ['min' => 51, 'max' => 70,  'label' => 'Vulnerabilidad media-alta', 'color' => '#fff3cd', 'text_color' => '#856404',
-         'desc' => 'La copropiedad presenta una vulnerabilidad media-alta y un plan para emergencia incompleto, que solo podria ser activado parcialmente en caso de emergencia.'],
+         'desc' => 'El establecimiento comercial presenta una vulnerabilidad media-alta y un plan para emergencia incompleto, que solo podria ser activado parcialmente en caso de emergencia.'],
         ['min' => 0,  'max' => 50,  'label' => 'Alta vulnerabilidad',   'color' => '#f8d7da', 'text_color' => '#721c24',
-         'desc' => 'La copropiedad presenta una alta vulnerabilidad funcional. Se deben revisar todos los aspectos que puedan estar representando riesgo para las personas que permanecen en la copropiedad en un momento de emergencia.'],
+         'desc' => 'El establecimiento comercial presenta una alta vulnerabilidad funcional. Se deben revisar todos los aspectos que puedan estar representando riesgo para las personas que permanecen en el establecimiento comercial en un momento de emergencia.'],
     ];
 
     public function __construct()

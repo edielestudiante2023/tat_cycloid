@@ -29,7 +29,7 @@
         .info-empresa p { margin: 5px 0; font-size: 0.9rem; }
         .seccion-titulo { font-size: 1.1rem; font-weight: bold; color: #0d6efd; border-bottom: 2px solid #e9ecef; padding-bottom: 8px; margin-bottom: 15px; margin-top: 25px; }
         .items-table { width: 100%; border-collapse: collapse; margin-bottom: 25px; font-size: 0.85rem; }
-        .items-table th { background-color: #2d6a4f; color: white; padding: 10px 8px; text-align: left; }
+        .items-table th { background-color: #ee6c21; color: white; padding: 10px 8px; text-align: left; }
         .items-table th.monto { text-align: right; width: 120px; }
         .items-table td { border-bottom: 1px solid #dee2e6; padding: 8px; }
         .items-table .categoria { background-color: #e9ecef; font-weight: bold; color: #1a5f7a; }

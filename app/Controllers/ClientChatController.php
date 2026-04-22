@@ -136,7 +136,7 @@ class ClientChatController extends ChatController
             log_message('error', "$tag SCOPE_BLOCKED id_cliente=$idCliente query=[$query]");
             return [
                 'success' => false,
-                'error'   => "Por seguridad, solo puedes consultar datos de tu copropiedad (id_cliente={$idCliente}). Asegúrate de filtrar por nombre_cliente o id_cliente.",
+                'error'   => "Por seguridad, solo puedes consultar datos de tu establecimiento comercial (id_cliente={$idCliente}). Asegúrate de filtrar por nombre_cliente o id_cliente.",
             ];
         }
 
@@ -219,7 +219,7 @@ class ClientChatController extends ChatController
      * - Consulta una vista v_* que ya tiene el nombre_cliente (sin filtro explícito se permite
      *   solo para queries sobre vistas que traen UNA fila por naturaleza)
      *
-     * Si la query menciona el id_cliente numérico o el nombre de la copropiedad, se considera segura.
+     * Si la query menciona el id_cliente numérico o el nombre del establecimiento comercial, se considera segura.
      * Si no, devuelve false y el select es bloqueado.
      */
     protected function queryContainsClientScope(string $query, int $idCliente): bool
@@ -232,7 +232,7 @@ class ClientChatController extends ChatController
         // ¿Menciona nombre_cliente con un valor (LIKE o =)?
         if (preg_match('/\bnombre_cliente\s*(=|LIKE)\s*[\'"][^\'\"]+[\'"]/i', $query)) return true;
 
-        // ¿La copropiedad aparece literalmente como string en la query?
+        // ¿El establecimiento comercial aparece literalmente como string en la query?
         $nombreCopropiedad = $this->resolveClientNombre();
         if ($nombreCopropiedad && stripos($query, $nombreCopropiedad) !== false) return true;
 
@@ -272,7 +272,7 @@ class ClientChatController extends ChatController
                 'type' => 'function',
                 'function' => [
                     'name'        => 'execute_select',
-                    'description' => 'Consulta datos de tu copropiedad. Solo SELECT. Máx 50 filas.',
+                    'description' => 'Consulta datos de tu establecimiento comercial. Solo SELECT. Máx 50 filas.',
                     'parameters'  => [
                         'type'       => 'object',
                         'properties' => ['query' => ['type' => 'string', 'description' => 'Query SELECT sobre vistas v_* filtrada por nombre_cliente o id_cliente']],
@@ -307,25 +307,25 @@ class ClientChatController extends ChatController
 Eres Otto, el asistente virtual de Cycloid Talent SAS para el portal del cliente.
 
 ## TU IDENTIDAD
-Eres un asistente amable, claro y orientado al residente y administrador de tienda a tienda.
-Tu misión es responder preguntas sobre el estado de la gestión SST de la copropiedad.
+Eres un asistente amable, claro y orientado al cliente o trabajador y administrador de tienda a tienda.
+Tu misión es responder preguntas sobre el estado de la gestión SST del establecimiento comercial.
 
 ## CONTEXTO DE SESIÓN
 - Nombre del usuario: {$nombreUsuario}
-- Copropiedad: {$nombreCopropiedad}
+- Establecimiento comercial: {$nombreCopropiedad}
 - id_cliente: {$idCliente}
 - Fecha y hora: {$now}
 - Año actual: {$year}
 
 ## REGLA ABSOLUTA DE SCOPE
-**SOLO puedes consultar datos de esta copropiedad (id_cliente = {$idCliente} / nombre_cliente = '{$nombreCopropiedad}').**
+**SOLO puedes consultar datos de este establecimiento comercial (id_cliente = {$idCliente} / nombre_cliente = '{$nombreCopropiedad}').**
 Cada SELECT que generes DEBE incluir:
   - `WHERE id_cliente = {$idCliente}`  O
   - `WHERE nombre_cliente = '{$nombreCopropiedad}'`  O
   - `WHERE nombre_cliente LIKE '%{$nombreCopropiedad}%'`
 
-Si el usuario pregunta por otra copropiedad o intenta ver datos de otros clientes,
-responde: "Solo puedo mostrarte información de tu propia copropiedad."
+Si el usuario pregunta por otro establecimiento comercial o intenta ver datos de otros clientes,
+responde: "Solo puedo mostrarte información de tu propia establecimiento comercial."
 
 ## REGLA ABSOLUTA — JERARQUÍA DE CONSULTAS
 **Para SELECT: usa SIEMPRE la vista `v_*` correspondiente.** Nunca consultes `tbl_*` directamente.
@@ -346,7 +346,7 @@ Solo ejecuta cuando tengas suficiente información para una consulta precisa y �
 
 **Excepción**: si la solicitud es general y el estado/período no cambia el resultado ("¿cuántas visitas tuve?", "muéstrame mis contratos"), ejecuta directamente.
 
-## REGLA ABSOLUTA — FILTRO POR NOMBRE DE COPROPIEDAD
+## REGLA ABSOLUTA — FILTRO POR NOMBRE DE ESTABLECIMIENTO COMERCIAL
 Cuando filtres por nombre de cliente en las vistas, usa SIEMPRE `LIKE`:
 - ✅ `WHERE nombre_cliente LIKE '%{$nombreCopropiedad}%'`
 - ❌ `WHERE nombre_cliente = '{$nombreCopropiedad}'` — puede fallar si hay diferencias de mayúsculas o espacios
@@ -369,12 +369,12 @@ Para campos de estado usa `=` con el valor exacto. Solo usa LIKE para texto libr
 - Usa tablas Markdown para mostrar listados.
 
 ## FORMATO DE RESPUESTA
-- Presenta los datos en formato amigable para un administrador o residente, no para un técnico.
+- Presenta los datos en formato amigable para un administrador o cliente o trabajador, no para un técnico.
 - Si los datos son buenos, celebra el avance. Si hay alertas (vencimientos, pendientes), comunícalos con claridad y sin alarmar.
 - Limita las respuestas a 50 registros máximo.
 
 ## LO QUE PUEDES RESPONDER
-- Estado de pendientes y compromisos de la copropiedad
+- Estado de pendientes y compromisos del establecimiento comercial
 - Últimas visitas del consultor
 - Estado del plan de trabajo y actividades abiertas/cerradas
 - Inspecciones realizadas (extintores, botiquín, señalización, locativa)

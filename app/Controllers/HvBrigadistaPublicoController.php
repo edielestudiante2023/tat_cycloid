@@ -53,7 +53,7 @@ class HvBrigadistaPublicoController extends BaseController
         $documento = trim($this->request->getPost('documento_identidad') ?? '');
 
         $errores = [];
-        if (!$idCliente) $errores[] = 'Copropiedad';
+        if (!$idCliente) $errores[] = 'Establecimiento comercial';
         if (empty($nombreCompleto)) $errores[] = 'Nombre completo';
         if (empty($documento)) $errores[] = 'Documento de identidad';
 
@@ -162,6 +162,7 @@ class HvBrigadistaPublicoController extends BaseController
 
         $fileName = $file->getRandomName();
         $file->move(FCPATH . $dir, $fileName);
+        compress_uploaded_image(FCPATH . $dir . '/' . $fileName);
 
         return $dir . $fileName;
     }

@@ -45,7 +45,7 @@
         text-align: center;
         font-weight: bold;
         font-size: 13px;
-        color: #1b4332;
+        color: #c9541a;
         margin: 20px 0 5px;
     }
     .subtitle {
@@ -58,16 +58,16 @@
     .section-title {
         font-weight: bold;
         font-size: 11px;
-        color: #1b4332;
+        color: #c9541a;
         margin-top: 18px;
         margin-bottom: 6px;
-        border-bottom: 1px solid #1b4332;
+        border-bottom: 1px solid #c9541a;
         padding-bottom: 3px;
     }
     .subsection-title {
         font-weight: bold;
         font-size: 10px;
-        color: #1b4332;
+        color: #c9541a;
         margin-top: 12px;
         margin-bottom: 4px;
     }
@@ -78,7 +78,7 @@
         font-size: 9px;
     }
     .data-table th {
-        background: #1b4332;
+        background: #c9541a;
         color: white;
         padding: 5px 6px;
         text-align: left;
@@ -126,13 +126,13 @@
     }
     .indicador-box .ind-label {
         font-weight: bold;
-        color: #1b4332;
+        color: #c9541a;
     }
 </style>
 </head>
 <body>
 
-<?php $nombreCliente = $cliente['nombre_cliente'] ?? 'CONJUNTO RESIDENCIAL'; ?>
+<?php $nombreCliente = $cliente['nombre_cliente'] ?? 'ESTABLECIMIENTO COMERCIAL'; ?>
 
 <!-- HEADER -->
 <table class="header-table">
@@ -168,12 +168,12 @@
 
 <!-- 1.1 OBJETIVO -->
 <div class="section-title">1.1 OBJETIVO</div>
-<p>Prevenir, controlar y minimizar la presencia y proliferación de plagas y roedores en <?= esc($nombreCliente) ?>, mediante la implementación de acciones preventivas, correctivas y de control, orientadas a la protección de la salud de residentes, visitantes y trabajadores, garantizando condiciones adecuadas de salubridad en todas las áreas comunes de la copropiedad.</p>
+<p>Prevenir, controlar y minimizar la presencia y proliferación de plagas y roedores en <?= esc($nombreCliente) ?>, mediante la implementación de acciones preventivas, correctivas y de control, orientadas a la protección de la salud de clientes y trabajadores, visitantes y trabajadores, garantizando condiciones adecuadas de salubridad en todas las áreas del establecimiento comercial.</p>
 
 <!-- 1.2 ALCANCE -->
 <div class="section-title">1.2 ALCANCE</div>
-<p>El presente Programa aplica para todas las áreas comunes de <?= esc($nombreCliente) ?>, incluyendo zonas de circulación, cuartos técnicos, cuartos eléctricos, áreas verdes, zonas de residuos, cuartos de almacenamiento, parqueaderos, sótanos, zonas perimetrales, y espacios o módulos en situación de abandono, donde puedan generarse condiciones favorables para la proliferación de plagas.</p>
-<p>El Programa es de obligatorio cumplimiento para el personal administrativo, personal de servicios generales, empresas contratistas y demás terceros que desarrollen actividades dentro de la copropiedad.</p>
+<p>El presente Programa aplica para todas las áreas del establecimiento de <?= esc($nombreCliente) ?>, incluyendo zonas de circulación, cuartos técnicos, cuartos eléctricos, áreas verdes, zonas de residuos, cuartos de almacenamiento, parqueaderos, sótanos, zonas perimetrales, y espacios o módulos en situación de abandono, donde puedan generarse condiciones favorables para la proliferación de plagas.</p>
+<p>El Programa es de obligatorio cumplimiento para el personal administrativo, personal de servicios generales, empresas contratistas y demás terceros que desarrollen actividades dentro del establecimiento comercial.</p>
 
 <!-- 1.3 DEFINICIONES -->
 <div class="section-title">1.3 DEFINICIONES</div>
@@ -191,7 +191,7 @@
 </ul>
 <p>Para evitar su desarrollo, se deberán implementar de forma continua las siguientes acciones preventivas:</p>
 <ol class="lista-items" type="a">
-    <li>Limpiar diariamente los restos de alimentos en superficies y áreas comunes.</li>
+    <li>Limpiar diariamente los restos de alimentos en superficies y áreas del establecimiento.</li>
     <li>Eliminar la grasa acumulada en zonas donde se manipulen alimentos.</li>
     <li>Barrer y limpiar los pisos, incluyendo áreas debajo de mesas, equipos y cercanas a paredes.</li>
     <li>Mantener limpios los desagües.</li>
@@ -202,7 +202,7 @@
     <li>No depositar residuos sólidos cerca de áreas de manipulación o consumo de alimentos.</li>
 </ol>
 <p>La aplicación permanente de estas medidas genera condiciones adversas que dificultan el desarrollo y permanencia de plagas.</p>
-<p>Las plagas más comunes identificadas en copropiedades son:</p>
+<p>Las plagas más comunes identificadas en establecimientos comerciales son:</p>
 <ul class="lista-items">
     <li>Roedores</li>
     <li>Palomas y otras aves</li>
@@ -286,7 +286,7 @@
 <p><strong>Medidas preventivas:</strong></p>
 <ul class="lista-items">
     <li>No dejar desperdicios orgánicos expuestos.</li>
-    <li>Eliminar la grasa acumulada en cocinas, cuartos de residuos y zonas comunes.</li>
+    <li>Eliminar la grasa acumulada en cocinas, cuartos de residuos y áreas del establecimiento.</li>
     <li>Sellar grietas, hendiduras y juntas de baldosas.</li>
     <li>Revisar cajas, empaques y materiales que ingresen a áreas de almacenamiento o manipulación de alimentos.</li>
 </ul>
@@ -304,7 +304,7 @@
 <ul class="lista-items">
     <li>No dejar residuos orgánicos expuestos (alimentos crudos, preparados o residuos sólidos).</li>
     <li>Mantener los recipientes de basura cerrados y con recolección frecuente.</li>
-    <li>Garantizar limpieza diaria de superficies, pisos y áreas comunes.</li>
+    <li>Garantizar limpieza diaria de superficies, pisos y áreas del establecimiento.</li>
 </ul>
 
 <div class="subsection-title">1.6.3 MOSQUITO</div>
@@ -320,7 +320,7 @@
 <p><strong>Medidas preventivas:</strong></p>
 <ul class="lista-items">
     <li>Evitar la acumulación de aguas estancadas.</li>
-    <li>Eliminar encharcamientos en zonas comunes y áreas verdes.</li>
+    <li>Eliminar encharcamientos en áreas del establecimiento y áreas verdes.</li>
     <li>No mantener recipientes, baldes, materas u objetos con agua acumulada.</li>
     <li>Realizar limpieza y drenaje periódico de sumideros y desagües.</li>
 </ul>
@@ -379,7 +379,7 @@
 <div class="subsection-title">1.6.9 APLICACIÓN DE LOS PRODUCTOS</div>
 <p>No se deberán realizar fumigaciones en condiciones meteorológicas adversas, especialmente en días lluviosos, ya que la humedad reduce la eficacia de los principios activos.</p>
 <p>Los insecticidas deberán aplicarse mediante nebulización, utilizando máquinas termo-nebulizadoras, con el producto químico preparado conforme a ficha técnica y hoja de seguridad.</p>
-<p>La Administración deberá informar previamente a los residentes y/o comerciantes sobre las fechas y horarios de aplicación.</p>
+<p>La Administración deberá informar previamente a los clientes y trabajadores y/o comerciantes sobre las fechas y horarios de aplicación.</p>
 
 <div class="subsection-title">1.6.10 ROTACIÓN DE PRODUCTOS</div>
 <p>Con el fin de evitar la resistencia o inmunidad de las plagas a los insecticidas, se deberá realizar rotación de principios activos, alternando piretroides y organofosforados en cada jornada de fumigación.</p>
@@ -423,7 +423,7 @@
     <li>Previo a la aplicación de productos, se deberá evacuar personas, animales y alimentos.</li>
     <li>Suspender actividades relacionadas con manipulación de alimentos.</li>
     <li>Uso obligatorio de Elementos de Protección Personal (EPP) durante toda la actividad.</li>
-    <li>Informar a usuarios y residentes sobre las medidas antes, durante y después del control de plagas.</li>
+    <li>Informar a usuarios y clientes y trabajadores sobre las medidas antes, durante y después del control de plagas.</li>
     <li>Conocer y aplicar las hojas de seguridad (SDS) y fichas técnicas de los productos utilizados.</li>
     <li>Limpiar y desinfectar los EPP al finalizar la actividad.</li>
     <li>Disponer adecuadamente los residuos generados, conforme a la normatividad ambiental vigente.</li>
@@ -436,8 +436,8 @@
 <ul class="lista-items">
     <li>Garantizar la implementación, ejecución y actualización del Programa de Control Integral de Plagas.</li>
     <li>Contratar empresas legalmente constituidas, con personal capacitado, licencia sanitaria vigente y cumplimiento de la normatividad aplicable.</li>
-    <li>Informar oportunamente a residentes, comerciantes y usuarios sobre fechas, horarios y medidas preventivas.</li>
-    <li>Realizar inspecciones periódicas a áreas comunes y zonas críticas.</li>
+    <li>Informar oportunamente a clientes y trabajadores, comerciantes y usuarios sobre fechas, horarios y medidas preventivas.</li>
+    <li>Realizar inspecciones periódicas a áreas del establecimiento y zonas críticas.</li>
     <li>Aplicar llamados de atención, medidas correctivas y sanciones conforme al reglamento interno.</li>
     <li>Custodiar registros, certificados, actas e informes derivados del programa.</li>
 </ul>
@@ -451,7 +451,7 @@
     <li>Informar hallazgos relevantes.</li>
 </ul>
 
-<div class="definition-term">Residentes, locales y comerciantes</div>
+<div class="definition-term">Clientes y trabajadores, locales y comerciantes</div>
 <ul class="lista-items">
     <li>Cumplir medidas preventivas.</li>
     <li>Facilitar acceso durante inspecciones.</li>
@@ -459,7 +459,7 @@
     <li>Reportar presencia de plagas.</li>
 </ul>
 
-<div class="definition-term">Responsable del SG-SST del Conjunto Residencial</div>
+<div class="definition-term">Responsable del SG-SST del Establecimiento</div>
 <ul class="lista-items">
     <li>Velar por el cumplimiento del cronograma.</li>
     <li>Coordinar con administración y empresa contratada.</li>
@@ -481,7 +481,7 @@
 <ul class="lista-items">
     <li>Reuniones periódicas para verificar cumplimiento.</li>
     <li>Evaluación conjunta entre Administración, empresa contratada, consejo y SG-SST.</li>
-    <li>Inspecciones mensuales a áreas comunes.</li>
+    <li>Inspecciones mensuales a áreas del establecimiento.</li>
     <li>Aplicación de medidas correctivas y sanciones si aplica.</li>
     <li>Verificación del cronograma por parte del Administrador.</li>
 </ul>

@@ -381,7 +381,7 @@ Fecha: <?= isset($latestVersion['sin_contrato']) && $latestVersion['sin_contrato
                 <li class="gamma-parrafo">Destacar más las fortalezas que las debilidades, como forma de mantener en los servidores una actitud motivadora y positiva.</li>
             </ul>
 
-            <strong>7.9. Hacer uso adecuado Y respetuoso de las zonas comunes y puestos de trabajo, garantizando que permanezcan limpios y ordenados.:</strong> Conductas asociadas:
+            <strong>7.9. Hacer uso adecuado Y respetuoso de las áreas del establecimiento y puestos de trabajo, garantizando que permanezcan limpios y ordenados.:</strong> Conductas asociadas:
             <ul>
                 <li class="gamma-parrafo">Respetar el espacio de trabajo compartido.</li>
                 <li class="gamma-parrafo">Evitar interrumpir las labores de los compañeros.</li>

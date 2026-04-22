@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showCancelButton: true,
             confirmButtonText: 'Agregar',
             cancelButtonText: 'Cancelar',
-            confirmButtonColor: '#e76f51',
+            confirmButtonColor: '#ee6c21',
             inputValidator: function(value) {
                 if (!value || !value.trim()) {
                     return 'Ingrese un nombre';

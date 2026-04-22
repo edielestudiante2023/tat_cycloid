@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1b4332">
+    <meta name="theme-color" content="#c9541a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Mi SST">
-    <link rel="manifest" href="<?= base_url('manifest_client.json?v=1') ?>">
+    <link rel="manifest" href="<?= base_url('manifest_client.json?v=2') ?>">
     <link rel="apple-touch-icon" href="<?= base_url('icons/icon-192.png') ?>">
     <title><?= esc($title ?? 'Inspecciones') ?> - Cycloid TAT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,14 +15,14 @@
     <style>
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #1b4332;
+            color: #c9541a;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
         }
         .navbar {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 3px solid #e76f51;
+            border-bottom: 3px solid #ee6c21;
             position: fixed;
             top: 0;
             width: 100%;
@@ -47,7 +47,7 @@
             padding-bottom: 60px;
         }
         .page-header {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             color: white;
             padding: 1.5rem 2rem;
             border-radius: 15px;
@@ -103,7 +103,7 @@
             color: white;
         }
         footer {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             color: #ffffff;
             padding: 15px 0;
             margin-top: 2rem;
@@ -119,14 +119,8 @@
 <body>
     <nav class="navbar">
         <div class="container navbar-content">
-            <a href="https://dashboard.cycloidtalent.com/login" target="_blank">
-                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Logo Cycloid TAT">
-            </a>
-            <a href="https://cycloidtalent.com/index.php/consultoria-sst" target="_blank">
-                <img src="<?= base_url('uploads/logosst.png') ?>" alt="Logo SST">
-            </a>
-            <a href="https://cycloidtalent.com/" target="_blank">
-                <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Logo Cycloid">
+            <a href="https://tat.cycloidtalent.com/index.php/login" target="_blank">
+                <img src="<?= base_url('uploads/tat.png') ?>" alt="Logo Cycloid TAT">
             </a>
         </div>
     </nav>
@@ -142,29 +136,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- PWA: Banner offline + Boton volver + Service Worker -->
-    <div id="offlineBanner" style="display:none;position:fixed;top:0;left:0;right:0;background:#e76f51;color:#fff;text-align:center;padding:8px;z-index:9999;font-weight:600;">
-        <i class="fas fa-wifi-slash"></i> Sin conexi&oacute;n - Modo offline
-    </div>
-    <a href="<?= base_url('client/dashboard') ?>" id="btnVolverDashboard" title="Volver al Dashboard" style="position:fixed;bottom:24px;left:24px;z-index:9998;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1b4332,#2d6a4f);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,0.3);text-decoration:none;font-size:22px;transition:transform 0.2s,box-shadow 0.2s;border:2px solid rgba(255,255,255,0.2);">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40h-16c-1.1 0-2.2 0-3.3-.1-1.4 .1-2.8 .1-4.2 .1H392c-22.1 0-40-17.9-40-40V360c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32v112c0 22.1-17.9 40-40 40h-12c-1.5 0-3-.1-4.5-.2-1 .1-2.1 .2-3.1 .2H88c-22.1 0-40-17.9-40-40v-78.2c0-2.6-.2-5.2-.5-7.8V288H32c-18 0-32-14-32-32.1 0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7l255.4 224.5c8 7 12 15 11 24z"/></svg>
-    </a>
-    <style>
-    #btnVolverDashboard:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(0,0,0,0.4);}
-    #btnVolverDashboard:active{transform:scale(0.95);}
-    @media(max-width:768px){#btnVolverDashboard{bottom:20px;left:16px;width:50px;height:50px;font-size:20px;}}
-    </style>
-    <script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            navigator.serviceWorker.register('<?= base_url("sw_client.js") ?>', {
-                scope: '<?= base_url() ?>'
-            });
-        });
-    }
-    window.addEventListener('online', function() { document.getElementById('offlineBanner').style.display = 'none'; });
-    window.addEventListener('offline', function() { document.getElementById('offlineBanner').style.display = 'block'; });
-    </script>
+    <!-- TAT Fase 5 - Compresor de imagenes (auto: input[type=file][accept=image/*]) -->
+    <script src="<?= base_url('js/image-compress.js?v=1') ?>" defer></script>
+<?php helper("pwa"); echo pwa_client_scripts(); ?>
 </body>
 </html>

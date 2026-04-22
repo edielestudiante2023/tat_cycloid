@@ -92,7 +92,7 @@
 
         .chart-container h5 {
             text-align: center;
-            color: #1b4332;
+            color: #c9541a;
             font-weight: 600;
             margin-bottom: 1rem;
         }
@@ -132,10 +132,8 @@
     <!-- Navbar con logos -->
     <nav class="navbar-logos">
         <div class="container-fluid d-flex justify-content-around align-items-center">
-            <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT" height="60">
-            <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST" height="60">
-            <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloid" height="60">
-        </div>
+            <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT" height="60">
+            </div>
     </nav>
 
     <div style="height: 100px;"></div>

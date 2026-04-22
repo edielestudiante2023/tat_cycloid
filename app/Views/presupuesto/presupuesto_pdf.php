@@ -25,7 +25,7 @@
         .seccion-titulo { background-color: #1a5f7a; color: white; padding: 8px 12px; margin: 20px 0 10px 0; font-weight: bold; font-size: 11pt; }
 
         .items-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        .items-table th { background-color: #2d6a4f; color: white; padding: 10px 8px; text-align: left; font-size: 10pt; }
+        .items-table th { background-color: #ee6c21; color: white; padding: 10px 8px; text-align: left; font-size: 10pt; }
         .items-table th.monto { text-align: right; width: 120px; }
         .items-table td { border-bottom: 1px solid #dee2e6; padding: 8px; font-size: 9pt; }
         .items-table .categoria { background-color: #e9ecef; font-weight: bold; padding: 10px 8px; color: #1a5f7a; }

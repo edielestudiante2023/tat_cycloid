@@ -27,7 +27,7 @@ $storageKey = $isEdit ? 'limpieza_draft_' . $inspeccion['id'] : 'limpieza_draft_
 
     <!-- DATOS GENERALES -->
     <div class="card mb-3">
-        <div class="card-header" style="background: #1b4332; color: white;">
+        <div class="card-header" style="background: #c9541a; color: white;">
             <i class="fas fa-info-circle me-1"></i> Datos Generales
         </div>
         <div class="card-body">
@@ -115,7 +115,7 @@ document.querySelector('.btn-finalizar').addEventListener('click', function(e) {
         text: 'Se generará el PDF y no podrá editarse más.',
         icon: 'question',
         showCancelButton: true,
-        confirmButtonColor: '#e76f51',
+        confirmButtonColor: '#ee6c21',
         confirmButtonText: 'Sí, finalizar',
         cancelButtonText: 'Cancelar'
     }).then(result => {
@@ -156,7 +156,7 @@ if (!isEditLocal) {
                     showCancelButton: true,
                     confirmButtonText: 'Si, restaurar',
                     cancelButtonText: 'No, empezar de cero',
-                    confirmButtonColor: '#e76f51',
+                    confirmButtonColor: '#ee6c21',
                 }).then(function(result) {
                     if (result.isConfirmed) restoreFromLocal(data);
                     else localStorage.removeItem(STORAGE_KEY);

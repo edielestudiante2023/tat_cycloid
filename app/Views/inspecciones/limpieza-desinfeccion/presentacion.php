@@ -14,8 +14,8 @@ body {
     line-height: 1.6;
 }
 .doc-header {
-    background: #1b4332;
-    border-bottom: 4px solid #e76f51;
+    background: #c9541a;
+    border-bottom: 4px solid #ee6c21;
     padding: 28px 48px;
     display: flex;
     justify-content: space-between;
@@ -26,8 +26,8 @@ body {
 }
 .doc-header h1 { font-size: 26px; color: #fff; }
 .doc-header .code-badge {
-    background: #e76f51;
-    color: #1b4332;
+    background: #ee6c21;
+    color: #c9541a;
     font-weight: bold;
     font-size: 20px;
     padding: 8px 20px;
@@ -69,10 +69,10 @@ body {
     user-select: none;
     transition: background .2s;
 }
-.section-header:hover { background: #1b4332; }
+.section-header:hover { background: #c9541a; }
 .section-header h2 {
     font-size: 20px;
-    color: #e76f51;
+    color: #ee6c21;
     font-weight: 600;
 }
 .section-header .badges { display: flex; gap: 8px; align-items: center; }
@@ -122,8 +122,8 @@ body {
     margin: 12px 0;
 }
 .data-table th {
-    background: #1b4332;
-    color: #e76f51;
+    background: #c9541a;
+    color: #ee6c21;
     padding: 10px 12px;
     text-align: left;
     border: 1px solid #30363d;
@@ -156,7 +156,7 @@ body {
 
 <div class="doc-header">
     <div>
-        <h1><span style="color:#e76f51">📋</span> Programa de Limpieza y Desinfección</h1>
+        <h1><span style="color:#ee6c21">📋</span> Programa de Limpieza y Desinfección</h1>
         <div style="color:#8b949e; font-size:15px; margin-top:4px;">Plan de Saneamiento Básico — Tienda a Tienda</div>
     </div>
     <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
@@ -170,7 +170,7 @@ body {
 </div>
 
 <div class="nav-bar">
-    <strong style="color:#e76f51;font-size:14px;">Secciones:</strong>
+    <strong style="color:#ee6c21;font-size:14px;">Secciones:</strong>
     <span class="sep">|</span>
     <a href="#s11">1.1 Objetivo</a>
     <a href="#s12">1.2 Alcance</a>
@@ -187,7 +187,7 @@ body {
     <a href="#s113">1.13 Control</a>
     <a href="#s114">1.14 Indicadores</a>
     <span class="sep">|</span>
-    <a href="javascript:openAll()" style="color:#e76f51">▶ Expandir todo</a>
+    <a href="javascript:openAll()" style="color:#ee6c21">▶ Expandir todo</a>
     <a href="javascript:closeAll()" style="color:#8b949e">▼ Colapsar todo</a>
 </div>
 
@@ -203,10 +203,10 @@ body {
         </div>
     </div>
     <div class="section-body">
-        <p>Definir, planificar y establecer las actividades, insumos, recursos humanos, EPP, sustancias químicas autorizadas, responsabilidades, frecuencias, mecanismos de control e indicadores para ejecutar de manera segura, eficiente y continua las labores de limpieza y desinfección en las áreas comunes del <strong>[NOMBRE DEL CONJUNTO]</strong>.</p>
-        <p>Se desarrolla en cumplimiento de la Ley 9 de 1979, Ley 675 de 2001, Decreto 1072 de 2015 (SG-SST) y demás normas sanitarias vigentes.</p>
+        <p>Definir, planificar y establecer las actividades, insumos, recursos humanos, EPP, sustancias químicas autorizadas, responsabilidades, frecuencias, mecanismos de control e indicadores para ejecutar de manera segura, eficiente y continua las labores de limpieza y desinfección en las áreas del establecimiento del <strong>[NOMBRE DEL ESTABLECIMIENTO]</strong>.</p>
+        <p>Se desarrolla en cumplimiento de la Ley 9 de 1979, Ley 232 de 1995, Resolución 2674 de 2013 (BPM, Arts. 6.5 y 26), Decreto 1072 de 2015 (SG-SST) y demás normas sanitarias vigentes.</p>
         <div class="ai-note">
-            <strong>🤖 Potencial IA:</strong> El objetivo podría personalizarse con características específicas del conjunto (número de torres, tipo de zonas comunes, particularidades sanitarias).
+            <strong>🤖 Potencial IA:</strong> El objetivo podría personalizarse con características específicas del conjunto (número de torres, tipo de áreas del establecimiento, particularidades sanitarias).
         </div>
     </div>
 </div>
@@ -221,8 +221,8 @@ body {
         </div>
     </div>
     <div class="section-body">
-        <p>Aplica a todas las áreas comunes del <strong>[NOMBRE DEL CONJUNTO]</strong>, bajo responsabilidad de la Administración. Incluye personal propio y empresas contratistas.</p>
-        <p><strong>Áreas cubiertas:</strong> Zonas comunes, pasillos, escaleras, rampas, pocetas, andenes, cuartos de almacenamiento, contenedores, oficina de administración, baños, salón social, unidad de residuos, techos, canales, parqueaderos.</p>
+        <p>Aplica a todas las áreas del establecimiento del <strong>[NOMBRE DEL ESTABLECIMIENTO]</strong>, bajo responsabilidad de la Administración. Incluye personal propio y empresas contratistas.</p>
+        <p><strong>Áreas cubiertas:</strong> Áreas del establecimiento, pasillos, escaleras, rampas, pocetas, andenes, cuartos de almacenamiento, contenedores, oficina de administración, baños, salón social, unidad de residuos, techos, canales, parqueaderos.</p>
         <div class="ai-note">
             <strong>🤖 Potencial IA:</strong> El alcance podría listar las áreas REALES del conjunto específico (número de torres, nombre de zonas sociales, etc.) en lugar del listado genérico.
         </div>
@@ -265,11 +265,11 @@ body {
     <div class="section-body">
         <p>Actores definidos:</p>
         <ul>
-            <li><strong>Administrador(a) de la Copropiedad</strong> — implementación, recursos, cronograma, supervisión.</li>
+            <li><strong>Administrador del establecimiento</strong> — implementación, recursos, cronograma, supervisión.</li>
             <li><strong>Personal de servicios generales / aseo</strong> — ejecución, EPP, registros.</li>
             <li><strong>Empresas contratistas de aseo</strong> — cuando aplique.</li>
-            <li><strong>Consejo de Administración o Comité de Convivencia</strong> — verificación.</li>
-            <li><strong>Responsable del SG-SST del Conjunto</strong> — [NOMBRE DEL RESPONSABLE]</li>
+            <li><strong>Propietario o Comité de Convivencia Laboral (cuando aplique)</strong> — verificación.</li>
+            <li><strong>Responsable del SG-SST del Establecimiento</strong> — [NOMBRE DEL RESPONSABLE]</li>
         </ul>
         <div class="ai-note">
             <strong>🤖 Potencial IA:</strong> Podría generarse texto con el nombre real del responsable y datos específicos del cargo en el conjunto.
@@ -396,7 +396,7 @@ body {
     <div class="section-body">
         <table class="data-table">
             <tr><th>ÁREA</th><th>FRECUENCIA</th></tr>
-            <tr><td>Zonas comunes y pasillos</td><td>Diaria</td></tr>
+            <tr><td>Áreas del establecimiento y pasillos</td><td>Diaria</td></tr>
             <tr><td>Escaleras y rampas</td><td>Diaria</td></tr>
             <tr><td>Baños administrativos y sociales</td><td>Diaria</td></tr>
             <tr><td>Oficina de administración</td><td>Diaria</td></tr>
@@ -469,19 +469,19 @@ body {
         <div class="sub-section">
             <h3>1.14.1 Cumplimiento de actividades de limpieza y desinfección</h3>
             <table class="data-table">
-                <tr><td style="width:40%; background:#161b22; font-weight:bold; color:#e76f51;">Fórmula</td><td>(N° días registrados ÷ Días hábiles del periodo) × 100</td></tr>
-                <tr><td style="background:#161b22; font-weight:bold; color:#e76f51;">Meta</td><td>≥ 95%</td></tr>
-                <tr><td style="background:#161b22; font-weight:bold; color:#e76f51;">Periodicidad</td><td>Mensual</td></tr>
-                <tr><td style="background:#161b22; font-weight:bold; color:#e76f51;">Fuente</td><td>Planilla de limpieza diligenciada</td></tr>
+                <tr><td style="width:40%; background:#161b22; font-weight:bold; color:#ee6c21;">Fórmula</td><td>(N° días registrados ÷ Días hábiles del periodo) × 100</td></tr>
+                <tr><td style="background:#161b22; font-weight:bold; color:#ee6c21;">Meta</td><td>≥ 95%</td></tr>
+                <tr><td style="background:#161b22; font-weight:bold; color:#ee6c21;">Periodicidad</td><td>Mensual</td></tr>
+                <tr><td style="background:#161b22; font-weight:bold; color:#ee6c21;">Fuente</td><td>Planilla de limpieza diligenciada</td></tr>
             </table>
         </div>
         <div class="sub-section">
             <h3>1.14.2 Estado de los elementos de limpieza</h3>
             <table class="data-table">
-                <tr><td style="width:40%; background:#161b22; font-weight:bold; color:#e76f51;">Fórmula</td><td>(N° elementos en buen estado ÷ N° total verificados) × 100</td></tr>
-                <tr><td style="background:#161b22; font-weight:bold; color:#e76f51;">Meta</td><td>≥ 90%</td></tr>
-                <tr><td style="background:#161b22; font-weight:bold; color:#e76f51;">Periodicidad</td><td>Mensual</td></tr>
-                <tr><td style="background:#161b22; font-weight:bold; color:#e76f51;">Elementos</td><td>Escobas, traperos, cepillos, mopas, baldes, recogedores, atomizadores</td></tr>
+                <tr><td style="width:40%; background:#161b22; font-weight:bold; color:#ee6c21;">Fórmula</td><td>(N° elementos en buen estado ÷ N° total verificados) × 100</td></tr>
+                <tr><td style="background:#161b22; font-weight:bold; color:#ee6c21;">Meta</td><td>≥ 90%</td></tr>
+                <tr><td style="background:#161b22; font-weight:bold; color:#ee6c21;">Periodicidad</td><td>Mensual</td></tr>
+                <tr><td style="background:#161b22; font-weight:bold; color:#ee6c21;">Elementos</td><td>Escobas, traperos, cepillos, mopas, baldes, recogedores, atomizadores</td></tr>
             </table>
         </div>
     </div>

@@ -25,7 +25,7 @@
         <?php foreach ($hallazgos as $i => $h): ?>
         <div class="mb-3 pb-3" style="border-bottom:1px solid #f0f0f0;">
             <div class="d-flex justify-content-between align-items-start mb-1">
-                <strong style="font-size:13px; color:#1b4332;">Hallazgo #<?= $i + 1 ?></strong>
+                <strong style="font-size:13px; color:#c9541a;">Hallazgo #<?= $i + 1 ?></strong>
                 <?php
                 $estadoColor = 'bg-warning text-dark';
                 if ($h['estado'] === 'CERRADO') $estadoColor = 'bg-success';

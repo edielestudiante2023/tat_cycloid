@@ -24,7 +24,7 @@
         .header-code { width: 130px; font-size: 9px; }
 
         /* Titulo principal */
-        .main-title { text-align: center; font-size: 12px; font-weight: bold; margin: 10px 0 8px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 12px; font-weight: bold; margin: 10px 0 8px; color: #c9541a; }
 
         /* Tabla datos generales */
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; border: 1px solid #ccc; }
@@ -32,7 +32,7 @@
         .info-label { font-weight: bold; color: #444; width: 100px; background: #f7f7f7; }
 
         /* Titulos de seccion */
-        .section-title { background: #1b4332; color: white; padding: 4px 10px; font-weight: bold; font-size: 10px; margin: 10px 0 5px; }
+        .section-title { background: #c9541a; color: white; padding: 4px 10px; font-weight: bold; font-size: 10px; margin: 10px 0 5px; }
 
         /* Tablas de datos */
         .data-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
@@ -93,15 +93,15 @@
     <!-- TEXTO INTRODUCTORIO -->
     <div class="section-title">INTRODUCCION</div>
     <p class="intro-text">
-        Las inspecciones locativas en el ambito de la tienda a tienda desempenan un papel critico en la gestion integral de la seguridad y la salud en el trabajo (SST), asi como en la proteccion del bienestar de todos los residentes y proveedores que interactuan con estas instalaciones. Cycloid Talent SAS, como experto en la gestion de talento y SST, destaca la importancia de estas inspecciones como una herramienta fundamental para mantener la seguridad de todos los actores involucrados. Estas inspecciones permiten una identificacion proactiva y una mitigacion oportuna de riesgos que, si no son gestionados adecuadamente, podrian derivar en incidentes que comprometan tanto la integridad fisica de las personas como la infraestructura misma.
+        Las inspecciones locativas en el ambito del establecimiento de comercio desempenan un papel critico en la gestion integral de la seguridad y la salud en el trabajo (SST), asi como en la proteccion del bienestar de todos los clientes y trabajadores y proveedores que interactuan con estas instalaciones. Cycloid Talent SAS, como experto en la gestion de talento y SST, destaca la importancia de estas inspecciones como una herramienta fundamental para mantener la seguridad de todos los actores involucrados. Estas inspecciones permiten una identificacion proactiva y una mitigacion oportuna de riesgos que, si no son gestionados adecuadamente, podrian derivar en incidentes que comprometan tanto la integridad fisica de las personas como la infraestructura misma.
     </p>
     <p class="intro-text">
-        El analisis sistematico de los elementos estructurales y operativos de las propiedades horizontales facilita la adopcion de estrategias preventivas que minimicen el impacto de posibles peligros, convirtiendo a las inspecciones en un componente esencial de la gestion de riesgos y en un requisito indispensable para la sostenibilidad del entorno construido. Ademas, este proceso contribuye a la mejora continua del ambiente laboral, impulsando la implementacion de practicas seguras y garantizando el cumplimiento de las normativas vigentes en materia de SST, lo cual es crucial para la reduccion de accidentes y enfermedades laborales.
+        El analisis sistematico de los elementos estructurales y operativos de los establecimientos comerciales facilita la adopcion de estrategias preventivas que minimicen el impacto de posibles peligros, convirtiendo a las inspecciones en un componente esencial de la gestion de riesgos y en un requisito indispensable para la sostenibilidad del entorno construido. Ademas, este proceso contribuye a la mejora continua del ambiente laboral, impulsando la implementacion de practicas seguras y garantizando el cumplimiento de las normativas vigentes en materia de SST, lo cual es crucial para la reduccion de accidentes y enfermedades laborales.
     </p>
 
     <div class="section-title">IDENTIFICACION DE RIESGOS COMUNES</div>
     <p class="intro-text">
-        La identificacion de riesgos en la tienda a tienda revela una amplia variedad de peligros que requieren una intervencion rigurosa y tecnica. Entre los hallazgos mas frecuentes se encuentran pisos rotos, cables electricos sueltos, vidrios peligrosos, y otros elementos que se encuentran deteriorados o mal instalados. Estos elementos constituyen amenazas significativas para la seguridad de residentes y trabajadores. Cycloid Talent SAS hace enfasis en la importancia de abordar estos riesgos de manera estructurada y tecnica, con el fin de garantizar la seguridad integral de todas las personas que habitan o trabajan en la propiedad.
+        La identificacion de riesgos en el establecimiento de comercio revela una amplia variedad de peligros que requieren una intervencion rigurosa y tecnica. Entre los hallazgos mas frecuentes se encuentran pisos rotos, cables electricos sueltos, vidrios peligrosos, y otros elementos que se encuentran deteriorados o mal instalados. Estos elementos constituyen amenazas significativas para la seguridad de clientes y trabajadores. Cycloid Talent SAS hace enfasis en la importancia de abordar estos riesgos de manera estructurada y tecnica, con el fin de garantizar la seguridad integral de todas las personas que habitan o trabajan en la propiedad.
     </p>
 
     <div class="section-title">ENFOQUE PREVENTIVO EN SST</div>
@@ -109,10 +109,10 @@
         Desde la perspectiva de la gestion en SST, resulta fundamental adoptar un enfoque preventivo, con inspecciones regulares y sistematicas orientadas a la identificacion, evaluacion y control de riesgos antes de que estos se materialicen en danos. Dichas inspecciones deben llevarse a cabo mediante una metodologia rigurosa que permita no solo el levantamiento detallado de los riesgos presentes, sino tambien la priorizacion de estos en funcion de su severidad y probabilidad de ocurrencia. Ademas, es esencial involucrar a personal capacitado en la realizacion de estas inspecciones, lo cual garantiza un analisis tecnico adecuado y recomendaciones precisas para la mitigacion de riesgos.
     </p>
     <p class="intro-text">
-        La implementacion de medidas correctivas debe incluir la reparacion inmediata de elementos deteriorados, la senalizacion adecuada de areas peligrosas, y la ejecucion de acciones de mantenimiento preventivo que garanticen la funcionalidad y seguridad de las instalaciones. Estas acciones preventivas no solo aseguran el bienestar de los residentes y proveedores, sino que tambien contribuyen a la optimizacion de los recursos al reducir costos asociados a indemnizaciones, responsabilidades legales, y deterioro de la reputacion de la administracion.
+        La implementacion de medidas correctivas debe incluir la reparacion inmediata de elementos deteriorados, la senalizacion adecuada de areas peligrosas, y la ejecucion de acciones de mantenimiento preventivo que garanticen la funcionalidad y seguridad de las instalaciones. Estas acciones preventivas no solo aseguran el bienestar de los clientes y trabajadores y proveedores, sino que tambien contribuyen a la optimizacion de los recursos al reducir costos asociados a indemnizaciones, responsabilidades legales, y deterioro de la reputacion de la administracion.
     </p>
     <p class="intro-text">
-        El enfoque preventivo en SST tambien implica la capacitacion continua de los trabajadores y la sensibilizacion de los residentes en temas de seguridad. La formacion en el reconocimiento de riesgos y en el reporte oportuno de condiciones peligrosas es una herramienta poderosa para la prevencion de accidentes. La educacion de los residentes y el personal de servicio respecto a practicas seguras no solo mejora la capacidad de respuesta ante emergencias, sino que tambien fomenta una actitud proactiva hacia la seguridad, haciendo de cada individuo un agente activo en la prevencion de riesgos.
+        El enfoque preventivo en SST tambien implica la capacitacion continua de los trabajadores y la sensibilizacion de los clientes y trabajadores en temas de seguridad. La formacion en el reconocimiento de riesgos y en el reporte oportuno de condiciones peligrosas es una herramienta poderosa para la prevencion de accidentes. La educacion de los clientes y trabajadores y el personal de servicio respecto a practicas seguras no solo mejora la capacidad de respuesta ante emergencias, sino que tambien fomenta una actitud proactiva hacia la seguridad, haciendo de cada individuo un agente activo en la prevencion de riesgos.
     </p>
 
     <!-- HALLAZGOS -->

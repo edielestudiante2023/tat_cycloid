@@ -41,7 +41,7 @@
         }
 
         .header-section {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             color: white;
             padding: 1.5rem;
             border-radius: 15px;
@@ -79,7 +79,7 @@
 
         .chart-container h6 {
             text-align: center;
-            color: #1b4332;
+            color: #c9541a;
             font-weight: 600;
             margin-bottom: 0.5rem;
             font-size: 0.9rem;
@@ -184,7 +184,7 @@
 
         .accordion-estandar .accordion-button:not(.collapsed) {
             background-color: #e9ecef;
-            color: #1b4332;
+            color: #c9541a;
         }
 
         .accordion-estandar .accordion-body {
@@ -356,10 +356,8 @@
     <!-- Navbar con logos -->
     <nav class="navbar-logos">
         <div class="container-fluid d-flex justify-content-around align-items-center">
-            <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT">
-            <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST">
-            <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloid">
-        </div>
+            <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT">
+            </div>
     </nav>
 
     <div style="height: 80px;"></div>

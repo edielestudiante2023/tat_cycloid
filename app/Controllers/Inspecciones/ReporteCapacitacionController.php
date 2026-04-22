@@ -441,7 +441,7 @@ class ReporteCapacitacionController extends BaseController
             return $this->response->setJSON(['error' => 'API key no configurada.'])->setStatusCode(500);
         }
 
-        $prompt = "Eres un experto en Seguridad y Salud en el Trabajo (SST) para propiedades horizontales colombianas (conjuntos residenciales y edificios). El personal capacitado son principalmente contratistas de aseo y vigilancia, y ocasionalmente la comunidad (residentes y administración).
+        $prompt = "Eres un experto en Seguridad y Salud en el Trabajo (SST) para establecimientos comerciales colombianas (establecimientos comerciales y edificios). El personal capacitado son principalmente contratistas de aseo y vigilancia, y ocasionalmente la comunidad (clientes y trabajadores y administración).
 
 Redacta el objetivo de la siguiente capacitación en SST: «{$nombre}».
 

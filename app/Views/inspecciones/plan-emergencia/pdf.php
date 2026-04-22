@@ -31,14 +31,14 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
         .header-code { width: 120px; font-size: 8px; }
 
         .cover-page { text-align: center; padding-top: 120px; }
-        .cover-title { font-size: 18px; font-weight: bold; color: #1b4332; margin-bottom: 10px; }
+        .cover-title { font-size: 18px; font-weight: bold; color: #c9541a; margin-bottom: 10px; }
         .cover-subtitle { font-size: 14px; font-weight: bold; color: #444; margin-bottom: 30px; }
         .cover-img { max-width: 400px; max-height: 280px; border: 2px solid #ccc; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #c9541a; }
 
-        .section-title { background: #1b4332; color: white; padding: 4px 8px; font-weight: bold; font-size: 9px; margin: 10px 0 5px; }
-        .section-subtitle { font-weight: bold; font-size: 9px; color: #1b4332; margin: 6px 0 3px; }
+        .section-title { background: #c9541a; color: white; padding: 4px 8px; font-weight: bold; font-size: 9px; margin: 10px 0 5px; }
+        .section-subtitle { font-weight: bold; font-size: 9px; color: #c9541a; margin: 6px 0 3px; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
@@ -49,7 +49,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
         .data-table td { border: 1px solid #ccc; padding: 3px 5px; font-size: 8px; vertical-align: middle; }
 
         .content-text { font-size: 8.5px; line-height: 1.4; margin-bottom: 5px; text-align: justify; }
-        .content-bold { font-size: 8.5px; font-weight: bold; margin: 5px 0 2px; color: #1b4332; }
+        .content-bold { font-size: 8.5px; font-weight: bold; margin: 5px 0 2px; color: #c9541a; }
 
         .foto-block { text-align: center; margin: 6px 0; }
         .foto-block img { max-width: 300px; max-height: 200px; border: 1px solid #ccc; }
@@ -59,7 +59,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
         .foto-row td { text-align: center; padding: 4px; vertical-align: top; }
         .foto-row img { max-width: 220px; max-height: 150px; border: 1px solid #ccc; }
 
-        .annex-title { background: #2d6a4f; color: white; padding: 5px 8px; font-weight: bold; font-size: 10px; margin: 10px 0 6px; text-align: center; }
+        .annex-title { background: #ee6c21; color: white; padding: 5px 8px; font-weight: bold; font-size: 10px; margin: 10px 0 6px; text-align: center; }
 
         .opt-a { background: #d4edda; color: #155724; font-weight: bold; text-align: center; }
         .opt-b { background: #fff3cd; color: #856404; font-weight: bold; text-align: center; }
@@ -105,58 +105,58 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
 
     <!-- ============ INTRODUCCION ============ -->
     <div class="section-title">INTRODUCCION</div>
-    <p class="content-text">De acuerdo con la Ley 675 de 2001, se considera edificio a una construccion de uno o varios pisos levantados sobre un lote o terreno, cuya estructura comprende un numero plural de unidades independientes; y conjunto al desarrollo inmobiliario conformado por varios edificios levantados sobre uno o varios lotes de terreno, que comparten areas y servicios de uso y utilidad general, como vias internas, estacionamiento, zonas verdes, muros de cerramiento, porterias, entre otros. Cuando uno u otro se destina a la vivienda de las personas, se denomina edificio o conjunto de uso residencial (Congreso de Colombia Ley 675/01, 2001).</p>
+    <p class="content-text">Todo establecimiento de comercio, independientemente de su tamano o actividad, puede verse afectado por emergencias de origen natural, tecnologico o social que comprometan la vida, la salud o los bienes de trabajadores, clientes y visitantes. La normativa colombiana — Ley 232 de 1995, Ley 1523 de 2012 (Sistema Nacional de Gestion del Riesgo de Desastres), Decreto 1072 de 2015 y Resolucion 0312 de 2019 — establece la obligacion del propietario o representante legal del establecimiento de identificar, prevenir y responder ante estos eventos, mediante la formulacion e implementacion de un Plan de Preparacion y Respuesta ante Emergencias.</p>
     <p class="content-text">Es posible que todo edificio o instalacion que albergue personas se convierta en un lugar de desastre en el evento que se produzca una emergencia repentina que adolezca de la oportuna y optima intervencion de esta. La emergencia puede agravarse con el panico que usualmente se despierta cuando se carece de la preparacion adecuada para afrontar un suceso.</p>
     <p class="content-text">Todas las entidades ya sean del sector publico o privado tienen la responsabilidad de administrar situaciones generadas por los desastres o por las emergencias que puedan presentarse, como consecuencia del riesgo al cual se encuentran expuestos.</p>
-    <p class="content-text">Un plan de emergencia es el conjunto de medidas anticipadas a una emergencia, que permite a sus usuarios la posibilidad de no ser afectados si esta sucede. Su proposito es proporcionar los elementos necesarios a todos los miembros que hacen parte del Conjunto residencial, criterios basicos que le permitan responder de forma adecuada a los eventos catastroficos que en una edificacion pueden ocurrir.</p>
-    <p class="content-text">Existe la responsabilidad de estar preparados para hacerle frente a las situaciones adversas, las cuales pueden ser de diferente origen: naturales (vendavales, inundaciones, sismos, tormentas electricas, y algunos otros), tecnologicas (incendios, explosiones, derrames de combustibles, fallas electricas, fallas estructurales, entre otras) y sociales (atentados, vandalismo, terrorismos, amenazas de diferente indole y otras acciones). Lo anterior muestra la variedad de emergencias que en cualquier momento pueden afectar de manera individual o colectiva el cotidiano vivir de los residentes con resultados como lesiones o muerte, dano a bienes, afectacion del medio ambiente, alteracion del funcionamiento del conjunto y perdidas economicas.</p>
+    <p class="content-text">Un plan de emergencia es el conjunto de medidas anticipadas a una emergencia, que permite a sus usuarios la posibilidad de no ser afectados si esta sucede. Su proposito es proporcionar los elementos necesarios a todos los miembros que hacen parte del Establecimiento comercial, criterios basicos que le permitan responder de forma adecuada a los eventos catastroficos que en una edificacion pueden ocurrir.</p>
+    <p class="content-text">Existe la responsabilidad de estar preparados para hacerle frente a las situaciones adversas, las cuales pueden ser de diferente origen: naturales (vendavales, inundaciones, sismos, tormentas electricas, y algunos otros), tecnologicas (incendios, explosiones, derrames de combustibles, fallas electricas, fallas estructurales, entre otras) y sociales (atentados, vandalismo, terrorismos, amenazas de diferente indole y otras acciones). Lo anterior muestra la variedad de emergencias que en cualquier momento pueden afectar de manera individual o colectiva el cotidiano vivir de los clientes y trabajadores con resultados como lesiones o muerte, dano a bienes, afectacion del medio ambiente, alteracion del funcionamiento del conjunto y perdidas economicas.</p>
 
     <!-- ============ JUSTIFICACION ============ -->
     <div class="section-title">JUSTIFICACION</div>
     <p class="content-text">La gestion del riesgo, de acuerdo con la Ley 1523 de 2012, es un proceso social orientado a la formulacion, ejecucion, seguimiento y evaluacion de politicas, estrategias, planes, programas, regulaciones, instrumentos, medidas y acciones permanentes para el conocimiento y la reduccion del riesgo, y para el manejo de desastres, con el proposito explicito de contribuir a la seguridad, el bienestar, la calidad de vida de las personas y al desarrollo sostenible.</p>
     <p class="content-text">Frente a la imposibilidad de eliminar por completo la probabilidad de ocurrencia de una situacion de emergencia, se ha evidenciado la necesidad de establecer un proceso que permita contrarrestar y minimizar las consecuencias adversas que se presentan en una situacion de crisis. Este proceso es conocido como "Plan de preparacion para emergencias y contingencias", el cual es empleado para prevenir y controlar aquellos eventos que puedan catalogarse como un riesgo.</p>
     <p class="content-text">El plan de emergencias es una herramienta que permite poner en conocimiento todos los factores de riesgo (amenaza y vulnerabilidad) frente a las personas y los bienes. Asi mismo, debe ser divulgado a todas las personas que intervienen en el, e implementarlo por medio de simulacros periodicos, por esto se hace necesaria la participacion de todos los miembros de <?= $nombreCliente ?>.</p>
-    <p class="content-text">La mitigacion de la afectacion en la salud de las personas es el principal factor del plan de emergencias del conjunto residencial, es por esto por lo que se planteo un panorama de riesgos que permite evaluar cada una de las estructuras que hacen parte de este.</p>
-    <p class="content-text"><?= $nombreCliente ?> implementara el plan de emergencias con la seguridad de que su aplicacion le permitira disponer de una herramienta de trabajo agil en la planificacion de tratamientos de emergencias. Se deberan considerar las politicas y procedimientos, ya que en algun momento cada persona tendra funciones y responsabilidades en cooperacion con la Administracion del Conjunto; debido a lo anterior, se conformaran brigadas de emergencia con sus diferentes acciones y responsabilidades, el equipo de evacuacion, el equipo de primeros auxilios y el equipo control de incendios, con el fin de contar con un ambiente seguro, con la proteccion adecuada para la salud de los residentes y sus trabajadores, brindando una atencion de emergencias de manera eficiente y eficaz.</p>
+    <p class="content-text">La mitigacion de la afectacion en la salud de las personas es el principal factor del plan de emergencias del establecimiento comercial, es por esto por lo que se planteo un panorama de riesgos que permite evaluar cada una de las estructuras que hacen parte de este.</p>
+    <p class="content-text"><?= $nombreCliente ?> implementara el plan de emergencias con la seguridad de que su aplicacion le permitira disponer de una herramienta de trabajo agil en la planificacion de tratamientos de emergencias. Se deberan considerar las politicas y procedimientos, ya que en algun momento cada persona tendra funciones y responsabilidades en cooperacion con la Administracion del Conjunto; debido a lo anterior, se conformaran brigadas de emergencia con sus diferentes acciones y responsabilidades, el equipo de evacuacion, el equipo de primeros auxilios y el equipo control de incendios, con el fin de contar con un ambiente seguro, con la proteccion adecuada para la salud de los clientes y trabajadores y sus trabajadores, brindando una atencion de emergencias de manera eficiente y eficaz.</p>
 
     <!-- ============ OBJETIVOS ============ -->
     <div class="section-title">OBJETIVOS</div>
     <div class="section-subtitle">OBJETIVO GENERAL</div>
-    <p class="content-text">Elaborar el Plan de Emergencias de <?= $nombreCliente ?> para que sirva como guia en el desarrollo de actividades orientadas en la prevencion y atencion de eventos que pueden ocasionar lesiones a los residentes y trabajadores y de igual forma a la infraestructura del conjunto.</p>
+    <p class="content-text">Elaborar el Plan de Emergencias de <?= $nombreCliente ?> para que sirva como guia en el desarrollo de actividades orientadas en la prevencion y atencion de eventos que pueden ocasionar lesiones a los clientes y trabajadores y de igual forma a la infraestructura del conjunto.</p>
     <div class="section-subtitle">OBJETIVOS ESPECIFICOS</div>
-    <p class="content-text">Proporcionar a los residentes de <?= $nombreCliente ?> los elementos adecuados que les permitan responder con eficacia en la prevencion y atencion de emergencias para reducir el impacto al interior del conjunto residencial.</p>
+    <p class="content-text">Proporcionar a los clientes y trabajadores de <?= $nombreCliente ?> los elementos adecuados que les permitan responder con eficacia en la prevencion y atencion de emergencias para reducir el impacto al interior del establecimiento comercial.</p>
     <p class="content-text">Contar con una estructura organizativa eficiente y preparada para actuar en situaciones de emergencia, permitiendo la identificacion oportuna de amenazas, la evaluacion de vulnerabilidades y la definicion precisa de niveles de riesgo.</p>
-    <p class="content-text">Minimizar los danos a la comunidad y su ambiente.</p>
+    <p class="content-text">Minimizar los danos a los ocupantes del establecimiento y su entorno.</p>
 
     <!-- ============ ALCANCE ============ -->
     <div class="section-title">ALCANCE</div>
-    <p class="content-text">Este documento, denominado Plan de Preparacion y Respuesta ante Situaciones de Emergencia (PPRSE), tiene como enfoque principal todas las areas pertenecientes a la copropiedad. Ademas, abarca a todo el personal que forma parte de esta comunidad, incluyendo servidores publicos, contratistas, pasantes, judiciales, visitantes y otras partes interesadas.</p>
+    <p class="content-text">Este documento, denominado Plan de Preparacion y Respuesta ante Situaciones de Emergencia (PPRSE), tiene como enfoque principal todas las areas pertenecientes al establecimiento comercial. Ademas, abarca a todo el personal que forma parte de esta comunidad, incluyendo servidores publicos, contratistas, pasantes, judiciales, visitantes y otras partes interesadas.</p>
 
     <!-- ============ CONCEPTOS ============ -->
 <div class="section-title">CONCEPTOS</div>
-    <p class="content-text">De acuerdo con el articulo 4 de la Ley 675 de 2001 por medio de la cual se expide el Regimen de Tienda a Tienda, cada edificio o conjunto de uso residencial debe constituirse en persona juridica, por tanto, la legislacion colombiana alrededor del tema de Seguridad y Salud en el Trabajo es perfectamente aplicable a las administraciones y consejos de administracion.</p>
+    <p class="content-text">Todo establecimiento de comercio en Colombia, en aplicacion de la Ley 232 de 1995 (requisitos de funcionamiento), el Decreto 1072 de 2015 (Sistema de Gestion de Seguridad y Salud en el Trabajo) y la Resolucion 0312 de 2019 (estandares minimos del SG-SST), debe garantizar condiciones seguras y saludables para sus trabajadores, clientes y visitantes, asi como disponer de un plan de preparacion y respuesta ante emergencias proporcional al tamano y tipo de actividad del establecimiento. El propietario o representante legal del establecimiento es el responsable directo de implementar y mantener actualizado este Plan.</p>
     <p class="content-text">Para mayor comprension de la diferente terminologia que se va a tratar en el documento, se describe a continuacion algunos de los conceptos:</p>
     <?php
     $conceptos = [
-        'ALARMA O PITO' => 'Sistema sonoro que permite avisar inmediatamente se accione a la comunidad la presencia de un riesgo que pone en grave peligro sus vidas.',
+        'ALARMA O PITO' => 'Sistema sonoro que permite avisar inmediatamente a los ocupantes del establecimiento sobre la presencia de un riesgo que pone en grave peligro sus vidas.',
         'ALERTA' => 'Acciones de respuesta especificas frente a una emergencia.',
-        'AMENAZA' => 'Factor externo de origen natural, tecnologico o social que puede afectar a la comunidad y a la copropiedad, provocando lesiones y/o muerte a las personas o danos a la infraestructura fisica y economica.',
+        'AMENAZA' => 'Factor externo de origen natural, tecnologico o social que puede afectar a los ocupantes y al establecimiento comercial, provocando lesiones y/o muerte a las personas o danos a la infraestructura fisica y economica.',
         'ANALISIS DE VULNERABILIDAD' => 'Es la medida o grado de ser afectado por amenazas o riesgos segun la frecuencia y la severidad de estos. La vulnerabilidad depende de varios factores entre otros: la posibilidad de ocurrencia del evento, la frecuencia de la ocurrencia de este, los planes y programas preventivos existentes y la posibilidad de programacion anual entre otros.',
         'AYUDA INSTITUCIONAL' => 'Es aquella prestada por entidades publicas y/o privadas de caracter comunitario, organizados con el fin especifico de responder de oficio a los desastres.',
         'COMBUSTION' => 'Reaccion mediante la cual una sustancia denominada combustible interactua quimicamente con otra llamada oxidante o comburente y da como resultado gases toxicos irritantes y asfixiantes, humo que obstaculiza la visibilidad y afecta la respiracion, llamas y calor que generan lesiones de diversa intensidad en las personas.',
         'CONTINGENCIA' => 'Evento que puede suceder o no suceder para el cual debemos estar preparados.',
         'CONTROL' => 'Accion de eliminar o limitar el desarrollo de un siniestro, para evitar o minimizar sus consecuencias.',
         'DESASTRE' => 'Es el dano o alteracion grave de las condiciones normales de la vida, causado por fenomenos naturales o accion del hombre en forma accidental.',
-        'EMERGENCIA' => 'Estado de alteracion parcial o total de las actividades de una tienda a tienda, ocasionado por la ocurrencia de un evento que genera peligro inminente y cuyo control supera la capacidad de respuesta de las personas y de las organizaciones.',
+        'EMERGENCIA' => 'Estado de alteracion parcial o total de las actividades de un establecimiento de comercio, ocasionado por la ocurrencia de un evento que genera peligro inminente y cuyo control supera la capacidad de respuesta de las personas y de las organizaciones.',
         'ESCENARIO' => 'Representacion o descripcion detallada de una situacion o conjunto de circunstancias hipoteticas, ya sea en el presente o en el futuro. Los escenarios se utilizan comunmente en la planificacion estrategica, la toma de decisiones, la gestion de riesgos y la narrativa, para explorar posibles resultados o eventos. En el contexto de un plan de emergencias, un escenario podria ser una representacion detallada de una situacion de emergencia hipotetica que se utiliza como base para la planificacion y preparacion de respuestas.',
         'EVENTO' => 'Descripcion de un fenomeno natural, tecnologico o provocado por el hombre en terminos de sus caracteristicas, su severidad, ubicacion y area de influencia.',
         'EVACUACION' => 'Es el conjunto de acciones tendientes a desplazar las personas de una zona de mayor amenaza a otra de menor peligro.',
         'IMPACTO' => 'Accion directa de una amenaza o un riesgo en un grupo de personas.',
         'MITIGACION' => 'Acciones desarrolladas antes, durante y despues de un siniestro, tendientes a contrarrestar sus efectos criticos, y asegurar la supervivencia del sistema hasta tanto se efectue la recuperacion.',
-        'PLAN DE ACCION' => 'Es un trabajo colectivo que establece en un documento las medidas preventivas para evitar los posibles desastres especificos de cada comunidad y que indica las operaciones, tareas, y responsabilidades de toda la comunidad para situaciones de inminente peligro.',
+        'PLAN DE ACCION' => 'Es un trabajo colectivo que establece en un documento las medidas preventivas para evitar los posibles desastres especificos del establecimiento y que indica las operaciones, tareas y responsabilidades de todos sus ocupantes para situaciones de inminente peligro.',
         'PLAN DE CONTINGENCIAS' => 'Componente del plan de emergencias y desastres que contiene los procedimientos para la pronta respuesta en caso de presentarse un evento especifico.',
         'PLAN DE EMERGENCIAS' => 'Definicion de politicas, organizaciones y metodos que indican la manera de enfrentar una situacion de emergencia o desastre, en lo general y en lo particular, en sus distintas fases.',
-        'PREPARACION' => 'Se lleva a cabo mediante la organizacion institucional, prediccion de eventos y planificacion de acciones de alerta, busqueda, rescate, traslado, evacuacion y asistencia de personas, salvamento de bienes y de rehabilitacion y reconstruccion de la copropiedad o comunidad.',
+        'PREPARACION' => 'Se lleva a cabo mediante la organizacion institucional, prediccion de eventos y planificacion de acciones de alerta, busqueda, rescate, traslado, evacuacion y asistencia de personas, salvamento de bienes y de rehabilitacion y reconstruccion del establecimiento comercial o comunidad.',
         'PREVENCION' => 'Accion para evitar la ocurrencia de desastres.',
         'RECUPERACION' => 'Actividad final en el proceso de respuesta a una emergencia. Consiste en restablecer la operatividad de un sistema interferido.',
         'RIESGO' => 'Una amenaza evaluada en cuanto su probabilidad de ocurrencia y su gravedad potencial esperada.',
@@ -174,7 +174,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
     <?php endforeach; ?>
 
     <!-- ============ INFORMACION GENERAL DEL CONJUNTO ============ -->
-<div class="section-title">INFORMACION GENERAL DEL CONJUNTO RESIDENCIAL</div>
+<div class="section-title">INFORMACION GENERAL DEL ESTABLECIMIENTO COMERCIAL</div>
 
     <div class="section-subtitle">UBICACION</div>
     <p class="content-text"><?= $nombreCliente ?> se encuentra localizado en la Direccion: <?= $direccion ?></p>
@@ -194,10 +194,10 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
         <?php endif; ?>
         <tr><td class="info-label">ESTRUCTURA SISMO RESISTENTE</td><td><?= esc($inspeccion['sismo_resistente'] ?? '-') ?></td></tr>
         <tr><td class="info-label">ANO DE CONSTRUCCION</td><td><?= $inspeccion['anio_construccion'] ?? '-' ?></td></tr>
-        <tr><td class="info-label">UNIDADES HABITACIONALES</td><td><?= $inspeccion['numero_unidades_habitacionales'] ?? '-' ?></td></tr>
-        <tr><td class="info-label">PARQUEADEROS CARROS RESIDENTES</td><td><?= $inspeccion['parqueaderos_carros_residentes'] ?? '0' ?></td></tr>
+        <tr><td class="info-label">AREAS / DEPENDENCIAS</td><td><?= $inspeccion['numero_unidades_habitacionales'] ?? '-' ?></td></tr>
+        <tr><td class="info-label">PARQUEADEROS CARROS CLIENTES Y TRABAJADORES</td><td><?= $inspeccion['parqueaderos_carros_residentes'] ?? '0' ?></td></tr>
         <tr><td class="info-label">PARQUEADEROS CARROS VISITANTES</td><td><?= $inspeccion['parqueaderos_carros_visitantes'] ?? '0' ?></td></tr>
-        <tr><td class="info-label">PARQUEADEROS MOTOS RESIDENTES</td><td><?= $inspeccion['parqueaderos_motos_residentes'] ?? '0' ?></td></tr>
+        <tr><td class="info-label">PARQUEADEROS MOTOS CLIENTES Y TRABAJADORES</td><td><?= $inspeccion['parqueaderos_motos_residentes'] ?? '0' ?></td></tr>
         <tr><td class="info-label">PARQUEADEROS MOTOS VISITANTES</td><td><?= $inspeccion['parqueaderos_motos_visitantes'] ?? '0' ?></td></tr>
         <tr><td class="info-label">PARQUEADERO PRIVADO</td><td><?= $enumSiNo[$inspeccion['hay_parqueadero_privado'] ?? ''] ?? '-' ?></td></tr>
         <tr><td class="info-label">SALONES COMUNALES</td><td><?= $inspeccion['cantidad_salones_comunales'] ?? '0' ?></td></tr>
@@ -327,7 +327,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
     <p class="content-text"><strong>RESOLUCION 1428 DE 2002</strong> "Por la cual se adoptan los Planes Tipo de Emergencias en seis escenarios Distritales, se modifica y adiciona la Resolucion 0151 del 06 de febrero de 2002".</p>
     <p class="content-text"><strong>DECRETO 332/04</strong> "Por el cual se organiza el regimen y el Sistema para la Prevencion y Atencion de Emergencias". Art. 7 - Planes de Emergencias: Se adoptaran para cada una de las entidades y comites sectoriales. Art. 8 - Planes de Contingencia.</p>
     <p class="content-text"><strong>DECRETO 423/06</strong> "Por el cual se adopta el Plan Distrital para la prevencion y Atencion de Emergencias". Art. 18 - Planes de Emergencias: Instrumentos para la coordinacion general y actuacion frente a situaciones de calamidad, desastre o emergencia. Art. 19 - Planes de Contingencia.</p>
-    <p class="content-text"><strong>RESOLUCION No. 375/06</strong> Condiciones basicas para la copropiedad que prestan el servicio de logistica en las aglomeraciones de publico.</p>
+    <p class="content-text"><strong>RESOLUCION No. 375/06</strong> Condiciones basicas para el establecimiento comercial que prestan el servicio de logistica en las aglomeraciones de publico.</p>
     <p class="content-text"><strong>RESOLUCION No. 137/07</strong> Parametros e instrucciones para la administracion de emergencias en Bogota - Plan de Emergencias de Bogota.</p>
     <p class="content-text"><strong>DECRETO 633/07</strong> Disposiciones en materia de prevencion de riesgos en los lugares donde se presenten aglomeraciones de publico. Art. 5 - Planes de Contingencia.</p>
 
@@ -351,7 +351,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
             <tr><td>Incendios Forestales</td></tr>
             <tr><td rowspan="2" style="font-weight:bold; text-align:center; background:#f0f0f0;">SOCIAL</td><td>Condiciones sociales insatisfechas (atentados terroristas, amenazas)</td></tr>
             <tr><td>Condiciones politicas y sociales de la region (robos)</td></tr>
-            <tr><td rowspan="5" style="font-weight:bold; text-align:center; background:#f0f0f0;">TECNOLOGICO</td><td>Presencia copropiedades vecinas (Explosiones, incendios)</td></tr>
+            <tr><td rowspan="5" style="font-weight:bold; text-align:center; background:#f0f0f0;">TECNOLOGICO</td><td>Presencia establecimientos comerciales vecinas (Explosiones, incendios)</td></tr>
             <tr><td>Almacenamiento de gases toxicos (fugas de sustancias nocivas)</td></tr>
             <tr><td>Inflamabilidad de una sustancia (incendios, explosiones)</td></tr>
             <tr><td>Presencia Aeropuerto (paso de aviones)</td></tr>
@@ -416,31 +416,31 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
     <p class="content-text"><strong>INUNDACIONES:</strong> Se presentan generalmente despues de una lluvia fuerte o una granizada, por sustraccion de drenajes, por taponamiento de sifones, de desagues o de bajantes de canales; cuando se presenta acumulacion de residuos o basuras o por diametros muy reducidos de los tubos de la caneria; por mala inclinacion de los desniveles hacia los respectivos desagues, o por estar la edificacion en zonas bajas inundables como cerca de rios, lagos o por estar construida en zonas pantanosas. Por presentarse en la capital epocas de fuertes y prolongados inviernos, es muy probable que se presenten este tipo de amenazas.<br>CLASIFICACION DEL RIESGO: POCO PROBABLE</p>
 
     <div class="section-subtitle">RIESGOS TECNOLOGICOS</div>
-    <p class="content-text"><strong>INCENDIO:</strong> Entre las amenazas mas importantes se hace referencia a las de incendio, la cual es caracteristica de toda edificacion cuya destinacion sea de caracter industrial, comercial, de servicios o residencia. Esta amenaza no solamente se presenta por una eventual vecindad a fuentes de ignicion o detonacion, fuentes de calor, fuentes electricas, presencia de cargas estaticas y tambien por diferentes cargas combustibles de materiales solidos presentes en las instalaciones del conjunto residencial y a los trabajos que en el se realicen. Debido a que en el conjunto se almacenan diferentes combustibles como vestuario, telones, madera, alfombras, carton, plasticos, equipos de oficina; presencia de gas natural y demas combustibles que pueden ocasionar un incendio de grandes proporciones.<br>CLASIFICACION DEL RIESGO: MUY PROBABLE</p>
+    <p class="content-text"><strong>INCENDIO:</strong> Entre las amenazas mas importantes se hace referencia a las de incendio, la cual es caracteristica de toda edificacion cuya destinacion sea de caracter industrial, comercial, de servicios o residencia. Esta amenaza no solamente se presenta por una eventual vecindad a fuentes de ignicion o detonacion, fuentes de calor, fuentes electricas, presencia de cargas estaticas y tambien por diferentes cargas combustibles de materiales solidos presentes en las instalaciones del establecimiento comercial y a los trabajos que en el se realicen. Debido a que en el conjunto se almacenan diferentes combustibles como vestuario, telones, madera, alfombras, carton, plasticos, equipos de oficina; presencia de gas natural y demas combustibles que pueden ocasionar un incendio de grandes proporciones.<br>CLASIFICACION DEL RIESGO: MUY PROBABLE</p>
     <p class="content-text"><strong>EXPLOSION:</strong> Es un riesgo que viene relacionado con el manejo de cargas combustibles del tipo B como el almacenamiento y manipulacion de liquidos y gases inflamables, la reactividad por escape de gases comprimidos como el caso de gas natural, y en el manejo de solventes, lacas, pinturas, Varsol que normalmente emanan gases con propiedades inflamables detonantes lo mismo que eventualmente lo podria hacer pero con menos posibilidad el ACPM.<br>CLASIFICACION DEL RIESGO: MUY PROBABLE</p>
     <p class="content-text"><strong>FALLA ESTRUCTURAL:</strong> La vulnerabilidad estructural se encuentra determinada por la capacidad de soporte vertical y resistencia a cargas horizontales de la edificacion, la cual en terminos generales presenta buen aspecto. Un gran porcentaje de las instalaciones esta construido en muros de ladrillo y cemento, pisos en cemento, techos en placa de concreto. Con el objeto de determinar la capacidad sismo resistente de las edificaciones se recomienda realizar un estudio tecnico de las mismas y conforme a su valoracion reforzar las estructuras o realizar las modificaciones arquitectonicas necesarias, en consonancia con las exigencias del codigo colombiano de construcciones sismo resistentes, adoptado por el Decreto 400 con vigencia desde el ano de 1984 y actualizado por la Ley 400 de 1997 y el Decreto 33 de 1998.<br>CLASIFICACION DEL RIESGO: POCO PROBABLE</p>
-    <p class="content-text"><strong>INTOXICACIONES POR INHALACION DE VAPORES:</strong> Estas afectaciones en la salud se pueden causar debido a la acumulacion de gases nocivos para las personas, esto se puede agravar en el caso del parqueadero de vehiculos del conjunto residencial si no se cuenta con la cultura de la revision periodica de los vehiculos automotores y si las personas se quedan bajo periodos largos en este sitio, para lo cual se hace necesario implementar la cultura de esperar que los propietarios de los vehiculos realicen el calentamiento del motor en un area ventilada.<br>CLASIFICACION DEL RIESGO: POCO PROBABLE</p>
+    <p class="content-text"><strong>INTOXICACIONES POR INHALACION DE VAPORES:</strong> Estas afectaciones en la salud se pueden causar debido a la acumulacion de gases nocivos para las personas, esto se puede agravar en el caso del parqueadero de vehiculos del establecimiento comercial si no se cuenta con la cultura de la revision periodica de los vehiculos automotores y si las personas se quedan bajo periodos largos en este sitio, para lo cual se hace necesario implementar la cultura de esperar que los propietarios de los vehiculos realicen el calentamiento del motor en un area ventilada.<br>CLASIFICACION DEL RIESGO: POCO PROBABLE</p>
 
     <div class="section-subtitle">RIESGOS SOCIALES</div>
-    <p class="content-text"><strong>VANDALISMO:</strong> Por la gran descomposicion social que se vive hoy en dia esta es una de las amenazas con un riesgo de probabilidad considerable sin que tenga que ver el tipo de copropiedad o area habitacional que pueda ser afectada es simplemente el deseo de producir panico y sembrar el miedo entre la poblacion. La probabilidad que suceda esta amenaza es poco probable debido a la ubicacion que presenta el conjunto residencial, sin embargo, se debe considerar que existen muchas formas de hacerlo: a traves de paquetes, de sobres, de vehiculos y de variedad de articulos incluyendo extintores.<br>CLASIFICACION DEL RIESGO: PROBABLE</p>
+    <p class="content-text"><strong>VANDALISMO:</strong> Por la gran descomposicion social que se vive hoy en dia esta es una de las amenazas con un riesgo de probabilidad considerable sin que tenga que ver el tipo de establecimiento comercial o area habitacional que pueda ser afectada es simplemente el deseo de producir panico y sembrar el miedo entre la poblacion. La probabilidad que suceda esta amenaza es poco probable debido a la ubicacion que presenta el establecimiento comercial, sin embargo, se debe considerar que existen muchas formas de hacerlo: a traves de paquetes, de sobres, de vehiculos y de variedad de articulos incluyendo extintores.<br>CLASIFICACION DEL RIESGO: PROBABLE</p>
     <p class="content-text"><strong>ATENTADOS TERRORISTAS:</strong> En este se incluyen aquellas acciones en que ademas de bombas, o proyectiles dirigidos desde cierta distancia hacia algun objetivo en particular y que generalmente puede afectar instalaciones o viviendas aledanas y ajenas a las que se proponlan hacer dano sin que por eso importe algo tambien puede tratarse de acciones de que inciten a sembrar terror en la poblacion esto puede incluir acciones como el secuestro ya sea por grupos organizados como la guerrilla o bandas criminales.<br>CLASIFICACION DEL RIESGO: PROBABLE</p>
-    <p class="content-text"><strong>ASALTO Y HURTO:</strong> Existe la posibilidad de tener este riesgo principalmente en horas nocturnas ocasionado por la gran inseguridad que se presenta en la actualidad en el Distrito Capital, pero es importante acotar que el conjunto residencial cuenta con un sistema de vigilancia privado contratado para salvaguardar los bienes y servicios de los residentes pero esto se limita solo a la tienda a tienda, esto no desconoce la problematica que se presenta en las areas perimetrales del sector del conjunto residencial.<br>CLASIFICACION DEL RIESGO: PROBABLE</p>
+    <p class="content-text"><strong>ASALTO Y HURTO:</strong> Existe la posibilidad de tener este riesgo principalmente en horas nocturnas ocasionado por la gran inseguridad que se presenta en la actualidad en el Distrito Capital, pero es importante acotar que el establecimiento comercial cuenta con un sistema de vigilancia privado contratado para salvaguardar los bienes y servicios de los clientes y trabajadores pero esto se limita solo al establecimiento, esto no desconoce la problematica que se presenta en las areas perimetrales del sector del establecimiento comercial.<br>CLASIFICACION DEL RIESGO: PROBABLE</p>
 
     <!-- ============ CARGA COMBUSTIBLE ============ -->
 <div class="section-title">CARGA COMBUSTIBLE</div>
     <p class="content-text">La edificacion presenta diferentes tipos de material combustible, segun sus caracteristicas:</p>
     <div class="section-subtitle">CLASE A</div>
-    <p class="content-text">Papel: en documentos, informes, papeleria, archivo en oficinas administrativas (facturacion, contabilidad, tesoreria y recepcion) y demas documentos que hagan parte del personal administrativo y de los residentes.<br>Carton: En los puntos de acopio de los residuos solidos, y en los diferentes empaques que se encuentren en el conjunto residencial.<br>Telas: En apartamentos, salones de recepcion y areas de atencion al publico dentro del conjunto residencial.<br>Madera: en muebles, sillas, puertas, divisiones, en las areas de los apartamentos, areas de recreacion, administracion y recepcion.<br>Materiales acrilicos: en computadores, impresoras, telefonos, calculadoras.<br>Cuero: en algunas sillas de los apartamentos.</p>
+    <p class="content-text">Papel: en documentos, informes, papeleria, archivo en oficinas administrativas (facturacion, contabilidad, tesoreria y recepcion) y demas documentos que hagan parte del personal administrativo y de los clientes y trabajadores.<br>Carton: En los puntos de acopio de los residuos solidos, y en los diferentes empaques que se encuentren en el establecimiento comercial.<br>Telas: En apartamentos, salones de recepcion y areas de atencion al publico dentro del establecimiento comercial.<br>Madera: en muebles, sillas, puertas, divisiones, en las areas de los apartamentos, areas de recreacion, administracion y recepcion.<br>Materiales acrilicos: en computadores, impresoras, telefonos, calculadoras.<br>Cuero: en algunas sillas de los apartamentos.</p>
     <div class="section-subtitle">CLASE B</div>
-    <p class="content-text">Solventes, pinturas, esmaltes, vinilos, quimicos (area piscina y/o contratistas de aseo y mantenimiento).<br>Liquidos inflamables (Gasolina, ACPM).<br>Gas natural el cual se distribuye a todos los apartamentos y demas equipos que funcionan en el conjunto residencial.</p>
+    <p class="content-text">Solventes, pinturas, esmaltes, vinilos, quimicos (area piscina y/o contratistas de aseo y mantenimiento).<br>Liquidos inflamables (Gasolina, ACPM).<br>Gas natural el cual se distribuye a todos los apartamentos y demas equipos que funcionan en el establecimiento comercial.</p>
     <div class="section-subtitle">CLASE C</div>
     <p class="content-text">Redes electricas energizadas, tomas, interruptores y luminarias en todas las instalaciones. Cuarto de contadores en el parqueadero.<br>Computadores, impresoras, telefonos, televisores, DVD entre otros. Area de materiales con los que se realizan los arreglos locativos. Equipos de bombeo del agua.<br>Planta electrica en el parqueadero.</p>
 
     <div class="section-subtitle">RECOMENDACIONES SEGUN EL TIPO DE COMBUSTIBLE</div>
-    <p class="content-text">Las siguientes recomendaciones estan encaminadas a disminuir el riesgo de presentarse una emergencia en el conjunto residencial, la cual debe ser aplicada por todo el personal que reside y realiza diferentes actividades propias o derivadas de su oficio.</p>
+    <p class="content-text">Las siguientes recomendaciones estan encaminadas a disminuir el riesgo de presentarse una emergencia en el establecimiento comercial, la cual debe ser aplicada por todo el personal que reside y realiza diferentes actividades propias o derivadas de su oficio.</p>
     <p class="content-text"><strong>PARA RIESGO CLASE A:</strong><br>Evitar cajas con papeleria y documentos bajo las mesas. Utilizar archivadores y bibliotecas unicamente.<br>No almacenar cajas con material tipo A cerca de bombillos incandescentes (minimo 50 CMS de distancia).<br>No dejar trapos, pedazos de estopa con grasa, cera o Varsol por fuera de recipientes metalicos cerrados.<br>No dejar cerca de estufas, grecas, hornos o cafeteras prendidas: limpiones, trapos o coge ollas.<br>No usar papeles para encender la estufa.<br>No almacenar papeles impregnados de liquidos inflamables (Gasolina, ACPM, Varsol, Pinturas, Grasa y demas elementos que pueda ocasionar una ignicion o incendio.</p>
-    <p class="content-text"><strong>PARA RIESGOS CLASE B:</strong><br>Disponer de un lugar ventilado y en buenas condiciones de orden y aseo para almacenar todos los elementos que se requieren en el conjunto residencial para labores de mantenimiento.<br>Guardar todos los materiales inflamables en recipientes hermeticos y dentro de gabinetes metalicos con puerta.<br>Todo recipiente que contenga algun liquido inflamable debe encontrarse rotulado especificando su nombre comercial y en lo posible las fichas de seguridad de los productos.<br>Mantener materiales inflamables en lugares aireados y alejados de fuentes de calor o de tomas o instalaciones electricas de riesgo.<br>Evitar el uso de gas propano en areas cerradas.<br>Se debe tener un kit anti derrames en el conjunto en caso de presentarse un derrame especialmente en el area del parqueadero.</p>
-    <p class="content-text"><strong>PARA RIESGOS CLASE C:</strong><br>Evitar el uso de elementos para produccion de calor en areas donde pueda acumularse material combustible como papel, plasticos, telas y madera principalmente, y dejarlos desconectados en horas de la noche, los equipos electricos.<br>Identificar cajas de tacos de corriente en todos los lugares donde se ubiquen.<br>Restringir la entrada a las areas de cuartos electricos de mediana o alta tension.<br>Realizar revisiones periodicas de posibles humedades que se encuentren en cercania a algun elemento electrico esto se puede presentar en las areas comunes como al interior de los apartamentos o casas.</p>
+    <p class="content-text"><strong>PARA RIESGOS CLASE B:</strong><br>Disponer de un lugar ventilado y en buenas condiciones de orden y aseo para almacenar todos los elementos que se requieren en el establecimiento comercial para labores de mantenimiento.<br>Guardar todos los materiales inflamables en recipientes hermeticos y dentro de gabinetes metalicos con puerta.<br>Todo recipiente que contenga algun liquido inflamable debe encontrarse rotulado especificando su nombre comercial y en lo posible las fichas de seguridad de los productos.<br>Mantener materiales inflamables en lugares aireados y alejados de fuentes de calor o de tomas o instalaciones electricas de riesgo.<br>Evitar el uso de gas propano en areas cerradas.<br>Se debe tener un kit anti derrames en el conjunto en caso de presentarse un derrame especialmente en el area del parqueadero.</p>
+    <p class="content-text"><strong>PARA RIESGOS CLASE C:</strong><br>Evitar el uso de elementos para produccion de calor en areas donde pueda acumularse material combustible como papel, plasticos, telas y madera principalmente, y dejarlos desconectados en horas de la noche, los equipos electricos.<br>Identificar cajas de tacos de corriente en todos los lugares donde se ubiquen.<br>Restringir la entrada a las areas de cuartos electricos de mediana o alta tension.<br>Realizar revisiones periodicas de posibles humedades que se encuentren en cercania a algun elemento electrico esto se puede presentar en las áreas del establecimiento como al interior de los apartamentos o casas.</p>
 
     <!-- ============ PON CODIGO 7 ============ -->
 <div class="section-title">PROCEDIMIENTO OPERATIVO NORMALIZADO (PON) - CODIGO 7</div>
@@ -448,7 +448,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
     <p class="content-text"><strong>Codigo de Emergencia:</strong> CODIGO 7 - Persona(s) atrapada(s) en ascensor</p>
     <p class="content-text"><strong>Introduccion:</strong> En edificaciones residenciales y comerciales que cuentan con ascensores, es posible que se presenten fallas tecnicas, cortes electricos u otros incidentes que provoquen la detencion del equipo con ocupantes en su interior. Este procedimiento operativo establece las acciones especificas para responder de manera rapida, segura y coordinada, minimizando riesgos y evitando danos fisicos o psicologicos a las personas involucradas.</p>
     <p class="content-text"><strong>Objetivo:</strong> Establecer el procedimiento seguro y estandarizado para la atencion de emergencias por fallas de ascensor con personas atrapadas, asegurando la proteccion de la vida, la salud y la integridad de los ocupantes, asi como la coordinacion con organismos de socorro y personal tecnico especializado.</p>
-    <p class="content-text"><strong>Alcance:</strong> Aplica para todo el personal de vigilancia, administracion, brigadas de emergencia, personal de mantenimiento y demas personas que participen en la atencion de emergencias dentro del conjunto residencial o edificio.</p>
+    <p class="content-text"><strong>Alcance:</strong> Aplica para todo el personal de vigilancia, administracion, brigadas de emergencia, personal de mantenimiento y demas personas que participen en la atencion de emergencias dentro del establecimiento comercial o edificio.</p>
     <p class="content-text"><strong>Definiciones clave:</strong><br>Falla de ascensor: Cese repentino o irregular del funcionamiento del ascensor por razones mecanicas, electricas o electronicas.<br>Rescate tecnico: Intervencion de personal calificado para liberar de forma segura a las personas atrapadas.<br>Emergencia critica: Situacion en la que la vida o la salud de los ocupantes esta en riesgo inmediato.</p>
     <p class="content-text"><strong>Responsables de la ejecucion:</strong> Personal de vigilancia. Administrador del conjunto. Brigada de emergencias (si aplica). Empresa mantenedora del ascensor. Organismos de socorro (Bomberos, Defensa Civil, etc., si es necesario).</p>
     <p class="content-text"><strong>Procedimiento:</strong></p>
@@ -467,7 +467,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
     <!-- ============ DIAGRAMA DE ACTUACION EN EMERGENCIAS ============ -->
     <?php if (!empty($diagramaBase64)): ?>
 <div class="section-title">DIAGRAMA DE ACTUACION EN CASO DE EMERGENCIA</div>
-    <p class="content-text">El siguiente diagrama de flujo establece el protocolo general de actuacion ante diferentes tipos de emergencia que puedan presentarse en la tienda a tienda. Permite identificar rapidamente las acciones a seguir segun el tipo de evento.</p>
+    <p class="content-text">El siguiente diagrama de flujo establece el protocolo general de actuacion ante diferentes tipos de emergencia que puedan presentarse en el establecimiento. Permite identificar rapidamente las acciones a seguir segun el tipo de evento.</p>
     <div style="text-align: center; margin: 15px 0;">
         <img src="<?= $diagramaBase64 ?>" style="max-width: 100%; max-height: 700px;">
     </div>
@@ -475,12 +475,12 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
 
     <!-- ============ ANEXOS - EVALUACIONES DE SEGURIDAD ============ -->
 <div class="annex-title">ANEXOS - EVALUACIONES DE SEGURIDAD</div>
-    <p class="content-text">La gestion eficiente de la seguridad en propiedades horizontales requiere un enfoque integral que permita identificar y mitigar los riesgos. Cycloid Talent SAS ha llevado a cabo una revision exhaustiva de los principales elementos de seguridad necesarios para la creacion de este Plan de Emergencias.</p>
+    <p class="content-text">La gestion eficiente de la seguridad en establecimientos comerciales requiere un enfoque integral que permita identificar y mitigar los riesgos. Cycloid Talent SAS ha llevado a cabo una revision exhaustiva de los principales elementos de seguridad necesarios para la creacion de este Plan de Emergencias.</p>
 
     <!-- ANEXO: INSPECCION LOCATIVA -->
     <?php if ($ultimaLocativa && !empty($hallazgosLocativa)): ?>
     <div class="section-title">INSPECCION LOCATIVA GENERAL</div>
-    <p class="content-text">La inspeccion general se refiere a la revision periodica de todas las areas comunes con el fin de identificar posibles riesgos para la seguridad de los residentes, visitantes y trabajadores.</p>
+    <p class="content-text">La inspeccion general se refiere a la revision periodica de todas las áreas del establecimiento con el fin de identificar posibles riesgos para la seguridad de los clientes y trabajadores, visitantes y trabajadores.</p>
     <table class="data-table">
         <thead><tr><th style="width:60%;">HALLAZGO IDENTIFICADO</th><th style="width:20%;">FECHA</th><th style="width:20%;">IMAGEN</th></tr></thead>
         <tbody>
@@ -507,7 +507,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
     <!-- ANEXO: MATRIZ VULNERABILIDAD -->
     <?php if ($ultimaMatriz): ?>
 <div class="section-title">MATRIZ DE VULNERABILIDAD</div>
-    <p class="content-text">La matriz de vulnerabilidad es una herramienta utilizada para evaluar los riesgos a los que esta expuesta una copropiedad, analizando aspectos de seguridad fisica, infraestructura y procesos de mantenimiento.</p>
+    <p class="content-text">La matriz de vulnerabilidad es una herramienta utilizada para evaluar los riesgos a los que esta expuesta un establecimiento comercial, analizando aspectos de seguridad fisica, infraestructura y procesos de mantenimiento.</p>
     <?php
     $matrizCriterios = [
         'c1_plan_evacuacion' => '1. El plan de evacuacion',
@@ -589,7 +589,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
     <!-- ANEXO: BOTIQUIN -->
     <?php if ($ultimaBot): ?>
 <div class="section-title">REVISION DE BOTIQUIN</div>
-    <p class="content-text">Los botiquines en propiedades horizontales deben estar equipados con los suministros de primeros auxilios necesarios para atender emergencias menores, garantizando una respuesta rapida ante accidentes hasta que llegue la asistencia medica profesional.</p>
+    <p class="content-text">Los botiquines en establecimientos comerciales deben estar equipados con los suministros de primeros auxilios necesarios para atender emergencias menores, garantizando una respuesta rapida ante accidentes hasta que llegue la asistencia medica profesional.</p>
     <table class="info-table">
         <tr><td class="info-label">FECHA DE LA INSPECCION</td><td><?= !empty($ultimaBot['fecha_inspeccion']) ? date('d/m/Y', strtotime($ultimaBot['fecha_inspeccion'])) : '-' ?></td></tr>
         <tr><td class="info-label">UBICACION DEL BOTIQUIN</td><td><?= esc($ultimaBot['ubicacion_botiquin'] ?? '-') ?></td></tr>
@@ -606,7 +606,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
     <!-- ANEXO: RECURSOS SEGURIDAD -->
     <?php if ($ultimaRec): ?>
 <div class="section-title">RECURSOS DE SEGURIDAD</div>
-    <p class="content-text">Los recursos de seguridad incluyen equipo fisico (camaras, alarmas, cercas electricas, sistemas de control de acceso) y personal de seguridad capacitado, destinados a proteger a los residentes y garantizar el control de accesos y la vigilancia de areas comunes.</p>
+    <p class="content-text">Los recursos de seguridad incluyen equipo fisico (camaras, alarmas, cercas electricas, sistemas de control de acceso) y personal de seguridad capacitado, destinados a proteger a los clientes y trabajadores y garantizar el control de accesos y la vigilancia de áreas del establecimiento.</p>
     <table class="info-table">
         <tr><td class="info-label">FECHA DE LA INSPECCION</td><td><?= !empty($ultimaRec['fecha_inspeccion']) ? date('d/m/Y', strtotime($ultimaRec['fecha_inspeccion'])) : '-' ?></td></tr>
         <?php
@@ -630,7 +630,7 @@ $tipoInmueble = ['casas' => 'CASAS', 'apartamentos' => 'APARTAMENTOS'];
     <!-- ANEXO: COMUNICACIONES -->
     <?php if ($ultimaCom): ?>
 <div class="section-title">EQUIPOS DE COMUNICACIONES</div>
-    <p class="content-text">Los equipos de comunicaciones en una copropiedad son esenciales para coordinar las actividades del personal de seguridad, administracion y mantenimiento. Incluyen radios, intercomunicadores y telefonos para comunicacion rapida y efectiva.</p>
+    <p class="content-text">Los equipos de comunicaciones en un establecimiento comercial son esenciales para coordinar las actividades del personal de seguridad, administracion y mantenimiento. Incluyen radios, intercomunicadores y telefonos para comunicacion rapida y efectiva.</p>
     <table class="info-table">
         <tr><td class="info-label">FECHA DE LA INSPECCION</td><td><?= !empty($ultimaCom['fecha_inspeccion']) ? date('d/m/Y', strtotime($ultimaCom['fecha_inspeccion'])) : '-' ?></td></tr>
     </table>

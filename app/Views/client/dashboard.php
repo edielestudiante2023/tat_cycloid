@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1b4332">
+    <meta name="theme-color" content="#c9541a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Mi SST">
-    <link rel="manifest" href="<?= base_url('manifest_client.json?v=1') ?>">
+    <link rel="manifest" href="<?= base_url('manifest_client.json?v=2') ?>">
     <link rel="apple-touch-icon" href="<?= base_url('icons/icon-192.png') ?>">
-    <title>Cycloid TAT - Tienda a Tienda</title>
+    <title>Enterprisesst - Tienda a Tienda</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -19,7 +19,7 @@
         /* Estilo global */
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #1b4332;
+            color: #c9541a;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
         }
@@ -28,7 +28,7 @@
         .navbar {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 3px solid #e76f51;
+            border-bottom: 3px solid #ee6c21;
             position: fixed;
             top: 0;
             width: 100%;
@@ -60,7 +60,7 @@
 
         /* Header mejorado */
         .welcome-header {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             color: white;
             padding: 2rem;
             border-radius: 15px;
@@ -101,7 +101,7 @@
         }
 
         .btn-primary-custom {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             color: #ffffff;
             border: none;
         }
@@ -113,7 +113,7 @@
         }
 
         .btn-success-custom {
-            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
+            background: linear-gradient(135deg, #ee6c21 0%, #ff8d4e 100%);
             color: #ffffff;
             border: none;
         }
@@ -126,19 +126,19 @@
 
         .btn-info-custom {
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            color: #1b4332;
-            border: 2px solid #1b4332;
+            color: #c9541a;
+            border: 2px solid #c9541a;
         }
 
         .btn-info-custom:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(28, 36, 55, 0.2);
-            color: #1b4332;
+            color: #c9541a;
         }
 
         /* Título de sección */
         .section-title {
-            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
+            background: linear-gradient(135deg, #ee6c21 0%, #ff8d4e 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -161,7 +161,7 @@
         }
 
         .accordion-header .accordion-button {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             color: white;
             font-weight: 600;
             font-size: 1.1rem;
@@ -172,7 +172,7 @@
         }
 
         .accordion-header .accordion-button:not(.collapsed) {
-            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
+            background: linear-gradient(135deg, #ee6c21 0%, #ff8d4e 100%);
             color: white;
             box-shadow: none;
         }
@@ -192,7 +192,7 @@
             align-items: center;
             padding: 1rem 1.5rem;
             text-decoration: none;
-            color: #1b4332;
+            color: #c9541a;
             border-bottom: 1px solid #e9ecef;
             transition: all 0.3s ease;
             position: relative;
@@ -204,7 +204,7 @@
 
         .access-item:hover {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            color: #1b4332;
+            color: #c9541a;
             transform: translateX(10px);
             text-decoration: none;
         }
@@ -212,7 +212,7 @@
         .access-item .item-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
+            background: linear-gradient(135deg, #ee6c21 0%, #ff8d4e 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -227,7 +227,7 @@
         }
 
         .access-item .item-number {
-            background: #1b4332;
+            background: #c9541a;
             color: white;
             width: 30px;
             height: 30px;
@@ -275,11 +275,11 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             text-align: center;
             margin-top: 3rem;
-            border: 2px solid #e76f51;
+            border: 2px solid #ee6c21;
         }
 
         .asesoria-card h2 {
-            color: #1b4332;
+            color: #c9541a;
             margin-bottom: 1rem;
         }
 
@@ -302,14 +302,14 @@
         }
 
         .contact-item i {
-            color: #e76f51;
+            color: #ee6c21;
             margin-right: 0.5rem;
             font-size: 1.2rem;
         }
 
         /* Footer mejorado */
         footer {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             color: #ffffff;
             padding: 20px 0;
             margin-top: 3rem;
@@ -339,7 +339,7 @@
             width: 68px;
             height: 68px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #e76f51 0%, #8B6914 100%);
+            background: linear-gradient(135deg, #ee6c21 0%, #c9541a 100%);
             box-shadow: 0 6px 24px rgba(139, 105, 20, 0.45);
             cursor: pointer;
             z-index: 1050;
@@ -386,7 +386,7 @@
         }
 
         .otto-widget-header {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             padding: 16px 20px;
             display: flex;
             align-items: center;
@@ -398,7 +398,7 @@
             height: 48px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #e76f51;
+            border: 2px solid #ee6c21;
         }
         .otto-widget-header .otto-info {
             flex: 1;
@@ -410,7 +410,7 @@
             margin: 0;
         }
         .otto-widget-header .otto-role {
-            color: #e76f51;
+            color: #ee6c21;
             font-size: 0.82rem;
             margin: 0;
         }
@@ -438,7 +438,7 @@
             padding: 14px 16px;
             margin-bottom: 16px;
             font-size: 0.95rem;
-            color: #1b4332;
+            color: #c9541a;
             line-height: 1.5;
         }
         .otto-input-row {
@@ -455,10 +455,10 @@
             transition: border-color 0.2s;
         }
         .otto-input-row input:focus {
-            border-color: #e76f51;
+            border-color: #ee6c21;
         }
         .otto-input-row button {
-            background: linear-gradient(135deg, #e76f51 0%, #8B6914 100%);
+            background: linear-gradient(135deg, #ee6c21 0%, #c9541a 100%);
             border: none;
             color: #fff;
             border-radius: 12px;
@@ -484,14 +484,14 @@
             border-radius: 20px;
             padding: 6px 12px;
             font-size: 0.8rem;
-            color: #1b4332;
+            color: #c9541a;
             cursor: pointer;
             transition: background 0.2s, border-color 0.2s;
         }
         .otto-suggestion:hover {
-            background: #e76f51;
+            background: #ee6c21;
             color: #fff;
-            border-color: #e76f51;
+            border-color: #ee6c21;
         }
 
         /* Responsive */
@@ -522,16 +522,8 @@
     <nav class="navbar">
         <div class="container navbar-content">
             <!-- Logo izquierdo -->
-            <a href="https://dashboard.cycloidtalent.com/login" target="_blank">
-                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Logo Cycloid TAT">
-            </a>
-            <!-- Logo central -->
-            <a href="https://cycloidtalent.com/index.php/consultoria-sst" target="_blank">
-                <img src="<?= base_url('uploads/logosst.png') ?>" alt="Logo SST">
-            </a>
-            <!-- Logo derecho -->
-            <a href="https://cycloidtalent.com/" target="_blank">
-                <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Logo Cycloid">
+            <a href="https://tat.cycloidtalent.com/index.php/login" target="_blank">
+                <img src="<?= base_url('uploads/tat.png') ?>" alt="Logo Cycloid TAT">
             </a>
         </div>
     </nav>
@@ -619,7 +611,7 @@
                     $index = 1;
                     $dimension_items = [];
                     $dimension_count = [];
-                    
+
                     // Primero agrupamos los accesos por dimensión
                     foreach ($accesos as $acceso) {
                         $dimension_items[$acceso['dimension']][] = $acceso;
@@ -637,7 +629,7 @@
                     </div>
                 <?php
                 endif;
-                
+
                 if (isset($accesos) && !empty($accesos)):
                     $accordion_index = 0;
                     foreach ($dimension_items as $dimension => $items):
@@ -670,9 +662,9 @@
                             </div>
                         </div>
                     </div>
-                <?php 
+                <?php
                     $accordion_index++;
-                endforeach; 
+                endforeach;
                 endif;
                 ?>
             </div>
@@ -709,10 +701,10 @@
 
     <!-- Footer -->
     <footer class="text-center">
-        <p>&copy; 2024 Cycloid Talent SAS. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Cycloid Talent SAS. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Otto Chat Widget -->
+    <?php if (false): // Otto Chat Widget — DESACTIVADO (modulo de asistente IA no se maneja en TAT Cycloid) ?>
     <div class="otto-bubble hidden" id="ottoBubble" title="Hablar con Otto">
         <img src="<?= base_url('otto/otto.png') ?>" alt="Otto">
     </div>
@@ -744,6 +736,7 @@
             </div>
         </div>
     </div>
+    <?php endif; ?>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -763,7 +756,7 @@
                 }, index * 200);
             });
 
-            // Otto widget — slide up after page loads
+            /* Otto widget — DESACTIVADO (modulo de asistente IA no se maneja en TAT Cycloid)
             const widget = document.getElementById('ottoWidget');
             const bubble = document.getElementById('ottoBubble');
             const closeBtn = document.getElementById('ottoClose');
@@ -794,7 +787,7 @@
                 input.focus();
             });
 
-            // Submit → navigate to chat
+            // Submit -> navigate to chat
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 var msg = input.value.trim();
@@ -812,11 +805,12 @@
                     window.location.href = chatUrl + '?q=' + encodeURIComponent(q);
                 });
             });
+            */
         });
     </script>
 
     <!-- PWA: Banner offline + Service Worker -->
-    <div id="offlineBanner" style="display:none;position:fixed;top:0;left:0;right:0;background:#e76f51;color:#fff;text-align:center;padding:8px;z-index:9999;font-weight:600;">
+    <div id="offlineBanner" style="display:none;position:fixed;top:0;left:0;right:0;background:#ee6c21;color:#fff;text-align:center;padding:8px;z-index:9999;font-weight:600;">
         <i class="fas fa-wifi-slash"></i> Sin conexi&oacute;n - Modo offline
     </div>
     <script>

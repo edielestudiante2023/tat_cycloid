@@ -22,11 +22,11 @@
             z-index: 1000;
             padding: 10px 0;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border-bottom: 2px solid #e76f51;
+            border-bottom: 2px solid #ee6c21;
         }
 
         .page-header {
-            background: linear-gradient(135deg, #1b4332, #2d6a4f);
+            background: linear-gradient(135deg, #c9541a, #ee6c21);
             color: white;
             padding: 30px;
             border-radius: 15px;
@@ -75,7 +75,7 @@
 
         .info-item {
             padding: 15px;
-            border-left: 4px solid #e76f51;
+            border-left: 4px solid #ee6c21;
             background: #f8f9fa;
             border-radius: 0 8px 8px 0;
             margin-bottom: 15px;
@@ -97,7 +97,7 @@
     <nav class="navbar-fixed">
         <div class="d-flex justify-content-between align-items-center px-4" style="max-width: 1200px; margin: 0 auto;">
             <a href="<?= base_url('/admin/dashboard') ?>">
-                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Logo" style="height: 60px;">
+                <img src="<?= base_url('uploads/tat.png') ?>" alt="Logo" style="height: 60px;">
             </a>
             <div>
                 <a href="<?= base_url('/admin/dashboard') ?>" class="btn btn-primary btn-sm me-2">

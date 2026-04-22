@@ -46,6 +46,7 @@ class VigiaController extends Controller
         if ($file && $file->isValid() && !$file->hasMoved()) {
             $firmaFileName = $file->getRandomName();
             $file->move(ROOTPATH . 'public/uploads', $firmaFileName);
+            compress_uploaded_image(ROOTPATH . 'public/uploads/' . $firmaFileName);
         }
 
         $data = [
@@ -100,6 +101,7 @@ class VigiaController extends Controller
         if ($file && $file->isValid() && !$file->hasMoved()) {
             $firmaFileName = $file->getRandomName();
             $file->move(ROOTPATH . 'public/uploads', $firmaFileName);
+            compress_uploaded_image(ROOTPATH . 'public/uploads/' . $firmaFileName);
             $data['firma_vigia'] = $firmaFileName;
         }
 

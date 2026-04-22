@@ -16,12 +16,12 @@
         .badge-incumple { background-color: #dc3545; color: #fff; }
         .badge-pendiente { background-color: #ffc107; color: #333; }
         .header-bar {
-            background: linear-gradient(135deg, #1b4332, #2d6a4f);
+            background: linear-gradient(135deg, #c9541a, #ee6c21);
             padding: 20px 30px;
             border-radius: 10px;
             margin-bottom: 20px;
         }
-        .header-bar h4 { color: #e76f51; margin: 0; }
+        .header-bar h4 { color: #ee6c21; margin: 0; }
         .header-bar p { color: #adb5bd; margin: 0; font-size: 14px; }
 
         /* Cards clickeables */
@@ -44,12 +44,12 @@
         .filter-row { margin-bottom: 15px; }
         .filter-row select { font-size: 13px; }
         .filter-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-        .filter-card.active { border-color: #e76f51; box-shadow: 0 0 0 2px #e76f51; }
+        .filter-card.active { border-color: #ee6c21; box-shadow: 0 0 0 2px #ee6c21; }
         .filter-card .card-count { font-size: 24px; font-weight: bold; }
         .filter-card .card-label { font-size: 11px; margin-top: 2px; }
 
         /* Colores de cards */
-        .card-consultor { background: linear-gradient(135deg, #2d6a4f, #34495e); color: #fff; }
+        .card-consultor { background: linear-gradient(135deg, #ee6c21, #34495e); color: #fff; }
         .card-externo { background: linear-gradient(135deg, #8e44ad, #9b59b6); color: #fff; }
         .card-cumple { background: linear-gradient(135deg, #27ae60, #2ecc71); color: #fff; }
         .card-incumple { background: linear-gradient(135deg, #c0392b, #e74c3c); color: #fff; }
@@ -70,12 +70,10 @@
 <body>
     <nav style="background-color: white; position: fixed; top: 0; width: 100%; z-index: 1000; padding: 10px 0; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div><a href="https://dashboard.cycloidtalent.com/login"><img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" style="height: 100px;"></a></div>
-            <div><a href="https://cycloidtalent.com/index.php/consultoria-sst"><img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" style="height: 100px;"></a></div>
-            <div><a href="https://cycloidtalent.com/"><img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo" style="height: 100px;"></a></div>
+            <div><a href="https://tat.cycloidtalent.com/index.php/login"><img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" style="height: 100px;"></a></div>
             <div style="text-align: center;">
                 <h2 style="margin: 0; font-size: 16px;">Ir a Dashboard</h2>
-                <a href="<?= base_url('/dashboardconsultant') ?>" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-size: 14px; margin-top: 5px;">Ir a DashBoard</a>
+                <a href="<?= base_url('/dashboardconsultant') ?>" style="display: inline-block; padding: 10px 20px; background-color: #ee6c21; color: white; text-decoration: none; border-radius: 5px; font-size: 14px; margin-top: 5px;">Ir a DashBoard</a>
             </div>
         </div>
     </nav>

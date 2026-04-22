@@ -57,7 +57,7 @@ $action = $isEdit
             <div class="card mb-3 pregunta-card" data-idx="<?= $i ?>">
                 <div class="card-body pb-2">
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span style="font-size:12px; font-weight:700; color:#e76f51;">Pregunta <?= $i + 1 ?></span>
+                        <span style="font-size:12px; font-weight:700; color:#ee6c21;">Pregunta <?= $i + 1 ?></span>
                         <button type="button" class="btn btn-xs btn-outline-danger btn-eliminar-pregunta" style="font-size:11px; padding:1px 7px;">
                             <i class="fas fa-times"></i>
                         </button>
@@ -112,7 +112,7 @@ $action = $isEdit
     <div class="card mb-3 pregunta-card">
         <div class="card-body pb-2">
             <div class="d-flex justify-content-between align-items-center mb-2">
-                <span class="pregunta-num-label" style="font-size:12px; font-weight:700; color:#e76f51;">Pregunta</span>
+                <span class="pregunta-num-label" style="font-size:12px; font-weight:700; color:#ee6c21;">Pregunta</span>
                 <button type="button" class="btn btn-xs btn-outline-danger btn-eliminar-pregunta" style="font-size:11px; padding:1px 7px;">
                     <i class="fas fa-times"></i>
                 </button>

@@ -124,7 +124,7 @@
         h1,
         h2 {
             text-align: center;
-            color: #2d6a4f;
+            color: #ee6c21;
         }
 
         p {

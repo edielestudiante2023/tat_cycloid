@@ -8,6 +8,7 @@ use App\Models\InspeccionLocativaModel;
 use App\Models\InspeccionSenalizacionModel;
 use App\Models\InspeccionExtintoresModel;
 use App\Models\InspeccionBotiquinModel;
+use App\Models\InspeccionBotiquinTipoAModel;
 use App\Models\InspeccionGabineteModel;
 use App\Models\InspeccionComunicacionModel;
 use App\Models\InspeccionRecursosSeguridadModel;
@@ -84,6 +85,15 @@ class InspeccionesController extends BaseController
             ->join('tbl_clientes', 'tbl_clientes.id_cliente = tbl_inspeccion_botiquin.id_cliente', 'left')
             ->where('tbl_inspeccion_botiquin.estado', 'borrador')
             ->orderBy('tbl_inspeccion_botiquin.updated_at', 'DESC')
+            ->findAll();
+
+        $botiquinTipoAModel = new InspeccionBotiquinTipoAModel();
+        $totalBotiquinTipoA = $botiquinTipoAModel->where('estado', 'completo')->countAllResults();
+        $pendientesBotiquinTipoA = $botiquinTipoAModel
+            ->select('tbl_inspeccion_botiquin_tipo_a.*, tbl_clientes.nombre_cliente')
+            ->join('tbl_clientes', 'tbl_clientes.id_cliente = tbl_inspeccion_botiquin_tipo_a.id_cliente', 'left')
+            ->where('tbl_inspeccion_botiquin_tipo_a.estado', 'borrador')
+            ->orderBy('tbl_inspeccion_botiquin_tipo_a.updated_at', 'DESC')
             ->findAll();
 
         $gabineteModel = new InspeccionGabineteModel();
@@ -224,6 +234,7 @@ class InspeccionesController extends BaseController
             'pendientesSenalizacion' => $pendientesSenalizacion,
             'pendientesExtintores' => $pendientesExtintores,
             'pendientesBotiquin' => $pendientesBotiquin,
+            'pendientesBotiquinTipoA' => $pendientesBotiquinTipoA,
             'pendientesGabinetes' => $pendientesGabinetes,
             'pendientesComunicaciones' => $pendientesComunicaciones,
             'pendientesRecursosSeg' => $pendientesRecursosSeg,
@@ -256,6 +267,7 @@ class InspeccionesController extends BaseController
             'totalSenalizacion' => $totalSenalizacion,
             'totalExtintores'  => $totalExtintores,
             'totalBotiquin'    => $totalBotiquin,
+            'totalBotiquinTipoA' => $totalBotiquinTipoA,
             'totalGabinetes'   => $totalGabinetes,
             'totalComunicaciones' => $totalComunicaciones,
             'totalRecursosSeg' => $totalRecursosSeg,

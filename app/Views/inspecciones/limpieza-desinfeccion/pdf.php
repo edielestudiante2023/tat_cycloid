@@ -47,7 +47,7 @@
         text-align: center;
         font-weight: bold;
         font-size: 13px;
-        color: #1b4332;
+        color: #c9541a;
         margin: 20px 0 5px;
     }
     .subtitle {
@@ -60,16 +60,16 @@
     .section-title {
         font-weight: bold;
         font-size: 11px;
-        color: #1b4332;
+        color: #c9541a;
         margin-top: 18px;
         margin-bottom: 6px;
-        border-bottom: 1px solid #1b4332;
+        border-bottom: 1px solid #c9541a;
         padding-bottom: 3px;
     }
     .subsection-title {
         font-weight: bold;
         font-size: 10px;
-        color: #1b4332;
+        color: #c9541a;
         margin-top: 12px;
         margin-bottom: 4px;
     }
@@ -81,7 +81,7 @@
         font-size: 9px;
     }
     .data-table th {
-        background: #1b4332;
+        background: #c9541a;
         color: white;
         padding: 5px 6px;
         text-align: left;
@@ -133,13 +133,13 @@
     }
     .indicador-box .ind-label {
         font-weight: bold;
-        color: #1b4332;
+        color: #c9541a;
     }
 </style>
 </head>
 <body>
 
-<?php $nombreCliente = $cliente['nombre_cliente'] ?? 'CONJUNTO RESIDENCIAL'; ?>
+<?php $nombreCliente = $cliente['nombre_cliente'] ?? 'ESTABLECIMIENTO COMERCIAL'; ?>
 
 <!-- HEADER -->
 <table class="header-table">
@@ -175,15 +175,15 @@
 
 <!-- 1.1 OBJETIVO -->
 <div class="section-title">1.1 OBJETIVO</div>
-<p>Definir, planificar y establecer las actividades, insumos, recursos humanos, elementos de protección personal (EPP), sustancias químicas autorizadas, responsabilidades, frecuencias, mecanismos de control e indicadores, así como los procedimientos técnicos necesarios, para ejecutar de manera segura, eficiente, sistemática y continua las labores de limpieza y desinfección en las áreas comunes del en <?= esc($nombreCliente) ?>, con el fin de prevenir riesgos sanitarios, controlar agentes contaminantes de origen biológico, físico y químico, y garantizar condiciones adecuadas de salubridad para residentes, trabajadores, contratistas, visitantes y demás usuarios de la copropiedad.</p>
-<p>El presente Programa se desarrolla en cumplimiento de lo dispuesto en la Ley 9 de 1979, la Ley 675 de 2001, el Decreto 1072 de 2015 (SG-SST), y demás normas sanitarias y ambientales vigentes aplicables a las copropiedades, y se articula con el Plan de Saneamiento Básico como uno de sus componentes técnicos.</p>
+<p>Definir, planificar y establecer las actividades, insumos, recursos humanos, elementos de protección personal (EPP), sustancias químicas autorizadas, responsabilidades, frecuencias, mecanismos de control e indicadores, así como los procedimientos técnicos necesarios, para ejecutar de manera segura, eficiente, sistemática y continua las labores de limpieza y desinfección en las áreas del establecimiento del en <?= esc($nombreCliente) ?>, con el fin de prevenir riesgos sanitarios, controlar agentes contaminantes de origen biológico, físico y químico, y garantizar condiciones adecuadas de salubridad para clientes y trabajadores, contratistas, visitantes y demás usuarios del establecimiento comercial.</p>
+<p>El presente Programa se desarrolla en cumplimiento de lo dispuesto en la Ley 9 de 1979, la Ley 232 de 1995, la Resolución 2674 de 2013 (BPM, Arts. 6.5 y 26), el Decreto 1072 de 2015 (SG-SST), y demás normas sanitarias y ambientales vigentes aplicables a los establecimientos de comercio de alimentos, y se articula con el Plan de Saneamiento Básico como uno de sus componentes técnicos.</p>
 
 <!-- 1.2 ALCANCE -->
 <div class="section-title">1.2 ALCANCE</div>
-<p>El presente Programa aplica a todas las áreas comunes en <?= esc($nombreCliente) ?>, bajo la responsabilidad de la Administración de la Tienda a Tienda, e involucra al personal propio, personal de servicios generales y/o empresas contratistas encargadas de las labores de aseo, limpieza y desinfección.</p>
+<p>El presente Programa aplica a todas las áreas del establecimiento en <?= esc($nombreCliente) ?>, bajo la responsabilidad de la Administración del establecimiento, e involucra al personal propio, personal de servicios generales y/o empresas contratistas encargadas de las labores de aseo, limpieza y desinfección.</p>
 <p>Las actividades de limpieza y desinfección se desarrollarán, como mínimo, en las siguientes áreas:</p>
 <ul class="lista-items">
-    <li>Zonas comunes</li>
+    <li>Áreas del establecimiento</li>
     <li>Pasillos</li>
     <li>Escaleras y rampas</li>
     <li>Pocetas de lavado</li>
@@ -211,7 +211,7 @@
 <p class="definition-text">Conjunto de elementos naturales y artificiales que rodean a las personas, incluyendo el aire, el agua, el suelo y su interrelación, así como las relaciones entre estos elementos y los seres vivos, que pueden influir en la salud y el bienestar humano. (Decreto 1843 de 1991).</p>
 
 <div class="definition-term">Barrido:</div>
-<p class="definition-text">Actividad que consiste en el retiro de residuos sólidos y partículas sueltas (polvo, arena, papeles u otros desechos visibles) presentes en superficies como pisos, andenes, escaleras y zonas comunes, mediante el uso de escobas, cepillos u otros implementos manuales.</p>
+<p class="definition-text">Actividad que consiste en el retiro de residuos sólidos y partículas sueltas (polvo, arena, papeles u otros desechos visibles) presentes en superficies como pisos, andenes, escaleras y áreas del establecimiento, mediante el uso de escobas, cepillos u otros implementos manuales.</p>
 
 <div class="definition-term">Limpieza:</div>
 <p class="definition-text">Proceso mediante el cual se elimina la suciedad visible, residuos orgánicos e inorgánicos de superficies, equipos o áreas, utilizando agua, detergente y acción mecánica, con el fin de preparar las superficies para una posterior desinfección y reducir la carga contaminante.</p>
@@ -235,7 +235,7 @@
 <p class="definition-text">Conjunto de prácticas y condiciones destinadas a mantener la limpieza de instalaciones, equipos, superficies y personas, con el fin de prevenir la contaminación y proteger la salud.</p>
 
 <div class="definition-term">Hábitos higiénicos:</div>
-<p class="definition-text">Conjunto de comportamientos y prácticas personales y laborales orientadas a prevenir la contaminación, la proliferación de microorganismos y la transmisión de agentes patógenos en las áreas comunes.</p>
+<p class="definition-text">Conjunto de comportamientos y prácticas personales y laborales orientadas a prevenir la contaminación, la proliferación de microorganismos y la transmisión de agentes patógenos en las áreas del establecimiento.</p>
 
 <div class="definition-term">Inspección sanitaria:</div>
 <p class="definition-text">Actividad de verificación y control realizada para evaluar las condiciones higiénico-sanitarias de personas, áreas, instalaciones o procesos, con el fin de comprobar el cumplimiento de la normatividad sanitaria vigente. (Decreto 2257 de 1986).</p>
@@ -262,7 +262,7 @@
 <div class="section-title">1.4 RESPONSABLES</div>
 <p>La implementación, ejecución, seguimiento, evaluación y mejora continua del Programa de Limpieza y Desinfección estará a cargo de los siguientes actores:</p>
 
-<div class="definition-term">Administrador(a) de la Copropiedad:</div>
+<div class="definition-term">Administrador(a) de la Establecimiento comercial:</div>
 <p class="definition-text">Responsable de garantizar la implementación integral del Programa, asignar los recursos humanos, técnicos y financieros necesarios, aprobar el cronograma de actividades, supervisar su cumplimiento, verificar el seguimiento de los indicadores establecidos y conservar los registros y soportes documentales.</p>
 
 <div class="definition-term">Personal de servicios generales / aseo:</div>
@@ -271,10 +271,10 @@
 <div class="definition-term">Empresas contratistas de aseo (cuando aplique):</div>
 <p class="definition-text">Responsables de cumplir con los protocolos definidos en el presente Programa, suministrar personal capacitado, elementos de protección personal adecuados, productos autorizados con su respectiva ficha técnica y hoja de seguridad (SDS), y entregar los informes o certificaciones correspondientes a la Administración.</p>
 
-<div class="definition-term">Consejo de Administración o Comité de Convivencia (cuando aplique):</div>
+<div class="definition-term">Propietario del establecimiento o Comité de Convivencia Laboral (cuando aplique):</div>
 <p class="definition-text">Apoyar la verificación del cumplimiento del Programa, revisar informes de seguimiento e impulsar acciones de mejora cuando se identifiquen desviaciones o hallazgos sanitarios.</p>
 
-<div class="definition-term">Responsable del SG-SST del Conjunto Residencial:</div>
+<div class="definition-term">Responsable del SG-SST del Establecimiento:</div>
 <p class="definition-text">Velar por el cumplimiento del cronograma del Programa, articular su ejecución con el Sistema de Gestión de Seguridad y Salud en el Trabajo, coordinar con la Administración las actividades desarrolladas por empresas contratistas, verificar el uso adecuado de EPP y realizar seguimiento a los informes, indicadores y certificados entregados.</p>
 
 <!-- 1.5 EPP -->
@@ -371,7 +371,7 @@
 
 <!-- Tabla dilución hipoclorito -->
 <div class="subsection-title">Tabla de dilución del hipoclorito de sodio</div>
-<p>El hipoclorito de sodio es el desinfectante de mayor uso en la copropiedad por su eficacia, disponibilidad y bajo costo. Para garantizar su correcto uso, se establecen las siguientes diluciones según la concentración del producto comercial y el área de aplicación:</p>
+<p>El hipoclorito de sodio es el desinfectante de mayor uso en el establecimiento comercial por su eficacia, disponibilidad y bajo costo. Para garantizar su correcto uso, se establecen las siguientes diluciones según la concentración del producto comercial y el área de aplicación:</p>
 <table class="data-table">
     <tr>
         <th>USO / ÁREA</th>
@@ -529,7 +529,7 @@
         <th style="width: 60%;">ÁREA</th>
         <th>FRECUENCIA</th>
     </tr>
-    <tr><td>Zonas comunes y pasillos</td><td>Diaria</td></tr>
+    <tr><td>Áreas del establecimiento y pasillos</td><td>Diaria</td></tr>
     <tr><td>Escaleras y rampas</td><td>Diaria</td></tr>
     <tr><td>Baños administrativos y sociales</td><td>Diaria</td></tr>
     <tr><td>Oficina de administración</td><td>Diaria</td></tr>
@@ -562,7 +562,7 @@
 <ol class="lista-items">
     <li>Inspecciones periódicas a las áreas intervenidas.</li>
     <li>Verificación mensual del cumplimiento del cronograma.</li>
-    <li>Revisión del estado de limpieza y desinfección de las áreas comunes.</li>
+    <li>Revisión del estado de limpieza y desinfección de las áreas del establecimiento.</li>
     <li>Registro, análisis y corrección de no conformidades.</li>
     <li>Seguimiento a los indicadores del Programa.</li>
     <li>Implementación de acciones correctivas y preventivas cuando se identifiquen desviaciones.</li>
@@ -582,7 +582,7 @@
         <tr><td class="ind-label" style="background: #f0f0f0;">Meta</td><td>Mayor o igual a 95%</td></tr>
         <tr><td class="ind-label" style="background: #f0f0f0;">Periodicidad de medición</td><td>Mensual</td></tr>
         <tr><td class="ind-label" style="background: #f0f0f0;">Fuente de información</td><td>Planilla de limpieza y desinfección diligenciada</td></tr>
-        <tr><td class="ind-label" style="background: #f0f0f0;">Responsable</td><td>Administración del Conjunto Residencial</td></tr>
+        <tr><td class="ind-label" style="background: #f0f0f0;">Responsable</td><td>Administración del Establecimiento</td></tr>
     </table>
 </div>
 <p>Este indicador permite verificar el grado de cumplimiento de las actividades de limpieza y desinfección, evidenciando si se están ejecutando conforme a lo planificado. Un resultado inferior a la meta establecida deberá generar acciones correctivas.</p>
@@ -597,7 +597,7 @@
         <tr><td class="ind-label" style="background: #f0f0f0;">Periodicidad de medición</td><td>Mensual</td></tr>
         <tr><td class="ind-label" style="background: #f0f0f0;">Elementos verificados</td><td>Escobas, traperos, cepillos, mopas, baldes, recogedores, atomizadores y demás implementos de aseo</td></tr>
         <tr><td class="ind-label" style="background: #f0f0f0;">Fuente de información</td><td>Inspección visual directa de elementos de limpieza</td></tr>
-        <tr><td class="ind-label" style="background: #f0f0f0;">Responsable</td><td>Administración del Conjunto Residencial</td></tr>
+        <tr><td class="ind-label" style="background: #f0f0f0;">Responsable</td><td>Administración del Establecimiento</td></tr>
     </table>
 </div>
 <p>Este indicador mide el porcentaje de elementos de limpieza que se encuentran en buen estado al momento de la verificación. Permite identificar necesidades de reposición o mantenimiento de los implementos de aseo, garantizando la eficacia de las actividades del Programa.</p>

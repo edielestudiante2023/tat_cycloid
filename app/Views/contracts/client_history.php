@@ -53,7 +53,7 @@
             height: 20px;
             border-radius: 50%;
             background: white;
-            border: 3px solid #007bff;
+            border: 3px solid #ee6c21;
         }
         .timeline-marker.active {
             border-color: #28a745;

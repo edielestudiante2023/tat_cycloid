@@ -83,7 +83,7 @@ function openPhoto(src) {
 <!-- Acciones -->
 <div class="mb-4">
     <?php if (!empty($inspeccion['ruta_pdf'])): ?>
-    <a href="<?= base_url('/inspecciones/recursos-seguridad/pdf/') ?><?= $inspeccion['id'] ?>" class="btn btn-primary" target="_blank" style="background:#e76f51; border-color:#e76f51;">
+    <a href="<?= base_url('/inspecciones/recursos-seguridad/pdf/') ?><?= $inspeccion['id'] ?>" class="btn btn-primary" target="_blank" style="background:#ee6c21; border-color:#ee6c21;">
         <i class="fas fa-file-pdf"></i> Ver PDF
     </a>
     <?php endif; ?>

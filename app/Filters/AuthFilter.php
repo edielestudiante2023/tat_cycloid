@@ -38,6 +38,12 @@ class AuthFilter implements FilterInterface
             return redirect()->to('/login');
         }
 
+        // En desarrollo: saltar check de inactividad (solo refrescar last_activity)
+        if (ENVIRONMENT !== 'production') {
+            $session->set('last_activity', time());
+            return null;
+        }
+
         $role = $session->get('role');
         $lastActivity = $session->get('last_activity');
         $currentTime = time();

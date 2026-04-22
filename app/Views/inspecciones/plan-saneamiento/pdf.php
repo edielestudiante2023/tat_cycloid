@@ -45,7 +45,7 @@
         text-align: center;
         font-weight: bold;
         font-size: 13px;
-        color: #1b4332;
+        color: #c9541a;
         margin: 20px 0 5px;
     }
     .subtitle {
@@ -58,16 +58,16 @@
     .section-title {
         font-weight: bold;
         font-size: 11px;
-        color: #1b4332;
+        color: #c9541a;
         margin-top: 18px;
         margin-bottom: 6px;
-        border-bottom: 1px solid #1b4332;
+        border-bottom: 1px solid #c9541a;
         padding-bottom: 3px;
     }
     .subsection-title {
         font-weight: bold;
         font-size: 10px;
-        color: #1b4332;
+        color: #c9541a;
         margin-top: 12px;
         margin-bottom: 4px;
     }
@@ -78,7 +78,7 @@
         font-size: 9px;
     }
     .data-table th {
-        background: #1b4332;
+        background: #c9541a;
         color: white;
         padding: 5px 6px;
         text-align: left;
@@ -117,7 +117,7 @@
     }
     .indicador-box .ind-label {
         font-weight: bold;
-        color: #1b4332;
+        color: #c9541a;
     }
     .program-list-item {
         margin: 4px 0 4px 20px;
@@ -130,7 +130,7 @@
         font-size: 9px;
     }
     .resultado-table th {
-        background: #1b4332;
+        background: #c9541a;
         color: white;
         padding: 5px 6px;
         text-align: left;
@@ -183,21 +183,21 @@ $fechaDoc = !empty($inspeccion['fecha_programa']) ? date('d/m/Y', strtotime($ins
 <!-- INTRODUCCIÓN -->
 <div class="section-title">INTRODUCCIÓN</div>
 
-<p>La Tienda a Tienda, en su condición de espacio colectivo destinado a la vivienda, el comercio y/o el uso mixto, tiene la responsabilidad de garantizar condiciones sanitarias y ambientales adecuadas que protejan la salud, la seguridad y el bienestar de los residentes, trabajadores, visitantes y demás usuarios de las áreas comunes.</p>
+<p>El establecimiento de comercio, por su condición de espacio abierto al público destinado al almacenamiento, preparación y/o venta de alimentos y productos de consumo, tiene la responsabilidad de garantizar condiciones sanitarias y ambientales adecuadas que protejan la salud, la seguridad y el bienestar de clientes, trabajadores, visitantes y demás usuarios de sus áreas.</p>
 
-<p>El Plan de Saneamiento Básico (PSB) de <strong><?= esc($nombreCliente) ?></strong> se establece como una herramienta preventiva, técnica y de control, orientada a minimizar los riesgos sanitarios y ambientales derivados de la inadecuada gestión de residuos, deficiencias en la limpieza y desinfección, presencia de plagas y fallas en el suministro de agua potable, en cumplimiento de la normatividad vigente aplicable a las copropiedades en Colombia.</p>
+<p>El Plan de Saneamiento Básico (PSB) de <strong><?= esc($nombreCliente) ?></strong> se establece como una herramienta preventiva, técnica y de control, orientada a minimizar los riesgos sanitarios y ambientales derivados de la inadecuada gestión de residuos, deficiencias en la limpieza y desinfección, presencia de plagas y fallas en el suministro de agua potable, en cumplimiento de la normatividad vigente aplicable a los establecimientos comerciales en Colombia.</p>
 
 <p>El marco constitucional que soporta este Plan se fundamenta en la Constitución Política de Colombia de 1991, particularmente en los artículos 49 y 79, los cuales consagran el derecho fundamental a la salud, al saneamiento ambiental y el derecho colectivo a gozar de un ambiente sano, así como el deber del Estado y de los particulares de proteger y conservar el ambiente.</p>
 
-<p>En concordancia con lo anterior, el Código Sanitario Nacional – Ley 9 de 1979, establece la obligación de prevenir y controlar los factores de riesgo biológicos, físicos y químicos que puedan afectar la salud humana, asignando responsabilidades tanto a entidades públicas como a personas naturales y jurídicas, dentro de las cuales se encuentran las copropiedades sometidas al régimen de tienda a tienda.</p>
+<p>En concordancia con lo anterior, el Código Sanitario Nacional – Ley 9 de 1979, establece la obligación de prevenir y controlar los factores de riesgo biológicos, físicos y químicos que puedan afectar la salud humana, asignando responsabilidades tanto a entidades públicas como a personas naturales y jurídicas, dentro de las cuales se encuentran los establecimientos de comercio sometidos a la normativa sanitaria aplicable a la preparación, almacenamiento y venta de alimentos.</p>
 
-<p>Así mismo, el presente Plan se estructura conforme a lo dispuesto en la Ley 675 de 2001, que regula el régimen de Tienda a Tienda en Colombia, la cual establece como deber del administrador velar por la conservación, salubridad y adecuada utilización de los bienes comunes, garantizando condiciones seguras y saludables para la comunidad.</p>
+<p>Así mismo, el presente Plan se estructura conforme a lo dispuesto en la Ley 232 de 1995, que define los requisitos de funcionamiento de los establecimientos de comercio, y en la Resolución 2674 de 2013 del Ministerio de Salud y Protección Social, que establece los requisitos sanitarios y de Buenas Prácticas de Manufactura (BPM) para las actividades relacionadas con la fabricación, procesamiento, preparación, envase, almacenamiento, transporte, distribución y comercialización de alimentos para consumo humano. Bajo este marco, el propietario o responsable del establecimiento es el garante de mantener las condiciones sanitarias, la inocuidad de los alimentos y la seguridad de trabajadores y clientes.</p>
 
-<p>En materia de gestión ambiental y manejo de residuos sólidos, el Plan se soporta en la Ley 99 de 1993, la Ley 142 de 1994, el Decreto 1077 de 2015 (Decreto Único Reglamentario del Sector Vivienda), el Decreto 596 de 2016 sobre aprovechamiento de residuos sólidos, y la Resolución 2184 de 2019, que establece el código de colores para la separación en la fuente, aplicable a las áreas comunes de la copropiedad.</p>
+<p>En materia de gestión ambiental y manejo de residuos sólidos, el Plan se soporta en la Ley 99 de 1993, la Ley 142 de 1994, el Decreto 1077 de 2015 (Decreto Único Reglamentario del Sector Vivienda), el Decreto 596 de 2016 sobre aprovechamiento de residuos sólidos, y la Resolución 2184 de 2019, que establece el código de colores para la separación en la fuente, aplicable a las áreas del establecimiento comercial.</p>
 
 <p>En lo relacionado con la calidad del agua para consumo humano, se adopta lo dispuesto en el Decreto 1575 de 2007 y la Resolución 2115 de 2007, que definen las características, instrumentos básicos y frecuencias de control para garantizar el suministro de agua potable en edificaciones residenciales, incluyendo el mantenimiento de tanques de almacenamiento.</p>
 
-<p>El Plan de Saneamiento Básico de <strong><?= esc($nombreCliente) ?></strong> contempla la ejecución sistemática y documentada de actividades de limpieza, desinfección, control integral de plagas, manejo integral de residuos sólidos y aseguramiento del abastecimiento de agua potable, como acciones fundamentales para preservar condiciones higiénico-sanitarias óptimas en las zonas comunes y de servicio.</p>
+<p>El Plan de Saneamiento Básico de <strong><?= esc($nombreCliente) ?></strong> contempla la ejecución sistemática y documentada de actividades de limpieza, desinfección, control integral de plagas, manejo integral de residuos sólidos y aseguramiento del abastecimiento de agua potable, como acciones fundamentales para preservar condiciones higiénico-sanitarias óptimas en las áreas del establecimiento y de servicio.</p>
 
 <p>Este documento incluye los siguientes programas, cada uno con sus respectivos procedimientos, frecuencias, registros, listas de verificación, indicadores y responsables, para asegurar su correcta implementación, seguimiento y mejora continua:</p>
 
@@ -208,7 +208,7 @@ $fechaDoc = !empty($inspeccion['fecha_programa']) ? date('d/m/Y', strtotime($ins
     <li>Programa de Abastecimiento y Control de Agua Potable</li>
 </ul>
 
-<p>La aplicación del presente Plan reafirma el compromiso de la copropiedad con la salud pública, la convivencia, la prevención de riesgos sanitarios y el cumplimiento de la normatividad legal vigente, contribuyendo de manera directa a la calidad de vida de todos los habitantes del conjunto residencial.</p>
+<p>La aplicación del presente Plan reafirma el compromiso del establecimiento comercial con la salud pública, la convivencia, la prevención de riesgos sanitarios y el cumplimiento de la normatividad legal vigente, contribuyendo de manera directa a la calidad de vida de todos los habitantes del establecimiento comercial.</p>
 
 <!-- CONSOLIDACIÓN DE INDICADORES -->
 <div class="section-title">CONSOLIDACIÓN DE INDICADORES Y DISPONIBILIDAD DE PROGRAMAS</div>
@@ -217,7 +217,7 @@ $fechaDoc = !empty($inspeccion['fecha_programa']) ? date('d/m/Y', strtotime($ins
 
 <p>No obstante, con el fin de facilitar la verificación por parte de las entidades de control territorial, autoridades sanitarias, auditorías internas y externas, el presente Plan de Saneamiento Básico consolida dentro de su estructura los indicadores de gestión, proceso y resultado asociados a cada programa.</p>
 
-<p>Lo anterior permite contar, en un solo documento, con una visión integrada del desempeño sanitario de la copropiedad, sin que ello signifique que los programas se sustituyen o se unifican en un único archivo.</p>
+<p>Lo anterior permite contar, en un solo documento, con una visión integrada del desempeño sanitario del establecimiento comercial, sin que ello signifique que los programas se sustituyen o se unifican en un único archivo.</p>
 
 <p>En consecuencia:</p>
 <ul class="lista-items">

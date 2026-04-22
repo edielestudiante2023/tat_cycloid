@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
     <style>
-        :root { --primary-dark: #1b4332; --gold-primary: #e76f51; --gold-secondary: #f4a261; --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+        :root { --primary-dark: #c9541a; --gold-primary: #ee6c21; --gold-secondary: #ff8d4e; --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
         body { background: var(--gradient-bg); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; }
         .navbar-custom { background: #fff; box-shadow: 0 8px 32px rgba(28,36,55,0.15); padding: 15px 0; border-bottom: 2px solid var(--gold-primary); }
         .card-section { border: none; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 1.5rem; }
@@ -489,8 +489,8 @@
                 showCancelButton: true,
                 confirmButtonText: '<i class="fas fa-arrow-right me-1"></i>Continuar',
                 cancelButtonText: '<i class="fas fa-external-link-alt me-1"></i>Ir a gestionar',
-                confirmButtonColor: '#e76f51',
-                cancelButtonColor: '#1b4332',
+                confirmButtonColor: '#ee6c21',
+                cancelButtonColor: '#c9541a',
                 allowOutsideClick: false,
             }).then(function(result) {
                 if (!result.isConfirmed) {
@@ -998,5 +998,6 @@
 
     function esc(str) { var d = document.createElement('div'); d.textContent = str; return d.innerHTML; }
     </script>
+    <script src="<?= base_url('js/image-compress.js?v=1') ?>" defer></script>
 </body>
 </html>

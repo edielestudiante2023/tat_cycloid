@@ -95,7 +95,7 @@ $action = $isEdit ? base_url('/inspecciones/plan-emergencia/update/') . $inspecc
                     <input type="number" name="anio_construccion" class="form-control" min="1900" max="2100" value="<?= $inspeccion['anio_construccion'] ?? '' ?>">
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Numero total de unidades habitacionales</label>
+                    <label class="form-label">Numero de areas / dependencias del establecimiento</label>
                     <input type="number" name="numero_unidades_habitacionales" class="form-control" min="0" value="<?= $inspeccion['numero_unidades_habitacionales'] ?? '' ?>">
                 </div>
                 <?php foreach (['foto_torres_1' => 'Foto 1 de Torres o Casas', 'foto_torres_2' => 'Foto 2 de Torres o Casas'] as $campo => $label): ?>
@@ -122,9 +122,9 @@ $action = $isEdit ? base_url('/inspecciones/plan-emergencia/update/') . $inspecc
                 <h6 class="card-title" style="font-size:14px; color:#999;">PARQUEADEROS</h6>
                 <?php
                 $parkFields = [
-                    'parqueaderos_carros_residentes' => 'Parqueaderos carros residentes',
+                    'parqueaderos_carros_residentes' => 'Parqueaderos carros clientes y trabajadores',
                     'parqueaderos_carros_visitantes' => 'Parqueaderos carros visitantes',
-                    'parqueaderos_motos_residentes'  => 'Parqueaderos motos residentes',
+                    'parqueaderos_motos_residentes'  => 'Parqueaderos motos clientes y trabajadores',
                     'parqueaderos_motos_visitantes'  => 'Parqueaderos motos visitantes',
                 ];
                 foreach ($parkFields as $campo => $label): ?>
@@ -159,10 +159,10 @@ $action = $isEdit ? base_url('/inspecciones/plan-emergencia/update/') . $inspecc
             </div>
         </div>
 
-        <!-- 5. AREAS COMUNES -->
+        <!-- 5. ÁREAS DEL ESTABLECIMIENTO -->
         <div class="card mb-3">
             <div class="card-body">
-                <h6 class="card-title" style="font-size:14px; color:#999;">AREAS COMUNES</h6>
+                <h6 class="card-title" style="font-size:14px; color:#999;">ÁREAS DEL ESTABLECIMIENTO</h6>
                 <div class="mb-2">
                     <label class="form-label">Cantidad de salones comunales</label>
                     <input type="number" name="cantidad_salones_comunales" class="form-control form-control-sm" min="0" value="<?= $inspeccion['cantidad_salones_comunales'] ?? '0' ?>">
@@ -215,7 +215,7 @@ $action = $isEdit ? base_url('/inspecciones/plan-emergencia/update/') . $inspecc
         $circulaciones = [
             ['titulo' => 'CIRCULACION VEHICULAR', 'campo_texto' => 'circulacion_vehicular', 'label_texto' => 'Describa las zonas de circulacion vehicular', 'fotos' => ['foto_circulacion_vehicular' => 'Foto Zona de Circulacion Vehicular']],
             ['titulo' => 'CIRCULACION PEATONAL', 'campo_texto' => 'circulacion_peatonal', 'label_texto' => 'Describa las zonas de circulacion peatonal', 'fotos' => ['foto_circulacion_peatonal_1' => 'Foto 1 Circulacion Peatonal', 'foto_circulacion_peatonal_2' => 'Foto 2 Circulacion Peatonal']],
-            ['titulo' => 'SALIDAS DE EMERGENCIA', 'campo_texto' => 'salidas_emergencia', 'label_texto' => 'Cuantas salidas de emergencia tiene la copropiedad y cuales son', 'fotos' => ['foto_salida_emergencia_1' => 'Foto 1 Salida Emergencia', 'foto_salida_emergencia_2' => 'Foto 2 Salida Emergencia']],
+            ['titulo' => 'SALIDAS DE EMERGENCIA', 'campo_texto' => 'salidas_emergencia', 'label_texto' => 'Cuantas salidas de emergencia tiene el establecimiento comercial y cuales son', 'fotos' => ['foto_salida_emergencia_1' => 'Foto 1 Salida Emergencia', 'foto_salida_emergencia_2' => 'Foto 2 Salida Emergencia']],
             ['titulo' => 'INGRESOS PEATONALES', 'campo_texto' => 'ingresos_peatonales', 'label_texto' => 'Describa los ingresos peatonales', 'fotos' => ['foto_ingresos_peatonales' => 'Foto Ingresos Peatonales']],
             ['titulo' => 'ACCESOS VEHICULARES', 'campo_texto' => 'accesos_vehiculares', 'label_texto' => 'Describa los accesos vehiculares', 'fotos' => ['foto_acceso_vehicular_1' => 'Foto 1 Acceso Vehicular', 'foto_acceso_vehicular_2' => 'Foto 2 Acceso Vehicular']],
         ];
@@ -675,7 +675,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         showCancelButton: true,
                         confirmButtonText: 'Si, restaurar',
                         cancelButtonText: 'No, empezar de cero',
-                        confirmButtonColor: '#e76f51',
+                        confirmButtonColor: '#ee6c21',
                     }).then(result => {
                         if (result.isConfirmed) restoreFromLocal(data);
                         else localStorage.removeItem(STORAGE_KEY);

@@ -25,18 +25,22 @@ class ConsultantDashboardController extends Controller
     public function addClient()
     {
         $consultantModel = new ConsultantModel();
-        $consultants = $consultantModel->findAll(); // Recupera todos los consultores
+        $consultants = $consultantModel->findAll();
 
-        // Verifica que los consultores se están cargando
         if (empty($consultants)) {
             log_message('error', 'No se encontraron consultores en la base de datos.');
         }
 
-        // Pasa los consultores a la vista
-        $data = [
-            'consultants' => $consultants
-        ];
-        return view('consultant/add_client', $data);
+        $tiposEstablecimiento = \Config\Database::connect()
+            ->table('tbl_tipo_establecimiento')
+            ->where('activo', 1)
+            ->orderBy('orden', 'ASC')
+            ->get()->getResultArray();
+
+        return view('consultant/add_client', [
+            'consultants'           => $consultants,
+            'tipos_establecimiento' => $tiposEstablecimiento,
+        ]);
     }
 
    
@@ -62,11 +66,13 @@ class ConsultantDashboardController extends Controller
     if ($logo && $logo->isValid() && !$logo->hasMoved()) {
         $logoName = $logo->getRandomName();
         $logo->move(ROOTPATH . 'public/uploads', $logoName); // Cambiado WRITEPATH por ROOTPATH
+        compress_uploaded_image(ROOTPATH . 'public/uploads/' . $logoName);
     }
 
     if ($firma && $firma->isValid() && !$firma->hasMoved()) {
         $firmaName = $firma->getRandomName();
         $firma->move(ROOTPATH . 'public/uploads', $firmaName); // Cambiado WRITEPATH por ROOTPATH
+        compress_uploaded_image(ROOTPATH . 'public/uploads/' . $firmaName);
     }
 
     $data = [

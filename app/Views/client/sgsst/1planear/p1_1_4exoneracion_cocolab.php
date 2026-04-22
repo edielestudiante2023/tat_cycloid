@@ -35,7 +35,7 @@
         h1,
         h2 {
             text-align: center;
-            color: #2d6a4f;
+            color: #ee6c21;
         }
 
         p {
@@ -209,7 +209,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'Spanish_Spain'); // Configura el idi
 
 
         <p>
-            <strong><?= $client['nombre_cliente'] ?></strong> con Nit <strong><?= $client['nit_cliente'] ?></strong> desea informar que, en la actualidad, no cuenta con empleados dependientes en su estructura. En consecuencia, se considera innecesaria la formación de un Comité de Convivencia Laboral, dado que este se establece principalmente para representar y atender las necesidades y preocupaciones de los trabajadores directos de una empresa. Dado que las copropiedades de tienda a tienda no participan en actividades económicas, comerciales o de producción, este ítem no resulta aplicable en nuestra situación actual.
+            <strong><?= $client['nombre_cliente'] ?></strong> con Nit <strong><?= $client['nit_cliente'] ?></strong> desea informar que, en la actualidad, no cuenta con empleados dependientes en su estructura. En consecuencia, se considera innecesaria la formación de un Comité de Convivencia Laboral, dado que este se establece principalmente para representar y atender las necesidades y preocupaciones de los trabajadores directos de una empresa. Dado que los establecimientos de comercio bajo la modalidad tienda a tienda, por su estructura operativa y el número reducido de personas vinculadas, no requieren la conformación de este comité, este ítem no resulta aplicable en nuestra situación actual.
 
             <br>
             <br>
@@ -219,7 +219,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'Spanish_Spain'); // Configura el idi
             <br>
             <br>
 
-            En virtud de lo expuesto, y considerando que en nuestro conjunto residencial no existen empleados contratados directamente por la copropiedad, no es necesario establecer dicho comité en este momento. Reiteramos nuestro compromiso de cumplir con todas las normativas y regulaciones pertinentes para garantizar un ambiente seguro y armonioso en nuestro entorno para contratistas y residentes.
+            En virtud de lo expuesto, y considerando que en nuestro establecimiento comercial no existen empleados contratados directamente por el establecimiento comercial, no es necesario establecer dicho comité en este momento. Reiteramos nuestro compromiso de cumplir con todas las normativas y regulaciones pertinentes para garantizar un ambiente seguro y armonioso en nuestro entorno para contratistas y clientes y trabajadores.
 
 
             <br><br>

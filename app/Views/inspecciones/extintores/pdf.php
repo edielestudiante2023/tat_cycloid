@@ -22,13 +22,13 @@
         .header-title { text-align: center; font-weight: bold; font-size: 9px; }
         .header-code { width: 120px; font-size: 8px; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 6px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 6px; color: #c9541a; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
         .info-label { font-weight: bold; color: #444; width: 140px; background: #f7f7f7; }
 
-        .section-title { background: #1b4332; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
+        .section-title { background: #c9541a; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
 
         .data-table { width: 100%; border-collapse: collapse; margin-bottom: 6px; }
         .data-table th { background: #e8e8e8; border: 1px solid #aaa; padding: 3px 4px; font-size: 7px; text-align: center; }
@@ -141,7 +141,7 @@
     </table>
     <table class="inv-table">
         <tr>
-            <td class="inv-label">Unidades residenciales</td>
+            <td class="inv-label">Locales comerciales</td>
             <td style="text-align:center;"><?= $inspeccion['cantidad_unidades_residenciales'] ?? 0 ?></td>
             <td class="inv-label">Porteria</td>
             <td style="text-align:center;"><?= $inspeccion['cantidad_porteria'] ?? 0 ?></td>

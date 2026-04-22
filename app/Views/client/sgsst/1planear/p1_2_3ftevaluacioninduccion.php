@@ -167,16 +167,16 @@
         <p><strong>1. ¿Cuál es el principal objetivo del Sistema de Gestión de Seguridad y Salud en el Trabajo (SG-SST)?</strong></p>
         <ul>
             <li>a) Maximizar los beneficios económicos.</li>
-            <li>b) Prevenir enfermedades en los residentes.</li>
-            <li>c) Minimizar los riesgos legales de la tienda a tienda en caso de un eventual accidente.</li>
+            <li>b) Prevenir enfermedades en los clientes y trabajadores.</li>
+            <li>c) Minimizar los riesgos legales de la <?= esc($client['nombre_cliente'] ?? '') ?> en caso de un eventual accidente.</li>
             <li>d) Fomentar el consumo de alcohol y tabaco en el trabajo.</li>
         </ul>
     </div>
 
     <div class="epsilon-question">
-        <p><strong>2. ¿Quiénes deben implementar el SG-SST en una tienda a tienda?</strong></p>
+        <p><strong>2. ¿Quiénes deben implementar el SG-SST en <?= esc($client['nombre_cliente'] ?? '') ?>?</strong></p>
         <ul>
-            <li>a) Solo los residentes.</li>
+            <li>a) Solo los clientes y trabajadores.</li>
             <li>b) Solo los empleados.</li>
             <li>c) Solo los contratistas.</li>
             <li>d) Los contratantes de personal bajo modalidad de contrato civil, comercial o administrativo.</li>
@@ -204,19 +204,19 @@
     </div>
 
     <div class="epsilon-question">
-        <p><strong>5. ¿Qué función desempeña la "Brigada de Emergencia" en la tienda a tienda?</strong></p>
+        <p><strong>5. ¿Qué función desempeña la "Brigada de Emergencia" en la <?= esc($client['nombre_cliente'] ?? '') ?>?</strong></p>
         <ul>
-            <li>a) Mantener orden y limpieza en las áreas comunes.</li>
+            <li>a) Mantener orden y limpieza en las áreas del establecimiento.</li>
             <li>b) Promover la cultura de la prevención y reaccionar en caso de emergencias como sismos o incendios.</li>
             <li>c) Organizar fiestas y eventos.</li>
-            <li>d) Gestionar la seguridad en las zonas comunes.</li>
+            <li>d) Gestionar la seguridad en las áreas del establecimiento.</li>
         </ul>
     </div>
 
     <div class="epsilon-question">
         <p><strong>6. ¿Cuál es el propósito de un "FURAT" en el contexto de seguridad y salud en el trabajo?</strong></p>
         <ul>
-            <li>a) Registrar la asistencia de los residentes a cursos de seguridad.</li>
+            <li>a) Registrar la asistencia de los clientes y trabajadores a cursos de seguridad.</li>
             <li>b) Informar a la ARL sobre la ocurrencia de un accidente de trabajo.</li>
             <li>c) Realizar pruebas de alcoholemia a los trabajadores.</li>
             <li>d) Organizar simulacros de evacuación.</li>
@@ -224,10 +224,10 @@
     </div>
 
     <div class="epsilon-question">
-        <p><strong>7. ¿Qué debe exigir la copropiedad en cuanto a las dotaciones de proveedores y contratistas?</strong></p>
+        <p><strong>7. ¿Qué debe exigir el establecimiento comercial en cuanto a las dotaciones de proveedores y contratistas?</strong></p>
         <ul>
             <li>a) Equipos de oficina.</li>
-            <li>b) Programas de entretenimiento para residentes.</li>
+            <li>b) Programas de entretenimiento para clientes y trabajadores.</li>
             <li>c) Programas de capacitación para empleados.</li>
             <li>d) Equipos de protección personal (EPP) adecuados.</li>
         </ul>
@@ -236,7 +236,7 @@
     <div class="epsilon-question">
         <p><strong>8. ¿Cuál es la política sobre el consumo de alcohol, tabaco y drogas?</strong></p>
         <ul>
-            <li>a) Prohibir el consumo solo para los residentes.</li>
+            <li>a) Prohibir el consumo solo para los clientes y trabajadores.</li>
             <li>b) Permitir el consumo en áreas designadas.</li>
             <li>c) Prohibir el consumo para proveedores y contratistas.</li>
             <li>d) Promover el consumo de drogas en eventos sociales.</li>
@@ -247,9 +247,9 @@
         <p><strong>9. ¿Cuál es el objetivo de la política de prevención, preparación y respuesta ante emergencias?</strong></p>
         <ul>
             <li>a) Fomentar el uso de dispositivos móviles.</li>
-            <li>b) Proporcionar entretenimiento a los residentes.</li>
+            <li>b) Proporcionar entretenimiento a los clientes y trabajadores.</li>
             <li>c) Salvaguardar la salud y la seguridad de las personas en la propiedad.</li>
-            <li>d) Controlar el consumo de alimentos en la copropiedad.</li>
+            <li>d) Controlar el consumo de alimentos en el establecimiento comercial.</li>
         </ul>
     </div>
 

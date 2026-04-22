@@ -37,7 +37,7 @@
     ?>
     <?php foreach ($grouped as $tipo => $urls): ?>
     <div class="card mb-3">
-        <div class="card-header py-2 px-3 text-white" style="background: <?= $colores[$tipo] ?? '#1b4332' ?>; font-size: 13px;">
+        <div class="card-header py-2 px-3 text-white" style="background: <?= $colores[$tipo] ?? '#c9541a' ?>; font-size: 13px;">
             <i class="fas fa-folder-open me-1"></i> <?= esc($tipo) ?>
             <span class="badge bg-light text-dark ms-1" style="font-size: 10px;"><?= count($urls) ?></span>
         </div>
@@ -45,7 +45,7 @@
             <?php foreach ($urls as $u): ?>
             <div class="d-flex align-items-center justify-content-between px-3 py-2 border-bottom" style="font-size: 13px;">
                 <div class="flex-grow-1 me-2" style="min-width: 0;">
-                    <a href="<?= esc($u['url']) ?>" target="_blank" class="text-decoration-none fw-bold" style="color: <?= $colores[$tipo] ?? '#1b4332' ?>;">
+                    <a href="<?= esc($u['url']) ?>" target="_blank" class="text-decoration-none fw-bold" style="color: <?= $colores[$tipo] ?? '#c9541a' ?>;">
                         <i class="fas fa-external-link-alt me-1" style="font-size: 10px;"></i><?= esc($u['nombre']) ?>
                     </a>
                 </div>
@@ -82,7 +82,7 @@ function confirmarEliminarInsp(url){
     Swal.fire({
         title:'Eliminar registro',
         html:'<p style="color:#666;font-size:14px;">Esta accion no se puede deshacer.<br>Para confirmar, resuelve la operacion:</p>'+
-             '<div style="font-size:24px;font-weight:700;color:#1b4332;margin:10px 0;">'+a+' '+op+' '+b+' = ?</div>',
+             '<div style="font-size:24px;font-weight:700;color:#c9541a;margin:10px 0;">'+a+' '+op+' '+b+' = ?</div>',
         input:'number',inputPlaceholder:'Tu respuesta',icon:'warning',showCancelButton:true,
         confirmButtonColor:'#dc3545',confirmButtonText:'Eliminar',cancelButtonText:'Cancelar',
         inputValidator:function(value){
@@ -99,7 +99,7 @@ function confirmarEliminarInsp(url){
         Swal.fire({
             title:'Confirmar eliminacion',
             html:'<p style="color:#dc3545;font-size:14px;font-weight:600;">Segunda verificacion</p>'+
-                 '<div style="font-size:24px;font-weight:700;color:#1b4332;margin:10px 0;">'+a2+' '+op2+' '+b2+' = ?</div>',
+                 '<div style="font-size:24px;font-weight:700;color:#c9541a;margin:10px 0;">'+a2+' '+op2+' '+b2+' = ?</div>',
             input:'number',inputPlaceholder:'Tu respuesta',icon:'error',showCancelButton:true,
             confirmButtonColor:'#dc3545',confirmButtonText:'Confirmar eliminacion',cancelButtonText:'Cancelar',
             inputValidator:function(value){

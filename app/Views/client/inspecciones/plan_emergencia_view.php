@@ -60,7 +60,7 @@ if ($tieneFotosFachada): ?>
             <?php endif; ?>
             <tr><td class="text-muted">Sismo resistente</td><td><?= esc($inspeccion['sismo_resistente'] ?? '-') ?></td></tr>
             <tr><td class="text-muted">Año de construcción</td><td><?= $inspeccion['anio_construccion'] ?? '-' ?></td></tr>
-            <tr><td class="text-muted">Unidades habitacionales</td><td><?= $inspeccion['numero_unidades_habitacionales'] ?? '-' ?></td></tr>
+            <tr><td class="text-muted">Áreas / dependencias</td><td><?= $inspeccion['numero_unidades_habitacionales'] ?? '-' ?></td></tr>
         </table>
         <?php if (!empty($inspeccion['foto_torres_1']) || !empty($inspeccion['foto_torres_2'])): ?>
         <div class="row g-2 mt-2">
@@ -81,9 +81,9 @@ if ($tieneFotosFachada): ?>
     <div class="card-body">
         <h6 style="font-size:14px; color:#999; font-weight:700; margin-bottom:12px;">PARQUEADEROS</h6>
         <table class="table table-sm mb-0" style="font-size:14px;">
-            <tr><td class="text-muted" style="width:55%;">Carros residentes</td><td><?= $inspeccion['parqueaderos_carros_residentes'] ?? '0' ?></td></tr>
+            <tr><td class="text-muted" style="width:55%;">Carros clientes y trabajadores</td><td><?= $inspeccion['parqueaderos_carros_residentes'] ?? '0' ?></td></tr>
             <tr><td class="text-muted">Carros visitantes</td><td><?= $inspeccion['parqueaderos_carros_visitantes'] ?? '0' ?></td></tr>
-            <tr><td class="text-muted">Motos residentes</td><td><?= $inspeccion['parqueaderos_motos_residentes'] ?? '0' ?></td></tr>
+            <tr><td class="text-muted">Motos clientes y trabajadores</td><td><?= $inspeccion['parqueaderos_motos_residentes'] ?? '0' ?></td></tr>
             <tr><td class="text-muted">Motos visitantes</td><td><?= $inspeccion['parqueaderos_motos_visitantes'] ?? '0' ?></td></tr>
             <tr><td class="text-muted">Parqueadero privado</td><td><?= $enumSiNo[$inspeccion['hay_parqueadero_privado'] ?? ''] ?? '-' ?></td></tr>
         </table>
@@ -105,7 +105,7 @@ if ($tieneFotosFachada): ?>
 <!-- Áreas Comunes -->
 <div class="card mb-3">
     <div class="card-body">
-        <h6 style="font-size:14px; color:#999; font-weight:700; margin-bottom:12px;">ÁREAS COMUNES</h6>
+        <h6 style="font-size:14px; color:#999; font-weight:700; margin-bottom:12px;">ÁREAS DEL ESTABLECIMIENTO</h6>
         <table class="table table-sm mb-0" style="font-size:14px;">
             <tr><td class="text-muted" style="width:55%;">Salones comunales</td><td><?= $inspeccion['cantidad_salones_comunales'] ?? '0' ?></td></tr>
             <tr><td class="text-muted">Locales comerciales</td><td><?= $inspeccion['cantidad_locales_comerciales'] ?? '0' ?></td></tr>
@@ -437,7 +437,7 @@ function openPhoto(src) {
 <!-- Acciones -->
 <div class="mb-4">
     <?php if (!empty($inspeccion['ruta_pdf'])): ?>
-    <a href="<?= base_url('/inspecciones/plan-emergencia/pdf/') ?><?= $inspeccion['id'] ?>" class="btn btn-primary" target="_blank" style="background:#e76f51; border-color:#e76f51;">
+    <a href="<?= base_url('/inspecciones/plan-emergencia/pdf/') ?><?= $inspeccion['id'] ?>" class="btn btn-primary" target="_blank" style="background:#ee6c21; border-color:#ee6c21;">
         <i class="fas fa-file-pdf"></i> Ver PDF
     </a>
     <?php endif; ?>

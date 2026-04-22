@@ -19,7 +19,7 @@ function estadoColorClient(string $estado): string {
 ?>
 
 <div class="page-header">
-    <h1><i class="fas fa-first-aid me-2"></i> Inspección de Botiquín</h1>
+    <h1><i class="fas fa-first-aid me-2"></i> Inspección de Botiquín Tipo B</h1>
     <a href="<?= base_url('client/inspecciones/botiquin') ?>" class="btn-back">
         <i class="fas fa-arrow-left me-1"></i> Volver
     </a>
@@ -94,7 +94,7 @@ function estadoColorClient(string $estado): string {
         <h2 class="accordion-header">
             <button class="accordion-button <?= $secNum > 1 ? 'collapsed' : '' ?>" type="button"
                     data-bs-toggle="collapse" data-bs-target="#cbot_<?= $secNum ?>"
-                    style="background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%); color:white; font-weight:600; font-size:14px;">
+                    style="background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%); color:white; font-weight:600; font-size:14px;">
                 <?= esc($grupoNombre) ?> (<?= count($items) ?>)
             </button>
         </h2>
@@ -248,6 +248,6 @@ function openPhoto(src) {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
     }
     .accordion-button:not(.collapsed) {
-        background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%) !important;
+        background: linear-gradient(135deg, #ee6c21 0%, #ff8d4e 100%) !important;
     }
 </style>

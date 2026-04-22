@@ -18,14 +18,14 @@
         .opcion-label { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px;
             border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; margin-bottom: 8px;
             transition: background .15s, border-color .15s; font-size: 14px; }
-        .opcion-label input { margin-top: 2px; flex-shrink: 0; accent-color: #e76f51; }
-        .opcion-label:has(input:checked) { background: #fdf6e3; border-color: #e76f51; }
+        .opcion-label input { margin-top: 2px; flex-shrink: 0; accent-color: #ee6c21; }
+        .opcion-label:has(input:checked) { background: #fdf6e3; border-color: #ee6c21; }
         .pregunta-num { font-size: 12px; color: #999; font-weight: 600; margin-bottom: 6px; }
         .pregunta-texto { font-size: 14px; font-weight: 600; margin-bottom: 10px; color: #222; }
         .tratamiento-box { background: #f8f9ff; border: 1px solid #d0d8f0; border-radius: 8px;
             padding: 14px; font-size: 13px; line-height: 1.6; color: #444; max-height: 200px;
             overflow-y: auto; margin-bottom: 12px; }
-        .btn-enviar { background: #e76f51; color: #fff; border: none; font-weight: 700;
+        .btn-enviar { background: #ee6c21; color: #fff; border: none; font-weight: 700;
             font-size: 15px; padding: 14px; border-radius: 10px; width: 100%; }
         .btn-enviar:hover { background: #a07e3e; color: #fff; }
         .select2-container { width: 100% !important; }
@@ -55,7 +55,7 @@
                     <strong>Autorización de Tratamiento de Datos Personales</strong><br><br>
                     De conformidad con la <strong>Ley 1581 de 2012</strong> y el Decreto 1377 de 2013 sobre Protección de Datos Personales en Colombia, al diligenciar este formulario usted autoriza de manera libre, expresa e informada a <strong>Enterprises SST S.A.S.</strong> para recolectar, almacenar, usar y circular sus datos personales (nombre, número de identificación, cargo y datos de contacto) con las siguientes finalidades:<br><br>
                     • Gestionar el registro de asistencia y evaluación de la inducción en Seguridad y Salud en el Trabajo (SG-SST).<br>
-                    • Elaborar informes y reportes de gestión del SG-SST para la copropiedad.<br>
+                    • Elaborar informes y reportes de gestión del SG-SST para el establecimiento comercial.<br>
                     • Cumplir con obligaciones legales en materia de SST ante entidades reguladoras (ARL, Ministerio de Trabajo).<br><br>
                     Sus datos serán tratados con total confidencialidad y no serán cedidos a terceros sin su consentimiento, salvo obligación legal. Puede ejercer sus derechos de acceso, corrección, cancelación u oposición (ARCO) contactándonos en <strong>info@enterprisessst.com</strong>.<br><br>
                     <em>Al marcar la casilla y enviar este formulario, usted declara haber leído y aceptado esta autorización.</em>

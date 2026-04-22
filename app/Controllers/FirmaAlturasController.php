@@ -309,7 +309,7 @@ class FirmaAlturasController extends BaseController
                 <p>Estimado/a Administrador/a,</p>
                 <p><strong>' . htmlspecialchars($nombreCliente) . '</strong></p>
 
-                <p style="text-align: justify;">Como responsables de la gestión del Sistema de Gestión de Seguridad y Salud en el Trabajo (SG-SST) de su copropiedad, nos permitimos informarle sobre la implementación de un protocolo de obligatorio cumplimiento relacionado con <strong>trabajos en alturas</strong> realizados en las instalaciones del conjunto.</p>
+                <p style="text-align: justify;">Como responsables de la gestión del Sistema de Gestión de Seguridad y Salud en el Trabajo (SG-SST) de su establecimiento comercial, nos permitimos informarle sobre la implementación de un protocolo de obligatorio cumplimiento relacionado con <strong>trabajos en alturas</strong> realizados en las instalaciones del conjunto.</p>
 
                 <div style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 15px 0;">
                     <h4 style="margin: 0 0 8px; color: #856404;">¿Por qué es importante?</h4>
@@ -318,11 +318,11 @@ class FirmaAlturasController extends BaseController
 
                 <div style="background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; padding: 15px; margin: 15px 0;">
                     <h4 style="margin: 0 0 8px; color: #721c24;">¿Cuál es el riesgo?</h4>
-                    <p style="margin: 0; font-size: 14px; color: #721c24; text-align: justify;">Si la copropiedad autoriza o permite trabajos en alturas con personal que <strong>no cuenta con curso de alturas, EPS, ARL o seguridad social</strong>, y ocurre un accidente grave o mortal:</p>
+                    <p style="margin: 0; font-size: 14px; color: #721c24; text-align: justify;">Si el establecimiento comercial autoriza o permite trabajos en alturas con personal que <strong>no cuenta con curso de alturas, EPS, ARL o seguridad social</strong>, y ocurre un accidente grave o mortal:</p>
                     <ul style="font-size: 14px; color: #721c24; margin: 8px 0 0;">
                         <li>El administrador como representante legal responde civil y penalmente</li>
                         <li>La ARL no cubre el accidente si el trabajador no está afiliado</li>
-                        <li>La copropiedad asume costos médicos, indemnizaciones y sanciones</li>
+                        <li>El establecimiento comercial asume costos médicos, indemnizaciones y sanciones</li>
                         <li><strong>Cycloid Talent SAS</strong> no asume responsabilidad por trabajos no notificados</li>
                     </ul>
                 </div>
@@ -332,7 +332,7 @@ class FirmaAlturasController extends BaseController
                     <p style="margin: 0; font-size: 14px; color: #155724; text-align: justify;"><strong>Antes de autorizar cualquier trabajo en alturas</strong>, notifique formalmente a su consultor SST asignado para verificar que el contratista cumpla con todos los requisitos legales.</p>
                 </div>
 
-                <p style="text-align: justify;">Para formalizar la adopción de este protocolo en su copropiedad, requerimos su firma digital como representante legal:</p>
+                <p style="text-align: justify;">Para formalizar la adopción de este protocolo en su establecimiento comercial, requerimos su firma digital como representante legal:</p>
 
                 <div style="text-align: center; margin: 25px 0;">
                     <a href="' . $urlFirma . '" style="display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #28a745, #218838); color: white; text-decoration: none; border-radius: 25px; font-size: 16px; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">Firmar protocolo de trabajo en alturas</a>

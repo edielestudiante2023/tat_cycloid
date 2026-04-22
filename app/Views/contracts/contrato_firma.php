@@ -21,7 +21,7 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
         .header-contrato {
-            background: linear-gradient(135deg, #1a5f7a 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #1a5f7a 0%, #ee6c21 100%);
             color: white;
             border-radius: 12px 12px 0 0;
             padding: 25px;
@@ -503,5 +503,6 @@
         });
     });
     </script>
+    <script src="<?= base_url('js/image-compress.js?v=1') ?>" defer></script>
 </body>
 </html>

@@ -17,12 +17,12 @@
         font-weight: 600;
         white-space: nowrap;
         cursor: pointer;
-        border: 2px solid #e76f51;
+        border: 2px solid #ee6c21;
         background: white;
-        color: #e76f51;
+        color: #ee6c21;
         transition: all .2s;
     }
-    .filter-pill.active { background: #e76f51; color: white; }
+    .filter-pill.active { background: #ee6c21; color: white; }
     .filter-pill .pill-count {
         background: rgba(0,0,0,0.15);
         border-radius: 10px;
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 showCancelButton: true,
                 confirmButtonText: 'Si, reenviar',
                 cancelButtonText: 'Cancelar',
-                confirmButtonColor: '#e76f51',
+                confirmButtonColor: '#ee6c21',
             }).then(function(result) {
                 if (result.isConfirmed) {
                     fetch('<?= base_url('/inspecciones/carta-vigia/reenviar/') ?>' + id, {

@@ -578,5 +578,6 @@
             });
         });
     </script>
+    <script src="<?= base_url('js/image-compress.js?v=1') ?>" defer></script>
 </body>
 </html>

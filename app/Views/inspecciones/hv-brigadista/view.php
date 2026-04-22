@@ -39,7 +39,7 @@
                 <img src="<?= base_url($hv['foto_brigadista']) ?>" alt="Foto" style="max-height:150px; border-radius:8px; object-fit:contain;">
             </div>
             <?php endif; ?>
-            <div><strong>Copropiedad:</strong> <?= esc($cliente['nombre_cliente'] ?? 'N/A') ?></div>
+            <div><strong>Establecimiento comercial:</strong> <?= esc($cliente['nombre_cliente'] ?? 'N/A') ?></div>
             <div><strong>Nombre:</strong> <?= esc($hv['nombre_completo'] ?? 'N/A') ?></div>
             <div><strong>Documento:</strong> <?= esc($hv['documento_identidad'] ?? 'N/A') ?></div>
             <div><strong>Fecha nacimiento:</strong> <?= !empty($hv['f_nacimiento']) ? date('d/m/Y', strtotime($hv['f_nacimiento'])) : 'N/A' ?></div>

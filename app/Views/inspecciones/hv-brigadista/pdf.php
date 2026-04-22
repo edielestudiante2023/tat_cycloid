@@ -22,20 +22,20 @@
         .header-title { text-align: center; font-weight: bold; font-size: 9px; }
         .header-code { width: 120px; font-size: 8px; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 6px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 6px; color: #c9541a; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 6px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
         .info-label { font-weight: bold; color: #444; width: 160px; background: #f7f7f7; }
 
-        .section-title { background: #1b4332; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
+        .section-title { background: #c9541a; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
 
         .data-table { width: 100%; border-collapse: collapse; margin-bottom: 6px; }
         .data-table th { background: #e8e8e8; border: 1px solid #aaa; padding: 3px 4px; font-size: 8px; text-align: center; }
         .data-table td { border: 1px solid #ccc; padding: 2px 4px; font-size: 8px; text-align: center; vertical-align: middle; }
 
         .content-text { font-size: 8px; line-height: 1.4; margin-bottom: 4px; text-align: justify; }
-        .theory-title { font-weight: bold; font-size: 9px; margin: 6px 0 3px; color: #1b4332; }
+        .theory-title { font-weight: bold; font-size: 9px; margin: 6px 0 3px; color: #c9541a; }
 
         .foto-inline { max-width: 120px; max-height: 150px; border: 1px solid #ccc; }
         .firma-inline { max-width: 200px; max-height: 80px; border: 1px solid #ccc; }
@@ -64,19 +64,19 @@
 
     <!-- ====== MARCO TEORICO ====== -->
     <div class="theory-title">1. OBJETIVO</div>
-    <p class="content-text">Registrar y mantener actualizada la informacion personal, de salud y de formacion de cada brigadista de la copropiedad <?= esc($cliente['nombre_cliente'] ?? '') ?>, con el fin de garantizar que el personal que integra la brigada de emergencias cumple con las condiciones fisicas, medicas y de capacitacion necesarias para responder de manera efectiva ante situaciones de emergencia.</p>
+    <p class="content-text">Registrar y mantener actualizada la informacion personal, de salud y de formacion de cada brigadista del establecimiento comercial <?= esc($cliente['nombre_cliente'] ?? '') ?>, con el fin de garantizar que el personal que integra la brigada de emergencias cumple con las condiciones fisicas, medicas y de capacitacion necesarias para responder de manera efectiva ante situaciones de emergencia.</p>
 
     <div class="theory-title">2. ALCANCE</div>
-    <p class="content-text">Este formato aplica a todos los miembros de las brigadas de emergencia de las copropiedades atendidas por CYCLOID SAS, de acuerdo con la Resolucion 0312 de 2019 (Estandares Minimos del SG-SST) y el Decreto 1072 de 2015 (Decreto Unico Reglamentario del Sector Trabajo). Cubre el registro de datos personales, antecedentes de salud, formacion academica relacionada con emergencias y la aptitud fisica del brigadista.</p>
+    <p class="content-text">Este formato aplica a todos los miembros de las brigadas de emergencia de los establecimientos comerciales atendidas por CYCLOID SAS, de acuerdo con la Resolucion 0312 de 2019 (Estandares Minimos del SG-SST) y el Decreto 1072 de 2015 (Decreto Unico Reglamentario del Sector Trabajo). Cubre el registro de datos personales, antecedentes de salud, formacion academica relacionada con emergencias y la aptitud fisica del brigadista.</p>
 
     <div class="theory-title">3. DEFINICIONES</div>
     <p class="content-text"><strong>Brigadista:</strong> Persona voluntaria, capacitada y entrenada para prevenir, controlar y reaccionar en situaciones de emergencia.<br>
-    <strong>Brigada de Emergencias:</strong> Grupo organizado de personas capacitadas para actuar antes, durante y despues de una emergencia dentro de la copropiedad.<br>
+    <strong>Brigada de Emergencias:</strong> Grupo organizado de personas capacitadas para actuar antes, durante y despues de una emergencia dentro del establecimiento comercial.<br>
     <strong>Hoja de Vida:</strong> Documento que consolida la informacion personal, medica y de formacion del brigadista, permitiendo evaluar su idoneidad para las funciones asignadas.<br>
     <strong>Cuestionario PAR-Q:</strong> Cuestionario de Aptitud para la Actividad Fisica (Physical Activity Readiness Questionnaire) utilizado para identificar contraindicaciones medicas previas a la participacion en actividades fisicas.</p>
 
     <div class="theory-title">4. METODOLOGIA</div>
-    <p class="content-text">El proceso de registro comprende: (1) Identificacion de la copropiedad y del brigadista, (2) Recoleccion de datos personales incluyendo registro fotografico, (3) Documentacion de estudios relacionados con la respuesta ante emergencias, (4) Evaluacion del estado de salud mediante cuestionario PAR-Q de 14 preguntas, (5) Registro de restricciones medicas y habitos de actividad fisica, (6) Firma del brigadista como constancia de veracidad de la informacion.</p>
+    <p class="content-text">El proceso de registro comprende: (1) Identificacion del establecimiento comercial y del brigadista, (2) Recoleccion de datos personales incluyendo registro fotografico, (3) Documentacion de estudios relacionados con la respuesta ante emergencias, (4) Evaluacion del estado de salud mediante cuestionario PAR-Q de 14 preguntas, (5) Registro de restricciones medicas y habitos de actividad fisica, (6) Firma del brigadista como constancia de veracidad de la informacion.</p>
 
     <!-- ====== RESULTADOS ====== -->
 <table class="header-table">
@@ -101,7 +101,7 @@
     <div class="section-title">5. DATOS PERSONALES</div>
     <table class="info-table">
         <tr>
-            <td class="info-label">Copropiedad</td>
+            <td class="info-label">Establecimiento comercial</td>
             <td><?= esc($cliente['nombre_cliente'] ?? 'N/A') ?></td>
             <td rowspan="7" style="width:130px; text-align:center; vertical-align:middle;">
                 <?php if (!empty($fotoBase64)): ?>

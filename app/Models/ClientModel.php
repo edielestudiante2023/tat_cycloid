@@ -21,7 +21,13 @@ class ClientModel extends Model
         'firma_representante_legal', 'estandares',
         'consultor_externo', 'email_consultor_externo',
         'token_firma_alturas', 'token_firma_alturas_exp',
-        'firma_alturas_fecha', 'firma_alturas_ip', 'protocolo_alturas_firmado'
+        'firma_alturas_fecha', 'firma_alturas_ip', 'protocolo_alturas_firmado',
+        // Campos TAT Fase 1 (Salud + Bomberos)
+        'nombre_comercial', 'numero_inscripcion_sanitaria', 'matricula_mercantil',
+        'departamento', 'comuna', 'barrio',
+        'propietario_nombre', 'propietario_tipo_id', 'propietario_numero_id',
+        'rep_legal_tipo_id', 'numero_trabajadores', 'autoriza_notificacion_electronica',
+        'id_tipo_establecimiento', 'aforo', 'area_m2',
     ];
 
     /**

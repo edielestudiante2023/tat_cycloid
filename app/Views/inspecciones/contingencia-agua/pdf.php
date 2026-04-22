@@ -11,17 +11,17 @@
     .header-table .logo-cell img { max-width: 90px; max-height: 55px; }
     .header-table .title-cell { text-align: center; font-weight: bold; font-size: 10px; }
     .header-table .code-cell { width: 120px; font-size: 9px; }
-    .main-title { text-align: center; font-weight: bold; font-size: 13px; color: #1b4332; margin: 20px 0 5px; }
+    .main-title { text-align: center; font-weight: bold; font-size: 13px; color: #c9541a; margin: 20px 0 5px; }
     .subtitle { text-align: center; font-weight: bold; font-size: 11px; color: #333; margin-bottom: 15px; }
-    .section-title { font-weight: bold; font-size: 11px; color: #1b4332; margin-top: 18px; margin-bottom: 6px; border-bottom: 1px solid #1b4332; padding-bottom: 3px; }
-    .subsection-title { font-weight: bold; font-size: 10px; color: #1b4332; margin-top: 12px; margin-bottom: 4px; }
+    .section-title { font-weight: bold; font-size: 11px; color: #c9541a; margin-top: 18px; margin-bottom: 6px; border-bottom: 1px solid #c9541a; padding-bottom: 3px; }
+    .subsection-title { font-weight: bold; font-size: 10px; color: #c9541a; margin-top: 12px; margin-bottom: 4px; }
     .data-table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 9px; }
-    .data-table th { background: #1b4332; color: white; padding: 5px 7px; text-align: center; font-weight: bold; border: 1px solid #1b4332; }
+    .data-table th { background: #c9541a; color: white; padding: 5px 7px; text-align: center; font-weight: bold; border: 1px solid #c9541a; }
     .data-table td { border: 1px solid #aaa; padding: 4px 6px; vertical-align: top; }
     .data-table tr:nth-child(even) td { background: #f5f5f5; }
     .alert-box { background: #d1ecf1; border: 1.5px solid #0c5460; border-radius: 4px; padding: 7px 10px; margin: 8px 0; font-size: 9.5px; }
-    .step-box { border: 1px solid #1b4332; border-radius: 3px; padding: 6px 10px; margin: 5px 0; font-size: 9.5px; }
-    .step-num { font-weight: bold; color: #1b4332; }
+    .step-box { border: 1px solid #c9541a; border-radius: 3px; padding: 6px 10px; margin: 5px 0; font-size: 9.5px; }
+    .step-num { font-weight: bold; color: #c9541a; }
     p { margin: 5px 0 8px; font-size: 10px; }
     ul, ol { margin: 4px 0 8px 18px; font-size: 10px; }
     li { margin-bottom: 2px; }
@@ -58,11 +58,11 @@
 
 <!-- 1. OBJETIVO -->
 <div class="section-title">1. OBJETIVO</div>
-<p>Establecer las acciones de respuesta inmediata y las alternativas de suministro ante una interrupción del servicio de agua potable en <strong><?= esc($cliente['nombre_cliente'] ?? 'la copropiedad') ?></strong>, garantizando el bienestar de los residentes, la continuidad de las actividades esenciales de higiene y la preservación de las condiciones sanitarias del conjunto.</p>
+<p>Establecer las acciones de respuesta inmediata y las alternativas de suministro ante una interrupción del servicio de agua potable en <strong><?= esc($cliente['nombre_cliente'] ?? 'el establecimiento comercial') ?></strong>, garantizando el bienestar de los clientes y trabajadores, la continuidad de las actividades esenciales de higiene y la preservación de las condiciones sanitarias del conjunto.</p>
 
 <!-- 2. ALCANCE -->
 <div class="section-title">2. ALCANCE</div>
-<p>Este plan aplica a todos los residentes, empleados y visitantes de <strong><?= esc($cliente['nombre_cliente'] ?? 'la copropiedad') ?></strong> durante eventos de interrupción del suministro de agua, ya sea por cortes programados de la empresa prestadora del servicio, daños en la red interna o externa, o emergencias ambientales.</p>
+<p>Este plan aplica a todos los clientes y trabajadores, empleados y visitantes de <strong><?= esc($cliente['nombre_cliente'] ?? 'el establecimiento comercial') ?></strong> durante eventos de interrupción del suministro de agua, ya sea por cortes programados de la empresa prestadora del servicio, daños en la red interna o externa, o emergencias ambientales.</p>
 
 <!-- 3. MARCO LEGAL -->
 <div class="section-title">3. MARCO LEGAL</div>
@@ -71,7 +71,8 @@
     <li><strong>Decreto 1076 de 2015</strong> — Decreto Único Reglamentario del Sector Ambiente y Desarrollo Sostenible.</li>
     <li><strong>Resolución 2115 de 2007</strong> — Características, instrumentos básicos y frecuencias del sistema de control y vigilancia para la calidad del agua para consumo humano.</li>
     <li><strong>Decreto 1072 de 2015</strong> — SG-SST: medidas de emergencia ante situaciones que afecten condiciones de trabajo.</li>
-    <li><strong>Ley 675 de 2001</strong> — Régimen de Tienda a Tienda. Responsabilidad del administrador en la gestión de servicios esenciales.</li>
+    <li><strong>Resolución 2674 de 2013</strong> — Requisitos sanitarios y BPM; Art. 6 sobre suministro y calidad del agua en establecimientos de alimentos.</li>
+    <li><strong>Ley 232 de 1995</strong> — Requisitos de funcionamiento de los establecimientos de comercio.</li>
     <li><strong>NTC-ISO 22301</strong> — Sistemas de gestión de continuidad del negocio (referencia para planes de contingencia).</li>
 </ul>
 
@@ -90,23 +91,23 @@
 <!-- 5. CAPACIDAD DE RESERVA -->
 <div class="section-title">5. CAPACIDAD DE RESERVA DEL CONJUNTO</div>
 <?php if (!empty($inspeccion['capacidad_reserva'])): ?>
-<table style="width:100%; border:1.5px solid #1b4332; border-collapse:collapse; margin-bottom:8px;">
+<table style="width:100%; border:1.5px solid #c9541a; border-collapse:collapse; margin-bottom:8px;">
     <tr>
-        <td style="background:#1b4332; color:white; padding:6px 10px; font-weight:bold; width:40%;">CAPACIDAD DE ALMACENAMIENTO</td>
+        <td style="background:#c9541a; color:white; padding:6px 10px; font-weight:bold; width:40%;">CAPACIDAD DE ALMACENAMIENTO</td>
         <td style="padding:7px 10px;"><?= esc($inspeccion['capacidad_reserva']) ?></td>
     </tr>
 </table>
 <?php else: ?>
 <p class="nota">Capacidad de reserva: por verificar — documentar tanques y volumen total antes de activar el plan.</p>
 <?php endif; ?>
-<p>La copropiedad debe mantener sus tanques de almacenamiento en condiciones óptimas de limpieza y desinfección, revisados mínimo cada 6 meses, conforme a la Resolución 2115 de 2007.</p>
+<p>El establecimiento comercial debe mantener sus tanques de almacenamiento en condiciones óptimas de limpieza y desinfección, revisados mínimo cada 6 meses, conforme a la Resolución 2115 de 2007.</p>
 
 <!-- 6. PROVEEDOR DE AGUA ALTERNATIVA -->
 <div class="section-title">6. PROVEEDOR DE AGUA ALTERNATIVA (CARROTANQUE)</div>
 <?php if (!empty($inspeccion['empresa_carrotanque'])): ?>
-<table style="width:100%; border:1.5px solid #1b4332; border-collapse:collapse; margin-bottom:8px;">
+<table style="width:100%; border:1.5px solid #c9541a; border-collapse:collapse; margin-bottom:8px;">
     <tr>
-        <td style="background:#1b4332; color:white; padding:6px 10px; font-weight:bold; width:40%;">PROVEEDOR CARROTANQUE</td>
+        <td style="background:#c9541a; color:white; padding:6px 10px; font-weight:bold; width:40%;">PROVEEDOR CARROTANQUE</td>
         <td style="padding:7px 10px;"><?= nl2br(esc($inspeccion['empresa_carrotanque'])) ?></td>
     </tr>
 </table>
@@ -125,23 +126,23 @@
 
 <div class="subsection-title">7.1 Corte programado (con aviso previo)</div>
 <div class="step-box"><span class="step-num">PASO 1:</span> Al recibir notificación de corte, la administración verifica el nivel de los tanques de almacenamiento y la duración estimada del corte.</div>
-<div class="step-box"><span class="step-num">PASO 2:</span> Si los tanques tienen capacidad suficiente para la duración del corte, comunicar a los residentes recomendando uso racional del agua.</div>
+<div class="step-box"><span class="step-num">PASO 2:</span> Si los tanques tienen capacidad suficiente para la duración del corte, comunicar a los clientes y trabajadores recomendando uso racional del agua.</div>
 <div class="step-box"><span class="step-num">PASO 3:</span> Si los tanques no tienen capacidad suficiente, contactar al proveedor de carrotanque con mínimo 4 horas de anticipación y coordinar la entrega.</div>
-<div class="step-box"><span class="step-num">PASO 4:</span> Circular informativa a todos los residentes indicando: duración estimada del corte, disponibilidad de agua en tanques/carrotanque y recomendaciones de uso racional.</div>
+<div class="step-box"><span class="step-num">PASO 4:</span> Circular informativa a todos los clientes y trabajadores indicando: duración estimada del corte, disponibilidad de agua en tanques/carrotanque y recomendaciones de uso racional.</div>
 
 <div class="subsection-title">7.2 Corte no programado (emergencia)</div>
 <div class="step-box"><span class="step-num">PASO 1:</span> Verificar de inmediato si el corte es de la empresa prestadora (llamar a la línea de atención) o interno (revisar sistema de bombeo y tuberías).</div>
 <div class="step-box"><span class="step-num">PASO 2:</span> Contactar al proveedor de carrotanque para solicitud urgente de agua.</div>
 <div class="step-box"><span class="step-num">PASO 3:</span> Si el daño es interno, contactar al plomero o empresa de mantenimiento para reparación urgente.</div>
-<div class="step-box"><span class="step-num">PASO 4:</span> Comunicar a los residentes la situación y las acciones en curso mediante mensajes por el sistema de comunicación del conjunto.</div>
+<div class="step-box"><span class="step-num">PASO 4:</span> Comunicar a los clientes y trabajadores la situación y las acciones en curso mediante mensajes por el sistema de comunicación del conjunto.</div>
 <div class="step-box"><span class="step-num">PASO 5:</span> Si el corte supera 24 horas, notificar a la Secretaría de Salud Municipal y solicitar apoyo institucional.</div>
 
 <!-- 8. MEDIDAS DE USO RACIONAL -->
 <div class="section-title">8. MEDIDAS DE USO RACIONAL DEL AGUA DURANTE LA CONTINGENCIA</div>
 <ul>
-    <li>Suspender temporalmente el riego de jardines y lavado de zonas comunes.</li>
+    <li>Suspender temporalmente el riego de jardines y lavado de áreas del establecimiento.</li>
     <li>Priorizar el uso del agua para consumo humano, higiene personal y preparación de alimentos.</li>
-    <li>Instruir a los residentes para llenar recipientes de almacenamiento personal (baldes, ollas) mientras haya presión.</li>
+    <li>Instruir a los clientes y trabajadores para llenar recipientes de almacenamiento personal (baldes, ollas) mientras haya presión.</li>
     <li>Evitar el uso de la piscina y zonas recreativas que consuman agua.</li>
     <li>Reportar inmediatamente cualquier fuga o desperdicio detectado.</li>
 </ul>
@@ -154,10 +155,10 @@
 <div class="section-title">9. RESPONSABLES</div>
 <table class="data-table">
     <tr><th>ROL</th><th>RESPONSABILIDAD</th></tr>
-    <tr><td><strong>Administrador(a)</strong></td><td>Activar el plan, contactar al proveedor de carrotanque, notificar a residentes y autoridades, gestionar el registro de la contingencia.</td></tr>
+    <tr><td><strong>Administrador(a)</strong></td><td>Activar el plan, contactar al proveedor de carrotanque, notificar a clientes y trabajadores y autoridades, gestionar el registro de la contingencia.</td></tr>
     <tr><td><strong>Consultor SST</strong></td><td>Asesorar el plan, verificar condiciones sanitarias del agua alternativa, capacitar al personal.</td></tr>
     <tr><td><strong>Personal de mantenimiento</strong></td><td>Verificar estado del sistema de bombeo y tuberías, reportar daños internos y coordinar reparaciones.</td></tr>
-    <tr><td><strong>Consejo de Administración</strong></td><td>Aprobar la contratación del proveedor de carrotanque y gestionar el presupuesto de emergencia.</td></tr>
+    <tr><td><strong>Propietario del establecimiento</strong></td><td>Aprobar la contratación del proveedor de carrotanque y gestionar el presupuesto de emergencia.</td></tr>
 </table>
 
 <!-- 10. REGISTROS -->
@@ -165,9 +166,9 @@
 <ul>
     <li>Registro de cada evento de corte: fecha, hora, duración, causa, acciones tomadas.</li>
     <li>Factura o recibo del servicio de carrotanque (volumen, costo, fecha).</li>
-    <li>Circular de notificación a residentes.</li>
+    <li>Circular de notificación a clientes y trabajadores.</li>
     <li>Reporte a la empresa prestadora del servicio si el corte es externo.</li>
-    <li>Acta del Consejo de Administración si el evento requirió aprobación de recursos.</li>
+    <li>Registro de aprobación del propietario si el evento requirió aprobación de recursos.</li>
 </ul>
 
 

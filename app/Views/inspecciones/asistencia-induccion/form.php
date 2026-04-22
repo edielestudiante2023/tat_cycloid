@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         showCancelButton: true,
                         confirmButtonText: 'Si, restaurar',
                         cancelButtonText: 'No, empezar de cero',
-                        confirmButtonColor: '#e76f51',
+                        confirmButtonColor: '#ee6c21',
                     }).then(result => {
                         if (result.isConfirmed) restoreFromLocal(data);
                         else localStorage.removeItem(STORAGE_KEY);
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showCancelButton: true,
             confirmButtonText: '<i class="fas fa-signature"></i> Ir a Firmas',
             cancelButtonText: 'Seguir editando',
-            confirmButtonColor: '#e76f51',
+            confirmButtonColor: '#ee6c21',
             cancelButtonColor: '#6c757d',
         }).then(result => {
             if (!result.isConfirmed) return;
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 showCancelButton: true,
                 confirmButtonText: 'Verificar',
                 cancelButtonText: 'Cancelar',
-                confirmButtonColor: '#e76f51',
+                confirmButtonColor: '#ee6c21',
                 inputValidator: (val) => {
                     if (!val) return 'Debe ingresar un número';
                     if (parseInt(val) !== op1.r) return 'Respuesta incorrecta. Intente de nuevo.';

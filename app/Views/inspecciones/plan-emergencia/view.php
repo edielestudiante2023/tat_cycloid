@@ -63,7 +63,7 @@ $telefonosCiudad = ($ciudad && isset($telefonos[$ciudad])) ? $telefonos[$ciudad]
                 <?php endif; ?>
                 <tr><td class="text-muted">Sismo resistente</td><td><?= esc($inspeccion['sismo_resistente'] ?? '-') ?></td></tr>
                 <tr><td class="text-muted">Ano de construccion</td><td><?= $inspeccion['anio_construccion'] ?? '-' ?></td></tr>
-                <tr><td class="text-muted">Unidades habitacionales</td><td><?= $inspeccion['numero_unidades_habitacionales'] ?? '-' ?></td></tr>
+                <tr><td class="text-muted">Áreas / dependencias</td><td><?= $inspeccion['numero_unidades_habitacionales'] ?? '-' ?></td></tr>
             </table>
             <?php if (!empty($inspeccion['foto_torres_1']) || !empty($inspeccion['foto_torres_2'])): ?>
             <div class="row g-2 mt-2">
@@ -84,9 +84,9 @@ $telefonosCiudad = ($ciudad && isset($telefonos[$ciudad])) ? $telefonos[$ciudad]
         <div class="card-body">
             <h6 class="card-title" style="font-size:14px; color:#999;">PARQUEADEROS</h6>
             <table class="table table-sm mb-0" style="font-size:14px;">
-                <tr><td class="text-muted" style="width:60%;">Carros residentes</td><td><?= $inspeccion['parqueaderos_carros_residentes'] ?? '0' ?></td></tr>
+                <tr><td class="text-muted" style="width:60%;">Carros clientes y trabajadores</td><td><?= $inspeccion['parqueaderos_carros_residentes'] ?? '0' ?></td></tr>
                 <tr><td class="text-muted">Carros visitantes</td><td><?= $inspeccion['parqueaderos_carros_visitantes'] ?? '0' ?></td></tr>
-                <tr><td class="text-muted">Motos residentes</td><td><?= $inspeccion['parqueaderos_motos_residentes'] ?? '0' ?></td></tr>
+                <tr><td class="text-muted">Motos clientes y trabajadores</td><td><?= $inspeccion['parqueaderos_motos_residentes'] ?? '0' ?></td></tr>
                 <tr><td class="text-muted">Motos visitantes</td><td><?= $inspeccion['parqueaderos_motos_visitantes'] ?? '0' ?></td></tr>
                 <tr><td class="text-muted">Parqueadero privado</td><td><?= $enumSiNo[$inspeccion['hay_parqueadero_privado'] ?? ''] ?? '-' ?></td></tr>
             </table>
@@ -108,7 +108,7 @@ $telefonosCiudad = ($ciudad && isset($telefonos[$ciudad])) ? $telefonos[$ciudad]
     <!-- Areas Comunes -->
     <div class="card mb-3">
         <div class="card-body">
-            <h6 class="card-title" style="font-size:14px; color:#999;">AREAS COMUNES</h6>
+            <h6 class="card-title" style="font-size:14px; color:#999;">ÁREAS DEL ESTABLECIMIENTO</h6>
             <table class="table table-sm mb-0" style="font-size:14px;">
                 <tr><td class="text-muted" style="width:60%;">Salones comunales</td><td><?= $inspeccion['cantidad_salones_comunales'] ?? '0' ?></td></tr>
                 <tr><td class="text-muted">Locales comerciales</td><td><?= $inspeccion['cantidad_locales_comerciales'] ?? '0' ?></td></tr>

@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-dark: #1b4332;
-            --secondary-dark: #2d6a4f;
-            --gold-primary: #e76f51;
+            --primary-dark: #c9541a;
+            --secondary-dark: #ee6c21;
+            --gold-primary: #ee6c21;
         }
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -55,7 +55,7 @@
             border: none;
             font-weight: 600;
         }
-        .btn-back:hover { background: #f4a261; color: var(--primary-dark); }
+        .btn-back:hover { background: #ff8d4e; color: var(--primary-dark); }
     </style>
 </head>
 <body>

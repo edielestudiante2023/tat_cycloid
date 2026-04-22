@@ -45,7 +45,7 @@
 
         /* Header */
         .header-section {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             color: white;
             padding: 1.5rem;
             border-radius: 15px;
@@ -70,7 +70,7 @@
         .indicator-value {
             font-size: 2rem;
             font-weight: bold;
-            color: #1b4332;
+            color: #c9541a;
         }
 
         .indicator-label {
@@ -177,7 +177,7 @@
 
         .accordion-estandar .accordion-button:not(.collapsed) {
             background-color: #e9ecef;
-            color: #1b4332;
+            color: #c9541a;
         }
 
         .accordion-estandar .accordion-body {
@@ -312,7 +312,7 @@
         }
 
         footer a {
-            color: #007bff;
+            color: #ee6c21;
             text-decoration: none;
         }
 
@@ -373,14 +373,8 @@
     <nav class="navbar-custom">
         <div class="container-fluid d-flex justify-content-between align-items-center px-3">
             <div class="d-flex align-items-center gap-2">
-                <a href="https://dashboard.cycloidtalent.com/login">
-                    <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT">
-                </a>
-                <a href="https://cycloidtalent.com/index.php/consultoria-sst">
-                    <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST">
-                </a>
-                <a href="https://cycloidtalent.com/">
-                    <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids">
+                <a href="https://tat.cycloidtalent.com/index.php/login">
+                    <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT">
                 </a>
             </div>
             <div class="d-flex gap-2">

@@ -24,7 +24,7 @@
         .header-code { width: 130px; font-size: 9px; }
 
         /* Titulo principal */
-        .main-title { text-align: center; font-size: 12px; font-weight: bold; margin: 10px 0 8px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 12px; font-weight: bold; margin: 10px 0 8px; color: #c9541a; }
 
         /* Tabla datos generales */
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; border: 1px solid #ccc; }
@@ -32,7 +32,7 @@
         .info-label { font-weight: bold; color: #444; width: 90px; background: #f7f7f7; }
 
         /* Titulos de seccion */
-        .section-title { background: #1b4332; color: white; padding: 4px 10px; font-weight: bold; font-size: 10px; margin: 10px 0 5px; }
+        .section-title { background: #c9541a; color: white; padding: 4px 10px; font-weight: bold; font-size: 10px; margin: 10px 0 5px; }
 
         /* Tablas de datos */
         .data-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; }

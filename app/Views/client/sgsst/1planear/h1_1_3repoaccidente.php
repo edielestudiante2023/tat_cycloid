@@ -209,13 +209,13 @@
             La notificación e investigación de los accidentes de trabajo que se presenten eventualmente en <strong><?= $client['nombre_cliente'] ?></strong> es responsabilidad del personal asignado de manera permanente por nuestros contratistas o de manera eventual por nuestros proveedores. Estas actividades son fundamentales para lograr un mejoramiento continuo de las condiciones de salud, seguridad y medio ambiente de sus proveedores y contratistas.
         </p>
         <p>
-            Es fundamental tener presente que, en el ámbito de las propiedades horizontales, donde no existen trabajadores directos ni son consideradas empresas en sí mismas, nuestra empresa, CYCLOID TALENT, se especializa en la gestión de la Seguridad y Salud en el Trabajo (SST). En este contexto, <strong><?= $client['nombre_cliente'] ?></strong> cuenta con proveedores que asignan talento humano de forma permanente y contratistas que destinan personal para actividades específicas.
+            Es fundamental tener presente que, en el ámbito de los establecimientos comerciales, donde no existen trabajadores directos ni son consideradas empresas en sí mismas, nuestra empresa, CYCLOID TALENT, se especializa en la gestión de la Seguridad y Salud en el Trabajo (SST). En este contexto, <strong><?= $client['nombre_cliente'] ?></strong> cuenta con proveedores que asignan talento humano de forma permanente y contratistas que destinan personal para actividades específicas.
         </p>
         <p>
             Dentro de este marco, la Resolución 1570 de 2005 establece las variables y mecanismos para la recolección de información en salud ocupacional y riesgos laborales. Asimismo, esta resolución impone la obligación de registrar de manera clara y completa el Formato Único de Reporte de Accidentes de Trabajo (FURAT).
         </p>
         <p>
-            La importancia de este registro es tal que, en caso de faltantes en la información, el Ministerio correspondiente puede notificar por escrito a los empleadores, solicitando explicaciones. Esta situación podría conllevar sanciones para los empresarios, en forma de multas sucesivas mensuales de hasta 500 SMLMV. Adicionalmente, las Administradoras de Riesgos Laborales también están sujetas a sanciones si no solicitan la información faltante a los empleadores o no la reportan al Ministerio, pudiendo alcanzar multas de hasta 1000 SMLMV. En CYCLOID TALENT, nos comprometemos a garantizar la adecuada gestión de la información requerida, evitando posibles sanciones y contribuyendo al cumplimiento normativo en materia de SST en propiedades horizontales.
+            La importancia de este registro es tal que, en caso de faltantes en la información, el Ministerio correspondiente puede notificar por escrito a los empleadores, solicitando explicaciones. Esta situación podría conllevar sanciones para los empresarios, en forma de multas sucesivas mensuales de hasta 500 SMLMV. Adicionalmente, las Administradoras de Riesgos Laborales también están sujetas a sanciones si no solicitan la información faltante a los empleadores o no la reportan al Ministerio, pudiendo alcanzar multas de hasta 1000 SMLMV. En CYCLOID TALENT, nos comprometemos a garantizar la adecuada gestión de la información requerida, evitando posibles sanciones y contribuyendo al cumplimiento normativo en materia de SST en establecimientos comerciales.
         </p>
         <p>
             <strong>Término:</strong> El artículo 62 del Decreto 1295 de 1994 establece para el empleador la obligatoriedad de reportar todo accidente de trabajo o enfermedad laboral que ocurra en una empresa o actividad económica dentro de los dos días hábiles siguientes a la ocurrencia del accidente o diagnóstico de la enfermedad.
@@ -242,13 +242,13 @@
         <ul class="delta-lista">
             <li>Prestar los primeros auxilios: Proporcionar los primeros auxilios al trabajador afectado si se dispone de los medios necesarios.</li>
             <li>Verificar si necesita atención médica: Evaluar la gravedad del incidente y, si es necesario, trasladarlo a la institución de salud más cercana.</li>
-            <li>Comunicar el incidente al administrador de la copropiedad y al supervisor/líder para reporte correspondiente.</li>
+            <li>Comunicar el incidente al responsable del establecimiento y al supervisor/líder para reporte correspondiente.</li>
             <li>Determinar si el accidente es de origen laboral.</li>
             <li>Contactar a la línea efectiva de la ARL del proveedor o contratista para solicitar orientación.</li>
             <li>Solicitar el diligenciamiento del Formato Único de Reporte de Accidentes de Trabajo (FURAT) y una copia del mismo por parte del proveedor o contratista.</li>
             <li>Confirmar el envío de la copia del FURAT a la EPS y la ARL.</li>
             <li>Monitorear el envío del original a la ARL del proveedor o contratista dentro de los plazos establecidos.</li>
-            <li>Realizar una investigación del accidente junto con los líderes de SST de los contratistas o proveedores y de la tienda a tienda para definir acciones correctivas.</li>
+            <li>Realizar una investigación del accidente junto con los líderes de SST de los contratistas o proveedores y de la <?= esc($client['nombre_cliente'] ?? '') ?> para definir acciones correctivas.</li>
         </ul>
 
         <h3 class="gamma-titulo">4. BENEFICIOS</h3>
@@ -260,7 +260,7 @@
             <li>Manifiesta el compromiso de los proveedores y contratistas con la seguridad de su personal.</li>
         </ul>
         <p>
-            Tanto para la tienda a tienda como para el talento humano asignado por parte de proveedores y contratistas, es fundamental colaborar en la investigación para identificar las causas, definir acciones preventivas y compartir aprendizajes que mejoren la seguridad laboral.
+            Tanto para la <?= esc($client['nombre_cliente'] ?? '') ?> como para el talento humano asignado por parte de proveedores y contratistas, es fundamental colaborar en la investigación para identificar las causas, definir acciones preventivas y compartir aprendizajes que mejoren la seguridad laboral.
         </p>
     </div>
 

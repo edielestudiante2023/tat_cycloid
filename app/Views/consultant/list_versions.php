@@ -108,18 +108,8 @@
   <nav style="background-color: white; position: fixed; top: 0; width: 100%; z-index: 1000; padding: 10px 0; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
     <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 20px;">
       <div>
-        <a href="https://dashboard.cycloidtalent.com/login">
-          <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" style="height: 100px;">
-        </a>
-      </div>
-      <div>
-        <a href="https://cycloidtalent.com/index.php/consultoria-sst">
-          <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" style="height: 100px;">
-        </a>
-      </div>
-      <div>
-        <a href="https://cycloidtalent.com/">
-          <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo" style="height: 100px;">
+        <a href="https://tat.cycloidtalent.com/index.php/login">
+          <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" style="height: 100px;">
         </a>
       </div>
     </div>
@@ -127,7 +117,7 @@
     <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin: 10px 0 0; padding: 0 20px;">
       <div style="text-align: center;">
         <h2 style="margin: 0; font-size: 16px;">Ir a Dashboard</h2>
-        <a href="<?= base_url('/dashboardconsultant') ?>" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-size: 14px; margin-top: 5px;">Ir a DashBoard</a>
+        <a href="<?= base_url('/dashboardconsultant') ?>" style="display: inline-block; padding: 10px 20px; background-color: #ee6c21; color: white; text-decoration: none; border-radius: 5px; font-size: 14px; margin-top: 5px;">Ir a DashBoard</a>
       </div>
 
       <button id="clearState" class="btn btn-danger btn-sm">Restablecer Filtros</button>

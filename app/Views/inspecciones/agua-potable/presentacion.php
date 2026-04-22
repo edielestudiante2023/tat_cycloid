@@ -7,7 +7,7 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #e6edf3; font-size: 18px; line-height: 1.6; }
-.doc-header { background: #1b4332; border-bottom: 4px solid #58a6ff; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.doc-header { background: #c9541a; border-bottom: 4px solid #58a6ff; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
 .doc-header h1 { font-size: 26px; color: #fff; }
 .code-badge { background: #58a6ff; color: #0d1117; font-weight: bold; font-size: 20px; padding: 8px 20px; border-radius: 6px; }
 .nav-bar { background: #161b22; padding: 12px 48px; border-bottom: 1px solid #30363d; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
@@ -17,7 +17,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 .content { padding: 48px; max-width: 1400px; margin: 0 auto; }
 .section { background: #161b22; border: 1px solid #30363d; border-radius: 10px; margin-bottom: 24px; overflow: hidden; }
 .section-header { padding: 22px 32px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; transition: background .2s; }
-.section-header:hover { background: #1b4332; }
+.section-header:hover { background: #c9541a; }
 .section-header h2 { font-size: 20px; color: #58a6ff; font-weight: 600; }
 .badges { display: flex; gap: 8px; align-items: center; }
 .badge { font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
@@ -34,7 +34,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 .sub-section { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; margin: 14px 0; padding: 18px 24px; }
 .sub-section h3 { color: #79c0ff; font-size: 15px; margin-bottom: 10px; }
 .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0; }
-.data-table th { background: #1b4332; color: #58a6ff; padding: 10px 12px; text-align: left; border: 1px solid #30363d; }
+.data-table th { background: #c9541a; color: #58a6ff; padding: 10px 12px; text-align: left; border: 1px solid #30363d; }
 .data-table td { padding: 8px 12px; border: 1px solid #21262d; vertical-align: top; }
 .data-table tr:nth-child(even) td { background: #0d1117; }
 .ai-note { background: #1f2d3f; border: 1px solid #1f6feb; border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-size: 14px; color: #79c0ff; }
@@ -89,7 +89,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
         <div class="badges"><span class="badge badge-ai">🤖 Candidato IA</span><span class="badge-arrow">▼</span></div>
     </div>
     <div class="section-body">
-        <p>Garantizar el abastecimiento continuo de agua potable en calidad y cantidad suficiente para el <strong>[NOMBRE DEL CONJUNTO]</strong>, mediante el mantenimiento, limpieza y desinfección periódica de los tanques de almacenamiento y las redes internas de distribución.</p>
+        <p>Garantizar el abastecimiento continuo de agua potable en calidad y cantidad suficiente para el <strong>[NOMBRE DEL ESTABLECIMIENTO]</strong>, mediante el mantenimiento, limpieza y desinfección periódica de los tanques de almacenamiento y las redes internas de distribución.</p>
         <div class="ai-note"><strong>🤖 Potencial IA:</strong> El objetivo podría personalizarse con los datos reales del sistema de tanques del conjunto (cantidad, capacidad, tipo: enterrado/elevado).</div>
     </div>
 </div>
@@ -100,7 +100,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
         <div class="badges"><span class="badge badge-data">Dato del cliente</span><span class="badge-ai">🤖 Candidato IA</span><span class="badge-arrow">▼</span></div>
     </div>
     <div class="section-body">
-        <p>Aplica al sistema de almacenamiento y distribución de agua del <strong>[NOMBRE DEL CONJUNTO]</strong>:</p>
+        <p>Aplica al sistema de almacenamiento y distribución de agua del <strong>[NOMBRE DEL ESTABLECIMIENTO]</strong>:</p>
         <div style="display:flex; gap:20px; flex-wrap:wrap; margin:16px 0;">
             <div class="data-highlight" style="flex:1; min-width:200px;">
                 <div class="label">🛢️ CANTIDAD DE TANQUES</div>
@@ -136,8 +136,8 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
         <div class="badges"><span class="badge badge-data">Dato del cliente</span><span class="badge-ai">🤖 Candidato IA</span><span class="badge-arrow">▼</span></div>
     </div>
     <div class="section-body">
-        <p>El agua es suministrada por la empresa de acueducto local y almacenada en los tanques del conjunto antes de su distribución a las unidades privadas y áreas comunes.</p>
-        <p>Flujo: <strong>Red pública → Tanques de almacenamiento → Red interna → Unidades y áreas comunes</strong></p>
+        <p>El agua es suministrada por la empresa de acueducto local y almacenada en los tanques del establecimiento antes de su distribución a las áreas operativas y administrativas.</p>
+        <p>Flujo: <strong>Red pública → Tanques de almacenamiento → Red interna → Áreas operativas del establecimiento</strong></p>
         <div class="ai-note"><strong>🤖 Potencial IA:</strong> Podría especificar el nombre de la empresa de acueducto, sistema de bombeo (si aplica), y la capacidad real del conjunto para almacenar agua en caso de corte.</div>
     </div>
 </div>
@@ -193,7 +193,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
     </div>
     <div class="section-body">
         <ol>
-            <li>Coordinación previa con la Administración (aviso a residentes 24h antes).</li>
+            <li>Coordinación previa con la Administración (aviso a clientes y trabajadores 24h antes).</li>
             <li>Cierre de válvula de entrada y vaciado del tanque.</li>
             <li>Colocación de EPP: traje impermeable, botas, guantes, máscara respiratoria, arnés si aplica.</li>
             <li>Retiro de sedimentos y partículas gruesas con escoba y recogedor.</li>

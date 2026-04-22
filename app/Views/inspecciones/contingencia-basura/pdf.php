@@ -11,18 +11,18 @@
     .header-table .logo-cell img { max-width: 90px; max-height: 55px; }
     .header-table .title-cell { text-align: center; font-weight: bold; font-size: 10px; }
     .header-table .code-cell { width: 120px; font-size: 9px; }
-    .main-title { text-align: center; font-weight: bold; font-size: 13px; color: #1b4332; margin: 20px 0 5px; }
+    .main-title { text-align: center; font-weight: bold; font-size: 13px; color: #c9541a; margin: 20px 0 5px; }
     .subtitle { text-align: center; font-weight: bold; font-size: 11px; color: #333; margin-bottom: 15px; }
-    .section-title { font-weight: bold; font-size: 11px; color: #1b4332; margin-top: 18px; margin-bottom: 6px; border-bottom: 1px solid #1b4332; padding-bottom: 3px; }
-    .subsection-title { font-weight: bold; font-size: 10px; color: #1b4332; margin-top: 12px; margin-bottom: 4px; }
+    .section-title { font-weight: bold; font-size: 11px; color: #c9541a; margin-top: 18px; margin-bottom: 6px; border-bottom: 1px solid #c9541a; padding-bottom: 3px; }
+    .subsection-title { font-weight: bold; font-size: 10px; color: #c9541a; margin-top: 12px; margin-bottom: 4px; }
     .data-table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 9px; }
-    .data-table th { background: #1b4332; color: white; padding: 5px 7px; text-align: center; font-weight: bold; border: 1px solid #1b4332; }
+    .data-table th { background: #c9541a; color: white; padding: 5px 7px; text-align: center; font-weight: bold; border: 1px solid #c9541a; }
     .data-table td { border: 1px solid #aaa; padding: 4px 6px; vertical-align: top; }
     .data-table tr:nth-child(even) td { background: #f5f5f5; }
     .alert-box { background: #d4edda; border: 1.5px solid #155724; border-radius: 4px; padding: 7px 10px; margin: 8px 0; font-size: 9.5px; }
     .warning-box { background: #fff3cd; border: 1.5px solid #e6a800; border-radius: 4px; padding: 7px 10px; margin: 8px 0; font-size: 9.5px; }
-    .step-box { border: 1px solid #1b4332; border-radius: 3px; padding: 6px 10px; margin: 5px 0; font-size: 9.5px; }
-    .step-num { font-weight: bold; color: #1b4332; }
+    .step-box { border: 1px solid #c9541a; border-radius: 3px; padding: 6px 10px; margin: 5px 0; font-size: 9.5px; }
+    .step-num { font-weight: bold; color: #c9541a; }
     p { margin: 5px 0 8px; font-size: 10px; }
     ul, ol { margin: 4px 0 8px 18px; font-size: 10px; }
     li { margin-bottom: 2px; }
@@ -59,11 +59,11 @@
 
 <!-- 1. OBJETIVO -->
 <div class="section-title">1. OBJETIVO</div>
-<p>Establecer las medidas de respuesta ante la falta de recolección de residuos sólidos por parte del prestador del servicio de aseo, garantizando las condiciones sanitarias, la correcta gestión temporal de los residuos y la protección de la salud de los residentes, empleados y visitantes de <strong><?= esc($cliente['nombre_cliente'] ?? 'la copropiedad') ?></strong>.</p>
+<p>Establecer las medidas de respuesta ante la falta de recolección de residuos sólidos por parte del prestador del servicio de aseo, garantizando las condiciones sanitarias, la correcta gestión temporal de los residuos y la protección de la salud de los clientes y trabajadores, empleados y visitantes de <strong><?= esc($cliente['nombre_cliente'] ?? 'el establecimiento comercial') ?></strong>.</p>
 
 <!-- 2. ALCANCE -->
 <div class="section-title">2. ALCANCE</div>
-<p>Este plan aplica a todos los residuos sólidos generados en las unidades privadas y áreas comunes de la copropiedad, durante eventos de interrupción del servicio de recolección de residuos por parte de la empresa de aseo contratada o del operador del servicio público.</p>
+<p>Este plan aplica a todos los residuos sólidos generados en las áreas operativas y administrativas del establecimiento comercial, durante eventos de interrupción del servicio de recolección de residuos por parte de la empresa de aseo contratada o del operador del servicio público.</p>
 
 <!-- 3. MARCO LEGAL -->
 <div class="section-title">3. MARCO LEGAL</div>
@@ -73,14 +73,15 @@
     <li><strong>Resolución 2184 de 2019</strong> — Código de colores para la separación de residuos sólidos en la fuente.</li>
     <li><strong>Ley 9 de 1979</strong> — Código Sanitario Nacional. Obligaciones en el manejo de residuos sólidos.</li>
     <li><strong>Decreto 1072 de 2015</strong> — SG-SST: gestión de condiciones de trabajo ante situaciones de emergencia sanitaria.</li>
-    <li><strong>Ley 675 de 2001</strong> — Régimen de Tienda a Tienda. Responsabilidad del administrador en el mantenimiento de condiciones sanitarias.</li>
+    <li><strong>Resolución 2674 de 2013</strong> — Requisitos sanitarios y BPM; Arts. 6 y 33 sobre manejo de residuos sólidos en establecimientos de alimentos.</li>
+    <li><strong>Ley 232 de 1995</strong> — Requisitos de funcionamiento de los establecimientos de comercio.</li>
 </ul>
 
 <!-- 4. INFORMACIÓN DEL PRESTADOR -->
 <div class="section-title">4. INFORMACIÓN DEL PRESTADOR DEL SERVICIO DE ASEO</div>
-<table style="width:100%; border:1.5px solid #1b4332; border-collapse:collapse; margin-bottom:8px;">
+<table style="width:100%; border:1.5px solid #c9541a; border-collapse:collapse; margin-bottom:8px;">
     <tr>
-        <td style="background:#1b4332; color:white; padding:6px 10px; font-weight:bold; width:40%;">EMPRESA PRESTADORA DE ASEO</td>
+        <td style="background:#c9541a; color:white; padding:6px 10px; font-weight:bold; width:40%;">EMPRESA PRESTADORA DE ASEO</td>
         <td style="padding:7px 10px;"><?= esc($inspeccion['empresa_aseo'] ?? 'Por definir') ?></td>
     </tr>
     <tr>
@@ -108,7 +109,7 @@
 <div class="step-box"><span class="step-num">PASO 1:</span> El recuperador o personal de aseo detecta que el vehículo recolector no realizó la ruta. Reporta inmediatamente a la administración.</div>
 <div class="step-box"><span class="step-num">PASO 2:</span> La administración llama a la línea de atención de la empresa prestadora para conocer el motivo y la fecha estimada de reanudación del servicio.</div>
 <div class="step-box"><span class="step-num">PASO 3:</span> Verificar que el cuarto de residuos tenga capacidad suficiente para almacenar los residuos de manera temporal con las condiciones mínimas sanitarias.</div>
-<div class="step-box"><span class="step-num">PASO 4:</span> Comunicar a los residentes la situación e instruirlos para reducir la generación de residuos y mantener la separación en la fuente.</div>
+<div class="step-box"><span class="step-num">PASO 4:</span> Comunicar a los clientes y trabajadores la situación e instruirlos para reducir la generación de residuos y mantener la separación en la fuente.</div>
 
 <div class="subsection-title">6.2 Entre 24 y 72 horas</div>
 <div class="step-box"><span class="step-num">PASO 5:</span> Si el servicio no se reanuda en 24 horas, contactar a la empresa para buscar un servicio de recolección especial o a terceros autorizados por la autoridad ambiental.</div>
@@ -126,26 +127,26 @@
 <table class="data-table">
     <tr><th>ACCIÓN</th><th>FRECUENCIA</th><th>RESPONSABLE</th></tr>
     <tr><td>Limpieza y desinfección del cuarto</td><td>Mínimo 2 veces al día</td><td>Recuperador / Personal de aseo</td></tr>
-    <tr><td>Sellado hermético de bolsas de residuos</td><td>Permanente</td><td>Recuperador / Residentes</td></tr>
+    <tr><td>Sellado hermético de bolsas de residuos</td><td>Permanente</td><td>Recuperador / Clientes y trabajadores</td></tr>
     <tr><td>Control de olores (desodorizante industrial)</td><td>2 veces al día</td><td>Recuperador / Personal de aseo</td></tr>
     <tr><td>Verificación de contenedores (tapas cerradas)</td><td>Cada 4 horas</td><td>Recuperador</td></tr>
     <tr><td>Control de acceso de plagas (trampas)</td><td>Diario</td><td>Recuperador / Mantenimiento</td></tr>
     <tr><td>Registro fotográfico del estado del cuarto</td><td>Diario</td><td>Administración</td></tr>
 </table>
 
-<!-- 8. INSTRUCCIONES PARA RESIDENTES -->
-<div class="section-title">8. INSTRUCCIONES PARA RESIDENTES DURANTE LA CONTINGENCIA</div>
+<!-- 8. INSTRUCCIONES PARA CLIENTES Y TRABAJADORES -->
+<div class="section-title">8. INSTRUCCIONES PARA CLIENTES Y TRABAJADORES DURANTE LA CONTINGENCIA</div>
 <ul>
     <li>Mantener la separación en la fuente según el Código de Colores (Resolución 2184 de 2019): verde (orgánicos), blanco (aprovechables), negro (no aprovechables), rojo (peligrosos).</li>
     <li>Compactar los residuos al máximo para reducir el volumen.</li>
     <li>Bajar los residuos únicamente en los horarios establecidos por la administración para la contingencia.</li>
-    <li>No acumular residuos en zonas de paso, pasillos, escaleras o áreas comunes distintas al cuarto de residuos.</li>
+    <li>No acumular residuos en zonas de paso, pasillos, escaleras o áreas del establecimiento distintas al cuarto de residuos.</li>
     <li>Reducir la generación de residuos orgánicos durante la contingencia (evitar desperdicios de comida).</li>
     <li>Reportar cualquier signo de plaga o condición insalubre a la administración de inmediato.</li>
 </ul>
 
 <div class="warning-box">
-    <strong>⚠ PROHIBIDO:</strong> Disponer residuos en vía pública, zonas verdes, parqueaderos u otras áreas del conjunto distintas al cuarto de residuos. Esta práctica genera multas económicas y riesgo sanitario para toda la comunidad.
+    <strong>⚠ PROHIBIDO:</strong> Disponer residuos en vía pública, zonas verdes, parqueaderos u otras áreas del establecimiento distintas al cuarto de residuos. Esta práctica genera multas económicas y riesgo sanitario para los ocupantes y vecinos del establecimiento.
 </div>
 
 <!-- 9. COMUNICACIÓN -->
@@ -156,18 +157,18 @@
     <tr><td>Superintendencia Servicios Públicos</td><td>Si el servicio no se restablece en 24 h</td><td>Portal web — Radicado PQRS</td></tr>
     <tr><td>Secretaría de Salud Municipal</td><td>Si el acúmulo genera riesgo sanitario (&gt;72 h)</td><td>Visita o línea de emergencias</td></tr>
     <tr><td>Autoridad ambiental (DAGMA/CVC/CAR)</td><td>Si se requiere disposición especial</td><td>Solicitud formal</td></tr>
-    <tr><td>Consejo de Administración</td><td>Para autorización de gastos extraordinarios</td><td>Convocatoria urgente</td></tr>
+    <tr><td>Propietario del establecimiento</td><td>Para autorización de gastos extraordinarios</td><td>Contacto directo</td></tr>
 </table>
 
 <!-- 10. RESPONSABLES -->
 <div class="section-title">10. RESPONSABLES</div>
 <table class="data-table">
     <tr><th>ROL</th><th>RESPONSABILIDAD</th></tr>
-    <tr><td><strong>Administrador(a)</strong></td><td>Activar el plan, contactar a la empresa de aseo y autoridades, notificar a residentes, gestionar soluciones alternativas de recolección.</td></tr>
+    <tr><td><strong>Administrador(a)</strong></td><td>Activar el plan, contactar a la empresa de aseo y autoridades, notificar a clientes y trabajadores, gestionar soluciones alternativas de recolección.</td></tr>
     <tr><td><strong>Consultor SST</strong></td><td>Asesorar el plan, verificar condiciones sanitarias del cuarto de residuos, recomendar medidas de control de plagas.</td></tr>
     <tr><td><strong>Recuperador / Personal de aseo</strong></td><td>Intensificar la limpieza y desinfección del cuarto, verificar estado de contenedores, reportar señales de plaga.</td></tr>
-    <tr><td><strong>Consejo de Administración</strong></td><td>Aprobar recursos para contratación de servicios especiales de recolección o gestión alternativa de residuos.</td></tr>
-    <tr><td><strong>Residentes</strong></td><td>Seguir instrucciones de la administración, mantener separación en la fuente, reducir generación de residuos.</td></tr>
+    <tr><td><strong>Propietario del establecimiento</strong></td><td>Aprobar recursos para contratación de servicios especiales de recolección o gestión alternativa de residuos.</td></tr>
+    <tr><td><strong>Clientes y trabajadores</strong></td><td>Seguir instrucciones de la administración, mantener separación en la fuente, reducir generación de residuos.</td></tr>
 </table>
 
 <!-- 11. REGISTROS -->
@@ -176,9 +177,9 @@
     <li>Registro de cada día sin servicio de recolección (fecha, comunicación con la empresa, respuesta obtenida).</li>
     <li>Radicado de PQRS ante la empresa prestadora y la Superintendencia de Servicios Públicos.</li>
     <li>Registro fotográfico del cuarto de residuos durante la contingencia.</li>
-    <li>Circular de notificación a residentes (fechada y firmada).</li>
+    <li>Circular de notificación a clientes y trabajadores (fechada y firmada).</li>
     <li>Factura de servicios especiales de recolección si aplica.</li>
-    <li>Acta del Consejo de Administración si se aprobaron recursos extraordinarios.</li>
+    <li>Registro de aprobación del propietario si se aprobaron recursos extraordinarios.</li>
 </ul>
 
 <div class="alert-box">

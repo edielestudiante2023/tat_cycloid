@@ -356,9 +356,9 @@
         }
 
         .btn-month:hover {
-            background-color: #007bff;
+            background-color: #ee6c21;
             color: #fff;
-            border-color: #007bff;
+            border-color: #ee6c21;
             transform: scale(1.1);
         }
 

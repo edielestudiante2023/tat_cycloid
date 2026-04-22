@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="theme-color" content="#1b4332">
+    <meta name="theme-color" content="#c9541a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Inspecciones">
@@ -25,9 +25,9 @@
 
     <style>
         :root {
-            --primary-dark: #1b4332;
-            --gold-primary: #e76f51;
-            --gold-hover: #a8843f;
+            --primary-dark: #c9541a;
+            --gold-primary: #ee6c21;
+            --gold-hover: #c9541a;
             --bg-light: #f5f5f5;
             --text-primary: #333;
         }
@@ -218,12 +218,12 @@
         .dataTables_wrapper .dataTables_info,
         .dataTables_wrapper .dataTables_paginate { font-size: 13px; }
         table.dataTable td, table.dataTable th { font-size: 13px; vertical-align: middle; }
-        table.dataTable thead th { background: #1b4332 !important; color: #e76f51 !important; border-color: #2d6a4f !important; }
+        table.dataTable thead th { background: #c9541a !important; color: #ee6c21 !important; border-color: #ee6c21 !important; }
         table.dataTable thead th.sorting:after,
         table.dataTable thead th.sorting_asc:after,
-        table.dataTable thead th.sorting_desc:after { color: #e76f51; }
-        .dataTables_wrapper .page-item.active .page-link { background-color: #e76f51; border-color: #e76f51; }
-        .dataTables_wrapper .page-link { color: #1b4332; }
+        table.dataTable thead th.sorting_desc:after { color: #ee6c21; }
+        .dataTables_wrapper .page-item.active .page-link { background-color: #ee6c21; border-color: #ee6c21; }
+        .dataTables_wrapper .page-link { color: #c9541a; }
 
         /* Badge estados */
         .badge-borrador {
@@ -441,6 +441,9 @@
 
     <!-- Autosave Server Engine -->
     <script src="/js/autosave_server.js"></script>
+
+    <!-- TAT Fase 5 - Compresor de imagenes (auto: input[type=file][accept=image/*]) -->
+    <script src="<?= base_url('js/image-compress.js?v=1') ?>" defer></script>
 
     <!-- Service Worker Registration -->
     <script>

@@ -263,7 +263,7 @@ class PlanContingenciaPlagasController extends BaseController
                 'nombre_responsable' => 'Administrador(a) del Conjunto',
                 'empresa_fumigadora' => 'Gestionar con una empresa certificada en control de plagas que garantice registro sanitario vigente ante la Secretaría de Salud, experiencia comprobada en tienda a tienda y disponibilidad para atención de emergencias en menos de 24 horas.',
             ],
-            'cliente'    => ['nombre_cliente' => 'CONJUNTO RESIDENCIAL — EJEMPLO'],
+            'cliente'    => ['nombre_cliente' => 'ESTABLECIMIENTO COMERCIAL — EJEMPLO'],
             'consultor'  => ['nombre_consultor' => 'Consultor SST'],
             'logoBase64' => '',
         ];
