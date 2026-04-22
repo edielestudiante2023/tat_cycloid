@@ -27,6 +27,15 @@ html,body{margin:0;padding:0;background:#f4f6f9;font-family:-apple-system,BlinkM
 .toast.show{opacity:1}
 .offline-bar{background:#ffc107;color:#1c2437;padding:10px;text-align:center;font-size:.85rem;font-weight:600;border-radius:8px;margin-bottom:10px;display:none}
 .offline-bar.show{display:block}
+.actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.actions a{flex:1;min-width:140px;padding:12px 14px;border-radius:10px;text-decoration:none;text-align:center;font-size:.9rem;font-weight:600;transition:transform .15s}
+.actions a:active{transform:scale(.97)}
+.actions .btn-back{background:#1c2437;color:#bd9751;border:1px solid #bd9751}
+.actions .btn-calendar{background:#bd9751;color:#1c2437}
+.progress-box{background:#fff;border-radius:12px;padding:14px;margin-top:10px;box-shadow:0 2px 8px rgba(0,0,0,.05);text-align:center}
+.progress-box .pct{font-size:1.6rem;font-weight:700;color:#1c2437}
+.progress-box .pct.done{color:#28a745}
+.progress-box .lbl{font-size:.8rem;color:#666;margin-top:2px}
 .footer{text-align:center;color:#999;font-size:.75rem;padding:20px 0}
 @media (min-width: 576px) { .wrap{padding:20px} .header{padding:28px} }
 </style>
@@ -58,7 +67,21 @@ html,body{margin:0;padding:0;background:#f4f6f9;font-family:-apple-system,BlinkM
                 </div>
             </div>
         <?php endforeach; ?>
+
+        <div class="progress-box">
+            <div class="pct" id="progressPct">0%</div>
+            <div class="lbl" id="progressLbl">0 / <?= count($actividades) ?> actividades completadas</div>
+        </div>
     <?php endif; ?>
+
+    <div class="actions">
+        <a href="<?= base_url('dashboard') ?>" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Volver al dashboard
+        </a>
+        <a href="<?= base_url('rutinas/calendario?usuario=' . (int)$usuario['id_usuario']) ?>" class="btn-calendar" target="_blank">
+            <i class="fa-solid fa-calendar-days"></i> Ver mi calendario
+        </a>
+    </div>
 
     <div class="footer">Cycloid Talent · Checklist seguro con token del día</div>
 </div>
@@ -87,6 +110,27 @@ window.addEventListener('online', updateOfflineBar);
 window.addEventListener('offline', updateOfflineBar);
 updateOfflineBar();
 
+function actualizarProgreso(){
+    const total = document.querySelectorAll('.card[data-id]').length;
+    if (total === 0) return;
+    const hechas = document.querySelectorAll('.card.done').length;
+    const pct = Math.round((hechas / total) * 100);
+    const pctEl = document.getElementById('progressPct');
+    const lblEl = document.getElementById('progressLbl');
+    if (pctEl) {
+        pctEl.textContent = pct + '%';
+        pctEl.classList.toggle('done', pct === 100);
+    }
+    if (lblEl) {
+        lblEl.textContent = hechas + ' / ' + total + ' actividades completadas';
+    }
+    if (pct === 100 && !window._completedShown) {
+        window._completedShown = true;
+        setTimeout(() => toast('✅ ¡Rutinas del día completas!'), 500);
+    }
+}
+actualizarProgreso();
+
 async function enviarCheck(idActividad, cardEl){
     const body = new FormData();
     body.append('user_id', USER_ID);
@@ -104,6 +148,7 @@ async function enviarCheck(idActividad, cardEl){
             cardEl.querySelector('.sync-label').style.display = 'none';
             cardEl.querySelector('.chk').disabled = true;
             toast(data.duplicate ? 'Ya estaba marcada' : '¡Actividad marcada!');
+            actualizarProgreso();
             return true;
         }
         toast(data.message || 'Error', true);
