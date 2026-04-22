@@ -9,6 +9,7 @@
     <meta name="apple-mobile-web-app-title" content="Cycloid TAT">
     <link rel="manifest" href="<?= base_url('/manifest_inspecciones.json?v=4') ?>">
     <link rel="apple-touch-icon" href="<?= base_url('/icons/icon-192.png?v=4') ?>">
+    <link rel="icon" type="image/png" href="<?= base_url('uploads/tat.png?v=4') ?>">
     <title>Login - Cycloid TAT</title>
 
     <!-- Bootstrap 5 CSS -->
