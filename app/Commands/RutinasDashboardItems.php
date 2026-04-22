@@ -69,7 +69,7 @@ class RutinasDashboardItems extends BaseCommand
                 'categoria'       => 'Operación Diaria',
                 'icono'           => 'fas fa-calendar-check',
                 'color_gradiente' => '#1c2437,#bd9751',
-                'target_blank'    => 0,
+                'target_blank'    => 1,
                 'activo'          => 1,
             ],
             [
@@ -82,7 +82,7 @@ class RutinasDashboardItems extends BaseCommand
                 'categoria'       => 'Operación Diaria',
                 'icono'           => 'fas fa-list-check',
                 'color_gradiente' => '#1c2437,#2d3a5e',
-                'target_blank'    => 0,
+                'target_blank'    => 1,
                 'activo'          => 1,
             ],
             [
@@ -95,7 +95,7 @@ class RutinasDashboardItems extends BaseCommand
                 'categoria'       => 'Operación Diaria',
                 'icono'           => 'fas fa-people-arrows',
                 'color_gradiente' => '#2d3a5e,#bd9751',
-                'target_blank'    => 0,
+                'target_blank'    => 1,
                 'activo'          => 1,
             ],
         ];
@@ -118,8 +118,15 @@ class RutinasDashboardItems extends BaseCommand
             $insertados++;
         }
 
+        // Asegurar target_blank=1 en los 3 (por si se insertaron antes con 0)
+        $urls = array_column($items, 'accion_url');
+        $db->table('dashboard_items')
+           ->whereIn('accion_url', $urls)
+           ->update(['target_blank' => 1]);
+        $aff = $db->affectedRows();
+
         CLI::write('', 'white');
-        CLI::write("Insertados: {$insertados} · Ya existían: {$existentes}", 'green');
+        CLI::write("Insertados: {$insertados} · Ya existían: {$existentes} · target_blank=1 en {$aff} fila(s)", 'green');
     }
 
     private function getConnection(string $env)
