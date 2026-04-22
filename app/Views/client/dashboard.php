@@ -585,6 +585,11 @@
                         </a>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="<?= base_url('rutinas/mi-checklist') ?>" class="btn w-100" style="background: linear-gradient(135deg,#bd9751,#1c2437); color:#fff; border:none;">
+                            <i class="fas fa-list-check me-2"></i> Rutinas del día
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
                         <a href="<?= base_url('empleados') ?>" class="btn w-100" style="background: linear-gradient(135deg,#1c2437,#bd9751); color:#fff; border:none;">
                             <i class="fas fa-user-plus me-2"></i> Empleados del local
                         </a>
