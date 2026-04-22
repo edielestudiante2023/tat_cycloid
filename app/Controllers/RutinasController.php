@@ -115,11 +115,13 @@ class RutinasController extends Controller
         $data['actividades'] = (new RutinaActividadModel())->where('activa', 1)->orderBy('nombre')->findAll();
 
         if ($idCliente > 0) {
+            // Incluye tanto empleados como al dueño (tipo=client): ambos pueden ejecutar rutinas.
             $data['empleados'] = $db->query(
-                "SELECT id_usuario, nombre_completo, email
+                "SELECT id_usuario, nombre_completo, email, tipo_usuario
                    FROM tbl_usuarios
-                  WHERE tipo_usuario = 'employee' AND id_entidad = ? AND estado = 'activo'
-                  ORDER BY nombre_completo",
+                  WHERE id_entidad = ? AND estado = 'activo'
+                    AND tipo_usuario IN ('employee', 'client')
+                  ORDER BY FIELD(tipo_usuario, 'client', 'employee'), nombre_completo",
                 [$idCliente]
             )->getResultArray();
 
@@ -127,7 +129,7 @@ class RutinasController extends Controller
                 $ids = array_column($data['empleados'], 'id_usuario');
                 $data['asignaciones'] = $db->query(
                     "SELECT ra.id_asignacion, ra.id_usuario, ra.id_actividad, ra.activa,
-                            u.nombre_completo, u.email,
+                            u.nombre_completo, u.email, u.tipo_usuario,
                             a.nombre AS actividad, a.frecuencia, a.peso
                        FROM rutinas_asignaciones ra
                        JOIN tbl_usuarios u         ON u.id_usuario   = ra.id_usuario
@@ -151,14 +153,14 @@ class RutinasController extends Controller
             return redirect()->back()->with('error', 'Selecciona empleado y al menos una actividad.');
         }
 
-        // Validar que el empleado pertenezca al cliente (y que el solicitante tenga acceso)
+        // Valida: empleado O dueño (client) del cliente seleccionado
         $userModel = new UserModel();
         $u = $userModel->find($idUsuario);
-        if (!$u || $u['tipo_usuario'] !== 'employee') {
-            return redirect()->back()->with('error', 'Empleado inválido.');
+        if (!$u || !in_array($u['tipo_usuario'], ['employee', 'client'], true)) {
+            return redirect()->back()->with('error', 'Usuario inválido para asignación.');
         }
         if ($idCliente > 0 && (int)$u['id_entidad'] !== $idCliente) {
-            return redirect()->back()->with('error', 'El empleado no pertenece al cliente seleccionado.');
+            return redirect()->back()->with('error', 'El usuario no pertenece al cliente seleccionado.');
         }
 
         $m = new RutinaAsignacionModel();
@@ -216,9 +218,10 @@ class RutinasController extends Controller
         $db = Database::connect();
         $data['empleados'] = $idCliente > 0
             ? $db->query(
-                "SELECT id_usuario, nombre_completo FROM tbl_usuarios
-                  WHERE tipo_usuario = 'employee' AND id_entidad = ? AND estado = 'activo'
-                  ORDER BY nombre_completo",
+                "SELECT id_usuario, nombre_completo, tipo_usuario FROM tbl_usuarios
+                  WHERE id_entidad = ? AND estado = 'activo'
+                    AND tipo_usuario IN ('employee', 'client')
+                  ORDER BY FIELD(tipo_usuario, 'client', 'employee'), nombre_completo",
                 [$idCliente]
             )->getResultArray()
             : [];

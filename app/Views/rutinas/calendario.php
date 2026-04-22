@@ -80,10 +80,10 @@ body{background:#f4f6f9}
                 <div class="col-12 col-md-3">
                     <label class="form-label small mb-1">Empleado (opcional)</label>
                     <select name="empleado" class="form-select form-select-sm">
-                        <option value="0">— Todos los empleados —</option>
-                        <?php foreach ($empleados as $e): ?>
+                        <option value="0">— Todos (dueño + empleados) —</option>
+                        <?php foreach ($empleados as $e): $isDueno = ($e['tipo_usuario'] ?? '') === 'client'; ?>
                             <option value="<?= (int)$e['id_usuario'] ?>" <?= (int)$e['id_usuario'] === $idEmpleado ? 'selected' : '' ?>>
-                                <?= esc($e['nombre_completo']) ?>
+                                <?= $isDueno ? '👤 ' : '👷 ' ?><?= esc($e['nombre_completo']) ?>
                             </option>
                         <?php endforeach; ?>
                     </select>

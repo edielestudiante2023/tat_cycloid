@@ -60,15 +60,16 @@ body{background:#f4f6f9}
                     <input type="hidden" name="id_cliente" value="<?= (int)$idCliente ?>">
                     <div class="row g-3">
                         <div class="col-12 col-md-6">
-                            <label class="form-label fw-bold">Empleado del local</label>
+                            <label class="form-label fw-bold">Quién ejecuta la rutina</label>
                             <select name="id_usuario" class="form-select" required>
                                 <option value="">Seleccione…</option>
-                                <?php foreach ($empleados as $e): ?>
+                                <?php foreach ($empleados as $e): $isDueno = ($e['tipo_usuario'] ?? '') === 'client'; ?>
                                     <option value="<?= (int)$e['id_usuario'] ?>">
-                                        <?= esc($e['nombre_completo']) ?> (<?= esc($e['email']) ?>)
+                                        <?= $isDueno ? '👤 DUEÑO — ' : '👷 ' ?><?= esc($e['nombre_completo']) ?> (<?= esc($e['email']) ?>)
                                     </option>
                                 <?php endforeach; ?>
                             </select>
+                            <small class="text-muted"><i class="bi bi-info-circle"></i> Puedes asignar tanto al dueño (si atiende él mismo) como a empleados.</small>
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label fw-bold">Actividades a asignar</label>
@@ -108,9 +109,16 @@ body{background:#f4f6f9}
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($asignaciones as $a): ?>
+                        <?php foreach ($asignaciones as $a): $isDueno = ($a['tipo_usuario'] ?? '') === 'client'; ?>
                             <tr>
-                                <td><?= esc($a['nombre_completo']) ?></td>
+                                <td>
+                                    <?php if ($isDueno): ?>
+                                        <span class="badge bg-warning text-dark">Dueño</span>
+                                    <?php else: ?>
+                                        <span class="badge bg-secondary">Empleado</span>
+                                    <?php endif; ?>
+                                    <?= esc($a['nombre_completo']) ?>
+                                </td>
                                 <td class="d-none d-md-table-cell small text-muted"><?= esc($a['email']) ?></td>
                                 <td><?= esc($a['actividad']) ?></td>
                                 <td><span class="badge bg-secondary"><?= esc($a['frecuencia']) ?></span></td>
