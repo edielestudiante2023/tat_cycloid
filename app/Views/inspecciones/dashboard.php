@@ -1057,11 +1057,13 @@
             <div><strong>Actas de Visita</strong></div>
             <div class="count">(<?= $totalActas ?>)</div>
         </a>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/senalizacion') ?>" class="card-tipo">
             <i class="fas fa-search"></i>
             <div><strong>Senalizacion</strong></div>
             <div class="count">(<?= $totalSenalizacion ?>)</div>
         </a>
+        <?php endif; ?>
         <a href="<?= base_url('/inspecciones/inspeccion-locativa') ?>" class="card-tipo">
             <i class="fas fa-hard-hat"></i>
             <div><strong>Locativas</strong></div>
@@ -1082,61 +1084,83 @@
             <div><strong>Botiquín Tipo A</strong></div>
             <div class="count">(<?= $totalBotiquinTipoA ?? 0 ?>)</div>
         </a>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/gabinetes') ?>" class="card-tipo">
             <i class="fas fa-shower"></i>
             <div><strong>Gabinetes</strong></div>
             <div class="count">(<?= $totalGabinetes ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/comunicaciones') ?>" class="card-tipo">
             <i class="fas fa-walkie-talkie"></i>
             <div><strong>Comunicaciones</strong></div>
             <div class="count">(<?= $totalComunicaciones ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/recursos-seguridad') ?>" class="card-tipo">
             <i class="fas fa-shield-alt"></i>
             <div><strong>Rec. Seguridad</strong></div>
             <div class="count">(<?= $totalRecursosSeg ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/probabilidad-peligros') ?>" class="card-tipo">
             <i class="fas fa-exclamation-triangle"></i>
             <div><strong>Prob. Peligros</strong></div>
             <div class="count">(<?= $totalProbPeligros ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/matriz-vulnerabilidad') ?>" class="card-tipo">
             <i class="fas fa-th-list"></i>
             <div><strong>Matriz Vuln.</strong></div>
             <div class="count">(<?= $totalMatrizVul ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/plan-emergencia') ?>" class="card-tipo">
             <i class="fas fa-file-medical"></i>
             <div><strong>Plan Emergencia</strong></div>
             <div class="count">(<?= $totalPlanEmergencia ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/simulacro') ?>" class="card-tipo">
             <i class="fas fa-running"></i>
             <div><strong>Ev. Simulacro</strong></div>
             <div class="count">(<?= $totalSimulacro ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/hv-brigadista') ?>" class="card-tipo">
             <i class="fas fa-id-card-alt"></i>
             <div><strong>HV Brigadista</strong></div>
             <div class="count">(<?= $totalHvBrigadista ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/dotacion-vigilante') ?>" class="card-tipo">
             <i class="fas fa-user-shield"></i>
             <div><strong>Dot. Vigilante</strong></div>
             <div class="count">(<?= $totalDotVig ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/dotacion-aseadora') ?>" class="card-tipo">
             <i class="fas fa-spray-can-sparkles"></i>
             <div><strong>Dot. Aseadora</strong></div>
             <div class="count">(<?= $totalDotAse ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/dotacion-todero') ?>" class="card-tipo">
             <i class="fas fa-broom"></i>
             <div><strong>Dot. Todero</strong></div>
             <div class="count">(<?= $totalDotTod ?>)</div>
         </a>
+        <?php endif; ?>
         <a href="<?= base_url('/inspecciones/auditoria-zona-residuos') ?>" class="card-tipo">
             <i class="fas fa-dumpster"></i>
             <div><strong>Zona Residuos</strong></div>
@@ -1147,11 +1171,13 @@
             <div><strong>Capacitaciones</strong></div>
             <div class="count">(<?= $totalRepCap ?>)</div>
         </a>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/preparacion-simulacro') ?>" class="card-tipo">
             <i class="fas fa-clipboard-check"></i>
             <div><strong>Prep. Simulacro</strong></div>
             <div class="count">(<?= $totalPrepSim ?>)</div>
         </a>
+        <?php endif; ?>
         <a href="<?= base_url('/inspecciones/asistencia-induccion') ?>" class="card-tipo">
             <i class="fas fa-clipboard-list"></i>
             <div><strong>Asistencia</strong></div>
@@ -1187,21 +1213,27 @@
             <div><strong>Plan Saneamiento</strong></div>
             <div class="count">(<?= $totalPlanSan ?>)</div>
         </a>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/contingencia-plagas') ?>" class="card-tipo">
             <i class="fas fa-bug"></i>
             <div><strong>Cont. Plagas</strong></div>
             <div class="count">(<?= $totalContPlagas ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/contingencia-agua') ?>" class="card-tipo">
             <i class="fas fa-tint-slash"></i>
             <div><strong>Cont. Sin Agua</strong></div>
             <div class="count">(<?= $totalContAgua ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/contingencia-basura') ?>" class="card-tipo">
             <i class="fas fa-trash-alt"></i>
             <div><strong>Cont. Basura</strong></div>
             <div class="count">(<?= $totalContBasura ?>)</div>
         </a>
+        <?php endif; ?>
         <a href="<?= base_url('/inspecciones/kpi-limpieza') ?>" class="card-tipo">
             <i class="fas fa-chart-line"></i>
             <div><strong>KPI Limpieza</strong></div>

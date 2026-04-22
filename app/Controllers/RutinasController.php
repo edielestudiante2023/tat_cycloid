@@ -222,6 +222,26 @@ class RutinasController extends Controller
     }
 
     // ══════════════════════════════════════════════════════════════
+    // Atajo autenticado: redirige al checklist público del día actual
+    // con token generado. Uso: botón "Rutinas del día" desde dashboards.
+    // ══════════════════════════════════════════════════════════════
+
+    public function miChecklist()
+    {
+        $session = session();
+        $userId  = (int) ($session->get('id_usuario') ?? 0);
+
+        if ($userId <= 0) {
+            return redirect()->to('/login');
+        }
+
+        $fecha = date('Y-m-d');
+        $token = NotificadorRutinas::generarToken($userId, $fecha);
+
+        return redirect()->to("/rutinas/checklist/{$userId}/{$fecha}/{$token}");
+    }
+
+    // ══════════════════════════════════════════════════════════════
     // Checklist público (sin login, con token)
     // ══════════════════════════════════════════════════════════════
 

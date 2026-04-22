@@ -1852,6 +1852,9 @@ $routes->group('listado-maestro', ['filter' => 'auth'], function($routes) {
 // RUTINAS DE TRABAJO — PWA (calendario, asignaciones, checklist público)
 // ============================================================================
 $routes->group('rutinas', ['filter' => 'auth'], function($routes) {
+    // Atajo: redirige al checklist del día del usuario logueado
+    $routes->get('mi-checklist', 'RutinasController::miChecklist');
+
     // Calendario
     $routes->get('calendario', 'RutinasController::calendario');
 

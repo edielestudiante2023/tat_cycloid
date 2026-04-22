@@ -538,7 +538,64 @@
                 <p><i class="fas fa-user me-2"></i>Sesión: <strong><?= session()->get('nombre_usuario') ?? 'Usuario' ?></strong></p>
             </div>
 
-            <!-- Quick Access Buttons -->
+            <!-- Mi gestión TAT (accesos directos al operativo del tendero) -->
+            <h4 class="section-title fade-in-up">
+                <i class="fas fa-store"></i> Mi gestión TAT
+            </h4>
+            <div class="quick-access text-center fade-in-up">
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="<?= base_url('client/neveras') ?>" class="btn w-100" style="background: linear-gradient(135deg,#0dcaf0,#0a9ec0); color:#fff; border:none;">
+                            <i class="fas fa-snowflake me-2"></i> Neveras
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="<?= base_url('client/limpieza-local') ?>" class="btn w-100" style="background: linear-gradient(135deg,#198754,#20c997); color:#fff; border:none;">
+                            <i class="fas fa-broom me-2"></i> Limpieza del local
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="<?= base_url('client/equipos') ?>" class="btn w-100" style="background: linear-gradient(135deg,#0d6efd,#0b5ed7); color:#fff; border:none;">
+                            <i class="fas fa-blender me-2"></i> Equipos y utensilios
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="<?= base_url('client/recepcion-mp') ?>" class="btn w-100" style="background: linear-gradient(135deg,#6f4f28,#a8843f); color:#fff; border:none;">
+                            <i class="fas fa-truck-ramp-box me-2"></i> Recepción de MP
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="<?= base_url('client/contaminacion') ?>" class="btn w-100" style="background: linear-gradient(135deg,#dc3545,#e74c3c); color:#fff; border:none;">
+                            <i class="fas fa-exchange-alt me-2"></i> Contaminación cruzada
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="<?= base_url('client/almacenamiento') ?>" class="btn w-100" style="background: linear-gradient(135deg,#7c3aed,#a855f7); color:#fff; border:none;">
+                            <i class="fas fa-boxes-stacked me-2"></i> Almacenamiento
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="<?= base_url('client/trabajadores') ?>" class="btn w-100" style="background: linear-gradient(135deg,#fd7e14,#e67e22); color:#fff; border:none;">
+                            <i class="fas fa-users me-2"></i> Trabajadores
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="<?= base_url('client/bomberos') ?>" class="btn w-100" style="background: linear-gradient(135deg,#b91c1c,#dc2626); color:#fff; border:none;">
+                            <i class="fas fa-fire-extinguisher me-2"></i> Permisos de Bomberos
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="<?= base_url('rutinas/mi-checklist') ?>" class="btn w-100" style="background: linear-gradient(135deg,#1c2437,#bd9751); color:#fff; border:none;">
+                            <i class="fas fa-list-check me-2"></i> Rutinas del día
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monitor de actividades TAT -->
+            <h4 class="section-title fade-in-up">
+                <i class="fas fa-tachometer-alt"></i> Monitor de actividades TAT
+            </h4>
             <div class="quick-access text-center fade-in-up">
                 <div class="row justify-content-center">
                     <div class="col-lg-3 col-md-6 mb-3">
@@ -546,6 +603,7 @@
                             <i class="fas fa-calendar-alt me-2"></i> Plan de Trabajo
                         </a>
                     </div>
+                    <?php /* TAT — botones comentados (Documentos + Panel de Gestión): no aplican por ahora. Descomentar si se reactivan.
                     <div class="col-lg-3 col-md-6 mb-3">
                         <a href="<?= base_url('/report_dashboard/' . $client['id_cliente']) ?>" target="_blank" class="btn btn-success-custom w-100">
                             <i class="fas fa-file-alt me-2"></i> Documentos
@@ -556,9 +614,20 @@
                             <i class="fas fa-chart-line me-2"></i> Panel de Gestión
                         </a>
                     </div>
+                    */ ?>
                     <div class="col-lg-3 col-md-6 mb-3">
-                        <a href="<?= base_url('/pdfUnificado/' . $client['id_cliente']) ?>" target="_blank" class="btn w-100" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white; border: none;">
-                            <i class="fas fa-file-pdf me-2"></i> PDF Unificado
+                        <a href="<?= base_url('/listCronogramasCliente/' . $client['id_cliente']) ?>" target="_blank" class="btn w-100" style="background: linear-gradient(135deg,#667eea,#764ba2); color:#fff; border:none;">
+                            <i class="fas fa-graduation-cap me-2"></i> Capacitaciones
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="<?= base_url('/listPendientesCliente/' . $client['id_cliente']) ?>" target="_blank" class="btn w-100" style="background: linear-gradient(135deg,#fa709a,#fee140); color:#fff; border:none;">
+                            <i class="fas fa-clipboard-list me-2"></i> Pendientes
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <a href="<?= base_url('/listVencimientosCliente/' . $client['id_cliente']) ?>" target="_blank" class="btn w-100" style="background: linear-gradient(135deg,#f39c12,#d35400); color:#fff; border:none;">
+                            <i class="fas fa-hourglass-half me-2"></i> Vencimientos
                         </a>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-3">
@@ -569,7 +638,7 @@
                 </div>
             </div>
 
-            <!-- Dashboards Analíticos -->
+            <?php /* TAT — Dashboards Analíticos comentados: no aplican al aplicativo TAT por ahora. Descomentar si se reactivan.
             <h4 class="section-title fade-in-up">
                 <i class="fas fa-chart-bar"></i> Dashboards Analíticos
             </h4>
@@ -597,6 +666,7 @@
                     </div>
                 </div>
             </div>
+            */ ?>
 
             <!-- Título -->
             <h4 class="section-title fade-in-up">
@@ -669,8 +739,15 @@
                 ?>
             </div>
 
-            <!-- Botón de cerrar sesión -->
+            <!-- PDF Unificado (acceso rápido antes de cerrar sesión) -->
             <div class="text-center mt-4 fade-in-up">
+                <a href="<?= base_url('/pdfUnificado/' . $client['id_cliente']) ?>" target="_blank" class="btn w-100" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color:#fff; border:none; max-width:360px; padding:12px;">
+                    <i class="fas fa-file-pdf me-2"></i> PDF Unificado
+                </a>
+            </div>
+
+            <!-- Botón de cerrar sesión -->
+            <div class="text-center mt-3 fade-in-up">
                 <a href="<?= base_url('/logout') ?>" rel="noopener noreferrer">
                     <button type="button" class="btn btn-logout" aria-label="Cerrar Sesión">
                         <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión

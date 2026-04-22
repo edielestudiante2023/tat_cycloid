@@ -15,6 +15,14 @@ class ConsultorTablaItemsController extends Controller
             ->orderBy('orden', 'ASC')
             ->findAll();
 
+        // TAT Fase 1: tarjetas ocultas por estar fuera de alcance.
+        // Para restaurar una tarjeta, elimina su "detalle" de este array.
+        $itemsOcultos = [
+            'Otto - Asistente IA',
+            'Monitor Otto',
+        ];
+        $items = array_filter($items, static fn($it) => !in_array($it['detalle'] ?? '', $itemsOcultos, true));
+
         // Agrupar por categoría
         $grouped = [];
         foreach ($items as $item) {

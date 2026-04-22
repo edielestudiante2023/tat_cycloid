@@ -139,6 +139,7 @@
             <td style="text-align:center;"><?= $inspeccion['cantidad_agua'] ?? 0 ?></td>
         </tr>
     </table>
+    <?php /* TAT — Distribucion por ubicacion PH comentada: no aplica a TAT. Solo interesa el total de extintores.
     <table class="inv-table">
         <tr>
             <td class="inv-label">Locales comerciales</td>
@@ -165,6 +166,7 @@
             <td>&nbsp;</td>
         </tr>
     </table>
+    */ ?>
 
     <!-- EXTINTORES INSPECCIONADOS -->
 <div class="section-title">DETALLE DE EXTINTORES INSPECCIONADOS (<?= count($extintores) ?>)</div>
