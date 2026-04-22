@@ -19,6 +19,8 @@ html,body{margin:0;padding:0;background:#f4f6f9;font-family:-apple-system,BlinkM
 .card .body{flex:1}
 .card .name{font-weight:600;color:#1c2437;font-size:1rem;margin-bottom:3px}
 .card .desc{color:#666;font-size:.85rem}
+.card .peso{display:inline-block;background:#f6f2e8;color:#bd9751;font-weight:700;font-size:.72rem;padding:2px 8px;border-radius:10px;margin-top:4px;border:1px solid #e7dfc6}
+.universo-badge{background:#bd9751;color:#1c2437;font-weight:700;font-size:.78rem;padding:6px 12px;border-radius:18px;display:inline-block;margin-top:10px}
 .card.done{background:#e6f7ec;border-left:4px solid #28a745}
 .card.done .name{text-decoration:line-through;color:#155724}
 .card.pending-sync{border-left:4px solid #ffc107}
@@ -47,6 +49,11 @@ html,body{margin:0;padding:0;background:#f4f6f9;font-family:-apple-system,BlinkM
         <h1><i class="fa-solid fa-list-check"></i> Rutinas del día</h1>
         <div class="sub"><?= esc($usuario['nombre_completo'] ?? 'Usuario') ?></div>
         <div class="sub"><?= date('d/m/Y', strtotime($fecha)) ?></div>
+        <?php if (!empty($pesoTotal)): ?>
+            <div class="universo-badge">
+                Meta del día: <?= number_format($pesoTotal, 2) ?> pts = 100%
+            </div>
+        <?php endif; ?>
     </div>
 
     <div id="offlineBar" class="offline-bar">
@@ -57,13 +64,14 @@ html,body{margin:0;padding:0;background:#f4f6f9;font-family:-apple-system,BlinkM
         <div class="card"><div class="body">No tienes actividades asignadas.</div></div>
     <?php else: ?>
         <?php foreach ($actividades as $a): $done = !empty($ya[(int)$a['id_actividad']]); ?>
-            <div class="card <?= $done ? 'done' : '' ?>" data-id="<?= (int)$a['id_actividad'] ?>">
+            <div class="card <?= $done ? 'done' : '' ?>" data-id="<?= (int)$a['id_actividad'] ?>" data-peso="<?= esc($a['peso']) ?>">
                 <input type="checkbox" class="chk" <?= $done ? 'checked disabled' : '' ?>>
                 <div class="body">
                     <div class="name"><?= esc($a['nombre']) ?></div>
                     <?php if (!empty($a['descripcion'])): ?>
                         <div class="desc"><?= esc($a['descripcion']) ?></div>
                     <?php endif; ?>
+                    <div class="peso"><i class="fa-solid fa-weight-scale"></i> <?= number_format((float)$a['peso'], 2) ?> pts</div>
                     <div class="sync-label" style="display:none;"><i class="fa-solid fa-clock"></i> Pendiente de sincronizar</div>
                 </div>
             </div>
@@ -71,7 +79,10 @@ html,body{margin:0;padding:0;background:#f4f6f9;font-family:-apple-system,BlinkM
 
         <div class="progress-box">
             <div class="pct" id="progressPct">0%</div>
-            <div class="lbl" id="progressLbl">0 / <?= count($actividades) ?> actividades completadas</div>
+            <div class="lbl" id="progressLbl">
+                <span id="pctPts">0.00</span> / <?= number_format($pesoTotal, 2) ?> pts
+                · <span id="pctCount">0</span> / <?= count($actividades) ?> actividades
+            </div>
         </div>
     <?php endif; ?>
 
@@ -114,19 +125,25 @@ window.addEventListener('offline', updateOfflineBar);
 updateOfflineBar();
 
 function actualizarProgreso(){
-    const total = document.querySelectorAll('.card[data-id]').length;
+    const cards = document.querySelectorAll('.card[data-id]');
+    const total = cards.length;
     if (total === 0) return;
-    const hechas = document.querySelectorAll('.card.done').length;
-    const pct = Math.round((hechas / total) * 100);
+    let pesoTotal = 0, pesoHechas = 0, hechas = 0;
+    cards.forEach(c => {
+        const p = parseFloat(c.dataset.peso || '0') || 0;
+        pesoTotal += p;
+        if (c.classList.contains('done')) { pesoHechas += p; hechas++; }
+    });
+    const pct = pesoTotal > 0 ? Math.round((pesoHechas / pesoTotal) * 100) : 0;
     const pctEl = document.getElementById('progressPct');
-    const lblEl = document.getElementById('progressLbl');
     if (pctEl) {
         pctEl.textContent = pct + '%';
         pctEl.classList.toggle('done', pct === 100);
     }
-    if (lblEl) {
-        lblEl.textContent = hechas + ' / ' + total + ' actividades completadas';
-    }
+    const ptsEl = document.getElementById('pctPts');
+    const cntEl = document.getElementById('pctCount');
+    if (ptsEl) ptsEl.textContent = pesoHechas.toFixed(2);
+    if (cntEl) cntEl.textContent = hechas;
     if (pct === 100 && !window._completedShown) {
         window._completedShown = true;
         setTimeout(() => toast('✅ ¡Rutinas del día completas!'), 500);
@@ -257,5 +274,6 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('<?= base_url('sw_rutinas.js') ?>').catch(()=>{});
 }
 </script>
+<?php helper('rutinas'); echo rutinas_floating_back(); ?>
 </body>
 </html>

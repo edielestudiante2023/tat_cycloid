@@ -59,5 +59,6 @@ body{background:#f4f6f9}
         </div>
     </div>
 </div>
+<?php helper('rutinas'); echo rutinas_floating_back(); ?>
 </body>
 </html>

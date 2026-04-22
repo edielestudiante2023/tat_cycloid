@@ -338,7 +338,7 @@ class RutinasController extends Controller
 
         $db = Database::connect();
         $actividades = $db->query(
-            "SELECT a.id_actividad, a.nombre, a.descripcion
+            "SELECT a.id_actividad, a.nombre, a.descripcion, a.peso
                FROM rutinas_asignaciones ra
                JOIN rutinas_actividades a ON a.id_actividad = ra.id_actividad
               WHERE ra.id_usuario = ? AND ra.activa = 1 AND a.activa = 1
@@ -355,12 +355,16 @@ class RutinasController extends Controller
         $ya = [];
         foreach ($registros as $r) $ya[(int)$r['id_actividad']] = true;
 
+        $pesoTotal = 0.0;
+        foreach ($actividades as $a) $pesoTotal += (float) $a['peso'];
+
         return view('rutinas/checklist_publico', [
             'usuario'     => $user,
             'fecha'       => $fecha,
             'token'       => $token,
             'actividades' => $actividades,
             'ya'          => $ya,
+            'pesoTotal'   => $pesoTotal,
         ]);
     }
 
