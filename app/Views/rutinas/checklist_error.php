@@ -18,5 +18,6 @@ p{color:#666}
     <h1>No se pudo abrir el checklist</h1>
     <p><?= esc($mensaje ?? 'Enlace inválido.') ?></p>
 </div>
+<?php helper('rutinas'); echo rutinas_floating_back(); ?>
 </body>
 </html>

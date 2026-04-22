@@ -221,5 +221,6 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('<?= base_url('sw_rutinas.js') ?>').catch(()=>{});
 }
 </script>
+<?php helper('rutinas'); echo rutinas_floating_back(); ?>
 </body>
 </html>
