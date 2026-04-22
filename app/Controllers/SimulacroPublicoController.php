@@ -91,7 +91,7 @@ class SimulacroPublicoController extends BaseController
         } else {
             // Crear nuevo registro (paso 1 siempre incluye id_cliente)
             if ($step === 1 && empty($saveData['id_cliente'])) {
-                return $this->response->setJSON(['success' => false, 'error' => 'Seleccione una copropiedad'])->setStatusCode(400);
+                return $this->response->setJSON(['success' => false, 'error' => 'Seleccione un establecimiento comercial'])->setStatusCode(400);
             }
             $saveData['estado'] = 'borrador';
             $this->evalModel->insert($saveData);
@@ -147,6 +147,7 @@ class SimulacroPublicoController extends BaseController
 
         $fileName = $file->getRandomName();
         $file->move(FCPATH . $dir, $fileName);
+        compress_uploaded_image(FCPATH . $dir . '/' . $fileName);
         $path = $dir . $fileName;
 
         $this->evalModel->update($id, [$campo => $path]);
@@ -181,7 +182,7 @@ class SimulacroPublicoController extends BaseController
 
         // Validar campos mínimos
         $errores = [];
-        if (empty($eval['id_cliente'])) $errores[] = 'Copropiedad';
+        if (empty($eval['id_cliente'])) $errores[] = 'Establecimiento comercial';
         if (empty($eval['fecha'])) $errores[] = 'Fecha';
         if (empty($eval['nombre_brigadista_lider'])) $errores[] = 'Nombre brigadista lider';
 
@@ -229,7 +230,7 @@ class SimulacroPublicoController extends BaseController
     private function getCamposPorPaso(): array
     {
         return [
-            // Paso 1: Selector de copropiedad
+            // Paso 1: Selector de establecimiento comercial
             1 => ['id_cliente', 'fecha'],
             // Paso 2: Info general
             2 => [

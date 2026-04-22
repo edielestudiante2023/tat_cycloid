@@ -12,14 +12,14 @@
         body { font-family: Segoe UI, Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 0; }
 
         .header {
-            background: #1b4332;
+            background: #c9541a;
             color: white;
             padding: 16px 20px;
             position: sticky;
             top: 0;
             z-index: 10;
         }
-        .header h1 { margin: 0; font-size: 16px; color: #e76f51; }
+        .header h1 { margin: 0; font-size: 16px; color: #ee6c21; }
         .header p  { margin: 4px 0 0; font-size: 13px; color: #ccc; }
 
         .stats-bar {
@@ -32,14 +32,14 @@
             gap: 16px;
             flex-wrap: wrap;
         }
-        .stats-bar span { font-weight: 700; color: #e76f51; }
+        .stats-bar span { font-weight: 700; color: #ee6c21; }
 
         .estandar-group { margin: 12px 16px; }
         .estandar-title {
             font-size: 12px;
             font-weight: 700;
             color: #fff;
-            background: #1b4332;
+            background: #c9541a;
             padding: 6px 12px;
             border-radius: 6px 6px 0 0;
             margin-bottom: 0;
@@ -68,7 +68,7 @@
         .item-card input[type=checkbox]:disabled { cursor: default; }
 
         .item-body { flex: 1; }
-        .item-numeral { font-size: 11px; color: #e76f51; font-weight: 700; margin-bottom: 2px; }
+        .item-numeral { font-size: 11px; color: #ee6c21; font-weight: 700; margin-bottom: 2px; }
         .item-texto   { font-size: 13px; color: #333; line-height: 1.4; }
         .item-estado  { font-size: 11px; margin-top: 4px; }
         .badge-nocumple { color: #dc3545; font-weight: 700; }
@@ -77,7 +77,7 @@
 
         .empty-state { text-align: center; padding: 48px 20px; color: #666; }
         .empty-state i { font-size: 48px; color: #28a745; display: block; margin-bottom: 12px; }
-        .empty-state h3 { color: #1b4332; }
+        .empty-state h3 { color: #c9541a; }
 
         .toast {
             position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);

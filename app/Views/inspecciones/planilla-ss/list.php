@@ -10,7 +10,7 @@
 
     <div class="d-flex justify-content-between align-items-center mt-2 mb-3">
         <div>
-            <h6 class="mb-0" style="color:#1b4332;font-weight:700;">
+            <h6 class="mb-0" style="color:#c9541a;font-weight:700;">
                 <i class="fas fa-file-invoice"></i> Planilla Seg. Social
             </h6>
             <small class="text-muted"><?= count($registros) ?> registros</small>

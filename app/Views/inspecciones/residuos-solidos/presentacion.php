@@ -7,7 +7,7 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #e6edf3; font-size: 18px; line-height: 1.6; }
-.doc-header { background: #1b4332; border-bottom: 4px solid #3fb950; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.doc-header { background: #c9541a; border-bottom: 4px solid #3fb950; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
 .doc-header h1 { font-size: 26px; color: #fff; }
 .code-badge { background: #3fb950; color: #0d1117; font-weight: bold; font-size: 20px; padding: 8px 20px; border-radius: 6px; }
 .nav-bar { background: #161b22; padding: 12px 48px; border-bottom: 1px solid #30363d; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
@@ -17,7 +17,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 .content { padding: 48px; max-width: 1400px; margin: 0 auto; }
 .section { background: #161b22; border: 1px solid #30363d; border-radius: 10px; margin-bottom: 24px; overflow: hidden; }
 .section-header { padding: 22px 32px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; transition: background .2s; }
-.section-header:hover { background: #1b4332; }
+.section-header:hover { background: #c9541a; }
 .section-header h2 { font-size: 20px; color: #3fb950; font-weight: 600; }
 .badges { display: flex; gap: 8px; align-items: center; }
 .badge { font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
@@ -34,7 +34,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 .sub-section { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; margin: 14px 0; padding: 18px 24px; }
 .sub-section h3 { color: #7ee787; font-size: 15px; margin-bottom: 10px; }
 .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0; }
-.data-table th { background: #1b4332; color: #3fb950; padding: 10px 12px; text-align: left; border: 1px solid #30363d; }
+.data-table th { background: #c9541a; color: #3fb950; padding: 10px 12px; text-align: left; border: 1px solid #30363d; }
 .data-table td { padding: 8px 12px; border: 1px solid #21262d; vertical-align: top; }
 .data-table tr:nth-child(even) td { background: #0d1117; }
 .ai-note { background: #1f3a2e; border: 1px solid #238636; border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-size: 14px; color: #3fb950; }
@@ -89,7 +89,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
         <div class="badges"><span class="badge badge-ai">🤖 Candidato IA</span><span class="badge-arrow">▼</span></div>
     </div>
     <div class="section-body">
-        <p>Establecer los lineamientos, procedimientos y responsabilidades para el manejo integral de residuos sólidos generados en las áreas comunes del <strong>[NOMBRE DEL CONJUNTO]</strong>, garantizando su correcta clasificación, recolección, almacenamiento y disposición final.</p>
+        <p>Establecer los lineamientos, procedimientos y responsabilidades para el manejo integral de residuos sólidos generados en las áreas del establecimiento del <strong>[NOMBRE DEL ESTABLECIMIENTO]</strong>, garantizando su correcta clasificación, recolección, almacenamiento y disposición final.</p>
         <div class="ai-note"><strong>🤖 Potencial IA:</strong> El objetivo podría adaptarse según el tipo de residuos característicos del conjunto y la infraestructura de almacenamiento disponible.</div>
     </div>
 </div>
@@ -100,7 +100,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
         <div class="badges"><span class="badge badge-ai">🤖 Candidato IA</span><span class="badge-arrow">▼</span></div>
     </div>
     <div class="section-body">
-        <p>Aplica a todas las áreas comunes del <strong>[NOMBRE DEL CONJUNTO]</strong>: zonas comunes, áreas administrativas, salones, parqueaderos y unidades de almacenamiento de residuos. Involucra al personal de aseo, residentes y visitantes en la correcta separación en la fuente.</p>
+        <p>Aplica a todas las áreas del establecimiento del <strong>[NOMBRE DEL ESTABLECIMIENTO]</strong>: áreas del establecimiento, áreas administrativas, salones, parqueaderos y unidades de almacenamiento de residuos. Involucra al personal de aseo, clientes y trabajadores y visitantes en la correcta separación en la fuente.</p>
         <div class="ai-note"><strong>🤖 Potencial IA:</strong> Podría mencionar el cuarto de residuos específico del conjunto y la ruta de recolección municipal.</div>
     </div>
 </div>
@@ -168,7 +168,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
             <li><strong>Administrador(a):</strong> Implementación y supervisión del programa.</li>
             <li><strong>Personal de aseo:</strong> Recolección, clasificación y transporte al cuarto de residuos.</li>
             <li><strong>Empresa de aseo contratista:</strong> Cuando aplique.</li>
-            <li><strong>Residentes y propietarios:</strong> Separación correcta en la fuente.</li>
+            <li><strong>Clientes y trabajadores y propietarios:</strong> Separación correcta en la fuente.</li>
             <li><strong>Responsable SG-SST:</strong> [NOMBRE DEL RESPONSABLE]</li>
         </ul>
         <div class="ai-note"><strong>🤖 Potencial IA:</strong> Podría especificar el nombre real del responsable y el número de operarios de aseo del conjunto.</div>
@@ -203,7 +203,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
     <div class="section-body">
         <div class="sub-section">
             <h3>1.10.1 Fuentes de generación de residuos</h3>
-            <p>Áreas comunes, zonas de uso colectivo, administración, zonas verdes, salones comunales, zonas húmedas, parqueaderos.</p>
+            <p>Áreas del establecimiento, zonas de uso colectivo, administración, zonas verdes, salones comunales, zonas húmedas, parqueaderos.</p>
         </div>
         <div class="sub-section">
             <h3>1.10.2 Clasificación de los residuos generados</h3>
@@ -226,11 +226,11 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
         <div class="badges"><span class="badge badge-static">Texto legal fijo</span><span class="badge-arrow">▼</span></div>
     </div>
     <div class="section-body">
-        <div class="sub-section"><h3>1.11.1 Recolección en áreas comunes y zonas colectivas</h3><p>Ruta de recolección diaria con carro de residuos, verificación de bolsas, transportar al cuarto de almacenamiento temporal.</p></div>
+        <div class="sub-section"><h3>1.11.1 Recolección en áreas del establecimiento y zonas colectivas</h3><p>Ruta de recolección diaria con carro de residuos, verificación de bolsas, transportar al cuarto de almacenamiento temporal.</p></div>
         <div class="sub-section"><h3>1.11.2 Recolección en puntos administrativos</h3><p>Recolección diaria de la oficina de administración con separación en la fuente desde el origen.</p></div>
         <div class="sub-section"><h3>1.11.3 Recolección de residuos peligrosos (RESPEL y RAEE)</h3><p>Gestión a través de gestores autorizados por la autoridad ambiental. Registro de entrega y certificado de disposición.</p></div>
         <div class="sub-section"><h3>1.11.4 Recolección de residuos orgánicos</h3><p>Compostaje o entrega al servicio de recolección municipal. Nunca mezclar con residuos peligrosos.</p></div>
-        <div class="sub-section"><h3>1.11.5 Alternativas para optimización del manejo</h3><p>Reducción en la fuente, reutilización, reciclaje, puntos de entrega voluntaria (PEV), campañas de sensibilización a residentes.</p></div>
+        <div class="sub-section"><h3>1.11.5 Alternativas para optimización del manejo</h3><p>Reducción en la fuente, reutilización, reciclaje, puntos de entrega voluntaria (PEV), campañas de sensibilización a clientes y trabajadores.</p></div>
     </div>
 </div>
 
@@ -241,7 +241,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
     </div>
     <div class="section-body">
         <p>Capacitaciones obligatorias al personal de aseo: separación en la fuente, manejo seguro, bioseguridad, manejo de residuos peligrosos. Mínimo 1 capacitación semestral documentada con lista de asistencia.</p>
-        <p>Campañas de sensibilización a residentes y propietarios sobre correcta clasificación.</p>
+        <p>Campañas de sensibilización a clientes y trabajadores y propietarios sobre correcta clasificación.</p>
     </div>
 </div>
 

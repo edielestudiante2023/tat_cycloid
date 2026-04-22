@@ -91,14 +91,14 @@ class InspeccionBotiquinController extends BaseController
 
         return view('inspecciones/layout_pwa', [
             'content' => view('inspecciones/botiquin/list', $data),
-            'title'   => 'Botiquin',
+            'title'   => 'Botiquin Tipo B',
         ]);
     }
 
     public function create($idCliente = null)
     {
         $data = [
-            'title'      => 'Nueva Inspeccion de Botiquin',
+            'title'      => 'Nueva Inspeccion de Botiquin Tipo B',
             'inspeccion'  => null,
             'idCliente'  => $idCliente,
             'elementos'  => self::ELEMENTOS,
@@ -107,7 +107,7 @@ class InspeccionBotiquinController extends BaseController
 
         return view('inspecciones/layout_pwa', [
             'content' => view('inspecciones/botiquin/form', $data),
-            'title'   => 'Nuevo Botiquin',
+            'title'   => 'Nuevo Botiquin Tipo B',
         ]);
     }
 
@@ -164,7 +164,7 @@ class InspeccionBotiquinController extends BaseController
         }
 
         $data = [
-            'title'         => 'Editar Inspeccion de Botiquin',
+            'title'         => 'Editar Inspeccion de Botiquin Tipo B',
             'inspeccion'     => $inspeccion,
             'idCliente'     => $inspeccion['id_cliente'],
             'elementos'     => self::ELEMENTOS,
@@ -173,7 +173,7 @@ class InspeccionBotiquinController extends BaseController
 
         return view('inspecciones/layout_pwa', [
             'content' => view('inspecciones/botiquin/form', $data),
-            'title'   => 'Editar Botiquin',
+            'title'   => 'Editar Botiquin Tipo B',
         ]);
     }
 
@@ -240,7 +240,7 @@ class InspeccionBotiquinController extends BaseController
         }
 
         $data = [
-            'title'         => 'Ver Inspeccion de Botiquin',
+            'title'         => 'Ver Inspeccion de Botiquin Tipo B',
             'inspeccion'     => $inspeccion,
             'cliente'       => $clientModel->find($inspeccion['id_cliente']),
             'consultor'     => $consultantModel->find($inspeccion['id_consultor']),
@@ -250,7 +250,7 @@ class InspeccionBotiquinController extends BaseController
 
         return view('inspecciones/layout_pwa', [
             'content' => view('inspecciones/botiquin/view', $data),
-            'title'   => 'Ver Botiquin',
+            'title'   => 'Ver Botiquin Tipo B',
         ]);
     }
 

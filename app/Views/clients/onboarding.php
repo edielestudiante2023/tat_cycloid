@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #4361ee; --primary-dark: #3a56d4; }
+        :root { --primary: #ee6c21; --primary-dark: #c9541a; }
         body { background: #f0f2f5; font-family: 'Segoe UI', sans-serif; }
 
         .top-navbar {
@@ -18,18 +18,18 @@
         }
         .top-navbar img { height: 60px; }
         .top-navbar .btn-dashboard {
-            background: linear-gradient(135deg, #007bff, #0056b3);
+            background: linear-gradient(135deg, #ee6c21, #c9541a);
             color: #fff; border: none; border-radius: 8px;
             padding: 8px 20px; font-size: 13px; text-decoration: none;
             transition: transform .15s, box-shadow .15s;
         }
         .top-navbar .btn-dashboard:hover {
-            transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,123,255,.35);
+            transform: translateY(-1px); box-shadow: 0 4px 12px rgba(238,108,33,.35);
         }
         .page-wrapper { padding-top: 100px; padding-bottom: 60px; }
         .main-card { border: none; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,.08); overflow: hidden; }
         .card-header-custom {
-            background: linear-gradient(135deg, #2d6a4f, #40916c);
+            background: linear-gradient(135deg, #ee6c21, #40916c);
             padding: 28px 32px; color: #fff; display: flex; align-items: center; gap: 16px;
         }
         .card-header-custom .icon-box {
@@ -55,9 +55,9 @@
         .form-label { font-size: .82rem; font-weight: 600; color: #495057; margin-bottom: 5px; }
         .form-label i { width: 16px; color: #6c757d; margin-right: 4px; }
         .form-control, .form-select { border-radius: 8px; border-color: #dee2e6; font-size: .88rem; transition: border-color .15s, box-shadow .15s; }
-        .form-control:focus, .form-select:focus { border-color: #86b7fe; box-shadow: 0 0 0 .2rem rgba(13,110,253,.12); }
+        .form-control:focus, .form-select:focus { border-color: #ffa952; box-shadow: 0 0 0 .2rem rgba(238,108,33,.15); }
         .btn-guardar {
-            background: linear-gradient(135deg, #2d6a4f, #40916c);
+            background: linear-gradient(135deg, #ee6c21, #40916c);
             color: #fff; border: none; border-radius: 10px; padding: 12px 32px;
             font-size: .95rem; font-weight: 600; transition: transform .15s, box-shadow .15s;
         }
@@ -75,14 +75,8 @@
 
 <!-- NAVBAR -->
 <nav class="top-navbar">
-    <a href="https://dashboard.cycloidtalent.com/login">
-        <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT">
-    </a>
-    <a href="https://cycloidtalent.com/index.php/consultoria-sst">
-        <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST">
-    </a>
-    <a href="https://cycloidtalent.com/">
-        <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloid">
+    <a href="https://tat.cycloidtalent.com/index.php/login">
+        <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT">
     </a>
     <a href="<?= base_url('/dashboardconsultant') ?>" class="btn-dashboard">
         <i class="fas fa-tachometer-alt me-1"></i> Dashboard
@@ -133,7 +127,7 @@
                 ═══════════════════════════════════════════════════════ -->
                 <div class="section-card contrato-highlight">
                     <div class="section-header">
-                        <i class="fas fa-file-signature" style="background:#2d6a4f;"></i>
+                        <i class="fas fa-file-signature" style="background:#ee6c21;"></i>
                         <span>Datos del Contrato <span class="text-success fw-bold">(complete primero)</span></span>
                     </div>
                     <div class="section-body">
@@ -224,7 +218,7 @@
                 ═══════════════════════════════════════════════════════ -->
                 <div class="section-card">
                     <div class="section-header">
-                        <i class="fas fa-building" style="background:#4361ee;"></i>
+                        <i class="fas fa-building" style="background:#ee6c21;"></i>
                         <span>Identificación del Cliente</span>
                     </div>
                     <div class="section-body">
@@ -285,7 +279,7 @@
                 ═══════════════════════════════════════════════════════ -->
                 <div class="section-card">
                     <div class="section-header">
-                        <i class="fas fa-address-book" style="background:#7209b7;"></i>
+                        <i class="fas fa-address-book" style="background:#c9541a;"></i>
                         <span>Información de Contacto</span>
                     </div>
                     <div class="section-body">
@@ -303,7 +297,7 @@
                                 <input type="text" name="direccion_cliente" class="form-control" required>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label"><i class="fas fa-envelope-open-text"></i>Correo Consejo de Administración</label>
+                                <label class="form-label"><i class="fas fa-envelope-open-text"></i>Correo del Propietario</label>
                                 <input type="email" name="correo_consejo_admon" class="form-control">
                             </div>
                             <div class="col-md-6">
@@ -476,7 +470,7 @@
     <p class="mb-1 fw-bold">Cycloid Talent SAS</p>
     <p class="mb-1">Todos los derechos reservados &copy; 2024 &nbsp;&middot;&nbsp; NIT: 901.653.912</p>
     <p class="mb-2">
-        <a href="https://cycloidtalent.com/" target="_blank" class="text-decoration-none" style="color:#007bff;">cycloidtalent.com</a>
+        <a href="https://cycloidtalent.com/" target="_blank" class="text-decoration-none" style="color:#ee6c21;">cycloidtalent.com</a>
     </p>
     <div class="d-flex gap-3 justify-content-center">
         <a href="https://www.facebook.com/CycloidTalent" target="_blank" class="social-icon">
@@ -609,5 +603,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+    <script src="<?= base_url('js/image-compress.js?v=1') ?>" defer></script>
 </body>
 </html>

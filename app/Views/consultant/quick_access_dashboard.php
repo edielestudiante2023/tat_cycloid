@@ -14,10 +14,10 @@
 
     <style>
         :root {
-            --primary-dark: #1b4332;
-            --secondary-dark: #2d6a4f;
-            --gold-primary: #e76f51;
-            --gold-secondary: #f4a261;
+            --primary-dark: #c9541a;
+            --secondary-dark: #ee6c21;
+            --gold-primary: #ee6c21;
+            --gold-secondary: #ff8d4e;
             --white-primary: #ffffff;
             --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
@@ -161,18 +161,8 @@
         <div class="container-fluid">
             <div class="header-logos-custom d-flex justify-content-between align-items-center w-100">
                 <div>
-                    <a href="https://dashboard.cycloidtalent.com/login" target="_blank">
-                        <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo">
-                    </a>
-                </div>
-                <div>
-                    <a href="https://cycloidtalent.com/index.php/consultoria-sst" target="_blank">
-                        <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo">
-                    </a>
-                </div>
-                <div>
-                    <a href="https://cycloidtalent.com/" target="_blank">
-                        <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo">
+                    <a href="https://tat.cycloidtalent.com/index.php/login" target="_blank">
+                        <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo">
                     </a>
                 </div>
             </div>

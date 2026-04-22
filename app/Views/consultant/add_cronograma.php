@@ -28,7 +28,7 @@
         }
 
         .btn-primary {
-            background-color: #007bff;
+            background-color: #ee6c21;
             border: none;
             font-weight: bold;
         }
@@ -90,7 +90,7 @@
         }
 
         .select2-container--bootstrap-5 .select2-results__option--highlighted[aria-selected] {
-            background-color: #007bff;
+            background-color: #ee6c21;
         }
     </style>
 </head>
@@ -101,14 +101,8 @@
         <div class="container-fluid">
             <!-- Logos -->
             <div class="d-flex align-items-center">
-                <a href="https://dashboard.cycloidtalent.com/login" class="me-3">
-                    <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" height="60">
-                </a>
-                <a href="https://cycloidtalent.com/index.php/consultoria-sst" class="me-3">
-                    <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" height="60">
-                </a>
-                <a href="https://cycloidtalent.com/">
-                    <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo" height="60">
+                <a href="https://tat.cycloidtalent.com/index.php/login" class="me-3">
+                    <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" height="60">
                 </a>
             </div>
 
@@ -193,7 +187,7 @@
                 <!-- Perfil de Asistentes -->
                 <div class="mb-3">
                     <label for="perfil_de_asistentes" class="form-label">Perfil de Asistentes</label>
-                    <input type="text" name="perfil_de_asistentes" id="perfil_de_asistentes" class="form-control" value="TODOS" placeholder="Ej: TODOS, CONTRATISTAS, RESIDENTES" required>
+                    <input type="text" name="perfil_de_asistentes" id="perfil_de_asistentes" class="form-control" value="TODOS" placeholder="Ej: TODOS, CONTRATISTAS, CLIENTES Y TRABAJADORES" required>
                 </div>
             </div>
 

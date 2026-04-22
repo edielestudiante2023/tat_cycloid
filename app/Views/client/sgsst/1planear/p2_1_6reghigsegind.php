@@ -216,7 +216,7 @@
     </div>
 
     <div class="gamma-section">
-        <p class="beta-parrafo"><strong>ARTÍCULO 1:</strong> La Tienda a Tienda <strong><?= $client['nombre_cliente'] ?></strong> se compromete a cumplir rigurosamente con todas las disposiciones legales vigentes relacionadas con la Seguridad y Salud en el Trabajo (SG-SST) dentro del ámbito de una tienda a tienda. Este compromiso se enmarca en las leyes y regulaciones colombianas, las cuales buscan garantizar los mecanismos que aseguren una prevención adecuada y oportuna de los accidentes de trabajo y enfermedades laborales.</p>
+        <p class="beta-parrafo"><strong>ARTÍCULO 1:</strong> <strong><?= $client['nombre_cliente'] ?></strong> se compromete a cumplir rigurosamente con todas las disposiciones legales vigentes relacionadas con la Seguridad y Salud en el Trabajo (SG-SST) dentro del ámbito de <?= esc($client['nombre_cliente'] ?? '') ?>. Este compromiso se enmarca en las leyes y regulaciones colombianas, las cuales buscan garantizar los mecanismos que aseguren una prevención adecuada y oportuna de los accidentes de trabajo y enfermedades laborales.</p>
 
         <p class="beta-parrafo">Este compromiso se respalda y fundamenta en los siguientes dispositivos legales: Artículos 34, 57, 58, 205, 206, 217, 220, 221, 282, 283, 348, 349, 350 y 351 del Código Sustantivo del Trabajo, la Ley 9 de 1979, Resolución 2400 de 1979, Decreto 614 de 1984, Resolución 2013 de 1986, Decreto 1295 de 1994, Decreto 1772 de 1994, Ley 1010 de 2006, Resolución 1401 de 2007, Resolución 1918 de 2009, Resolución 2346 de 2007, Resolución 2646 de 2008, Resolución 1409 de 2012, Resolución 1356 de 2012, Resolución 652 de 2012, Ley 1562 de 2012, Resolución 1903 de 2013, Decreto 723 de 2013, Decreto 1477 de 2014, Decreto Único Reglamentario del Sector Trabajo 1072 de 2015, Decreto 1273 de 2018 y Resolución 0312 de 2019.</p>
 
@@ -224,13 +224,13 @@
     </div>
 
     <div class="gamma-section">
-        <p class="beta-parrafo"><strong>ARTÍCULO 2:</strong> La Tienda a Tienda <strong><?= $client['nombre_cliente'] ?></strong> asume el compromiso de fomentar y garantizar la designación de un Vigía de Salud y Seguridad en el Trabajo, en estricta conformidad con las disposiciones establecidas por el Decreto 614 de 1984, la Resolución 2013 de 1986, la Resolución 1016 de 1989, el Decreto 1295 de 1994, el Decreto 1072 de 2015 y demás normativas aplicables.</p>
+        <p class="beta-parrafo"><strong>ARTÍCULO 2:</strong> <strong><?= $client['nombre_cliente'] ?></strong> asume el compromiso de fomentar y garantizar la designación de un Vigía de Salud y Seguridad en el Trabajo, en estricta conformidad con las disposiciones establecidas por el Decreto 614 de 1984, la Resolución 2013 de 1986, la Resolución 1016 de 1989, el Decreto 1295 de 1994, el Decreto 1072 de 2015 y demás normativas aplicables.</p>
 
         <p class="beta-parrafo">Además, se compromete a impulsar y asegurar la formación y operación del Vigía quien es la figura del Comité Paritario de Seguridad y Salud en el Trabajo (COPASST), de acuerdo con lo establecido por el Decreto 614 de 1984, la Resolución 2013 de 1986, el Decreto 1295 de 1994, el Decreto 1771 de 1994, la Ley 1562 de 2012, el Decreto Único Reglamentario del Sector Trabajo 1072 de 2015, la Resolución 0312 de 2019 y cualquier otra normativa pertinente que pueda establecerse con ese propósito.</p>
     </div>
 
     <div class="gamma-section">
-        <p class="beta-parrafo"><strong>ARTÍCULO 3:</strong> La Tienda a Tienda <strong><?= $client['nombre_cliente'] ?></strong> se compromete a garantizar que los contratistas designados para llevar a cabo labores permanentes dentro de sus instalaciones implementen un Sistema de Gestión de Seguridad y Salud en el Trabajo (SGSST).</p>
+        <p class="beta-parrafo"><strong>ARTÍCULO 3:</strong> <strong><?= $client['nombre_cliente'] ?></strong> se compromete a garantizar que los contratistas designados para llevar a cabo labores permanentes dentro de sus instalaciones implementen un Sistema de Gestión de Seguridad y Salud en el Trabajo (SGSST).</p>
 
         <p class="beta-parrafo">Dicho sistema deberá contemplar, como mínimo, los siguientes aspectos:</p>
         <ul class="delta-lista">
@@ -240,7 +240,7 @@
     </div>
 
     <div class="gamma-section">
-        <p class="beta-parrafo"><strong>ARTÍCULO 4:</strong> La Tienda a Tienda <strong><?= $client['nombre_cliente'] ?></strong> se compromete a asignar los recursos necesarios para llevar a cabo actividades programadas, en consonancia con el Sistema de Gestión de la Seguridad y Salud en el Trabajo.</p>
+        <p class="beta-parrafo"><strong>ARTÍCULO 4:</strong> <strong><?= $client['nombre_cliente'] ?></strong> se compromete a asignar los recursos necesarios para llevar a cabo actividades programadas, en consonancia con el Sistema de Gestión de la Seguridad y Salud en el Trabajo.</p>
 
         <p class="beta-parrafo">Este sistema incluirá, como mínimo, los siguientes aspectos:</p>
         <ul class="delta-lista">
@@ -251,7 +251,7 @@
     </div>
 
     <div class="gamma-section">
-        <p class="beta-parrafo"><strong>ARTÍCULO 5:</strong> Los riesgos presentes en la tienda a tienda de <strong><?= $client['nombre_cliente'] ?></strong> incluyen riesgos biológicos, físicos, químicos, psicosociales, biomecánicos, mecánicos, eléctricos, locativos, tecnológicos, públicos, accidentes de tránsito y fenómenos naturales.</p>
+        <p class="beta-parrafo"><strong>ARTÍCULO 5:</strong> Los riesgos presentes en <strong><?= $client['nombre_cliente'] ?></strong> incluyen riesgos biológicos, físicos, químicos, psicosociales, biomecánicos, mecánicos, eléctricos, locativos, tecnológicos, públicos, accidentes de tránsito y fenómenos naturales.</p>
     </div>
 
     <div class="gamma-section">
@@ -259,7 +259,7 @@
     </div>
 
     <div class="gamma-section">
-        <p class="beta-parrafo"><strong>ARTÍCULO 7:</strong> La tienda a tienda llevará a cabo procesos de inducción y/o reinducción para contratistas, orientándolos en medidas de prevención y seguridad.</p>
+        <p class="beta-parrafo"><strong>ARTÍCULO 7:</strong> La <?= esc($client['nombre_cliente'] ?? '') ?> llevará a cabo procesos de inducción y/o reinducción para contratistas, orientándolos en medidas de prevención y seguridad.</p>
     </div>
 
     <div class="gamma-section">

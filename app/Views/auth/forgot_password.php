@@ -13,7 +13,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #e76f51 0%, #f4a261 25%, #f5f7fa 50%, #c3cfe2 75%, #e76f51 100%);
+            background: linear-gradient(135deg, #ee6c21 0%, #ff8d4e 25%, #f5f7fa 50%, #c3cfe2 75%, #ee6c21 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -24,10 +24,10 @@
 
         @keyframes backgroundShift {
             0%, 100% {
-                background: linear-gradient(135deg, #e76f51 0%, #f4a261 25%, #f5f7fa 50%, #c3cfe2 75%, #e76f51 100%);
+                background: linear-gradient(135deg, #ee6c21 0%, #ff8d4e 25%, #f5f7fa 50%, #c3cfe2 75%, #ee6c21 100%);
             }
             50% {
-                background: linear-gradient(135deg, #f4a261 0%, #e76f51 25%, #c3cfe2 50%, #f5f7fa 75%, #f4a261 100%);
+                background: linear-gradient(135deg, #ff8d4e 0%, #ee6c21 25%, #c3cfe2 50%, #f5f7fa 75%, #ff8d4e 100%);
             }
         }
 
@@ -63,7 +63,7 @@
         .title {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #1b4332;
+            color: #c9541a;
             text-align: center;
             margin-bottom: 10px;
         }
@@ -85,18 +85,18 @@
         }
 
         .form-control:focus {
-            border-color: #e76f51;
+            border-color: #ee6c21;
             box-shadow: 0 0 0 4px rgba(189, 151, 81, 0.2);
         }
 
         .form-label {
             font-weight: 600;
-            color: #1b4332;
+            color: #c9541a;
             margin-bottom: 8px;
         }
 
         .btn-primary-custom {
-            background: linear-gradient(135deg, #1b4332, #2d6a4f);
+            background: linear-gradient(135deg, #c9541a, #ee6c21);
             border: none;
             border-radius: 12px;
             color: white;
@@ -110,7 +110,7 @@
         .btn-primary-custom:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(28, 36, 55, 0.3);
-            background: linear-gradient(135deg, #2d6a4f, #e76f51);
+            background: linear-gradient(135deg, #ee6c21, #ee6c21);
         }
 
         .back-link {
@@ -119,14 +119,14 @@
         }
 
         .back-link a {
-            color: #e76f51;
+            color: #ee6c21;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
         }
 
         .back-link a:hover {
-            color: #1b4332;
+            color: #c9541a;
         }
 
         .alert-success-custom {
@@ -159,7 +159,7 @@
 
 <div class="main-container">
     <div class="logo-container">
-        <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo">
+        <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo">
     </div>
 
     <div class="header-icon">🔐</div>

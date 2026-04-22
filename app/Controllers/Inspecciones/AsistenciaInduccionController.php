@@ -754,7 +754,7 @@ class AsistenciaInduccionController extends BaseController
             return $this->response->setJSON(['error' => 'API key no configurada.'])->setStatusCode(500);
         }
 
-        $prompt = "Eres un experto en Seguridad y Salud en el Trabajo (SST) para propiedades horizontales colombianas (conjuntos residenciales y edificios). El personal que asiste a las sesiones son principalmente contratistas de aseo y vigilancia, y ocasionalmente residentes y administración.
+        $prompt = "Eres un experto en Seguridad y Salud en el Trabajo (SST) para establecimientos comerciales colombianas (establecimientos comerciales y edificios). El personal que asiste a las sesiones son principalmente contratistas de aseo y vigilancia, y ocasionalmente clientes y trabajadores y administración.
 
 Redacta el objetivo de la siguiente sesión de inducción o capacitación en SST: «{$tema}».
 
@@ -762,7 +762,7 @@ El objetivo debe:
 - Ser claro, concreto y profesional
 - Estar en infinitivo (Capacitar, Sensibilizar, Fortalecer, Instruir, etc.)
 - Tener máximo 3 oraciones
-- Mencionar el perfil del personal cuando aplique (contratistas de aseo, vigilancia, residentes o administración)
+- Mencionar el perfil del personal cuando aplique (contratistas de aseo, vigilancia, clientes y trabajadores o administración)
 - No incluir títulos ni numeración, solo el texto del objetivo";
 
         $payload = json_encode([

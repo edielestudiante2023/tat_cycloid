@@ -156,31 +156,11 @@
     style="background-color: white; position: fixed; top: 0; width: 100%; z-index: 1100; padding: 10px 0; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
     <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;">
       <div>
-        <a href="https://dashboard.cycloidtalent.com/login">
-          <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo"
+        <a href="https://tat.cycloidtalent.com/index.php/login">
+          <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo"
             style="height: 100px;" />
         </a>
       </div>
-      <div style="display: flex; align-items: center; gap: 15px;">
-        <a href="https://cycloidtalent.com/index.php/consultoria-sst">
-          <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" style="height: 100px;" />
-        </a>
-        <a href="https://cycloidtalent.com/">
-          <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloid Logo"
-            style="height: 100px;" />
-        </a>
-        <?php
-        $sortedTopics = $topicsList;
-        asort($sortedTopics);
-        ?>
-        <div style="width: 300px;">
-          <select id="sectionsSelect" class="form-select">
-            <option></option>
-            <?php foreach ($sortedTopics as $key => $titulo): ?>
-              <option value="<?= esc($key) ?>"><?= esc($titulo) ?></option>
-            <?php endforeach; ?>
-          </select>
-        </div>
       </div>
     </div>
   </nav>

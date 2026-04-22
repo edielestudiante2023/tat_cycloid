@@ -12,27 +12,24 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" />
   <!-- DataTables Buttons CSS para Bootstrap 5 -->
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css" />
+  <!-- DataTables Responsive CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.bootstrap5.min.css" />
   <style>
-    /* Asegura que html y body ocupen toda la pantalla */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-    
     body {
       background-color: #f9f9f9;
       color: #333;
     }
 
-    /* Utilizamos container-fluid para que ocupe el 100% del ancho */
+    /* Logos del navbar: responsive en movil */
+    .nav-logo { height: 100px; transition: height 0.3s; }
+    @media (max-width: 768px) {
+      .nav-logo { height: 40px !important; }
+    }
+
+    /* Contenedor principal sin altura forzada (permite scroll natural en movil) */
     .container-fluid {
       margin-top: 30px;
       width: 100%;
-      height: calc(100vh - 140px); /* Ajuste para navbar y footer */
-      display: flex;
-      flex-direction: column;
     }
 
     /* Contenedor de la tabla que se expande y permite scroll interno */
@@ -120,18 +117,8 @@
     <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;">
       <!-- Logos -->
       <div>
-        <a href="https://dashboard.cycloidtalent.com/login">
-          <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" style="height: 100px;" />
-        </a>
-      </div>
-      <div>
-        <a href="https://cycloidtalent.com/index.php/consultoria-sst">
-          <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" style="height: 100px;" />
-        </a>
-      </div>
-      <div>
-        <a href="https://cycloidtalent.com/">
-          <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo" style="height: 100px;" />
+        <a href="https://tat.cycloidtalent.com/index.php/login">
+          <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" class="nav-logo" />
         </a>
       </div>
     </div>
@@ -214,6 +201,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
   <!-- Botón HTML5 para exportar -->
   <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+  <!-- DataTables Responsive JS -->
+  <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.4.0/js/responsive.bootstrap5.min.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -222,6 +212,7 @@
       // Inicializar DataTable con botones, stateSave, filtros por columna y opciones de registros
       var table = $("#reportsTable").DataTable({
         dom: 'lBfrtip', // Se incluye "l" para mostrar el selector de cantidad de registros
+        responsive: true,
         buttons: [
           {
             extend: 'excelHtml5',
@@ -234,6 +225,15 @@
           [4, 'asc'],   // Por "Detalle Reporte"
           [0, 'asc'],   // Por "Título"
           [2, 'asc']    // Por "Estado"
+        ],
+        columnDefs: [
+          { responsivePriority: 1, targets: 0 }, // Titulo
+          { responsivePriority: 2, targets: 1 }, // Enlace
+          { responsivePriority: 3, targets: 2 }, // Estado
+          { responsivePriority: 4, targets: 5 }, // Tipo Reporte
+          { responsivePriority: 10000, targets: 3 }, // Observaciones (colapsa)
+          { responsivePriority: 10001, targets: 4 }, // Detalle (colapsa)
+          { responsivePriority: 10002, targets: 6 }  // Fecha Creacion (colapsa)
         ],
         paging: true,
         searching: true,

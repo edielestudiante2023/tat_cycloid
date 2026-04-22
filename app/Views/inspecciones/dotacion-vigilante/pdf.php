@@ -33,14 +33,14 @@ $porcentaje = $totalEvaluados > 0 ? round(($puntajeBueno / $totalEvaluados) * 10
         .header-title { text-align: center; font-weight: bold; font-size: 9px; }
         .header-code { width: 120px; font-size: 8px; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #c9541a; }
         .main-subtitle { text-align: center; font-size: 9px; font-weight: bold; margin: 0 0 6px; color: #444; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
         .info-label { font-weight: bold; color: #444; width: 160px; background: #f7f7f7; }
 
-        .section-title { background: #1b4332; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
+        .section-title { background: #c9541a; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
         .content-text { font-size: 9px; line-height: 1.4; margin-bottom: 5px; }
         .intro-text { font-size: 8px; line-height: 1.4; margin-bottom: 6px; text-align: justify; }
 
@@ -128,7 +128,7 @@ $porcentaje = $totalEvaluados > 0 ? round(($puntajeBueno / $totalEvaluados) * 10
     <!-- IMPORTANCIA DE LA INSPECCION -->
     <div class="section-title">IMPORTANCIA DE LA INSPECCION DE DOTACIONES</div>
     <p class="intro-text">
-        Cycloid Talent considera las inspecciones de dotaciones como un pilar fundamental para garantizar la seguridad y salud de su talento humano asignado por terceros y proveedores dentro de la copropiedad, ya que permiten:<br>
+        Cycloid Talent considera las inspecciones de dotaciones como un pilar fundamental para garantizar la seguridad y salud de su talento humano asignado por terceros y proveedores dentro del establecimiento comercial, ya que permiten:<br>
         Verificar el cumplimiento de la normativa legal: Se comprueba que la empresa contratista este suministrando los EPP adecuados y en cantidad suficiente a sus trabajadores.<br>
         Evaluar el estado de los EPP: Se inspecciona que los EPP se encuentren en buen estado de conservacion, funcionamiento y limpieza.<br>
         Capacitar a los colaboradores de los contratistas: Se brinda informacion a los trabajadores sobre el uso correcto y mantenimiento de los EPP.<br>

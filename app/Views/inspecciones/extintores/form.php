@@ -95,11 +95,12 @@ $action = $isEdit ? base_url('/inspecciones/extintores/update/') . $inspeccion['
                                 <input type="number" name="cantidad_agua" class="form-control form-control-sm" min="0" value="<?= $inspeccion['cantidad_agua'] ?? 0 ?>">
                             </div>
                         </div>
+                        <?php /* TAT — Distribucion por ubicacion PH comentada: no aplica a TAT. Solo interesa el total de extintores. Descomentar si se reactivan.
                         <hr style="margin:8px 0;">
                         <small class="text-muted d-block mb-2" style="font-size:11px;">Distribucion por ubicacion:</small>
                         <div class="row g-2">
                             <div class="col-6">
-                                <label class="form-label" style="font-size:12px;">Unidades residenciales</label>
+                                <label class="form-label" style="font-size:12px;">Locales comerciales</label>
                                 <input type="number" name="cantidad_unidades_residenciales" class="form-control form-control-sm" min="0" value="<?= $inspeccion['cantidad_unidades_residenciales'] ?? 0 ?>">
                             </div>
                             <div class="col-6">
@@ -127,6 +128,7 @@ $action = $isEdit ? base_url('/inspecciones/extintores/update/') . $inspeccion['
                                 <input type="number" name="cantidad_planta_electrica" class="form-control form-control-sm" min="0" value="<?= $inspeccion['cantidad_planta_electrica'] ?? 0 ?>">
                             </div>
                         </div>
+                        */ ?>
                     </div>
                 </div>
             </div>
@@ -345,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cliente = document.getElementById('selectCliente').value;
         if (!cliente) {
             e.preventDefault();
-            Swal.fire({ icon: 'warning', title: 'Selecciona un cliente', confirmButtonColor: '#e76f51' });
+            Swal.fire({ icon: 'warning', title: 'Selecciona un cliente', confirmButtonColor: '#ee6c21' });
             return;
         }
         e.preventDefault();
@@ -356,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showCancelButton: true,
             confirmButtonText: 'Si, finalizar',
             cancelButtonText: 'Cancelar',
-            confirmButtonColor: '#e76f51',
+            confirmButtonColor: '#ee6c21',
         }).then(result => {
             if (result.isConfirmed) {
                 const input = document.createElement('input');
@@ -382,8 +384,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (data.recomendaciones_generales) document.querySelector('[name="recomendaciones_generales"]').value = data.recomendaciones_generales;
 
         ['numero_extintores_totales','cantidad_abc','cantidad_co2','cantidad_solkaflam','cantidad_agua',
-         'capacidad_libras','cantidad_unidades_residenciales','cantidad_porteria','cantidad_oficina_admin',
+         'capacidad_libras'
+         /* TAT — campos de ubicación PH comentados: ya no se muestran en el form.
+         ,'cantidad_unidades_residenciales','cantidad_porteria','cantidad_oficina_admin',
          'cantidad_shut_basuras','cantidad_salones_comunales','cantidad_cuarto_bombas','cantidad_planta_electrica'
+         */
         ].forEach(f => {
             const el = document.querySelector('[name="'+f+'"]');
             if (el && data[f]) el.value = data[f];
@@ -409,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         showCancelButton: true,
                         confirmButtonText: 'Si, restaurar',
                         cancelButtonText: 'No, empezar de cero',
-                        confirmButtonColor: '#e76f51',
+                        confirmButtonColor: '#ee6c21',
                     }).then(result => {
                         if (result.isConfirmed) restoreFromLocal(data);
                         else localStorage.removeItem(STORAGE_KEY);

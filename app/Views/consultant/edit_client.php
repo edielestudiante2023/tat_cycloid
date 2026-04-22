@@ -29,7 +29,7 @@
         }
         .top-navbar img { height: 60px; }
         .top-navbar .btn-dashboard {
-            background: linear-gradient(135deg, #007bff, #0056b3);
+            background: linear-gradient(135deg, #ee6c21, #c9541a);
             color: #fff; border: none;
             border-radius: 8px;
             padding: 8px 20px;
@@ -39,7 +39,7 @@
         }
         .top-navbar .btn-dashboard:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0,123,255,.35);
+            box-shadow: 0 4px 12px rgba(238,108,33,.35);
         }
 
         /* Layout principal */
@@ -171,8 +171,8 @@
             transition: border-color .15s, box-shadow .15s;
         }
         .form-control:focus, .form-select:focus {
-            border-color: #86b7fe;
-            box-shadow: 0 0 0 .2rem rgba(13,110,253,.12);
+            border-color: #ffa952;
+            box-shadow: 0 0 0 .2rem rgba(238,108,33,.15);
         }
 
         /* Preview imágenes */
@@ -187,7 +187,7 @@
 
         /* Botón guardar */
         .btn-guardar {
-            background: linear-gradient(135deg, #007bff, #0056b3);
+            background: linear-gradient(135deg, #ee6c21, #c9541a);
             color: #fff;
             border: none;
             border-radius: 10px;
@@ -198,7 +198,7 @@
         }
         .btn-guardar:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(0,123,255,.35);
+            box-shadow: 0 6px 18px rgba(238,108,33,.35);
             color: #fff;
         }
 
@@ -239,14 +239,8 @@
 
 <!-- ═══ NAVBAR ═══════════════════════════════════════════════════════════════ -->
 <nav class="top-navbar">
-    <a href="https://dashboard.cycloidtalent.com/login">
-        <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT">
-    </a>
-    <a href="https://cycloidtalent.com/index.php/consultoria-sst">
-        <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST">
-    </a>
-    <a href="https://cycloidtalent.com/">
-        <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloid">
+    <a href="https://tat.cycloidtalent.com/index.php/login">
+        <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT">
     </a>
     <a href="<?= base_url('/dashboardconsultant') ?>" class="btn-dashboard">
         <i class="fas fa-tachometer-alt me-1"></i> Dashboard
@@ -357,7 +351,7 @@
                 <!-- SECCIÓN 1 — Información Básica -->
                 <div class="section-card">
                     <div class="section-header">
-                        <i class="fas fa-building" style="background:#4361ee;"></i>
+                        <i class="fas fa-building" style="background:#ee6c21;"></i>
                         <span>Información Básica</span>
                     </div>
                     <div class="section-body">
@@ -450,7 +444,7 @@
                 <!-- SECCIÓN 2 — Contacto -->
                 <div class="section-card">
                     <div class="section-header">
-                        <i class="fas fa-address-book" style="background:#7209b7;"></i>
+                        <i class="fas fa-address-book" style="background:#c9541a;"></i>
                         <span>Información de Contacto</span>
                     </div>
                     <div class="section-body">
@@ -460,7 +454,7 @@
                                 <input type="email" name="correo_cliente" value="<?= esc($client['correo_cliente']) ?>" class="form-control">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label"><i class="fas fa-envelope-open-text"></i>Correo Consejo de Administración</label>
+                                <label class="form-label"><i class="fas fa-envelope-open-text"></i>Correo del Propietario</label>
                                 <input type="email" name="correo_consejo_admon" value="<?= esc($client['correo_consejo_admon'] ?? '') ?>" class="form-control">
                             </div>
                             <div class="col-md-6">
@@ -523,7 +517,100 @@
                     </div>
                 </div>
 
-                <!-- SECCIÓN 4 — Archivos -->
+                <!-- SECCIÓN 4 — Información Sanitaria y Regulatoria (TAT) -->
+                <div class="section-card">
+                    <div class="section-header">
+                        <i class="fas fa-notes-medical" style="background:#ee6c21;"></i>
+                        <span>Información Sanitaria y Regulatoria</span>
+                    </div>
+                    <div class="section-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label"><i class="fas fa-store"></i>Nombre Comercial</label>
+                                <input type="text" name="nombre_comercial" value="<?= esc($client['nombre_comercial'] ?? '') ?>" class="form-control" placeholder="Ej: Panadería La Esquina">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label"><i class="fas fa-shop"></i>Tipo de Establecimiento</label>
+                                <select name="id_tipo_establecimiento" class="form-select">
+                                    <option value="">Seleccione...</option>
+                                    <?php if (!empty($tipos_establecimiento)): foreach ($tipos_establecimiento as $t): ?>
+                                        <option value="<?= $t['id_tipo_establecimiento'] ?>" <?= (int)($client['id_tipo_establecimiento'] ?? 0) === (int)$t['id_tipo_establecimiento'] ? 'selected' : '' ?>><?= esc($t['nombre']) ?></option>
+                                    <?php endforeach; endif; ?>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><i class="fas fa-file-medical"></i>N° Inscripción Sanitaria</label>
+                                <input type="text" name="numero_inscripcion_sanitaria" value="<?= esc($client['numero_inscripcion_sanitaria'] ?? '') ?>" class="form-control" placeholder="Asignado por Sec. Salud">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><i class="fas fa-file-contract"></i>Matrícula Mercantil</label>
+                                <input type="text" name="matricula_mercantil" value="<?= esc($client['matricula_mercantil'] ?? '') ?>" class="form-control" placeholder="Cámara de Comercio">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><i class="fas fa-users"></i>N° de Trabajadores</label>
+                                <input type="number" name="numero_trabajadores" value="<?= esc($client['numero_trabajadores'] ?? '') ?>" class="form-control" min="0">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><i class="fas fa-map"></i>Departamento</label>
+                                <input type="text" name="departamento" value="<?= esc($client['departamento'] ?? '') ?>" class="form-control">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><i class="fas fa-location-dot"></i>Comuna / Sector</label>
+                                <input type="text" name="comuna" value="<?= esc($client['comuna'] ?? '') ?>" class="form-control">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label"><i class="fas fa-tree-city"></i>Barrio</label>
+                                <input type="text" name="barrio" value="<?= esc($client['barrio'] ?? '') ?>" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label"><i class="fas fa-user-tie"></i>Nombre del Propietario</label>
+                                <input type="text" name="propietario_nombre" value="<?= esc($client['propietario_nombre'] ?? '') ?>" class="form-control" placeholder="Dueño del establecimiento">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label"><i class="fas fa-id-card"></i>Tipo ID Propietario</label>
+                                <select name="propietario_tipo_id" class="form-select">
+                                    <?php $propTipo = $client['propietario_tipo_id'] ?? ''; ?>
+                                    <option value="">-</option>
+                                    <?php foreach (['CC','CE','NIT','TI','PA','RC'] as $t): ?>
+                                        <option value="<?= $t ?>" <?= $propTipo === $t ? 'selected' : '' ?>><?= $t ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label"><i class="fas fa-hashtag"></i>N° ID Propietario</label>
+                                <input type="text" name="propietario_numero_id" value="<?= esc($client['propietario_numero_id'] ?? '') ?>" class="form-control">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label"><i class="fas fa-id-card"></i>Tipo ID Rep. Legal</label>
+                                <select name="rep_legal_tipo_id" class="form-select">
+                                    <?php $repTipo = $client['rep_legal_tipo_id'] ?? ''; ?>
+                                    <option value="">-</option>
+                                    <?php foreach (['CC','CE','NIT','TI','PA','RC'] as $t): ?>
+                                        <option value="<?= $t ?>" <?= $repTipo === $t ? 'selected' : '' ?>><?= $t ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label"><i class="fas fa-people-arrows"></i>Aforo</label>
+                                <input type="number" name="aforo" value="<?= esc($client['aforo'] ?? '') ?>" class="form-control" min="0" placeholder="N° personas">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label"><i class="fas fa-vector-square"></i>Área (m²)</label>
+                                <input type="number" step="0.01" name="area_m2" value="<?= esc($client['area_m2'] ?? '') ?>" class="form-control" min="0">
+                            </div>
+                            <div class="col-md-3 d-flex align-items-end">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="autoriza_notificacion_electronica" value="1" id="autNotifEdit" <?= !empty($client['autoriza_notificacion_electronica']) ? 'checked' : '' ?>>
+                                    <label class="form-check-label" for="autNotifEdit" style="font-size:.82rem;">
+                                        Autoriza notificación electrónica
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 5 — Archivos -->
                 <div class="section-card">
                     <div class="section-header">
                         <i class="fas fa-paperclip" style="background:#f77f00;"></i>
@@ -752,7 +839,7 @@
     <p class="mb-1 fw-bold">Cycloid Talent SAS</p>
     <p class="mb-1">Todos los derechos reservados © 2024 &nbsp;·&nbsp; NIT: 901.653.912</p>
     <p class="mb-2">
-        <a href="https://cycloidtalent.com/" target="_blank" class="text-decoration-none" style="color:#007bff;">cycloidtalent.com</a>
+        <a href="https://cycloidtalent.com/" target="_blank" class="text-decoration-none" style="color:#ee6c21;">cycloidtalent.com</a>
     </p>
     <div class="d-flex gap-3 justify-content-center">
         <a href="https://www.facebook.com/CycloidTalent" target="_blank" class="social-icon">
@@ -793,5 +880,6 @@ document.addEventListener('DOMContentLoaded', function() {
     syncPlazo();
 });
 </script>
+    <script src="<?= base_url('js/image-compress.js?v=1') ?>" defer></script>
 </body>
 </html>

@@ -28,20 +28,8 @@
         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <!-- Logo izquierdo -->
             <div>
-                <a href="https://dashboard.cycloidtalent.com/login">
-                    <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" style="height: 100px;">
-                </a>
-            </div>
-            <!-- Logo centro -->
-            <div>
-                <a href="https://cycloidtalent.com/index.php/consultoria-sst">
-                    <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" style="height: 100px;">
-                </a>
-            </div>
-            <!-- Logo derecho -->
-            <div>
-                <a href="https://cycloidtalent.com/">
-                    <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo" style="height: 100px;">
+                <a href="https://tat.cycloidtalent.com/index.php/login">
+                    <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" style="height: 100px;">
                 </a>
             </div>
             <!-- Botón -->

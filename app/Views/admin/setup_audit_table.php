@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-dark: #1b4332;
-            --gold-primary: #e76f51;
-            --gold-secondary: #f4a261;
+            --primary-dark: #c9541a;
+            --gold-primary: #ee6c21;
+            --gold-secondary: #ff8d4e;
         }
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -26,7 +26,7 @@
             margin: 0 auto;
         }
         .setup-header {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #ee6c21 100%);
             color: white;
             padding: 30px;
             border-radius: 15px;

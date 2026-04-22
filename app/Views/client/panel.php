@@ -18,14 +18,14 @@
         }
 
         .accordion-button {
-            background-color: #007bff;
+            background-color: #ee6c21;
             color: white;
             border: none;
             transition: background-color 0.3s ease-in-out;
         }
 
         .accordion-button:hover {
-            background-color: #0056b3;
+            background-color: #c9541a;
         }
 
         .grid-container {
@@ -55,7 +55,7 @@
 
         .grid-item i {
             font-size: 2rem;
-            color: #007bff;
+            color: #ee6c21;
         }
 
         .icon-container img {

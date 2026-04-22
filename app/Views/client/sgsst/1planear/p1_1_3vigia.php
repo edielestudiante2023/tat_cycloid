@@ -33,7 +33,7 @@
         h1,
         h2 {
             text-align: center;
-            color: #2d6a4f;
+            color: #ee6c21;
         }
 
         p {
@@ -213,20 +213,20 @@
         <h2>Funciones del Vigía</h2>
 
         <ol>
-            <li>Revisar y autorizar el plan de emergencia del conjunto residencial, en coordinación con el administrador de la copropiedad.</li>
+            <li>Revisar y autorizar el plan de emergencia del establecimiento comercial, en coordinación con el responsable del establecimiento.</li>
             <li>Realizar simulacros de emergencia con la comunidad, al menos una vez al año.</li>
             <li>Promover la cultura de la prevención en la comunidad, a través de campañas de sensibilización y educación.</li>
-            <li>Inspeccionar periódicamente las áreas comunes del conjunto residencial, para identificar y corregir los riesgos potenciales.</li>
+            <li>Inspeccionar periódicamente las áreas del establecimiento comercial, para identificar y corregir los riesgos potenciales.</li>
             <li>Revisar los extintores y demás equipos de seguridad, para garantizar su correcto funcionamiento.</li>
-            <li>Mantener actualizada la información de los contratistas que prestan servicios al conjunto residencial, en materia de seguridad y salud en el trabajo.</li>
+            <li>Mantener actualizada la información de los contratistas que prestan servicios al establecimiento comercial, en materia de seguridad y salud en el trabajo.</li>
             <li>Inspeccionar los trabajos que realizan los contratistas, para verificar el cumplimiento de las normas de seguridad.</li>
-            <li>Promover la participación de los residentes en las actividades de prevención de riesgos.</li>
-            <li>Brindar información y orientación a los residentes sobre temas de seguridad y salud en el trabajo.</li>
+            <li>Promover la participación de los clientes y trabajadores en las actividades de prevención de riesgos.</li>
+            <li>Brindar información y orientación a los clientes y trabajadores sobre temas de seguridad y salud en el trabajo.</li>
             <li>Promover la práctica de hábitos saludables en la comunidad, como la alimentación sana y la actividad física.</li>
             <li>Promover el reciclaje y la reutilización de materiales, para contribuir con la protección del medio ambiente.</li>
-            <li>Revisar con la administración del conjunto residencial las políticas y procedimientos en materia de seguridad y salud en el trabajo.</li>
+            <li>Revisar con la administración del establecimiento comercial las políticas y procedimientos en materia de seguridad y salud en el trabajo.</li>
             <li>Revisar junto con el administrador el informe anual sobre las actividades realizadas en materia de seguridad y salud en el trabajo.</li>
-            <li>Promover la cultura de la prevención en el entorno del conjunto residencial, a través del trabajo con las instituciones locales.</li>
+            <li>Promover la cultura de la prevención en el entorno del establecimiento comercial, a través del trabajo con las instituciones locales.</li>
             <li>Actualizar constantemente sus conocimientos y habilidades en materia de seguridad y salud en el trabajo.</li>
         </ol>
 

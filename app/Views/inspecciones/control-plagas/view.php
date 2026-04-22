@@ -14,7 +14,7 @@
 
 <!-- Datos Generales -->
 <div class="card mb-3">
-    <div class="card-header" style="background: #1b4332; color: white;">
+    <div class="card-header" style="background: #c9541a; color: white;">
         <i class="fas fa-info-circle me-1"></i> Datos Generales
     </div>
     <div class="card-body p-0">

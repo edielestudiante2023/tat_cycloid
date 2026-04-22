@@ -45,7 +45,7 @@
         text-align: center;
         font-weight: bold;
         font-size: 13px;
-        color: #1b4332;
+        color: #c9541a;
         margin: 20px 0 5px;
     }
     .subtitle {
@@ -58,16 +58,16 @@
     .section-title {
         font-weight: bold;
         font-size: 11px;
-        color: #1b4332;
+        color: #c9541a;
         margin-top: 18px;
         margin-bottom: 6px;
-        border-bottom: 1px solid #1b4332;
+        border-bottom: 1px solid #c9541a;
         padding-bottom: 3px;
     }
     .subsection-title {
         font-weight: bold;
         font-size: 10px;
-        color: #1b4332;
+        color: #c9541a;
         margin-top: 12px;
         margin-bottom: 4px;
     }
@@ -78,7 +78,7 @@
         font-size: 9px;
     }
     .data-table th {
-        background: #1b4332;
+        background: #c9541a;
         color: white;
         padding: 5px 6px;
         text-align: left;
@@ -126,24 +126,24 @@
     }
     .indicador-box .ind-label {
         font-weight: bold;
-        color: #1b4332;
+        color: #c9541a;
     }
     .tanque-info {
-        border: 1px solid #1b4332;
+        border: 1px solid #c9541a;
         padding: 8px 12px;
         margin: 8px 0 12px;
         background: #f5f8ff;
     }
     .tanque-info .tanque-label {
         font-weight: bold;
-        color: #1b4332;
+        color: #c9541a;
     }
 </style>
 </head>
 <body>
 
 <?php
-$nombreCliente = $cliente['nombre_cliente'] ?? 'CONJUNTO RESIDENCIAL';
+$nombreCliente = $cliente['nombre_cliente'] ?? 'ESTABLECIMIENTO COMERCIAL';
 $cantTanques = $inspeccion['cantidad_tanques'] ?? '—';
 $capIndividual = $inspeccion['capacidad_individual'] ?? '—';
 $capTotal = $inspeccion['capacidad_total'] ?? '—';
@@ -232,7 +232,7 @@ $capTotal = $inspeccion['capacidad_total'] ?? '—';
 <p class="definition-text">La captación del agua se realiza mediante tanques aéreos y/o subterráneos, los cuales permiten garantizar el suministro del recurso en situaciones de emergencia o suspensión temporal del servicio.</p>
 
 <div class="definition-term">c. Distribución:</div>
-<p class="definition-text">El sistema de distribución está conformado por tuberías que transportan el agua desde los tanques de almacenamiento hacia los puntos de suministro del conjunto residencial.</p>
+<p class="definition-text">El sistema de distribución está conformado por tuberías que transportan el agua desde los tanques de almacenamiento hacia los puntos de suministro del establecimiento comercial.</p>
 
 <div class="definition-term">d. Almacenamiento:</div>
 <p class="definition-text"><?= esc($nombreCliente) ?> debe garantizar un abastecimiento mínimo de agua potable para un periodo de setenta y dos (72) horas, para lo cual se realizará un aforo del consumo, siguiendo el siguiente procedimiento:</p>

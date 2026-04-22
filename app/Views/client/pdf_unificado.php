@@ -12,7 +12,7 @@
     <style>
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #1b4332;
+            color: #c9541a;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
         }
@@ -20,7 +20,7 @@
         .navbar {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 3px solid #e76f51;
+            border-bottom: 3px solid #ee6c21;
             position: fixed;
             top: 0;
             width: 100%;
@@ -52,7 +52,7 @@
         }
 
         .header-section {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             color: white;
             padding: 2rem;
             border-radius: 15px;
@@ -72,7 +72,7 @@
         }
 
         .info-card {
-            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
+            background: linear-gradient(135deg, #ee6c21 0%, #ff8d4e 100%);
             color: white;
             border-radius: 15px;
             padding: 1.5rem;
@@ -121,7 +121,7 @@
         .document-item .icon {
             width: 35px;
             height: 35px;
-            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
+            background: linear-gradient(135deg, #ee6c21 0%, #ff8d4e 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -144,7 +144,7 @@
         .dimension-actuar { background: #9C27B0; color: white; }
 
         .btn-generate {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             color: white;
             font-weight: 600;
             padding: 1rem 2rem;
@@ -169,8 +169,8 @@
 
         .btn-back {
             background: transparent;
-            color: #1b4332;
-            border: 2px solid #1b4332;
+            color: #c9541a;
+            border: 2px solid #c9541a;
             padding: 0.75rem 1.5rem;
             border-radius: 50px;
             font-weight: 600;
@@ -178,7 +178,7 @@
         }
 
         .btn-back:hover {
-            background: #1b4332;
+            background: #c9541a;
             color: white;
         }
 
@@ -198,7 +198,7 @@
         }
 
         .progress-bar {
-            background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
+            background: linear-gradient(135deg, #ee6c21 0%, #ff8d4e 100%);
             border-radius: 15px;
             transition: width 0.3s ease;
         }
@@ -207,7 +207,7 @@
             text-align: center;
             margin-top: 1rem;
             font-weight: 500;
-            color: #1b4332;
+            color: #c9541a;
         }
 
         .alert-warning-custom {
@@ -232,7 +232,7 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #e76f51;
+            color: #ee6c21;
         }
 
         .stat-label {
@@ -241,7 +241,7 @@
         }
 
         footer {
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             color: #ffffff;
             padding: 20px 0;
             margin-top: 3rem;
@@ -268,14 +268,8 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container navbar-content">
-            <a href="https://dashboard.cycloidtalent.com/login" target="_blank">
-                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Logo Cycloid TAT">
-            </a>
-            <a href="https://cycloidtalent.com/index.php/consultoria-sst" target="_blank">
-                <img src="<?= base_url('uploads/logosst.png') ?>" alt="Logo SST">
-            </a>
-            <a href="https://cycloidtalent.com/" target="_blank">
-                <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Logo Cycloid">
+            <a href="https://tat.cycloidtalent.com/index.php/login" target="_blank">
+                <img src="<?= base_url('uploads/tat.png') ?>" alt="Logo Cycloid TAT">
             </a>
         </div>
     </nav>
@@ -352,7 +346,7 @@
                                 $currentDimension = $acceso['dimension'];
                         ?>
                             <div class="document-item" style="background: #f8f9fa; font-weight: 600; cursor:pointer;" data-dimension="<?= esc($currentDimension) ?>">
-                                <div class="icon" style="background: #1b4332;">
+                                <div class="icon" style="background: #c9541a;">
                                     <i class="fas fa-folder"></i>
                                 </div>
                                 <span><?= esc($currentDimension) ?></span>

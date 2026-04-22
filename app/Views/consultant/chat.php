@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#1b4332">
+    <meta name="theme-color" content="#c9541a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Otto - Asistente SST</title>
@@ -17,10 +17,10 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         :root {
-            --primary-dark: #1b4332;
-            --secondary-dark: #2d6a4f;
-            --gold-primary: #e76f51;
-            --gold-secondary: #f4a261;
+            --primary-dark: #c9541a;
+            --secondary-dark: #ee6c21;
+            --gold-primary: #ee6c21;
+            --gold-secondary: #ff8d4e;
             --white-primary: #ffffff;
             --white-secondary: #f8f9fa;
             --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -627,9 +627,8 @@
         <div class="container">
             <div class="header-logos-custom">
                 <div style="display:flex; align-items:center; gap: 10px;">
-                    <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT">
-                    <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloid" style="max-height:40px;">
-                </div>
+                    <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT">
+                    </div>
                 <div class="nav-title" style="display:flex;align-items:center;gap:8px;">
                     <img src="<?= base_url('otto/otto.png') ?>" alt="Otto" style="width:32px;height:32px;border-radius:50%;object-fit:cover;">
                     <span>Otto</span>

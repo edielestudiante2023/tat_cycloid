@@ -180,11 +180,11 @@
     <div class="alpha-title">POLÍTICA USO ELEMENTOS DE PROTECCIÓN PERSONAL</div>
 
     <p class="beta-parrafo">
-        A pesar de carecer de empleados directos, <strong><?= $client['nombre_cliente'] ?></strong> se compromete a velar por la seguridad y salud en el trabajo de sus contratistas y proveedores, quienes desempeñan actividades comerciales mediante personal especializado según el objeto del contrato. La copropiedad asume la responsabilidad de supervisar, monitorear y auditar la provisión de elementos de protección personal (EPP) por parte de contratistas y proveedores para prevenir accidentes y salvaguardar la salud de los trabajadores.
+        A pesar de carecer de empleados directos, <strong><?= $client['nombre_cliente'] ?></strong> se compromete a velar por la seguridad y salud en el trabajo de sus contratistas y proveedores, quienes desempeñan actividades comerciales mediante personal especializado según el objeto del contrato. El establecimiento comercial asume la responsabilidad de supervisar, monitorear y auditar la provisión de elementos de protección personal (EPP) por parte de contratistas y proveedores para prevenir accidentes y salvaguardar la salud de los trabajadores.
     </p>
 
     <p class="beta-parrafo">
-        Para garantizar la eficacia de los equipos y EPP proporcionados al personal de contratistas y proveedores, la copropiedad se compromete a:
+        Para garantizar la eficacia de los equipos y EPP proporcionados al personal de contratistas y proveedores, el establecimiento comercial se compromete a:
     </p>
 
     <ul class="delta-lista">
@@ -198,9 +198,9 @@
 
     <ul class="delta-lista">
         <li class="beta-parrafo">Utilizar correctamente y de manera obligatoria los EPP asignados para garantizar su propia seguridad.</li>
-        <li class="beta-parrafo">Informar a su supervisor y/o al responsable del contrato, ya sea contratista o proveedor de la copropiedad, sobre la falta o deterioro de los EPP.</li>
+        <li class="beta-parrafo">Informar a su supervisor y/o al responsable del contrato, ya sea contratista o proveedor del establecimiento comercial, sobre la falta o deterioro de los EPP.</li>
         <li class="beta-parrafo">No iniciar la prestación del servicio o el objeto del contrato sin disponer de los EPP necesarios según la naturaleza del riesgo.</li>
-        <li class="beta-parrafo">La copropiedad se reserva el derecho de no autorizar la prestación del servicio en caso de incumplimiento por parte del proveedor o contratista en el uso de los EPP exigidos por la normativa vigente en la materia.</li>
+        <li class="beta-parrafo">El establecimiento comercial se reserva el derecho de no autorizar la prestación del servicio en caso de incumplimiento por parte del proveedor o contratista en el uso de los EPP exigidos por la normativa vigente en la materia.</li>
     </ul>
 
 

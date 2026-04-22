@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-dark: #1b4332;
-            --secondary-dark: #2d6a4f;
-            --gold-primary: #e76f51;
-            --gold-secondary: #f4a261;
+            --primary-dark: #c9541a;
+            --secondary-dark: #ee6c21;
+            --gold-primary: #ee6c21;
+            --gold-secondary: #ff8d4e;
             --white-primary: #ffffff;
             --white-secondary: #f8f9fa;
             --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -276,11 +276,11 @@
             position: fixed;
             bottom: 0; left: 0; right: 0;
             z-index: 9999;
-            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            background: linear-gradient(135deg, #c9541a 0%, #ee6c21 100%);
             color: white;
             padding: 16px 20px;
             box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
-            border-top: 3px solid #e76f51;
+            border-top: 3px solid #ee6c21;
         }
 
         /* Botón logout */
@@ -368,11 +368,11 @@
         <div style="display:flex; align-items:center; justify-content:space-between; max-width:600px; margin:0 auto;">
             <div style="flex:1;">
                 <div style="font-weight:700; font-size:15px; margin-bottom:2px;">
-                    <i class="fas fa-mobile-alt me-2" style="color:#e76f51;"></i>App de Inspecciones
+                    <i class="fas fa-mobile-alt me-2" style="color:#ee6c21;"></i>App de Inspecciones
                 </div>
                 <div style="font-size:12px; opacity:0.8;">Accede a la version movil optimizada</div>
             </div>
-            <a href="<?= base_url('/inspecciones') ?>" target="_blank" style="background:#e76f51; color:white; padding:10px 20px; border-radius:25px; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap; margin-left:12px;">
+            <a href="<?= base_url('/inspecciones') ?>" target="_blank" style="background:#ee6c21; color:white; padding:10px 20px; border-radius:25px; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap; margin-left:12px;">
                 Abrir App <i class="fas fa-arrow-right ms-1"></i>
             </a>
             <button onclick="document.getElementById('mobileBanner').style.display='none'" style="background:none; border:none; color:rgba(255,255,255,0.6); font-size:20px; padding:4px 8px; margin-left:8px; cursor:pointer;">&times;</button>
@@ -392,18 +392,8 @@
             <div class="container">
                 <div class="header-logos-custom">
                     <div>
-                        <a href="https://dashboard.cycloidtalent.com/login" target="_blank" rel="noopener noreferrer">
-                            <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://cycloidtalent.com/index.php/consultoria-sst" target="_blank" rel="noopener noreferrer">
-                            <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://cycloidtalent.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo">
+                        <a href="https://tat.cycloidtalent.com/index.php/login" target="_blank" rel="noopener noreferrer">
+                            <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo">
                         </a>
                     </div>
                 </div>

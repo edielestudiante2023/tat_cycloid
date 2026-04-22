@@ -24,7 +24,7 @@
         .header-code { width: 130px; font-size: 9px; }
 
         /* Titulo principal */
-        .main-title { text-align: center; font-size: 12px; font-weight: bold; margin: 10px 0 8px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 12px; font-weight: bold; margin: 10px 0 8px; color: #c9541a; }
 
         /* Tabla datos generales */
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; border: 1px solid #ccc; }
@@ -32,7 +32,7 @@
         .info-label { font-weight: bold; color: #444; width: 100px; background: #f7f7f7; }
 
         /* Titulos de seccion */
-        .section-title { background: #1b4332; color: white; padding: 4px 10px; font-weight: bold; font-size: 10px; margin: 10px 0 5px; }
+        .section-title { background: #c9541a; color: white; padding: 4px 10px; font-weight: bold; font-size: 10px; margin: 10px 0 5px; }
 
         /* Tablas de datos */
         .data-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
@@ -107,22 +107,22 @@
         En cumplimiento de los lineamientos establecidos por el Sistema de Gestion de Seguridad y Salud en el Trabajo (SG-SST) y con base en la normativa vigente en Colombia, se realizo una inspeccion tecnica de senalizacion en las instalaciones de <?= esc($cliente['nombre_cliente'] ?? '') ?>. Esta actividad hace parte de las acciones planificadas para la identificacion de condiciones inseguras y la verificacion del cumplimiento de los requisitos minimos de seguridad en infraestructura, enmarcados en el Decreto 1072 de 2015 y la Resolucion 0312 de 2019.
     </p>
     <p class="intro-text">
-        El proposito de la inspeccion fue evaluar la adecuacion, visibilidad y estado de los elementos de senalizacion preventiva, informativa y de emergencia en las zonas comunes de la copropiedad, considerando su impacto directo en la prevencion de accidentes, la orientacion de residentes y visitantes, y la adecuada respuesta ante situaciones de emergencia. Se incluyeron elementos como rutas de evacuacion, salidas de emergencia, senalizacion de extintores, botiquines, camillas, puntos de encuentro, alarmas, gabinetes contra incendio, asi como senalizacion vial interna y de seguridad en piscinas y cuartos tecnicos.
+        El proposito de la inspeccion fue evaluar la adecuacion, visibilidad y estado de los elementos de senalizacion preventiva, informativa y de emergencia en las áreas del establecimiento comercial, considerando su impacto directo en la prevencion de accidentes, la orientacion de clientes y trabajadores y visitantes, y la adecuada respuesta ante situaciones de emergencia. Se incluyeron elementos como rutas de evacuacion, salidas de emergencia, senalizacion de extintores, botiquines, camillas, puntos de encuentro, alarmas, gabinetes contra incendio, asi como senalizacion vial interna y de seguridad en piscinas y cuartos tecnicos.
     </p>
     <p class="intro-text">
-        Esta labor fue liderada por Cycloid Talent SAS, siguiendo criterios tecnicos definidos en el Formato FT-SST-224 - Version 001, con el fin de garantizar la trazabilidad del proceso y la mejora continua del sistema de gestion en la copropiedad.
+        Esta labor fue liderada por Cycloid Talent SAS, siguiendo criterios tecnicos definidos en el Formato FT-SST-224 - Version 001, con el fin de garantizar la trazabilidad del proceso y la mejora continua del sistema de gestion en el establecimiento comercial.
     </p>
 
     <!-- JUSTIFICACION -->
     <div class="section-title">JUSTIFICACION</div>
     <p class="intro-text">
-        La senalizacion adecuada en espacios residenciales no es unicamente un requerimiento normativo, sino una herramienta esencial en la prevencion de riesgos y en la proteccion de la vida e integridad de las personas que habitan, trabajan o visitan el conjunto residencial. Segun el Decreto 1072 de 2015 y sus normas complementarias, las organizaciones deben implementar medidas que garanticen ambientes de trabajo y convivencia seguros, entre ellas, la correcta senalizacion de zonas de riesgo y equipos de emergencia.
+        La senalizacion adecuada en espacios residenciales no es unicamente un requerimiento normativo, sino una herramienta esencial en la prevencion de riesgos y en la proteccion de la vida e integridad de las personas que habitan, trabajan o visitan el establecimiento comercial. Segun el Decreto 1072 de 2015 y sus normas complementarias, las organizaciones deben implementar medidas que garanticen ambientes de trabajo y convivencia seguros, entre ellas, la correcta senalizacion de zonas de riesgo y equipos de emergencia.
     </p>
     <p class="intro-text">
-        En entornos como los conjuntos residenciales, donde confluyen personas de todas las edades y niveles de conocimiento en seguridad, la senalizacion cumple una funcion clave en la orientacion frente a riesgos electricos, quimicos, fisicos, o ante situaciones de evacuacion. Una senalizacion deficiente o inexistente puede generar confusion, retrasos en la respuesta a emergencias, aumento de accidentes y, en casos graves, consecuencias legales por negligencia administrativa.
+        En entornos como los establecimientos comerciales, donde confluyen personas de todas las edades y niveles de conocimiento en seguridad, la senalizacion cumple una funcion clave en la orientacion frente a riesgos electricos, quimicos, fisicos, o ante situaciones de evacuacion. Una senalizacion deficiente o inexistente puede generar confusion, retrasos en la respuesta a emergencias, aumento de accidentes y, en casos graves, consecuencias legales por negligencia administrativa.
     </p>
     <p class="intro-text">
-        Por tanto, este informe tecnico permite establecer un diagnostico claro del estado actual de la senalizacion, identificando fortalezas y oportunidades de mejora, para que la administracion del conjunto <?= esc($cliente['nombre_cliente'] ?? '') ?> implemente planes de accion correctivos, preventivos o de mejora que aseguren el cumplimiento de los estandares minimos en SST, protejan a la comunidad y fortalezcan la cultura del autocuidado y la prevencion.
+        Por tanto, este informe tecnico permite establecer un diagnostico claro del estado actual de la senalizacion, identificando fortalezas y oportunidades de mejora, para que la administracion del establecimiento <?= esc($cliente['nombre_cliente'] ?? '') ?> implemente planes de accion correctivos, preventivos o de mejora que aseguren el cumplimiento de los estandares minimos en SST, protejan a los ocupantes del establecimiento y fortalezcan la cultura del autocuidado y la prevencion.
     </p>
 
     <!-- HALLAZGOS POR GRUPO -->

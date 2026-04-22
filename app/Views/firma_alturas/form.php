@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { background: linear-gradient(135deg, #2d6a4f 0%, #1a252f 100%); min-height: 100vh; }
+        body { background: linear-gradient(135deg, #ee6c21 0%, #1a252f 100%); min-height: 100vh; }
         .firma-container { max-width: 650px; margin: 0 auto; padding: 15px; }
         .card-firma { border: none; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
         .header-protocolo { background: linear-gradient(135deg, #c0392b 0%, #96281b 100%); color: white; border-radius: 12px 12px 0 0; padding: 20px; text-align: center; }
@@ -46,16 +46,16 @@
                 </div>
 
                 <div class="risk-box mb-3">
-                    <i class="fas fa-exclamation-triangle"></i> <strong>Responsabilidad:</strong> Si la copropiedad autoriza o permite trabajos en alturas con personal sin curso de alturas, sin EPS, sin ARL o sin seguridad social, y ocurre un accidente grave o mortal:
+                    <i class="fas fa-exclamation-triangle"></i> <strong>Responsabilidad:</strong> Si el establecimiento comercial autoriza o permite trabajos en alturas con personal sin curso de alturas, sin EPS, sin ARL o sin seguridad social, y ocurre un accidente grave o mortal:
                     <ul class="mb-0 mt-1">
                         <li>El administrador como representante legal responde civil y penalmente</li>
                         <li>La ARL no cubre el accidente si el trabajador no está afiliado</li>
-                        <li>La copropiedad asume la totalidad de costos médicos, indemnizaciones y sanciones</li>
+                        <li>El establecimiento comercial asume la totalidad de costos médicos, indemnizaciones y sanciones</li>
                     </ul>
                 </div>
 
                 <div class="action-box mb-3">
-                    <i class="fas fa-clipboard-check"></i> <strong>Protocolo:</strong> Antes de autorizar cualquier trabajo en alturas en las instalaciones de la copropiedad, el administrador DEBE notificar formalmente al consultor SST asignado por Cycloid Talent para verificar el cumplimiento de requisitos legales del contratista.
+                    <i class="fas fa-clipboard-check"></i> <strong>Protocolo:</strong> Antes de autorizar cualquier trabajo en alturas en las instalaciones del establecimiento comercial, el administrador DEBE notificar formalmente al consultor SST asignado por Cycloid Talent para verificar el cumplimiento de requisitos legales del contratista.
                 </div>
 
                 <p><strong>Cycloid Talent SAS</strong>, como consultor externo del SG-SST, <strong>no asume responsabilidad</strong> por accidentes derivados de trabajos en alturas que no hayan sido notificados formalmente, conforme a lo establecido en el contrato de prestación de servicios vigente.</p>
@@ -245,5 +245,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+    <script src="<?= base_url('js/image-compress.js?v=1') ?>" defer></script>
 </body>
 </html>

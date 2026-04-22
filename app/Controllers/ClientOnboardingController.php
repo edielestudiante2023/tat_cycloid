@@ -179,6 +179,7 @@ class ClientOnboardingController extends Controller
         if ($file && $file->isValid() && !$file->hasMoved()) {
             $name = $file->getRandomName();
             $file->move($uploadPath, $name);
+            compress_uploaded_image($uploadPath . '/' . $name);
             return $name;
         }
         return null;

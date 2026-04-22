@@ -264,8 +264,8 @@
         <p>
             El Sistema de gestión en Seguridad y Salud en el trabajo de <b><?= $client['nombre_cliente'] ?></b>
             depende de un modelo de administración efectivo fundamentado bajo principios de calidad a partir del ciclo PHVA.
-            Sin embargo, su desarrollo efectivo se alcanzará en la medida que la copropiedad logre una concepción clara de la importancia
-            de éste en todos los riesgos que pueda tener la copropiedad y su responsabilidad contractual con contratistas, proveedores y residentes.
+            Sin embargo, su desarrollo efectivo se alcanzará en la medida que el establecimiento comercial logre una concepción clara de la importancia
+            de éste en todos los riesgos que pueda tener el establecimiento comercial y su responsabilidad contractual con contratistas, proveedores y clientes y trabajadores.
             Es por esto por lo que se plantean los siguientes niveles de participación, sus funciones y responsabilidades.
         </p>
         <h2>Roles y Responsabilidades</h2>
@@ -280,7 +280,7 @@
             <tbody>
                 <tr>
                     <td>Gestión de Riesgos</td>
-                    <td>El administrador debe asegurar la gestión de los riesgos aplicables a contratantes de personal bajo modalidad de contrato civil, comercial o administrativo, que presten sus servicios a la copropiedad, a fin de minimizar el riesgo legal.</td>
+                    <td>El administrador debe asegurar la gestión de los riesgos aplicables a contratantes de personal bajo modalidad de contrato civil, comercial o administrativo, que presten sus servicios al establecimiento comercial, a fin de minimizar el riesgo legal.</td>
                 </tr>
                 <tr>
                     <td>Política de Seguridad y Salud en el Trabajo</td>
@@ -288,23 +288,23 @@
                 </tr>
                 <tr>
                     <td>Asignación y Comunicación de Responsabilidades</td>
-                    <td>Debe asignar, documentar y comunicar las responsabilidades específicas en Seguridad y Salud en el Trabajo SST a los residentes, consejo, comités de la copropiedad, contratistas, y prestadores de servicios.</td>
+                    <td>Debe asignar, documentar y comunicar las responsabilidades específicas en Seguridad y Salud en el Trabajo SST a los clientes y trabajadores, consejo, comités del establecimiento comercial, contratistas, y prestadores de servicios.</td>
                 </tr>
                 <tr>
                     <td>Definición de Recursos</td>
-                    <td>Asesora y orienta a la administración del conjunto y consejo de administración la estructura del gasto para la asignación de los recursos financieros, técnicos y el personal necesario para el diseño, implementación, revisión evaluación y mejora de las medidas de prevención y control, para la gestión eficaz de los peligros y riesgos en la copropiedad.</td>
+                    <td>Asesora y orienta al propietario del establecimiento y al responsable del SG-SST la estructura del gasto para la asignación de los recursos financieros, técnicos y el personal necesario para el diseño, implementación, revisión evaluación y mejora de las medidas de prevención y control, para la gestión eficaz de los peligros y riesgos en el establecimiento comercial.</td>
                 </tr>
                 <tr>
                     <td>Cumplimiento de los Requisitos Normativos Aplicables</td>
                     <td>Debe garantizar que opera bajo el cumplimiento de la normatividad nacional vigente aplicable en materia de seguridad y salud en el trabajo.</td>
                 </tr>
                 <tr>
-                    <td>Rendición de cuentas al interior de la copropiedad</td>
+                    <td>Rendición de cuentas al interior del establecimiento comercial</td>
                     <td>A quienes se les hayan delegado responsabilidades en el Sistema de Gestión de la Seguridad y Salud en el Trabajo SG-SST, tienen la obligación de rendir cuentas internamente en relación con su desempeño. Esta rendición de cuentas se podrá hacer a través de medios escritos, electrónicos, verbales o los que sean considerados por los responsables. La rendición se hará como mínimo anualmente y deberá quedar documentada.</td>
                 </tr>
                 <tr>
                     <td>Gestión de los Peligros y Riesgos</td>
-                    <td>Debe adoptar disposiciones efectivas para desarrollar las medidas de identificación de peligros, evaluación y valoración de los riesgos y establecimiento de controles que prevengan daños en la salud de los residentes y/o contratistas, en los equipos e instalaciones.</td>
+                    <td>Debe adoptar disposiciones efectivas para desarrollar las medidas de identificación de peligros, evaluación y valoración de los riesgos y establecimiento de controles que prevengan daños en la salud de los clientes y trabajadores y/o contratistas, en los equipos e instalaciones.</td>
                 </tr>
                 <tr>
                     <td>Plan de Trabajo Anual en SST</td>
@@ -312,19 +312,19 @@
                 </tr>
                 <tr>
                     <td>Prevención y Promoción de Riesgos Laborales de contratistas y prestadores de servicios</td>
-                    <td>La copropiedad debe implementar y desarrollar controles a sus contratistas y prestadores de servicio para la prevención de accidentes de trabajo y enfermedades laborales, así como de promoción de la salud en el Sistema de Gestión de la Seguridad y Salud en el Trabajo SG-SST.</td>
+                    <td>El establecimiento comercial debe implementar y desarrollar controles a sus contratistas y prestadores de servicio para la prevención de accidentes de trabajo y enfermedades laborales, así como de promoción de la salud en el Sistema de Gestión de la Seguridad y Salud en el Trabajo SG-SST.</td>
                 </tr>
                 <tr>
-                    <td>Participación de los contratistas, prestadores de servicios, consejo y residentes</td>
-                    <td>Debe asegurar la adopción de medidas eficaces que garanticen la participación de todos los actores de la copropiedad, vista como un sistema de naturaleza abierta que interactúa con otros sistemas, y sus representantes ante los residentes como son el consejo de administración y el vigía en Seguridad y Salud en el Trabajo. Estos representantes de la copropiedad frente al SG – SST deben participar en la ejecución de la política y funcionamiento del sistema, a fin de que cuenten con el tiempo y demás recursos necesarios, acorde con la normatividad vigente que les es aplicable.</td>
+                    <td>Participación de los contratistas, prestadores de servicios, consejo y clientes y trabajadores</td>
+                    <td>Debe asegurar la adopción de medidas eficaces que garanticen la participación de todos los actores del establecimiento comercial, vista como un sistema de naturaleza abierta que interactúa con otros sistemas, y sus representantes ante los clientes y trabajadores como son el responsable del establecimiento y el vigía en Seguridad y Salud en el Trabajo. Estos representantes del establecimiento comercial frente al SG – SST deben participar en la ejecución de la política y funcionamiento del sistema, a fin de que cuenten con el tiempo y demás recursos necesarios, acorde con la normatividad vigente que les es aplicable.</td>
                 </tr>
                 <tr>
                     <td>Capacitación</td>
-                    <td>Garantizar un programa de capacitación acorde con las necesidades específicas detectadas en la identificación de peligros, evaluación y valoración de riesgos. Garantizar un programa de inducción y entrenamiento para los contratistas y prestadores de servicio de la copropiedad, independientemente de su forma de vínculo contractual. La capacitación de nivel estratégico para consejo de administración y comités también es parte de la gestión del sistema al menos una vez al año.</td>
+                    <td>Garantizar un programa de capacitación acorde con las necesidades específicas detectadas en la identificación de peligros, evaluación y valoración de riesgos. Garantizar un programa de inducción y entrenamiento para los contratistas y prestadores de servicio del establecimiento comercial, independientemente de su forma de vínculo contractual. La capacitación de nivel estratégico para el responsable del establecimiento y comités también es parte de la gestión del sistema al menos una vez al año.</td>
                 </tr>
                 <tr>
                     <td>Comunicación</td>
-                    <td>Garantizar información oportuna sobre la gestión de la seguridad y salud en el trabajo y canales de comunicación que permitan recolectar información manifestada por los contratistas y el administrador de la copropiedad.</td>
+                    <td>Garantizar información oportuna sobre la gestión de la seguridad y salud en el trabajo y canales de comunicación que permitan recolectar información manifestada por los contratistas y el responsable del establecimiento.</td>
                 </tr>
                 <tr>
                     <td>Identificación de Riesgos</td>
@@ -332,7 +332,7 @@
                 </tr>
                 <tr>
                     <td>Integración</td>
-                    <td>La copropiedad debe involucrar los aspectos de Seguridad y Salud en el Trabajo frente a los demás procesos, procedimientos y decisiones en la copropiedad.</td>
+                    <td>El establecimiento comercial debe involucrar los aspectos de Seguridad y Salud en el Trabajo frente a los demás procesos, procedimientos y decisiones en el establecimiento comercial.</td>
                 </tr>
             </tbody>
         </table>
@@ -356,7 +356,7 @@
                 </tr>
                 <tr>
                     <td>Promover la participación</td>
-                    <td>Promover la participación de todos los miembros del consejo de administración y del administrador en la implementación del SG-SST.</td>
+                    <td>Promover la participación de todo el equipo de trabajo y del propietario en la implementación del SG-SST.</td>
                 </tr>
                 <tr>
                     <td>Identificación, evaluación y valoración de riesgos</td>
@@ -364,7 +364,7 @@
                 </tr>
                 <tr>
                     <td>Comunicación</td>
-                    <td>Promover la comprensión de las políticas en los contratistas y residentes. Informar sobre las necesidades de capacitación y entrenamiento en Seguridad y Salud en el Trabajo según los riesgos prioritarios y los niveles de la copropiedad.</td>
+                    <td>Promover la comprensión de las políticas en los contratistas y clientes y trabajadores. Informar sobre las necesidades de capacitación y entrenamiento en Seguridad y Salud en el Trabajo según los riesgos prioritarios y los niveles del establecimiento comercial.</td>
                 </tr>
                 <tr>
                     <td>Incidentes y accidentes</td>
@@ -400,11 +400,11 @@
                 </tr>
                 <tr>
                     <td>Cumplir</td>
-                    <td>Cumplir las normas, reglamentos e instrucciones del Sistema de Gestión de la Seguridad y Salud en la copropiedad.</td>
+                    <td>Cumplir las normas, reglamentos e instrucciones del Sistema de Gestión de la Seguridad y Salud en el establecimiento comercial.</td>
                 </tr>
                 <tr>
                     <td>Comunicación</td>
-                    <td>Informar oportunamente al administrador de la copropiedad y al contratante acerca de los peligros y riesgos latentes en su sitio de trabajo.</td>
+                    <td>Informar oportunamente al responsable del establecimiento y al contratante acerca de los peligros y riesgos latentes en su sitio de trabajo.</td>
                 </tr>
                 <tr>
                     <td>Capacitarse</td>
@@ -416,7 +416,7 @@
                 </tr>
                 <tr>
                     <td>Reporte</td>
-                    <td>Reportar inmediatamente todo accidente o incidente de trabajo tanto a la empresa contratista como al administrador de la copropiedad.</td>
+                    <td>Reportar inmediatamente todo accidente o incidente de trabajo tanto a la empresa contratista como al responsable del establecimiento.</td>
                 </tr>
             </tbody>
         </table>
@@ -431,15 +431,15 @@
             <tbody>
                 <tr>
                     <td>Investigar</td>
-                    <td>Accidentes, incidentes, y otras estadísticas de los contratistas de la copropiedad.</td>
+                    <td>Accidentes, incidentes, y otras estadísticas de los contratistas del establecimiento comercial.</td>
                 </tr>
                 <tr>
                     <td>Capacitar</td>
-                    <td>Participar en actividades de capacitación y retroalimentar al consejo de administración.</td>
+                    <td>Participar en actividades de capacitación y retroalimentar al responsable del establecimiento.</td>
                 </tr>
                 <tr>
                     <td>Coordinar</td>
-                    <td>Entre consejo de administración, contratistas, y administrador de la copropiedad frente a temas inherentes a la Seguridad y Salud en el Trabajo.</td>
+                    <td>Entre el responsable del establecimiento, contratistas y el propietario frente a temas inherentes a la Seguridad y Salud en el Trabajo.</td>
                 </tr>
                 <tr>
                     <td>Inspeccionar</td>
@@ -447,11 +447,11 @@
                 </tr>
                 <tr>
                     <td>Vigilar</td>
-                    <td>El cumplimiento del Sistema de Gestión de la Seguridad y la Salud en el Trabajo de la copropiedad. Así mismo podrá solicitar a contratistas el Reglamento de Higiene y Seguridad Industrial y las demás normas legales vigentes.</td>
+                    <td>El cumplimiento del Sistema de Gestión de la Seguridad y la Salud en el Trabajo del establecimiento comercial. Así mismo podrá solicitar a contratistas el Reglamento de Higiene y Seguridad Industrial y las demás normas legales vigentes.</td>
                 </tr>
                 <tr>
                     <td>Informar</td>
-                    <td>Informar al consejo de administración y al administrador de la copropiedad las inquietudes de los trabajadores de los contratistas y de los residentes de la copropiedad.</td>
+                    <td>Informar al responsable del establecimiento y al propietario las inquietudes de los trabajadores de los contratistas y de los clientes y trabajadores del establecimiento comercial.</td>
                 </tr>
             </tbody>
         </table>
@@ -483,7 +483,7 @@
                 </tr>
                 <tr>
                     <td>Gestión de la evacuación</td>
-                    <td>Debe gestionar la evacuación de la copropiedad, teniendo claro el manejo de rutas de evacuación, punto de encuentro, alarmas, conteo de residentes, manejo de elementos de evacuación como camillas y botiquines.</td>
+                    <td>Debe gestionar la evacuación del establecimiento comercial, teniendo claro el manejo de rutas de evacuación, punto de encuentro, alarmas, conteo de clientes y trabajadores, manejo de elementos de evacuación como camillas y botiquines.</td>
                 </tr>
                 <tr>
                     <td>Diseño de planes y simulacros</td>
@@ -491,7 +491,7 @@
                 </tr>
                 <tr>
                     <td>Capacitación</td>
-                    <td>Capacitar e instruir a todo el personal de la copropiedad en el plan de evacuación vigente, el cual debe ser mejorado constantemente de acuerdo con la realidad de cada copropiedad.</td>
+                    <td>Capacitar e instruir a todo el personal del establecimiento comercial en el plan de evacuación vigente, el cual debe ser mejorado constantemente de acuerdo con la realidad de cada establecimiento comercial.</td>
                 </tr>
                 <tr>
                     <td>Selección y capacitación de coordinadores</td>
@@ -521,7 +521,7 @@
         <h2>Conclusión</h2>
         <p>
             Este procedimiento detalla los roles y responsabilidades fundamentales para el Sistema de Gestión en Seguridad y Salud en el Trabajo,
-            asegurando la participación y el cumplimiento de las normativas aplicables en la copropiedad.
+            asegurando la participación y el cumplimiento de las normativas aplicables en el establecimiento comercial.
         </p>
     </div>
 

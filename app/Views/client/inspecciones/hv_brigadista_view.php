@@ -17,7 +17,7 @@
         </div>
         <?php endif; ?>
         <table class="table table-sm mb-0" style="font-size:14px;">
-            <tr><td class="text-muted" style="width:40%;">Copropiedad</td><td><strong><?= esc($cliente['nombre_cliente'] ?? 'N/A') ?></strong></td></tr>
+            <tr><td class="text-muted" style="width:40%;">Establecimiento comercial</td><td><strong><?= esc($cliente['nombre_cliente'] ?? 'N/A') ?></strong></td></tr>
             <tr><td class="text-muted">Nombre</td><td><strong><?= esc($hv['nombre_completo'] ?? 'N/A') ?></strong></td></tr>
             <tr><td class="text-muted">Documento</td><td><?= esc($hv['documento_identidad'] ?? 'N/A') ?></td></tr>
             <tr><td class="text-muted">Fecha nacimiento</td><td><?= !empty($hv['f_nacimiento']) ? date('d/m/Y', strtotime($hv['f_nacimiento'])) : 'N/A' ?></td></tr>
@@ -138,7 +138,7 @@
 <!-- Acciones -->
 <div class="mb-4">
     <?php if (!empty($hv['ruta_pdf'])): ?>
-    <a href="<?= base_url('/inspecciones/hv-brigadista/pdf/') ?><?= $hv['id'] ?>" class="btn btn-primary" target="_blank" style="background:#e76f51; border-color:#e76f51;">
+    <a href="<?= base_url('/inspecciones/hv-brigadista/pdf/') ?><?= $hv['id'] ?>" class="btn btn-primary" target="_blank" style="background:#ee6c21; border-color:#ee6c21;">
         <i class="fas fa-file-pdf"></i> Ver PDF
     </a>
     <?php endif; ?>

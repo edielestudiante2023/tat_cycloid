@@ -18,7 +18,7 @@ $colorMap = [
             <i class="fas fa-building me-1"></i> DATOS GENERALES
         </h6>
         <table class="table table-sm mb-0" style="font-size:14px;">
-            <tr><td class="text-muted" style="width:40%;">Copropiedad</td><td><strong><?= esc($cliente['nombre_cliente'] ?? 'N/A') ?></strong></td></tr>
+            <tr><td class="text-muted" style="width:40%;">Establecimiento comercial</td><td><strong><?= esc($cliente['nombre_cliente'] ?? 'N/A') ?></strong></td></tr>
             <tr><td class="text-muted">Fecha</td><td><?= date('d/m/Y', strtotime($inspeccion['fecha_inspeccion'])) ?></td></tr>
             <?php if (!empty($inspeccion['contratista'])): ?>
             <tr><td class="text-muted">Contratista</td><td><?= esc($inspeccion['contratista']) ?></td></tr>
@@ -128,7 +128,7 @@ function openPhoto(src) {
 <!-- Acciones -->
 <div class="mb-4">
     <?php if (!empty($inspeccion['ruta_pdf'])): ?>
-    <a href="<?= base_url('/inspecciones/dotacion-vigilante/pdf/') ?><?= $inspeccion['id'] ?>" class="btn btn-primary" target="_blank" style="background:#e76f51; border-color:#e76f51;">
+    <a href="<?= base_url('/inspecciones/dotacion-vigilante/pdf/') ?><?= $inspeccion['id'] ?>" class="btn btn-primary" target="_blank" style="background:#ee6c21; border-color:#ee6c21;">
         <i class="fas fa-file-pdf"></i> Ver PDF
     </a>
     <?php endif; ?>

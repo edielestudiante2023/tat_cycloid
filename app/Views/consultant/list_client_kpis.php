@@ -67,7 +67,7 @@
       <!-- Botón izquierdo -->
       <div style="text-align: center;">
         <h2 style="margin: 0; font-size: 16px;">Ir a Dashboard</h2>
-        <a href="<?= base_url('/dashboardconsultant') ?>" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-size: 14px; margin-top: 5px;">Ir a DashBoard</a>
+        <a href="<?= base_url('/dashboardconsultant') ?>" style="display: inline-block; padding: 10px 20px; background-color: #ee6c21; color: white; text-decoration: none; border-radius: 5px; font-size: 14px; margin-top: 5px;">Ir a DashBoard</a>
       </div>
       
       <!-- Botón para Restablecer Filtros -->

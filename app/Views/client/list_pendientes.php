@@ -24,6 +24,20 @@
             color: #343a40;
         }
 
+        /* Logos del navbar: responsive en movil */
+        .nav-logo { height: 60px; transition: height 0.3s; }
+        @media (max-width: 768px) {
+            .nav-logo { height: 40px !important; }
+        }
+
+        /* Selector de mes solo visible en movil */
+        .month-select-wrapper { display: none; }
+        .month-cards-wrapper { display: flex; }
+        @media (max-width: 768px) {
+            .month-cards-wrapper { display: none !important; }
+            .month-select-wrapper { display: block; }
+        }
+
         h2 {
             color: #495057;
             font-weight: 700;
@@ -178,14 +192,8 @@
             <div class="d-flex justify-content-between align-items-center w-100">
                 <!-- Logos -->
                 <div class="d-flex align-items-center">
-                    <a href="https://dashboard.cycloidtalent.com/login" class="me-3">
-                        <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" style="height: 60px;">
-                    </a>
-                    <a href="https://cycloidtalent.com/index.php/consultoria-sst" class="me-3">
-                        <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" style="height: 60px;">
-                    </a>
-                    <a href="https://cycloidtalent.com/">
-                        <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo" style="height: 60px;">
+                    <a href="https://tat.cycloidtalent.com/index.php/login" class="me-3">
+                        <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" class="nav-logo">
                     </a>
                 </div>
             </div>
@@ -258,7 +266,25 @@
         <div class="section-title">
             <i class="fas fa-calendar-week"></i> Filtrar por Mes
         </div>
-        <div class="row mb-4">
+        <!-- Selector de mes para movil -->
+        <div class="month-select-wrapper mb-4">
+            <select id="monthSelectMobile" class="form-select">
+                <option value="">-- Todos los meses --</option>
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </select>
+        </div>
+        <div class="row mb-4 month-cards-wrapper">
             <div class="col-6 col-md-1">
                 <div class="card text-white bg-info card-clickable card-month" data-month="1">
                     <div class="card-body p-2">
@@ -543,9 +569,6 @@
                 ],
                 order: [[4, 'desc']], // Ordenar por Fecha de Asignación descendente (índice ajustado)
                 stateSave: true, // Habilitar la persistencia del estado
-                scrollY: '50vh',
-                scrollX: true, // Habilitar el desplazamiento horizontal
-                scrollCollapse: true,
                 paging: true,
                 lengthChange: true,
                 searching: true,
@@ -893,6 +916,7 @@
                 $('.card-year').removeClass('active');
                 $('.card-month').removeClass('active');
                 $('.card-status').removeClass('active');
+                $('#monthSelectMobile').val('');
 
                 $.fn.dataTable.ext.search.pop();
 
@@ -902,6 +926,17 @@
                     updateStatusCounts();
                     updateMonthlyCounts();
                 }
+            });
+
+            // Selector de mes en movil: aplica el mismo filtro que las tarjetas
+            $('#monthSelectMobile').on('change', function() {
+                var val = $(this).val();
+                activeMonth = val ? val : null;
+                $('.card-month').removeClass('active');
+                if (val) {
+                    $('.card-month[data-month="' + val + '"]').addClass('active');
+                }
+                applyFilters();
             });
 
             // Actualizar contadores cuando la tabla se redibuja

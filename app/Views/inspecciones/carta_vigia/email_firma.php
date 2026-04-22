@@ -1,7 +1,7 @@
 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
     <!-- Header -->
-    <div style="background: linear-gradient(135deg, #2d6a4f 0%, #1a252f 100%); padding: 30px 20px; text-align: center; border-radius: 8px 8px 0 0;">
-        <div style="font-size: 32px; color: #e76f51; margin-bottom: 8px;">&#128737;</div>
+    <div style="background: linear-gradient(135deg, #ee6c21 0%, #1a252f 100%); padding: 30px 20px; text-align: center; border-radius: 8px 8px 0 0;">
+        <div style="font-size: 32px; color: #ee6c21; margin-bottom: 8px;">&#128737;</div>
         <h2 style="color: white; margin: 0; font-size: 20px;">Designacion como Vigia SST</h2>
         <p style="color: rgba(255,255,255,0.7); margin: 5px 0 0; font-size: 14px;">Sistema de Gestion de Seguridad y Salud en el Trabajo</p>
     </div>
@@ -60,7 +60,7 @@
     <div style="padding: 20px; text-align: center; border-top: 1px solid #e0e0e0; background: #f0f0f0; border-radius: 0 0 8px 8px;">
         <p style="color: #999; font-size: 12px; margin: 0;">
             Este correo fue enviado por Cycloid Talent SAS<br>
-            <a href="https://cycloidtalent.com" style="color: #e76f51;">www.cycloidtalent.com</a>
+            <a href="https://cycloidtalent.com" style="color: #ee6c21;">www.cycloidtalent.com</a>
         </p>
         <p style="color: #bbb; font-size: 11px; margin: 8px 0 0;">
             Si usted no esperaba este correo, puede ignorarlo.

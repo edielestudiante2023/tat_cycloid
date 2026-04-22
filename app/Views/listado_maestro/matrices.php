@@ -10,7 +10,7 @@
     <style>
         body { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
         .main-card { max-width: 800px; margin: 40px auto; border: none; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.12); overflow: hidden; }
-        .card-header-custom { background: linear-gradient(135deg, #1b4332, #2d6a4f); color: white; padding: 24px 28px; }
+        .card-header-custom { background: linear-gradient(135deg, #c9541a, #ee6c21); color: white; padding: 24px 28px; }
         .card-header-custom h2 { margin: 0; font-weight: 700; font-size: 1.3rem; }
         .card-header-custom p { margin: 6px 0 0; opacity: 0.8; font-size: 0.85rem; }
         .card-body-custom { padding: 28px; }
@@ -73,8 +73,8 @@
                     </a>
                 </div>
 
-                <div class="matriz-card d-flex align-items-center gap-3" style="border: 2px solid #1b4332;">
-                    <div class="matriz-icon" style="background: linear-gradient(135deg, #1b4332, #2d6a4f);">
+                <div class="matriz-card d-flex align-items-center gap-3" style="border: 2px solid #c9541a;">
+                    <div class="matriz-icon" style="background: linear-gradient(135deg, #c9541a, #ee6c21);">
                         <i class="fas fa-file-archive"></i>
                     </div>
                     <div class="flex-grow-1">

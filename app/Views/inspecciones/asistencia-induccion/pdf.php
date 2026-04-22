@@ -20,14 +20,14 @@ $tipoLabel = $tiposCharla[$inspeccion['tipo_charla'] ?? ''] ?? $inspeccion['tipo
         .header-title { text-align: center; font-weight: bold; font-size: 9px; }
         .header-code { width: 120px; font-size: 8px; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #c9541a; }
         .main-subtitle { text-align: center; font-size: 9px; font-weight: bold; margin: 0 0 6px; color: #444; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
         .info-label { font-weight: bold; color: #444; width: 130px; background: #f7f7f7; }
 
-        .section-title { background: #1b4332; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
+        .section-title { background: #c9541a; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
 
         .asist-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .asist-table th { background: #e8e8e8; padding: 4px 6px; font-size: 8px; border: 1px solid #ccc; text-align: left; }
@@ -35,7 +35,7 @@ $tipoLabel = $tiposCharla[$inspeccion['tipo_charla'] ?? ''] ?? $inspeccion['tipo
 
         .content-text { font-size: 9px; line-height: 1.4; margin-bottom: 5px; }
         .resp-text { font-size: 8.5px; line-height: 1.5; margin-bottom: 6px; text-align: justify; }
-        .resp-title { font-size: 9px; font-weight: bold; margin: 6px 0 3px; color: #1b4332; }
+        .resp-title { font-size: 9px; font-weight: bold; margin: 6px 0 3px; color: #c9541a; }
 
         .firma-img { max-width: 80px; max-height: 40px; }
     </style>
@@ -135,14 +135,14 @@ $tipoLabel = $tiposCharla[$inspeccion['tipo_charla'] ?? ''] ?? $inspeccion['tipo
 
     <div class="section-title">OBJETO</div>
     <p class="resp-text">
-        El presente documento tiene como finalidad formalizar la entrega y aceptacion de responsabilidades en materia de Seguridad y Salud en el Trabajo (SST) dentro de la TIENDA A TIENDA, de acuerdo con la normativa vigente y con el objetivo de garantizar la gestion efectiva de los riesgos laborales y la proteccion de los trabajadores y contratistas.
+        El presente documento tiene como finalidad formalizar la entrega y aceptacion de responsabilidades en materia de Seguridad y Salud en el Trabajo (SST) dentro del ESTABLECIMIENTO, de acuerdo con la normativa vigente y con el objetivo de garantizar la gestion efectiva de los riesgos laborales y la proteccion de los trabajadores y contratistas.
     </p>
 
     <div class="resp-title">1. RESPONSABILIDADES DEL ADMINISTRADOR:</div>
     <p class="resp-text">
         1. Definir, firmar y divulgar la politica de Seguridad y Salud en el Trabajo, asegurando su cumplimiento y revision periodica.<br>
-        2. Asignar y comunicar las responsabilidades especificas en SST a todos los niveles de la TIENDA A TIENDA.<br>
-        3. Presentar informes de rendicion de cuentas sobre el desempeno en SST ante el consejo y la comunidad.<br>
+        2. Asignar y comunicar las responsabilidades especificas en SST a todos los niveles del ESTABLECIMIENTO.<br>
+        3. Presentar informes de rendicion de cuentas sobre el desempeno en SST ante el propietario del establecimiento.<br>
         4. Garantizar los recursos necesarios (financieros, tecnicos y de personal) para el diseno, implementacion y mejora del SG-SST.<br>
         5. Asegurar la consulta y participacion del asesor en SST y del vigia en la identificacion de peligros y la implementacion de medidas de control.<br>
         6. Revisar el cumplimiento del plan de trabajo anual de SST y la ejecucion de los recursos asignados.<br>
@@ -171,7 +171,7 @@ $tipoLabel = $tiposCharla[$inspeccion['tipo_charla'] ?? ''] ?? $inspeccion['tipo
         1. Proponer actividades para mejorar las condiciones de seguridad y salud en el trabajo.<br>
         2. Participar en actividades de capacitacion en SST y promover su cumplimiento.<br>
         3. Colaborar con autoridades en inspecciones y auditorias.<br>
-        4. Vigilar el cumplimiento de las normas de SST en la TIENDA A TIENDA.<br>
+        4. Vigilar el cumplimiento de las normas de SST en el ESTABLECIMIENTO.<br>
         5. Reportar condiciones de riesgo y sugerir medidas de control.<br>
         6. Servir de enlace entre la administracion y los contratistas en temas de SST.<br>
         7. Apoyar la revision de estadisticas de accidentalidad y enfermedades laborales.<br>
@@ -196,7 +196,7 @@ $tipoLabel = $tiposCharla[$inspeccion['tipo_charla'] ?? ''] ?? $inspeccion['tipo
 
     <div class="section-title">5. FIRMA DE ACEPTACION DE RESPONSABILIDADES</div>
     <p class="resp-text">
-        Con la firma de este documento, cada una de las partes acepta las responsabilidades establecidas en materia de Seguridad y Salud en el Trabajo dentro de la TIENDA A TIENDA.
+        Con la firma de este documento, cada una de las partes acepta las responsabilidades establecidas en materia de Seguridad y Salud en el Trabajo dentro del ESTABLECIMIENTO.
     </p>
 
     <!-- LISTADO DE ASISTENTES (firmas de aceptacion) -->

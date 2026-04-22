@@ -7,7 +7,7 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #e6edf3; font-size: 18px; line-height: 1.6; }
-.doc-header { background: #1b4332; border-bottom: 4px solid #ff7b72; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.doc-header { background: #c9541a; border-bottom: 4px solid #ff7b72; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
 .doc-header h1 { font-size: 26px; color: #fff; }
 .code-badge { background: #ff7b72; color: #0d1117; font-weight: bold; font-size: 20px; padding: 8px 20px; border-radius: 6px; }
 .nav-bar { background: #161b22; padding: 12px 48px; border-bottom: 1px solid #30363d; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
@@ -17,7 +17,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 .content { padding: 48px; max-width: 1400px; margin: 0 auto; }
 .section { background: #161b22; border: 1px solid #30363d; border-radius: 10px; margin-bottom: 24px; overflow: hidden; }
 .section-header { padding: 22px 32px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; transition: background .2s; }
-.section-header:hover { background: #1b4332; }
+.section-header:hover { background: #c9541a; }
 .section-header h2 { font-size: 20px; color: #ff7b72; font-weight: 600; }
 .badges { display: flex; gap: 8px; align-items: center; }
 .badge { font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
@@ -34,7 +34,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
 .sub-section { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; margin: 14px 0; padding: 18px 24px; }
 .sub-section h3 { color: #ffa198; font-size: 15px; margin-bottom: 10px; }
 .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0; }
-.data-table th { background: #1b4332; color: #ff7b72; padding: 10px 12px; text-align: left; border: 1px solid #30363d; }
+.data-table th { background: #c9541a; color: #ff7b72; padding: 10px 12px; text-align: left; border: 1px solid #30363d; }
 .data-table td { padding: 8px 12px; border: 1px solid #21262d; vertical-align: top; }
 .data-table tr:nth-child(even) td { background: #0d1117; }
 .ai-note { background: #3d1f1f; border: 1px solid #8b2222; border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-size: 14px; color: #ff7b72; }
@@ -87,7 +87,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
         <div class="badges"><span class="badge badge-ai">🤖 Candidato IA</span><span class="badge-arrow">▼</span></div>
     </div>
     <div class="section-body">
-        <p>Establecer e implementar los procedimientos para la prevención, control y eliminación de plagas (roedores, insectos rastreros y voladores, aves) en las áreas comunes del <strong>[NOMBRE DEL CONJUNTO]</strong>, minimizando riesgos para la salud de residentes y trabajadores.</p>
+        <p>Establecer e implementar los procedimientos para la prevención, control y eliminación de plagas (roedores, insectos rastreros y voladores, aves) en las áreas del establecimiento del <strong>[NOMBRE DEL ESTABLECIMIENTO]</strong>, minimizando riesgos para la salud de clientes y trabajadores.</p>
         <div class="ai-note"><strong>🤖 Potencial IA:</strong> El objetivo podría adaptarse mencionando plagas identificadas previamente en el conjunto.</div>
     </div>
 </div>
@@ -98,7 +98,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
         <div class="badges"><span class="badge badge-ai">🤖 Candidato IA</span><span class="badge-arrow">▼</span></div>
     </div>
     <div class="section-body">
-        <p>Aplica a todas las áreas comunes del <strong>[NOMBRE DEL CONJUNTO]</strong>: zonas verdes, cuartos de residuos, sótanos, parqueaderos, cuartos técnicos, depósitos, tuberías y espacios confinados.</p>
+        <p>Aplica a todas las áreas del establecimiento del <strong>[NOMBRE DEL ESTABLECIMIENTO]</strong>: zonas verdes, cuartos de residuos, sótanos, parqueaderos, cuartos técnicos, depósitos, tuberías y espacios confinados.</p>
         <div class="ai-note"><strong>🤖 Potencial IA:</strong> Podría especificar las áreas críticas del conjunto donde históricamente han aparecido plagas.</div>
     </div>
 </div>
@@ -172,7 +172,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
         <div class="badges"><span class="badge badge-static">Texto legal fijo</span><span class="badge-arrow">▼</span></div>
     </div>
     <div class="section-body">
-        <p>Durante aplicaciones: desalojar área 2 horas mínimo, ventilar 30 minutos antes de reingresar, cubrir alimentos y superficies, retirar mascotas, informar a residentes con 24 horas de anticipación. Exigir certificado de aplicación y ficha técnica de productos usados.</p>
+        <p>Durante aplicaciones: desalojar área 2 horas mínimo, ventilar 30 minutos antes de reingresar, cubrir alimentos y superficies, retirar mascotas, informar a clientes y trabajadores con 24 horas de anticipación. Exigir certificado de aplicación y ficha técnica de productos usados.</p>
     </div>
 </div>
 
@@ -200,7 +200,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #
     <div class="section-body">
         <table class="data-table">
             <tr><th>SERVICIO</th><th>FRECUENCIA MÍNIMA</th><th>ÁREA</th></tr>
-            <tr><td>Desinsectación (fumigación)</td><td>Semestral</td><td>Todas las áreas comunes</td></tr>
+            <tr><td>Desinsectación (fumigación)</td><td>Semestral</td><td>Todas las áreas del establecimiento</td></tr>
             <tr><td>Desratización</td><td>Semestral</td><td>Cuarto residuos, sótanos, parqueaderos</td></tr>
             <tr><td>Control larvario (mosquitos)</td><td>Semestral</td><td>Zonas húmedas, piscinas, jardines</td></tr>
             <tr><td>Revisión estaciones de cebado</td><td>Mensual</td><td>Perimetral y puntos críticos</td></tr>

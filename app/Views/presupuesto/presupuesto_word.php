@@ -74,7 +74,7 @@
     </p>
 
     <table width="100%" border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse; margin-bottom:15px;">
-        <tr bgcolor="#2d6a4f" style="background-color:#2d6a4f;">
+        <tr bgcolor="#ee6c21" style="background-color:#ee6c21;">
             <th width="8%" style="border:1px solid #333; color:#ffffff; text-align:left; font-size:9pt;">Item</th>
             <th width="52%" style="border:1px solid #333; color:#ffffff; text-align:left; font-size:9pt;">Actividad / Descripcion</th>
             <th width="20%" style="border:1px solid #333; color:#ffffff; text-align:right; font-size:9pt;">Presupuestado</th>

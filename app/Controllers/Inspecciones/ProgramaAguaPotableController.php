@@ -272,7 +272,7 @@ class ProgramaAguaPotableController extends BaseController
                 'capacidad_individual' => '5.000 litros',
                 'capacidad_total'      => '10.000 litros',
             ],
-            'cliente'    => ['nombre_cliente' => 'CONJUNTO RESIDENCIAL — EJEMPLO'],
+            'cliente'    => ['nombre_cliente' => 'ESTABLECIMIENTO COMERCIAL — EJEMPLO'],
             'consultor'  => ['nombre_consultor' => 'Consultor SST'],
             'logoBase64' => '',
         ];

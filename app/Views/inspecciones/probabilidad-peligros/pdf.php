@@ -22,14 +22,14 @@
         .header-title { text-align: center; font-weight: bold; font-size: 9px; }
         .header-code { width: 120px; font-size: 8px; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #c9541a; }
         .main-subtitle { text-align: center; font-size: 9px; font-weight: bold; margin: 0 0 6px; color: #444; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
         .info-label { font-weight: bold; color: #444; width: 180px; background: #f7f7f7; }
 
-        .section-title { background: #1b4332; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
+        .section-title { background: #c9541a; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
 
         .data-table { width: 100%; border-collapse: collapse; margin-bottom: 6px; }
         .data-table th { background: #e8e8e8; border: 1px solid #aaa; padding: 4px 6px; font-size: 8px; text-align: center; }
@@ -43,7 +43,7 @@
         .intro-text { font-size: 8px; line-height: 1.4; margin-bottom: 6px; text-align: justify; }
         .intro-subtitle { font-weight: bold; font-size: 8px; margin: 4px 0 2px; }
 
-        .desc-title { font-weight: bold; font-size: 8px; margin: 4px 0 1px; color: #1b4332; }
+        .desc-title { font-weight: bold; font-size: 8px; margin: 4px 0 1px; color: #c9541a; }
         .desc-text { font-size: 7.5px; line-height: 1.3; margin-bottom: 4px; text-align: justify; }
 
         .result-table { width: 60%; border-collapse: collapse; margin: 6px auto; }
@@ -163,19 +163,19 @@
     <p class="desc-text">En este se incluyen aquellas acciones en que ademas de bombas, o proyectiles dirigidos desde cierta distancia hacia algun objetivo en particular y que generalmente puede afectar instalaciones o viviendas aledanas y ajenas a las que se proponian hacer dano sin que por eso importe algo tambien puede tratarse de acciones de que inciten a sembrar terror en la poblacion esto puede incluir acciones como el secuestro ya sea por grupos organizados como la guerrilla o bandas criminales.</p>
 
     <p class="desc-title">ASALTO Y HURTO:</p>
-    <p class="desc-text">Existe la posibilidad de tener este riesgo principalmente en horas nocturnas ocasionado por la gran inseguridad que se presenta en la actualidad en el Distrito Capital, pero es importante acotar que el conjunto residencial cuenta con un sistema de vigilancia privado contratado para salvaguardar los bienes y servicios de los residentes pero esto se limita solo a la tienda a tienda, esto no desconoce la problematica que se presenta en las areas perimetrales del sector del conjunto residencial.</p>
+    <p class="desc-text">Existe la posibilidad de tener este riesgo principalmente en horas nocturnas ocasionado por la gran inseguridad que se presenta en la actualidad en el Distrito Capital, pero es importante acotar que el establecimiento comercial cuenta con un sistema de vigilancia privado contratado para salvaguardar los bienes y servicios de los clientes y trabajadores pero esto se limita solo al establecimiento, esto no desconoce la problematica que se presenta en las areas perimetrales del sector del establecimiento comercial.</p>
 
     <p class="desc-title">VANDALISMO:</p>
-    <p class="desc-text">Por la gran descomposicion social que se vive hoy en dia esta es una de las amenazas con un riesgo de probabilidad considerable sin que tenga que ver el tipo de empresa o area habitacional que pueda ser afectada es simplemente el deseo de producir panico y sembrar el miedo entre la poblacion. La probabilidad de que suceda esta amenaza es poco probable debido a la ubicacion que presenta el conjunto residencial, sin embargo se debe considerar que existen muchas formas de hacerlo: a traves de paquetes, de sobres, de vehiculos y de variedad de articulos incluyendo extintores.</p>
+    <p class="desc-text">Por la gran descomposicion social que se vive hoy en dia esta es una de las amenazas con un riesgo de probabilidad considerable sin que tenga que ver el tipo de empresa o area habitacional que pueda ser afectada es simplemente el deseo de producir panico y sembrar el miedo entre la poblacion. La probabilidad de que suceda esta amenaza es poco probable debido a la ubicacion que presenta el establecimiento comercial, sin embargo se debe considerar que existen muchas formas de hacerlo: a traves de paquetes, de sobres, de vehiculos y de variedad de articulos incluyendo extintores.</p>
 
     <p class="desc-title">INCENDIOS:</p>
-    <p class="desc-text">Entre las amenazas mas importantes se hace referencia a las de incendio, la cual es caracteristica de toda edificacion cuya destinacion sea de caracter industrial, comercial, de servicios o residencia. Esta amenaza no solamente se presenta por una eventual vecindad a fuentes de ignicion o detonacion, fuentes de calor, fuentes electricas, presencia de cargas estaticas y tambien por diferentes cargas combustibles de materiales solidos presentes en las instalaciones del conjunto residencial y a los trabajos que en el se realicen. Debido a que el conjunto se almacenan diferentes combustibles como vestuario, telones, madera, alfombras, carton, plasticos, equipos de oficina; presencia de gas natural y demas combustibles que pueden ocasionar un incendio de grandes proporciones.</p>
+    <p class="desc-text">Entre las amenazas mas importantes se hace referencia a las de incendio, la cual es caracteristica de toda edificacion cuya destinacion sea de caracter industrial, comercial, de servicios o residencia. Esta amenaza no solamente se presenta por una eventual vecindad a fuentes de ignicion o detonacion, fuentes de calor, fuentes electricas, presencia de cargas estaticas y tambien por diferentes cargas combustibles de materiales solidos presentes en las instalaciones del establecimiento comercial y a los trabajos que en el se realicen. Debido a que el conjunto se almacenan diferentes combustibles como vestuario, telones, madera, alfombras, carton, plasticos, equipos de oficina; presencia de gas natural y demas combustibles que pueden ocasionar un incendio de grandes proporciones.</p>
 
     <p class="desc-title">EXPLOSIONES:</p>
     <p class="desc-text">Es un riesgo que viene relacionado con el manejo de cargas combustibles del tipo B como el almacenamiento y manipulacion de liquidos y gases inflamables, la reactividad por escape de gases comprimidos como el caso de gas natural, y en el manejo de solventes, lacas, pinturas, varsol que normalmente emanan gases con propiedades inflamables detonantes lo mismo que eventualmente lo podria hacer pero con menos posibilidad el ACPM.</p>
 
     <p class="desc-title">INHALACION DE GASES:</p>
-    <p class="desc-text">Estas afectaciones en la salud se pueden causar debido a la acumulacion de gases nocivos para las personas, esto se puede agravar en el caso del parqueadero de vehiculos del conjunto residencial si no se cuenta con la cultura de la revision periodica de los vehiculos automotores y si las personas se quedan bajo periodos largos en este sitio, para lo cual se hace necesario implementar la cultura de esperar que los propietarios de los vehiculos realicen el calentamiento del motor en un area ventilada.</p>
+    <p class="desc-text">Estas afectaciones en la salud se pueden causar debido a la acumulacion de gases nocivos para las personas, esto se puede agravar en el caso del parqueadero de vehiculos del establecimiento comercial si no se cuenta con la cultura de la revision periodica de los vehiculos automotores y si las personas se quedan bajo periodos largos en este sitio, para lo cual se hace necesario implementar la cultura de esperar que los propietarios de los vehiculos realicen el calentamiento del motor en un area ventilada.</p>
 
     <p class="desc-title">FALLA ESTRUCTURAL:</p>
     <p class="desc-text">La vulnerabilidad estructural se encuentra determinada por la capacidad de soporte vertical y resistencia a cargas horizontales de la edificacion, la cual en terminos generales presenta buen aspecto. Un gran porcentaje de las instalaciones esta construida en muros de ladrillo y cemento, pisos en cemento, techos en placa de concreto. Con el objeto de determinar la capacidad sismo resistente de las edificaciones se recomienda realizar un estudio tecnico de las mismas y conforme a su valoracion reforzar las estructuras o realizar las modificaciones arquitectonicas necesarias, en consonancia con las exigencias del codigo colombiano de construcciones sismo resistentes, adoptado por el Decreto 400 con vigencia desde el ano de 1984 y actualizado por la Ley 400 de 1997 y el Decreto 33 de 1998.</p>

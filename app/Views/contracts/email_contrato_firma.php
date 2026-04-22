@@ -190,9 +190,9 @@
 
                 <!-- Clausula Doceava -->
                 <div style="margin-bottom: 15px;">
-                    <h4 style="color: #333; font-size: 13px; margin-bottom: 5px;">DOCEAVA - ALTO RIESGO EN LA COPROPIEDAD</h4>
+                    <h4 style="color: #333; font-size: 13px; margin-bottom: 5px;">DOCEAVA - ALTO RIESGO EN EL ESTABLECIMIENTO COMERCIAL</h4>
                     <p style="color: #333; font-size: 13px; text-align: justify; line-height: 1.6; margin-top: 0;">
-                        Toda actividad ejecutada dentro de la copropiedad que implique alto riesgo, como trabajos en espacios confinados o trabajos en alturas, debera contar con la aprobacion y la revision documental de los contratistas responsables antes de su ejecucion. En caso de que el profesional a cargo del SG-SST no tenga conocimiento previo de dichas actividades, <strong>EL CONTRATISTA</strong> no asumira ninguna responsabilidad administrativa ni civil por cualquier accidente o incidente que pueda ocurrir.
+                        Toda actividad ejecutada dentro del establecimiento comercial que implique alto riesgo, como trabajos en espacios confinados o trabajos en alturas, debera contar con la aprobacion y la revision documental de los contratistas responsables antes de su ejecucion. En caso de que el profesional a cargo del SG-SST no tenga conocimiento previo de dichas actividades, <strong>EL CONTRATISTA</strong> no asumira ninguna responsabilidad administrativa ni civil por cualquier accidente o incidente que pueda ocurrir.
                     </p>
                 </div>
 

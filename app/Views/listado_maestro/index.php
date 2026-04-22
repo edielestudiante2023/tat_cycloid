@@ -25,7 +25,7 @@
         .info-empresa { margin-bottom: 15px; padding: 10px 15px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; }
         .info-empresa p { margin: 3px 0; font-size: 10pt; }
         .doc-table { width: 100%; border-collapse: collapse; font-size: 9pt; }
-        .doc-table th { background: #2d6a4f; color: white; padding: 8px 6px; text-align: left; font-size: 9pt; white-space: nowrap; }
+        .doc-table th { background: #ee6c21; color: white; padding: 8px 6px; text-align: left; font-size: 9pt; white-space: nowrap; }
         .doc-table td { border: 1px solid #dee2e6; padding: 6px; vertical-align: middle; }
         .doc-table tbody tr:hover { background: #e8f4f8; }
         .badge-vigente { background: #28a745; color: white; padding: 3px 8px; border-radius: 4px; font-size: 8pt; }

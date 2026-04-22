@@ -177,27 +177,27 @@
     <div class="alpha-title">Política de Seguridad y Salud en el Trabajo</div>
 
     <p class="beta-parrafo">
-        <strong><?= $client['nombre_cliente'] ?></strong>, nos comprometemos de manera prioritaria a salvaguardar la salud, la integridad física, social y psicológica de nuestros residentes, visitantes y contratistas. Esto se logra mediante la identificación, control y seguimiento de los factores de riesgo a los que pueden estar expuestos en nuestras instalaciones.
+        <strong><?= $client['nombre_cliente'] ?></strong>, nos comprometemos de manera prioritaria a salvaguardar la salud, la integridad física, social y psicológica de nuestros clientes y trabajadores, visitantes y contratistas. Esto se logra mediante la identificación, control y seguimiento de los factores de riesgo a los que pueden estar expuestos en nuestras instalaciones.
     </p>
 
     <div class="subtitle">Compromiso General</div>
     <p class="beta-parrafo">
-        Reconocemos formalmente nuestro compromiso con la seguridad y salud en el trabajo como un valor fundamental. En este sentido, todos los niveles de nuestra copropiedad asumen la responsabilidad de crear y mantener entornos seguros y saludables. Cumpliremos con todos los requisitos legales aplicables en la implementación del sistema de gestión de seguridad y salud en el trabajo.
+        Reconocemos formalmente nuestro compromiso con la seguridad y salud en el trabajo como un valor fundamental. En este sentido, todos los niveles de nuestro establecimiento comercial asumen la responsabilidad de crear y mantener entornos seguros y saludables. Cumpliremos con todos los requisitos legales aplicables en la implementación del sistema de gestión de seguridad y salud en el trabajo.
     </p>
 
     <div class="subtitle">Asignación de Recursos</div>
     <p class="beta-parrafo">
-        Destinamos los recursos humanos, físicos, tecnológicos y financieros necesarios para llevar a cabo una gestión efectiva de la salud y seguridad en el trabajo. Contamos con el respaldo y la colaboración del vigía en Seguridad y Salud en el Trabajo, del consejo de administración y del administrador de la copropiedad. Trabajaremos en conjunto para optimizar los recursos presupuestados y alcanzar nuestras metas de seguridad y salud.
+        Destinamos los recursos humanos, físicos, tecnológicos y financieros necesarios para llevar a cabo una gestión efectiva de la salud y seguridad en el trabajo. Contamos con el respaldo y la colaboración del vigía en Seguridad y Salud en el Trabajo, del responsable del establecimiento y del propietario. Trabajaremos en conjunto para optimizar los recursos presupuestados y alcanzar nuestras metas de seguridad y salud.
     </p>
 
     <div class="subtitle">Enfoque basado en Riesgos</div>
     <p class="beta-parrafo">
-        Nuestros programas están diseñados para impulsar un enfoque basado en riesgos y el autocuidado. Nos dedicamos a la identificación y corrección proactiva de condiciones inseguras, con el propósito de reducir la incidencia de accidentes en nuestros residentes, visitantes y contratistas. Además, nos preparamos para responder de manera efectiva en situaciones de emergencia.
+        Nuestros programas están diseñados para impulsar un enfoque basado en riesgos y el autocuidado. Nos dedicamos a la identificación y corrección proactiva de condiciones inseguras, con el propósito de reducir la incidencia de accidentes en nuestros clientes y trabajadores, visitantes y contratistas. Además, nos preparamos para responder de manera efectiva en situaciones de emergencia.
     </p>
 
     <div class="subtitle">Responsabilidad Compartida</div>
     <p class="beta-parrafo">
-        Cada residente, visitante y contratista comparte la responsabilidad de cumplir con las normas y procedimientos de seguridad. Este compromiso es esencial para garantizar entornos seguros y productivos. Asimismo, se espera que notifiquen de inmediato cualquier condición que pueda generar consecuencias o contingencias, tanto para las personas asignadas a la copropiedad por parte de nuestros proveedores, como para prevenir daños o perjuicios a cualquier otra persona dentro de la tienda a tienda.
+        Cada cliente o trabajador, visitante y contratista comparte la responsabilidad de cumplir con las normas y procedimientos de seguridad. Este compromiso es esencial para garantizar entornos seguros y productivos. Asimismo, se espera que notifiquen de inmediato cualquier condición que pueda generar consecuencias o contingencias, tanto para las personas asignadas al establecimiento comercial por parte de nuestros proveedores, como para prevenir daños o perjuicios a cualquier otra persona dentro del establecimiento.
     </p>
 
     <p class="beta-parrafo">

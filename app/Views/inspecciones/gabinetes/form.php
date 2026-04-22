@@ -232,7 +232,7 @@ $action = $isEdit ? base_url('/inspecciones/gabinetes/update/') . $inspeccion['i
                         </div>
                         <div class="mb-2">
                             <label class="form-label" style="font-size:12px;">Ubicacion de los detectores</label>
-                            <textarea name="ubicacion_detectores" class="form-control form-control-sm" rows="2" placeholder="Partes de la copropiedad con detectores..."><?= esc($inspeccion['ubicacion_detectores'] ?? '') ?></textarea>
+                            <textarea name="ubicacion_detectores" class="form-control form-control-sm" rows="2" placeholder="Partes del establecimiento comercial con detectores..."><?= esc($inspeccion['ubicacion_detectores'] ?? '') ?></textarea>
                         </div>
 
                         <!-- Fotos detectores -->
@@ -477,7 +477,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cliente = document.getElementById('selectCliente').value;
         if (!cliente) {
             e.preventDefault();
-            Swal.fire({ icon: 'warning', title: 'Selecciona un cliente', confirmButtonColor: '#e76f51' });
+            Swal.fire({ icon: 'warning', title: 'Selecciona un cliente', confirmButtonColor: '#ee6c21' });
             return;
         }
         e.preventDefault();
@@ -488,7 +488,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showCancelButton: true,
             confirmButtonText: 'Si, finalizar',
             cancelButtonText: 'Cancelar',
-            confirmButtonColor: '#e76f51',
+            confirmButtonColor: '#ee6c21',
         }).then(result => {
             if (result.isConfirmed) {
                 const input = document.createElement('input');
@@ -540,7 +540,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         showCancelButton: true,
                         confirmButtonText: 'Si, restaurar',
                         cancelButtonText: 'No, empezar de cero',
-                        confirmButtonColor: '#e76f51',
+                        confirmButtonColor: '#ee6c21',
                     }).then(result => {
                         if (result.isConfirmed) restoreFromLocal(data);
                         else localStorage.removeItem(STORAGE_KEY);

@@ -25,7 +25,7 @@
         .info-empresa p { margin: 2px 0; font-size: 8pt; }
 
         .doc-table { width: 100%; border-collapse: collapse; }
-        .doc-table th { background-color: #2d6a4f; color: #ffffff; padding: 5px 4px; text-align: left; font-size: 7pt; white-space: nowrap; border: 1px solid #333; }
+        .doc-table th { background-color: #ee6c21; color: #ffffff; padding: 5px 4px; text-align: left; font-size: 7pt; white-space: nowrap; border: 1px solid #333; }
         .doc-table td { border: 1px solid #dee2e6; padding: 4px; font-size: 7pt; vertical-align: middle; }
         .doc-table tr:nth-child(even) { background-color: #f8f9fa; }
 

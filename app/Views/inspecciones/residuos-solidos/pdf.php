@@ -45,7 +45,7 @@
         text-align: center;
         font-weight: bold;
         font-size: 13px;
-        color: #1b4332;
+        color: #c9541a;
         margin: 20px 0 5px;
     }
     .subtitle {
@@ -58,16 +58,16 @@
     .section-title {
         font-weight: bold;
         font-size: 11px;
-        color: #1b4332;
+        color: #c9541a;
         margin-top: 18px;
         margin-bottom: 6px;
-        border-bottom: 1px solid #1b4332;
+        border-bottom: 1px solid #c9541a;
         padding-bottom: 3px;
     }
     .subsection-title {
         font-weight: bold;
         font-size: 10px;
-        color: #1b4332;
+        color: #c9541a;
         margin-top: 12px;
         margin-bottom: 4px;
     }
@@ -78,7 +78,7 @@
         font-size: 9px;
     }
     .data-table th {
-        background: #1b4332;
+        background: #c9541a;
         color: white;
         padding: 5px 6px;
         text-align: left;
@@ -126,13 +126,13 @@
     }
     .indicador-box .ind-label {
         font-weight: bold;
-        color: #1b4332;
+        color: #c9541a;
     }
 </style>
 </head>
 <body>
 
-<?php $nombreCliente = $cliente['nombre_cliente'] ?? 'CONJUNTO RESIDENCIAL'; ?>
+<?php $nombreCliente = $cliente['nombre_cliente'] ?? 'ESTABLECIMIENTO COMERCIAL'; ?>
 
 <!-- HEADER -->
 <table class="header-table">
@@ -163,12 +163,12 @@
 </table>
 
 <!-- TÍTULO PRINCIPAL -->
-<div class="main-title">PROGRAMA DE DESECHOS SÓLIDOS – TIENDA A TIENDA</div>
+<div class="main-title">PROGRAMA DE DESECHOS SÓLIDOS – <?= esc(strtoupper($cliente['nombre_cliente'] ?? '')) ?></div>
 <div class="subtitle"><?= esc($nombreCliente) ?></div>
 
 <!-- 1.1 OBJETIVO -->
 <div class="section-title">1.1 OBJETIVO</div>
-<p>Definir, planificar y estandarizar las actividades, responsabilidades, elementos, áreas, recursos humanos, mecanismos de control, indicadores y procedimientos que garanticen una gestión integral, segura y eficiente de los residuos sólidos generados en <?= esc($nombreCliente) ?>, desde su generación, separación en la fuente, recolección interna, almacenamiento temporal, aprovechamiento y/o disposición final, en cumplimiento de la normatividad ambiental y sanitaria vigente aplicable a la Tienda a Tienda.</p>
+<p>Definir, planificar y estandarizar las actividades, responsabilidades, elementos, áreas, recursos humanos, mecanismos de control, indicadores y procedimientos que garanticen una gestión integral, segura y eficiente de los residuos sólidos generados en <?= esc($nombreCliente) ?>, desde su generación, separación en la fuente, recolección interna, almacenamiento temporal, aprovechamiento y/o disposición final, en cumplimiento de la normatividad ambiental y sanitaria vigente aplicable a la <?= esc($cliente['nombre_cliente'] ?? '') ?>.</p>
 
 <!-- 1.2 ALCANCE -->
 <div class="section-title">1.2 ALCANCE</div>
@@ -176,10 +176,10 @@
 <ul class="lista-items">
     <li>Administración del conjunto</li>
     <li>Actividades residenciales</li>
-    <li>Uso de zonas comunes</li>
+    <li>Uso de áreas del establecimiento</li>
     <li>Usuarios, visitantes, proveedores y contratistas</li>
 </ul>
-<p>El Programa es de obligatorio cumplimiento para residentes, personal administrativo, recuperador o responsable designado para la recolección y clasificación de residuos, empresas contratistas y terceros que desarrollen actividades dentro de la copropiedad.</p>
+<p>El Programa es de obligatorio cumplimiento para clientes y trabajadores, personal administrativo, recuperador o responsable designado para la recolección y clasificación de residuos, empresas contratistas y terceros que desarrollen actividades dentro del establecimiento comercial.</p>
 <p>Incluye las etapas de separación en la fuente, recolección interna, transporte interno, almacenamiento temporal, aprovechamiento, entrega al prestador del servicio público de aseo y manejo de residuos peligrosos cuando se generen.</p>
 
 <!-- 1.3 DEFINICIONES -->
@@ -193,7 +193,7 @@
 <p class="definition-text">Proceso mediante el cual los residuos recuperables son reincorporados al ciclo productivo mediante reciclaje, reutilización o compostaje.</p>
 
 <div class="definition-term">Caracterización de residuos:</div>
-<p class="definition-text">Identificación cualitativa y cuantitativa de los residuos generados en la copropiedad, de acuerdo con su tipo y origen.</p>
+<p class="definition-text">Identificación cualitativa y cuantitativa de los residuos generados en el establecimiento comercial, de acuerdo con su tipo y origen.</p>
 
 <div class="definition-term">Disposición final:</div>
 <p class="definition-text">Confinamiento definitivo de residuos no aprovechables en sitios autorizados por la autoridad competente.</p>
@@ -202,7 +202,7 @@
 <p class="definition-text">Conjunto de acciones técnicas, operativas, educativas y administrativas orientadas a la reducción, separación en la fuente, aprovechamiento y disposición adecuada de los residuos sólidos.</p>
 
 <div class="definition-term">Generador:</div>
-<p class="definition-text">Residente, usuario, visitante, trabajador o contratista que produce residuos dentro de la copropiedad.</p>
+<p class="definition-text">Cliente o trabajador, usuario, visitante, trabajador o contratista que produce residuos dentro del establecimiento comercial.</p>
 
 <div class="definition-term">Punto ecológico:</div>
 <p class="definition-text">Área señalizada con recipientes diferenciados para la separación en la fuente de los residuos, conforme al código de colores establecido.</p>
@@ -233,7 +233,7 @@
     <li>Verificar el adecuado estado físico, de limpieza y desinfección del carro recolector.</li>
     <li>Identificar y controlar condiciones inseguras.</li>
     <li>Realizar el recorrido conforme a la ruta sanitaria definida por la Administración del Conjunto.</li>
-    <li>Recolectar los residuos depositados en los puntos ecológicos y áreas comunes.</li>
+    <li>Recolectar los residuos depositados en los puntos ecológicos y áreas del establecimiento.</li>
     <li>Transportar los residuos hasta la unidad de almacenamiento temporal y disponerlos según su clasificación.</li>
     <li>Realizar lavado de manos al finalizar la labor.</li>
 </ol>
@@ -242,7 +242,7 @@
 <div class="section-title">1.6 NORMAS DE BIOSEGURIDAD</div>
 <ol class="lista-items" type="a">
     <li>El acceso a la unidad de almacenamiento temporal de residuos estará restringido exclusivamente al personal autorizado por la Administración.</li>
-    <li>Clasificar los residuos conforme al esquema de separación en la fuente establecido por la copropiedad.</li>
+    <li>Clasificar los residuos conforme al esquema de separación en la fuente establecido por el establecimiento comercial.</li>
     <li>Utilizar obligatoriamente los EPP durante las labores de recolección, limpieza y desinfección.</li>
     <li>Garantizar capacitación periódica al personal en riesgos, manejo seguro de residuos y procedimientos establecidos.</li>
     <li>Mantener el cuarto de residuos en condiciones óptimas de orden, aseo y desinfección.</li>
@@ -252,19 +252,19 @@
 <!-- 1.7 RESPONSABLES -->
 <div class="section-title">1.7 RESPONSABLES</div>
 
-<div class="definition-term">Consejo de Administración:</div>
+<div class="definition-term">Propietario del establecimiento:</div>
 <p class="definition-text">Aprobación del Programa y seguimiento a su cumplimiento.</p>
 
-<div class="definition-term">Administración del Conjunto:</div>
+<div class="definition-term">Administración del establecimiento:</div>
 <p class="definition-text">Implementación, control, seguimiento y mejora continua del Programa.</p>
 
 <div class="definition-term">Recuperador o Responsable Designado:</div>
 <p class="definition-text">Ejecución operativa de la recolección, clasificación y manejo interno de los residuos, utilizando los EPP establecidos, siguiendo las rutas sanitarias y diligenciando los registros correspondientes.</p>
 
-<div class="definition-term">Residentes y Usuarios:</div>
+<div class="definition-term">Clientes y trabajadores y Usuarios:</div>
 <p class="definition-text">Separación en la fuente y disposición adecuada de los residuos.</p>
 
-<div class="definition-term">Responsable del SG-SST del Conjunto Residencial:</div>
+<div class="definition-term">Responsable del SG-SST del Establecimiento:</div>
 <p class="definition-text">Velar por la identificación de peligros asociados al manejo de residuos, verificar el uso adecuado de EPP y hacer seguimiento al cumplimiento del cronograma del Programa de Gestión Integral de Residuos Sólidos.</p>
 
 <!-- 1.8 INSUMOS -->
@@ -321,11 +321,11 @@
         <td>Carro de recolección interna</td>
     </tr>
 </table>
-<p class="nota">Nota: Los elementos de protección personal deberán encontrarse en buen estado, limpios y ser de uso exclusivo para las labores de manejo de residuos sólidos del conjunto residencial, conforme a los lineamientos del SG-SST.</p>
+<p class="nota">Nota: Los elementos de protección personal deberán encontrarse en buen estado, limpios y ser de uso exclusivo para las labores de manejo de residuos sólidos del establecimiento comercial, conforme a los lineamientos del SG-SST.</p>
 
 <!-- 1.10 FUENTES DE GENERACIÓN -->
 <div class="section-title">1.10 FUENTES DE GENERACIÓN Y CLASIFICACIÓN DE RESIDUOS SÓLIDOS Y PELIGROSOS</div>
-<p>De conformidad con lo establecido en la Ley 99 de 1993, la Ley 142 de 1994, el Decreto 1077 de 2015, la Resolución 2184 de 2019 (código de colores para la separación en la fuente) y la Resolución 1362 de 2007 para residuos peligrosos, en <?= esc($nombreCliente) ?> se identifican las siguientes fuentes de generación de residuos sólidos y peligrosos, derivadas del uso, ocupación y operación normal de la copropiedad.</p>
+<p>De conformidad con lo establecido en la Ley 99 de 1993, la Ley 142 de 1994, el Decreto 1077 de 2015, la Resolución 2184 de 2019 (código de colores para la separación en la fuente) y la Resolución 1362 de 2007 para residuos peligrosos, en <?= esc($nombreCliente) ?> se identifican las siguientes fuentes de generación de residuos sólidos y peligrosos, derivadas del uso, ocupación y operación normal del establecimiento comercial.</p>
 
 <div class="subsection-title">1.10.1 FUENTES DE GENERACIÓN DE RESIDUOS</div>
 
@@ -338,7 +338,7 @@
     <li>RAEE – Residuos de Aparatos Eléctricos y Electrónicos: equipos eléctricos o electrónicos fuera de uso, tales como computadores, impresoras, monitores, teclados, cables, cargadores y otros dispositivos similares, los cuales requieren manejo diferencial y entrega a gestores autorizados.</li>
 </ul>
 
-<div class="definition-term">b. Áreas comunes y zonas de uso colectivo</div>
+<div class="definition-term">b. Áreas del establecimiento y zonas de uso colectivo</div>
 <p class="definition-text">Incluyen pasillos, escaleras, parqueaderos, salones sociales, baños comunes, zonas verdes y áreas recreativas. En estas zonas se generan:</p>
 <ul class="lista-items">
     <li>Residuos aprovechables: envases plásticos, cartón, papel, vidrio limpio.</li>
@@ -347,7 +347,7 @@
 </ul>
 
 <div class="definition-term">c. Unidad de almacenamiento temporal de residuos</div>
-<p class="definition-text">Corresponde al sitio destinado dentro de la copropiedad para la consolidación y presentación de los residuos al prestador del servicio público de aseo o a gestores autorizados. En esta área se concentran:</p>
+<p class="definition-text">Corresponde al sitio destinado dentro del establecimiento comercial para la consolidación y presentación de los residuos al prestador del servicio público de aseo o a gestores autorizados. En esta área se concentran:</p>
 <ul class="lista-items">
     <li>Residuos aprovechables previamente segregados.</li>
     <li>Residuos no aprovechables debidamente embolsados.</li>
@@ -393,12 +393,12 @@ if (file_exists($canecasPath)) {
 <div class="section-title">1.11 PROCEDIMIENTO DE RECOLECCIÓN, ALMACENAMIENTO Y DISPOSICIÓN FINAL</div>
 <p>El presente procedimiento establece los lineamientos para la correcta recolección, transporte interno, almacenamiento temporal y disposición final de los residuos sólidos y peligrosos generados en <?= esc($nombreCliente) ?>, de conformidad con la Ley 142 de 1994, el Decreto 1077 de 2015, la Resolución 2184 de 2019, la Resolución 1362 de 2007 y demás normas concordantes.</p>
 
-<div class="subsection-title">1.11.1 Recolección — Flujo del residente para disposición de residuos</div>
+<div class="subsection-title">1.11.1 Recolección — Flujo del cliente o trabajador para disposición de residuos</div>
 <?php if (!empty($inspeccion['flujo_residente'])): ?>
-<table style="width:100%; border:1.5px solid #1b4332; border-collapse:collapse; margin:6px 0 14px;">
+<table style="width:100%; border:1.5px solid #c9541a; border-collapse:collapse; margin:6px 0 14px;">
     <tr>
-        <td style="background:#1b4332; color:white; padding:5px 8px; font-weight:bold; font-size:9px; width:30%;">
-            FLUJO DEL RESIDENTE
+        <td style="background:#c9541a; color:white; padding:5px 8px; font-weight:bold; font-size:9px; width:30%;">
+            FLUJO DEL CLIENTE O TRABAJADOR
         </td>
         <td style="padding:7px 10px; font-size:9.5px; vertical-align:top;">
             <?= nl2br(esc($inspeccion['flujo_residente'])) ?>
@@ -406,17 +406,17 @@ if (file_exists($canecasPath)) {
     </tr>
 </table>
 <?php else: ?>
-<p class="nota">Flujo del residente no diligenciado.</p>
+<p class="nota">Flujo del cliente o trabajador no diligenciado.</p>
 <?php endif; ?>
 
-<div class="subsection-title">1.11.2 Recolección de residuos generados en la fuente (áreas comunes y zonas de uso colectivo)</div>
+<div class="subsection-title">1.11.2 Recolección de residuos generados en la fuente (áreas del establecimiento y zonas de uso colectivo)</div>
 <ol class="lista-items" type="a">
     <li>El recuperador o responsable designado para la recolección y clasificación de residuos deberá colocarse previamente los elementos de protección personal (EPP) establecidos para la actividad.</li>
     <li>Preparar los implementos requeridos para la recolección: carro de recolección interna (buggie, practiwagon o similar), escoba, recogedor y bolsas según el tipo de residuo.</li>
     <li>Verificar que el carro de recolección se encuentre en adecuadas condiciones físicas, de limpieza y desinfección.</li>
     <li>Identificar condiciones inseguras que puedan generar riesgo durante la actividad.</li>
     <li>Iniciar el recorrido conforme a las rutas sanitarias internas definidas por la Administración del conjunto.</li>
-    <li>Realizar la recolección de residuos en los puntos ecológicos y recipientes dispuestos en áreas comunes.</li>
+    <li>Realizar la recolección de residuos en los puntos ecológicos y recipientes dispuestos en áreas del establecimiento.</li>
     <li>Transportar los residuos a la unidad de almacenamiento temporal, disponiéndolos de acuerdo con su clasificación.</li>
     <li>Realizar higiene de manos al finalizar la actividad.</li>
 </ol>
@@ -465,7 +465,7 @@ if (file_exists($canecasPath)) {
     <li>Aprovechamiento de residuos orgánicos: Entrega a gestores autorizados para compostaje o aprovechamiento.</li>
     <li>Reducción y reutilización: Reutilización de embalajes, cajas y costales en buen estado.</li>
     <li>Reciclaje: Fortalecer la cultura de separación con apoyo de recicladores de oficio autorizados.</li>
-    <li>Control de calidad: Sensibilización a residentes y personal sobre la reducción del desperdicio y manejo responsable de residuos.</li>
+    <li>Control de calidad: Sensibilización a clientes y trabajadores y personal sobre la reducción del desperdicio y manejo responsable de residuos.</li>
 </ol>
 
 <!-- 1.12 CAPACITACIÓN -->
@@ -474,7 +474,7 @@ if (file_exists($canecasPath)) {
 <ul class="lista-items">
     <li>Identificar los actores internos involucrados en la generación de residuos.</li>
     <li>Implementar capacitaciones periódicas sobre separación en la fuente y manejo adecuado de residuos.</li>
-    <li>Incluir personal operativo, administrativo y residentes.</li>
+    <li>Incluir personal operativo, administrativo y clientes y trabajadores.</li>
     <li>Difundir los lineamientos a través de carteleras, circulares y medios internos.</li>
     <li>Promover la corresponsabilidad ambiental y el cumplimiento normativo.</li>
 </ul>
@@ -487,7 +487,7 @@ if (file_exists($canecasPath)) {
     <li>Residuos no aprovechables</li>
     <li>Residuos peligrosos</li>
 </ul>
-<p>Estos registros deberán conservarse como soporte para auditorías de Secretaría de Salud y autoridades ambientales, y estarán disponibles en los archivos administrativos del conjunto residencial.</p>
+<p>Estos registros deberán conservarse como soporte para auditorías de Secretaría de Salud y autoridades ambientales, y estarán disponibles en los archivos administrativos del establecimiento comercial.</p>
 
 <!-- 1.14 INDICADORES -->
 <div class="section-title">1.14 INDICADORES</div>
@@ -519,7 +519,7 @@ if (file_exists($canecasPath)) {
         <tr><td class="ind-label" style="background: #f0f0f0;">Responsable</td><td>Administración del conjunto / Responsable SG-SST</td></tr>
     </table>
 </div>
-<p>Evalúa el nivel de cumplimiento en la separación adecuada de residuos según el código de colores vigente, evidenciando el grado de apropiación del programa por parte de residentes, usuarios y personal operativo.</p>
+<p>Evalúa el nivel de cumplimiento en la separación adecuada de residuos según el código de colores vigente, evidenciando el grado de apropiación del programa por parte de clientes y trabajadores, usuarios y personal operativo.</p>
 
 </body>
 </html>

@@ -57,7 +57,7 @@ class InspeccionRecursosSeguridadController extends BaseController
         'planes_respuesta' => [
             'label'      => 'Planes de Respuesta a Emergencias',
             'icon'       => 'fa-file-alt',
-            'hint'       => 'Desarrollo de Planes de Respuesta para Seguridad de Residentes',
+            'hint'       => 'Desarrollo de Planes de Respuesta para Seguridad de Clientes y trabajadores',
             'tiene_foto' => false,
         ],
     ];

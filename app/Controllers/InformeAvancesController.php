@@ -521,6 +521,7 @@ class InformeAvancesController extends BaseController
 
         $newName = $campo . '_' . time() . '_' . $file->getRandomName();
         $file->move(FCPATH . $dir, $newName);
+        compress_uploaded_image(FCPATH . $dir . $newName);
 
         return $dir . $newName;
     }
@@ -741,7 +742,7 @@ class InformeAvancesController extends BaseController
                 Ir a Enterprisesst
             </a>
         </p>
-        <p style='text-align: justify;'>En <strong>Cycloid Talent</strong>, nos distinguimos por ser aliados estratégicos en la administración del SG-SST. Nuestro compromiso es ofrecerle soluciones innovadoras y personalizadas que potencien la seguridad y el bienestar en su copropiedad.</p>
+        <p style='text-align: justify;'>En <strong>Cycloid Talent</strong>, nos distinguimos por ser aliados estratégicos en la administración del SG-SST. Nuestro compromiso es ofrecerle soluciones innovadoras y personalizadas que potencien la seguridad y el bienestar en su establecimiento comercial.</p>
         <p style='text-align: justify; font-size: 1.1em; font-weight: bold;'>Gracias por confiar en Cycloid Talent, donde su tranquilidad y éxito son nuestra prioridad.</p>
         ";
 

@@ -73,32 +73,38 @@ class ConsultantController extends Controller
         if ($logo && $logo->isValid() && !$logo->hasMoved()) {
             $logoName = $logo->getRandomName();
             $logo->move($uploadPath, $logoName);
+            compress_uploaded_image($uploadPath . '/' . $logoName);
             $this->generateLogoThumbnail($uploadPath, $logoName);
         }
 
         if ($firma && $firma->isValid() && !$firma->hasMoved()) {
             $firmaName = $firma->getRandomName();
             $firma->move($uploadPath, $firmaName);
+            compress_uploaded_image($uploadPath . '/' . $firmaName);
         }
 
         if ($rutFile && $rutFile->isValid() && !$rutFile->hasMoved()) {
             $rutName = $rutFile->getRandomName();
             $rutFile->move($uploadPath, $rutName);
+            compress_uploaded_image($uploadPath . '/' . $rutName);
         }
 
         if ($camaraFile && $camaraFile->isValid() && !$camaraFile->hasMoved()) {
             $camaraName = $camaraFile->getRandomName();
             $camaraFile->move($uploadPath, $camaraName);
+            compress_uploaded_image($uploadPath . '/' . $camaraName);
         }
 
         if ($cedulaDocFile && $cedulaDocFile->isValid() && !$cedulaDocFile->hasMoved()) {
             $cedulaDocName = $cedulaDocFile->getRandomName();
             $cedulaDocFile->move($uploadPath, $cedulaDocName);
+            compress_uploaded_image($uploadPath . '/' . $cedulaDocName);
         }
 
         if ($ofertaFile && $ofertaFile->isValid() && !$ofertaFile->hasMoved()) {
             $ofertaName = $ofertaFile->getRandomName();
             $ofertaFile->move($uploadPath, $ofertaName);
+            compress_uploaded_image($uploadPath . '/' . $ofertaName);
         }
 
         $passwordPlano = $this->request->getVar('password');
@@ -140,6 +146,23 @@ class ConsultantController extends Controller
             'oferta_comercial' => $ofertaName,
             'firma_representante_legal' => $firmaName,
             'estandares' => $this->request->getVar('estandares'),
+
+            // Campos TAT Fase 1 (Salud + Bomberos)
+            'nombre_comercial'                  => $this->request->getVar('nombre_comercial') ?: null,
+            'numero_inscripcion_sanitaria'      => $this->request->getVar('numero_inscripcion_sanitaria') ?: null,
+            'matricula_mercantil'               => $this->request->getVar('matricula_mercantil') ?: null,
+            'departamento'                      => $this->request->getVar('departamento') ?: null,
+            'comuna'                            => $this->request->getVar('comuna') ?: null,
+            'barrio'                            => $this->request->getVar('barrio') ?: null,
+            'propietario_nombre'                => $this->request->getVar('propietario_nombre') ?: null,
+            'propietario_tipo_id'               => $this->request->getVar('propietario_tipo_id') ?: null,
+            'propietario_numero_id'             => $this->request->getVar('propietario_numero_id') ?: null,
+            'rep_legal_tipo_id'                 => $this->request->getVar('rep_legal_tipo_id') ?: null,
+            'numero_trabajadores'               => $this->request->getVar('numero_trabajadores') !== null && $this->request->getVar('numero_trabajadores') !== '' ? (int) $this->request->getVar('numero_trabajadores') : null,
+            'autoriza_notificacion_electronica' => $this->request->getVar('autoriza_notificacion_electronica') ? 1 : 0,
+            'id_tipo_establecimiento'           => $this->request->getVar('id_tipo_establecimiento') ?: null,
+            'aforo'                             => $this->request->getVar('aforo') !== null && $this->request->getVar('aforo') !== '' ? (int) $this->request->getVar('aforo') : null,
+            'area_m2'                           => $this->request->getVar('area_m2') !== null && $this->request->getVar('area_m2') !== '' ? (float) $this->request->getVar('area_m2') : null,
         ];
 
         if ($clientModel->save($data)) {
@@ -373,6 +396,7 @@ class ConsultantController extends Controller
             $destDir = UPLOADS_PATH . 'firmas_consultores/';
             if (!is_dir($destDir)) mkdir($destDir, 0775, true);
             $photo->move($destDir, $photoName);
+            compress_uploaded_image($destDir . $photoName);
             $data['foto_consultor'] = $photoName;
         }
 
@@ -383,6 +407,7 @@ class ConsultantController extends Controller
             $destDir = UPLOADS_PATH . 'firmas_consultores/';
             if (!is_dir($destDir)) mkdir($destDir, 0775, true);
             $signature->move($destDir, $signatureName);
+            compress_uploaded_image($destDir . $signatureName);
             $data['firma_consultor'] = $signatureName;
         }
 
@@ -425,6 +450,7 @@ class ConsultantController extends Controller
             if ($photo && $photo->isValid() && !$photo->hasMoved()) {
                 $photoName = $photo->getRandomName();
                 $photo->move(ROOTPATH . 'public/uploads', $photoName); // Guarda en la carpeta correcta
+                compress_uploaded_image(ROOTPATH . 'public/uploads/' . $photoName);
                 $data['foto_consultor'] = $photoName;
             }
 
@@ -499,6 +525,7 @@ class ConsultantController extends Controller
             $destDir = UPLOADS_PATH . 'firmas_consultores/';
             if (!is_dir($destDir)) mkdir($destDir, 0775, true);
             $newPhoto->move($destDir, $newPhotoName);
+            compress_uploaded_image($destDir . $newPhotoName);
 
             // Eliminar la imagen anterior si existe
             $oldPath = UPLOADS_PATH . 'firmas_consultores/' . ($consultant['foto_consultor'] ?? '');
@@ -517,6 +544,7 @@ class ConsultantController extends Controller
             $destDir = UPLOADS_PATH . 'firmas_consultores/';
             if (!is_dir($destDir)) mkdir($destDir, 0775, true);
             $newSignature->move($destDir, $newSignatureName);
+            compress_uploaded_image($destDir . $newSignatureName);
 
             // Eliminar la firma anterior si existe
             $oldPath = UPLOADS_PATH . 'firmas_consultores/' . ($consultant['firma_consultor'] ?? '');
@@ -569,12 +597,17 @@ class ConsultantController extends Controller
             return redirect()->to('/listClients')->with('error', 'Cliente no encontrado.');
         }
 
-        $data = [
-            'client' => $client,
-            'consultants' => $consultants
-        ];
+        $tiposEstablecimiento = \Config\Database::connect()
+            ->table('tbl_tipo_establecimiento')
+            ->where('activo', 1)
+            ->orderBy('orden', 'ASC')
+            ->get()->getResultArray();
 
-        return view('consultant/edit_client', $data);
+        return view('consultant/edit_client', [
+            'client'                => $client,
+            'consultants'           => $consultants,
+            'tipos_establecimiento' => $tiposEstablecimiento,
+        ]);
     }
 
 
@@ -618,6 +651,23 @@ class ConsultantController extends Controller
             'fecha_cierre_facturacion' => !empty($fechaCierre) ? (int) $fechaCierre : null,
             'fecha_asignacion_cronograma' => !empty($fechaAsignacion) ? $fechaAsignacion : null,
             // estandares es derivado del contrato activo — no se edita manualmente
+
+            // Campos TAT Fase 1 (Salud + Bomberos)
+            'nombre_comercial'                  => $this->request->getVar('nombre_comercial') ?: null,
+            'numero_inscripcion_sanitaria'      => $this->request->getVar('numero_inscripcion_sanitaria') ?: null,
+            'matricula_mercantil'               => $this->request->getVar('matricula_mercantil') ?: null,
+            'departamento'                      => $this->request->getVar('departamento') ?: null,
+            'comuna'                            => $this->request->getVar('comuna') ?: null,
+            'barrio'                            => $this->request->getVar('barrio') ?: null,
+            'propietario_nombre'                => $this->request->getVar('propietario_nombre') ?: null,
+            'propietario_tipo_id'               => $this->request->getVar('propietario_tipo_id') ?: null,
+            'propietario_numero_id'             => $this->request->getVar('propietario_numero_id') ?: null,
+            'rep_legal_tipo_id'                 => $this->request->getVar('rep_legal_tipo_id') ?: null,
+            'numero_trabajadores'               => $this->request->getVar('numero_trabajadores') !== null && $this->request->getVar('numero_trabajadores') !== '' ? (int) $this->request->getVar('numero_trabajadores') : null,
+            'autoriza_notificacion_electronica' => $this->request->getVar('autoriza_notificacion_electronica') ? 1 : 0,
+            'id_tipo_establecimiento'           => $this->request->getVar('id_tipo_establecimiento') ?: null,
+            'aforo'                             => $this->request->getVar('aforo') !== null && $this->request->getVar('aforo') !== '' ? (int) $this->request->getVar('aforo') : null,
+            'area_m2'                           => $this->request->getVar('area_m2') !== null && $this->request->getVar('area_m2') !== '' ? (float) $this->request->getVar('area_m2') : null,
         ];
 
         $uploadPath = ROOTPATH . 'public/uploads';
@@ -627,6 +677,7 @@ class ConsultantController extends Controller
         if ($newLogo && $newLogo->isValid() && !$newLogo->hasMoved()) {
             $newLogoName = $newLogo->getRandomName();
             $newLogo->move($uploadPath, $newLogoName);
+            compress_uploaded_image($uploadPath . '/' . $newLogoName);
             $this->generateLogoThumbnail($uploadPath, $newLogoName);
 
             if (!empty($client['logo'])) {
@@ -647,6 +698,7 @@ class ConsultantController extends Controller
         if ($newSignature && $newSignature->isValid() && !$newSignature->hasMoved()) {
             $newSignatureName = $newSignature->getRandomName();
             $newSignature->move($uploadPath, $newSignatureName);
+            compress_uploaded_image($uploadPath . '/' . $newSignatureName);
 
             if (!empty($client['firma_representante_legal']) && file_exists($uploadPath . '/' . $client['firma_representante_legal'])) {
                 unlink($uploadPath . '/' . $client['firma_representante_legal']);
@@ -662,6 +714,7 @@ class ConsultantController extends Controller
             if ($newFile && $newFile->isValid() && !$newFile->hasMoved()) {
                 $newFileName = $newFile->getRandomName();
                 $newFile->move($uploadPath, $newFileName);
+                compress_uploaded_image($uploadPath . '/' . $newFileName);
 
                 if (!empty($client[$field]) && file_exists($uploadPath . '/' . $client[$field])) {
                     unlink($uploadPath . '/' . $client[$field]);

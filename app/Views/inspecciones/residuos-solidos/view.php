@@ -14,7 +14,7 @@
 
 <!-- Datos Generales -->
 <div class="card mb-3">
-    <div class="card-header" style="background: #1b4332; color: white;">
+    <div class="card-header" style="background: #c9541a; color: white;">
         <i class="fas fa-info-circle me-1"></i> Datos Generales
     </div>
     <div class="card-body p-0">
@@ -37,7 +37,7 @@
             </tr>
             <?php if (!empty($inspeccion['flujo_residente'])): ?>
             <tr>
-                <td class="fw-bold bg-light">Flujo del residente</td>
+                <td class="fw-bold bg-light">Flujo del cliente o trabajador</td>
                 <td style="white-space: pre-wrap;"><?= esc($inspeccion['flujo_residente']) ?></td>
             </tr>
             <?php endif; ?>

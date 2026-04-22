@@ -91,7 +91,7 @@
 <p class="texto">
     La designacion se realiza en cumplimiento de las disposiciones legales que regulan el Sistema de Gestion
     de Seguridad y Salud en el Trabajo (SG-SST), y tiene como proposito velar por el bienestar y la seguridad
-    de los trabajadores y residentes del conjunto.
+    de los trabajadores y clientes y trabajadores del conjunto.
 </p>
 
 <!-- MARCO NORMATIVO -->
@@ -109,7 +109,7 @@
 <p class="texto">El Vigia de SST tendra las siguientes funciones y responsabilidades:</p>
 <ol class="funciones-list">
     <li>Proponer a la administracion la adopcion de medidas y el desarrollo de actividades que procuren y mantengan la salud en los lugares y ambientes de trabajo.</li>
-    <li>Proponer y participar en actividades de capacitacion en Seguridad y Salud en el Trabajo dirigidas a trabajadores, contratistas y residentes.</li>
+    <li>Proponer y participar en actividades de capacitacion en Seguridad y Salud en el Trabajo dirigidas a trabajadores, contratistas y clientes y trabajadores.</li>
     <li>Vigilar el desarrollo de las actividades que en materia de medicina, higiene y seguridad industrial se realicen en el conjunto.</li>
     <li>Colaborar con el analisis de las causas de los accidentes de trabajo y enfermedades laborales, y proponer al empleador las medidas correctivas necesarias.</li>
     <li>Visitar periodicamente los lugares de trabajo e inspeccionar los ambientes, maquinas, equipos y las operaciones realizadas por el personal, informando al empleador sobre la existencia de factores de riesgo.</li>

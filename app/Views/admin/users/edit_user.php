@@ -35,7 +35,7 @@
 
         .info-box {
             background-color: #e7f3ff;
-            border-left: 4px solid #007bff;
+            border-left: 4px solid #ee6c21;
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 5px;
@@ -49,18 +49,8 @@
     <nav style="background-color: white; position: fixed; top: 0; width: 100%; z-index: 1000; padding: 10px 0; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;">
             <div>
-                <a href="https://dashboard.cycloidtalent.com/login">
-                    <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" style="height: 100px;">
-                </a>
-            </div>
-            <div>
-                <a href="https://cycloidtalent.com/index.php/consultoria-sst">
-                    <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" style="height: 100px;">
-                </a>
-            </div>
-            <div>
-                <a href="https://cycloidtalent.com/">
-                    <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo" style="height: 100px;">
+                <a href="https://tat.cycloidtalent.com/index.php/login">
+                    <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" style="height: 100px;">
                 </a>
             </div>
         </div>

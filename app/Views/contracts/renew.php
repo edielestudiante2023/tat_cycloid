@@ -18,7 +18,7 @@
         }
         .contract-info {
             background-color: #e7f3ff;
-            border-left: 4px solid #007bff;
+            border-left: 4px solid #ee6c21;
             padding: 15px;
             margin-bottom: 25px;
             border-radius: 5px;

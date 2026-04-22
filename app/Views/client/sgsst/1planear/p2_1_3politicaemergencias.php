@@ -180,17 +180,17 @@
     <div class="alpha-title">POLÍTICA DE PREVENCIÓN – PREPARACIÓN Y RESPUESTA ANTE EMERGENCIAS</div>
 
     <p class="beta-parrafo">
-        Para <strong><?= $client['nombre_cliente'] ?></strong> es de vital importancia proveer un óptimo nivel de seguridad de los residentes, proveedores, contratistas y visitantes, para lo cual dispondrá de elementos e instalaciones adecuadas, apoyo en el fomento de la cultura de la prevención y el entrenamiento requerido para asegurar el control de emergencias de cualquier naturaleza.
+        Para <strong><?= $client['nombre_cliente'] ?></strong> es de vital importancia proveer un óptimo nivel de seguridad de los clientes y trabajadores, proveedores, contratistas y visitantes, para lo cual dispondrá de elementos e instalaciones adecuadas, apoyo en el fomento de la cultura de la prevención y el entrenamiento requerido para asegurar el control de emergencias de cualquier naturaleza.
     </p>
 
     <p class="beta-parrafo">
-        En concordancia con lo anterior, el consejo de administración, administrador de la copropiedad, y vigía SST se comprometen a proporcionar todo su apoyo, colaboración y gestión necesaria, para adelantar todos los procesos tendientes al cumplimiento de los objetivos propuestos en el Plan de Emergencias adoptado por <strong><?= $client['nombre_cliente'] ?></strong>.
+        En concordancia con lo anterior, el responsable del establecimiento, el propietario y el vigía SST se comprometen a proporcionar todo su apoyo, colaboración y gestión necesaria, para adelantar todos los procesos tendientes al cumplimiento de los objetivos propuestos en el Plan de Emergencias adoptado por <strong><?= $client['nombre_cliente'] ?></strong>.
     </p>
 
     <p class="beta-parrafo">Con el fin de:</p>
 
     <ul class="delta-lista">
-        <li class="beta-parrafo">Preservar la vida e integridad de todas las personas (proveedores, contratistas, residentes, visitantes y comunidad).</li>
+        <li class="beta-parrafo">Preservar la vida e integridad de todas las personas (proveedores, contratistas, clientes y trabajadores, visitantes y comunidad).</li>
         <li class="beta-parrafo">Garantizar la preservación de los bienes y activos de <strong><?= $client['nombre_cliente'] ?></strong>.</li>
         <li class="beta-parrafo">Velar por que todas las acciones que se adelanten garanticen la protección del medio ambiente.</li>
         <li class="beta-parrafo">Garantizar la continuidad operativa de <strong><?= $client['nombre_cliente'] ?></strong> y una rápida recuperación de los sectores afectados por eventuales emergencias.</li>

@@ -12,6 +12,7 @@
         + count($pendientesSenalizacion ?? [])
         + count($pendientesExtintores ?? [])
         + count($pendientesBotiquin ?? [])
+        + count($pendientesBotiquinTipoA ?? [])
         + count($pendientesGabinetes ?? [])
         + count($pendientesComunicaciones ?? [])
         + count($pendientesRecursosSeg ?? [])
@@ -127,8 +128,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes señalización -->
-    <?php if (!empty($pendientesSenalizacion)): ?>
+    <!-- Pendientes señalización [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesSenalizacion) */ ?>
     <?php foreach ($pendientesSenalizacion as $sen): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -198,7 +199,7 @@
                 <div>
                     <strong>
                         <i class="fas fa-edit text-warning"></i>
-                        Botiquin - <?= esc($bot['nombre_cliente'] ?? 'Sin cliente') ?>
+                        Botiquín Tipo B - <?= esc($bot['nombre_cliente'] ?? 'Sin cliente') ?>
                     </strong>
                     <div class="text-muted" style="font-size: 13px;">
                         <?= date('d/m/Y', strtotime($bot['fecha_inspeccion'])) ?>
@@ -220,8 +221,39 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes gabinetes -->
-    <?php if (!empty($pendientesGabinetes)): ?>
+    <!-- Pendientes botiquín Tipo A -->
+    <?php if (!empty($pendientesBotiquinTipoA)): ?>
+    <?php foreach ($pendientesBotiquinTipoA as $bota): ?>
+    <div class="card card-inspeccion borrador">
+        <div class="card-body py-3 px-3">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <strong>
+                        <i class="fas fa-edit text-warning"></i>
+                        Botiquín Tipo A - <?= esc($bota['nombre_cliente'] ?? 'Sin cliente') ?>
+                    </strong>
+                    <div class="text-muted" style="font-size: 13px;">
+                        <?= date('d/m/Y', strtotime($bota['fecha_inspeccion'])) ?>
+                        &middot;
+                        <span class="badge badge-borrador" style="font-size: 11px;">Borrador</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2 d-flex gap-1">
+                <a href="<?= base_url('/inspecciones/botiquin-tipo-a/edit/') ?><?= $bota['id'] ?>" class="btn btn-sm btn-outline-dark">
+                    Continuar editando <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+                <button type="button" class="btn btn-sm btn-outline-danger" onclick="confirmarEliminar('<?= base_url('/inspecciones/botiquin-tipo-a/delete/') ?><?= $bota['id'] ?>')">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+    <?php endif; ?>
+
+    <!-- Pendientes gabinetes [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesGabinetes) */ ?>
     <?php foreach ($pendientesGabinetes as $gab): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -251,8 +283,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes comunicaciones -->
-    <?php if (!empty($pendientesComunicaciones)): ?>
+    <!-- Pendientes comunicaciones [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesComunicaciones) */ ?>
     <?php foreach ($pendientesComunicaciones as $com): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -282,8 +314,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes recursos seguridad -->
-    <?php if (!empty($pendientesRecursosSeg)): ?>
+    <!-- Pendientes recursos seguridad [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesRecursosSeg) */ ?>
     <?php foreach ($pendientesRecursosSeg as $rec): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -313,8 +345,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes probabilidad peligros -->
-    <?php if (!empty($pendientesProbPeligros)): ?>
+    <!-- Pendientes probabilidad peligros [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesProbPeligros) */ ?>
     <?php foreach ($pendientesProbPeligros as $pp): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -344,8 +376,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes matriz vulnerabilidad -->
-    <?php if (!empty($pendientesMatrizVul)): ?>
+    <!-- Pendientes matriz vulnerabilidad [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesMatrizVul) */ ?>
     <?php foreach ($pendientesMatrizVul as $mv): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -375,8 +407,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes plan emergencia -->
-    <?php if (!empty($pendientesPlanEmg)): ?>
+    <!-- Pendientes plan emergencia [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesPlanEmg) */ ?>
     <?php foreach ($pendientesPlanEmg as $pe): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -406,8 +438,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes simulacro -->
-    <?php if (!empty($pendientesSimulacro)): ?>
+    <!-- Pendientes simulacro [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesSimulacro) */ ?>
     <?php foreach ($pendientesSimulacro as $sim): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -440,8 +472,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes HV brigadista -->
-    <?php if (!empty($pendientesHvBrig)): ?>
+    <!-- Pendientes HV brigadista [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesHvBrig) */ ?>
     <?php foreach ($pendientesHvBrig as $hvb): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -472,8 +504,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes dotación vigilante -->
-    <?php if (!empty($pendientesDotVig)): ?>
+    <!-- Pendientes dotación vigilante [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesDotVig) */ ?>
     <?php foreach ($pendientesDotVig as $dv): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -499,8 +531,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes dotación aseadora -->
-    <?php if (!empty($pendientesDotAse)): ?>
+    <!-- Pendientes dotación aseadora [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesDotAse) */ ?>
     <?php foreach ($pendientesDotAse as $da): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -526,8 +558,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes dotación todero -->
-    <?php if (!empty($pendientesDotTod)): ?>
+    <!-- Pendientes dotación todero [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesDotTod) */ ?>
     <?php foreach ($pendientesDotTod as $dt): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -553,8 +585,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes auditoría zona residuos -->
-    <?php if (!empty($pendientesAudRes)): ?>
+    <!-- Pendientes auditoría zona residuos [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesAudRes) */ ?>
     <?php foreach ($pendientesAudRes as $ar): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -607,8 +639,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes preparación simulacro -->
-    <?php if (!empty($pendientesPrepSim)): ?>
+    <!-- Pendientes preparación simulacro [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesPrepSim) */ ?>
     <?php foreach ($pendientesPrepSim as $ps): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -796,8 +828,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes Contingencia Plagas -->
-    <?php if (!empty($pendientesContPlagas)): ?>
+    <!-- Pendientes Contingencia Plagas [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesContPlagas) */ ?>
     <?php foreach ($pendientesContPlagas as $cp): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -823,8 +855,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes Contingencia Agua -->
-    <?php if (!empty($pendientesContAgua)): ?>
+    <!-- Pendientes Contingencia Agua [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesContAgua) */ ?>
     <?php foreach ($pendientesContAgua as $ca): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -850,8 +882,8 @@
     <?php endforeach; ?>
     <?php endif; ?>
 
-    <!-- Pendientes Contingencia Basura -->
-    <?php if (!empty($pendientesContBasura)): ?>
+    <!-- Pendientes Contingencia Basura [TAT Fase 2 — oculto: no aplica a locales comerciales] -->
+    <?php if (false): /* restaurar: !empty($pendientesContBasura) */ ?>
     <?php foreach ($pendientesContBasura as $cb): ?>
     <div class="card card-inspeccion borrador">
         <div class="card-body py-3 px-3">
@@ -994,24 +1026,24 @@
     <!-- Buscador de inspecciones -->
     <div class="mb-3 mt-2">
         <div class="input-group">
-            <span class="input-group-text" style="background:#1b4332; color:#e76f51; border:none;"><i class="fas fa-search"></i></span>
+            <span class="input-group-text" style="background:#c9541a; color:#ee6c21; border:none;"><i class="fas fa-search"></i></span>
             <input type="text" id="buscarInspeccion" class="form-control" placeholder="Buscar inspección..." style="border:1px solid #dee2e6; font-size:14px;">
         </div>
     </div>
 
     <!-- Card Agendamiento destacada -->
     <div class="section-title">Agendamiento</div>
-    <a href="<?= base_url('/inspecciones/agendamiento') ?>" class="card mb-3 border-0" style="background: linear-gradient(135deg, #1b4332, #2d6a4f); border-radius: 12px; text-decoration:none;">
+    <a href="<?= base_url('/inspecciones/agendamiento') ?>" class="card mb-3 border-0" style="background: linear-gradient(135deg, #c9541a, #ee6c21); border-radius: 12px; text-decoration:none;">
         <div class="card-body py-3 px-3 d-flex align-items-center justify-content-between">
             <div>
-                <div style="color: #e76f51; font-weight: 700; font-size: 16px;">
+                <div style="color: #ee6c21; font-weight: 700; font-size: 16px;">
                     <i class="fas fa-calendar-alt me-2"></i>Agendamientos
                 </div>
                 <div style="color: #adb5bd; font-size: 13px;">
                     <?= $totalAgendamientos ?> visita<?= $totalAgendamientos !== 1 ? 's' : '' ?> pendiente<?= $totalAgendamientos !== 1 ? 's' : '' ?>
                 </div>
             </div>
-            <div style="color: #e76f51; font-size: 24px;">
+            <div style="color: #ee6c21; font-size: 24px;">
                 <i class="fas fa-arrow-right"></i>
             </div>
         </div>
@@ -1025,11 +1057,13 @@
             <div><strong>Actas de Visita</strong></div>
             <div class="count">(<?= $totalActas ?>)</div>
         </a>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/senalizacion') ?>" class="card-tipo">
             <i class="fas fa-search"></i>
             <div><strong>Senalizacion</strong></div>
             <div class="count">(<?= $totalSenalizacion ?>)</div>
         </a>
+        <?php endif; ?>
         <a href="<?= base_url('/inspecciones/inspeccion-locativa') ?>" class="card-tipo">
             <i class="fas fa-hard-hat"></i>
             <div><strong>Locativas</strong></div>
@@ -1042,64 +1076,91 @@
         </a>
         <a href="<?= base_url('/inspecciones/botiquin') ?>" class="card-tipo">
             <i class="fas fa-first-aid"></i>
-            <div><strong>Botiquin</strong></div>
+            <div><strong>Botiquín Tipo B</strong></div>
             <div class="count">(<?= $totalBotiquin ?>)</div>
         </a>
+        <a href="<?= base_url('/inspecciones/botiquin-tipo-a') ?>" class="card-tipo">
+            <i class="fas fa-briefcase-medical"></i>
+            <div><strong>Botiquín Tipo A</strong></div>
+            <div class="count">(<?= $totalBotiquinTipoA ?? 0 ?>)</div>
+        </a>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/gabinetes') ?>" class="card-tipo">
             <i class="fas fa-shower"></i>
             <div><strong>Gabinetes</strong></div>
             <div class="count">(<?= $totalGabinetes ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/comunicaciones') ?>" class="card-tipo">
             <i class="fas fa-walkie-talkie"></i>
             <div><strong>Comunicaciones</strong></div>
             <div class="count">(<?= $totalComunicaciones ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/recursos-seguridad') ?>" class="card-tipo">
             <i class="fas fa-shield-alt"></i>
             <div><strong>Rec. Seguridad</strong></div>
             <div class="count">(<?= $totalRecursosSeg ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/probabilidad-peligros') ?>" class="card-tipo">
             <i class="fas fa-exclamation-triangle"></i>
             <div><strong>Prob. Peligros</strong></div>
             <div class="count">(<?= $totalProbPeligros ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/matriz-vulnerabilidad') ?>" class="card-tipo">
             <i class="fas fa-th-list"></i>
             <div><strong>Matriz Vuln.</strong></div>
             <div class="count">(<?= $totalMatrizVul ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/plan-emergencia') ?>" class="card-tipo">
             <i class="fas fa-file-medical"></i>
             <div><strong>Plan Emergencia</strong></div>
             <div class="count">(<?= $totalPlanEmergencia ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/simulacro') ?>" class="card-tipo">
             <i class="fas fa-running"></i>
             <div><strong>Ev. Simulacro</strong></div>
             <div class="count">(<?= $totalSimulacro ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/hv-brigadista') ?>" class="card-tipo">
             <i class="fas fa-id-card-alt"></i>
             <div><strong>HV Brigadista</strong></div>
             <div class="count">(<?= $totalHvBrigadista ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/dotacion-vigilante') ?>" class="card-tipo">
             <i class="fas fa-user-shield"></i>
             <div><strong>Dot. Vigilante</strong></div>
             <div class="count">(<?= $totalDotVig ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/dotacion-aseadora') ?>" class="card-tipo">
             <i class="fas fa-spray-can-sparkles"></i>
             <div><strong>Dot. Aseadora</strong></div>
             <div class="count">(<?= $totalDotAse ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/dotacion-todero') ?>" class="card-tipo">
             <i class="fas fa-broom"></i>
             <div><strong>Dot. Todero</strong></div>
             <div class="count">(<?= $totalDotTod ?>)</div>
         </a>
+        <?php endif; ?>
         <a href="<?= base_url('/inspecciones/auditoria-zona-residuos') ?>" class="card-tipo">
             <i class="fas fa-dumpster"></i>
             <div><strong>Zona Residuos</strong></div>
@@ -1110,11 +1171,13 @@
             <div><strong>Capacitaciones</strong></div>
             <div class="count">(<?= $totalRepCap ?>)</div>
         </a>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/preparacion-simulacro') ?>" class="card-tipo">
             <i class="fas fa-clipboard-check"></i>
             <div><strong>Prep. Simulacro</strong></div>
             <div class="count">(<?= $totalPrepSim ?>)</div>
         </a>
+        <?php endif; ?>
         <a href="<?= base_url('/inspecciones/asistencia-induccion') ?>" class="card-tipo">
             <i class="fas fa-clipboard-list"></i>
             <div><strong>Asistencia</strong></div>
@@ -1150,21 +1213,27 @@
             <div><strong>Plan Saneamiento</strong></div>
             <div class="count">(<?= $totalPlanSan ?>)</div>
         </a>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/contingencia-plagas') ?>" class="card-tipo">
             <i class="fas fa-bug"></i>
             <div><strong>Cont. Plagas</strong></div>
             <div class="count">(<?= $totalContPlagas ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/contingencia-agua') ?>" class="card-tipo">
             <i class="fas fa-tint-slash"></i>
             <div><strong>Cont. Sin Agua</strong></div>
             <div class="count">(<?= $totalContAgua ?>)</div>
         </a>
+        <?php endif; ?>
+        <?php if (false): // TAT Fase 1: fuera de alcance — restaurar quitando if(false) ?>
         <a href="<?= base_url('/inspecciones/contingencia-basura') ?>" class="card-tipo">
             <i class="fas fa-trash-alt"></i>
             <div><strong>Cont. Basura</strong></div>
             <div class="count">(<?= $totalContBasura ?>)</div>
         </a>
+        <?php endif; ?>
         <a href="<?= base_url('/inspecciones/kpi-limpieza') ?>" class="card-tipo">
             <i class="fas fa-chart-line"></i>
             <div><strong>KPI Limpieza</strong></div>
@@ -1204,6 +1273,46 @@
             <i class="fas fa-tasks"></i>
             <div><strong>Pendientes</strong></div>
             <div class="count">(<?= $totalPendientesAbiertos ?> abiertas)</div>
+        </a>
+        <a href="<?= base_url('/trabajadores/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#6f42c1;">
+            <i class="fas fa-users" style="color:#6f42c1;"></i>
+            <div><strong>Trabajadores</strong></div>
+            <div class="count">Gestión por cliente</div>
+        </a>
+        <a href="<?= base_url('/bomberos/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#d62828;">
+            <i class="fas fa-fire-extinguisher" style="color:#d62828;"></i>
+            <div><strong>Permisos Bomberos</strong></div>
+            <div class="count">Expediente anual</div>
+        </a>
+        <a href="<?= base_url('/neveras/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#0277bd;">
+            <i class="fas fa-snowflake" style="color:#0277bd;"></i>
+            <div><strong>Control Neveras</strong></div>
+            <div class="count">Temperatura / humedad</div>
+        </a>
+        <a href="<?= base_url('/limpieza-local/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#198754;">
+            <i class="fas fa-broom" style="color:#198754;"></i>
+            <div><strong>Inspección de Aseo</strong></div>
+            <div class="count">Checklist de limpieza</div>
+        </a>
+        <a href="<?= base_url('/equipos/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#6c757d;">
+            <i class="fas fa-tools" style="color:#6c757d;"></i>
+            <div><strong>Equipos y Utensilios</strong></div>
+            <div class="count">Inspección semanal</div>
+        </a>
+        <a href="<?= base_url('/recepcion-mp/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#6f4f28;">
+            <i class="fas fa-truck-ramp-box" style="color:#6f4f28;"></i>
+            <div><strong>Recepción MP</strong></div>
+            <div class="count">POES 4.1</div>
+        </a>
+        <a href="<?= base_url('/contaminacion/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#dc3545;">
+            <i class="fas fa-exchange-alt" style="color:#dc3545;"></i>
+            <div><strong>Contaminación Cruzada</strong></div>
+            <div class="count">POES 4.2</div>
+        </a>
+        <a href="<?= base_url('/almacenamiento/seleccionar-cliente') ?>" class="card-tipo" target="_blank" style="border-color:#7c3aed;">
+            <i class="fas fa-boxes-stacked" style="color:#7c3aed;"></i>
+            <div><strong>Almacenamiento</strong></div>
+            <div class="count">POES 4.4</div>
         </a>
         <a href="<?= base_url('/inspecciones/lavado-tanques') ?>" class="card-tipo">
             <i class="fas fa-water"></i>
@@ -1260,7 +1369,7 @@ function confirmarEliminar(url) {
     Swal.fire({
         title: 'Eliminar registro',
         html: '<p style="color:#666;font-size:14px;">Esta accion no se puede deshacer.<br>Para confirmar, resuelve la operacion:</p>' +
-              '<div style="font-size:24px;font-weight:700;color:#1b4332;margin:10px 0;">' + a + ' ' + op + ' ' + b + ' = ?</div>',
+              '<div style="font-size:24px;font-weight:700;color:#c9541a;margin:10px 0;">' + a + ' ' + op + ' ' + b + ' = ?</div>',
         input: 'number',
         inputPlaceholder: 'Tu respuesta',
         icon: 'warning',
@@ -1294,7 +1403,7 @@ function confirmarEliminar(url) {
         Swal.fire({
             title: 'Confirmar eliminacion',
             html: '<p style="color:#dc3545;font-size:14px;font-weight:600;">Segunda verificacion</p>' +
-                  '<div style="font-size:24px;font-weight:700;color:#1b4332;margin:10px 0;">' + a2 + ' ' + op2 + ' ' + b2 + ' = ?</div>',
+                  '<div style="font-size:24px;font-weight:700;color:#c9541a;margin:10px 0;">' + a2 + ' ' + op2 + ' ' + b2 + ' = ?</div>',
             input: 'number',
             inputPlaceholder: 'Tu respuesta',
             icon: 'error',

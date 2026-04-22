@@ -11,7 +11,7 @@
   <style>
     body {
       background-color: #f5f7fa;
-      color: #1b4332;
+      color: #c9541a;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -20,7 +20,7 @@
     /* Estilo para la barra lateral vertical */
     .vertical-sidebar {
       background-color: whitesmoke;
-      border-right: 2px solid #e76f51;
+      border-right: 2px solid #ee6c21;
       height: 100vh;
       padding-top: 20px;
       position: fixed;
@@ -50,7 +50,7 @@
     }
 
     .btn-primary-custom {
-      background-color: #1b4332;
+      background-color: #c9541a;
       color: #ffffff;
       border: none;
     }
@@ -61,7 +61,7 @@
     }
 
     footer {
-      background-color: #1b4332;
+      background-color: #c9541a;
       color: #ffffff;
       padding: 15px 0;
       text-align: center;
@@ -87,14 +87,8 @@
 <body>
   <!-- Barra lateral vertical con logotipos -->
   <div class="vertical-sidebar">
-    <a href="https://dashboard.cycloidtalent.com/login" target="_blank">
-      <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Logo Cycloid TAT">
-    </a>
-    <a href="https://cycloidtalent.com/index.php/consultoria-sst" target="_blank">
-      <img src="<?= base_url('uploads/logosst.png') ?>" alt="Logo SST">
-    </a>
-    <a href="https://cycloidtalent.com/" target="_blank">
-      <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Logo Cycloid">
+    <a href="https://tat.cycloidtalent.com/index.php/login" target="_blank">
+      <img src="<?= base_url('uploads/tat.png') ?>" alt="Logo Cycloid TAT">
     </a>
   </div>
 
@@ -121,8 +115,7 @@
           <h2>¿Desea reactivar sus servicios?</h2>
           <p>Estamos aquí para brindarle acompañamiento experto en la gestión de su SST.</p>
           <div>
-            <img src="<?= base_url('uploads/logocycloid.png') ?>" alt="Cycloid">
-          </div>
+            </div>
           <p><strong>Email:</strong> diana.cuestas@cycloidtalent.com</p>
           <p><strong>Teléfono:</strong> 3229074371</p>
         </div>

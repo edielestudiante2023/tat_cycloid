@@ -22,20 +22,20 @@
         .header-title { text-align: center; font-weight: bold; font-size: 9px; }
         .header-code { width: 120px; font-size: 8px; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 6px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 6px; color: #c9541a; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 6px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
         .info-label { font-weight: bold; color: #444; width: 160px; background: #f7f7f7; }
 
-        .section-title { background: #1b4332; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
+        .section-title { background: #c9541a; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
 
         .data-table { width: 100%; border-collapse: collapse; margin-bottom: 6px; }
         .data-table th { background: #e8e8e8; border: 1px solid #aaa; padding: 3px 4px; font-size: 8px; text-align: center; }
         .data-table td { border: 1px solid #ccc; padding: 2px 4px; font-size: 8px; text-align: center; vertical-align: middle; }
 
         .content-text { font-size: 8px; line-height: 1.4; margin-bottom: 4px; text-align: justify; }
-        .theory-title { font-weight: bold; font-size: 9px; margin: 6px 0 3px; color: #1b4332; }
+        .theory-title { font-weight: bold; font-size: 9px; margin: 6px 0 3px; color: #c9541a; }
 
         .foto-inline { max-width: 200px; max-height: 150px; border: 1px solid #ccc; }
 
@@ -65,10 +65,10 @@
 
     <!-- ====== MARCO TEORICO ====== -->
     <div class="theory-title">1. OBJETIVO</div>
-    <p class="content-text">Evaluar la capacidad de respuesta del personal de la copropiedad <?= esc($cliente['nombre_cliente'] ?? '') ?> ante un evento de emergencia simulado, identificando fortalezas, debilidades y oportunidades de mejora en los procedimientos de evacuacion, comunicacion y liderazgo de la brigada de emergencias.</p>
+    <p class="content-text">Evaluar la capacidad de respuesta del personal del establecimiento comercial <?= esc($cliente['nombre_cliente'] ?? '') ?> ante un evento de emergencia simulado, identificando fortalezas, debilidades y oportunidades de mejora en los procedimientos de evacuacion, comunicacion y liderazgo de la brigada de emergencias.</p>
 
     <div class="theory-title">2. ALCANCE</div>
-    <p class="content-text">Este formato aplica a todos los simulacros de evacuacion realizados en las copropiedades atendidas por CYCLOID SAS, de acuerdo con la Ley 1523 de 2012 (Gestion del Riesgo de Desastres) y la Resolucion 0312 de 2019 (Estandares Minimos del SG-SST). Cubre desde la preparacion previa hasta el cierre del ejercicio, incluyendo el registro de tiempos, conteo de evacuados y evaluacion cuantitativa y cualitativa.</p>
+    <p class="content-text">Este formato aplica a todos los simulacros de evacuacion realizados en los establecimientos comerciales atendidas por CYCLOID SAS, de acuerdo con la Ley 1523 de 2012 (Gestion del Riesgo de Desastres) y la Resolucion 0312 de 2019 (Estandares Minimos del SG-SST). Cubre desde la preparacion previa hasta el cierre del ejercicio, incluyendo el registro de tiempos, conteo de evacuados y evaluacion cuantitativa y cualitativa.</p>
 
     <div class="theory-title">3. DEFINICIONES</div>
     <p class="content-text"><strong>Simulacro:</strong> Ejercicio practico que replica una situacion de emergencia con el fin de evaluar y mejorar los planes de respuesta.<br>
@@ -101,7 +101,7 @@
     <!-- Seccion 1: Identificacion -->
     <div class="section-title">1. IDENTIFICACION</div>
     <table class="info-table">
-        <tr><td class="info-label">Copropiedad</td><td><?= esc($cliente['nombre_cliente'] ?? 'N/A') ?></td></tr>
+        <tr><td class="info-label">Establecimiento comercial</td><td><?= esc($cliente['nombre_cliente'] ?? 'N/A') ?></td></tr>
         <tr><td class="info-label">NIT</td><td><?= esc($cliente['nit_cliente'] ?? 'N/A') ?></td></tr>
         <tr><td class="info-label">Direccion</td><td><?= esc($eval['direccion'] ?? 'N/A') ?></td></tr>
         <tr><td class="info-label">Fecha del simulacro</td><td><?= !empty($eval['fecha']) ? date('d/m/Y', strtotime($eval['fecha'])) : 'N/A' ?></td></tr>

@@ -264,9 +264,9 @@ class PlanContingenciaAguaController extends BaseController
                 'fecha_programa'      => date('Y-m-d'),
                 'nombre_responsable'  => 'Administrador(a) del Conjunto',
                 'empresa_carrotanque' => 'Gestionar con un proveedor de carrotanque que certifique la calidad del agua suministrada mediante análisis fisicoquímico y microbiológico vigente, cuente con registro sanitario del vehículo cisterna y garantice capacidad de respuesta urgente en menos de 4 horas.',
-                'capacidad_reserva'   => 'Verificar y documentar la capacidad total de almacenamiento en los tanques del conjunto, asegurando que la reserva disponible cubra al menos 24 horas de consumo normal de todos los residentes.',
+                'capacidad_reserva'   => 'Verificar y documentar la capacidad total de almacenamiento en los tanques del conjunto, asegurando que la reserva disponible cubra al menos 24 horas de consumo normal de todos los clientes y trabajadores.',
             ],
-            'cliente'    => ['nombre_cliente' => 'CONJUNTO RESIDENCIAL — EJEMPLO'],
+            'cliente'    => ['nombre_cliente' => 'ESTABLECIMIENTO COMERCIAL — EJEMPLO'],
             'consultor'  => ['nombre_consultor' => 'Consultor SST'],
             'logoBase64' => '',
         ];

@@ -24,7 +24,7 @@
             border-color: #ced4da;
         }
         .select2-container--bootstrap-5 .select2-search__field:focus {
-            border-color: #86b7fe;
+            border-color: #ffa952;
             box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
         }
     </style>

@@ -22,14 +22,8 @@
     <nav class="bg-white fixed-top py-2 shadow-sm">
         <div class="container d-flex justify-content-between align-items-center">
             <!-- Logos -->
-            <a href="https://dashboard.cycloidtalent.com/login">
-                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" height="100">
-            </a>
-            <a href="https://cycloidtalent.com/index.php/consultoria-sst">
-                <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" height="100">
-            </a>
-            <a href="https://cycloidtalent.com/">
-                <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo" height="100">
+            <a href="https://tat.cycloidtalent.com/index.php/login">
+                <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" height="100">
             </a>
             <!-- Botón Dashboard -->
             <div class="text-center">

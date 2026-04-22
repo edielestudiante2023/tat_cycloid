@@ -219,39 +219,39 @@ Fecha: <?= isset($latestVersion['sin_contrato']) && $latestVersion['sin_contrato
     <ul>
         <li>Garantizar que los Proveedores y Contratistas conozcan y establezcan rápidamente el contexto en el que se desarrollará su labor.</li>
         <li>Dar cumplimiento a requisitos legales del Sistema de Gestión de Seguridad y Salud en el Trabajo.</li>
-        <li>Definir los términos bajo los cuales el Proveedor o Contratista se debe regir para prestar un servicio a la copropiedad.</li>
+        <li>Definir los términos bajo los cuales el Proveedor o Contratista se debe regir para prestar un servicio al establecimiento comercial.</li>
     </ul>
 
     <p class="beta-titulo">DESCRIPCIÓN DEL PROCEDIMIENTO</p>
     <p class="gamma-subtitulo">A. DEFINICIONES</p>
     <ul>
         <li><strong>Compra:</strong> Adquisición del derecho de uso o explotación de un bien o servicio, a cambio de la entrega de otro bien representado en dinero.</li>
-        <li><strong>Insumos:</strong> Todo elemento de consumo interno necesario para el normal desarrollo de las actividades administrativas en la tienda a tienda.</li>
+        <li><strong>Insumos:</strong> Todo elemento de consumo interno necesario para el normal desarrollo de las actividades administrativas en la <?= esc($client['nombre_cliente'] ?? '') ?>.</li>
         <li><strong>No conformidad:</strong> No cumplimiento de un requisito, pudiendo ser una desviación de estándares, prácticas, procedimientos, requisitos normativos, entre otros.</li>
-        <li><strong>Parte interesada:</strong> Persona o grupo involucrado o afectado por el desempeño en seguridad y salud en el trabajo en la tienda a tienda.</li>
+        <li><strong>Parte interesada:</strong> Persona o grupo involucrado o afectado por el desempeño en seguridad y salud en el trabajo en la <?= esc($client['nombre_cliente'] ?? '') ?>.</li>
         <li><strong>Producto:</strong> Resultado del desarrollo de actividades o procesos aplicados a materias primas e insumos para generar un elemento tangible.</li>
-        <li><strong>Proveedor:</strong> Organización o persona que proporciona producto o servicio a la tienda a tienda.</li>
-        <li><strong>Proveedores críticos:</strong> Aquellos que pueden afectar de manera significativa la seguridad y salud en el trabajo de la copropiedad.</li>
+        <li><strong>Proveedor:</strong> Organización o persona que proporciona producto o servicio a la <?= esc($client['nombre_cliente'] ?? '') ?>.</li>
+        <li><strong>Proveedores críticos:</strong> Aquellos que pueden afectar de manera significativa la seguridad y salud en el trabajo del establecimiento comercial.</li>
         <li><strong>Proveedor único o exclusivo:</strong> Organización que por las características especiales de su producto y/o servicio no tiene competencia alguna.</li>
         <li><strong>Requisito Normativo:</strong> Requisito de seguridad y salud en el trabajo impuesto por una norma vigente y aplicable.</li>
-        <li><strong>Servicio:</strong> Labor o trabajo realizado a favor de la tienda a tienda por empresas o personas, sin implicar transformación de materia prima.</li>
+        <li><strong>Servicio:</strong> Labor o trabajo realizado a favor de la <?= esc($client['nombre_cliente'] ?? '') ?> por empresas o personas, sin implicar transformación de materia prima.</li>
     </ul>
 
     <p class="gamma-subtitulo">B. CRITERIOS DE SELECCIÓN DE PROVEEDORES</p>
-    <p>Detalla los criterios específicos de selección de proveedores adaptados a las necesidades particulares de la tienda a tienda:</p>
+    <p>Detalla los criterios específicos de selección de proveedores adaptados a las necesidades particulares de la <?= esc($client['nombre_cliente'] ?? '') ?>:</p>
     <ul>
-        <li>Experiencia en servicios similares para propiedades horizontales.</li>
-        <li>Cumplimiento de normativas de seguridad y salud específicas para la tienda a tienda.</li>
+        <li>Experiencia en servicios similares para establecimientos comerciales.</li>
+        <li>Cumplimiento de normativas de seguridad y salud específicas para la <?= esc($client['nombre_cliente'] ?? '') ?>.</li>
         <li>Referencias de trabajos anteriores relacionados con comunidades residenciales.</li>
-        <li>Capacidades técnicas y recursos disponibles adaptados a las instalaciones de la tienda a tienda.</li>
-        <li>Cumplimiento de plazos y tiempos de entrega ajustados a las necesidades de la copropiedad.</li>
+        <li>Capacidades técnicas y recursos disponibles adaptados a las instalaciones de la <?= esc($client['nombre_cliente'] ?? '') ?>.</li>
+        <li>Cumplimiento de plazos y tiempos de entrega ajustados a las necesidades del establecimiento comercial.</li>
     </ul>
 
     <p class="gamma-subtitulo">C. PROCEDIMIENTO DE EVALUACIÓN DE PROVEEDORES</p>
     <ol>
         <li><strong>Criterios de Evaluación:</strong>
             <ul>
-                <li>Experiencia en servicios para propiedades horizontales.</li>
+                <li>Experiencia en servicios para establecimientos comerciales.</li>
                 <li>Cumplimiento de normativas de seguridad y salud aplicables.</li>
                 <li>Referencias de trabajos anteriores relacionados con comunidades residenciales.</li>
                 <li>Capacidades técnicas y recursos adecuados para las instalaciones.</li>
@@ -296,7 +296,7 @@ Fecha: <?= isset($latestVersion['sin_contrato']) && $latestVersion['sin_contrato
                 <li>Cumplimiento de los términos contractuales.</li>
                 <li>Calidad del servicio proporcionado.</li>
                 <li>Cumplimiento de normativas de seguridad y salud.</li>
-                <li>Retroalimentación de los residentes y usuarios.</li>
+                <li>Retroalimentación de los clientes y trabajadores y usuarios.</li>
             </ul>
         </li>
         <li><strong>Acciones Correctivas:</strong> Implementación de planes de mejora continua.</li>

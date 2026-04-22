@@ -26,14 +26,8 @@
             <div class="row w-100 align-items-center">
                 <!-- Logos -->
                 <div class="col-md-8 col-12 d-flex justify-content-between align-items-center">
-                    <a href="https://dashboard.cycloidtalent.com/login">
-                        <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" class="img-fluid" style="max-height: 60px;">
-                    </a>
-                    <a href="https://cycloidtalent.com/index.php/consultoria-sst">
-                        <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" class="img-fluid" style="max-height: 60px;">
-                    </a>
-                    <a href="https://cycloidtalent.com/">
-                        <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo" class="img-fluid" style="max-height: 60px;">
+                    <a href="https://tat.cycloidtalent.com/index.php/login">
+                        <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" class="img-fluid" style="max-height: 60px;">
                     </a>
                 </div>
                 <!-- Botón de Dashboard -->

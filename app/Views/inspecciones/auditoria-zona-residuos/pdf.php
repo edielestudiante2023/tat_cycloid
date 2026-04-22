@@ -39,14 +39,14 @@ $porcentaje = $totalEvaluados > 0 ? round(($puntajeBueno / $totalEvaluados) * 10
         .header-title { text-align: center; font-weight: bold; font-size: 9px; }
         .header-code { width: 120px; font-size: 8px; }
 
-        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #1b4332; }
+        .main-title { text-align: center; font-size: 11px; font-weight: bold; margin: 8px 0 4px; color: #c9541a; }
         .main-subtitle { text-align: center; font-size: 9px; font-weight: bold; margin: 0 0 6px; color: #444; }
 
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; border: 1px solid #ccc; }
         .info-table td { padding: 3px 6px; font-size: 9px; border: 1px solid #ccc; }
         .info-label { font-weight: bold; color: #444; width: 160px; background: #f7f7f7; }
 
-        .section-title { background: #1b4332; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
+        .section-title { background: #c9541a; color: white; padding: 3px 8px; font-weight: bold; font-size: 9px; margin: 8px 0 4px; }
         .content-text { font-size: 9px; line-height: 1.4; margin-bottom: 5px; }
         .intro-text { font-size: 8px; line-height: 1.4; margin-bottom: 6px; text-align: justify; }
 
@@ -91,7 +91,7 @@ $porcentaje = $totalEvaluados > 0 ? round(($puntajeBueno / $totalEvaluados) * 10
     <!-- INTRODUCCION -->
     <div class="section-title">INTRODUCCION</div>
     <p class="intro-text">
-        La correcta gestion de la zona de residuos en las propiedades horizontales es fundamental para garantizar un entorno seguro, saludable y en cumplimiento de la normativa ambiental vigente. La presente auditoria evalua las condiciones fisicas, de limpieza, seguridad y senalizacion del cuarto de basuras, asignando una calificacion a cada aspecto inspeccionado con su respectiva evidencia fotografica.
+        La correcta gestion de la zona de residuos en los establecimientos comerciales es fundamental para garantizar un entorno seguro, saludable y en cumplimiento de la normativa ambiental vigente. La presente auditoria evalua las condiciones fisicas, de limpieza, seguridad y senalizacion del cuarto de basuras, asignando una calificacion a cada aspecto inspeccionado con su respectiva evidencia fotografica.
     </p>
 
     <!-- LEYENDA DE CRITERIOS -->
@@ -119,7 +119,7 @@ $porcentaje = $totalEvaluados > 0 ? round(($puntajeBueno / $totalEvaluados) * 10
         </tr>
         <tr>
             <td style="text-align:center;"><span class="estado-badge" style="background:#adb5bd; color:#333;">No Aplica</span></td>
-            <td>El aspecto no es aplicable a las caracteristicas de esta tienda a tienda.</td>
+            <td>El aspecto no es aplicable a las caracteristicas de este establecimiento.</td>
         </tr>
     </table>
 

@@ -83,7 +83,7 @@
 
         .chart-container h5 {
             text-align: center;
-            color: #1b4332;
+            color: #c9541a;
             font-weight: 600;
             margin-bottom: 1rem;
         }
@@ -133,17 +133,16 @@
         <div class="d-flex justify-content-between align-items-center px-4" style="max-width: 1400px; margin: 0 auto;">
             <div>
                 <a href="<?= base_url('/admin/dashboard') ?>">
-                    <img src="<?= base_url('uploads/logocycloidhorizontal.png') ?>" alt="Cycloid" style="height: 50px;">
+                    <img src="<?= base_url('uploads/tat.png') ?>" alt="TAT" style="height: 50px;">
                 </a>
             </div>
             <div>
-                <h5 class="mb-0 fw-bold" style="color: #1b4332;">EVOLUCION ESTANDARES MINIMOS CLIENTES</h5>
+                <h5 class="mb-0 fw-bold" style="color: #c9541a;">EVOLUCION ESTANDARES MINIMOS CLIENTES</h5>
             </div>
             <div class="d-flex align-items-center">
                 <span class="badge bg-secondary me-2">nombre_cliente</span>
                 <span class="badge bg-primary fs-6" id="badgeTotalClientes"><?= $totalClientes ?></span>
-                <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT" style="height: 50px; margin-left: 15px;">
-            </div>
+                </div>
         </div>
     </nav>
 

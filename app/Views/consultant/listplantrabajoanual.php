@@ -119,14 +119,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
         <div class="container-fluid">
             <div class="d-flex align-items-center">
-                <a href="https://dashboard.cycloidtalent.com/login" class="me-3">
-                    <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo">
-                </a>
-                <a href="https://cycloidtalent.com/index.php/consultoria-sst" class="me-3">
-                    <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo">
-                </a>
-                <a href="https://cycloidtalent.com/">
-                    <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo">
+                <a href="https://tat.cycloidtalent.com/index.php/login" class="me-3">
+                    <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo">
                 </a>
             </div>
             <div class="ms-auto d-flex">

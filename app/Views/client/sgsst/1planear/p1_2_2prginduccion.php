@@ -156,14 +156,14 @@
 
     <div class="beta-subtitulo">3. REQUISITOS GENERALES</div>
     <p class="gamma-parrafo">
-        El proceso de inducción en <strong><?= $client['nombre_cliente'] ?></strong> forma parte fundamental para la formación y desarrollo de todas las partes interesadas, tales como el consejo de administración, el vigía SST, el administrador de la copropiedad y el talento humano asignado por contratistas y proveedores. La inducción general es un proceso de aprendizaje que incorpora, ubica y orienta a todas las partes interesadas hacia la seguridad y salud dentro de la copropiedad.
+        El proceso de inducción en <strong><?= $client['nombre_cliente'] ?></strong> forma parte fundamental para la formación y desarrollo de todas las partes interesadas, tales como el responsable del establecimiento, el vigía SST, el propietario y el talento humano asignado por contratistas y proveedores. La inducción general es un proceso de aprendizaje que incorpora, ubica y orienta a todas las partes interesadas hacia la seguridad y salud dentro del establecimiento comercial.
     </p>
 
     <div class="beta-subtitulo">4. CONTENIDO: ESQUEMA GENERAL DEL PROCESO DE INDUCCIÓN</div>
 
     <div class="beta-subtitulo">ETAPA 1: INTRODUCCIÓN</div>
     <ul class="delta-lista">
-        <li class="gamma-parrafo">SG-SST en tienda a tienda.</li>
+        <li class="gamma-parrafo">SG-SST en <?= esc($client['nombre_cliente'] ?? '') ?>.</li>
     </ul>
 
     <div class="beta-subtitulo">ETAPA 2: SALUD OCUPACIONAL Y SEGURIDAD INDUSTRIAL</div>

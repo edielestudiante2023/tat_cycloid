@@ -146,7 +146,7 @@
 
     <div class="beta-subtitulo">1. OBJETO</div>
     <p class="gamma-parrafo">
-        Desarrollar actividades de capacitación acordes con los programas del Sistema de Gestión de la Salud y Seguridad en el Trabajo de la copropiedad <strong><?= $client['nombre_cliente'] ?></strong>, que fortalezcan las capacidades, conocimientos y aptitudes del consejo de administración, vigía, proveedores y contratistas en materia de Salud y Seguridad en el trabajo.
+        Desarrollar actividades de capacitación acordes con los programas del Sistema de Gestión de la Salud y Seguridad en el Trabajo del establecimiento comercial <strong><?= $client['nombre_cliente'] ?></strong>, que fortalezcan las capacidades, conocimientos y aptitudes del responsable del establecimiento, vigía, proveedores y contratistas en materia de Salud y Seguridad en el trabajo.
     </p>
 
     <div class="beta-subtitulo">2. ALCANCE</div>
@@ -155,13 +155,13 @@
     </p>
 
     <div class="beta-subtitulo">3. METODOLOGÍA</div>
-    <p class="gamma-parrafo"><strong>CAPACITACIÓN CONTINUA:</strong> Con el programa de capacitación, se busca mantener actualizados a las partes interesadas y desarrollar un plan de entrenamiento que incluya temas de seguridad industrial y ambiental. Este plan contará con la participación del administrador de la copropiedad, el vigía de la seguridad y salud en el trabajo, y los miembros del consejo de administración interesados. Tomando como referencia la Matriz de riesgos, se capacitará a todas las partes interesadas de acuerdo con los riesgos críticos detectados. El entrenamiento estará enfocado en la prevención de incidentes, accidentes y enfermedades laborales; se analizarán indicadores como cumplimiento, cobertura y eficacia para la elaboración del cronograma.</p>
+    <p class="gamma-parrafo"><strong>CAPACITACIÓN CONTINUA:</strong> Con el programa de capacitación, se busca mantener actualizados a las partes interesadas y desarrollar un plan de entrenamiento que incluya temas de seguridad industrial y ambiental. Este plan contará con la participación del responsable del establecimiento, el vigía de la seguridad y salud en el trabajo, y los miembros del equipo de trabajo interesados. Tomando como referencia la Matriz de riesgos, se capacitará a todas las partes interesadas de acuerdo con los riesgos críticos detectados. El entrenamiento estará enfocado en la prevención de incidentes, accidentes y enfermedades laborales; se analizarán indicadores como cumplimiento, cobertura y eficacia para la elaboración del cronograma.</p>
 
-    <p class="gamma-parrafo"><strong>CAPACITACIÓN ESPECÍFICA:</strong> Según la evaluación de riesgos de la copropiedad, se procederá al fortalecimiento de las competencias de todas las partes interesadas, promoviendo el "saber-hacer" y el "saber-saber" para mejorar la gestión y aplicar acciones concretas para la comunidad, proveedores y contratistas.</p>
+    <p class="gamma-parrafo"><strong>CAPACITACIÓN ESPECÍFICA:</strong> Según la evaluación de riesgos del establecimiento comercial, se procederá al fortalecimiento de las competencias de todas las partes interesadas, promoviendo el "saber-hacer" y el "saber-saber" para mejorar la gestión y aplicar acciones concretas para la comunidad, proveedores y contratistas.</p>
 
     <ul class="delta-lista">
         <li class="gamma-parrafo">
-            <strong>Descripción de la Actividad:</strong> El responsable del SG-SST, en común acuerdo con el administrador de la copropiedad, definirá la ruta de capacitación para las partes interesadas (consejo de administración, vigía SST, proveedores y contratistas) según criterios de criticidad o nivelación de conocimientos.
+            <strong>Descripción de la Actividad:</strong> El responsable del SG-SST, en común acuerdo con el responsable del establecimiento, definirá la ruta de capacitación para las partes interesadas (el responsable del establecimiento, vigía SST, proveedores y contratistas) según criterios de criticidad o nivelación de conocimientos.
         </li>
         <li class="gamma-parrafo">
             <strong>Capacitación Programada:</strong> Tras el proceso de Identificación de Peligros y Evaluación de Riesgos, el responsable del SG-SST detectará las capacitaciones necesarias para el personal cuyas actividades representen riesgos significativos y procederá a establecer el cronograma.
@@ -195,7 +195,7 @@
 
     <div class="beta-subtitulo">7.1. Programación</div>
     <p class="gamma-parrafo">
-        El responsable del SG-SST y el administrador de la copropiedad definirán y programarán las actividades de capacitación, incluyendo:
+        El responsable del SG-SST y el responsable del establecimiento definirán y programarán las actividades de capacitación, incluyendo:
     </p>
     <ul class="delta-lista">
         <li class="gamma-parrafo">Tema</li>
@@ -211,7 +211,7 @@
 
     <div class="beta-subtitulo">7.2. Ejecución</div>
     <p class="gamma-parrafo">
-        El responsable de la capacitación presentará la propuesta al administrador de la copropiedad, vigía SST y/o consejo de administración para su verificación. Si se requiere un ente externo, se solicitará su revisión previa. Todos los asistentes deberán ser registrados en el formato FT-SST-006, junto con una evaluación del conocimiento.
+        El responsable de la capacitación presentará la propuesta al responsable del establecimiento, vigía SST y/o al propietario para su verificación. Si se requiere un ente externo, se solicitará su revisión previa. Todos los asistentes deberán ser registrados en el formato FT-SST-006, junto con una evaluación del conocimiento.
     </p>
 
     <div class="beta-subtitulo">7.3. Registro de asistencia y resultado de evaluaciones</div>

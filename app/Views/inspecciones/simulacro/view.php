@@ -34,7 +34,7 @@
     <div class="card mb-3">
         <div class="card-header"><strong><i class="fas fa-building"></i> Identificacion</strong></div>
         <div class="card-body" style="font-size:13px;">
-            <div><strong>Copropiedad:</strong> <?= esc($cliente['nombre_cliente'] ?? 'N/A') ?></div>
+            <div><strong>Establecimiento comercial:</strong> <?= esc($cliente['nombre_cliente'] ?? 'N/A') ?></div>
             <div><strong>NIT:</strong> <?= esc($cliente['nit_cliente'] ?? 'N/A') ?></div>
             <div><strong>Fecha:</strong> <?= date('d/m/Y', strtotime($eval['fecha'])) ?></div>
             <div><strong>Direccion:</strong> <?= esc($eval['direccion'] ?? 'N/A') ?></div>

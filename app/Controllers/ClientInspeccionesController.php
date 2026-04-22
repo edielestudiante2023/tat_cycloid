@@ -15,6 +15,8 @@ use App\Models\InspeccionSenalizacionModel;
 use App\Models\ItemSenalizacionModel;
 use App\Models\InspeccionBotiquinModel;
 use App\Models\ElementoBotiquinModel;
+use App\Models\InspeccionBotiquinTipoAModel;
+use App\Models\ElementoBotiquinTipoAModel;
 use App\Models\InspeccionExtintoresModel;
 use App\Models\ExtintorDetalleModel;
 use App\Models\InspeccionComunicacionModel;
@@ -47,6 +49,7 @@ use App\Models\AsistenciaInduccionAsistenteModel;
 use App\Models\ReporteCapacitacionModel;
 use App\Models\PreparacionSimulacroModel;
 use App\Controllers\Inspecciones\InspeccionBotiquinController;
+use App\Controllers\Inspecciones\InspeccionBotiquinTipoAController;
 use App\Controllers\Inspecciones\InspeccionExtintoresController;
 use App\Controllers\Inspecciones\InspeccionComunicacionController;
 use App\Controllers\Inspecciones\InspeccionGabineteController;
@@ -116,6 +119,7 @@ class ClientInspeccionesController extends Controller
         $locativaModel = new InspeccionLocativaModel();
         $senalizacionModel = new InspeccionSenalizacionModel();
         $botiquinModel = new InspeccionBotiquinModel();
+        $botiquinTipoAModel = new InspeccionBotiquinTipoAModel();
         $extintoresModel = new InspeccionExtintoresModel();
         $comunicacionModel = new InspeccionComunicacionModel();
         $gabineteModel = new InspeccionGabineteModel();
@@ -144,6 +148,17 @@ class ClientInspeccionesController extends Controller
         $repCapacModel = new ReporteCapacitacionModel();
         $prepSimulacroModel = new PreparacionSimulacroModel();
 
+        // TAT Fase 4 + 5 - modulos nuevos
+        $neveraModel       = new \App\Models\NeveraModel();
+        $inspNeveraModel   = new \App\Models\InspeccionNeveraModel();
+        $trabajadorModel   = new \App\Models\TrabajadorModel();
+        $bomberosSolModel  = new \App\Models\BomberosSolicitudModel();
+        $inspLimpiezaModel = new \App\Models\InspeccionLimpiezaLocalModel();
+        $inspEquiposModel  = new \App\Models\InspeccionEquiposModel();
+        $recepcionMpModel  = new \App\Models\RecepcionMpModel();
+        $inspContaminacionModel = new \App\Models\InspeccionContaminacionModel();
+        $inspAlmacenamientoModel = new \App\Models\InspeccionAlmacenamientoModel();
+
         $tipos = [
             [
                 'nombre'  => 'Actas de Visita',
@@ -163,6 +178,7 @@ class ClientInspeccionesController extends Controller
                 'ultima'  => $locativaModel->where('id_cliente', $clientId)->where('estado', 'completo')->orderBy('fecha_inspeccion', 'DESC')->first(),
                 'campo_fecha' => 'fecha_inspeccion',
             ],
+            /* TAT Fase 2 — oculto: no aplica a locales comerciales.
             [
                 'nombre'  => 'Inspecciones de Señalización',
                 'icono'   => 'fa-sign',
@@ -172,13 +188,23 @@ class ClientInspeccionesController extends Controller
                 'ultima'  => $senalizacionModel->where('id_cliente', $clientId)->where('estado', 'completo')->orderBy('fecha_inspeccion', 'DESC')->first(),
                 'campo_fecha' => 'fecha_inspeccion',
             ],
+            */
             [
-                'nombre'  => 'Inspecciones de Botiquín',
+                'nombre'  => 'Inspecciones de Botiquín Tipo B',
                 'icono'   => 'fa-first-aid',
                 'color'   => '#dc3545',
                 'url'     => base_url('client/inspecciones/botiquin'),
                 'conteo'  => $botiquinModel->where('id_cliente', $clientId)->where('estado', 'completo')->countAllResults(false),
                 'ultima'  => $botiquinModel->where('id_cliente', $clientId)->where('estado', 'completo')->orderBy('fecha_inspeccion', 'DESC')->first(),
+                'campo_fecha' => 'fecha_inspeccion',
+            ],
+            [
+                'nombre'  => 'Inspecciones de Botiquín Tipo A',
+                'icono'   => 'fa-briefcase-medical',
+                'color'   => '#e76f51',
+                'url'     => base_url('client/inspecciones/botiquin-tipo-a'),
+                'conteo'  => $botiquinTipoAModel->where('id_cliente', $clientId)->where('estado', 'completo')->countAllResults(false),
+                'ultima'  => $botiquinTipoAModel->where('id_cliente', $clientId)->where('estado', 'completo')->orderBy('fecha_inspeccion', 'DESC')->first(),
                 'campo_fecha' => 'fecha_inspeccion',
             ],
             [
@@ -190,6 +216,7 @@ class ClientInspeccionesController extends Controller
                 'ultima'  => $extintoresModel->where('id_cliente', $clientId)->where('estado', 'completo')->orderBy('fecha_inspeccion', 'DESC')->first(),
                 'campo_fecha' => 'fecha_inspeccion',
             ],
+            /* TAT Fase 2 — oculto: no aplica a locales comerciales.
             [
                 'nombre'  => 'Equipos de Comunicación',
                 'icono'   => 'fa-broadcast-tower',
@@ -208,6 +235,7 @@ class ClientInspeccionesController extends Controller
                 'ultima'  => $gabineteModel->where('id_cliente', $clientId)->where('estado', 'completo')->orderBy('fecha_inspeccion', 'DESC')->first(),
                 'campo_fecha' => 'fecha_inspeccion',
             ],
+            */
             [
                 'nombre'  => 'Cartas de Vigía',
                 'icono'   => 'fa-user-shield',
@@ -226,6 +254,7 @@ class ClientInspeccionesController extends Controller
                 'ultima'  => $vencimientoModel->where('id_cliente', $clientId)->orderBy('fecha_vencimiento', 'DESC')->first(),
                 'campo_fecha' => 'fecha_vencimiento',
             ],
+            /* TAT Fase 2 — oculto: no aplica a locales comerciales.
             [
                 'nombre'  => 'Matriz de Vulnerabilidad',
                 'icono'   => 'fa-shield-alt',
@@ -280,6 +309,7 @@ class ClientInspeccionesController extends Controller
                 'ultima'  => $simulacroModel->where('id_cliente', $clientId)->where('estado', 'completo')->orderBy('fecha', 'DESC')->first(),
                 'campo_fecha' => 'fecha',
             ],
+            */
             [
                 'nombre'  => 'Limpieza y Desinfección',
                 'icono'   => 'fa-pump-soap',
@@ -371,6 +401,7 @@ class ClientInspeccionesController extends Controller
                 'campo_fecha' => null,
                 'es_dashboard' => true,
             ],
+            /* TAT Fase 2 — oculto: no aplica a locales comerciales. Auditoría Zona Residuos será reemplazada por "Inspección Limpieza del Local" en fase posterior.
             [
                 'nombre'  => 'Dotación Vigilante',
                 'icono'   => 'fa-user-tie',
@@ -407,6 +438,7 @@ class ClientInspeccionesController extends Controller
                 'ultima'  => $audResiduosModel->where('id_cliente', $clientId)->where('estado', 'completo')->orderBy('fecha_inspeccion', 'DESC')->first(),
                 'campo_fecha' => 'fecha_inspeccion',
             ],
+            */
             [
                 'nombre'  => 'Asistencia Inducción',
                 'icono'   => 'fa-chalkboard-teacher',
@@ -425,6 +457,7 @@ class ClientInspeccionesController extends Controller
                 'ultima'  => $repCapacModel->where('id_cliente', $clientId)->where('estado', 'completo')->orderBy('fecha_capacitacion', 'DESC')->first(),
                 'campo_fecha' => 'fecha_capacitacion',
             ],
+            /* TAT Fase 2 — oculto: no aplica a locales comerciales.
             [
                 'nombre'  => 'Preparación Simulacro',
                 'icono'   => 'fa-clipboard-list',
@@ -433,6 +466,95 @@ class ClientInspeccionesController extends Controller
                 'conteo'  => $prepSimulacroModel->where('id_cliente', $clientId)->where('estado', 'completo')->countAllResults(false),
                 'ultima'  => $prepSimulacroModel->where('id_cliente', $clientId)->where('estado', 'completo')->orderBy('fecha_simulacro', 'DESC')->first(),
                 'campo_fecha' => 'fecha_simulacro',
+            ],
+            */
+
+            // ====== TAT Fase 5.1 — Control de Neveras ======
+            [
+                'nombre'  => 'Control de Neveras',
+                'icono'   => 'fa-snowflake',
+                'color'   => '#0277bd',
+                'url'     => base_url('client/neveras'),
+                'conteo'  => $inspNeveraModel->where('id_cliente', $clientId)->countAllResults(false),
+                'ultima'  => $inspNeveraModel->where('id_cliente', $clientId)->orderBy('fecha_hora', 'DESC')->first(),
+                'campo_fecha' => 'fecha_hora',
+            ],
+
+            // ====== TAT Fase 4.1 — Trabajadores ======
+            [
+                'nombre'  => 'Trabajadores',
+                'icono'   => 'fa-users',
+                'color'   => '#6f42c1',
+                'url'     => base_url('client/trabajadores'),
+                'conteo'  => $trabajadorModel->where('id_cliente', $clientId)->where('activo', 1)->countAllResults(false),
+                'ultima'  => $trabajadorModel->where('id_cliente', $clientId)->orderBy('created_at', 'DESC')->first(),
+                'campo_fecha' => 'created_at',
+            ],
+
+            // ====== TAT Fase 4.2 — Permisos Bomberos ======
+            [
+                'nombre'  => 'Permisos Bomberos',
+                'icono'   => 'fa-fire-extinguisher',
+                'color'   => '#d62828',
+                'url'     => base_url('client/bomberos'),
+                'conteo'  => $bomberosSolModel->where('id_cliente', $clientId)->countAllResults(false),
+                'ultima'  => $bomberosSolModel->where('id_cliente', $clientId)->orderBy('anio', 'DESC')->first(),
+                'campo_fecha' => 'created_at',
+            ],
+
+            // ====== TAT Fase 5.2 — Inspección de Aseo ======
+            [
+                'nombre'  => 'Inspección de Aseo',
+                'icono'   => 'fa-broom',
+                'color'   => '#198754',
+                'url'     => base_url('client/limpieza-local'),
+                'conteo'  => $inspLimpiezaModel->where('id_cliente', $clientId)->countAllResults(false),
+                'ultima'  => $inspLimpiezaModel->where('id_cliente', $clientId)->orderBy('fecha_hora', 'DESC')->first(),
+                'campo_fecha' => 'fecha_hora',
+            ],
+
+            // ====== TAT Fase 5.3a — Equipos y Utensilios ======
+            [
+                'nombre'  => 'Equipos y Utensilios',
+                'icono'   => 'fa-tools',
+                'color'   => '#6c757d',
+                'url'     => base_url('client/equipos'),
+                'conteo'  => $inspEquiposModel->where('id_cliente', $clientId)->countAllResults(false),
+                'ultima'  => $inspEquiposModel->where('id_cliente', $clientId)->orderBy('fecha_hora', 'DESC')->first(),
+                'campo_fecha' => 'fecha_hora',
+            ],
+
+            // ====== TAT Fase 5.3b — Recepción de Materias Primas ======
+            [
+                'nombre'  => 'Recepción MP',
+                'icono'   => 'fa-truck-ramp-box',
+                'color'   => '#6f4f28',
+                'url'     => base_url('client/recepcion-mp'),
+                'conteo'  => $recepcionMpModel->where('id_cliente', $clientId)->countAllResults(false),
+                'ultima'  => $recepcionMpModel->where('id_cliente', $clientId)->orderBy('fecha_hora', 'DESC')->first(),
+                'campo_fecha' => 'fecha_hora',
+            ],
+
+            // ====== TAT Fase 5.3c — POES Contaminación Cruzada ======
+            [
+                'nombre'  => 'Contaminación Cruzada',
+                'icono'   => 'fa-exchange-alt',
+                'color'   => '#dc3545',
+                'url'     => base_url('client/contaminacion'),
+                'conteo'  => $inspContaminacionModel->where('id_cliente', $clientId)->countAllResults(false),
+                'ultima'  => $inspContaminacionModel->where('id_cliente', $clientId)->orderBy('fecha_hora', 'DESC')->first(),
+                'campo_fecha' => 'fecha_hora',
+            ],
+
+            // ====== TAT Fase 5.3d — POES Almacenamiento ======
+            [
+                'nombre'  => 'Almacenamiento',
+                'icono'   => 'fa-boxes-stacked',
+                'color'   => '#7c3aed',
+                'url'     => base_url('client/almacenamiento'),
+                'conteo'  => $inspAlmacenamientoModel->where('id_cliente', $clientId)->countAllResults(false),
+                'ultima'  => $inspAlmacenamientoModel->where('id_cliente', $clientId)->orderBy('fecha_hora', 'DESC')->first(),
+                'campo_fecha' => 'fecha_hora',
             ],
         ];
 
@@ -653,11 +775,11 @@ class ClientInspeccionesController extends Controller
 
         return view('client/inspecciones/layout', [
             'client'  => $client,
-            'title'   => 'Inspecciones de Botiquín',
+            'title'   => 'Inspecciones de Botiquín Tipo B',
             'content' => view('client/inspecciones/list', [
                 'inspecciones' => $inspecciones,
                 'tipo'         => 'botiquin',
-                'titulo'       => 'Inspecciones de Botiquín',
+                'titulo'       => 'Inspecciones de Botiquín Tipo B',
                 'campo_fecha'  => 'fecha_inspeccion',
                 'base_url'     => 'client/inspecciones/botiquin',
             ]),
@@ -696,8 +818,77 @@ class ClientInspeccionesController extends Controller
 
         return view('client/inspecciones/layout', [
             'client'  => $clientModel->find($clientId),
-            'title'   => 'Inspección de Botiquín',
+            'title'   => 'Inspección de Botiquín Tipo B',
             'content' => view('client/inspecciones/botiquin_view', $data),
+        ]);
+    }
+
+    // ─── INSPECCIONES DE BOTIQUÍN TIPO A ─────────────────────
+
+    public function listBotiquinTipoA()
+    {
+        $clientId = $this->getClientId();
+        if (!$clientId) {
+            return redirect()->to('/login')->with('error', 'Acceso no autorizado.');
+        }
+
+        $clientModel = new ClientModel();
+        $client = $clientModel->find($clientId);
+
+        $model = new InspeccionBotiquinTipoAModel();
+        $inspecciones = $model
+            ->where('id_cliente', $clientId)
+            ->where('estado', 'completo')
+            ->orderBy('fecha_inspeccion', 'DESC')
+            ->findAll();
+
+        return view('client/inspecciones/layout', [
+            'client'  => $client,
+            'title'   => 'Inspecciones de Botiquín Tipo A',
+            'content' => view('client/inspecciones/list', [
+                'inspecciones' => $inspecciones,
+                'tipo'         => 'botiquin_tipo_a',
+                'titulo'       => 'Inspecciones de Botiquín Tipo A',
+                'campo_fecha'  => 'fecha_inspeccion',
+                'base_url'     => 'client/inspecciones/botiquin-tipo-a',
+            ]),
+        ]);
+    }
+
+    public function viewBotiquinTipoA($id)
+    {
+        $clientId = $this->getClientId();
+        if (!$clientId) {
+            return redirect()->to('/login')->with('error', 'Acceso no autorizado.');
+        }
+
+        $model = new InspeccionBotiquinTipoAModel();
+        $inspeccion = $model->find($id);
+        if (!$inspeccion || (int)$inspeccion['id_cliente'] !== (int)$clientId) {
+            return redirect()->to('/client/inspecciones')->with('error', 'Inspección no encontrada.');
+        }
+
+        $clientModel = new ClientModel();
+        $consultantModel = new ConsultantModel();
+
+        $elementosRaw = (new ElementoBotiquinTipoAModel())->getByInspeccion($id);
+        $elementosData = [];
+        foreach ($elementosRaw as $elem) {
+            $elementosData[$elem['clave']] = $elem;
+        }
+
+        $data = [
+            'inspeccion'    => $inspeccion,
+            'cliente'       => $clientModel->find($inspeccion['id_cliente']),
+            'consultor'     => $consultantModel->find($inspeccion['id_consultor']),
+            'elementos'     => InspeccionBotiquinTipoAController::ELEMENTOS,
+            'elementosData' => $elementosData,
+        ];
+
+        return view('client/inspecciones/layout', [
+            'client'  => $clientModel->find($clientId),
+            'title'   => 'Inspección de Botiquín Tipo A',
+            'content' => view('client/inspecciones/botiquin_tipo_a_view', $data),
         ]);
     }
 

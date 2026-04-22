@@ -18,8 +18,8 @@
   <style>
     /* Variables CSS para consistencia */
     :root {
-      --primary-color: #007bff;
-      --primary-dark: #0056b3;
+      --primary-color: #ee6c21;
+      --primary-dark: #c9541a;
       --secondary-color: #6c757d;
       --success-color: #28a745;
       --warning-color: #ffc107;
@@ -147,7 +147,7 @@
       text-align: left !important;
       margin-bottom: 20px;
       padding: 15px;
-      background: linear-gradient(135deg, #007bff, #0056b3);
+      background: linear-gradient(135deg, #ee6c21, #c9541a);
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
     }
@@ -321,20 +321,8 @@
     <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;">
       <!-- Logo izquierdo -->
       <div>
-        <a href="https://dashboard.cycloidtalent.com/login">
-          <img src="<?= base_url('uploads/logocycloid_tatblancoslogan.png') ?>" alt="Cycloid TAT Logo" style="height: 100px;">
-        </a>
-      </div>
-      <!-- Logo centro -->
-      <div>
-        <a href="https://cycloidtalent.com/index.php/consultoria-sst">
-          <img src="<?= base_url('uploads/logosst.png') ?>" alt="SST Logo" style="height: 100px;">
-        </a>
-      </div>
-      <!-- Logo derecho -->
-      <div>
-        <a href="https://cycloidtalent.com/">
-          <img src="<?= base_url('uploads/logocycloidsinfondo.png') ?>" alt="Cycloids Logo" style="height: 100px;">
+        <a href="https://tat.cycloidtalent.com/index.php/login">
+          <img src="<?= base_url('uploads/tat.png') ?>" alt="Cycloid TAT Logo" style="height: 100px;">
         </a>
       </div>
     </div>
