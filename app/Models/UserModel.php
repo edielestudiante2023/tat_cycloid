@@ -36,7 +36,7 @@ class UserModel extends Model
     protected $validationRules = [
         'email'           => 'required|valid_email|is_unique[tbl_usuarios.email,id_usuario,{id_usuario}]',
         'nombre_completo' => 'required|min_length[3]|max_length[255]',
-        'tipo_usuario'    => 'required|in_list[admin,consultant,client]',
+        'tipo_usuario'    => 'required|in_list[admin,consultant,client,employee]',
         'estado'          => 'required|in_list[activo,inactivo,pendiente,bloqueado]',
     ];
 

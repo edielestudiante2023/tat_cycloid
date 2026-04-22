@@ -95,6 +95,20 @@ class AuthController extends Controller
                     'last_activity'  => time() // Para control de inactividad
                 ]);
                 return redirect()->to('/consultor/dashboard');
+
+            } elseif ($tipoUsuario === 'employee') {
+                $session->set([
+                    'user_id'        => $user['id_entidad'], // id_cliente (el local donde trabaja)
+                    'id_entidad'     => $user['id_entidad'],
+                    'id_usuario'     => $user['id_usuario'],
+                    'id_sesion'      => $idSesion,
+                    'role'           => 'employee',
+                    'nombre_usuario' => $user['nombre_completo'] ?? 'Empleado',
+                    'email_usuario'  => $user['email'] ?? '',
+                    'isLoggedIn'     => true,
+                    'last_activity'  => time()
+                ]);
+                return redirect()->to('/rutinas/mi-checklist');
             }
         }
 

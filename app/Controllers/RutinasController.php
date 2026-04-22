@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Libraries\NotificadorRutinas;
+use App\Models\ClientModel;
 use App\Models\RutinaActividadModel;
 use App\Models\RutinaAsignacionModel;
 use App\Models\RutinaRegistroModel;
@@ -91,32 +92,51 @@ class RutinasController extends Controller
     }
 
     // ══════════════════════════════════════════════════════════════
-    // CRUD de asignaciones
+    // Asignaciones — por Cliente → Empleados → Actividades
     // ══════════════════════════════════════════════════════════════
 
     public function listAsignaciones()
     {
+        $role     = session()->get('role');
+        $idCliente = (int) ($this->request->getGet('cliente') ?? 0);
+        if ($role === 'client') {
+            $idCliente = (int) session()->get('user_id');
+        }
+
+        $data['clientes']   = $this->clientesAccesibles();
+        if ($idCliente === 0 && !empty($data['clientes'])) {
+            $idCliente = (int) $data['clientes'][0]['id_cliente'];
+        }
+        $data['idCliente']  = $idCliente;
+
         $db = Database::connect();
-        $data['asignaciones'] = $db->query(
-            "SELECT ra.id_asignacion, ra.id_usuario, ra.id_actividad, ra.activa,
-                    u.nombre_completo, u.email,
-                    a.nombre AS actividad, a.frecuencia, a.peso
-               FROM rutinas_asignaciones ra
-               JOIN tbl_usuarios u         ON u.id_usuario   = ra.id_usuario
-               JOIN rutinas_actividades a  ON a.id_actividad = ra.id_actividad
-              ORDER BY u.nombre_completo, a.nombre"
-        )->getResultArray();
+        $data['empleados']   = [];
+        $data['asignaciones'] = [];
+        $data['actividades'] = (new RutinaActividadModel())->where('activa', 1)->orderBy('nombre')->findAll();
 
-        // Usuarios activos con email (pool para formulario)
-        $data['usuarios'] = $db->query(
-            "SELECT id_usuario, nombre_completo, email, tipo_usuario
-               FROM tbl_usuarios
-              WHERE estado = 'activo' AND email IS NOT NULL AND email <> ''
-              ORDER BY nombre_completo"
-        )->getResultArray();
+        if ($idCliente > 0) {
+            $data['empleados'] = $db->query(
+                "SELECT id_usuario, nombre_completo, email
+                   FROM tbl_usuarios
+                  WHERE tipo_usuario = 'employee' AND id_entidad = ? AND estado = 'activo'
+                  ORDER BY nombre_completo",
+                [$idCliente]
+            )->getResultArray();
 
-        $data['actividades'] = (new RutinaActividadModel())
-            ->where('activa', 1)->orderBy('nombre')->findAll();
+            if (!empty($data['empleados'])) {
+                $ids = array_column($data['empleados'], 'id_usuario');
+                $data['asignaciones'] = $db->query(
+                    "SELECT ra.id_asignacion, ra.id_usuario, ra.id_actividad, ra.activa,
+                            u.nombre_completo, u.email,
+                            a.nombre AS actividad, a.frecuencia, a.peso
+                       FROM rutinas_asignaciones ra
+                       JOIN tbl_usuarios u         ON u.id_usuario   = ra.id_usuario
+                       JOIN rutinas_actividades a  ON a.id_actividad = ra.id_actividad
+                      WHERE ra.id_usuario IN (" . implode(',', array_map('intval', $ids)) . ")
+                      ORDER BY u.nombre_completo, a.nombre"
+                )->getResultArray();
+            }
+        }
 
         return view('rutinas/list_asignaciones', $data);
     }
@@ -125,9 +145,20 @@ class RutinasController extends Controller
     {
         $idUsuario   = (int) $this->request->getPost('id_usuario');
         $actividades = (array) $this->request->getPost('actividades');
+        $idCliente   = (int) $this->request->getPost('id_cliente');
 
         if ($idUsuario <= 0 || empty($actividades)) {
-            return redirect()->back()->with('error', 'Selecciona usuario y al menos una actividad.');
+            return redirect()->back()->with('error', 'Selecciona empleado y al menos una actividad.');
+        }
+
+        // Validar que el empleado pertenezca al cliente (y que el solicitante tenga acceso)
+        $userModel = new UserModel();
+        $u = $userModel->find($idUsuario);
+        if (!$u || $u['tipo_usuario'] !== 'employee') {
+            return redirect()->back()->with('error', 'Empleado inválido.');
+        }
+        if ($idCliente > 0 && (int)$u['id_entidad'] !== $idCliente) {
+            return redirect()->back()->with('error', 'El empleado no pertenece al cliente seleccionado.');
         }
 
         $m = new RutinaAsignacionModel();
@@ -137,100 +168,141 @@ class RutinasController extends Controller
             if ($idAct <= 0) continue;
             $existe = $m->where('id_usuario', $idUsuario)->where('id_actividad', $idAct)->first();
             if ($existe) continue;
-            $m->insert([
-                'id_usuario'   => $idUsuario,
-                'id_actividad' => $idAct,
-                'activa'       => 1,
-            ]);
+            $m->insert(['id_usuario' => $idUsuario, 'id_actividad' => $idAct, 'activa' => 1]);
             $creadas++;
         }
 
-        return redirect()->to('/rutinas/asignaciones')->with('msg', "{$creadas} asignación(es) creada(s).");
+        return redirect()->to('/rutinas/asignaciones?cliente=' . ($idCliente ?: (int)$u['id_entidad']))
+                         ->with('msg', "{$creadas} asignación(es) creada(s).");
     }
 
     public function deleteAsignacion(int $id)
     {
-        (new RutinaAsignacionModel())->delete($id);
-        return redirect()->to('/rutinas/asignaciones')->with('msg', 'Asignación eliminada.');
+        $m = new RutinaAsignacionModel();
+        $a = $m->find($id);
+        $idCliente = 0;
+        if ($a) {
+            $userModel = new UserModel();
+            $u = $userModel->find((int)$a['id_usuario']);
+            $idCliente = (int)($u['id_entidad'] ?? 0);
+            $m->delete($id);
+        }
+        return redirect()->to('/rutinas/asignaciones' . ($idCliente ? '?cliente='.$idCliente : ''))
+                         ->with('msg', 'Asignación eliminada.');
     }
 
     // ══════════════════════════════════════════════════════════════
-    // Calendario (matriz actividades × días hábiles)
+    // Calendario — vista dual (por cliente | por empleado)
     // ══════════════════════════════════════════════════════════════
 
     public function calendario()
     {
-        $hoy     = date('Y-m-d');
-        $mes     = (int) ($this->request->getGet('mes') ?? date('n'));
-        $anio    = (int) ($this->request->getGet('anio') ?? date('Y'));
-        $usuario = (int) ($this->request->getGet('usuario') ?? 0);
+        $hoy        = date('Y-m-d');
+        $role       = session()->get('role');
+        $mes        = (int) ($this->request->getGet('mes')  ?? date('n'));
+        $anio       = (int) ($this->request->getGet('anio') ?? date('Y'));
+        $idCliente  = (int) ($this->request->getGet('cliente') ?? 0);
+        $idEmpleado = (int) ($this->request->getGet('empleado') ?? 0);
 
-        $db = Database::connect();
-        $data['usuarios'] = $db->query(
-            "SELECT DISTINCT u.id_usuario, u.nombre_completo
-               FROM tbl_usuarios u
-               JOIN rutinas_asignaciones ra ON ra.id_usuario = u.id_usuario AND ra.activa = 1
-              WHERE u.estado = 'activo'
-              ORDER BY u.nombre_completo"
-        )->getResultArray();
-
-        if ($usuario === 0 && !empty($data['usuarios'])) {
-            $usuario = (int) $data['usuarios'][0]['id_usuario'];
+        if ($role === 'client') {
+            $idCliente = (int) session()->get('user_id');
         }
 
-        $data['mes']         = $mes;
-        $data['anio']        = $anio;
-        $data['usuarioId']   = $usuario;
-        $data['nombreMes']   = $this->nombreMes($mes);
+        $data['clientes'] = $this->clientesAccesibles();
+        if ($idCliente === 0 && !empty($data['clientes'])) {
+            $idCliente = (int) $data['clientes'][0]['id_cliente'];
+        }
+
+        $db = Database::connect();
+        $data['empleados'] = $idCliente > 0
+            ? $db->query(
+                "SELECT id_usuario, nombre_completo FROM tbl_usuarios
+                  WHERE tipo_usuario = 'employee' AND id_entidad = ? AND estado = 'activo'
+                  ORDER BY nombre_completo",
+                [$idCliente]
+            )->getResultArray()
+            : [];
+
+        $data['mes']        = $mes;
+        $data['anio']       = $anio;
+        $data['idCliente']  = $idCliente;
+        $data['idEmpleado'] = $idEmpleado;
+        $data['nombreMes']  = $this->nombreMes($mes);
         $data['diasHabiles'] = $this->calcularDiasHabiles($anio, $mes);
 
-        $data['actividades']    = [];
-        $data['registros']      = [];
-        $data['puntajeDiario']  = [];
-        $data['puntajeSemanal'] = [];
-        $data['puntajeMensual'] = 0;
+        $data['resumenPorEmpleado'] = [];
+        $data['empleado']           = null;
+        $data['actividades']        = [];
+        $data['registros']          = [];
+        $data['puntajeDiario']      = [];
+        $data['puntajeSemanal']     = [];
+        $data['puntajeMensual']     = 0;
+        $data['pesoTotal']          = 0;
 
-        if ($usuario > 0) {
-            $data['actividades'] = $db->query(
-                "SELECT a.id_actividad, a.nombre, a.frecuencia, a.peso
-                   FROM rutinas_asignaciones ra
-                   JOIN rutinas_actividades a ON a.id_actividad = ra.id_actividad
-                  WHERE ra.id_usuario = ? AND ra.activa = 1 AND a.activa = 1
-                  ORDER BY a.nombre",
-                [$usuario]
-            )->getResultArray();
-
-            $inicio = sprintf('%04d-%02d-01', $anio, $mes);
-            $fin    = date('Y-m-t', strtotime($inicio));
-
-            $regs = $db->query(
-                "SELECT id_actividad, fecha, completada, hora_completado
-                   FROM rutinas_registros
-                  WHERE id_usuario = ? AND fecha BETWEEN ? AND ?",
-                [$usuario, $inicio, $fin]
-            )->getResultArray();
-
-            foreach ($regs as $r) {
-                $data['registros'][$r['fecha']][$r['id_actividad']] = $r;
+        if ($idEmpleado > 0) {
+            // Modo por empleado (vista detallada)
+            $data['empleado'] = $db->table('tbl_usuarios')->where('id_usuario', $idEmpleado)->get()->getRowArray();
+            $this->cargarDetalleEmpleado($db, $idEmpleado, $mes, $anio, $hoy, $data);
+        } elseif ($idCliente > 0) {
+            // Modo por cliente (tabla resumen: fila por empleado, columna por día)
+            foreach ($data['empleados'] as $emp) {
+                $d = ['empleado' => $emp];
+                $this->cargarDetalleEmpleado($db, (int)$emp['id_usuario'], $mes, $anio, $hoy, $d);
+                $data['resumenPorEmpleado'][] = $d;
             }
-
-            [$data['puntajeDiario'], $data['puntajeSemanal'], $data['puntajeMensual']] =
-                $this->calcularPuntajes($data['actividades'], $data['registros'], $data['diasHabiles'], $hoy);
         }
 
         return view('rutinas/calendario', $data);
     }
 
+    private function cargarDetalleEmpleado($db, int $idEmpleado, int $mes, int $anio, string $hoy, array &$out): void
+    {
+        $actividades = $db->query(
+            "SELECT a.id_actividad, a.nombre, a.frecuencia, a.peso
+               FROM rutinas_asignaciones ra
+               JOIN rutinas_actividades a ON a.id_actividad = ra.id_actividad
+              WHERE ra.id_usuario = ? AND ra.activa = 1 AND a.activa = 1
+              ORDER BY a.nombre",
+            [$idEmpleado]
+        )->getResultArray();
+
+        $inicio = sprintf('%04d-%02d-01', $anio, $mes);
+        $fin    = date('Y-m-t', strtotime($inicio));
+
+        $regs = $db->query(
+            "SELECT id_actividad, fecha, completada, hora_completado
+               FROM rutinas_registros
+              WHERE id_usuario = ? AND fecha BETWEEN ? AND ?",
+            [$idEmpleado, $inicio, $fin]
+        )->getResultArray();
+
+        $registros = [];
+        foreach ($regs as $r) {
+            $registros[$r['fecha']][$r['id_actividad']] = $r;
+        }
+
+        $diasHabiles = $out['diasHabiles'] ?? $this->calcularDiasHabiles($anio, $mes);
+        [$diario, $semanal, $mensual] = $this->calcularPuntajes($actividades, $registros, $diasHabiles, $hoy);
+
+        $pesoTotal = 0;
+        foreach ($actividades as $a) $pesoTotal += (float) $a['peso'];
+
+        $out['actividades']    = $actividades;
+        $out['registros']      = $registros;
+        $out['puntajeDiario']  = $diario;
+        $out['puntajeSemanal'] = $semanal;
+        $out['puntajeMensual'] = $mensual;
+        $out['pesoTotal']      = $pesoTotal;
+    }
+
     // ══════════════════════════════════════════════════════════════
-    // Atajo autenticado: redirige al checklist público del día actual
-    // con token generado. Uso: botón "Rutinas del día" desde dashboards.
+    // Atajo autenticado: redirige al checklist propio
     // ══════════════════════════════════════════════════════════════
 
     public function miChecklist()
     {
         $session = session();
         $userId  = (int) ($session->get('id_usuario') ?? 0);
-
         if ($userId <= 0) {
             return redirect()->to('/login');
         }
@@ -242,7 +314,7 @@ class RutinasController extends Controller
     }
 
     // ══════════════════════════════════════════════════════════════
-    // Checklist público (sin login, con token)
+    // Checklist público (token)
     // ══════════════════════════════════════════════════════════════
 
     public function checklistPublico(int $userId, string $fecha, string $token)
@@ -333,9 +405,60 @@ class RutinasController extends Controller
         return $this->response->setJSON(['success' => true]);
     }
 
+    /**
+     * Disparador manual "Terminar reporte" → email a consultor + dueño.
+     */
+    public function reportarChecklist()
+    {
+        $userId = (int) $this->request->getPost('user_id');
+        $fecha  = (string) $this->request->getPost('fecha');
+        $token  = (string) $this->request->getPost('token');
+
+        if ($userId <= 0 || !$this->fechaValida($fecha)) {
+            return $this->response->setJSON(['success' => false, 'message' => 'Parámetros inválidos']);
+        }
+        if (!NotificadorRutinas::validarToken($userId, $fecha, $token)) {
+            return $this->response->setJSON(['success' => false, 'message' => 'Token inválido']);
+        }
+
+        $notif = new NotificadorRutinas();
+        $res   = $notif->enviarResumenCierre($userId, $fecha);
+
+        return $this->response->setJSON($res);
+    }
+
     // ══════════════════════════════════════════════════════════════
-    // Helpers internos
+    // Helpers
     // ══════════════════════════════════════════════════════════════
+
+    private function clientesAccesibles(): array
+    {
+        $role = session()->get('role');
+        $userId = (int) session()->get('user_id');
+        $db = Database::connect();
+
+        if ($role === 'client') {
+            return $db->query(
+                "SELECT id_cliente, nombre_cliente FROM tbl_clientes WHERE id_cliente = ?",
+                [$userId]
+            )->getResultArray();
+        }
+
+        if ($role === 'consultant') {
+            return $db->query(
+                "SELECT id_cliente, nombre_cliente FROM tbl_clientes
+                  WHERE id_consultor = ? AND (estado = 'activo' OR estado IS NULL)
+                  ORDER BY nombre_cliente",
+                [$userId]
+            )->getResultArray();
+        }
+
+        return $db->query(
+            "SELECT id_cliente, nombre_cliente FROM tbl_clientes
+              WHERE estado = 'activo' OR estado IS NULL
+              ORDER BY nombre_cliente"
+        )->getResultArray();
+    }
 
     private function fechaValida(string $fecha): bool
     {
@@ -366,9 +489,6 @@ class RutinasController extends Controller
         return $nombres[$mes] ?? '';
     }
 
-    /**
-     * @return array{0:array<string,float>, 1:array<int,float>, 2:float}
-     */
     private function calcularPuntajes(array $actividades, array $registros, array $diasHabiles, string $hoy): array
     {
         $pesoTotal = 0.0;
@@ -387,7 +507,6 @@ class RutinasController extends Controller
             $diario[$fecha] = (int) round(($sum / $pesoTotal) * 100);
         }
 
-        // Agregar por semana ISO
         $porSemana = [];
         foreach ($diasHabiles as $d) {
             if ($d['fecha'] > $hoy) continue;
@@ -398,7 +517,6 @@ class RutinasController extends Controller
             $semanal[$sem] = (int) round(array_sum($vals) / max(count($vals), 1));
         }
 
-        // Mensual (solo días hasta hoy)
         $pasados = [];
         foreach ($diasHabiles as $d) {
             if ($d['fecha'] > $hoy) continue;

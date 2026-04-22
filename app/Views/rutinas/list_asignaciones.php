@@ -24,56 +24,86 @@ body{background:#f4f6f9}
 <body>
 <div class="container py-3 py-md-4">
     <div class="card card-rutinas mb-3">
-        <div class="header-rutinas"><h1><i class="bi bi-people-fill"></i> Asignaciones de rutinas</h1></div>
+        <div class="header-rutinas d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <h1><i class="bi bi-diagram-3"></i> Asignaciones de rutinas</h1>
+            <a href="<?= base_url('empleados?cliente='.$idCliente) ?>" class="btn btn-sm btn-light">
+                <i class="bi bi-people"></i> Gestionar empleados
+            </a>
+        </div>
         <div class="card-body">
-            <?php if (session('msg')): ?>
-                <div class="alert alert-success"><?= esc(session('msg')) ?></div>
-            <?php endif; ?>
-            <?php if (session('error')): ?>
-                <div class="alert alert-danger"><?= esc(session('error')) ?></div>
-            <?php endif; ?>
-            <form action="<?= base_url('rutinas/asignaciones/add') ?>" method="post">
-                <div class="row g-3">
-                    <div class="col-12 col-md-6">
-                        <label class="form-label fw-bold">Usuario</label>
-                        <select name="id_usuario" class="form-select" required>
-                            <option value="">Seleccione…</option>
-                            <?php foreach ($usuarios as $u): ?>
-                                <option value="<?= (int)$u['id_usuario'] ?>">
-                                    <?= esc($u['nombre_completo']) ?> (<?= esc($u['email']) ?>) — <?= esc($u['tipo_usuario']) ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <label class="form-label fw-bold">Actividades a asignar</label>
-                        <div class="actividades-grid">
-                            <?php foreach ($actividades as $a): ?>
-                                <label>
-                                    <input type="checkbox" name="actividades[]" value="<?= (int)$a['id_actividad'] ?>">
-                                    <?= esc($a['nombre']) ?>
-                                </label>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
+            <?php if (session('msg')): ?><div class="alert alert-success"><?= esc(session('msg')) ?></div><?php endif; ?>
+            <?php if (session('error')): ?><div class="alert alert-danger"><?= esc(session('error')) ?></div><?php endif; ?>
+
+            <form method="get" class="row g-2 align-items-end mb-3">
+                <div class="col-12 col-md-10">
+                    <label class="form-label small mb-1">Cliente (local)</label>
+                    <select name="cliente" class="form-select form-select-sm" <?= session('role') === 'client' ? 'disabled' : '' ?>>
+                        <?php foreach ($clientes as $c): ?>
+                            <option value="<?= (int)$c['id_cliente'] ?>" <?= (int)$c['id_cliente'] === $idCliente ? 'selected' : '' ?>>
+                                <?= esc($c['nombre_cliente']) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
-                <div class="mt-3">
-                    <button class="btn btn-cycloid"><i class="bi bi-plus-lg"></i> Asignar</button>
+                <div class="col-12 col-md-2">
+                    <button class="btn btn-dark btn-sm w-100"><i class="bi bi-funnel"></i> Ver</button>
                 </div>
             </form>
+
+            <?php if (empty($empleados)): ?>
+                <div class="alert alert-warning">
+                    Este local no tiene empleados registrados.
+                    <a href="<?= base_url('empleados/add?cliente='.$idCliente) ?>">Crea el primero</a> para poder asignar rutinas.
+                </div>
+            <?php else: ?>
+                <form action="<?= base_url('rutinas/asignaciones/add') ?>" method="post">
+                    <input type="hidden" name="id_cliente" value="<?= (int)$idCliente ?>">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label fw-bold">Empleado del local</label>
+                            <select name="id_usuario" class="form-select" required>
+                                <option value="">Seleccione…</option>
+                                <?php foreach ($empleados as $e): ?>
+                                    <option value="<?= (int)$e['id_usuario'] ?>">
+                                        <?= esc($e['nombre_completo']) ?> (<?= esc($e['email']) ?>)
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label fw-bold">Actividades a asignar</label>
+                            <div class="actividades-grid">
+                                <?php foreach ($actividades as $a): ?>
+                                    <label>
+                                        <input type="checkbox" name="actividades[]" value="<?= (int)$a['id_actividad'] ?>">
+                                        <?= esc($a['nombre']) ?>
+                                        <small class="text-muted">(<?= esc($a['frecuencia']) ?>, peso <?= esc($a['peso']) ?>)</small>
+                                    </label>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-cycloid"><i class="bi bi-plus-lg"></i> Asignar</button>
+                    </div>
+                </form>
+            <?php endif; ?>
         </div>
     </div>
 
+    <?php if (!empty($empleados)): ?>
     <div class="card card-rutinas">
         <div class="card-body">
+            <h6 class="mb-3">Asignaciones actuales del local</h6>
             <div class="table-responsive">
                 <table id="tblAsignaciones" class="table table-hover align-middle">
                     <thead>
                         <tr>
-                            <th>Usuario</th>
+                            <th>Empleado</th>
                             <th class="d-none d-md-table-cell">Email</th>
                             <th>Actividad</th>
                             <th>Frec.</th>
+                            <th>Peso</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -84,6 +114,7 @@ body{background:#f4f6f9}
                                 <td class="d-none d-md-table-cell small text-muted"><?= esc($a['email']) ?></td>
                                 <td><?= esc($a['actividad']) ?></td>
                                 <td><span class="badge bg-secondary"><?= esc($a['frecuencia']) ?></span></td>
+                                <td><?= esc($a['peso']) ?></td>
                                 <td class="text-end">
                                     <a href="<?= base_url('rutinas/asignaciones/delete/'.$a['id_asignacion']) ?>"
                                        class="btn btn-sm btn-outline-danger"
@@ -96,11 +127,15 @@ body{background:#f4f6f9}
                     </tbody>
                 </table>
             </div>
-            <a href="<?= base_url('rutinas/calendario') ?>" class="btn btn-outline-dark btn-sm"><i class="bi bi-calendar3"></i> Calendario</a>
-            <a href="<?= base_url('rutinas/actividades') ?>" class="btn btn-outline-dark btn-sm"><i class="bi bi-list-check"></i> Actividades</a>
-            <a href="<?= base_url('admindashboard') ?>" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-left"></i> Dashboard</a>
+            <div class="d-flex flex-wrap gap-2 mt-2">
+                <a href="<?= base_url('rutinas/calendario?cliente='.$idCliente) ?>" class="btn btn-outline-dark btn-sm"><i class="bi bi-calendar3"></i> Calendario del local</a>
+                <a href="<?= base_url('rutinas/actividades') ?>" class="btn btn-outline-dark btn-sm"><i class="bi bi-list-check"></i> Actividades</a>
+                <a href="<?= base_url('empleados?cliente='.$idCliente) ?>" class="btn btn-outline-dark btn-sm"><i class="bi bi-people"></i> Empleados</a>
+                <a href="<?= base_url(session('role') === 'client' ? 'dashboard' : 'admindashboard') ?>" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-left"></i> Volver</a>
+            </div>
         </div>
     </div>
+    <?php endif; ?>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
@@ -108,10 +143,12 @@ body{background:#f4f6f9}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 $(function(){
-    $('#tblAsignaciones').DataTable({
-        language: { url: 'https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json' },
-        order: [[0,'asc']], pageLength: 25
-    });
+    if ($('#tblAsignaciones').length) {
+        $('#tblAsignaciones').DataTable({
+            language: { url: 'https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json' },
+            order: [[0,'asc']], pageLength: 25
+        });
+    }
 });
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('<?= base_url('sw_rutinas.js') ?>').catch(()=>{});

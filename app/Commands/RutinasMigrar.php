@@ -110,8 +110,41 @@ class RutinasMigrar extends BaseCommand
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
         ");
 
+        // 4) Extender ENUM tipo_usuario para incluir 'employee' (idempotente)
+        $this->extenderEnumEmployee($db);
+
         CLI::write('', 'white');
         CLI::write("=== MIGRACIÓN COMPLETA [{$env}] ===", 'green');
+    }
+
+    private function extenderEnumEmployee($db): void
+    {
+        try {
+            $row = $db->query(
+                "SELECT COLUMN_TYPE AS col
+                   FROM INFORMATION_SCHEMA.COLUMNS
+                  WHERE TABLE_SCHEMA = ?
+                    AND TABLE_NAME = 'tbl_usuarios'
+                    AND COLUMN_NAME = 'tipo_usuario'",
+                [$db->getDatabase()]
+            )->getRow();
+
+            if (!$row) {
+                CLI::write("  · tipo_usuario: columna no encontrada. Saltado.", 'white');
+                return;
+            }
+
+            if (stripos($row->col, "'employee'") !== false) {
+                CLI::write("  · tipo_usuario ya incluye 'employee'. Saltado.", 'white');
+                return;
+            }
+
+            $db->query("ALTER TABLE tbl_usuarios
+                        MODIFY tipo_usuario ENUM('admin','consultant','client','employee') NOT NULL");
+            CLI::write("  ✔ tipo_usuario extendido con 'employee'.", 'green');
+        } catch (\Throwable $e) {
+            CLI::error("  ✖ Error extendiendo ENUM: " . $e->getMessage());
+        }
     }
 
     private function createIfMissing($db, string $database, string $table, string $sql): void
