@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#c9541a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Inspecciones">
-    <link rel="manifest" href="<?= base_url('/manifest_inspecciones.json?v=3') ?>">
-    <link rel="apple-touch-icon" href="<?= base_url('/icons/icon-192.png?v=3') ?>">
+    <meta name="apple-mobile-web-app-title" content="Cycloid TAT">
+    <link rel="manifest" href="<?= base_url('/manifest_inspecciones.json?v=4') ?>">
+    <link rel="apple-touch-icon" href="<?= base_url('/icons/icon-192.png?v=4') ?>">
     <title>Login - Cycloid TAT</title>
 
     <!-- Bootstrap 5 CSS -->
