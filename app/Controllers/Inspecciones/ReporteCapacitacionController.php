@@ -632,7 +632,7 @@ El objetivo debe:
             ->like('observaciones', 'rep_cap_id:' . $inspeccion['id'])
             ->first();
 
-        $destDir = UPLOADS_PATH . $nitCliente;
+        $destDir = UPLOADS_CLIENTES . $nitCliente;
         if (!is_dir($destDir)) {
             mkdir($destDir, 0755, true);
         }
@@ -648,7 +648,7 @@ El objetivo debe:
             'id_cliente'      => $inspeccion['id_cliente'],
             'estado'          => 'CERRADO',
             'observaciones'   => 'Generado automaticamente desde modulo de inspecciones. rep_cap_id:' . $inspeccion['id'],
-            'enlace'          => base_url(UPLOADS_URL_PREFIX . '/' . $nitCliente . '/' . $fileName),
+            'enlace'          => base_url('uploads/clientes/' . $nitCliente . '/' . $fileName),
             'updated_at'      => date('Y-m-d H:i:s'),
         ];
 

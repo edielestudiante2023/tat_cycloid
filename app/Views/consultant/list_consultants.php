@@ -147,14 +147,14 @@
                             <td><?= htmlspecialchars($consultant['numero_licencia']) ?></td>
                             <td>
                                 <?php if (!empty($consultant['foto_consultor'])): ?>
-                                    <img src="<?= base_url('serve-file/firmas_consultores/' . htmlspecialchars($consultant['foto_consultor'])) ?>" alt="Foto del Consultor" width="50" data-toggle="tooltip" data-placement="top" title="Foto del Consultor">
+                                    <img src="<?= upload_url('foto_consultor', $consultant['foto_consultor']) ?>" alt="Foto del Consultor" width="50" data-toggle="tooltip" data-placement="top" title="Foto del Consultor">
                                 <?php else: ?>
                                     No disponible
                                 <?php endif; ?>
                             </td>
                             <td>
                                 <?php if (!empty($consultant['firma_consultor'])): ?>
-                                    <img src="<?= base_url('serve-file/firmas_consultores/' . htmlspecialchars($consultant['firma_consultor'])) ?>" alt="Firma del Consultor" width="50" data-toggle="tooltip" data-placement="top" title="Firma del Consultor">
+                                    <img src="<?= upload_url('firma_consultor', $consultant['firma_consultor']) ?>" alt="Firma del Consultor" width="50" data-toggle="tooltip" data-placement="top" title="Firma del Consultor">
                                 <?php else: ?>
                                     No disponible
                                 <?php endif; ?>

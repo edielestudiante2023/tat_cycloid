@@ -544,7 +544,7 @@ class InspeccionBotiquinTipoAController extends BaseController
             ->like('observaciones', 'insp_bot_tipo_a_id:' . $inspeccion['id'])
             ->first();
 
-        $destDir = UPLOADS_PATH . $nitCliente;
+        $destDir = UPLOADS_CLIENTES . $nitCliente;
         if (!is_dir($destDir)) {
             mkdir($destDir, 0755, true);
         }
@@ -560,7 +560,7 @@ class InspeccionBotiquinTipoAController extends BaseController
             'id_cliente'      => $inspeccion['id_cliente'],
             'estado'          => 'CERRADO',
             'observaciones'   => 'Generado automaticamente desde modulo de inspecciones Tipo A. insp_bot_tipo_a_id:' . $inspeccion['id'],
-            'enlace'          => base_url(UPLOADS_URL_PREFIX . '/' . $nitCliente . '/' . $fileName),
+            'enlace'          => base_url('uploads/clientes/' . $nitCliente . '/' . $fileName),
             'updated_at'      => date('Y-m-d H:i:s'),
         ];
 

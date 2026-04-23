@@ -5,53 +5,54 @@ namespace App\Controllers;
 use CodeIgniter\HTTP\ResponseInterface;
 
 /**
- * FileServerController
+ * FileServerController — BC-shim.
  *
- * Sirve archivos desde UPLOADS_PATH (fuera de public/).
- * Reemplaza el acceso directo que antes tenían en public/uploads/.
+ * Post-consolidación de uploads, los soportes viven en public/uploads/ y se
+ * sirven directo por Apache. Este controlador se mantiene solo para:
+ *  - Redirigir URLs viejas `/serve-file/...` a `/uploads/...` (301 permanente).
+ *  - Servir archivos que aún no fueron migrados desde UPLOADS_PATH (fallback).
  *
  * Ruta: GET /serve-file/(:any) → FileServerController::serve/$1
  */
 class FileServerController extends BaseController
 {
-    /**
-     * Sirve un archivo desde UPLOADS_PATH.
-     *
-     * @param string ...$segments Segmentos de ruta (ej: "901103223", "archivo.pdf")
-     */
     public function serve(string ...$segments): ResponseInterface
     {
-        // Verificar sesión activa
-        $session = session();
-        if (!$session->get('isLoggedIn') && !$session->get('client_logged_in')) {
-            return redirect()->to('/login');
-        }
-
-        // Reconstruir ruta relativa
         $relativePath = implode('/', $segments);
-
-        // Sanitizar: prevenir directory traversal
         $relativePath = str_replace(['..', "\0"], '', $relativePath);
         $relativePath = ltrim($relativePath, '/');
 
-        if (empty($relativePath)) {
+        if ($relativePath === '') {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
 
-        // Construir ruta absoluta
-        $filePath = rtrim(UPLOADS_PATH, '/\\') . '/' . $relativePath;
+        // Renombres conocidos para URLs legacy:
+        //  - firmas_consultores/       → consultores/firmas/
+        //  - planillas-seguridad-social/ → planillas-ss/
+        //  - {NIT}/                    → clientes/{NIT}/
+        $nuevo = preg_replace('#^firmas_consultores/#', 'consultores/firmas/', $relativePath);
+        $nuevo = preg_replace('#^planillas-seguridad-social/#', 'planillas-ss/', $nuevo);
+        $nuevo = preg_replace('#^(\d+)/#', 'clientes/$1/', $nuevo);
 
-        // Verificar que el archivo existe
-        if (!is_file($filePath)) {
+        // Si ya existe en la nueva ubicación pública → 301
+        if (is_file(FCPATH . 'uploads/' . $nuevo)) {
+            return redirect()->to(base_url('uploads/' . $nuevo), 301);
+        }
+
+        // Fallback: archivo aún en UPLOADS_PATH vieja (pre-migración)
+        $session = session();
+        if (! $session->get('isLoggedIn') && ! $session->get('client_logged_in')) {
+            return redirect()->to('/login');
+        }
+
+        $filePath = rtrim(UPLOADS_PATH, '/\\') . '/' . $relativePath;
+        if (! is_file($filePath)) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(
                 'Archivo no encontrado: ' . $relativePath
             );
         }
 
-        // Detectar MIME type
         $mimeType = mime_content_type($filePath) ?: 'application/octet-stream';
-
-        // Para PDFs e imágenes: mostrar inline. Para otros: descargar.
         $inlineTypes = [
             'application/pdf',
             'image/jpeg',
@@ -59,13 +60,11 @@ class FileServerController extends BaseController
             'image/gif',
             'image/webp',
         ];
-
-        $disposition = in_array($mimeType, $inlineTypes) ? 'inline' : 'attachment';
-        $fileName = basename($filePath);
+        $disposition = in_array($mimeType, $inlineTypes, true) ? 'inline' : 'attachment';
 
         return $this->response
             ->setHeader('Content-Type', $mimeType)
-            ->setHeader('Content-Disposition', $disposition . '; filename="' . $fileName . '"')
+            ->setHeader('Content-Disposition', $disposition . '; filename="' . basename($filePath) . '"')
             ->setHeader('Content-Length', (string) filesize($filePath))
             ->setHeader('Cache-Control', 'private, max-age=3600')
             ->setBody(file_get_contents($filePath));

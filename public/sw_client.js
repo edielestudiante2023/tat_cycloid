@@ -1,5 +1,8 @@
-const CACHE_NAME = 'client-dashboard-v6';
-const BASE_PATH = '/tat_cycloid/public';
+const CACHE_NAME = 'client-dashboard-v7';
+// TAT — BASE_PATH se calcula dinámico desde la URL del SW.
+// local:  /tat_cycloid/public/sw_client.js → BASE_PATH = /tat_cycloid/public
+// prod:   /sw_client.js                     → BASE_PATH = ''
+const BASE_PATH = self.location.pathname.replace(/\/sw_client\.js$/, '');
 const ASSETS_TO_CACHE = [
     BASE_PATH + '/client/dashboard',
     // CDN - CSS

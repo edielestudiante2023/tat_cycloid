@@ -368,7 +368,7 @@ class PlanSaneamientoController extends BaseController
             ->like('observaciones', 'plan_san_id:' . $inspeccion['id'])
             ->first();
 
-        $destDir = UPLOADS_PATH . $nitCliente;
+        $destDir = UPLOADS_CLIENTES . $nitCliente;
         if (!is_dir($destDir)) {
             mkdir($destDir, 0755, true);
         }
@@ -384,7 +384,7 @@ class PlanSaneamientoController extends BaseController
             'id_cliente'      => $inspeccion['id_cliente'],
             'estado'          => 'CERRADO',
             'observaciones'   => 'Generado automaticamente desde modulo de inspecciones. plan_san_id:' . $inspeccion['id'],
-            'enlace'          => base_url(UPLOADS_URL_PREFIX . '/' . $nitCliente . '/' . $fileName),
+            'enlace'          => base_url('uploads/clientes/' . $nitCliente . '/' . $fileName),
             'updated_at'      => date('Y-m-d H:i:s'),
         ];
 

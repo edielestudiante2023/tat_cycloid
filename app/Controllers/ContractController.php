@@ -290,7 +290,7 @@ class ContractController extends Controller
 
         // Eliminar PDF asociado si existe
         if (!empty($contract['ruta_pdf_contrato'])) {
-            $pdfPath = UPLOADS_PATH . str_replace(UPLOADS_URL_PREFIX . '/', '', $contract['ruta_pdf_contrato']);
+            $pdfPath = UPLOADS_BASE . str_replace(UPLOADS_URL_PREFIX . '/', '', $contract['ruta_pdf_contrato']);
             if (file_exists($pdfPath)) {
                 unlink($pdfPath);
             }
@@ -298,7 +298,7 @@ class ContractController extends Controller
 
         // Eliminar imagen de firma si existe
         if (!empty($contract['firma_cliente_imagen'])) {
-            $firmaPath = UPLOADS_PATH . str_replace(UPLOADS_URL_PREFIX . '/', '', $contract['firma_cliente_imagen']);
+            $firmaPath = UPLOADS_BASE . str_replace(UPLOADS_URL_PREFIX . '/', '', $contract['firma_cliente_imagen']);
             if (file_exists($firmaPath)) {
                 unlink($firmaPath);
             }
@@ -599,7 +599,7 @@ class ContractController extends Controller
             $pdfGenerator->generateContract($contract);
 
             // 2. Crear directorio si no existe
-            $uploadDir = UPLOADS_PATH . 'contratos' . DIRECTORY_SEPARATOR;
+            $uploadDir = UPLOADS_CONTRATOS;
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0775, true);
             }
@@ -759,7 +759,7 @@ class ContractController extends Controller
             }
         }
 
-        $filePath = UPLOADS_PATH . str_replace(UPLOADS_URL_PREFIX . '/', '', $contract['ruta_pdf_contrato']);
+        $filePath = UPLOADS_BASE . str_replace(UPLOADS_URL_PREFIX . '/', '', $contract['ruta_pdf_contrato']);
 
         if (!file_exists($filePath)) {
             return redirect()->to('/contracts/view/' . $idContrato)
@@ -1182,11 +1182,11 @@ Genera únicamente el texto de la cláusula, listo para insertar en el contrato.
             $nombreArchivo = 'firma_contrato_' . $contrato['id_contrato'] . '_' . time() . '.png';
             $rutaFirma = UPLOADS_URL_PREFIX . '/firmas/' . $nombreArchivo;
 
-            if (!is_dir(UPLOADS_PATH . 'firmas')) {
-                mkdir(UPLOADS_PATH . 'firmas', 0755, true);
+            if (!is_dir(rtrim(UPLOADS_FIRMAS, '/\\'))) {
+                mkdir(rtrim(UPLOADS_FIRMAS, '/\\'), 0755, true);
             }
 
-            file_put_contents(UPLOADS_PATH . 'firmas/' . $nombreArchivo, $firmaDecoded);
+            file_put_contents(UPLOADS_FIRMAS . $nombreArchivo, $firmaDecoded);
         }
 
         // Generar código de verificación ANTES de anular el token
@@ -1307,7 +1307,7 @@ Genera únicamente el texto de la cláusula, listo para insertar en el contrato.
                 $pdfGenerator = new ContractPDFGenerator();
                 $pdfGenerator->generateContract($contractData);
 
-                $uploadDir = UPLOADS_PATH . 'contratos' . DIRECTORY_SEPARATOR;
+                $uploadDir = UPLOADS_CONTRATOS;
                 if (!is_dir($uploadDir)) {
                     mkdir($uploadDir, 0775, true);
                 }
@@ -1406,7 +1406,7 @@ Genera únicamente el texto de la cláusula, listo para insertar en el contrato.
             $pdfGenerator = new ContractPDFGenerator();
             $pdfGenerator->generateContract($contract);
 
-            $uploadDir = UPLOADS_PATH . 'contratos' . DIRECTORY_SEPARATOR;
+            $uploadDir = UPLOADS_CONTRATOS;
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0775, true);
             }

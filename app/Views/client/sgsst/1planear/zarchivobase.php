@@ -217,13 +217,13 @@ Fecha: <?= isset($latestVersion['sin_contrato']) && $latestVersion['sin_contrato
 
             <!-- Mostrar foto del consultor -->
             <div class="logo">
-                <img src="<?= base_url('serve-file/firmas_consultores/' . $consultant['foto_consultor']) ?>" alt="Foto de <?= $consultant['nombre_consultor'] ?>">
+                <img src="<?= upload_url('foto_consultor', $consultant['foto_consultor']) ?>" alt="Foto de <?= $consultant['nombre_consultor'] ?>">
                 <p>Foto de <?= $consultant['nombre_consultor'] ?></p>
             </div>
 
             <!-- Mostrar firma del consultor -->
             <div class="signature">
-                <img src="<?= base_url('serve-file/firmas_consultores/' . $consultant['firma_consultor']) ?>" alt="Firma de <?= $consultant['nombre_consultor'] ?>">
+                <img src="<?= upload_url('firma_consultor', $consultant['firma_consultor']) ?>" alt="Firma de <?= $consultant['nombre_consultor'] ?>">
                 <p>Firma de <?= $consultant['nombre_consultor'] ?></p>
             </div>
 

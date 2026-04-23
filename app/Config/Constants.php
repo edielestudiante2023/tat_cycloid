@@ -95,17 +95,23 @@ define('EVENT_PRIORITY_HIGH', 10);
 
 /*
  |--------------------------------------------------------------------------
- | Uploads dinámicos (fuera de git)
+ | Uploads
  |--------------------------------------------------------------------------
- | Ruta donde se almacenan los uploads de clientes.
- | Producción: /www/soportes-clientes/
- | Local XAMPP: c:/xampp/soportes-clientes/
+ | Todo el almacenamiento de archivos subidos por el usuario vive bajo
+ | `public/uploads/` con una estructura de subcarpetas por tipo.
  |
- | NUNCA debe estar dentro del repo git.
+ | UPLOADS_PATH / UPLOADS_URL_PREFIX son alias del destino unificado y se
+ | mantienen para compatibilidad con código que aún los referencia.
  */
-defined('UPLOADS_PATH') || define('UPLOADS_PATH', WRITEPATH . 'soportes-clientes/');
-
-/*
- | Prefijo de URL para servir archivos via FileServerController
- */
-defined('UPLOADS_URL_PREFIX') || define('UPLOADS_URL_PREFIX', 'serve-file');
+defined('UPLOADS_BASE')          || define('UPLOADS_BASE',          FCPATH . 'uploads/');
+defined('UPLOADS_PATH')          || define('UPLOADS_PATH',          UPLOADS_BASE);
+defined('UPLOADS_URL_PREFIX')    || define('UPLOADS_URL_PREFIX',    'uploads');
+defined('UPLOADS_CLIENTES')      || define('UPLOADS_CLIENTES',      UPLOADS_BASE . 'clientes/');
+defined('UPLOADS_CLIENTES_DOCS') || define('UPLOADS_CLIENTES_DOCS', UPLOADS_BASE . 'clientes-docs/');
+defined('UPLOADS_CONSULTORES')   || define('UPLOADS_CONSULTORES',   UPLOADS_BASE . 'consultores/');
+defined('UPLOADS_CONTRATOS')     || define('UPLOADS_CONTRATOS',     UPLOADS_BASE . 'contratos/');
+defined('UPLOADS_INFORMES')      || define('UPLOADS_INFORMES',      UPLOADS_BASE . 'informes/pdf/');
+defined('UPLOADS_TMP')           || define('UPLOADS_TMP',           UPLOADS_BASE . 'tmp/');
+defined('UPLOADS_INSPECCIONES')  || define('UPLOADS_INSPECCIONES',  UPLOADS_BASE . 'inspecciones/');
+defined('UPLOADS_FIRMAS')        || define('UPLOADS_FIRMAS',        UPLOADS_BASE . 'firmas/');
+defined('UPLOADS_BRANDING')      || define('UPLOADS_BRANDING',      UPLOADS_BASE . 'branding/');

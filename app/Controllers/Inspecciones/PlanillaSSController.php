@@ -110,7 +110,7 @@ class PlanillaSSController extends BaseController
         $reporteModel = new ReporteModel();
         $nitCliente   = $cliente['nit_cliente'];
 
-        $destDir = UPLOADS_PATH . $nitCliente;
+        $destDir = UPLOADS_CLIENTES . $nitCliente;
         if (!is_dir($destDir)) {
             mkdir($destDir, 0755, true);
         }
@@ -138,7 +138,7 @@ class PlanillaSSController extends BaseController
             'id_cliente'      => $idCliente,
             'estado'          => 'CERRADO',
             'observaciones'   => 'Generado automaticamente. ' . $tag,
-            'enlace'          => base_url(UPLOADS_URL_PREFIX . '/' . $nitCliente . '/' . $fileName),
+            'enlace'          => base_url('uploads/clientes/' . $nitCliente . '/' . $fileName),
             'updated_at'      => date('Y-m-d H:i:s'),
         ];
 

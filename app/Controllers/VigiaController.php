@@ -44,9 +44,12 @@ class VigiaController extends Controller
 
         // Verificar y mover la firma del vigía
         if ($file && $file->isValid() && !$file->hasMoved()) {
-            $firmaFileName = $file->getRandomName();
-            $file->move(ROOTPATH . 'public/uploads', $firmaFileName);
-            compress_uploaded_image(ROOTPATH . 'public/uploads/' . $firmaFileName);
+            $firmaDir = UPLOADS_FIRMAS . 'vigias/';
+            if (!is_dir($firmaDir)) mkdir($firmaDir, 0775, true);
+            $rand = $file->getRandomName();
+            $file->move($firmaDir, $rand);
+            compress_uploaded_image($firmaDir . $rand);
+            $firmaFileName = 'firmas/vigias/' . $rand;
         }
 
         $data = [
@@ -99,10 +102,12 @@ class VigiaController extends Controller
 
         $file = $this->request->getFile('firma_vigia');
         if ($file && $file->isValid() && !$file->hasMoved()) {
-            $firmaFileName = $file->getRandomName();
-            $file->move(ROOTPATH . 'public/uploads', $firmaFileName);
-            compress_uploaded_image(ROOTPATH . 'public/uploads/' . $firmaFileName);
-            $data['firma_vigia'] = $firmaFileName;
+            $firmaDir = UPLOADS_FIRMAS . 'vigias/';
+            if (!is_dir($firmaDir)) mkdir($firmaDir, 0775, true);
+            $rand = $file->getRandomName();
+            $file->move($firmaDir, $rand);
+            compress_uploaded_image($firmaDir . $rand);
+            $data['firma_vigia'] = 'firmas/vigias/' . $rand;
         }
 
         if ($vigiaModel->update($id, $data)) {

@@ -163,7 +163,7 @@ class PdfUnificadoController extends Controller
             });
         }
 
-        $tempDir = WRITEPATH . 'uploads/temp_pdfs/';
+        $tempDir = UPLOADS_TMP . 'temp_pdfs/';
         if (!is_dir($tempDir)) {
             mkdir($tempDir, 0755, true);
         }

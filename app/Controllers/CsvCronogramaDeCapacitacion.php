@@ -42,8 +42,8 @@ class CsvCronogramaDeCapacitacion extends Controller
         if ($file->isValid() && !$file->hasMoved()) {
             // Mover el archivo a la carpeta writable/uploads
             $newName = $file->getRandomName();
-            $file->move(WRITEPATH . 'uploads', $newName);
-            $filePath = WRITEPATH . 'uploads/' . $newName;
+            $file->move(rtrim(UPLOADS_TMP, '/\\'), $newName);
+            $filePath = UPLOADS_TMP . $newName;
 
             try {
                 // Leer el archivo CSV utilizando PhpSpreadsheet

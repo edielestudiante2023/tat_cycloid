@@ -49,7 +49,7 @@ class DocumentoController extends Controller
         if ($photo->isValid() && !$photo->hasMoved()) {
             // Generar un nombre único para la foto y moverla a la carpeta de destino
             $photoName = $photo->getRandomName();
-            $photo->move(WRITEPATH . 'uploads', $photoName);
+            $photo->move(rtrim(UPLOADS_TMP, '/\\'), $photoName);
             
             // Actualizar la base de datos con el nombre de la foto
             $consultantModel->update(session()->get('user_id'), ['foto_consultor' => $photoName]);

@@ -352,7 +352,7 @@ class RegenerarPdfs extends BaseCommand
                             $pdfGenerator = new \App\Libraries\ContractPDFGenerator();
                             $pdfGenerator->generateContract($contract);
 
-                            $uploadDir = UPLOADS_PATH . 'contratos' . DIRECTORY_SEPARATOR;
+                            $uploadDir = UPLOADS_CONTRATOS;
                             if (!is_dir($uploadDir)) {
                                 mkdir($uploadDir, 0775, true);
                             }

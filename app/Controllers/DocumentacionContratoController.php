@@ -287,10 +287,10 @@ class DocumentacionContratoController extends Controller
         // Crear ZIP
         $nombreCliente = preg_replace('/[^a-zA-Z0-9]/', '_', $client['nombre_cliente']);
         $nombreZip = 'Documentacion_' . $nombreCliente . '_' . $nombrePeriodo . '_' . date('Y-m-d') . '.zip';
-        $rutaZip = WRITEPATH . 'uploads/' . $nombreZip;
+        $rutaZip = UPLOADS_TMP . $nombreZip;
 
-        if (!is_dir(WRITEPATH . 'uploads')) {
-            mkdir(WRITEPATH . 'uploads', 0755, true);
+        if (!is_dir(rtrim(UPLOADS_TMP, '/\\'))) {
+            mkdir(rtrim(UPLOADS_TMP, '/\\'), 0755, true);
         }
 
         $zip = new ZipArchive();
@@ -556,10 +556,10 @@ class DocumentacionContratoController extends Controller
         // Crear ZIP
         $nombreCliente = preg_replace('/[^a-zA-Z0-9]/', '_', $client['nombre_cliente']);
         $nombreZip = 'Documentacion_' . $nombreCliente . '_' . $contract['numero_contrato'] . '_' . date('Y-m-d') . '.zip';
-        $rutaZip = WRITEPATH . 'uploads/' . $nombreZip;
+        $rutaZip = UPLOADS_TMP . $nombreZip;
 
-        if (!is_dir(WRITEPATH . 'uploads')) {
-            mkdir(WRITEPATH . 'uploads', 0755, true);
+        if (!is_dir(rtrim(UPLOADS_TMP, '/\\'))) {
+            mkdir(rtrim(UPLOADS_TMP, '/\\'), 0755, true);
         }
 
         $zip = new ZipArchive();
@@ -660,10 +660,10 @@ class DocumentacionContratoController extends Controller
         // Crear ZIP
         $nombreCliente = preg_replace('/[^a-zA-Z0-9]/', '_', $contract['nombre_cliente']);
         $nombreZip = 'Documentacion_' . $nombreCliente . '_' . $contract['numero_contrato'] . '_' . date('Y-m-d') . '.zip';
-        $rutaZip = WRITEPATH . 'uploads/' . $nombreZip;
+        $rutaZip = UPLOADS_TMP . $nombreZip;
 
-        if (!is_dir(WRITEPATH . 'uploads')) {
-            mkdir(WRITEPATH . 'uploads', 0755, true);
+        if (!is_dir(rtrim(UPLOADS_TMP, '/\\'))) {
+            mkdir(rtrim(UPLOADS_TMP, '/\\'), 0755, true);
         }
 
         $zip = new ZipArchive();

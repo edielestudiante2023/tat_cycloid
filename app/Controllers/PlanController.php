@@ -22,8 +22,8 @@ class PlanController extends Controller
         if ($file && $file->isValid() && !$file->hasMoved()) {
             // Mover el archivo a la carpeta writable/uploads
             $newName = $file->getRandomName();
-            $file->move(WRITEPATH . 'uploads', $newName);
-            $filePath = WRITEPATH . 'uploads/' . $newName;
+            $file->move(rtrim(UPLOADS_TMP, '/\\'), $newName);
+            $filePath = UPLOADS_TMP . $newName;
 
             try {
                 // Usar PhpSpreadsheet para leer el archivo
