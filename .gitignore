@@ -181,16 +181,13 @@ composer.json
 # son documentacion de clientes generada en produccion
 #-------------------------
 writable/soportes-clientes/
-public/uploads/*/
+public/uploads/*
 !public/uploads/.gitkeep
-public/uploads/contratos/
-public/uploads/firmas/
-public/uploads/inspecciones/
-public/uploads/informe-avances/
-public/uploads/matrices/
-public/uploads/planillas-seguridad-social/
-public/uploads/reportes/
-public/uploads/imagenesplanemergencias/
+!public/uploads/.htaccess
+!public/uploads/index.html
+!public/uploads/branding/
+public/uploads/branding/*
+!public/uploads/branding/.gitkeep
 
 #-------------------------
 # Archivos de notas/bocetos (no son parte del sistema)

@@ -66,7 +66,8 @@ class ClientOnboardingController extends Controller
         $estandares = self::FREQ_MAP[$frecuenciaVisitas] ?? 'Mensual';
 
         // ── File uploads (todos opcionales) ──────────────────────────────
-        $uploadPath = ROOTPATH . 'public/uploads';
+        $uploadPath = rtrim(UPLOADS_CLIENTES_DOCS, '/\\');
+        if (!is_dir($uploadPath)) mkdir($uploadPath, 0775, true);
 
         $logoName       = $this->moveFile($request->getFile('logo'), $uploadPath);
         $firmaName      = $this->moveFile($request->getFile('firma_representante_legal'), $uploadPath);
@@ -77,7 +78,8 @@ class ClientOnboardingController extends Controller
 
         // Generar thumbnail del logo si se subió
         if ($logoName) {
-            $this->generateLogoThumbnail($uploadPath, $logoName);
+            // moveFile ya devuelve prefijado 'clientes-docs/xxx'; el thumb usa el nombre crudo
+            $this->generateLogoThumbnail($uploadPath, basename($logoName));
         }
 
         // ── Crear cliente ─────────────────────────────────────────────────
@@ -128,7 +130,7 @@ class ClientOnboardingController extends Controller
         $clientId = $clientModel->getInsertID();
 
         // ── Carpeta NIT ───────────────────────────────────────────────────
-        $nitPath = UPLOADS_PATH . $nitCliente;
+        $nitPath = UPLOADS_CLIENTES . $nitCliente;
         if (!is_dir($nitPath)) {
             mkdir($nitPath, 0777, true);
         }
@@ -180,7 +182,7 @@ class ClientOnboardingController extends Controller
             $name = $file->getRandomName();
             $file->move($uploadPath, $name);
             compress_uploaded_image($uploadPath . '/' . $name);
-            return $name;
+            return 'clientes-docs/' . $name;
         }
         return null;
     }

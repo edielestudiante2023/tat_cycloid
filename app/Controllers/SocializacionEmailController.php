@@ -865,7 +865,7 @@ class SocializacionEmailController extends BaseController
             $pdfContent = $dompdf->output();
 
             // Guardar archivo
-            $dir = UPLOADS_PATH . 'reportes/socializacion/';
+            $dir = UPLOADS_BASE . 'reportes/socializacion/';
             if (!is_dir($dir)) {
                 mkdir($dir, 0755, true);
             }

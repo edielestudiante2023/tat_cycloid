@@ -425,7 +425,7 @@ class EvaluacionSimulacroController extends BaseController
             ->like('observaciones', 'eval_sim_id:' . $eval['id'])
             ->first();
 
-        $destDir = UPLOADS_PATH . $nitCliente;
+        $destDir = UPLOADS_CLIENTES . $nitCliente;
         if (!is_dir($destDir)) {
             mkdir($destDir, 0755, true);
         }
@@ -441,7 +441,7 @@ class EvaluacionSimulacroController extends BaseController
             'id_cliente'      => $eval['id_cliente'],
             'estado'          => 'CERRADO',
             'observaciones'   => 'Generado automaticamente desde modulo de inspecciones. eval_sim_id:' . $eval['id'],
-            'enlace'          => base_url(UPLOADS_URL_PREFIX . '/' . $nitCliente . '/' . $fileName),
+            'enlace'          => base_url('uploads/clientes/' . $nitCliente . '/' . $fileName),
             'updated_at'      => date('Y-m-d H:i:s'),
         ];
 

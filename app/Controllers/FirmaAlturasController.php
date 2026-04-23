@@ -71,7 +71,7 @@ class FirmaAlturasController extends BaseController
         }
 
         // Guardar imagen de firma
-        $firmaDir = FCPATH . 'uploads/firmas-representantes/';
+        $firmaDir = UPLOADS_FIRMAS . 'representantes/';
         if (!is_dir($firmaDir)) {
             mkdir($firmaDir, 0755, true);
         }
@@ -83,7 +83,7 @@ class FirmaAlturasController extends BaseController
 
         // Actualizar tbl_clientes
         $this->clientModel->update($cliente['id_cliente'], [
-            'firma_representante_legal'  => 'firmas-representantes/' . $firmaFileName,
+            'firma_representante_legal'  => 'firmas/representantes/' . $firmaFileName,
             'protocolo_alturas_firmado'  => 1,
             'firma_alturas_fecha'        => date('Y-m-d H:i:s'),
             'firma_alturas_ip'           => $this->request->getIPAddress(),
@@ -183,7 +183,7 @@ class FirmaAlturasController extends BaseController
             ->first();
 
         // Copiar a UPLOADS_PATH/{nit_cliente}/
-        $destDir = UPLOADS_PATH . $nitCliente;
+        $destDir = UPLOADS_CLIENTES . $nitCliente;
         if (!is_dir($destDir)) {
             mkdir($destDir, 0755, true);
         }
@@ -199,7 +199,7 @@ class FirmaAlturasController extends BaseController
             'id_cliente'      => $cliente['id_cliente'],
             'estado'          => 'CERRADO',
             'observaciones'   => 'Generado automaticamente al firmar protocolo de trabajo en alturas. protocolo_alturas_cliente:' . $cliente['id_cliente'],
-            'enlace'          => base_url(UPLOADS_URL_PREFIX . '/' . $nitCliente . '/' . $fileName),
+            'enlace'          => base_url('uploads/clientes/' . $nitCliente . '/' . $fileName),
             'updated_at'      => date('Y-m-d H:i:s'),
         ];
 

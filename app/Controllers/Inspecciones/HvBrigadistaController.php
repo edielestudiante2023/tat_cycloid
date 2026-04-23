@@ -465,7 +465,7 @@ class HvBrigadistaController extends BaseController
             ->like('observaciones', 'hv_brig_id:' . $hv['id'])
             ->first();
 
-        $destDir = UPLOADS_PATH . $nitCliente;
+        $destDir = UPLOADS_CLIENTES . $nitCliente;
         if (!is_dir($destDir)) {
             mkdir($destDir, 0755, true);
         }
@@ -481,7 +481,7 @@ class HvBrigadistaController extends BaseController
             'id_cliente'      => $hv['id_cliente'],
             'estado'          => 'CERRADO',
             'observaciones'   => 'Generado automaticamente desde modulo de inspecciones. hv_brig_id:' . $hv['id'],
-            'enlace'          => base_url(UPLOADS_URL_PREFIX . '/' . $nitCliente . '/' . $fileName),
+            'enlace'          => base_url('uploads/clientes/' . $nitCliente . '/' . $fileName),
             'updated_at'      => date('Y-m-d H:i:s'),
         ];
 

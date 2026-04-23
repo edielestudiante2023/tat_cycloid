@@ -716,7 +716,7 @@
         const conversationHistory = [];
         let isProcessing = false;
         const BASE_URL = '<?= base_url() ?>';
-        const USER_PHOTO = '<?= !empty($usuario['foto']) ? base_url('serve-file/firmas_consultores/' . $usuario['foto']) : '' ?>';
+        const USER_PHOTO = '<?= !empty($usuario['foto']) ? upload_url('foto_consultor', $usuario['foto']) : '' ?>';
 
         // =====================================================================
         // Envío de mensajes

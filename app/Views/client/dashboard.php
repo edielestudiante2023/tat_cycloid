@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Mi SST">
-    <link rel="manifest" href="<?= base_url('manifest_client.json?v=2') ?>">
+    <link rel="manifest" href="<?= base_url('manifest_client.php?v=5') ?>">
     <link rel="apple-touch-icon" href="<?= base_url('icons/icon-192.png') ?>">
     <title>Enterprisesst - Tienda a Tienda</title>
     <!-- Bootstrap CSS -->

@@ -112,7 +112,7 @@ class ReportController extends Controller
 
         $file = $this->request->getFile('archivo');
         $nitCliente = $client['nit_cliente'];
-        $uploadPath = UPLOADS_PATH . $nitCliente;
+        $uploadPath = UPLOADS_CLIENTES . $nitCliente;
 
         if (!is_dir($uploadPath)) {
             mkdir($uploadPath, 0777, true);
@@ -135,7 +135,7 @@ class ReportController extends Controller
             'id_cliente'      => $idCliente,
             'estado'          => $this->request->getVar('estado') ?? 'CERRADO',
             'observaciones'   => $this->request->getVar('observaciones') ?? 'Recargado desde Takeout ' . date('Y-m-d'),
-            'enlace'          => base_url(UPLOADS_URL_PREFIX . '/' . $nitCliente . '/' . $fileName),
+            'enlace'          => base_url('uploads/clientes/' . $nitCliente . '/' . $fileName),
             'created_at'      => $createdAt,
             'updated_at'      => $createdAt,
         ];
@@ -177,7 +177,7 @@ class ReportController extends Controller
         // Procesar archivo
         $file = $this->request->getFile('archivo');
         $nitCliente = $client['nit_cliente'];
-        $uploadPath = UPLOADS_PATH . $nitCliente;
+        $uploadPath = UPLOADS_CLIENTES . $nitCliente;
 
         // Crear directorio si no existe
         if (!is_dir($uploadPath)) {
@@ -199,7 +199,7 @@ class ReportController extends Controller
             'id_cliente' => $idCliente,
             'estado' => $this->request->getVar('estado'),
             'observaciones' => $this->request->getVar('observaciones'),
-            'enlace' => base_url(UPLOADS_URL_PREFIX . '/' . $nitCliente . '/' . $fileName),
+            'enlace' => base_url('uploads/clientes/' . $nitCliente . '/' . $fileName),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ];
@@ -756,7 +756,7 @@ class ReportController extends Controller
         $file = $this->request->getFile('archivo');
         if ($file && $file->isValid() && !$file->hasMoved()) {
             $newFileName = $file->getRandomName();
-            $clientFolder = UPLOADS_PATH . $nitCliente;
+            $clientFolder = UPLOADS_CLIENTES . $nitCliente;
 
             // Crear carpeta si no existe
             if (!is_dir($clientFolder)) {
@@ -767,7 +767,7 @@ class ReportController extends Controller
             $file->move($clientFolder, $newFileName);
 
             // Actualizar enlace en los datos
-            $data['enlace'] = base_url(UPLOADS_URL_PREFIX . '/' . $nitCliente . '/' . $newFileName);
+            $data['enlace'] = base_url('uploads/clientes/' . $nitCliente . '/' . $newFileName);
         } else {
             // Mantener el enlace original si no se subió un archivo nuevo
             $data['enlace'] = $reporte['enlace'];

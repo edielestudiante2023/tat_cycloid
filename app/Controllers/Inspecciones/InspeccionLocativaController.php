@@ -528,7 +528,7 @@ class InspeccionLocativaController extends BaseController
             ->first();
 
         // Copiar a uploads/{nit_cliente}/
-        $destDir = UPLOADS_PATH . $nitCliente;
+        $destDir = UPLOADS_CLIENTES . $nitCliente;
         if (!is_dir($destDir)) {
             mkdir($destDir, 0755, true);
         }
@@ -544,7 +544,7 @@ class InspeccionLocativaController extends BaseController
             'id_cliente'      => $inspeccion['id_cliente'],
             'estado'          => 'CERRADO',
             'observaciones'   => 'Generado automaticamente desde modulo de inspecciones. insp_locativa_id:' . $inspeccion['id'],
-            'enlace'          => base_url(UPLOADS_URL_PREFIX . '/' . $nitCliente . '/' . $fileName),
+            'enlace'          => base_url('uploads/clientes/' . $nitCliente . '/' . $fileName),
             'updated_at'      => date('Y-m-d H:i:s'),
         ];
 

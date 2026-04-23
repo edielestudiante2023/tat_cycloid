@@ -68,43 +68,50 @@ class ConsultantController extends Controller
         $cedulaDocName = null;
         $ofertaName = null;
 
-        $uploadPath = ROOTPATH . 'public/uploads';
+        $uploadPath = rtrim(UPLOADS_CLIENTES_DOCS, '/\\');
+        if (!is_dir($uploadPath)) mkdir($uploadPath, 0775, true);
 
         if ($logo && $logo->isValid() && !$logo->hasMoved()) {
-            $logoName = $logo->getRandomName();
-            $logo->move($uploadPath, $logoName);
-            compress_uploaded_image($uploadPath . '/' . $logoName);
-            $this->generateLogoThumbnail($uploadPath, $logoName);
+            $rand = $logo->getRandomName();
+            $logo->move($uploadPath, $rand);
+            compress_uploaded_image($uploadPath . '/' . $rand);
+            $this->generateLogoThumbnail($uploadPath, $rand);
+            $logoName = 'clientes-docs/' . $rand;
         }
 
         if ($firma && $firma->isValid() && !$firma->hasMoved()) {
-            $firmaName = $firma->getRandomName();
-            $firma->move($uploadPath, $firmaName);
-            compress_uploaded_image($uploadPath . '/' . $firmaName);
+            $rand = $firma->getRandomName();
+            $firma->move($uploadPath, $rand);
+            compress_uploaded_image($uploadPath . '/' . $rand);
+            $firmaName = 'clientes-docs/' . $rand;
         }
 
         if ($rutFile && $rutFile->isValid() && !$rutFile->hasMoved()) {
-            $rutName = $rutFile->getRandomName();
-            $rutFile->move($uploadPath, $rutName);
-            compress_uploaded_image($uploadPath . '/' . $rutName);
+            $rand = $rutFile->getRandomName();
+            $rutFile->move($uploadPath, $rand);
+            compress_uploaded_image($uploadPath . '/' . $rand);
+            $rutName = 'clientes-docs/' . $rand;
         }
 
         if ($camaraFile && $camaraFile->isValid() && !$camaraFile->hasMoved()) {
-            $camaraName = $camaraFile->getRandomName();
-            $camaraFile->move($uploadPath, $camaraName);
-            compress_uploaded_image($uploadPath . '/' . $camaraName);
+            $rand = $camaraFile->getRandomName();
+            $camaraFile->move($uploadPath, $rand);
+            compress_uploaded_image($uploadPath . '/' . $rand);
+            $camaraName = 'clientes-docs/' . $rand;
         }
 
         if ($cedulaDocFile && $cedulaDocFile->isValid() && !$cedulaDocFile->hasMoved()) {
-            $cedulaDocName = $cedulaDocFile->getRandomName();
-            $cedulaDocFile->move($uploadPath, $cedulaDocName);
-            compress_uploaded_image($uploadPath . '/' . $cedulaDocName);
+            $rand = $cedulaDocFile->getRandomName();
+            $cedulaDocFile->move($uploadPath, $rand);
+            compress_uploaded_image($uploadPath . '/' . $rand);
+            $cedulaDocName = 'clientes-docs/' . $rand;
         }
 
         if ($ofertaFile && $ofertaFile->isValid() && !$ofertaFile->hasMoved()) {
-            $ofertaName = $ofertaFile->getRandomName();
-            $ofertaFile->move($uploadPath, $ofertaName);
-            compress_uploaded_image($uploadPath . '/' . $ofertaName);
+            $rand = $ofertaFile->getRandomName();
+            $ofertaFile->move($uploadPath, $rand);
+            compress_uploaded_image($uploadPath . '/' . $rand);
+            $ofertaName = 'clientes-docs/' . $rand;
         }
 
         $passwordPlano = $this->request->getVar('password');
@@ -173,7 +180,7 @@ class ConsultantController extends Controller
             $nitCliente = $this->request->getVar('nit_cliente');
 
             // Crear la carpeta para el cliente en UPLOADS_PATH/{nit_cliente}
-            $uploadPath = UPLOADS_PATH . $nitCliente;
+            $uploadPath = UPLOADS_CLIENTES . $nitCliente;
 
             if (!is_dir($uploadPath)) { // Verificar si la carpeta ya existe
                 mkdir($uploadPath, 0777, true); // Crear la carpeta con permisos 0777
@@ -393,7 +400,7 @@ class ConsultantController extends Controller
         $photo = $this->request->getFile('foto_consultor');
         if ($photo && $photo->isValid() && !$photo->hasMoved()) {
             $photoName = $photo->getRandomName();
-            $destDir = UPLOADS_PATH . 'firmas_consultores/';
+            $destDir = UPLOADS_CONSULTORES . 'firmas/';
             if (!is_dir($destDir)) mkdir($destDir, 0775, true);
             $photo->move($destDir, $photoName);
             compress_uploaded_image($destDir . $photoName);
@@ -404,7 +411,7 @@ class ConsultantController extends Controller
         $signature = $this->request->getFile('firma_consultor');
         if ($signature && $signature->isValid() && !$signature->hasMoved()) {
             $signatureName = $signature->getRandomName();
-            $destDir = UPLOADS_PATH . 'firmas_consultores/';
+            $destDir = UPLOADS_CONSULTORES . 'firmas/';
             if (!is_dir($destDir)) mkdir($destDir, 0775, true);
             $signature->move($destDir, $signatureName);
             compress_uploaded_image($destDir . $signatureName);
@@ -448,10 +455,12 @@ class ConsultantController extends Controller
 
             $photo = $this->request->getFile('foto_consultor');
             if ($photo && $photo->isValid() && !$photo->hasMoved()) {
-                $photoName = $photo->getRandomName();
-                $photo->move(ROOTPATH . 'public/uploads', $photoName); // Guarda en la carpeta correcta
-                compress_uploaded_image(ROOTPATH . 'public/uploads/' . $photoName);
-                $data['foto_consultor'] = $photoName;
+                $destDir = UPLOADS_CONSULTORES . 'fotos/';
+                if (!is_dir($destDir)) mkdir($destDir, 0775, true);
+                $rand = $photo->getRandomName();
+                $photo->move($destDir, $rand);
+                compress_uploaded_image($destDir . $rand);
+                $data['foto_consultor'] = 'consultores/fotos/' . $rand;
             }
 
 
@@ -522,13 +531,13 @@ class ConsultantController extends Controller
         $newPhoto = $this->request->getFile('foto_consultor');
         if ($newPhoto && $newPhoto->isValid() && !$newPhoto->hasMoved()) {
             $newPhotoName = $newPhoto->getRandomName();
-            $destDir = UPLOADS_PATH . 'firmas_consultores/';
+            $destDir = UPLOADS_CONSULTORES . 'firmas/';
             if (!is_dir($destDir)) mkdir($destDir, 0775, true);
             $newPhoto->move($destDir, $newPhotoName);
             compress_uploaded_image($destDir . $newPhotoName);
 
             // Eliminar la imagen anterior si existe
-            $oldPath = UPLOADS_PATH . 'firmas_consultores/' . ($consultant['foto_consultor'] ?? '');
+            $oldPath = UPLOADS_CONSULTORES . 'firmas/' . ($consultant['foto_consultor'] ?? '');
             if (!empty($consultant['foto_consultor']) && file_exists($oldPath)) {
                 unlink($oldPath);
             }
@@ -541,13 +550,13 @@ class ConsultantController extends Controller
         $newSignature = $this->request->getFile('firma_consultor');
         if ($newSignature && $newSignature->isValid() && !$newSignature->hasMoved()) {
             $newSignatureName = $newSignature->getRandomName();
-            $destDir = UPLOADS_PATH . 'firmas_consultores/';
+            $destDir = UPLOADS_CONSULTORES . 'firmas/';
             if (!is_dir($destDir)) mkdir($destDir, 0775, true);
             $newSignature->move($destDir, $newSignatureName);
             compress_uploaded_image($destDir . $newSignatureName);
 
             // Eliminar la firma anterior si existe
-            $oldPath = UPLOADS_PATH . 'firmas_consultores/' . ($consultant['firma_consultor'] ?? '');
+            $oldPath = UPLOADS_CONSULTORES . 'firmas/' . ($consultant['firma_consultor'] ?? '');
             if (!empty($consultant['firma_consultor']) && file_exists($oldPath)) {
                 unlink($oldPath);
             }
@@ -670,41 +679,43 @@ class ConsultantController extends Controller
             'area_m2'                           => $this->request->getVar('area_m2') !== null && $this->request->getVar('area_m2') !== '' ? (float) $this->request->getVar('area_m2') : null,
         ];
 
-        $uploadPath = ROOTPATH . 'public/uploads';
+        $uploadPath = rtrim(UPLOADS_CLIENTES_DOCS, '/\\');
+        if (!is_dir($uploadPath)) mkdir($uploadPath, 0775, true);
 
         // Manejar la subida de un nuevo logo
         $newLogo = $this->request->getFile('logo');
         if ($newLogo && $newLogo->isValid() && !$newLogo->hasMoved()) {
-            $newLogoName = $newLogo->getRandomName();
-            $newLogo->move($uploadPath, $newLogoName);
-            compress_uploaded_image($uploadPath . '/' . $newLogoName);
-            $this->generateLogoThumbnail($uploadPath, $newLogoName);
+            $rand = $newLogo->getRandomName();
+            $newLogo->move($uploadPath, $rand);
+            compress_uploaded_image($uploadPath . '/' . $rand);
+            $this->generateLogoThumbnail($uploadPath, $rand);
 
             if (!empty($client['logo'])) {
-                if (file_exists($uploadPath . '/' . $client['logo'])) {
-                    unlink($uploadPath . '/' . $client['logo']);
+                $oldLogo = FCPATH . 'uploads/' . $client['logo'];
+                if (file_exists($oldLogo)) {
+                    unlink($oldLogo);
                 }
-                $oldThumb = $uploadPath . '/thumb_' . $client['logo'];
+                $oldThumb = dirname($oldLogo) . '/thumb_' . basename($client['logo']);
                 if (file_exists($oldThumb)) {
                     unlink($oldThumb);
                 }
             }
 
-            $data['logo'] = $newLogoName;
+            $data['logo'] = 'clientes-docs/' . $rand;
         }
 
         // Manejar la subida de una nueva firma
         $newSignature = $this->request->getFile('firma_representante_legal');
         if ($newSignature && $newSignature->isValid() && !$newSignature->hasMoved()) {
-            $newSignatureName = $newSignature->getRandomName();
-            $newSignature->move($uploadPath, $newSignatureName);
-            compress_uploaded_image($uploadPath . '/' . $newSignatureName);
+            $rand = $newSignature->getRandomName();
+            $newSignature->move($uploadPath, $rand);
+            compress_uploaded_image($uploadPath . '/' . $rand);
 
-            if (!empty($client['firma_representante_legal']) && file_exists($uploadPath . '/' . $client['firma_representante_legal'])) {
-                unlink($uploadPath . '/' . $client['firma_representante_legal']);
+            if (!empty($client['firma_representante_legal']) && file_exists(FCPATH . 'uploads/' . $client['firma_representante_legal'])) {
+                unlink(FCPATH . 'uploads/' . $client['firma_representante_legal']);
             }
 
-            $data['firma_representante_legal'] = $newSignatureName;
+            $data['firma_representante_legal'] = 'clientes-docs/' . $rand;
         }
 
         // Manejar archivos de documentos (RUT, Cámara, Cédula doc, Oferta)
@@ -712,15 +723,15 @@ class ConsultantController extends Controller
         foreach ($fileFields as $field) {
             $newFile = $this->request->getFile($field);
             if ($newFile && $newFile->isValid() && !$newFile->hasMoved()) {
-                $newFileName = $newFile->getRandomName();
-                $newFile->move($uploadPath, $newFileName);
-                compress_uploaded_image($uploadPath . '/' . $newFileName);
+                $rand = $newFile->getRandomName();
+                $newFile->move($uploadPath, $rand);
+                compress_uploaded_image($uploadPath . '/' . $rand);
 
-                if (!empty($client[$field]) && file_exists($uploadPath . '/' . $client[$field])) {
-                    unlink($uploadPath . '/' . $client[$field]);
+                if (!empty($client[$field]) && file_exists(FCPATH . 'uploads/' . $client[$field])) {
+                    unlink(FCPATH . 'uploads/' . $client[$field]);
                 }
 
-                $data[$field] = $newFileName;
+                $data[$field] = 'clientes-docs/' . $rand;
             }
         }
 

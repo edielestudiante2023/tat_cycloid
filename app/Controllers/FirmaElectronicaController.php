@@ -404,7 +404,7 @@ class FirmaElectronicaController extends Controller
                 $consultorModel = new \App\Models\ConsultantModel();
                 $consultor = $consultorModel->find($idConsultor);
                 if (!empty($consultor['firma_consultor'])) {
-                    $firmaPath = UPLOADS_PATH . 'firmas_consultores/' . $consultor['firma_consultor'];
+                    $firmaPath = UPLOADS_CONSULTORES . 'firmas/' . $consultor['firma_consultor'];
                     if (file_exists($firmaPath)) {
                         $firmaData = file_get_contents($firmaPath);
                         $firmaMime = mime_content_type($firmaPath);
@@ -457,7 +457,7 @@ class FirmaElectronicaController extends Controller
 
             // Guardar archivo en uploads/{nit}/
             $nit = $cliente['nit_cliente'] ?? $doc['id_cliente'];
-            $uploadDir = UPLOADS_PATH . $nit;
+            $uploadDir = UPLOADS_CLIENTES . $nit;
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0755, true);
             }
@@ -466,7 +466,7 @@ class FirmaElectronicaController extends Controller
             $filePath = $uploadDir . '/' . $fileName;
             file_put_contents($filePath, $pdfOutput);
 
-            $enlace = base_url(UPLOADS_URL_PREFIX . '/' . $nit . '/' . $fileName);
+            $enlace = base_url('uploads/clientes/' . $nit . '/' . $fileName);
 
             // Obtener ID del detail_report "Documento SG-SST"
             $detailReport = $this->db->table('detail_report')

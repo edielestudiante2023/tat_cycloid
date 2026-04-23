@@ -60,7 +60,7 @@ class MatricesGeneratorLibrary
         $nombreLimpio = preg_replace('/[^a-zA-Z0-9]/', '_', $cliente['nombre_cliente']);
 
         // Crear directorio de destino
-        $destDir = UPLOADS_PATH . 'matrices/' . $idCliente;
+        $destDir = UPLOADS_BASE . 'matrices/' . $idCliente;
         if (!is_dir($destDir)) {
             mkdir($destDir, 0775, true);
         }
@@ -109,7 +109,7 @@ class MatricesGeneratorLibrary
             ->get()->getResultArray();
 
         foreach ($registros as $reg) {
-            $filePath = UPLOADS_PATH . str_replace(UPLOADS_URL_PREFIX . '/', '', $reg['enlace']);
+            $filePath = UPLOADS_BASE . str_replace(UPLOADS_URL_PREFIX . '/', '', $reg['enlace']);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }

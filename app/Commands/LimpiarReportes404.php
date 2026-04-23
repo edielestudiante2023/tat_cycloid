@@ -18,10 +18,7 @@ class LimpiarReportes404 extends BaseCommand
 
     public function run(array $params)
     {
-        // Fallback: definir UPLOADS_PATH si no existe en Constants.php (producción legacy)
-        if (!defined('UPLOADS_PATH')) {
-            define('UPLOADS_PATH', getenv('UPLOADS_PATH') ?: ROOTPATH . '../soportes-clientes/');
-        }
+        // Post-consolidación: los soportes viven en FCPATH . 'uploads/'. No se usa UPLOADS_PATH aquí.
 
         $dryRun  = CLI::getOption('dry-run') !== null;
         $verbose = CLI::getOption('verbose') !== null;
@@ -238,7 +235,12 @@ class LimpiarReportes404 extends BaseCommand
 
     private function archivoExiste(string $rutaRelativa): bool
     {
-        return file_exists(UPLOADS_PATH . $rutaRelativa)
+        // Renombres legacy: firmas_consultores/ → consultores/firmas/, {NIT}/ → clientes/{NIT}/
+        $nuevo = preg_replace('#^firmas_consultores/#', 'consultores/firmas/', $rutaRelativa);
+        $nuevo = preg_replace('#^planillas-seguridad-social/#', 'planillas-ss/', $nuevo);
+        $nuevo = preg_replace('#^(\d+)/#', 'clientes/$1/', $nuevo);
+
+        return file_exists(FCPATH . 'uploads/' . $nuevo)
             || file_exists(FCPATH . 'uploads/' . $rutaRelativa);
     }
 
